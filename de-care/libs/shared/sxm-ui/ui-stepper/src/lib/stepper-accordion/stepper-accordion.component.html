@@ -1,0 +1,34 @@
+<section *ngFor="let step of stepList; let i = index" class="step-item" [class.active]="selected === step">
+    <header *ngIf="selected === step">
+        <div *ngIf="step.activeHeader; else activeHeaderLabel">
+            <ng-container [ngTemplateOutlet]="step.activeHeader"></ng-container>
+        </div>
+        <ng-template #activeHeaderLabel>
+            <p class="step-title">{{ i + 1 }}. {{ step.label }}</p>
+        </ng-template>
+    </header>
+    <header *ngIf="selected !== step">
+        <div *ngIf="step.inactiveHeader; else inactiveHeaderLabel">
+            <ng-container [ngTemplateOutlet]="step.inactiveHeader" [ngTemplateOutletContext]="{ stepNumber: i + 1 }"></ng-container>
+        </div>
+        <ng-template #inactiveHeaderLabel>
+            <p class="step-title" [class.inactive]="i >= selectedIndex">{{ i + 1 }}. {{ step.label }}</p>
+        </ng-template>
+        <button
+            *ngIf="selectedIndex > i"
+            (click)="step.editClicked.emit(step); selectedIndex = i"
+            class="edit-btn text-link-secondary"
+            data-track-click="Edit"
+            data-e2e="AccordionStepper.EditButton"
+            [attr.aria-expanded]="selected === step"
+        >
+            {{ step.editButtonLabelOverride || translateKeyPrefix + "EDIT_BUTTON_TEXT" | translate }}
+        </button>
+    </header>
+    <article *ngIf="selected === step" id="{{ step.id }}">
+        <ng-container [ngTemplateOutlet]="selected.content"></ng-container>
+    </article>
+    <article *ngIf="step.inactiveContent && selected !== step && selectedIndex > i">
+        <ng-container [ngTemplateOutlet]="step.inactiveContent"></ng-container>
+    </article>
+</section>

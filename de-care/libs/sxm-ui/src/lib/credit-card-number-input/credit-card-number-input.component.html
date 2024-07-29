@@ -1,0 +1,56 @@
+<div class="input-container" [class.invalid]="invalid" [class.filled]="value || maskedNum">
+    <ng-container *ngIf="!masked; else maskedCC">
+        <label for="{{ ccNumID }}">{{ labelText }}</label>
+        <input
+            #field
+            type="text"
+            id="{{ ccNumID }}"
+            [(ngModel)]="value"
+            maxlength="19"
+            qatag="CCNameOnCardTextfield"
+            [sxmCreditCardType]="{ cardNumber: value }"
+            (cardEntryEvent)="checkGiftCardHandler($event)"
+            onFocus
+            required
+            [class.ng-invalid]="invalid"
+            data-e2e="creditCardNumberInput.unmasked"
+        />
+    </ng-container>
+    <ng-template #maskedCC>
+        <label for="{{ ccNumMaskedID }}">{{ labelText }}</label>
+        <input
+            type="text"
+            id="{{ ccNumMaskedID }}"
+            class="ccNumMaskedInput"
+            qatag="CCCardNumberTextfieldMasked"
+            [value]="maskedNum"
+            [sxmCreditCardType]="{ cardNumber: value }"
+            (focus)="clearInput()"
+            onFocus
+        />
+    </ng-template>
+    <svg class="icon icon-content cc-icon icon-amex">
+        <use class="" xlink:href="#icon-cc-amex"></use>
+    </svg>
+    <svg class="icon icon-content cc-icon icon-dci">
+        <use class="" xlink:href="#icon-cc-dci"></use>
+    </svg>
+    <svg class="icon icon-content cc-icon icon-discover">
+        <use class="" xlink:href="#icon-cc-discover"></use>
+    </svg>
+    <svg class="icon icon-content cc-icon icon-jcb">
+        <use class="" xlink:href="#icon-cc-jcb"></use>
+    </svg>
+    <svg class="icon icon-content cc-icon icon-mc">
+        <use class="" xlink:href="#icon-cc-mc"></use>
+    </svg>
+    <svg class="icon icon-content cc-icon icon-visa">
+        <use class="" xlink:href="#icon-cc-visa"></use>
+    </svg>
+    <svg class="icon icon-content cc-icon icon-unionpay">
+        <use class="" xlink:href="#icon-cc-unionpay"></use>
+    </svg>
+</div>
+<div *ngIf="control?.invalid && control?.touched" class="invalid-feedback">
+    <p [innerHTML]="errorMsg">Invalid</p>
+</div>

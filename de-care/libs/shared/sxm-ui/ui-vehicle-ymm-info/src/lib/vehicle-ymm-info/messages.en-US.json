@@ -1,0 +1,8 @@
+{
+    "RADIO_ID_MASKED_LABEL": "Radio ID: ",
+    "RADIO_ID_MASKED": "****{{lastFour}}",
+    "VEHICLE_LABEL": "Your Vehicle: ",
+    "VEHICLE": "{{year}} {{make}} {{model}}",
+    "NICKNAME_LABEL": "Nickname: ",
+    "NICKNAME": "{{nickname}}"
+}

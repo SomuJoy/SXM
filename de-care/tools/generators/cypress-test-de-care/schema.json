@@ -1,0 +1,94 @@
+{
+    "$schema": "https://json-schema.org/schema",
+    "cli": "nx",
+    "$id": "cypress-test-de-care",
+    "type": "object",
+    "properties": {
+        "testName": {
+            "type": "string",
+            "description": "Name of the test (Examples: purchase, negative-scenarios, transaction-failures)",
+            "x-prompt": "Name of the test? (Examples: purchase, negative-scenarios, transaction-failures)"
+        },
+        "useCaseName": {
+            "type": "string",
+            "description": "Name of the use case this is for?",
+            "enum": ["checkout", "account", "subscription", "onboarding", "third-party-billing", "third-party-linking", "do-not-call"],
+            "x-prompt": {
+                "message": "Name of the use case this is for?",
+                "type": "list",
+                "items": [
+                    {
+                        "value": "checkout",
+                        "label": "checkout"
+                    },
+                    {
+                        "value": "account",
+                        "label": "account"
+                    },
+                    {
+                        "value": "subscription",
+                        "label": "subscription"
+                    },
+                    {
+                        "value": "onboarding",
+                        "label": "onboarding"
+                    },
+                    {
+                        "value": "third-party-billing",
+                        "label": "third-party-billing"
+                    },
+                    {
+                        "value": "third-party-linking",
+                        "label": "third-party-linking"
+                    },
+                    {
+                        "value": "do-not-call",
+                        "label": "do-not-call"
+                    }
+                ]
+            }
+        },
+        "featureName": {
+            "type": "string",
+            "description": "Name of the feature without the feature- prefix\n  (Examples: satellite, streaming)",
+            "x-prompt": "Name of the feature without the feature- prefix?\n  (Examples: satellite, streaming)"
+        },
+        "scenarioPath": {
+            "type": "string",
+            "description": "Optional path structure for this scenario? (Examples: non-accordion/organic, non-accordion/targeted)",
+            "x-prompt": "Optional path structure for this scenario? (Examples: non-accordion/organic, non-accordion/targeted)"
+        },
+        "tag": {
+            "type": "string",
+            "description": "Tag (used to group tests by product teams)?",
+            "enum": ["checkoutDigital", "checkoutSatellite", "myAccount", "onboarding", "retain"],
+            "x-prompt": {
+                "message": "Tag (used to group tests by product teams)?",
+                "type": "list",
+                "items": [
+                    {
+                        "value": "checkoutDigital",
+                        "label": "checkoutDigital"
+                    },
+                    {
+                        "value": "checkoutSatellite",
+                        "label": "checkoutSatellite"
+                    },
+                    {
+                        "value": "myAccount",
+                        "label": "myAccount"
+                    },
+                    {
+                        "value": "onboarding",
+                        "label": "onboarding"
+                    },
+                    {
+                        "value": "retain",
+                        "label": "retain"
+                    }
+                ]
+            }
+        }
+    },
+    "required": ["testName", "useCaseName", "featureName", "tag"]
+}

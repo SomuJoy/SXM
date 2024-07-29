@@ -1,0 +1,9 @@
+{
+    "HEADER": "On dirait que vous avez déjà un abonnement.",
+    "SUB_HEADER": "Connectez-vous pour modifier votre abonnement.",
+    "VEHICLE": "{{make}} {{model}} {{year}}",
+    "RADIO_ID_MASKED": "Code de Radio: ****{{maskedRadioId}}",
+    "SUBSCRIPTION_LABEL": " Subscription",
+    "CONTINUE_BTN_LABEL": "SE CONNECTER AU COMPTE",
+    "CONTINUE_BTN_LINK": "https://care.siriusxm.ca/login_view.action?langpref=fr"
+}

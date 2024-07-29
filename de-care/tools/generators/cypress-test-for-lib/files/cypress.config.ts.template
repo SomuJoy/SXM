@@ -1,0 +1,52 @@
+import { defineConfig } from 'cypress';
+import { nxComponentTestingPreset } from '@nrwl/angular/plugins/component-testing';
+
+// Note: Using a custom webpack config to get SASS preprocessing working for our import path
+//       that we use that needs to resolve to the node_modules/sxm/assets/src/scss dir
+import * as path from 'path';
+const nodeModulesPath = path.resolve(__dirname, '<%= nodeModulesPath %>');
+const webpackConfig = {
+    module: {
+        rules: [
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sassOptions: {
+                                includePaths: [`${nodeModulesPath}/sxm/assets/src/scss`],
+                            },
+                        },
+                    },
+                ],
+            },
+        ],
+    },
+};
+
+const componentConfig = nxComponentTestingPreset(__filename);
+export default defineConfig({
+    component: {
+        ...componentConfig,
+        devServer: {
+            ...componentConfig.devServer,
+            webpackConfig,
+        },
+        setupNodeEvents(on) {
+            on('task', {
+                log(message) {
+                    console.log(message);
+                    return null;
+                },
+                table(message) {
+                    console.table(message);
+                    return null;
+                },
+            });
+        },
+    },
+    env: {
+        nodeModulesPath,
+    },
+});

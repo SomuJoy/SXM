@@ -1,0 +1,53 @@
+{
+    "SharedSxmUiUiHelpFindingRadioModule": {
+        "SxmUiHelpFindingRadioComponent": {
+            "TITLE": "How do I find my Radio ID?",
+            "NEED_HELP_TEXT": "Tune your radio dial to channel 0 and the radio ID should display.",
+            "NEED_HELP_TEXT-1": "Tune your radio dial to channel 0 and the radio ID should display. If that did not work try accessing the menu function on your radio (Refer to your owner's manual for specific instructions).",
+            "NEED_HELP_TEXT-2": "For some Sirius radios, you will need to press and hold down the SAT or ESN button, or access your radio's menu functions.",
+            "TEXT_LINK-1": "Get more help for Sirius radios",
+            "TEXT_LINK-1_URL": "https://www.siriusxm.com/help/findsirius",
+            "TEXT_LINK-2": "Get help for Marine and Aviation devices",
+            "DONT_HAVE_RADIO": {
+                "HEADLINE": "Don't have a radio?",
+                "SUB_HEADLINE": "No problem. Check out our",
+                "LINK_TEXT": "SiriusXM Streaming Trial",
+                "LINK_URL": "https://www.siriusxm.com/streaming"
+            }
+        },
+        "SxmUiHelpFindingRadioAndAccountComponent": {
+            "TITLE": "How do I find my Radio ID?",
+            "NEED_HELP_TEXT-1": "Tune your radio dial to channel 0 and the radio ID should display. If that did not work try accessing the menu function on your radio (Refer to your owner's manual for specific instructions).",
+            "NEED_HELP_TEXT-2": "For some Sirius radios, you will need to press and hold down the SAT or ESN button, or access your radio's menu functions.",
+            "NEED_HELP_TEXT-3": "If you still need help finding it, or your Account Number, please ",
+            "CHAT_LINK": "chat with an agent.",
+            "TEXT_LINK-1": "Get more help for Sirius radios",
+            "TEXT_LINK-1_URL": "https://www.siriusxm.com/help/findsirius",
+            "TEXT_LINK-2": "Get help for Marine and Aviation devices",
+            "DONT_HAVE_RADIO": {
+                "HEADLINE": "Don't have a radio?",
+                "SUB_HEADLINE": "No problem. Check out our",
+                "LINK_TEXT": "SiriusXM Streaming Trial",
+                "LINK_URL": "https://www.siriusxm.com/streaming"
+            }
+        },
+        "SxmUiDeviceHelpComponent": {
+            "TITLE": "Lookup your Marine or Aviation Device ID",
+            "MESSAGE": "<strong>There are a few places you can look to find your Radio ID or ESN.</strong>",
+            "NOTE": "Note: Radio IDs are 8 digits and letters, and ESN's are 12 digits.",
+            "UNORDERED_LIST": {
+                "item-1": "For most devices, access your <strong>Diagnostics</strong> or <strong>Settings</strong> menu, and then look for your ESN/Radio ID/Device ID to be listed.",
+                "item-2": "Additionally, on many devices you may also look on the bottom of the device, or the packaging that it came with for the Radio ID. In many cases, you may find <strong>it next to the serial number</strong> of the device.",
+                "item-3": "If your device also has audio capability, you may be able to <strong>tune to channel 0</strong> and it will display your Radio ID.",
+                "item-4": "If you are still having trouble, you <strong>can call your manufacturer and ask them</strong> to provide you with your Radio ID."
+            }
+        },
+        "HelpFindingRadioModalComponent": {
+            "HELP_FINDING_RADIO_TITLE": "Radio Lookup",
+            "RADIO_LOOKUP_MARINE_AVIATION": "Device Help"
+        },
+        "SxmUiHelpFindingRadioAccordionComponent": {
+            "RADIO_ID_HELP_LABEL": "How do I find my Radio ID?"
+        }
+    }
+}

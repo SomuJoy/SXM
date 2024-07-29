@@ -1,0 +1,24 @@
+{
+    "name": "shared-sxm-ui-ui-nfl-opt-in",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/sxm-ui/ui-nfl-opt-in/src",
+    "prefix": "sxm-ui",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/shared/sxm-ui/ui-nfl-opt-in"],
+            "options": {
+                "jestConfig": "libs/shared/sxm-ui/ui-nfl-opt-in/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/sxm-ui/ui-nfl-opt-in/src/**/*.ts", "libs/shared/sxm-ui/ui-nfl-opt-in/src/**/*.html"]
+            }
+        }
+    },
+    "tags": ["type:ui", "scope:shared-ui"]
+}

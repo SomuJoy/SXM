@@ -1,0 +1,104 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "libs/sxm-assets/scss/ui_reset.scss";
+@import "components/buttons";
+
+.nc-container {
+    margin: 4px 0 12px;
+    &.audio-code {
+        padding: 8px 0 10px;
+    }
+    p {
+        margin-bottom: 0;
+    }
+    img {
+        max-height: 100px;
+    }
+}
+
+.nc-button {
+    margin-bottom: 16px;
+}
+
+:host {
+    .hide {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+.captcha-link {
+    min-width: 100px;
+}
+
+.input-container {
+    color: $red;
+    border: 1px solid $gray-dark;
+    box-sizing: border-box;
+    height: 56px;
+    margin-bottom: 16px;
+    position: relative;
+    width: 100%;
+    &.invalid {
+        border: 1px solid $red;
+        &.active {
+            input {
+                border-left: 4px solid $red;
+            }
+        }
+    }
+    &.filled {
+        box-shadow: none;
+        label,
+        label.is-autofilled {
+            transform: translateY(4px) scale(0.75);
+        }
+        input {
+            border-left: 0;
+            padding-left: 15px;
+        }
+    }
+    &.active {
+        label {
+            transform: translate(0, 4px) scale(0.75);
+        }
+        input {
+            border-left: 4px solid $blue-secondary;
+        }
+    }
+    &.mb-8 {
+        margin-bottom: 8px;
+    }
+    label {
+        color: $gray-dark;
+        @include font-size(14px);
+        font-weight: calculate-font-weight("book");
+        line-height: 20px;
+        position: absolute;
+        transform-origin: top left;
+        transform: translateY(17px) scale(1);
+        margin-left: 14px;
+        transition: 0.1s ease-in-out;
+    }
+    input {
+        border: 0;
+        font-family: inherit;
+        @include font-size(14px);
+        height: 100%;
+        outline: 0;
+        padding: 24px 0 16px 10px;
+        width: 100%;
+
+        // sass-lint:disable no-vendor-prefixes
+        &:-webkit-autofill {
+            animation-name: onAutoFillStart;
+            transition: background-color 50000s ease-in-out 0s;
+        }
+        &:not(:-webkit-autofill) {
+            animation-name: onAutoFillCancel;
+        }
+        &.is-autofilled {
+            border-left: 4px solid $blue-secondary;
+        }
+    }
+}

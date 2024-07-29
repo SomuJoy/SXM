@@ -1,0 +1,3 @@
+registry=https://sxmartifactory.corp.siriusxm.com/artifactory/api/npm/siriusxm-de-npm/
+node-options=--max_old_space_size=8192
+always-auth=true

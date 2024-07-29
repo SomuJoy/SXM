@@ -1,0 +1,10 @@
+{
+    "sharedSxmUiUiPackageComparisonModule": {
+        "packagesComparisonComponent": {
+            "MONTHLY_PRICE_AFTER": "Monthly rate plus fees after {{endDate}}",
+            "MONTHLY_PRICE_AFTER_QC": "Monthly rate after {{endDate}}",
+            "CHANNEL_LINEUP_TOOLTIP_COPY": "Inside and outside the car lineups vary slightly. Other fees and taxes may apply.",
+            "CHANNEL_LINEUP_TOOLTIP_COPY_QC": "Inside and outside the car lineups vary slightly. Taxes may apply."
+        }
+    }
+}

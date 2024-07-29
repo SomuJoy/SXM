@@ -1,0 +1,8 @@
+{
+    "SharedSxmUiUiRadioidFormFieldModule": {
+        "SxmUiRadioIdFormFieldComponent": {
+            "LABEL_TEXT": "Radio ID",
+            "ERROR_MESSAGE_REQUIRED": "Enter a valid Radio ID."
+        }
+    }
+}

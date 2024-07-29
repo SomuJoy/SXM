@@ -1,0 +1,10 @@
+{
+    "SharedSxmUiUiPageHeaderBasicModule": {
+        "PageHeaderBasicComponent": {
+            "SWITCH_LANGUAGE": {
+                "LABEL": "FR",
+                "VALUE": "fr-CA"
+            }
+        }
+    }
+}

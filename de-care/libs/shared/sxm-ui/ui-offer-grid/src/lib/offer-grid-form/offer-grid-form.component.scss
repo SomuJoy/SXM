@@ -1,0 +1,217 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: block;
+    width: auto;
+
+    @include bp(large) {
+        width: 100%;
+    }
+}
+
+.header-instructions {
+    padding: 8px 40px 24px;
+    margin: 0 -40px 24px -40px;
+    position: relative;
+    background: $white;
+
+    &::ng-deep {
+        p:last-child {
+            @include font-size(12px);
+            text-align: center;
+            color: $gray-charcoal;
+        }
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 24px;
+        position: absolute;
+        box-shadow: 0 2px 15px -4px rgba(0, 0, 0, 0.15);
+        z-index: -1;
+        bottom: 0px;
+        margin-left: -40px;
+    }
+}
+
+.phone-number {
+    width: 100%;
+    text-align: center;
+
+    @include bp(medium) {
+        a {
+            color: $black;
+            text-decoration: none;
+        }
+    }
+}
+
+button[type="submit"] {
+    margin-bottom: 24px;
+}
+
+.offer-grid {
+    padding: 0;
+
+    sxm-ui-accordion-chevron {
+        margin-top: 16px;
+        display: block;
+    }
+
+    &--header {
+        display: grid;
+        grid-template-rows: 32px minmax(68px, auto) 10px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 16px;
+        width: 100%;
+
+        .user-selection {
+            text-align: center;
+            letter-spacing: 1.05px;
+        }
+
+        .offer-option {
+            label {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $blue-ultra-light;
+                padding: 8px;
+                font-weight: bold;
+                @include font-size(12px);
+                margin-bottom: 0;
+                color: $blue;
+                text-align: center;
+                height: 100%;
+                cursor: pointer;
+            }
+
+            &.selected {
+                position: relative;
+
+                label {
+                    background-color: $purple;
+                    color: $white;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -10px;
+                    width: 0;
+                    height: 0;
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    border-top: 10px solid $purple;
+                    left: 46%;
+                }
+            }
+        }
+    }
+
+    &--row {
+        display: grid;
+        grid-auto-rows: auto minmax(40px, auto);
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 16px;
+        grid-row-gap: 12px;
+        justify-items: center;
+        align-items: center;
+        border-bottom: 1px solid $gray-medium;
+        padding: 24px 0;
+
+        > div {
+            > p,
+            > span {
+                @include font-size(16px);
+                line-height: 26px;
+            }
+
+            &.selected p {
+                font-weight: bold;
+                color: $purple;
+            }
+
+            &:first-child {
+                grid-column: 1/-1;
+            }
+
+            &.offer-price::ng-deep {
+                p {
+                    margin-bottom: 0;
+                    @include font-size(12px);
+                    line-height: 18px;
+
+                    &:first-child {
+                        @include font-size(16px);
+                    }
+                }
+            }
+            &.offer-price.selected::ng-deep {
+                p:first-child {
+                    font-weight: bold;
+                    color: $purple;
+                }
+            }
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &--feature {
+        .icon {
+            use {
+                stroke: $gray-dark;
+            }
+
+            &.x-mark,
+            &.check-mark {
+                use {
+                    stroke-width: 0.5;
+                }
+            }
+
+            &.x-mark {
+                width: 18px;
+                height: 18px;
+                @include bp(medium) {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            &.check-mark {
+                width: 18px;
+                height: 16px;
+                @include bp(medium) {
+                    stroke-width: 0.5;
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+
+        > div {
+            position: relative;
+
+            sxm-ui-tooltip {
+                position: absolute;
+                bottom: 0;
+                margin-left: 4px;
+            }
+
+            &.selected {
+                .icon {
+                    use {
+                        stroke-width: 2;
+                        stroke: $purple;
+                    }
+                }
+            }
+        }
+    }
+}

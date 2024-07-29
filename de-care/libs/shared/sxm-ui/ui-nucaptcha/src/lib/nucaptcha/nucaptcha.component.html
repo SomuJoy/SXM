@@ -1,0 +1,57 @@
+<form [formGroup]="nucaptchaForm" [class.hide]="hideCaptcha">
+    <div class="row no-padding">
+        <div class="column small-12 align-left no-padding">
+            <div #nuCaptchaImageContainer class="nc-container" [class.hide]="isAudioCode"></div>
+            <div #nuCaptchaContainer class="nc-container" [class.hide]="isAudioCode"></div>
+            <div *ngIf="isAudioCode" class="nc-container audio-code">
+                <p>
+                    <button class="text-link" (click)="replayAudio()">{{ translationKeyPart + "CAPTCHA_AUDIO_REPLAY" | translate }}</button>
+                </p>
+                <p>
+                    <a class="text-link" [href]="audioDownloadUrl">{{ translationKeyPart + "CAPTCHA_AUDIO_DOWNLOAD" | translate }}</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row no-padding">
+        <div class="column small-2 align-left no-padding captcha-link">
+            <button data-track-click="Audio code or Visual code" class="nc-button text-link align-right" (click)="toggleMedia()">
+                <ng-container *ngIf="!isAudioCode; else visualCodeToggle">{{ translationKeyPart + "CAPTCHA_AUDIO" | translate }}</ng-container>
+                <ng-template #visualCodeToggle>{{ translationKeyPart + "CAPTCHA_VISUAL" | translate }}</ng-template>
+            </button>
+        </div>
+        <div class="column small-4 align-left no-padding captcha-link">
+            <button data-track-click="Try a new code" class="nc-button text-link align-right" (click)="tryNewCode()">
+                {{ translationKeyPart + "CAPTCHA_TRY_NEW" | translate }}
+            </button>
+        </div>
+    </div>
+    <div class="row no-padding">
+        <div class="column small-12 align-left no-padding">
+            <div
+                *ngIf="hasCaptcha"
+                class="input-container"
+                [class.invalid]="(nucaptchaForm.controls.answer | formControlInvalid: submitted) || answerWasWrong"
+                [class.filled]="nucaptchaForm.controls.answer.value"
+            >
+                <label for="{{ captchaId }}">{{ translationKeyPart + "CAPTCHA" | translate }}</label>
+                <input
+                    type="text"
+                    maxlength="10"
+                    formControlName="answer"
+                    id="{{ captchaId }}"
+                    data-test="NuCaptchaTextfield"
+                    qatag="NuCaptchaTextfield"
+                    (focus)="answerWasWrong = false"
+                    onFocus
+                />
+            </div>
+            <div class="invalid-feedback">
+                <p *ngIf="answerWasWrong; else checkBlankCaptcha">{{ translationKeyPart + "ERROR.CAPTCHA_FAILED" | translate }}</p>
+                <ng-template #checkBlankCaptcha>
+                    <p *ngIf="nucaptchaForm.controls.answer | formControlInvalid: submitted">{{ translationKeyPart + "ERROR.CAPTCHA_BLANK" | translate }}</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</form>

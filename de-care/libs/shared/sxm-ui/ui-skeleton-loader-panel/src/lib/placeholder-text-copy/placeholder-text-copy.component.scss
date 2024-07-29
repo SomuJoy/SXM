@@ -1,0 +1,20 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: grid;
+    row-gap: 8px;
+    div {
+        height: 12px;
+        background-color: $gray-light;
+        border-radius: 2px;
+        &:nth-child(n) {
+            margin-right: 28px;
+        }
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+        &:nth-child(3n) {
+            margin-right: 16px;
+        }
+    }
+}

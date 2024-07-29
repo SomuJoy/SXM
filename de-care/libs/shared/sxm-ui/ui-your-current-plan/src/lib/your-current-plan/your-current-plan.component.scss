@@ -1,0 +1,14 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: flex;
+    flex-direction: column;
+
+    .mt-2 {
+        margin-top: 0.2rem;
+    }
+
+    .text-gray {
+        color: $gray-charcoal;
+    }
+}

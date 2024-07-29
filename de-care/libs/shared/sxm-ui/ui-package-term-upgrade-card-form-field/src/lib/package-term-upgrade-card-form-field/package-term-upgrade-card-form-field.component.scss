@@ -1,0 +1,19 @@
+.deal-addon {
+    .partner-image {
+        margin-bottom: 16px;
+        width: 28%;
+        margin-left: 20px;
+        align-items: flex-start;
+        img {
+            max-width: 110px;
+        }
+    }
+    .title {
+        flex: 1;
+        min-width: 60%;
+    }
+}
+
+.checkbox-item {
+    margin: 0;
+}

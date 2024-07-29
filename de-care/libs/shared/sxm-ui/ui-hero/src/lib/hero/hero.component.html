@@ -1,0 +1,22 @@
+<div class="ui-hero" [class.with-image]="heroData.imageUrl">
+    <div *ngIf="!heroData.imageUrl" class="ui-hero-background"></div>
+    <div class="content-container">
+        <div class="row ui-hero-content no-padding-small">
+            <div class="column small-12 ui-hero-copy align-left offset-medium-2" [ngClass]="heroData.imageUrl ? 'medium-5' : 'medium-8 align-center-medium-up'">
+                <div class="title-container flex align-left">
+                    <h1 #title class="ui-hero-copy--title h2" data-e2e="heroComponent.heading" [innerHTML]="heroData.title"></h1>
+                </div>
+                <div
+                    *ngIf="heroData.subtitle"
+                    class="ui-hero-copy--subtitle"
+                    [class.center]="centerSubtitle$ | async"
+                    [innerHTML]="heroData.subtitle"
+                    data-e2e="heroComponent.subtitle"
+                ></div>
+            </div>
+            <div *ngIf="heroData.imageUrl" class="ui-hero-image column small-12 medium-5 align-middle no-padding">
+                <img [src]="heroData.imageUrl" />
+            </div>
+        </div>
+    </div>
+</div>

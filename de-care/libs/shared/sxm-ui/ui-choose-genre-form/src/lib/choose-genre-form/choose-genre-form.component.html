@@ -1,0 +1,19 @@
+<div class="header">
+    <p class="header-text">
+        <strong>{{ translationKey + "HEADER" | translate }}</strong>
+    </p>
+    <p [id]="ariaDescribedbyTextId">
+        {{ translationKey + "HEADER_DESCRIPTION" | translate }}
+    </p>
+</div>
+<form *ngIf="genreForm" [formGroup]="genreForm" (ngSubmit)="submitForm()" data-e2e="rtcChoiceGenreSelectionForm">
+    <div *ngIf="genreForm.controls.option | formControlInvalid: formSubmitted" class="invalid-feedback">
+        <p data-e2e="rtcChoiceGenreSelectionFormError">
+            {{ translationKey + "ERROR" | translate }}
+        </p>
+    </div>
+    <sxm-ui-radio-option-with-tooltip-form-field-set [options]="formOptions" formControlName="option"></sxm-ui-radio-option-with-tooltip-form-field-set>
+    <button class="button primary full-width" type="submit" data-e2e="rtcChoiceGenreSelectionFormSubmitButton">
+        {{ translationKey + (useReviewButtonText ? "REVIEW_BUTTON" : "BUTTON") | translate }}
+    </button>
+</form>

@@ -1,0 +1,85 @@
+@import "sxm.phoenix.imports";
+
+.progress-bar {
+    width: calc(100% + 8px);
+    left: -4px;
+    position: relative;
+    .markers {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        .step {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 3;
+            position: relative;
+            &:last-of-type {
+                width: auto;
+            }
+            .dot {
+                height: 12px;
+                width: 12px;
+                box-sizing: content-box;
+                background-color: $white;
+                background-color: $gray-medium;
+                border: 4px solid $white;
+                border-radius: 50%;
+                span {
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 50%;
+                    opacity: 0;
+                    background-color: $white;
+                }
+            }
+            .break {
+                height: 12px;
+                width: 4px;
+                background-color: $white;
+                &:last-of-type {
+                    width: 0;
+                }
+            }
+            &.active {
+                .dot {
+                    background-color: $purple;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: background-color 0s 0.5s;
+                    span {
+                        height: calc(100% / 3);
+                        width: calc(100% / 3);
+                        opacity: 1;
+                        transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.1s ease-out 0.4s;
+                    }
+                }
+            }
+            &.done,
+            &.partial {
+                .dot {
+                    background-color: $purple;
+                }
+            }
+        }
+    }
+    .bar {
+        position: absolute;
+        left: 0px;
+        height: 4px;
+        z-index: 1;
+        top: 50%;
+        transform: translateY(-50%);
+        &.default {
+            background-color: $gray-medium;
+            right: 0;
+        }
+        &.progress {
+            background-color: $purple;
+            z-index: 2;
+            transition: width 0.5s;
+        }
+    }
+}

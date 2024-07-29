@@ -1,0 +1,44 @@
+<div *ngIf="gridRowVM as vm" class="grid-row" [ngClass]="'grid-columns-' + vm.columns.length" [attr.data-e2e]="vm.dataE2e || 'grid-row'">
+    <div class="grid-row-first-column">
+        <p>
+            <span class="feature-name" data-e2e="gridRowFeatureName" [innerHTML]="vm.title"></span>
+            <sxm-ui-tooltip *ngIf="vm.tooltip" [attr.data-track-click]="vm.tooltipId" class="tooltip-component tooltip-display-top-medium-up tooltip-display-right-large-up">
+                <span [innerHTML]="vm.tooltip"></span>
+            </sxm-ui-tooltip>
+        </p>
+    </div>
+    <ng-container *ngFor="let col of vm.columns; let i = index">
+        <ng-container *ngIf="col.label !== null && col.label !== undefined; else showCheckmark">
+            <div data-e2e="gridRowColumnFeatureLabel" [class.selected]="i === selectedIndex">
+                <ng-container *ngIf="col.linkUrl; else staticLabel">
+                    <a class="text-link" [href]="col.linkUrl" target="_blank">{{ col.label }}</a>
+                </ng-container>
+                <ng-template #staticLabel>
+                    <p [innerHTML]="col.label" class="feature-p-el"></p>
+                </ng-template>
+            </div>
+        </ng-container>
+        <ng-template #showCheckmark>
+            <div data-e2e="gridRowColumnFeatureMark" [class.selected]="i === selectedIndex">
+                <mat-icon
+                    svgIcon="checkmark"
+                    *ngIf="col.checkmark === true"
+                    aria-hidden="false"
+                    [attr.aria-label]="
+                        translateKeyPrefix + (col.checkmark ? '.OPTION_NAME_IS_INCLUDED_IN_ITEM_NAME' : '.OPTION_NAME_IS_NOT_INCLUDED_IN_ITEM_NAME')
+                            | translate: { optionName: vm.title, itemName: col.itemName }
+                    "
+                ></mat-icon>
+                <mat-icon
+                    svgIcon="x-mark"
+                    *ngIf="col.checkmark !== true"
+                    aria-hidden="false"
+                    [attr.aria-label]="
+                        translateKeyPrefix + (col.checkmark ? '.OPTION_NAME_IS_INCLUDED_IN_ITEM_NAME' : '.OPTION_NAME_IS_NOT_INCLUDED_IN_ITEM_NAME')
+                            | translate: { optionName: vm.title, itemName: col.itemName }
+                    "
+                ></mat-icon>
+            </div>
+        </ng-template>
+    </ng-container>
+</div>

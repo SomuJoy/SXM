@@ -1,0 +1,12 @@
+{
+    "HEADER_TITLE": "Confirmez votre adresse",
+    "HEADER_INSTRUCTIONS": "Choisissez une adresse recommandée par le service postal (voir ci-dessous), ou continuez avec celle que vous avez fournie.",
+    "NO_CORRECTED_HEADER_INSTRUCTIONS": "Nous n’avons pas pu valider votre adresse auprès du service postal. Veuillez confirmer que l’adresse ci-dessous est correcte ou saisissez une nouvelle adresse.",
+    "YOU_ENTERED_TTILE": "Vous avez saisi:",
+    "RECOMMENDED_TITLE": "Recommandation:",
+    "EDIT_LABEL": "Modifier",
+    "EDIT_ARIA_LABEL": "Modifier",
+    "USE_ADDRESS_LABEL": "UTILISER CETTE ADRESSE",
+    "USE_ADDRESS_ARIA_LABEL": "UTILISER CETTE ADRESSE",
+    "ERROR_CHOOSE_ADDRESS": "Choisissez une adresse pour continuer"
+}

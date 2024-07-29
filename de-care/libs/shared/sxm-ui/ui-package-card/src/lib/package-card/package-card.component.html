@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="package-name">
+        <h3 class="package-title">{{ packageData?.packageShortName }}</h3>
+    </div>
+    <div class="price-section">
+        <h6>
+            {{
+                translateKeyPrefix + ".PRICE"
+                    | translate
+                        : {
+                              pricePerMonth: packageData?.pricePerMonth | currency: "USD":"symbol-narrow":undefined:translationsForComponentService.currentLang,
+                              termLength: packageData.termLength
+                          }
+            }}
+        </h6>
+    </div>
+    <p class="offer-details-section">
+        <span>{{
+            translateKeyPrefix + ".PRICE_AFTER_TERM"
+                | translate: { retailPrice: packageData?.retailPrice | currency: "USD":"symbol-narrow":undefined:translationsForComponentService?.currentLang }
+        }}</span>
+        <span>{{ translateKeyPrefix + ".PLUS_FEES" | translate }}</span>
+        <a class="text-link" (click)="onClickSeeOfferDetails()">{{ translateKeyPrefix + ".SEE_OFFER_DETAILS" | translate }}</a>
+    </p>
+    <button class="button secondary button-get" (click)="onPackageSelected(packageData.packageName)">{{ translateKeyPrefix + ".GET" | translate }}</button>
+    <div class="icons-section">
+        <div *ngFor="let feature of packageData?.features">
+            <svg class="icon icon-utility check-mark">
+                <use class="icon-check-mark-flex-stroke" xlink:href="#icon-check-mark-flex-stroke"></use>
+            </svg>
+            <span>{{ feature }}</span>
+        </div>
+    </div>
+</div>

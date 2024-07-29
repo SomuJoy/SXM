@@ -1,0 +1,19 @@
+{
+    "SharedSxmUiUiAppFooterModule": {
+        "SxmUiAppFooterComponent": {
+            "TERMS_AND_CONDITIONS": {
+                "LINK_TEXT": "Conditions générales",
+                "LINK_URL": "https://www.siriusxm.ca/conditions"
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Politique de la vie privée",
+                "LINK_URL": "https://www.siriusxm.ca/vieprivee"
+            },
+            "SITE_TERMS": {
+                "LINK_TEXT": "Conditions d’utilisation du site",
+                "LINK_URL": "https://siriusxm.ca/conditions"
+            },
+            "COPYRIGHT_TEXT": "SiriusXM Canada Inc."
+        }
+    }
+}

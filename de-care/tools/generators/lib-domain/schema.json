@@ -1,0 +1,38 @@
+{
+    "$schema": "https://json-schema.org/schema",
+    "cli": "nx",
+    "$id": "lib-domain",
+    "type": "object",
+    "properties": {
+        "domain": {
+            "type": "string",
+            "description": "Domain name",
+            "x-prompt": "What domain is this for?"
+        },
+        "type": {
+            "type": "string",
+            "default": "util",
+            "description": "Type of lib.\n\n    state: state management and/or api services\n\n    ui: widget components for domain experience",
+            "x-prompt": {
+                "message": "Type of lib?",
+                "type": "list",
+                "items": [
+                    {
+                        "value": "state",
+                        "label": "STATE"
+                    },
+                    {
+                        "value": "ui",
+                        "label": "UI"
+                    }
+                ]
+            }
+        },
+        "name": {
+            "type": "string",
+            "description": "Domain lib name without the type prefix. (example: upsell-offers)",
+            "x-prompt": "Domain lib name without the type prefix?\n  (example: upsell-offers)"
+        }
+    },
+    "required": ["domain", "type", "name"]
+}

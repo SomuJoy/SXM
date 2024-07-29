@@ -1,0 +1,11 @@
+@import "sxm.phoenix.imports";
+
+:host(.loading-indicator.black) span {
+    background: $black;
+}
+
+:host(.loading-indicator.small) span {
+    margin: auto 4px;
+    height: 2px;
+    width: 2px;
+}

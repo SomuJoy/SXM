@@ -1,0 +1,116 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+    <div class="header-instructions">
+        <ng-content select="[headerInstructions]"></ng-content>
+    </div>
+    <section class="offer-grid">
+        <header id="offerGridHeader" class="offer-grid--header">
+            <div *ngFor="let offer of offers; index as i" class="user-selection">
+                <p class="small-copy text-uppercase" *ngIf="offer.calloutText" [innerHTML]="offer.calloutText"></p>
+            </div>
+            <div *ngFor="let offer of offers; index as i" [class.selected]="i === selectedColumn" class="offer-option" sxmUiDataClickTrack="ui" data-link-key="Option Tab">
+                <label for="plan-{{ i }}">
+                    {{ offer.name }}
+                </label>
+                <input
+                    class="plancode-radio"
+                    type="radio"
+                    name="planCode"
+                    [value]="offer.planCode"
+                    id="plan-{{ i }}"
+                    [ngModel]="offer.selected ? offer.planCode : null"
+                    ngModel
+                />
+            </div>
+        </header>
+        <div class="offer-grid--row">
+            <div>
+                <p>{{ textCopy?.priceRowText || translateKeyPrefix + "PRICE_ROW_TEXT" | translate }}</p>
+            </div>
+            <div class="offer-price" *ngFor="let price of prices; index as i" [class.selected]="i === selectedColumn" [innerHTML]="price"></div>
+        </div>
+        <div class="offer-grid--row" *ngIf="channelCounts.length > 0">
+            <div>
+                <span>
+                    {{ textCopy?.channelCountRowLabelInfo?.text || translateKeyPrefix + "CHANNEL_COUNT_ROW_TEXT" | translate }}
+                </span>
+                <sxm-ui-tooltip
+                    class="tool-tip"
+                    *ngIf="textCopy?.channelCountRowLabelInfo?.tooltipText || translateKeyPrefix + 'CHANNEL_COUNT_ROW_TOOLTIP' | translate as tooltipText"
+                >
+                    <span [innerHTML]="tooltipText"></span>
+                </sxm-ui-tooltip>
+            </div>
+            <div *ngFor="let channelCount of channelCounts; index as i" [class.selected]="i === selectedColumn">
+                <p>{{ channelCount }}</p>
+            </div>
+        </div>
+
+        <sxm-ui-accordion-chevron
+            [expandedText]="translateKeyPrefix + 'EXPANDED_TEXT' | translate"
+            [collapsedText]="translateKeyPrefix + 'COLLAPSED_TEXT' | translate"
+            [opened]="false"
+        >
+            <div class="offer-grid--row" *ngIf="adFreeChannelCounts.length > 0">
+                <div>
+                    <span>
+                        {{ textCopy?.adFreeChannelCountRowLabelInfo?.text || translateKeyPrefix + "AD_FREE_CHANNEL_COUNT_ROW_TEXT" | translate }}
+                    </span>
+                    <sxm-ui-tooltip
+                        class="tool-tip"
+                        *ngIf="textCopy?.adFreeChannelCountRowLabelInfo?.tooltipText || translateKeyPrefix + 'AD_FREE_CHANNEL_COUNT_ROW_TOOLTIP' | translate as tooltipText"
+                    >
+                        <span [innerHTML]="tooltipText"></span>
+                    </sxm-ui-tooltip>
+                </div>
+                <div *ngFor="let adFreeChannelCount of adFreeChannelCounts; index as i" [class.selected]="i === selectedColumn">
+                    <p>{{ adFreeChannelCount }}</p>
+                </div>
+            </div>
+            <div class="offer-grid--row offer-grid--feature" *ngFor="let featureRow of featureRows">
+                <div>
+                    <span [innerHTML]="featureRow.name"></span>
+                    <sxm-ui-tooltip class="tool-tip" *ngIf="featureRow.tooltipText">
+                        <span [innerHTML]="featureRow.tooltipText"></span>
+                    </sxm-ui-tooltip>
+                </div>
+                <div *ngFor="let offerFlag of featureRow.offerFlags; index as i" [class.selected]="i === selectedColumn">
+                    <svg *ngIf="offerFlag" class="icon icon-utility check-mark">
+                        <use class="icon-check-mark-flex-stroke" xlink:href="#icon-check-mark-flex-stroke"></use>
+                    </svg>
+                    <svg *ngIf="!offerFlag" class="icon icon-utility x-mark">
+                        <use class="icon-x-mark-flex-stroke" xlink:href="#icon-x-mark-flex-stroke"></use>
+                    </svg>
+                </div>
+            </div>
+            <div class="offer-grid--row" *ngIf="channelLineupLinks.length > 0">
+                <div>
+                    <span>
+                        {{ textCopy?.channelLineupRowLabelInfo?.text || translateKeyPrefix + "CHANNEL_LINEUP_ROW_TEXT" | translate }}
+                    </span>
+                    <sxm-ui-tooltip
+                        class="tool-tip"
+                        *ngIf="textCopy?.channelLineupRowLabelInfo?.tooltipText || translateKeyPrefix + 'CHANNEL_LINEUP_ROW_TOOLTIP' | translate as tooltipText"
+                    >
+                        <span [innerHTML]="tooltipText"></span>
+                    </sxm-ui-tooltip>
+                </div>
+                <div *ngFor="let channelLineupLink of channelLineupLinks; index as i" [class.selected]="i === selectedColumn">
+                    <a *ngIf="channelLineupLink?.url" href="{{ channelLineupLink.url }}" target="_blank" class="bold">{{
+                        channelLineupLink?.text || translateKeyPrefix + "CHANNEL_LINEUP_LINK_TEXT" | translate
+                    }}</a>
+                </div>
+            </div>
+        </sxm-ui-accordion-chevron>
+    </section>
+
+    <button type="submit" sxm-proceed-button [class.disabled]="!(selectedColumn >= 0)" sxmUiDataClickTrack="submit">
+        {{ selectedPackageName ? (translateKeyPrefix + "GET" | translate) + selectedPackageName : (translateKeyPrefix + "CONTINUE_BUTTON_TEXT" | translate) }}
+    </button>
+    <div>
+        <ng-content select="additionalHelpText"></ng-content>
+    </div>
+</form>
+<p class="phone-number">
+    {{ translateKeyPrefix + "QUESTIONS" | translate
+    }}<a class="text-link" href="tel:{{ translateKeyPrefix + 'PHONE' | translate }}">{{ translateKeyPrefix + "PHONE" | translate }}</a>
+</p>

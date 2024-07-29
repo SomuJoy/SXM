@@ -1,0 +1,21 @@
+<div class="input-container" [class.invalid]="control.invalid && control.touched">
+    <label data-e2e="sxmUITextFormFieldLabel" for="{{ controlId }}">{{ labelText }}</label>
+    <input
+        [formControl]="control"
+        id="{{ controlId }}"
+        name="{{ formControlName }}"
+        data-test="sxmUITextFormField"
+        data-e2e="sxmUITextFormField"
+        [attr.data-field-type]="dataFieldType"
+        type="text"
+        onFocus
+        appTrimFormField
+    />
+    <mat-icon svgIcon="tool-tip" *ngIf="tooltipIconOnly" (click)="tooltipClicked.emit()" aria-hidden="false" [attr.aria-label]="tooltipAriaLabelText"></mat-icon>
+    <sxm-ui-tooltip *ngIf="!tooltipIconOnly" class="tooltip-display-bottom tooltip-display-right tooltip-display-right-medium-up">
+        <ng-content select="[htmlContentForTooltip]"></ng-content>
+    </sxm-ui-tooltip>
+</div>
+<div *ngIf="control.invalid && control.touched" class="invalid-feedback">
+    <p [innerHTML]="errorText">Invalid</p>
+</div>

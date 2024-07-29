@@ -1,0 +1,31 @@
+{
+    "SharedSxmUiUiQuoteModule": {
+        "SxmUiQuoteSummaryComponent": {
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "Month",
+                    "other": "Months"
+                },
+                "PER_MONTH_ABBREVIATION": {
+                    "=1": "",
+                    "other": "/mo"
+                }
+            },
+            "CURRENT": {
+                "TERM_AND_PRICE_SUMMARY": "{{termLength}} {{pluralizedMonth}} for {{pricePerMonth}}{{perMonthAbbreviation}}",
+                "DUE_TODAY_LABEL": "Total - Due Now"
+            },
+            "RENEWAL": {
+                "ESTIMATED_BILLING_LABEL": "Estimated Future Billing",
+                "MONTHLY_STARTING": "Monthly starting - "
+            },
+            "CANCEL_ANYTIME": "Cancel anytime",
+            "SHOW_DETAILS": "Show details",
+            "HIDE_DETAILS": "Hide details",
+            "ARIA_SHOW_DETAILS": "Fees and Taxes: details",
+            "ARIA_HIDE_DETAILS": "Fees and Taxes: close details",
+            "TOTAL_FEES_AND_TAXES": "Fees and Taxes",
+            "TAXES_AND_FEES_DETAILS": "Details"
+        }
+    }
+}

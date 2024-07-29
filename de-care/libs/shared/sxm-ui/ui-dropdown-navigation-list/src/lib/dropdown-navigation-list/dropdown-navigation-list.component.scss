@@ -1,0 +1,71 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    position: relative;
+    overflow: visible;
+    display: grid;
+    justify-items: end;
+}
+
+button {
+    border: 0;
+    display: flex;
+    align-items: center;
+    color: $blue-secondary;
+    @include font-size(14px);
+    font-weight: calculate-font-weight("bold");
+    line-height: 20px;
+    padding: 12px 0;
+    .icon-utility use.icon-dropdown-sm {
+        stroke: $blue-secondary;
+    }
+    .icon-dropdown-sm-wrapper {
+        padding: 0 4px;
+    }
+    &.opened {
+        .icon-dropdown-sm-wrapper {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+ul {
+    &.hide {
+        display: none;
+        visibility: hidden;
+    }
+    position: absolute;
+    top: 36px;
+    right: 0;
+    width: 240px;
+    box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.1);
+    background: $white;
+    @include list-reset;
+    li {
+        border-bottom: 1px solid $gray-light;
+        &:last-child {
+            border: none;
+        }
+        &:hover {
+            background: $blue-light;
+        }
+        a {
+            @include underline(none);
+            color: $black;
+            display: inline-block;
+            width: 100%;
+            padding: 10px 16px;
+        }
+        &.loading {
+            text-align: center;
+            padding: 10px 16px;
+            &:hover {
+                background: $white;
+            }
+            > span {
+                background: $blue-secondary;
+            }
+        }
+    }
+}

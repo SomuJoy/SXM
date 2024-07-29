@@ -1,0 +1,70 @@
+{
+    "sweepstakes": {
+        "sweepstakesRegistrationFormComponent": {
+            "HEADER": "Enter into the sweepstakes",
+            "SUB_HEADER": "See <a href='{{ rulesUrl }}' target='_blank'>Official Rules</a> for details and eligibility requirements.",
+            "DOB": "Date of Birth",
+            "MONTH": "Month",
+            "DAY": "Day",
+            "YEAR": "Year",
+            "CONTENT_AGREEMENT": "I have read and agree to <a href='' target='_blank'>SiriusXM Content Release</a>.",
+            "RULES_AGREEMENT": "I have read, understand and agree to the <a href='{{ rulesUrl }}' target='_blank'>Official Rules</a>.",
+            "BUTTON": "ENTER SWEEPSTAKES",
+            "ERRORS": {
+                "INVALID_DOB": "You must enter a valid date of birth.",
+                "INVALID_AGE": "You must be 18 years or older to enter the sweepstakes.",
+                "INVALID_RELEASE": "You must accept our release and rules to enter the sweepstakes."
+            },
+            "MONTHS": [
+                {
+                    "label": "January",
+                    "key": "01"
+                },
+                {
+                    "label": "February",
+                    "key": "02"
+                },
+                {
+                    "label": "March",
+                    "key": "03"
+                },
+                {
+                    "label": "April",
+                    "key": "04"
+                },
+                {
+                    "label": "May",
+                    "key": "05"
+                },
+                {
+                    "label": "June",
+                    "key": "06"
+                },
+                {
+                    "label": "July",
+                    "key": "07"
+                },
+                {
+                    "label": "August",
+                    "key": "08"
+                },
+                {
+                    "label": "September",
+                    "key": "09"
+                },
+                {
+                    "label": "October",
+                    "key": "10"
+                },
+                {
+                    "label": "November",
+                    "key": "11"
+                },
+                {
+                    "label": "December",
+                    "key": "12"
+                }
+            ]
+        }
+    }
+}

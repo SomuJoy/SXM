@@ -1,0 +1,10 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/loading.scss";
+
+:host {
+    display: grid;
+    position: relative;
+    .gradient-animation {
+        @include skeletonLoadingPanel;
+    }
+}

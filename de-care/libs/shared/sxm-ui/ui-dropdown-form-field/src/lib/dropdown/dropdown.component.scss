@@ -1,0 +1,76 @@
+@import "sxm.phoenix.imports";
+
+li {
+    &.selected {
+        font-weight: bold;
+    }
+}
+
+:host {
+    outline: 0;
+
+    &:focus {
+        input {
+            border-left: 4px solid $blue-secondary;
+        }
+
+        &.invalid {
+            input {
+                border-left: 4px solid $red;
+            }
+        }
+    }
+
+    &.invalid {
+        .input-container {
+            border: 1px solid $red;
+
+            &.active {
+                input {
+                    border-left: 4px solid $red;
+                }
+            }
+        }
+    }
+    &.active {
+        z-index: 10;
+    }
+
+    .invalid-feedback {
+        padding-top: 16px;
+    }
+
+    // TODO: this is used to overwrite the path in the ui framework, need to refactor this dropdown component to be more accessible and while doing that, remove the dependencies on the ui framework classes
+    &.dropdown {
+        .input-container {
+            &::after {
+                background: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 9' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.343 1.172L7 6.828l5.657-5.656' stroke-width='2' stroke='%23736E7D' fill='none' fill-rule='evenodd'%3E%3C/path%3E%3C/svg%3E")
+                    no-repeat;
+            }
+        }
+    }
+}
+
+.input-container {
+    &.active ~ ul {
+        box-shadow: none;
+    }
+
+    label {
+        @include font-size(14px);
+        line-height: 22px;
+    }
+
+    .helper-div {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    input:disabled {
+        -webkit-text-fill-color: $black;
+        opacity: 1;
+    }
+}

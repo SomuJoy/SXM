@@ -1,0 +1,25 @@
+{
+    "name": "shared-sxm-ui-ui-nucaptcha",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/sxm-ui/ui-nucaptcha/src",
+    "prefix": "sxm-ui",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/shared/sxm-ui/ui-nucaptcha"],
+            "options": {
+                "jestConfig": "libs/shared/sxm-ui/ui-nucaptcha/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/sxm-ui/ui-nucaptcha/src/**/*.ts", "libs/shared/sxm-ui/ui-nucaptcha/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:ui", "scope:shared-ui"]
+}

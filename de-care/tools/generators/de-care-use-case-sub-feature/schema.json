@@ -1,0 +1,30 @@
+{
+    "$schema": "https://json-schema.org/schema",
+    "cli": "nx",
+    "$id": "de-care-use-case-sub-feature",
+    "type": "object",
+    "properties": {
+        "useCaseName": {
+            "type": "string",
+            "description": "Name of the use case this is for\n  (example: account)",
+            "x-prompt": "Name of the use case this is for?\n  (example: account)"
+        },
+        "featureName": {
+            "type": "string",
+            "description": "Name of the feature this is for without the feature- prefix\n  (example: my-account)",
+            "x-prompt": "Name of the feature this is for without the feature- prefix?\n  (example: my-account)"
+        },
+        "subName": {
+            "type": "string",
+            "description": "Name of the sub feature without any prefixes?\n  (example: dashboard)",
+            "x-prompt": "Name of the sub feature without any prefixes?\n  (example: dashboard)"
+        },
+        "skipState": {
+            "type": "boolean",
+            "description": "Skip creating a matching feature state lib for this sub feature.",
+            "x-prompt": "Skip creating a matching feature state lib for this sub feature?",
+            "default": false
+        }
+    },
+    "required": ["useCaseName", "featureName", "subName"]
+}

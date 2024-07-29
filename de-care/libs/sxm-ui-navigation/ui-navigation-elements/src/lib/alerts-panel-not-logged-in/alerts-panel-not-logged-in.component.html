@@ -1,0 +1,18 @@
+<div class="alerts-container">
+    <button
+        (click)="closed.emit()"
+        sxmUiDataClickTrack="ui"
+        data-link-key="Global Nav"
+        data-link-name="close panel"
+        [attr.aria-label]="translateKeyPrefix + '.ARIA_CLOSE_LABEL' | translate"
+    >
+        <span class="x-shape"></span>
+    </button>
+    <h6 class="no-margin">{{ translateKeyPrefix + ".TITLE" | translate }}</h6>
+    <p>
+        <a (click)="signInClicked.emit()" sxmUiDataClickTrack="ui" data-link-key="Global Nav" data-link-name="sign in" data-test="alertsPanelNotLoggedIn">{{
+            translateKeyPrefix + ".DIRECTIONS_LINK_LABEL" | translate
+        }}</a
+        >{{ translateKeyPrefix + ".DIRECTIONS_COPY" | translate }}
+    </p>
+</div>

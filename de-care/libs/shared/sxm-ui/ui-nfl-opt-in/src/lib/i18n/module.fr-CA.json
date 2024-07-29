@@ -1,0 +1,6 @@
+{
+    "NFL_TEXT": {
+        "CHECKBOX_TEXT": "J'accepte que Sirius XM Canada Inc. (351 King St. E, 10th floor, Toronto, ON M5A0L6, <a href=\"https://www.siriusxm.ca/fr/\" target=\"_blank\">www.siriusxm.ca</a>) partage mon nom, mon courriel et mon adresse avec la société NFL Canada (401 Bay Street, #1440 Toronto, ON, M5H 2Y4, <a href=\"https://www.nfl.com\" target=\"_blank\">www.nfl.com</a>) (\"NFL\") afin que NFL puisse m'envoyer des messages de marketing. J'accepte que la <a href=\"https://www.nfl.com/legal/privacy/fr\" target=\"_blank\">politique de confidentialité</a> de la NFL régisse la manière dont elle peut utiliser et partager mes données et que je doive contacter la NFL pour retirer mon consentement.",
+        "CHECKBOX_CONFIRMATION_TEXT": "Souhaitez-vous recevoir des offres spéciales et des informations promotionnelles de la part de la NFL?"
+    }
+}

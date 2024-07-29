@@ -1,0 +1,21 @@
+{
+    "sharedSxmUiUiFollowOnSelectionModule": {
+        "followOnSelectionComponent": {
+            "TITLE": {
+                "HEADLINE": "Find which package fits your groove.",
+                "YOUR_CHOICE": "Continue with what you had in your trial or pick a different option. Your choice won’t impact your current Platinum promotion.",
+                "OFFER_DETAILS": "See Offer Details below.",
+                "PROACTIVE_HEADLINE": "Next, confirm your plan for when your promotion ends.",
+                "PROACTIVE_COPY": "You'll be able to change or cancel your plan any time.",
+                "CHOICE_NOT_AVAILABLE_COPY": "We're sorry, your radio is not eligible for CHOICE."
+            },
+            "USER_SELECTION": {
+                "YOUR_TRIAL": "In Your Trial"
+            },
+            "PACKAGE_DETAILS": {
+                "PRICE": "{{price}}/mo",
+                "GET": "Get"
+            }
+        }
+    }
+}

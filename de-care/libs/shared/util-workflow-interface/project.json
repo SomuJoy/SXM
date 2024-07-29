@@ -1,0 +1,27 @@
+{
+    "name": "shared-util-workflow-interface",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/util-workflow-interface/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/util-workflow-interface/src/**/*.ts", "libs/shared/util-workflow-interface/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/shared/util-workflow-interface/jest.config.js",
+                "tsConfig": "libs/shared/util-workflow-interface/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/shared/util-workflow-interface/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {},
+    "tags": ["type:util", "scope:shared-util"]
+}

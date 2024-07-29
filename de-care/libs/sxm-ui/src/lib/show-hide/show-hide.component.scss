@@ -1,0 +1,25 @@
+@import "sxm.phoenix.imports";
+
+.component--add-element-title {
+    @include font-size(14px);
+    color: $blue-secondary;
+    font-weight: calculate-font-weight("bold");
+    line-height: 22px;
+    margin: 24px 0 16px;
+}
+
+button {
+    .icon {
+        &.small {
+            height: 8px;
+            margin: 0 6px 1px 2px;
+            width: 8px;
+        }
+    }
+}
+.add-element-content-container {
+    display: none;
+    &.active {
+        display: block;
+    }
+}

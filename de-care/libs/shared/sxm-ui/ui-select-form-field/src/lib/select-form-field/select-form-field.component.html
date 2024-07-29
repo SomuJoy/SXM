@@ -1,0 +1,6 @@
+<mat-form-field>
+    <mat-select [placeholder]="placeholder" panelClass="select-field">
+        <mat-option *ngFor="let option of options" [value]="option.value">{{ option.label }}</mat-option>
+    </mat-select>
+    <mat-icon svgIcon="dropdown-arrow-small"></mat-icon>
+</mat-form-field>

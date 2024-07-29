@@ -1,0 +1,45 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.column {
+    justify-content: flex-start;
+    &.medium-6 {
+        &:first-child {
+            padding-left: 0;
+            padding-right: 0;
+            @include bp(medium) {
+                padding-right: 12px;
+            }
+        }
+    }
+
+    &.medium-6 {
+        &:last-child {
+            padding-left: 0;
+            padding-right: 0;
+            @include bp(medium) {
+                padding-left: 12px;
+            }
+        }
+    }
+
+    .dropdown {
+        margin-bottom: 16px;
+        width: 100%;
+
+        .input-container {
+            margin-bottom: 0;
+        }
+    }
+
+    .invalid-feedback {
+        &.dropdown-error-msg {
+            margin-top: -32px;
+        }
+    }
+}

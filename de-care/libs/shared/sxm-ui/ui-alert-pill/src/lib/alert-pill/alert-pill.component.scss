@@ -1,0 +1,156 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@mixin pill($background-color) {
+    display: grid;
+    align-items: center;
+    padding: 16px 24px 16px 16px;
+    line-height: 22px;
+    border-radius: 28px;
+    background-color: $background-color;
+    box-shadow: 0 5px 9px 0 rgba(darken($background-color, 60%), 0.3);
+}
+@mixin alert-pill($color, $color-light) {
+    @include pill($color-light);
+    grid-template-columns: auto 1fr;
+    column-gap: 6px;
+    mat-icon[svgIcon="validate"] {
+        @include icon-coin(24px, $color);
+        padding: 2px 3px;
+        color: $color;
+    }
+}
+
+:host {
+    $color-light: lighten($green, 65%);
+    @include alert-pill($green, $color-light);
+}
+
+[svgIcon="warning"],
+[svgIcon="info"] {
+    padding: 0;
+    display: none;
+}
+
+[svgIcon="warning"] {
+    color: $orange;
+}
+
+[svgIcon="error"] {
+    display: none;
+}
+
+mat-icon {
+    color: $black;
+    align-self: start;
+    @include bp(medium) {
+        padding: 0;
+    }
+}
+
+:host-context(.alert-icon-success) {
+    [svgIcon="validate"] {
+        display: inline-block;
+    }
+    [svgIcon="warning"],
+    [svgIcon="info"] {
+        display: none;
+    }
+    [svgIcon="error"] {
+        display: none;
+    }
+}
+
+:host-context(.alert-icon-notification) {
+    [svgIcon="validate"],
+    [svgIcon="info"] {
+        display: none;
+    }
+    [svgIcon="warning"] {
+        display: inline-block;
+    }
+    [svgIcon="error"] {
+        display: none;
+    }
+}
+
+:host-context(.black-alert-icon-notification) {
+    [svgIcon="validate"],
+    [svgIcon="info"] {
+        display: none;
+    }
+    [svgIcon="warning"] {
+        display: inline-block;
+        color: $black;
+    }
+    [svgIcon="error"] {
+        display: none;
+    }
+}
+
+:host-context(.alert-icon-info) {
+    [svgIcon="validate"],
+    [svgIcon="warning"] {
+        display: none;
+    }
+    [svgIcon="info"] {
+        display: inline-block;
+        color: $orange;
+    }
+    [svgIcon="error"] {
+        display: none;
+    }
+}
+
+:host-context(.critical-alert-icon-info) {
+    background-color: red;
+    [svgIcon="validate"] {
+        display: none;
+    }
+    [svgIcon="warning"] {
+        display: inline-block;
+        color: darken($red, 8%);
+    }
+    [svgIcon="info"] {
+        display: none;
+    }
+    [svgIcon="error"] {
+        display: none;
+    }
+}
+
+:host-context(.alert-icon-error) {
+    background-color: #EB0A0A;
+    color: white;
+    [svgIcon="validate"] {
+        display: none;
+    }
+    [svgIcon="info"] {
+        display: none;
+    }
+    [svgIcon="warning"] {
+        display: none;
+    }
+    [svgIcon="error"] {
+        display: inline-block;
+        stroke: white;
+        padding: 0;
+        margin-bottom: 28px;
+        transform: scaleX(-1);
+    }
+}
+
+:host-context(.rounded-corners) {
+    border-radius: 2px;
+}
+
+:host-context(.straight-corners) {
+    border-radius: 0;
+}
+
+:host-context(.bold-text) {
+    font-weight: calculate-font-weight("bold");
+}
+
+:host-context(.no-shadow) {
+    box-shadow: none;
+}

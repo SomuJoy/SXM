@@ -1,0 +1,6 @@
+{
+    "SHOW_TOGGLE": "Découvrez les détails du forfait",
+    "HIDE_TOGGLE": "Masquer",
+    "ARIA_SHOW_TOGGLE": "Découvrez les détails du forfait - {{packageName}}",
+    "ARIA_HIDE_TOGGLE": "Masquer les détails du forfait - {{packageName}}"
+}

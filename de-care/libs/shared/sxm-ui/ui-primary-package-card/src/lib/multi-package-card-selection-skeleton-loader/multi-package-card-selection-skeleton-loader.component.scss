@@ -1,0 +1,44 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/loading.scss";
+
+.content-spot {
+    background-color: $gray-medium;
+    width: 60px;
+    height: 16px;
+    border-radius: 2px;
+}
+
+:host {
+    display: grid;
+    position: relative;
+    row-gap: 24px;
+    .gradient-animation {
+        @include skeletonLoadingPanel;
+        z-index: 1;
+    }
+
+    ul {
+        background-color: $gray-light;
+        margin: 0;
+        padding: 16px;
+        li {
+            list-style: none;
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                border: solid 8px $gray-medium;
+                border-radius: 8px;
+            }
+            &::after {
+                content: "";
+                margin-left: 24px;
+                position: absolute;
+                @extend .content-spot;
+            }
+            border-radius: 2px;
+            height: 16px;
+            max-width: 160px;
+        }
+    }
+}

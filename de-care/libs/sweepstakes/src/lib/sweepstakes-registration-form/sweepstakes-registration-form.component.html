@@ -1,0 +1,82 @@
+<h4>
+    {{ "sweepstakes.sweepstakesRegistrationFormComponent.HEADER" | translate }}
+</h4>
+
+<p
+    class="sub-header"
+    [innerHtml]="'sweepstakes.sweepstakesRegistrationFormComponent.SUB_HEADER' | translate: { rulesUrl: sweepstakesInfo ? sweepstakesInfo.officialRulesUrl : null }"
+></p>
+
+<form [formGroup]="sweepstakesForm" (ngSubmit)="sweepstakesFormSubmit(sweepstakesForm)">
+    <p>
+        {{ "sweepstakes.sweepstakesRegistrationFormComponent.DOB" | translate }}
+    </p>
+
+    <div formGroupName="dob" class="grid-container">
+        <sxm-ui-dropdown
+            formControlName="month"
+            class="dropdown top"
+            [class.invalid]="(sweepstakesForm.controls['dob']['controls']['month'].invalid && submitted) || invalidDOB"
+            [labelText]="'sweepstakes.sweepstakesRegistrationFormComponent.MONTH' | translate"
+            [passedValue]="'sweepstakes.sweepstakesRegistrationFormComponent.MONTHS' | translate"
+            [uniqueId]="monthId"
+            [qatag]="monthId"
+            key="key"
+            text="label"
+            [filterSelected]="true"
+            tabindex="0"
+        ></sxm-ui-dropdown>
+        <sxm-ui-dropdown
+            formControlName="day"
+            class="dropdown left"
+            [class.invalid]="(sweepstakesForm.controls['dob']['controls']['day'].invalid && submitted) || invalidDOB"
+            [labelText]="'sweepstakes.sweepstakesRegistrationFormComponent.DAY' | translate"
+            [passedValue]="days"
+            [uniqueId]="dayId"
+            [qatag]="dayId"
+            [filterSelected]="true"
+            tabindex="0"
+            key="key"
+            text="label"
+        ></sxm-ui-dropdown>
+        <sxm-ui-dropdown
+            formControlName="year"
+            class="dropdown right"
+            [class.invalid]="(sweepstakesForm.controls['dob']['controls']['year'].invalid && submitted) || invalidDOB"
+            [labelText]="'sweepstakes.sweepstakesRegistrationFormComponent.YEAR' | translate"
+            [passedValue]="years"
+            [uniqueId]="yearId"
+            [qatag]="yearId"
+            [filterSelected]="true"
+        ></sxm-ui-dropdown>
+    </div>
+
+    <p *ngIf="sweepstakesForm.get('dob').invalid && submitted" class="error-text">
+        {{ "sweepstakes.sweepstakesRegistrationFormComponent.ERRORS.INVALID_DOB" | translate }}
+    </p>
+
+    <p *ngIf="invalidDOB" class="error-text">
+        {{ "sweepstakes.sweepstakesRegistrationFormComponent.ERRORS.INVALID_AGE" | translate }}
+    </p>
+
+    <div class="checkbox-item" [class.error]="sweepstakesForm.get('rulesRelease').invalid && submitted">
+        <input formControlName="rulesRelease" class="checkbox" type="checkbox" id="rulesAgreementId" attr.qatag="rulesAgreementId" />
+        <label
+            class="input-label"
+            for="rulesAgreementId"
+            attr.qatag="rulesAgreementId"
+            [innerHTML]="
+                'sweepstakes.sweepstakesRegistrationFormComponent.RULES_AGREEMENT' | translate: { rulesUrl: sweepstakesInfo ? sweepstakesInfo.officialRulesUrl : null }
+            "
+        >
+        </label>
+    </div>
+
+    <p *ngIf="sweepstakesForm.get('rulesRelease').invalid && submitted" class="error-text check-error">
+        {{ "sweepstakes.sweepstakesRegistrationFormComponent.ERRORS.INVALID_RELEASE" | translate }}
+    </p>
+
+    <button type="submit" class="button secondary text-center align-justify full-width">
+        {{ "sweepstakes.sweepstakesRegistrationFormComponent.BUTTON" | translate }}
+    </button>
+</form>

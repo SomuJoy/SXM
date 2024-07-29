@@ -1,0 +1,13 @@
+{
+    "TITLE": "Verify your account.",
+    "SUB_TITLE": "We need to verify you are the owner of this account. How would you like to verify?",
+    "EMAIL_OPTION_LABEL": "Email me: {{maskedEmail}}",
+    "TEXT_OPTION_LABEL": "Text me: {{maskedPhone}}",
+    "BUTTON_TEXT": "CONTINUE",
+    "CONFIRM_PHONE_NUMBER_PLACEHOLDER": "Verify your phone number",
+    "AGREE_TO_TEXT_MESSAGE_LABEL": "I agree to receive a one-time text message and certify this is my mobile number. Message and data rates may apply. View our <a href=\"https://www.siriusxm.com/sms\" class=\"text-link\" target=\"_blank\">SMS Terms and Conditions</a> and <a href=\"https://www.siriusxm.com/privacy-policy\" class=\"text-link\" target=\"_blank\">Privacy Policy</a>.",
+    "ERROR_MESSAGE_AGREE_TO_TEXT_MESSAGE": "Please confirm that you have read and agree to the Terms and Conditions and Privacy Policy.",
+    "SYSTEM_ERROR": "We’re sorry, something went wrong with this attempt. Please try again.",
+    "BUSINESS_ERROR": "We’re sorry, something went wrong with this attempt. Please try again.",
+    "ERROR_MESSAGE_PHONE_DOES_NOT_MATCH": "The number entered does not match the phone number on your account."
+}

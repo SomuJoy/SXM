@@ -1,0 +1,66 @@
+<ng-content select="[page-title]"></ng-content>
+<section role="main" class="plan-selection-grid" data-test="planSelectionGrid">
+    <!--  offers -->
+    <div class="select-a-plan" [ngClass]="'grid-columns-' + numPlans">
+        <!-- 	headline -->
+        <div class="headline-and-lead-offer-end-date">
+            <ng-container>
+                <p class="small-copy header-text">
+                    <ng-content select="[reactive-text-paragraph]"></ng-content>
+                </p>
+            </ng-container>
+        </div>
+        <!--  Display copy above package that is the current trial/plan -->
+        <ng-container *ngFor="let package of packages; let i = index">
+            <div class="user-selection">
+                <ng-container *ngIf="currentPlanIndex !== null && currentPlanIndex !== undefined; else noCurrentPlanIndexGiven">
+                    <p *ngIf="currentPlanIndex === i" class="small-copy text-uppercase">
+                        <span #currentPlanText>
+                            <ng-content select="[current-plan-text]"></ng-content>
+                        </span>
+                        <!-- default copy if not projected from parent -->
+                        <span *ngIf="currentPlanText.children.length === 0">{{ translateKeyPrefix + ".USER_SELECTION.YOUR_TRIAL" | translate }}</span>
+                    </p>
+                </ng-container>
+                <ng-template #noCurrentPlanIndexGiven>
+                    <p *ngIf="package.packageName.endsWith(currentOrExpiredTrialPackage)" class="small-copy text-uppercase">
+                        <span #currentPlanText>
+                            <ng-content select="[current-plan-text]"></ng-content>
+                        </span>
+                        <!-- default copy if not projected from parent -->
+                        <span *ngIf="currentPlanText.children.length === 0">{{ translateKeyPrefix + ".USER_SELECTION.YOUR_TRIAL" | translate }}</span>
+                    </p>
+                </ng-template>
+            </div>
+        </ng-container>
+        <!--  Display packages to choose from -->
+        <ng-container *ngFor="let package of packages; index as i">
+            <ng-container
+                [ngTemplateOutlet]="planOptionTemplate"
+                [ngTemplateOutletContext]="{
+                    platform: package.packageName | platformFromPackageName,
+                    packageType:
+                        'app.packageDescriptions.' + (package.parentPackageName || package.packageName) + '.name' | translate | withoutPlatformName: package.packageName
+                }"
+            >
+            </ng-container>
+            <ng-template #planOptionTemplate let-platform="platform" let-packageType="packageType">
+                <div
+                    class="plan-option"
+                    [attr.data-test]="'optionTab' + i"
+                    role="button"
+                    tabindex="0"
+                    (keydown.enter)="onSelectPackage(i)"
+                    data-e2e="rtcFollowonSelectionOption"
+                    [attr.data-track-click]="platform + ' ' + packageType + ' Option Tab'"
+                    (click)="onSelectPackage(i)"
+                    [class.plan-option-selected]="i === selectedPackageIndex"
+                >
+                    <p class="plan-option--name">
+                        <span class="plan-option--name-platform">{{ platform }}</span> <br /><span class="plan-option--name-package">{{ packageType }}</span>
+                    </p>
+                </div>
+            </ng-template>
+        </ng-container>
+    </div>
+</section>

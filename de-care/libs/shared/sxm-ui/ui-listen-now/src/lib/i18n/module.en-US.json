@@ -1,0 +1,14 @@
+{
+    "SharedSxmUiUiListenNowModule": {
+        "SxmUiListenNowComponent": {
+            "HEADLINE": "Stream now",
+            "LINK_TEXT": "Start Listening",
+            "SUB_HEADLINE": "You're ready to listen on your phone, computer, smart TV, speakers, and more with the SXM App."
+        },
+        "SxmUiListenNowOnAppComponent": {
+            "HEADLINE": "Download the SXM App",
+            "LINK_TEXT": "Start Listening",
+            "SUB_HEADLINE": "You're ready to listen on your phone, computer, smart TV, speakers, and more with the SXM App."
+        }
+    }
+}

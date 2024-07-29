@@ -1,0 +1,73 @@
+@import "sxm.phoenix.imports";
+
+mat-select {
+    position: relative;
+    padding: 17px 12px 17px 16px;
+    line-height: 22px;
+}
+mat-icon[svgIcon="dropdown-arrow-small"] {
+    position: absolute;
+    right: 12px;
+    top: 24px;
+    width: 18px;
+    height: 11px;
+    // need to use aria-expanded selector since Material only adds this attribute to indicate expanded
+    @at-root mat-select[aria-expanded="true"] + #{&} {
+        transform: rotate(180deg);
+    }
+}
+:host {
+    mat-form-field {
+        display: block;
+        border: solid 1px $gray-dark;
+    }
+}
+// ng-deep is necessary to target internal elements since Material adds these to the DOM
+::ng-deep {
+    mat-select {
+        @at-root .mat-form-field-should-float#{&} {
+            padding-top: 24px;
+            padding-bottom: 8px;
+        }
+        .mat-select-arrow {
+            display: none;
+        }
+    }
+    // Placeholder label
+    .mat-form-field-label-wrapper {
+        position: relative;
+        label {
+            top: 16px;
+            left: 16px;
+            line-height: 22px;
+            color: $gray-dark;
+        }
+        @at-root .mat-form-field-should-float#{&} {
+            overflow: visible;
+            label {
+                transform: translateY(-10px) scale(0.857);
+            }
+        }
+    }
+    // Dropdown pane
+    .cdk-overlay-pane {
+        transform: none !important; // styles are written inline by Material, so !important is the only way to overwrite them
+        .select-field.mat-select-panel {
+            border: solid 1px $gray-dark;
+            border-radius: 0;
+            min-width: 100% !important; // styles are written inline by Material, so !important is the only way to overwrite them
+        }
+    }
+    // Individual list item
+    .mat-option {
+        &:hover,
+        &.mat-active {
+            background: $solitude-blue;
+        }
+        &.mat-selected,
+        &.mat-selected:hover {
+            background: $blue-secondary;
+            color: $white;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "HEADER_TITLE": "Verify your address",
+    "HEADER_INSTRUCTIONS": "Choose the recommended Postal Service address, or continue with the one you provided.",
+    "NO_CORRECTED_HEADER_INSTRUCTIONS": "We couldn’t verify your address with the Postal Service. Please confirm the address below is correct or enter a new address.",
+    "YOU_ENTERED_TTILE": "You entered:",
+    "RECOMMENDED_TITLE": "Recommended:",
+    "EDIT_LABEL": "Edit",
+    "EDIT_ARIA_LABEL": "Edit",
+    "USE_ADDRESS_LABEL": "use this address",
+    "USE_ADDRESS_ARIA_LABEL": "use this address",
+    "ERROR_CHOOSE_ADDRESS": "Choose an address to continue"
+}

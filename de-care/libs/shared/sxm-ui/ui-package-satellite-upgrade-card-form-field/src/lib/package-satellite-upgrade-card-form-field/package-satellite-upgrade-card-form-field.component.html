@@ -1,0 +1,64 @@
+<sxm-ui-content-card [flagPresent]="!!copyContent.marketingCallout" [headlinePresent]="true" class="reset-paragraph-last-of-type-margin no-head-padding">
+    <div htmlContentForFlag *ngIf="copyContent.marketingCallout">
+        <p class="small-copy text-uppercase" [innerHTML]="copyContent.marketingCallout"></p>
+    </div>
+    <div htmlContentForHead class="checkbox-item">
+        <input
+            type="checkbox"
+            [id]="inputId"
+            [formControl]="control"
+            class="checkbox"
+            data-e2e="packageSatelliteUpgradeCardFormFieldCheckbox"
+            data-test="packageSatelliteUpgradeCardFormFieldCheckbox"
+        />
+        <label
+            [for]="inputId"
+            class="input-label text-color-white large-copy"
+            [innerHTML]="copyContent.title"
+            data-e2e="packageSatelliteUpgradeCardFormFieldCheckboxLabel"
+            data-test="packageSatelliteUpgradeCardFormFieldCheckboxLabel"
+        ></label>
+    </div>
+    <div htmlContentForBody>
+        <div *ngIf="copyContent.upsellDeals as deals" class="deal-addon">
+            <ng-container *ngFor="let deal of deals; index as i">
+                <hr *ngIf="i > 0" />
+                <div
+                    class="flex flex-wrap flex-row-reverse align-justify align-middle common-body-padding"
+                    attr.data-e2e="packageSatelliteUpgradeCardFormFieldDealAddon{{ i }}"
+                >
+                    <div *ngIf="deal.deviceImage as deviceImgUrl" class="partner-image flex align-right">
+                        <img [src]="deviceImgUrl" data-e2e="packageSatelliteUpgradeCardFormFieldDealImage" />
+                    </div>
+                    <h5 class="title" [innerHtml]="deal.header" data-e2e="packageSatelliteUpgradeCardFormFieldDealTitle"></h5>
+                </div>
+            </ng-container>
+        </div>
+        <p [innerHTML]="copyContent.copy" data-e2e="packageSatelliteUpgradeCardFormFieldContentCopy"></p>
+        <sxm-ui-package-icons *ngIf="copyContent.icons" [iconsData]="copyContent.icons" data-e2e="packageSatelliteUpgradeCardFormFieldIcons"></sxm-ui-package-icons>
+        <sxm-ui-accordion-chevron
+            class="no-content-padding"
+            *ngIf="copyContent.descriptionTitle && copyContent.highlights.length > 0"
+            [expandedText]="translateKeyPrefix + '.HIDE_TOGGLE' | translate"
+            [collapsedText]="translateKeyPrefix + '.SHOW_TOGGLE' | translate"
+            [aria]="{
+                collapsedText:
+                    translateKeyPrefix + '.ARIA_SHOW_TOGGLE' | translate: { packageName: 'app.packageDescriptions.' + copyContent.packageName + '.name' | translate },
+                expandedText: translateKeyPrefix + '.ARIA_HIDE_TOGGLE' | translate: { packageName: 'app.packageDescriptions.' + copyContent.packageName + '.name' | translate }
+            }"
+            data-e2e="packageSatelliteUpgradeCardFormFieldDetailsAccordion"
+        >
+            <p class="bold" [innerHTML]="copyContent.descriptionTitle" data-e2e="packageSatelliteUpgradeCardFormFieldDetailsTitle"></p>
+            <ul class="checkmark-list" data-e2e="packageSatelliteUpgradeCardFormFieldDetailsList">
+                <li *ngFor="let highlight of copyContent.highlights" data-icon="checkmark-sm">
+                    <span [innerHTML]="highlight"></span>
+                    <div class="icon-checkmark-sm-wrapper">
+                        <svg class="icon icon-utility small">
+                            <use class="icon-checkmark-sm" xlink:href="#icon-checkmark-sm"></use>
+                        </svg>
+                    </div>
+                </li>
+            </ul>
+        </sxm-ui-accordion-chevron>
+    </div>
+</sxm-ui-content-card>

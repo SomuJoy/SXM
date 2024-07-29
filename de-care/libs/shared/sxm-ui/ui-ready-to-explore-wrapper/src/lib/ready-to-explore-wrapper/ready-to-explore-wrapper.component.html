@@ -1,0 +1,18 @@
+<h5>{{ headerText }}</h5>
+<ul>
+    <ng-container *ngFor="let link of listOfLinks">
+        <li [innerHTML]="link"></li>
+    </ng-container>
+    <li>
+        <streaming-player-link
+            [customLink]="streamingLinkUrl"
+            [customLinkText]="streamingLinkText"
+            [infoForToken]="{ subscriptionId: subscriptionID }"
+        ></streaming-player-link>
+    </li>
+</ul>
+<p class="footer-link">
+    <ng-container *ngIf="displayFooter">
+        <div>{{ footerText }} <span [innerHTML]="footerLink"></span></div>
+    </ng-container>
+</p>

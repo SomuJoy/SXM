@@ -1,0 +1,16 @@
+<div [formGroup]="control?.parent">
+    <sxm-ui-radio-option-with-tooltip-form-field
+        *ngFor="let option of options; let i = index"
+        [formControlName]="formControlName"
+        [value]="option.value"
+        [label]="option.label"
+        [alternateStyle]="i >= options.length - 2"
+    >
+        <div htmlContentForTooltip>
+            <div class="tooltip-title">
+                {{ option.tooltipTitle }}
+            </div>
+            <div *ngFor="let description of option.tooltipText" [innerHTML]="description" class="tooltip-description"></div>
+        </div>
+    </sxm-ui-radio-option-with-tooltip-form-field>
+</div>

@@ -1,0 +1,70 @@
+@import "sxm.phoenix.imports";
+
+li {
+    &.selected {
+        font-weight: bold;
+    }
+}
+
+:host {
+    display: block;
+    outline: 0;
+
+    margin-bottom: 16px;
+    width: 100%;
+
+    &:focus {
+        input {
+            border-left: 4px solid $blue-secondary;
+        }
+
+        &.invalid {
+            input {
+                border-left: 4px solid $red;
+            }
+        }
+    }
+
+    &.invalid {
+        .input-container {
+            border: 1px solid $red;
+
+            &.active {
+                input {
+                    border-left: 4px solid $red;
+                }
+            }
+        }
+    }
+    &.active {
+        z-index: 10;
+    }
+
+    .invalid-feedback {
+        padding-top: 16px;
+    }
+}
+
+.input-container {
+    &.active ~ ul {
+        box-shadow: none;
+    }
+
+    label {
+        @include font-size(14px);
+        line-height: 22px;
+    }
+
+    .helper-div {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    input:disabled {
+        -webkit-text-fill-color: $black;
+        opacity: 1;
+    }
+}

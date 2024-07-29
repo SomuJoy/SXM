@@ -1,0 +1,78 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "libs/sxm-assets/scss/ui_reset.scss";
+
+:host {
+    font-family: $font-standard;
+    display: block;
+    color: $black;
+    section {
+        padding: 0 16px;
+        @include bp(mobile-medium) {
+            padding: 0 24px;
+        }
+    }
+}
+h5.header {
+    @include get-header-style(h5);
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+.close-button {
+    @include button-reset;
+    position: absolute;
+    top: 26px;
+    right: 16px;
+    padding: 6px;
+    @include bp(mobile-medium) {
+        display: none;
+    }
+    .x-shape {
+        display: block;
+        position: relative;
+        @include x-shape;
+    }
+}
+hr {
+    background-color: $gray-dark;
+    opacity: 0.2;
+    margin-bottom: 24px;
+}
+.label {
+    color: $gray-dark;
+    @include font-size(12px);
+    font-weight: calculate-font-weight("bold");
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+}
+.no-account-label {
+    margin-top: 24px;
+    @include font-size(14px);
+    font-weight: calculate-font-weight("book");
+    @include bp(medium) {
+        margin-top: 12px;
+    }
+    a {
+        @include font-size(14px);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-decoration-thickness: 2px;
+        color: $blue-secondary;
+        padding: 12px 0;
+        @include bp(medium) {
+            padding: 0;
+        }
+    }
+}
+.cta-container {
+    margin-top: 24px;
+    padding: 16px 24px 24px 24px;
+    background-color: $off-white;
+    .app-cta-header {
+        color: $gray-dark;
+        @include font-size(12px);
+        font-weight: calculate-font-weight("bold");
+        letter-spacing: 1px;
+        margin: 16px 0 12px 0;
+    }
+}

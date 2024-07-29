@@ -1,0 +1,23 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: flex;
+    flex-wrap: nowrap;
+    .package-icon {
+        width: 33%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        mat-icon {
+            height: 64px;
+            width: 64px;
+            color: $purple;
+        }
+        .label {
+            color: $gray-dark;
+            @include font-size(12px);
+            font-weight: calculate-font-weight("book");
+            text-align: center;
+        }
+    }
+}

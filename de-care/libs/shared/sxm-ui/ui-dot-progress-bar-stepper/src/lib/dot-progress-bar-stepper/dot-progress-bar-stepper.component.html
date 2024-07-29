@@ -1,0 +1,18 @@
+<sxm-ui-dot-progress-bar [steps]="dotProgressBarSteps" [currentStepData]="dotProgressBarData"></sxm-ui-dot-progress-bar>
+<h6>
+    {{
+        translateKey
+            | translate
+                : {
+                      currentStep: selectedIndex + 1,
+                      steps: steps.length
+                  }
+    }}
+</h6>
+<div *ngFor="let step of steps; let i = index" class="step-item">
+    <div *ngIf="selected === step" class="component--step-content active" id="{{ step.id }}">
+        <div class="step-content-container no-padding">
+            <ng-container [ngTemplateOutlet]="selected.content"></ng-container>
+        </div>
+    </div>
+</div>

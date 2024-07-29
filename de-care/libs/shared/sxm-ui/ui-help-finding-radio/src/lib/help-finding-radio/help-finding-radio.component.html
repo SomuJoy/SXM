@@ -1,0 +1,51 @@
+<h5 *ngIf="title; else defaultTitle">
+    <ng-content select=".title"></ng-content>
+</h5>
+
+<ng-template #defaultTitle>
+    <h5>{{ "SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioComponent.TITLE" | translate }}</h5>
+</ng-template>
+
+<ng-container *ngIf="contentParagraphOne; else defaultParagraphOne">
+    <ng-content select=".paragraph-1"></ng-content>
+</ng-container>
+
+<ng-template #defaultParagraphOne>
+    <ng-container *ngIf="!needHelp; else needHelpOnly">
+        <p>{{ "SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioComponent.NEED_HELP_TEXT-1" | translate }}</p>
+    </ng-container>
+    <ng-template #needHelpOnly>
+        <p>{{ "SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioComponent.NEED_HELP_TEXT" | translate }}</p>
+    </ng-template>
+</ng-template>
+
+<ng-container *ngIf="contentParagraphTwo; else defaultParagraphTwo">
+    <ng-content select=".paragraph-2"></ng-content>
+</ng-container>
+<ng-template #defaultParagraphTwo>
+    <p>{{ "SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioComponent.NEED_HELP_TEXT-2" | translate }}</p>
+</ng-template>
+
+<ul class="link-list">
+    <li *ngIf="showSearchByLicensePlateLink">
+        <a class="text-link" href="" (click)="$event.preventDefault(); licensePlateHelp.emit()">{{ "identification.helpFindingRadioComponent.TEXT_LINK-0" | translate }}</a>
+    </li>
+    <li>
+        <a class="text-link" href="{{ 'SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioComponent.TEXT_LINK-1_URL' | translate }}" target="_blank">{{
+            "SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioComponent.TEXT_LINK-1" | translate
+        }}</a>
+    </li>
+    <li>
+        <a class="text-link" (click)="$event.preventDefault(); deviceHelp.emit()">{{
+            "SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioComponent.TEXT_LINK-2" | translate
+        }}</a>
+    </li>
+</ul>
+
+<div class="help-finding-radio" *ngIf="showDontHaveRadio">
+    <h4>{{ "SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioComponent.DONT_HAVE_RADIO.HEADLINE" | translate }}</h4>
+    <p class="text-color-gray-dark">{{ "SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioComponent.DONT_HAVE_RADIO.SUB_HEADLINE" | translate }}</p>
+    <a href="{{ 'SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioComponent.DONT_HAVE_RADIO.LINK_URL' | translate }}" target="_blank">{{
+        "SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioComponent.DONT_HAVE_RADIO.LINK_TEXT" | translate
+    }}</a>
+</div>

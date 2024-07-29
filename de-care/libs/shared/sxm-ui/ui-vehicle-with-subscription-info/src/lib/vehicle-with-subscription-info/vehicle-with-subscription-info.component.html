@@ -1,0 +1,126 @@
+<div class="vehicle-subscription">
+    <!--
+        If displayPackageNameAsTitle is true then display the packageName as title,
+        else if the vehicle data is there, display that
+        otherwise show the radio id as title
+    -->
+    <!-- TODO: refactor this to have most of this logic in the selector and have all copy fed to component-->
+    <sxm-ui-listener-details
+        *ngIf="data"
+        [listenerData]="{
+            eyebrow: eyebrow,
+            title: displayPackageNameAsTitle
+                ? ('app.packageDescriptions.' + data.packageName + '.name' | translate)
+                : data.vehicle?.year && data.vehicle?.make && data.vehicle?.model
+                ? data.vehicle?.year + ' ' + data.vehicle?.make + ' ' + data.vehicle?.model
+                : (translateKeyPrefix + 'RADIO_AS_TITLE' | translate: { radioId: data.radioId }),
+            icon: data.showIcon ? '#icon-car' : null,
+            footer: footer
+        }"
+        data-e2e="vehicleWithSubscriptionDetails"
+    >
+        <ng-container *ngIf="displayPackageNameAsTitle; else doNotDisplayPackageNameAsTitle">
+            <!-- vehicle info exists and the package name was displayed as title -->
+            <ng-container *ngIf="data.vehicle?.year && data.vehicle?.make && data.vehicle?.model; else packageNameTitleWithRadioId">
+                <p>{{ data.vehicle?.year }} {{ data.vehicle?.make }} {{ data.vehicle?.model }}</p>
+                <!-- show radio id only if the trial and self pay YMMs are identical -->
+                <p *ngIf="data.radioId && data.isYmmIdentical">{{ translateKeyPrefix + "RADIO" | translate: { radioId: data.radioId } }}</p>
+            </ng-container>
+            <!-- vehicle info does not exist so show radio id, package name was displayed as title -->
+            <ng-template #packageNameTitleWithRadioId>
+                <p>{{ translateKeyPrefix + "RADIO" | translate: { radioId: data.radioId } }}</p>
+            </ng-template>
+        </ng-container>
+        <ng-template #doNotDisplayPackageNameAsTitle>
+            <!-- Is not trial radio -->
+            <ng-container *ngIf="!data.isTrialRadio; else isTrialShowRadioId">
+                <!-- If the radio id exists and the vehicle info exists (thus was shown as title) and the trial and self pay YMMs are identical, show radio ID -->
+                <p *ngIf="data.radioId && data.vehicle?.year && data.vehicle?.make && data.vehicle?.model && data.isYmmIdentical">
+                    {{ translateKeyPrefix + "RADIO" | translate: { radioId: data.radioId } }}
+                </p>
+                <!-- this is not a trial radio so show the package name -->
+                <ng-container *ngIf="!data.isTrialRadio">
+                    <!-- there are multiple plans to display -->
+                    <ng-container *ngIf="data.multiplePlans; else singlePlan">
+                        <p *ngFor="let plan of data.multiplePlans" [innerHTML]="'app.packageDescriptions.' + plan.packageName + '.name' | translate"></p>
+                    </ng-container>
+                    <ng-template #singlePlan>
+                        <p>{{ "app.packageDescriptions." + data.packageName + ".name" | translate }}</p>
+                    </ng-template>
+                </ng-container>
+            </ng-container>
+            <!-- this is a trial radio so show the radio ID -->
+            <ng-template #isTrialShowRadioId>
+                <p *ngIf="data.radioId && data.vehicle?.year && data.vehicle?.make && data.vehicle?.model">
+                    {{ translateKeyPrefix + "RADIO" | translate: { radioId: data.radioId } }}
+                </p>
+            </ng-template>
+        </ng-template>
+
+        <ng-container *ngIf="data.isTrialRadio; else notTrialDate">
+            <p
+                [innerHTML]="
+                    (translateKeyPrefix + 'THE_TRIAL_TEXT' | translate) +
+                    ('app.packageDescriptions.' + data.packageName + '.name' | translate | withoutPlatformName: data.packageName) +
+                    '&nbsp' +
+                    (translateKeyPrefix + 'TRIAL_ENDS' | translate) +
+                    (data.endDate | date: (dateFormat$ | async):timeZone:locale)
+                "
+            ></p>
+        </ng-container>
+        <ng-template #notTrialDate>
+            <ng-container *ngIf="data.isSelfPayClosed; else notTrialDateNotClosedDate">
+                {{ translateKeyPrefix + "DATE_CLOSED" | translate }}
+                {{ data.endDate | date: (dateFormat$ | async):timeZone:locale }}
+            </ng-container>
+        </ng-template>
+        <ng-template #notTrialDateNotClosedDate>
+            <p *ngIf="data.startDate">
+                <ng-container *ngIf="data.isPromo; else startDateNotPromo">
+                    {{ translateKeyPrefix + "DATE_STARTS_PROMO" | translate: { termLength: data.termLength } }}
+                    {{ data.startDate | date: (dateFormat$ | async):timeZone:locale }}
+                </ng-container>
+                <ng-template #startDateNotPromo>
+                    {{ translateKeyPrefix + "DATE_STARTS" | translate: { termWord: data.termLength | i18nPlural: (translateKeyPrefix + "TERM_MAP" | translate) } }}
+                    {{ data.startDate | date: (dateFormat$ | async):timeZone:locale }}
+                </ng-template>
+            </p>
+            <ng-container *ngIf="data.endDate; else renewalDate">
+                <p>
+                    <ng-container *ngIf="data.isPromo; else endDateNotPromo">
+                        {{ translateKeyPrefix + "DATE_ENDS_PROMO" | translate: { termLength: data.termLength } }}
+                        {{ data.endDate | date: (dateFormat$ | async):timeZone:locale }}
+                    </ng-container>
+                    <ng-template #endDateNotPromo>
+                        {{ translateKeyPrefix + "DATE_ENDS" | translate: { termWord: data.termLength | i18nPlural: (translateKeyPrefix + "TERM_MAP" | translate) } }}
+                        {{ data.endDate | date: (dateFormat$ | async):timeZone:locale }}
+                    </ng-template>
+                </p>
+            </ng-container>
+            <ng-template #renewalDate>
+                <p *ngIf="data.renewalDate">
+                    <ng-container *ngIf="data.isPromo; else renewalDateNotPromo">
+                        {{ translateKeyPrefix + "DATE_RENEWS_PROMO" | translate: { termLength: data.termLength } }}
+                        {{ data.renewalDate | date: (dateFormat$ | async):timeZone:locale }}
+                    </ng-container>
+                    <ng-template #renewalDateNotPromo>
+                        {{ translateKeyPrefix + "DATE_RENEWS" | translate: { termWord: data.termLength | i18nPlural: (translateKeyPrefix + "TERM_MAP" | translate) } }}
+                        {{ data.renewalDate | date: (dateFormat$ | async):timeZone:locale }}
+                    </ng-template>
+                </p>
+            </ng-template>
+            <ng-container *ngIf="data.isLifetime">
+                <p>{{ translateKeyPrefix + "DATE_LIFETIME" | translate }}</p>
+            </ng-container>
+        </ng-template>
+        <p *ngIf="data.isSelfPay && data.username">
+            {{
+                translateKeyPrefix + "USERNAME"
+                    | translate
+                        : {
+                              username: data.username
+                          }
+            }}
+        </p>
+    </sxm-ui-listener-details>
+</div>

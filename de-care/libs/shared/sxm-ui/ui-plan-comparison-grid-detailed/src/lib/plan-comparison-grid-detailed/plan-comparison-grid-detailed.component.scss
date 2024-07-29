@@ -1,0 +1,264 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    h2 {
+        margin: 0;
+        &.plan-options-title {
+            display: none;
+        }
+    }
+    display: block;
+    overflow-x: auto;
+    min-width: 296px;
+    table {
+        border-collapse: separate;
+        border-spacing: 0;
+        th,
+        td {
+            border-bottom: 1px solid $gray-light;
+            width: 116px;
+            min-width: 116px;
+
+            @include bp(medium) {
+                width: 150px;
+                min-width: 150px;
+            }
+            @include bp(large) {
+                width: 150px;
+                min-width: 150px;
+            }
+        }
+        td {
+            padding: 12px;
+            text-align: center;
+        }
+        th:first-child,
+        td:first-child {
+            background-color: $white;
+            background-clip: padding-box;
+            border-right: 1px solid $gray-light;
+            border-bottom: 1px solid $gray-light;
+            font-weight: calculate-font-weight("bold");
+            font-size: calculate-rem(14px);
+            text-align: left;
+            position: sticky;
+            left: 0;
+            z-index: 1;
+            width: 180px;
+            min-width: 180px;
+
+            @include bp(medium) {
+                width: 240px;
+                min-width: 240px;
+            }
+            @include bp(large) {
+                width: 422px;
+                min-width: 422px;
+            }
+        }
+        thead {
+            th:first-child {
+                border-right: 0;
+            }
+        }
+        th.plan-tab {
+            display: inline-grid;
+            row-gap: 8px;
+            justify-items: center;
+            padding: 0 4px 0 0;
+            vertical-align: bottom;
+
+            &:nth-child(4) {
+                padding: 0;
+            }
+            .best-value {
+                background: $raspberry;
+                color: $white;
+                padding: 8px 10px;
+                border-radius: 16px;
+                width: fit-content;
+            }
+            h2 {
+                padding: 16px;
+                text-align: center;
+                background-color: $gray-light;
+                font-weight: calculate-font-weight("bold");
+                font-size: calculate-rem(12px);
+                @include bp(medium) {
+                    font-size: calculate-rem(14px);
+                }
+            }
+            th.plan-options-title {
+                h2 {
+                    display: none;
+                }
+            }
+        }
+        tfoot {
+            td {
+                border-bottom: 0;
+            }
+            td:first-child {
+                border: 0;
+                border-right: 1px solid $gray-light;
+            }
+        }
+    }
+    .channel-count {
+        color: $blue-secondary;
+        font-weight: calculate-font-weight("bold");
+    }
+    .listen-on {
+        grid-template-columns: 1fr 1fr;
+        .car,
+        .streaming {
+            color: $black;
+            width: 40px;
+            height: 40px;
+        }
+    }
+    thead,
+    tbody,
+    tfoot {
+        display: block;
+    }
+
+    .resizable-rows {
+        tr {
+            display: table;
+            table-layout: fixed;
+        }
+    }
+    .compatability {
+        font-weight: calculate-font-weight("bold");
+        font-size: calculate-rem(12px);
+        text-transform: uppercase;
+        color: $gray-dark;
+        .checkmark {
+            color: $black;
+            width: 18px;
+            height: 18px;
+        }
+    }
+    button {
+        &.show-more {
+            font-weight: calculate-font-weight("bold");
+            font-size: calculate-rem(14px);
+            display: flex;
+            column-gap: 4px;
+            align-items: center;
+            mat-icon[svgIcon="dropdown-arrow-small"] {
+                color: $black;
+                width: 14px;
+                height: 14px;
+                margin-top: 4px;
+                &.flipped {
+                    margin-top: 0;
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        &.cta {
+            margin: 0;
+        }
+    }
+    p.cancel-anytime-text {
+        display: none;
+    }
+    div.price-normal {
+        display: inline-block;
+    }
+    div.price-highlighted {
+        display: none;
+    }
+}
+
+:host-context(.columns-with-borders) {
+    table {
+        background: $white;
+        width: 100%;
+        td {
+            border-right: 1px solid $gray-medium;
+        }
+        th,
+        td {
+            @include bp(small) {
+                width: 27%;
+                min-width: 146px;
+            }
+            @include bp(medium) {
+                width: 186px;
+                min-width: 186px;
+            }
+            @include bp(large) {
+                width: 162px;
+                min-width: 162px;
+            }
+        }
+        th:first-child,
+        td:first-child {
+            @include bp(small) {
+                width: 55%;
+                min-width: 242px;
+            }
+            @include bp(medium) {
+                width: 318px;
+                min-width: 318px;
+            }
+            @include bp(large) {
+                width: 270px;
+                min-width: 270px;
+            }
+        }
+        thead {
+            position: sticky;
+            top: -1px;
+            z-index: 30;
+            th:first-child,
+            th.plan-tab {
+                display: revert;
+                height: 70px;
+                padding: 0 8px;
+                border-right: 1px solid $gray-medium;
+                background-color: $blue-light;
+                min-height: 70px;
+                vertical-align: middle;
+                h2 {
+                    margin: auto;
+                    background-color: inherit;
+                    padding: 0px;
+                    &.plan-options-title {
+                        margin-left: 8px;
+                        display: inline-grid;
+                        font-size: calculate-rem(16px);
+                        font-weight: calculate-font-weight("bold");
+                    }
+                }
+            }
+        }
+
+        button {
+            &.show-more {
+                display: none;
+            }
+        }
+
+        p.cancel-anytime-text {
+            display: inline-block;
+        }
+        p.bold-price {
+            font-weight: calculate-font-weight("bold");
+            margin-bottom: 0;
+        }
+        p.term-length {
+            font-size: calculate-rem(12px);
+        }
+        div.price-normal {
+            display: none;
+        }
+        div.price-highlighted {
+            display: inline-block;
+        }
+    }
+}

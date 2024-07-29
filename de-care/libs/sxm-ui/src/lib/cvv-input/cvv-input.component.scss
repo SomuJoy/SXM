@@ -1,0 +1,38 @@
+@import 'sxm.phoenix.imports';
+
+sxm-dropdown {
+    &:focus {
+        box-shadow: 0 0 5px $focus-blue-trans;
+        outline: 2px solid $focus-blue-trans;
+        outline-offset: .5px;
+    }
+}
+
+shared-card-selection,
+shared-redeem-prepaid {
+  margin-bottom: 14px;
+  width: 100%;
+}
+
+.component--add-element-title {
+  margin: 16px 0 32px;
+}
+
+.reg-title {
+  @include font-size(14px);
+  color: $gray-dark;
+}
+
+.reg-fields {
+  margin-top: 16px;
+}
+
+.input-container {
+  margin-bottom: 16px;
+  width: 100%;
+
+  label {
+    @include font-size(14px);
+    line-height: 22px;
+  }
+}

@@ -1,0 +1,9 @@
+{
+    "LASTNAME_LABEL_TEXT": "Last Name",
+    "EMAIL_LABEL_TEXT": "Email",
+    "BUTTON_TEXT": "CONTINUE",
+    "TITLE": "Let’s find your username.",
+    "SUB_TITLE": "Enter your last name and email to get started.",
+    "LASTNAME_REQUIRED_TEXT": "Enter your last name.",
+    "EMAIL_REQUIRED_TEXT": "Enter your email."
+}

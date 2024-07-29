@@ -1,0 +1,8 @@
+{
+    "HEADER": "We found 1 radio that matches the info that you gave us.",
+    "NO_ACTIVE_SERVICE": "No Active Service",
+    "VEHICLE": "{{year}} {{make}} {{model}}",
+    "RADIO_ID_MASKED": "RadioID: ****{{maskedRadioId}}",
+    "TRIAL_LABEL": " Trial Subscription",
+    "CONTINUE_BTN_LABEL": "CONTINUE"
+}

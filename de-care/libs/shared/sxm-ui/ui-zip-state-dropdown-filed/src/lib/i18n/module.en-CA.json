@@ -1,0 +1,10 @@
+{
+    "SharedSxmUiUiZipStateDropdownFiledModule": {
+        "SxmUiZipStateDropdownFieldComponent": {
+            "ERROR_ZIPCODE_FOUND": "Enter your postal code.",
+            "ZIP_LABEL": "Postal Code",
+            "STATE_LABEL": "Province",
+            "ERROR_STATE_FOUND": "Enter your province."
+        }
+    }
+}

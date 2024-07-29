@@ -1,0 +1,135 @@
+<div class="grid-wrapper" *ngIf="parameters$ | async as parameters" data-test="planGrid">
+    <!--   Monthly Price After -->
+    <sxm-ui-grid-row
+        *ngIf="renewalPriceRowColumnsData"
+        [gridRowVM]="{
+            title:
+                translateKeyPrefix + (isOfferTypeIsPromoOrPromoMCP ? '.HEADER_PROMO_PRICE' : '.RENEWAL_PRICE_AFTER') + ((_isQuebec$ | async) ? '_QC' : '')
+                | translate: { endDate: endDate | date: (dateFormat$ | async):null:currentLang },
+            columns: renewalPriceRowColumnsData,
+            dataE2e: 'planComparisonRenewalRateRow'
+        }"
+        [selectedIndex]="parameters.selectedPackageIndex"
+    ></sxm-ui-grid-row>
+    <sxm-ui-grid-row
+        *ngIf="promoPriceRowColumnsData"
+        [gridRowVM]="{
+            title: translateKeyPrefix + '.HEADER_PROMO_PRICE' | translate: { endDate: endDate | date: (dateFormat$ | async):null:currentLang },
+            columns: promoPriceRowColumnsData,
+            dataE2e: 'planComparisonMonthlyRateRow'
+        }"
+        [selectedIndex]="parameters.selectedPackageIndex"
+    ></sxm-ui-grid-row>
+    <sxm-ui-grid-row
+        *ngIf="monthlyPriceRowColumnsData"
+        [gridRowVM]="{
+            title:
+                translateKeyPrefix + '.MONTHLY_PRICE_AFTER' + (promoPriceRowColumnsData ? '_PROMO' : '')
+                | translate: { endDate: endDate | date: (dateFormat$ | async):null:currentLang },
+            columns: monthlyPriceRowColumnsData,
+            dataE2e: 'planComparisonMonthlyRateRow'
+        }"
+        [selectedIndex]="parameters.selectedPackageIndex"
+    ></sxm-ui-grid-row>
+    <sxm-ui-grid-row
+        *ngIf="hasWhereToListenRow"
+        [gridRowVM]="{
+            title: translateKeyPrefix + '.WHERE_TO_LISTEN' | translate,
+            columns: whereToListenColumns,
+            dataE2e: 'planComparisonWhereToListenRow'
+        }"
+        [selectedIndex]="parameters.selectedPackageIndex"
+    ></sxm-ui-grid-row>
+
+    <ng-container *ngIf="additionalGridRows?.length > 0">
+        <ng-container *ngTemplateOutlet="additionalGridRowsTemplate; context: { datos: { parameters: parameters } }"></ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="!hasWhereToListenRow">
+        <ng-container *ngTemplateOutlet="gridRowTemplate; context: { datos: { parameters: parameters, feature: parameters.features[0] } }"></ng-container>
+    </ng-container>
+
+    <!--   Channel Count, and, Package Features with Check or X marks-->
+
+    <sxm-ui-accordion-chevron
+        [collapsedText]="translateKeyPrefix + '.COLLAPSED_TEXT' | translate"
+        [expandedText]="translateKeyPrefix + '.EXPANDED_TEXT' | translate"
+        [opened]="!activateExpandable"
+        [ngClass]="{ 'hidden-chevron': !activateExpandable }"
+        (chevronClick)="onChevronClick()"
+        class="within-grid"
+    >
+        <ng-container data-e2e="planComparisonFeatureContainer" *ngFor="let feature of parameters?.features?.slice(hasWhereToListenRow ? 0 : 1); let i = index">
+            <ng-container *ngTemplateOutlet="gridRowTemplate; context: { datos: { parameters: parameters, feature: feature } }"></ng-container>
+        </ng-container>
+        <!--  Channel Lineup URL -->
+        <sxm-ui-grid-row
+            [gridRowVM]="{
+                title: translateKeyPrefix + '.CHANNELS_LINEUP' | translate,
+                tooltip: translateKeyPrefix + '.CHANNEL_LINEUP_TOOLTIP_COPY' | translate,
+                tooltipId:
+                    translateKeyPrefix + '.CHANNELS_LINEUP'
+                    | translate
+                    | planComparisionGridTooltipLinkId: (parameters.selectedName | withoutPlatformName: parameters.selectedPackageName),
+                columns: channelLineupRowColumnsData,
+                dataE2e: 'planComparisonChannelLineUpRow'
+            }"
+        ></sxm-ui-grid-row>
+    </sxm-ui-accordion-chevron>
+
+    <!--   Primary CTA and TFN -->
+    <div class="row no-padding align-right" *ngIf="displayCallsToAction">
+        <div class="column no-padding full-width-of-comparison" [ngClass]="'grid-columns-total-width-' + numPlans">
+            <!--   Primary CTA -->
+            <button data-e2e="planComparisonGridButton" class="button primary full-width" (click)="onContinue()">
+                {{ selectedPackageType ? (translateKeyPrefix + ".GET" | translate) + selectedPackageType : (translateKeyPrefix + ".PRIMARY_CTA_COPY" | translate) }}
+            </button>
+            <!--   TFN -->
+            <p class="text-center copy-under-cta">
+                {{ translateKeyPrefix + ".TFN_COPY" | translate }}
+                <a class="text-link" href="{{ 'tel:' + questionsPhoneNumber }}">
+                    {{ questionsPhoneNumber }}
+                </a>
+            </p>
+        </div>
+    </div>
+    <div class="row no-padding align-right family-discount" data-e2e="planComparisonGridFamilyDiscount" *ngIf="familyDiscount">
+        <div class="column no-padding full-width-of-comparison" [ngClass]="'grid-columns-total-width-' + numPlans">
+            <p class="text-center">
+                {{
+                    translateKeyPrefix + ".FAMILY_DISCOUNT"
+                        | translate
+                            : {
+                                  price: familyDiscount | currency: "USD":"symbol-narrow":priceFormat:currentLang
+                              }
+                }}
+            </p>
+        </div>
+    </div>
+</div>
+
+<ng-template #gridRowTemplate let-params="datos">
+    <sxm-ui-grid-row
+        [gridRowVM]="{
+            title: params.feature.name,
+            tooltip: params.feature.tooltipText,
+            tooltipId: params.feature.name | planComparisionGridTooltipLinkId: (params.parameters.selectedName | withoutPlatformName: params.parameters.selectedPackageName),
+            columns: params.feature.columns
+        }"
+        [selectedIndex]="params.parameters.selectedPackageIndex"
+    ></sxm-ui-grid-row>
+</ng-template>
+
+<ng-template #additionalGridRowsTemplate let-params="datos">
+    <ng-container *ngFor="let additionalGridRow of additionalGridRows">
+        <sxm-ui-grid-row
+            [gridRowVM]="{
+                title: additionalGridRow.title,
+                tooltip: additionalGridRow.tooltip,
+                tooltipId: additionalGridRow.tooltipId,
+                columns: additionalGridRow.columns
+            }"
+            [selectedIndex]="params.parameters.selectedPackageIndex || additionalGridRow.customSelectedIndex"
+        ></sxm-ui-grid-row>
+    </ng-container>
+</ng-template>

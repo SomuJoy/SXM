@@ -1,0 +1,40 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+        "input tooltip"
+        "error error";
+    .input-container {
+        grid-area: input;
+        border-right: 0;
+    }
+    sxm-ui-tooltip {
+        grid-area: tooltip;
+        background-color: white;
+        overflow: hidden;
+        display: block;
+        border: 1px solid $gray-dark;
+        border-left: 0;
+        height: 56px;
+        padding: 7px 8px 0 8px;
+        &.active {
+            overflow: inherit;
+        }
+        &.invalid {
+            border-color: $red;
+        }
+        ::ng-deep {
+            button {
+                width: 44px;
+                height: 44px;
+            }
+        }
+    }
+    .invalid-feedback {
+        grid-area: error;
+    }
+}

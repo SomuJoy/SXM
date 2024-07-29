@@ -1,0 +1,42 @@
+{
+    "$schema": "https://json-schema.org/schema",
+    "cli": "nx",
+    "id": "lib-shared",
+    "type": "object",
+    "properties": {
+        "type": {
+            "type": "string",
+            "default": "util",
+            "description": "Type of shared lib.\n\n    util: helper functions or services\n\n    ui-util: browser DOM helpers\n\n    state: Ngrx related stuff\n\n    ui: browser UI stuff",
+            "enum": ["util", "ui-util", "state", "ui"],
+            "x-prompt": {
+                "message": "Type of shared lib?",
+                "type": "list",
+                "items": [
+                    {
+                        "value": "util",
+                        "label": "util (helper functions or services)"
+                    },
+                    {
+                        "value": "ui-util",
+                        "label": "ui-util (browser DOM helpers)"
+                    },
+                    {
+                        "value": "state",
+                        "label": "state (Ngrx related stuff)"
+                    },
+                    {
+                        "value": "ui",
+                        "label": "ui (browser UI stuff)"
+                    }
+                ]
+            }
+        },
+        "name": {
+            "type": "string",
+            "description": "Shared lib name without the type prefix.\n\n   (example: web-storage)",
+            "x-prompt": "Shared lib name without the type prefix?\n  (example: web-storage)"
+        }
+    },
+    "required": ["type", "name"]
+}

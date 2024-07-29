@@ -1,0 +1,24 @@
+{
+    "$schema": "https://json-schema.org/schema",
+    "cli": "nx",
+    "$id": "service-microservice-endpoint",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Name of the microservice data service",
+            "x-prompt": "Name of the microservice data service?"
+        },
+        "project": {
+            "type": "string",
+            "description": "project name",
+            "x-prompt": "Name of the project (lib)?"
+        },
+        "getDataMethodName": {
+            "type": "string",
+            "description": "Name of the method to get data",
+            "x-prompt": "Name of the method to get data?"
+        }
+    },
+    "required": ["name", "project"]
+}

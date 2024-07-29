@@ -1,0 +1,45 @@
+{
+    "SharedSxmUiUiCreditCardFormFieldsModule": {
+        "SxmUiCreditCardFormFieldsComponent": {},
+        "SxmUiChargeAgreementCheckboxFormFieldComponent": {
+            "LABEL_PART_A": "Please charge my credit card for the amount due now and recurring charges as outlined above. By clicking \"{{formButtonTextCopy}}\" I agree that my service will <strong>AUTOMATICALLY RENEW and will be charged to my payment method at then-current rates at the time of each renewal, plus fees and taxes, until I cancel.</strong> I agree to the SiriusXM <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\" data-track-click=\"Customer Agreement\">Customer Agreement</a> and <a href=\"https://www.siriusxm.com/privacy-policy\" target=\"_blank\" data-track-click=\"Privacy Policy\">Privacy Policy</a>, including, receiving account notifications at the email address provided, the refund policy and how to cancel, which includes online methods or calling SiriusXM at <a href=\"tel:1-866-635-2349\">1-866-635-2349</a>.",
+            "LABEL_PART_B": "",
+            "LABEL_PART_B_RATE_VERSION": "",
+            "LANGUAGE_LINK_TEXT": "En Español",
+            "LANGUAGE_LINK_VALUE": "es-US",
+            "ERROR_REQUIRED": "Please accept the above agreement."
+        },
+        "SxmUiNameOnCardFormFieldComponent": {
+            "PLACEHOLDER": "Name on Card",
+            "ERROR_REQUIRED": "Enter your name as it appears on your card."
+        },
+        "SxmUiCreditCardNumberFormFieldComponent": {
+            "PLACEHOLDER": "Card Number",
+            "ERROR_REQUIRED": "Enter a valid credit card number.",
+            "CC_AMEX_ARIA_LABEL": "American Express",
+            "CC_DCI_ARIA_LABEL": "Diners Club International",
+            "CC_DISCOVER_ARIA_LABEL": "Discover",
+            "CC_JCB_ARIA_LABEL": "JCB",
+            "CC_MC_ARIA_LABEL": "Mastercard",
+            "CC_VISA_ARIA_LABEL": "Visa",
+            "CC_UNIONPAY_ARIA_LABEL": "UnionPay",
+            "LOCK_ICON_ARIA_LABEL": "Secure Field"
+        },
+        "SxmUiExpirationDateFormFieldComponent": {
+            "PLACEHOLDER": "Exp (MM/YY)",
+            "ERROR_REQUIRED": "Enter a valid expiration date."
+        },
+        "SxmUiCvvFormFieldComponent": {
+            "PLACEHOLDER": "CVV",
+            "TOOLTIP_MESSAGE_1": "For Visa and Mastercard, use the 3 digits on the back of your card.",
+            "TOOLTIP_MESSAGE_2": "For American Express, use the 4 digits on the front of your card.",
+            "ERROR_REQUIRED": "Enter a valid security code (CVV)."
+        },
+        "SxmUiInvoiceAgreementCheckboxFormFieldComponent": {
+            "LABEL_PART_A": "Please invoice me for the amount due now and recurring charges as outlined above, including a $2 invoice fee where permitted by law. By clicking \"{{formButtonTextCopy}},\" I agree that my services will <strong>AUTOMATICALLY RENEW and will be billed at then-current rates as the time of each renewal, plus fees and taxes, until I cancel</strong>. I agree to the SiriusXM <a target='_blank' href='https://www.siriusxm.com/customeragreement'>Customer Agreement</a> and <a target='_blank' href='https://www.siriusxm.com/privacy-policy'>Privacy Policy</a>, including the refund policy and how to cancel, which includes online methods or calling SiriusXM at <a href=\"tel:1-866-635-2349\">1-866-635-2349.</a>",
+            "LANGUAGE_LINK_TEXT": "En Español",
+            "LANGUAGE_LINK_VALUE": "es-US",
+            "ERROR_REQUIRED": "Please accept the above agreement."
+        }
+    }
+}

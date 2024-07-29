@@ -1,0 +1,9 @@
+{
+    "SharedSxmUiUiSubscriptionSummaryBlockModule": {
+        "SubscriptionSummaryBlockComponent": {
+            "ACCOUNT_NUMBER_LABEL": "Compte",
+            "RADIO_ID_LABEL": "CODE DE RADIO",
+            "NO_ACTIVE_SERVICE": "Aucun service actif"
+        }
+    }
+}

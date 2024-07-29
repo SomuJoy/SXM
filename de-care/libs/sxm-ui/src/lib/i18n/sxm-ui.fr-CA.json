@@ -1,0 +1,38 @@
+{
+    "sxmUi": {
+        "flepzFormFieldsComponent": {
+            "YOUR_INFO": "Votre info",
+            "CAR_INFO": "L'info de votre véhicule",
+            "FIRST_NAME": "Prénom",
+            "LAST_NAME": "Nom",
+            "EMAIL": "Courriel",
+            "PHONE_NUMBER": "Numéro de téléphone",
+            "ZIP_CODE": "Code postal",
+            "Continue": "Continuer",
+            "ERROR": {
+                "FIRST_NAME": "Entrez votre prénom.",
+                "LAST_NAME": "Entrez votre nom.",
+                "EMAIL": "Entrez une adresse courriel valide.",
+                "PHONE_NUMBER": "Entrez un numéro de téléphone valide.",
+                "ZIP_CODE": "Entrez un code postal valide.",
+                "USERNAME": "",
+                "CVV_EXCLUDE": "Le champ contient des caract\u00E8res qui ressemblent aux informations de s\u00E9curit\u00E9 de la carte de cr\u00E9dit. Pour continuer, veuillez les revoir et apporter les changements appropri\u00E9s."
+            }
+        },
+        "appFooterComponent": {
+            "TERMS_AND_CONDITIONS": {
+                "LINK_TEXT": "Conditions générales",
+                "LINK_URL": "https://www.siriusxm.ca/conditions"
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Politique de la vie privée",
+                "LINK_URL": "https://www.siriusxm.ca/vieprivee"
+            },
+            "SITE_TERMS": {
+                "LINK_TEXT": "Conditions d’utilisation du site",
+                "LINK_URL": "https://siriusxm.ca/conditions"
+            },
+            "COPYRIGHT_TEXT": "SiriusXM Canada Inc."
+        }
+    }
+}

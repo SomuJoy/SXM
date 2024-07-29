@@ -1,0 +1,67 @@
+@import "sxm.phoenix.imports";
+:host {
+    display: grid;
+    grid-template-rows: 1fr max-content;
+    background: $white;
+    box-shadow: 0px 2px 15px -4px rgba(0, 0, 0, 0.15);
+    .inner-padding {
+        padding: 20px 20px 32px;
+        @include bp(medium) {
+            padding: 24px 24px 40px;
+        }
+    }
+}
+
+:host(.flat) {
+    box-shadow: none;
+}
+
+:host(.no-padding) {
+    .inner-padding {
+        padding: 0;
+    }
+}
+
+:host(.vertical-center) {
+    display: grid;
+    align-items: center;
+    .inner-padding {
+        padding: 32px;
+        @include bp(medium) {
+            padding: 40px;
+        }
+    }
+}
+
+:host(.extra-padding-bottom) {
+    &:not(.vertical-center) {
+        .inner-padding {
+            @include bp(medium) {
+                padding-bottom: 80px;
+            }
+        }
+    }
+}
+
+:host(.equal-default-padding) {
+    .inner-padding {
+        padding: 20px;
+        @include bp(medium) {
+            padding: 24px;
+        }
+    }
+}
+
+// used to offset content that already has a 12px margin due to the accessibility requirement that buttons have at least a 44px high hit area
+:host(.offset-top-padding) {
+    .inner-padding {
+        padding-top: 8px;
+        @include bp(medium) {
+            padding-top: 12px;
+        }
+    }
+}
+
+:host(.transparent-background) {
+    background: transparent;
+}

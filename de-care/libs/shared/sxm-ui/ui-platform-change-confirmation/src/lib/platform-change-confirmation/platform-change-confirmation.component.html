@@ -1,0 +1,23 @@
+<div class="container">
+    <h4>{{ translateKeyPrefix + ".HEADER" | translate }}</h4>
+    <ng-container *ngIf="platformChangePlan?.packageName">
+        <h5>{{ translateKeyPrefix + ".NEW_PLAN" | translate }}</h5>
+        <p [innerHTML]="'app.packageDescriptions.' + platformChangePlan.packageName + '.name' | translate"></p>
+    </ng-container>
+    <h5>{{ translateKeyPrefix + ".NOT_INCLUDED" | translate }}</h5>
+    <ul class="checkmark-list">
+        <ng-container *ngFor="let channels of excludedChannels">
+            <li *ngFor="let description of channels.descriptions" data-icon="xmark-sm">
+                <span [innerHTML]="description"></span>
+                <div class="icon-remove-wrapper">
+                    <svg class="icon icon-utility small">
+                        <use class="icon-remove" xlink:href="#icon-remove"></use>
+                    </svg>
+                </div>
+            </li>
+        </ng-container>
+    </ul>
+    <button (click)="acceptClicked()" class="button primary full-width" data-e2e="differentPlatformAcceptButton" data-test="DifferentPlatformAcceptButton">
+        {{ translateKeyPrefix + ".ACCEPT" | translate }}
+    </button>
+</div>

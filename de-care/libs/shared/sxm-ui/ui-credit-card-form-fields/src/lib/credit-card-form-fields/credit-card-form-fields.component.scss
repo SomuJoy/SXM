@@ -1,0 +1,12 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 8px;
+    sxm-ui-name-on-card-form-field,
+    sxm-ui-credit-card-number-form-field {
+        grid-column: 1 / -1;
+    }
+}

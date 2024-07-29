@@ -1,0 +1,25 @@
+{
+    "$schema": "https://json-schema.org/schema",
+    "cli": "nx",
+    "$id": "de-care-use-case-feature",
+    "type": "object",
+    "properties": {
+        "useCaseName": {
+            "type": "string",
+            "description": "Name of the use case this is for?",
+            "x-prompt": "Name of the use case this is for?"
+        },
+        "name": {
+            "type": "string",
+            "description": "Name of the feature without the feature- prefix\n  (example: checkout-streaming-targeted)",
+            "x-prompt": "Name of the feature without the feature- prefix?\n  (example: checkout-streaming-targeted)"
+        },
+        "skipState": {
+            "type": "boolean",
+            "description": "Skip creating a matching feature state lib for this feature.",
+            "x-prompt": "Skip creating a matching feature state lib for this feature?",
+            "default": false
+        }
+    },
+    "required": ["useCaseName", "name"]
+}

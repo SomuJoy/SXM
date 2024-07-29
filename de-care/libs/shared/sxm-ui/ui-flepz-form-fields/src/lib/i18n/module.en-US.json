@@ -1,0 +1,22 @@
+{
+    "sharedSxmUiUiFlepzFormFieldsModule": {
+        "flepzFormFieldsComponent": {
+            "YOUR_INFO": "Your Info",
+            "FIRST_NAME": "First Name",
+            "LAST_NAME": "Last Name",
+            "EMAIL": "Email",
+            "PHONE_NUMBER": "Phone Number",
+            "ZIP_CODE": "Zip Code",
+            "Continue": "Continue",
+            "ERROR": {
+                "FIRST_NAME": "Enter your first name.",
+                "LAST_NAME": "Enter your last name.",
+                "EMAIL": "Enter a valid email address.",
+                "PHONE_NUMBER": "Enter a valid phone number.",
+                "ZIP_CODE": "Enter a valid zip code.",
+                "USERNAME": "Username/Email address already in use.",
+                "CVV_EXCLUDE": "The field contains characters that resemble credit card security information. Please review and make appropriate changes to continue."
+            }
+        }
+    }
+}

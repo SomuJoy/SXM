@@ -1,0 +1,31 @@
+<div class="input-container" [class.invalid]="control.invalid && control.touched" [class.filled]="!!control.value" [class.active]="inputIsFocused">
+    <label for="{{ controlId }}">{{ labelText || translateKeyPrefix + "LABEL_TEXT" | translate }}</label>
+    <input
+        *ngIf="maskedRadioIdFlag; else notMasked"
+        type="text"
+        appMaskedRadioId
+        data-test="sxmUIRadioIdFormField"
+        data-e2e="sxmUIRadioIdFormField"
+        [formControl]="control"
+        id="{{ controlId }}"
+        (focus)="inputIsFocused = true"
+        (blur)="inputIsFocused = false"
+    />
+    <ng-template #notMasked>
+        <input
+            type="text"
+            appTrimFormField
+            data-test="sxmUIRadioIdFormField"
+            data-e2e="sxmUIRadioIdFormField"
+            [formControl]="control"
+            id="{{ controlId }}"
+            (focus)="inputIsFocused = true"
+            (blur)="inputIsFocused = false"
+        />
+    </ng-template>
+</div>
+<div *ngIf="control.invalid && control.touched" class="invalid-feedback">
+    <p>
+        {{ errorMsg || translateKeyPrefix + "ERROR_MESSAGE_REQUIRED" | translate }}
+    </p>
+</div>

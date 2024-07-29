@@ -1,0 +1,22 @@
+{
+    "name": "shared-sxm-ui-ui-vehicle-with-subscription-info",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/sxm-ui/ui-vehicle-with-subscription-info/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/sxm-ui/ui-vehicle-with-subscription-info/src/**/*.ts", "libs/shared/sxm-ui/ui-vehicle-with-subscription-info/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:ui", "scope:shared-ui"]
+}

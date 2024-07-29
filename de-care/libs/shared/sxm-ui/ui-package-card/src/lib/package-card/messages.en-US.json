@@ -1,0 +1,7 @@
+{
+    "PRICE": "{{pricePerMonth}}/mo for {{termLength}} months",
+    "PRICE_AFTER_TERM": "Then {{retailPrice}}/mo. ",
+    "PLUS_FEES": "Plus fees and taxes. See ",
+    "SEE_OFFER_DETAILS": "Offer Details.",
+    "GET": "SELECT"
+}

@@ -1,0 +1,116 @@
+{
+    "SharedSxmUiUiListenOnDevicesModule": {
+        "SxmUiListenOnDevicesInfoComponent": {
+            "DEVICES": [
+                {
+                    "key": "Amazon",
+                    "name": "Amazon",
+                    "imageUrl": "https://www.siriusxm.com/content/dam/sxm-com/device-icons/Device-Card-Amazon-Dot-4th-Gen.png"
+                },
+                {
+                    "key": "Apple TV",
+                    "name": "Apple TV",
+                    "imageUrl": "https://www.siriusxm.com/content/dam/sxm-com/device-icons/DeviceCard-AppleWithTV-588x331-v2.png"
+                },
+                {
+                    "key": "Google",
+                    "name": "Google",
+                    "imageUrl": "https://www.siriusxm.com/content/dam/sxm-com/devices/google/google-nest/DeviceCardGoogle-588x331-v4.png"
+                },
+                {
+                    "key": "Bose",
+                    "name": "Bose",
+                    "imageUrl": "https://www.siriusxm.com/content/dam/sxm-com/device-icons/DeviceCard-Bose-588x331-v2.png"
+                },
+                {
+                    "key": "Roku",
+                    "name": "Roku",
+                    "imageUrl": "https://www.siriusxm.com/content/dam/sxm-com/device-icons/DeviceCard-Roku-588x331-v2.png"
+                },
+                {
+                    "key": "Samsung",
+                    "name": "Samsung",
+                    "imageUrl": "https://www.siriusxm.com/content/dam/sxm-com/devices/samsung/DeviceCard-SamsungDevices.png"
+                },
+                {
+                    "key": "LG",
+                    "name": "LG",
+                    "imageUrl": "https://www.siriusxm.com/content/dam/sxm-com/devices/lg/DeviceCard-LGDevices-588x331.png"
+                }
+            ],
+
+            "HEADLINE": "Set up your home device with your new subscription",
+            "SUB_HEADLINE": "Choose a device",
+            "SHOW_ALL_DEVICES_BUTTON_TEXT": "All devices",
+            "MODAL": {
+                "DEVICE_SETUP_MODAL_HEADER_TEXT": "Set up your device",
+                "APPLE_DEVICE_SETUP_MODAL": {
+                    "APPLE_DEVICE_SETUP_MODAL_TITLE": "Play SiriusXM Audio and Video via AppleTV",
+                    "APPLE_DEVICE_SETUP_MODAL_SUBTITLE": "<b> To Play SiriusXM on Apple TV: </b>",
+                    "INFO_ONE": "1. Open the SiriusXM app on a smartphone or tablet connected to the same Wi-Fi network as the Apple TV, and allow authentication.",
+                    "INFO_TWO": "2. Use any web browser to enter the activation code displayed on the TV.",
+                    "INFO_THREE": "3. Use the remote to manually enter your online login."
+                },
+                "AMAZON_DEVICE_SETUP_MODAL": {
+                    "AMAZON_DEVICE_SETUP_MODAL_TITLE": "Play SiriusXM Audio and Video via Amazon",
+                    "AMAZON_DEVICE_SETUP_MODAL_SUBTITLE": "<b> To Enable the SiriusXM Skill with Alexa: </b>",
+                    "INFO_ONE": "1. Select Settings from the Amazon Alexa app menu.",
+                    "INFO_TWO": "2. Enable the SiriusXM Skill from the Music & Audio category.",
+                    "INFO_THREE": "3. Enter your SXM App login.",
+
+                    "AMAZON_FIRE_TV_DEVICE_SETUP_MODAL_SUBTITLE": "<b> To play SiriusXM on your Amazon Fire TV device: </b>",
+                    "AMAZON_FIRE_TV_INFO_ONE": "1. Open the SXM App on a smartphone or tablet connected to the same WiFi network as the device, and allow authentication.",
+                    "AMAZON_FIRE_TV_INFO_TWO": "2. Use any web browser to enter the activation code displayed on the TV.",
+                    "AMAZON_FIRE_TV_INFO_THREE": "3. Use the remote to manually enter your SXM App login."
+                },
+                "GOOGLE_DEVICE_SETUP_MODAL": {
+                    "GOOGLE_DEVICE_SETUP_MODAL_TITLE": "Play SiriusXM Audio and Video via Google",
+                    "GOOGLE_DEVICE_SETUP_MODAL_SUBTITLE": "<b> To Play SiriusXM On Google Nest Devices: </b>",
+                    "INFO_ONE": "1. Make sure your mobile device or tablet is connected to the same Wi-Fi as your Google Nest device.",
+                    "INFO_TWO": "2. Open the Google Home App and tap Settings.",
+                    "INFO_THREE": "3. Under Google Assistant services, tap Radio. Select SiriusXM and link your SiriusXM account. Now ask the Google Assistant to play the SiriusXM channel you want to hear.",
+
+                    "CHROMECAST_DEVICE_SETUP_MODAL_SUBTITLE": "<b> To Play SiriusXM with Chromecast: </b>",
+                    "CHROMECAST_INFO_ONE": "1. Download the SXM App on your smartphone or tablet and enter your streaming credentials.",
+                    "CHROMECAST_INFO_TWO": "2. Tap the cast icon and select your Chromecast device."
+                },
+                "BOSE_DEVICE_SETUP_MODAL": {
+                    "BOSE_DEVICE_SETUP_MODAL_TITLE": "Play SiriusXM Audio and Video via Bose",
+                    "BOSE_DEVICE_SETUP_MODAL_SUBTITLE": "<b> To play SiriusXM on Bose SoundTouch: </b>",
+                    "INFO_ONE": "1.  Download the SoundTouch® app to your smartphone or tablet, and select Add Services.",
+                    "INFO_TWO": "2. Select SiriusXM.",
+                    "INFO_THREE": "3. Enter your SXM App login",
+
+                    "SUB_INFO_ONE": "1. Enable the Bose skill in the Alexa app by entering your SoundTouch login, and follow the directions to discover the speaker.",
+                    "SUB_INFO_TWO": "2. Now search for and enable the SiriusXM skill in the Alexa app.",
+                    "SUB_INFO_THREE": "3. Log in with your SiriusXM username and password.",
+                    "SUB_INFO_FOUR": "4. To start listening, say “Alexa, play [channel name or number] on SiriusXM on [name of Bose SoundTouch speaker]."
+                },
+                "ROKU_DEVICE_SETUP_MODAL": {
+                    "ROKU_PLAYER_DEVICE_SETUP_MODAL_TITLE": "Play SiriusXM Audio and Video via Roku",
+                    "ROKU_PLAYER_DEVICE_SETUP_MODAL_SUBTITLE": "<b> To play SiriusXM on a Roku player: </b>",
+                    "INFO_ONE": "1. Select SiriusXM in the Channel Store on your Roku device.",
+                    "INFO_TWO": "2. Select Add Channel then Go to Channel.",
+                    "INFO_THREE": "3. Enter your SiriusXM login.",
+
+                    "ROKU_TV_DEVICE_SETUP_MODAL_SUBTITLE": "<b> To play SiriusXM on a Roku TV: </b>",
+                    "ROKU_TV_INFO_ONE": "1. Select SiriusXM in the Channel Store on your Roku device.",
+                    "ROKU_TV_INFO_TWO": "2. Select Add Channel then Go to Channel.",
+                    "ROKU_TV_INFO_THREE": "3. Enter your SiriusXM login."
+                },
+                "SAMSUNG_DEVICE_SETUP_MODAL": {
+                    "SAMSUNG_DEVICE_SETUP_MODAL_TITLE": "Play SiriusXM Audio and Video via Samsung",
+                    "SAMSUNG_DEVICE_SETUP_MODAL_SUBTITLE": "<b> To play SiriusXM on your Samsung Smart TV: </b>",
+                    "INFO_ONE": "1. Download the SXM App from the Samsung Apps page.",
+                    "INFO_TWO": "2. Enter your streaming login."
+                },
+                "LG_DEVICE_SETUP_MODAL": {
+                    "LG_DEVICE_SETUP_MODAL_TITLE": "Play SiriusXM Audio and Video via LG",
+                    "LG_DEVICE_SETUP_MODAL_SUBTITLE": "<b> To play SiriusXM on your LG Smart TV: </b>",
+                    "INFO_ONE": "1. Select and open the SiriusXM app from the LG App Store.",
+                    "INFO_TWO": "2. Enter your online login."
+                }
+            }
+        }
+    }
+}

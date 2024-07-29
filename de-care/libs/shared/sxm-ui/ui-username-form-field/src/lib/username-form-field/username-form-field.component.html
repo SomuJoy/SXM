@@ -1,0 +1,20 @@
+<div class="input-container" [class.invalid]="control.invalid && control.touched" [class.filled]="!!control.value" [class.active]="inputIsFocused">
+    <label for="{{ controlId }}">{{ labelText || translateKeyPrefix + "LABEL_TEXT" | translate }}</label>
+    <input
+        type="text"
+        data-test="sxmUIUsernameFormField"
+        data-e2e="sxmUIUsernameFormField"
+        [formControl]="control"
+        id="{{ controlId }}"
+        appTrimFormField
+        (focus)="inputIsFocused = true"
+        (blur)="inputIsFocused = false"
+    />
+</div>
+<div *ngIf="control.invalid && control.touched" class="invalid-feedback">
+    <p *ngIf="control.hasError('required')">{{ translateKeyPrefix + "ERROR_MESSAGE_REQUIRED" | translate }}</p>
+    <p *ngIf="control.hasError('minlength') || control.hasError('usernamePatternRequirement')">
+        {{ translateKeyPrefix + "ERROR_MESSAGE_LENGTH" | translate: control.errors.minlength }}
+    </p>
+    <p *ngIf="control.hasError('usernameInUse')">{{ translateKeyPrefix + "USERNAME_IN_USE_ERROR_MSG" | translate }}</p>
+</div>

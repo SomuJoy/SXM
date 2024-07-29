@@ -1,0 +1,127 @@
+@import "sxm.phoenix.imports";
+
+$footer-vertical-padding: 32px;
+
+:host {
+    padding-bottom: $footer-vertical-padding;
+    &.remove-border {
+        .salesflow-footer {
+            .footer-links {
+                border-top: 0;
+            }
+            .copyright-column {
+                .copyright-content {
+                    border-top: 0;
+                }
+            }
+        }
+    }
+    @media print {
+        display: none;
+    }
+}
+
+.salesflow-footer {
+    line-height: 1.5;
+    @include font-size(12px);
+    a {
+        color: $black;
+        text-decoration: none;
+        &:before {
+            background-color: $black;
+            display: none;
+        }
+        &:hover {
+            &:before {
+                display: block;
+            }
+        }
+
+        img {
+            width: auto;
+            height: 14px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+    }
+
+    .footer-links {
+        border-top: 1px $gray-medium solid;
+        width: 100%;
+        padding-top: $footer-vertical-padding;
+        ul {
+            list-style-type: none;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            > li {
+                position: relative;
+                width: 50%;
+                margin-bottom: 12px;
+                @include bp(medium) {
+                    width: auto;
+                    align-items: flex-end;
+                    padding: 0 8px;
+                }
+                &:nth-child(even) {
+                    padding-left: 12px; //lining up the second column to the grid
+                    @include bp(medium) {
+                        padding-left: 8px;
+                    }
+                }
+                &:first-child {
+                    @include bp(medium) {
+                        padding-left: 0;
+                        &:before {
+                            display: none;
+                        }
+                    }
+                }
+                &:before {
+                    @include bp(medium) {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        width: 1px;
+                        height: 8px;
+                        top: 5px;
+                        left: 0;
+                        background-color: $gray-semi-dark;
+                    }
+                }
+            }
+        }
+        &.single-col-small ul > li {
+            width: 100%;
+            padding-left: 0;
+
+            @include bp(medium) {
+                width: auto;
+                align-items: flex-end;
+                padding: 0 8px;
+
+                &:first-child {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+    .copyright-column {
+        justify-content: flex-start;
+        .copyright-content {
+            width: 100%;
+            padding-top: 12px;
+            @include bp(medium) {
+                border-top: 1px $gray-medium solid;
+                padding-top: $footer-vertical-padding;
+                text-align: right;
+            }
+        }
+    }
+}

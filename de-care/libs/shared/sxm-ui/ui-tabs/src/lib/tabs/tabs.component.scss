@@ -1,0 +1,28 @@
+@import "sxm.phoenix.imports";
+:host {
+    width: 100%;
+}
+.tabs [role="tablist"] {
+    width: 100%;
+    overflow: scroll;
+    button {
+        color: inherit;
+        &::before {
+            bottom: 0;
+        }
+        &:focus.is-active {
+            &::before {
+                bottom: -2px;
+            }
+        }
+    }
+}
+
+:host-context(.dark-theme) {
+    .tabs [role="tablist"] {
+        &::after {
+            background-color: $white;
+        }
+        width: 100%;
+    }
+}

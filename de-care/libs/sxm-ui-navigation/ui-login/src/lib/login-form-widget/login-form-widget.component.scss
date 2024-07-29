@@ -1,0 +1,38 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: block;
+    font-family: $font-standard;
+    color: $black;
+    white-space: normal;
+    p {
+        line-height: 1.57;
+        @include font-size(14px);
+        font-weight: calculate-font-weight("book");
+        @include bp(medium) {
+            margin-bottom: calculate-rem(12px);
+        }
+        &.no-margin {
+            margin: 0;
+        }
+        a {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 2px;
+            padding: 12px 0;
+            color: $blue-secondary;
+            @include bp(medium) {
+                padding: 0;
+            }
+        }
+    }
+}
+
+:host-context(.login-form-theme-dark) {
+    color: #c4c4cd;
+    p {
+        a {
+            color: #54a4f8;
+        }
+    }
+}

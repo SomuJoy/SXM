@@ -1,0 +1,9 @@
+{
+    "LASTNAME_LABEL_TEXT": "Nom",
+    "EMAIL_LABEL_TEXT": "Courriel",
+    "BUTTON_TEXT": "CONTINUER",
+    "TITLE": "Trouvons votre nom d’utilisateur.",
+    "SUB_TITLE": "Saisissez  votre nom de famille et votre adresse courriel pour commencer.",
+    "LASTNAME_REQUIRED_TEXT": "Entrez votre nom.",
+    "EMAIL_REQUIRED_TEXT": "Entrez votre courriel."
+}

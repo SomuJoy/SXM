@@ -1,0 +1,8 @@
+<div class="hover-area" (mouseover)="showDropdown()" (mouseout)="hideDropdown()" (keyup)="keyup($event)">
+    <button [attr.aria-expanded]="open" aria-haspopup="true" (touchend)="toggleDropDown()">
+        <ng-content select="[hover]"></ng-content>
+    </button>
+    <div class="content" [class.active]="open">
+        <ng-content select="[content]"></ng-content>
+    </div>
+</div>

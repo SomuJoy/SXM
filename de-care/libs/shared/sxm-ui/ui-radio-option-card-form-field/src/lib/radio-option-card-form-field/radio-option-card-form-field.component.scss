@@ -1,0 +1,58 @@
+@import "sxm.phoenix.imports";
+.radio {
+    width: 100%;
+    position: relative;
+    height: 38px;
+
+    input {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        z-index: 1;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:checked + label {
+            &::before {
+                border-color: $blue-secondary;
+            }
+            &::after {
+                background-color: $blue-secondary;
+            }
+        }
+    }
+
+    label {
+        padding-left: 30px;
+        position: relative;
+        color: $white;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        line-height: 20px;
+
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            border-radius: 50%;
+            background-color: $white;
+        }
+
+        &::before {
+            height: 20px;
+            width: 20px;
+            border: 2px solid $gray-dark;
+        }
+
+        &::after {
+            left: 4px;
+            height: 12px;
+            width: 12px;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+<sxm-ui-content-card *ngIf="copyContent" [flagPresent]="true" class="deal-addon-card reset-paragraph-last-of-type-margin">
+    <div htmlContentForFlag>
+        <p class="small-copy bold text-uppercase" [innerHTML]="copyContent[0]?.marketingCallout" qatag="OurBestPackage" data-e2e="ourBestPackage"></p>
+    </div>
+    <div htmlContentForBody>
+        <ng-container *ngFor="let deal of copyContent; index as i">
+            <hr *ngIf="i > 0" />
+            <div class="flex flex-wrap flex-row-reverse align-justify align-middle common-body-padding">
+                <div *ngIf="deal.partnerImage as partnerImgUrl" class="partner-image flex align-right">
+                    <img [src]="partnerImgUrl" data-e2e="dealAddonCardPartnerImage" />
+                </div>
+                <div *ngIf="deal.productImage as prodImgUrl" class="product-image flex">
+                    <img [src]="prodImgUrl" data-e2e="dealAddonCardProductImage" />
+                </div>
+                <h5 class="title" [innerHtml]="deal.title" data-e2e="dealAddonCardTitle"></h5>
+            </div>
+            <div class="common-body-padding">
+                <p *ngIf="deal.shownDescription as shownDesc" [innerHTML]="shownDesc"></p>
+            </div>
+            <ng-container *ngIf="deal.description as desc">
+                <sxm-ui-accordion-chevron
+                    *ngIf="i === copyContent.length - 1; else staticDescription"
+                    isInnerAccordion="true"
+                    [showInnerAccordion]="deal.presentation === 'Presentation2' ? false : true"
+                    [expandedText]="deal.toggleExpanded"
+                    [collapsedText]="deal.toggleCollapsed"
+                    [opened]="deal.presentation === 'Presentation2' ? true : false"
+                >
+                    <div [innerHTML]="desc" data-e2e="dealAddonCardDetails"></div>
+                </sxm-ui-accordion-chevron>
+                <ng-template #staticDescription>
+                    <div class="static-description" [innerHTML]="desc"></div>
+                </ng-template>
+            </ng-container>
+        </ng-container>
+    </div>
+</sxm-ui-content-card>

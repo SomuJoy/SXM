@@ -1,0 +1,24 @@
+{
+    "name": "shared-sxm-ui-utility-ui-hover-dropdown",
+    "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/sxm-ui/utility/ui-hover-dropdown/src",
+    "prefix": "sxm-ui",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/shared/sxm-ui/utility/ui-hover-dropdown"],
+            "options": {
+                "jestConfig": "libs/shared/sxm-ui/utility/ui-hover-dropdown/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/sxm-ui/utility/ui-hover-dropdown/src/**/*.ts", "libs/shared/sxm-ui/utility/ui-hover-dropdown/src/**/*.html"]
+            }
+        }
+    },
+    "tags": ["type:ui", "scope:shared-ui"]
+}

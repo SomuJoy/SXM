@@ -1,0 +1,14 @@
+<div class="input-container" [class.invalid]="control.invalid && control.touched">
+    <label data-e2e="sxmUIEmail.label" for="{{ controlId }}">{{
+        !!labelText ? labelText : ("sharedSxmUiUiEmailFormFieldModule.emailFormFieldComponent.EMAIL_LABEL" | translate)
+    }}</label>
+    <input id="{{ controlId }}" type="email" [attr.qatag]="qatagName" [formControl]="control" data-test="sxmUIEmail" data-e2e="sxmUIEmail" onFocus appTrimFormField />
+</div>
+<div *ngIf="control.invalid && control.touched" class="invalid-feedback">
+    <div *ngIf="control.errors.usernameInUse; else otherError">
+        <p>{{ "sharedSxmUiUiEmailFormFieldModule.emailFormFieldComponent.EMAIL_ALREADY_IN_USE" | translate }}</p>
+    </div>
+    <ng-template #otherError>
+        <p>{{ !!errorMsg ? errorMsg : ("sharedSxmUiUiEmailFormFieldModule.emailFormFieldComponent.EMAIL_ERROR" | translate) }}</p>
+    </ng-template>
+</div>

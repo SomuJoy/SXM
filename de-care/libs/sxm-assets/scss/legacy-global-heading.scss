@@ -1,0 +1,14 @@
+// TODO: Are we even using these classes?
+
+@mixin legacy-global-heading {
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6 {
+        display: block;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+}

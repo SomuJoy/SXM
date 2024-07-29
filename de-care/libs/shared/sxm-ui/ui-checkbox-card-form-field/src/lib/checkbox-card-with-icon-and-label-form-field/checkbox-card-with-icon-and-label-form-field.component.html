@@ -1,0 +1,10 @@
+<article>
+    <div class="icon">
+        <ng-content select="[icon]"></ng-content>
+    </div>
+    <label for="{{ controlId }}" class="label">{{ label }}</label>
+    <aside>
+        <input type="checkbox" [formControl]="control" id="{{ controlId }}" name="{{ formControlName }}" data-test="checkboxCardWithIconAndLabelFormField" />
+        <mat-icon svgIcon="checkmark"></mat-icon>
+    </aside>
+</article>

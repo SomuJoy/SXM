@@ -1,0 +1,25 @@
+import { HttpClient } from '@angular/common/http';
+import { Inject, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { MICROSERVICE_API_BASE_URL } from '@de-care/shared/configuration-tokens-microservices';
+import { MicroservicesEndpointService } from '@de-care/shared/de-microservices-common';
+
+const ENDPOINT_URL = '/';
+
+interface RequestModel {}
+interface ResponseModel {}
+type ActionErrorCodes = 'SYSTEM';
+type FieldErrorCodes = '';
+
+@Injectable({ providedIn: 'root' })
+export class <%= classify(name) %>Service extends MicroservicesEndpointService {
+    constructor(@Inject(MICROSERVICE_API_BASE_URL) apiUrl: string, http: HttpClient) {
+        super(apiUrl, http);
+    }
+    <% if (methodName) { %>
+
+    <%= methodName %>(payload: RequestModel): Observable<ResponseModel> {
+        return this._post<RequestModel, ResponseModel, ActionErrorCodes, FieldErrorCodes>(`${this._apiUrl}${ENDPOINT_URL}`, payload, { withCredentials: true });
+    }
+    <% } %>
+}

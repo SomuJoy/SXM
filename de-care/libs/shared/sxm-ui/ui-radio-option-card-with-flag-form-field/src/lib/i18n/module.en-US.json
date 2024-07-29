@@ -1,0 +1,21 @@
+{
+    "sharedSxmUiUiRadioOptionCardWithFlagFormField": {
+        "radioOptionCardWithFlagFormField": {
+            "RADIO": "Radio ID: {{radioId}}",
+            "USERNAME": "Username: {{username}}",
+            "RENEWS": "Renews:",
+            "DEACTIVATED": "Deactivated:",
+            "PLURAL_MONTH_MAP": {
+                "=1": "Monthly Plan",
+                "=3": "Quarterly Plan",
+                "=6": "Semi-Annual Plan",
+                "=12": "Annual Plan",
+                "=24": "2-Year Plan",
+                "=36": "3-Year Plan",
+                "other": "#-Month Plan"
+            },
+            "NOT_VEHICLE_OWNER": "I no longer own this vehicle.",
+            "REMOVE_FROM_ACCOUNT": "Remove from account. (optional)"
+        }
+    }
+}

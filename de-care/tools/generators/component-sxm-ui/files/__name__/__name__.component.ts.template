@@ -1,0 +1,13 @@
+import { CommonModule } from '@angular/common';
+import { Component, NgModule, ChangeDetectionStrategy } from '@angular/core';
+
+@Component({
+    selector: 'sxm-ui-<%= dasherize(name) %>',
+    templateUrl: './<%= dasherize(name) %>.component.html',
+    styleUrls: ['./<%= dasherize(name) %>.component.scss'],
+    standalone: true,
+    imports: [],
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class SxmUi<%= classify(name) %>Component {
+}

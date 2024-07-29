@@ -1,0 +1,11 @@
+<table *ngIf="lineItem">
+    <tr class="large-copy bold">
+        <td>
+            <span>{{ lineItem.label }}</span>
+            <sxm-ui-tooltip *ngIf="lineItem.tooltip" class="tooltip-component tooltip-display-top-medium-up tooltip-display-right-large-up transparent">
+                <span>{{ lineItem.tooltip }}</span>
+            </sxm-ui-tooltip>
+        </td>
+        <td>{{ lineItem.amount }}</td>
+    </tr>
+</table>

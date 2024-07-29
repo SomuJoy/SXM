@@ -1,0 +1,88 @@
+@import "libs/sxm-assets/scss/animations.scss";
+
+$immediateAnimationDuration: 0.1s;
+$initialDelay: 3s;
+$loadingTime: 0.8s;
+
+ol {
+    font-size: 18px;
+    margin: 32px 0;
+
+    li {
+        margin-bottom: 32px;
+    }
+}
+
+.task-details-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .task-status-icon {
+        margin-left: 24px;
+        min-width: 30px;
+        height: 25px;
+        position: relative;
+
+        .icon.icon-utility,
+        .loading-indicator {
+            position: absolute;
+        }
+    }
+}
+
+:host-context(.animated) {
+    li {
+        .icon.icon-utility {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &:first-of-type {
+            .loading-indicator {
+                opacity: 1;
+                visibility: visible;
+
+                animation-name: hideElement;
+                animation-duration: $immediateAnimationDuration;
+                animation-fill-mode: both;
+                animation-delay: $initialDelay + $loadingTime;
+            }
+
+            .icon.icon-utility {
+                animation-name: showElement;
+                animation-duration: $immediateAnimationDuration;
+                animation-fill-mode: both;
+                animation-delay: $initialDelay + $loadingTime;
+            }
+        }
+
+        &:nth-of-type(2) {
+            opacity: 0.5;
+            visibility: visible;
+
+            animation-name: showElement;
+            animation-duration: $loadingTime;
+            animation-fill-mode: both;
+            animation-delay: $initialDelay + $loadingTime * 2;
+
+            .loading-indicator {
+                opacity: 0;
+                visibility: hidden;
+
+                animation-name: showThenHideElement;
+                animation-duration: $loadingTime * 4;
+                animation-fill-mode: both;
+                animation-delay: $initialDelay;
+                animation-timing-function: step-end;
+            }
+
+            .icon.icon-utility {
+                animation-name: showElement;
+                animation-duration: $immediateAnimationDuration;
+                animation-fill-mode: both;
+                animation-delay: $initialDelay + $loadingTime * 4;
+            }
+        }
+    }
+}

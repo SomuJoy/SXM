@@ -1,0 +1,11 @@
+<section>
+    <h5 class="header">{{ translateKeyPrefix + ".WELCOME" | translate }}</h5>
+    <div class="hr-container"><hr /></div>
+    <p class="no-account-label" [innerHTML]="translateKeyPrefix + '.SIGN_IN' | translate: { dotComBaseUrl: baseUrls.dotComUrl }" data-test="accountWithLoginLink"></p>
+    <p class="no-account-label" [innerHTML]="translateKeyPrefix + '.NO_ACCOUNT' | translate: { careBaseUrl: baseUrls.careUrl }" data-test="registerNewAccount"></p>
+</section>
+
+<footer class="cta-container">
+    <p class="app-cta-header">{{ translateKeyPrefix + ".APPS_LOGO_HEADER" | translate }}</p>
+    <sxm-ui-mobile-app-cta [showIOS]="platform === 'desktop' || platform === 'ios'" [showAndroid]="platform === 'desktop' || platform === 'android'"></sxm-ui-mobile-app-cta>
+</footer>

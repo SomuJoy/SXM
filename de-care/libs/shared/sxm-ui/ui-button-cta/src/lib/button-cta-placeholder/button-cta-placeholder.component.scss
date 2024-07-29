@@ -1,0 +1,16 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: grid;
+    background-color: $gray-medium;
+    height: 56px;
+    grid-template-areas:
+        ". . ."
+        ". text ."
+        ". . .";
+    div {
+        background-color: $gray-light;
+        grid-area: text;
+        border-radius: 2px;
+    }
+}

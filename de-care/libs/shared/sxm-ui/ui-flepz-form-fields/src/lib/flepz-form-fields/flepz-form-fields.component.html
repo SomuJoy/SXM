@@ -1,0 +1,136 @@
+<div [formGroup]="flepzForm">
+    <div class="row no-padding">
+        <div class="column small-12 no-padding">
+            <div class="input-container" [class.invalid]="frmControls.firstName | formControlInvalid: submitted" [class.filled]="frmControls.firstName.value">
+                <label for="{{ firstNameId }}">{{ "sharedSxmUiUiFlepzFormFieldsModule.flepzFormFieldsComponent.FIRST_NAME" | translate }}</label>
+                <input
+                    type="text"
+                    appTrimFormField
+                    formControlName="firstName"
+                    id="{{ firstNameId }}"
+                    data-test="FlepzFirstNameTextfield"
+                    data-e2e="FlepzFirstNameTextfield"
+                    qatag="FlepzFirstNameTextfield"
+                    maxlength="50"
+                    onFocus
+                    autocomplete="given-name"
+                />
+            </div>
+            <div *ngIf="frmControls.firstName | formControlInvalid: submitted" class="invalid-feedback">
+                <ng-container *ngIf="frmControls.firstName.hasError('cvvExclusion'); else firstNameError">
+                    <p>{{ "sharedSxmUiUiFlepzFormFieldsModule.flepzFormFieldsComponent.ERROR.CVV_EXCLUDE" | translate }}</p>
+                </ng-container>
+                <ng-template #firstNameError>
+                    <p>{{ "sharedSxmUiUiFlepzFormFieldsModule.flepzFormFieldsComponent.ERROR.FIRST_NAME" | translate }}</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+    <div class="row no-padding">
+        <div class="column small-12 no-padding">
+            <div class="input-container" [class.invalid]="frmControls.lastName | formControlInvalid: submitted" [class.filled]="frmControls.lastName.value">
+                <label for="{{ lastNameId }}">{{ "sharedSxmUiUiFlepzFormFieldsModule.flepzFormFieldsComponent.LAST_NAME" | translate }}</label>
+                <input
+                    type="text"
+                    appTrimFormField
+                    formControlName="lastName"
+                    id="{{ lastNameId }}"
+                    data-test="FlepzLastNameTextfield"
+                    data-e2e="FlepzLastNameTextfield"
+                    qatag="FlepzLastNameTextfield"
+                    maxlength="50"
+                    onFocus
+                    autocomplete="family-name"
+                />
+            </div>
+            <div *ngIf="frmControls.lastName | formControlInvalid: submitted" class="invalid-feedback">
+                <ng-container *ngIf="frmControls.lastName.hasError('cvvExclusion'); else lastNameError">
+                    <p>{{ "sharedSxmUiUiFlepzFormFieldsModule.flepzFormFieldsComponent.ERROR.CVV_EXCLUDE" | translate }}</p>
+                </ng-container>
+                <ng-template #lastNameError>
+                    <p>{{ "sharedSxmUiUiFlepzFormFieldsModule.flepzFormFieldsComponent.ERROR.LAST_NAME" | translate }}</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+    <div class="row no-padding">
+        <div class="column small-12 no-padding" *ngIf="includeEmail">
+            <div class="input-container" [class.invalid]="frmControls.email | formControlInvalid: submitted" [class.filled]="frmControls.email.value">
+                <label for="{{ emailId }}">{{ "sharedSxmUiUiFlepzFormFieldsModule.flepzFormFieldsComponent.EMAIL" | translate }}</label>
+                <input
+                    type="email"
+                    appTrimFormField
+                    formControlName="email"
+                    id="{{ emailId }}"
+                    data-test="FlepzEmailTextfield"
+                    data-e2e="FlepzEmailTextfield"
+                    qatag="FlepzEmailTextfield"
+                    onFocus
+                    maxlength="250"
+                    autocomplete="email"
+                />
+            </div>
+            <div *ngIf="frmControls.email | formControlInvalid: submitted" class="invalid-feedback">
+                <ng-container *ngIf="frmControls.email.hasError('cvvExclusion'); else userNameError">
+                    <p>{{ "sharedSxmUiUiFlepzFormFieldsModule.flepzFormFieldsComponent.ERROR.CVV_EXCLUDE" | translate }}</p>
+                </ng-container>
+                <ng-template #userNameError>
+                    <ng-container *ngIf="frmControls.email.hasError('usernameInUse'); else emailError">
+                        <p>{{ "sharedSxmUiUiFlepzFormFieldsModule.flepzFormFieldsComponent.ERROR.USERNAME" | translate }}</p>
+                    </ng-container>
+                </ng-template>
+                <ng-template #emailError>
+                    <p>{{ "sharedSxmUiUiFlepzFormFieldsModule.flepzFormFieldsComponent.ERROR.EMAIL" | translate }}</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+    <div class="row no-padding">
+        <div class="column align-left align-top no-padding" [class.medium-6]="includeZip" [class.small-7]="includeZip" [class.small-12]="!includeZip">
+            <div class="input-container" [class.invalid]="frmControls.phoneNumber | formControlInvalid: submitted" [class.filled]="frmControls.phoneNumber.value">
+                <label for="{{ phoneId }}">{{ "sharedSxmUiUiFlepzFormFieldsModule.flepzFormFieldsComponent.PHONE_NUMBER" | translate }}</label>
+                <input
+                    type="tel"
+                    appMaskPhoneNumber
+                    maxlength="14"
+                    formControlName="phoneNumber"
+                    id="{{ phoneId }}"
+                    data-test="FlepzPhoneNumberTextfield"
+                    data-e2e="FlepzPhoneNumberTextfield"
+                    qatag="FlepzPhoneNumberTextfield"
+                    onFocus
+                    autocomplete="tel-national"
+                />
+            </div>
+            <div *ngIf="frmControls.phoneNumber | formControlInvalid: submitted" class="invalid-feedback">
+                <p>{{ "sharedSxmUiUiFlepzFormFieldsModule.flepzFormFieldsComponent.ERROR.PHONE_NUMBER" | translate }}</p>
+            </div>
+        </div>
+        <div *ngIf="includeZip" class="column small-5 medium-6 align-right align-top no-padding">
+            <div class="input-container" [class.invalid]="frmControls.zipCode | formControlInvalid: submitted" [class.filled]="frmControls.zipCode.value">
+                <label for="{{ zipId }}">{{ "sharedSxmUiUiFlepzFormFieldsModule.flepzFormFieldsComponent.ZIP_CODE" | translate }}</label>
+                <input
+                    type="text"
+                    id="{{ zipId }}"
+                    data-test="FlepzZipCodeTextfield"
+                    data-e2e="FlepzZipCodeTextfield"
+                    qatag="FlepzZipCodeTextfield"
+                    appMaskZipCode
+                    [zipMaskIsCanada]="isCanada"
+                    formControlName="zipCode"
+                    inputmode="number"
+                    onFocus
+                    autocomplete="postal-code"
+                />
+            </div>
+            <div *ngIf="frmControls.zipCode | formControlInvalid: submitted" class="invalid-feedback">
+                <ng-container *ngIf="frmControls.zipCode.hasError('cvvExclusion'); else zipCodeError">
+                    <p>{{ "sharedSxmUiUiFlepzFormFieldsModule.flepzFormFieldsComponent.ERROR.CVV_EXCLUDE" | translate }}</p>
+                </ng-container>
+                <ng-template #zipCodeError>
+                    <p>{{ "sharedSxmUiUiFlepzFormFieldsModule.flepzFormFieldsComponent.ERROR.ZIP_CODE" | translate }}</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+@import "sxm.phoenix.imports";
+:host {
+    --dropdown-margin-top: 0; //space between dropdown content and hover button, can be overwritten by parent css targeting sxm-ui-hover-dropdown
+    --content-left: auto;
+    --content-width: auto;
+}
+.hover-area {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    width: max-content;
+    button {
+        border: 0;
+    }
+    .content {
+        position: absolute;
+        display: none;
+        padding-top: var(--dropdown-margin-top);
+        left: var(--content-left);
+        width: var(--content-width);
+        &.active {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+<div class="component--tool-tip" #tooltip>
+    <button
+        type="button"
+        class="component--tool-tip-button"
+        [attr.aria-describedby]="tooltipAriaDescribedById"
+        [attr.aria-label]="ariaLabel ? ariaLabel : (translateKeyPrefix + '.TOOLTIP_ARIA_LABEL' | translate)"
+        [class.active]="opened"
+        data-tool-tip-trigger
+        tabindex="0"
+        (click)="toggle()"
+        (keydown.escape)="close()"
+    >
+        <mat-icon svgIcon="tool-tip" [class.active]="opened"></mat-icon>
+    </button>
+    <div role="tooltip" [attr.id]="tooltipAriaDescribedById" #tooltipContent class="component--tool-tip-content" [class.active]="opened" [attr.aria-hidden]="!opened">
+        <div class="tool-tip-content-container">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>

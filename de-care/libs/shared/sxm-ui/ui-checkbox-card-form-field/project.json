@@ -1,0 +1,24 @@
+{
+    "name": "shared-sxm-ui-ui-checkbox-card-form-field",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/sxm-ui/ui-checkbox-card-form-field/src",
+    "prefix": "sxm-ui",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/shared/sxm-ui/ui-checkbox-card-form-field"],
+            "options": {
+                "jestConfig": "libs/shared/sxm-ui/ui-checkbox-card-form-field/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/sxm-ui/ui-checkbox-card-form-field/src/**/*.ts", "libs/shared/sxm-ui/ui-checkbox-card-form-field/src/**/*.html"]
+            }
+        }
+    },
+    "tags": ["type:ui", "scope:shared-ui"]
+}

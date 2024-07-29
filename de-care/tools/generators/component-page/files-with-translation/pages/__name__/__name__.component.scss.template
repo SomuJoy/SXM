@@ -1,0 +1,5 @@
+@import "sxm.phoenix.imports";
+
+:host {
+  #mainContent {}
+}

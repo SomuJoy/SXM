@@ -1,0 +1,28 @@
+{
+    "name": "shared-sxm-ui-ui-radio-option-with-tooltip-form-field-set",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/sxm-ui/ui-radio-option-with-tooltip-form-field-set/src",
+    "prefix": "sxm-ui",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/shared/sxm-ui/ui-radio-option-with-tooltip-form-field-set"],
+            "options": {
+                "jestConfig": "libs/shared/sxm-ui/ui-radio-option-with-tooltip-form-field-set/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/shared/sxm-ui/ui-radio-option-with-tooltip-form-field-set/src/**/*.ts",
+                    "libs/shared/sxm-ui/ui-radio-option-with-tooltip-form-field-set/src/**/*.html"
+                ]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:ui", "scope:shared-ui"]
+}

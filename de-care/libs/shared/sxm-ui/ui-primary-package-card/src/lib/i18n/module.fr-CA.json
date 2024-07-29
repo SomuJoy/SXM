@@ -1,0 +1,29 @@
+{
+    "SharedSxmUiUiPrimaryPackageCardModule": {
+        "SxmUiPrimaryPackageCardComponent": {
+            "PACKAGE_INCLUDES_TITLE": "{{packageName}} comprend :",
+            "VIEW_DETAILS_COLLAPSED": "Découvrez les détails du forfait",
+            "VIEW_DETAILS_EXPANDED": "Masquer",
+            "ARIA_VIEW_DETAILS_COLLAPSED": "Découvrez les détails du forfait - {{packageName}}",
+            "ARIA_VIEW_DETAILS_EXPANDED": "Masquer les détails du forfait - {{packageName}}"
+        },
+        "SxmUiPlanRecapCardComponent": {
+            "MRD_DISCOUNT_PRICE": "{{pricePerMonth}}/mois, plus frais avec rabais Multi-Radio.",
+            "MRD_DISCOUNT_PRICE_QUEBEC": "{{pricePerMonth}}/mois avec rabais Multi-Radio.",
+            "MRD_REGULAR_PRICE": "Rég. {{msrpPrice}}/mois.",
+            "TERM_AND_PRICE": "{{termLength}} {{monthString}} pour {{pricePerMonth}}{{dealRecapCardSuffix}}.",
+            "TERM_AND_PRICE_PLUS_FEES": "{{termLength}} {{monthString}} pour {{pricePerMonth}}{{dealRecapCardSuffix}} plus frais.",
+            "TERM_AND_PRICE_FREE": "{{termLength}} {{monthString}} Gratuits{{dealRecapCardSuffix}}.",
+            "FOLLOW_ON_PRICE": "Ensuite {{retailPricePerMonth}}/mois,",
+            "FOLLOW_ON_PRICE_QUEBEC": "Ensuite {{retailPricePerMonth}}/mois.",
+            "TERM_AND_PRICE_FOR_ONE": "{{pricePerMonth}}/mois,{{dealRecapCardSuffix}}",
+            "PLUS_FEE": "plus frais.",
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "mois",
+                    "other": "mois"
+                }
+            }
+        }
+    }
+}

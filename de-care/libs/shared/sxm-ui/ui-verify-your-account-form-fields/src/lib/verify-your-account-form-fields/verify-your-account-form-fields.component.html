@@ -1,0 +1,65 @@
+<br />
+<h4>{{ translateKeyPrefix + ".TITLE" | translate }}</h4>
+<br />
+<p>{{ translateKeyPrefix + ".SUB_TITLE" | translate }}</p>
+<br />
+<hr />
+<form [formGroup]="form">
+    <div *ngIf="isBusinessError$ | async" class="invalid-feedback">
+        <p>{{ translateKeyPrefix + ".BUSINESS_ERROR" | translate }}</p>
+    </div>
+    <div *ngIf="isSystemError$ | async" class="invalid-feedback">
+        <p>{{ translateKeyPrefix + ".SYSTEM_ERROR" | translate }}</p>
+    </div>
+    <sxm-ui-radio-option-form-field
+        formControlName="verifyType"
+        value="text"
+        [label]="
+            translateKeyPrefix + '.TEXT_OPTION_LABEL'
+                | translate
+                    : {
+                          maskedPhone: maskedPhone
+                      }
+        "
+        (change)="onSelect()"
+        *ngIf="canUsePhone"
+    ></sxm-ui-radio-option-form-field>
+
+    <div class="additional-data" *ngIf="showTextVerify">
+        <sxm-ui-phone-number-form-field
+            formControlName="text"
+            labelText="{{ translateKeyPrefix + '.CONFIRM_PHONE_NUMBER_PLACEHOLDER' | translate }}"
+        ></sxm-ui-phone-number-form-field>
+        <div *ngIf="isPhoneNumberNotMatchedError$ | async" class="invalid-feedback">
+            <p>{{ translateKeyPrefix + ".ERROR_MESSAGE_PHONE_DOES_NOT_MATCH" | translate }}</p>
+        </div>
+        <sxm-ui-checkbox-with-label-form-field formControlName="agreeToTextMessage">
+            <p>
+                <span [innerHTML]="translateKeyPrefix + '.AGREE_TO_TEXT_MESSAGE_LABEL' | translate"></span>
+            </p>
+            <div *ngIf="submitted && form.get('agreeToTextMessage').errors" class="invalid-feedback">
+                <p>{{ translateKeyPrefix + ".ERROR_MESSAGE_AGREE_TO_TEXT_MESSAGE" | translate }}</p>
+            </div>
+        </sxm-ui-checkbox-with-label-form-field>
+    </div>
+
+    <sxm-ui-radio-option-form-field
+        formControlName="verifyType"
+        value="email"
+        [label]="
+            translateKeyPrefix + '.EMAIL_OPTION_LABEL'
+                | translate
+                    : {
+                          maskedEmail: maskedEmail
+                      }
+        "
+        (change)="onSelect()"
+        *ngIf="canUseEmail"
+    ></sxm-ui-radio-option-form-field>
+    <div class="additional-data" *ngIf="canUseEmail && !showTextVerify">
+        <ng-content select="[privacyPolicy]" privacyPolicy></ng-content>
+    </div>
+    <button data-link-name="CONTINUE" type="button" sxm-proceed-button sxmUiDataClickTrack="submit" (click)="onVerifyAccountClick()" [loading]="processingSubmission$ | async">
+        {{ translateKeyPrefix + ".BUTTON_TEXT" | translate }}
+    </button>
+</form>

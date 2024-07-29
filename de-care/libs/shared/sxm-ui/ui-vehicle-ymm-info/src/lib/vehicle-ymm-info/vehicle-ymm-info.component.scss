@@ -1,0 +1,17 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.vehicle-info-section {
+    width: 100%;
+    min-height: 30px;
+    margin-bottom: 10px;
+    .ymm {
+        margin-bottom: 10px;
+    }
+}
+
+hr {
+    @include hr($gray-light);
+    width: 100%;
+    margin: 8px 0 0;
+}

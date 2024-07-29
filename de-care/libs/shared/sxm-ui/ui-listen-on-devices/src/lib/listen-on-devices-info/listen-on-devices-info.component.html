@@ -1,0 +1,109 @@
+<section>
+    <h5>{{ translateKeyPrefix + "HEADLINE" | translate }}</h5>
+    <p class="text-color-gray-dark listen-now-component-subhead">{{ translateKeyPrefix + "SUB_HEADLINE" | translate }}</p>
+</section>
+<ng-container *ngrxLet="allDevicesVisible$ as allDevicesVisible">
+    <section id="listenOnDeviceCards">
+        <ng-container *ngFor="let device of translateKeyPrefix + 'DEVICES' | translate; let i = index">
+            <figure [class.not-visible]="i > 2 && !allDevicesVisible" (click)="openDeviceModal(device.key)">
+                <img [src]="device.imageUrl" [attr.alt]="device.name" />
+                <figcaption class="flex flex-wrap align-justify">
+                    <strong>{{ device.name }}</strong>
+                </figcaption>
+            </figure>
+        </ng-container>
+    </section>
+    <button *ngIf="!allDevicesVisible" (click)="allDevicesVisible$.next(true)">
+        <strong>{{ translateKeyPrefix + "SHOW_ALL_DEVICES_BUTTON_TEXT" | translate }}</strong>
+        <svg class="icon icon-utility small">
+            <use class="icon-dropdown-sm" xlink:href="#icon-dropdown-sm"></use>
+        </svg>
+    </button>
+</ng-container>
+
+<!------------AppleTVDeviceSetupModal----------->
+<sxm-ui-modal #AppleTVDeviceSetup [title]="translateKeyPrefix + 'MODAL.DEVICE_SETUP_MODAL_HEADER_TEXT' | translate" [titlePresent]="true">
+    <h5>{{ translateKeyPrefix + "MODAL.APPLE_DEVICE_SETUP_MODAL.APPLE_DEVICE_SETUP_MODAL_TITLE" | translate }}</h5>
+    <div [innerHTML]="translateKeyPrefix + 'MODAL.APPLE_DEVICE_SETUP_MODAL.APPLE_DEVICE_SETUP_MODAL_SUBTITLE' | translate"></div>
+    <br />
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.APPLE_DEVICE_SETUP_MODAL.INFO_ONE' | translate"></p>
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.APPLE_DEVICE_SETUP_MODAL.INFO_TWO' | translate"></p>
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.APPLE_DEVICE_SETUP_MODAL.INFO_THREE' | translate"></p>
+</sxm-ui-modal>
+
+<!------------LGDeviceSetupModal----------->
+<sxm-ui-modal #LGDeviceSetup [title]="translateKeyPrefix + 'MODAL.DEVICE_SETUP_MODAL_HEADER_TEXT' | translate" [titlePresent]="true">
+    <h5>{{ translateKeyPrefix + "MODAL.LG_DEVICE_SETUP_MODAL.LG_DEVICE_SETUP_MODAL_TITLE" | translate }}</h5>
+    <div [innerHTML]="translateKeyPrefix + 'MODAL.LG_DEVICE_SETUP_MODAL.LG_DEVICE_SETUP_MODAL_SUBTITLE' | translate"></div>
+    <br />
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.LG_DEVICE_SETUP_MODAL.INFO_ONE' | translate"></p>
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.LG_DEVICE_SETUP_MODAL.INFO_TWO' | translate"></p>
+</sxm-ui-modal>
+
+<!-----------AmazonDeviceSetupModal----------->
+<sxm-ui-modal #AmazonDeviceSetup [title]="translateKeyPrefix + 'MODAL.DEVICE_SETUP_MODAL_HEADER_TEXT' | translate" [titlePresent]="true">
+    <h5>{{ translateKeyPrefix + "MODAL.AMAZON_DEVICE_SETUP_MODAL.AMAZON_DEVICE_SETUP_MODAL_TITLE" | translate }}</h5>
+    <div [innerHTML]="translateKeyPrefix + 'MODAL.AMAZON_DEVICE_SETUP_MODAL.AMAZON_DEVICE_SETUP_MODAL_SUBTITLE' | translate"></div>
+    <br />
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.AMAZON_DEVICE_SETUP_MODAL.INFO_ONE' | translate"></p>
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.AMAZON_DEVICE_SETUP_MODAL.INFO_TWO' | translate"></p>
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.AMAZON_DEVICE_SETUP_MODAL.INFO_THREE' | translate"></p>
+    <div [innerHTML]="translateKeyPrefix + 'MODAL.AMAZON_DEVICE_SETUP_MODAL.AMAZON_FIRE_TV_DEVICE_SETUP_MODAL_SUBTITLE' | translate"></div>
+    <br />
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.AMAZON_DEVICE_SETUP_MODAL.AMAZON_FIRE_TV_INFO_ONE' | translate"></p>
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.AMAZON_DEVICE_SETUP_MODAL.AMAZON_FIRE_TV_INFO_TWO' | translate"></p>
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.AMAZON_DEVICE_SETUP_MODAL.AMAZON_FIRE_TV_INFO_THREE' | translate"></p>
+</sxm-ui-modal>
+
+<!------------GoogleDeviceSetupModal----------->
+<sxm-ui-modal #GoogleDeviceSetup [title]="translateKeyPrefix + 'MODAL.DEVICE_SETUP_MODAL_HEADER_TEXT' | translate" [titlePresent]="true">
+    <h5>{{ translateKeyPrefix + "MODAL.GOOGLE_DEVICE_SETUP_MODAL.GOOGLE_DEVICE_SETUP_MODAL_TITLE" | translate }}</h5>
+    <div [innerHTML]="translateKeyPrefix + 'MODAL.GOOGLE_DEVICE_SETUP_MODAL.GOOGLE_DEVICE_SETUP_MODAL_SUBTITLE' | translate"></div>
+    <br />
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.GOOGLE_DEVICE_SETUP_MODAL.INFO_ONE' | translate"></p>
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.GOOGLE_DEVICE_SETUP_MODAL.INFO_TWO' | translate"></p>
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.GOOGLE_DEVICE_SETUP_MODAL.INFO_THREE' | translate"></p>
+    <div [innerHTML]="translateKeyPrefix + 'MODAL.GOOGLE_DEVICE_SETUP_MODAL.CHROMECAST_DEVICE_SETUP_MODAL_SUBTITLE' | translate"></div>
+    <br />
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.GOOGLE_DEVICE_SETUP_MODAL.CHROMECAST_INFO_ONE' | translate"></p>
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.GOOGLE_DEVICE_SETUP_MODAL.CHROMECAST_INFO_TWO' | translate"></p>
+</sxm-ui-modal>
+
+<!------------BoseDeviceSetupModal----------->
+<sxm-ui-modal #BoseDeviceSetup [title]="translateKeyPrefix + 'MODAL.DEVICE_SETUP_MODAL_HEADER_TEXT' | translate" [titlePresent]="true">
+    <h5>{{ translateKeyPrefix + "MODAL.BOSE_DEVICE_SETUP_MODAL.BOSE_DEVICE_SETUP_MODAL_TITLE" | translate }}</h5>
+    <div [innerHTML]="translateKeyPrefix + 'MODAL.BOSE_DEVICE_SETUP_MODAL.BOSE_DEVICE_SETUP_MODAL_SUBTITLE' | translate"></div>
+    <br />
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.BOSE_DEVICE_SETUP_MODAL.INFO_ONE' | translate"></p>
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.BOSE_DEVICE_SETUP_MODAL.INFO_TWO' | translate"></p>
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.BOSE_DEVICE_SETUP_MODAL.INFO_THREE' | translate"></p>
+    <br />
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.BOSE_DEVICE_SETUP_MODAL.SUB_INFO_ONE' | translate"></p>
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.BOSE_DEVICE_SETUP_MODAL.SUB_INFO_TWO' | translate"></p>
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.BOSE_DEVICE_SETUP_MODAL.SUB_INFO_THREE' | translate"></p>
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.BOSE_DEVICE_SETUP_MODAL.SUB_INFO_FOUR' | translate"></p>
+</sxm-ui-modal>
+
+<!------------RokuDeviceSetupModal----------->
+<sxm-ui-modal #RokuDeviceSetup [title]="translateKeyPrefix + 'MODAL.DEVICE_SETUP_MODAL_HEADER_TEXT' | translate" [titlePresent]="true">
+    <h5>{{ translateKeyPrefix + "MODAL.ROKU_DEVICE_SETUP_MODAL.ROKU_PLAYER_DEVICE_SETUP_MODAL_TITLE" | translate }}</h5>
+    <div [innerHTML]="translateKeyPrefix + 'MODAL.ROKU_DEVICE_SETUP_MODAL.ROKU_PLAYER_DEVICE_SETUP_MODAL_SUBTITLE' | translate"></div>
+    <br />
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.ROKU_DEVICE_SETUP_MODAL.INFO_ONE' | translate"></p>
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.ROKU_DEVICE_SETUP_MODAL.INFO_TWO' | translate"></p>
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.ROKU_DEVICE_SETUP_MODAL.INFO_THREE' | translate"></p>
+    <div [innerHTML]="translateKeyPrefix + 'MODAL.ROKU_DEVICE_SETUP_MODAL.ROKU_TV_DEVICE_SETUP_MODAL_SUBTITLE' | translate"></div>
+    <br />
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.ROKU_DEVICE_SETUP_MODAL.ROKU_TV_INFO_ONE' | translate"></p>
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.ROKU_DEVICE_SETUP_MODAL.ROKU_TV_INFO_TWO' | translate"></p>
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.ROKU_DEVICE_SETUP_MODAL.ROKU_TV_INFO_THREE' | translate"></p>
+</sxm-ui-modal>
+
+<!------------SamsungDeviceSetupModal----------->
+<sxm-ui-modal #SamsungDeviceSetup [title]="translateKeyPrefix + 'MODAL.DEVICE_SETUP_MODAL_HEADER_TEXT' | translate" [titlePresent]="true">
+    <h5>{{ translateKeyPrefix + "MODAL.SAMSUNG_DEVICE_SETUP_MODAL.SAMSUNG_DEVICE_SETUP_MODAL_TITLE" | translate }}</h5>
+    <div [innerHTML]="translateKeyPrefix + 'MODAL.SAMSUNG_DEVICE_SETUP_MODAL.SAMSUNG_DEVICE_SETUP_MODAL_SUBTITLE' | translate"></div>
+    <br />
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.SAMSUNG_DEVICE_SETUP_MODAL.INFO_ONE' | translate"></p>
+    <p [innerHTML]="translateKeyPrefix + 'MODAL.SAMSUNG_DEVICE_SETUP_MODAL.INFO_TWO' | translate"></p>
+</sxm-ui-modal>

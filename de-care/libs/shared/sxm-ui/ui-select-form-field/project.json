@@ -1,0 +1,31 @@
+{
+    "name": "shared-sxm-ui-ui-select-form-field",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/sxm-ui/ui-select-form-field/src",
+    "prefix": "sxm-ui",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+            "options": {
+                "jestConfig": "libs/shared/sxm-ui/ui-select-form-field/jest.config.ts",
+                "passWithNoTests": true
+            },
+            "configurations": {
+                "ci": {
+                    "ci": true,
+                    "codeCoverage": true
+                }
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["libs/shared/sxm-ui/ui-select-form-field/**/*.ts", "libs/shared/sxm-ui/ui-select-form-field/**/*.html"]
+            }
+        }
+    },
+    "tags": ["type:ui", "scope:shared-ui"]
+}

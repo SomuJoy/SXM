@@ -1,0 +1,27 @@
+<div class="tabs" *ngIf="tabInfos.length > 0 && !hideNav">
+    <div role="tablist" [attr.aria-label]="ariaLabel" tabIndex="0" (keydown)="onKeydown($event)" (focus)="onTablistFocus()">
+        <button
+            *ngFor="let tabInfo of tabInfos; let i = index"
+            role="tab"
+            class="tabs-title"
+            [class.is-active]="tabInfo.isSelected"
+            (click)="selectTab(tabInfo)"
+            (focus)="onTabFocus(tabInfo)"
+            [attr.aria-selected]="tabInfo.isSelected"
+            [attr.aria-controls]="tabInfo.id + '-panel'"
+            [id]="tabInfo.id"
+            [attr.qatag]="tabInfo.qaTag"
+            [attr.data-e2e]="tabInfo.qaTag"
+            [attr.data-test]="tabInfo.qaTag"
+            [attr.data-track-click]="tabInfo.id"
+            [attr.focus-index]="i"
+            tabIndex="-1"
+            #tabButton
+        >
+            {{ tabInfo.title }}
+        </button>
+    </div>
+</div>
+<div data-e2e="tabsContent" class="tabs-content" [class.nav-hidden]="hideNav">
+    <ng-content></ng-content>
+</div>

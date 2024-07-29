@@ -1,0 +1,13 @@
+{
+    "TITLE": "Vérifiez votre compte",
+    "SUB_TITLE": "Nous devons vérifier que vous êtes le propriétaire de ce compte. Comment voulez-vous vérifier.",
+    "EMAIL_OPTION_LABEL": "Envoyez-moi un courriel: {{maskedEmail}}",
+    "TEXT_OPTION_LABEL": "Envoyez-moi un message texte au: {{maskedPhone}}",
+    "BUTTON_TEXT": "CONTINUER",
+    "CONFIRM_PHONE_NUMBER_PLACEHOLDER": "Vérifiez votre numéro de téléphone",
+    "AGREE_TO_TEXT_MESSAGE_LABEL": "J'accepte de recevoir un message texte unique et certifie qu'il s'agit de mon numéro de mobile. Des frais de messagerie texte et de transmission de données standard peuvent s’appliquer. Consultez nos <a href=\"https://www.siriusxm.ca/smsfr\" class=\"text-link\" target=\"_blank\">Conditions générales d'utilisation des messages textes</a> and <a href=\"https://www.siriusxm.ca/privee\" class=\"text-link\" target=\"_blank\">Politique de confidentialité</a>.",
+    "ERROR_MESSAGE_AGREE_TO_TEXT_MESSAGE": "Veuillez confirmer que vous avez lu et accepté les conditions générales et la politique de confidentialité.",
+    "SYSTEM_ERROR": "Nous sommes désolés. Un problème est survenu. Veuillez réessayer.",
+    "BUSINESS_ERROR": "Nous sommes désolés. Un problème est survenu. Veuillez réessayer.",
+    "ERROR_MESSAGE_PHONE_DOES_NOT_MATCH": "Le numéro entré ne correspond pas à nos dossiers."
+}

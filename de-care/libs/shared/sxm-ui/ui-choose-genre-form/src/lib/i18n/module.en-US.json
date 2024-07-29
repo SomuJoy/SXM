@@ -1,0 +1,11 @@
+{
+    "SharedSxmUiUiChooseGenreFormModule": {
+        "chooseGenreFormComponent": {
+            "HEADER": "Choose your genre",
+            "HEADER_DESCRIPTION": "With Choice you'll get 3 bonus channels from a popular genre of your choice:",
+            "ERROR": "Pick a genre below.",
+            "BUTTON": "CONTINUE",
+            "REVIEW_BUTTON": "Review my order"
+        }
+    }
+}

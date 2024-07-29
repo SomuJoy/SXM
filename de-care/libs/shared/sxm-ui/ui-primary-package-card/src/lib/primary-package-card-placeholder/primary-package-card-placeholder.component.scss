@@ -1,0 +1,62 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: grid;
+    background-color: $white;
+    .content-spot {
+        background-color: $gray-light;
+    }
+    section {
+        display: grid;
+        row-gap: 24px;
+        padding: 24px 16px;
+        article {
+            display: grid;
+            row-gap: 8px;
+            div {
+                border-radius: 2px;
+                height: 24px;
+                &.title {
+                    max-width: 120px;
+                }
+                &.description {
+                    max-width: 160px;
+                }
+            }
+        }
+        ul {
+            padding: 0;
+            margin: 0;
+            display: grid;
+            row-gap: 12px;
+            li {
+                list-style: none;
+                position: relative;
+                margin: 0 0 0 28px;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: -28px;
+                    border: solid 8px $gray-light;
+                    border-radius: 8px;
+                }
+                border-radius: 2px;
+                height: 16px;
+                max-width: 160px;
+                &:nth-child(odd) {
+                    max-width: 180px;
+                }
+            }
+        }
+    }
+    footer {
+        padding: 16px;
+        height: 48px;
+        div {
+            background-color: $gray-medium;
+            width: 60px;
+            height: 16px;
+            border-radius: 2px;
+        }
+    }
+}

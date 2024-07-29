@@ -1,0 +1,20 @@
+<div class="content-container header-bar logo-bar">
+    <div class="row align-center">
+        <div class="column small-6 medium-5 align-left no-padding-small">
+            <svg class="icon">
+                <use class="icon-logo" xlink:href="#icon-logo"></use>
+            </svg>
+        </div>
+        <div class="column small-6 medium-5 align-right no-padding-small">
+            <button
+                #languageButton
+                *ngIf="languageChangeEnabled"
+                [value]="translateKeyPrefix + 'SWITCH_LANGUAGE.VALUE' | translate"
+                (click)="languageSelected.emit(languageButton.value)"
+                type="button"
+            >
+                <strong>{{ translateKeyPrefix + "SWITCH_LANGUAGE.LABEL" | translate }}</strong>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    background: $off-white;
+    width: 100%;
+    div {
+        height: 72px;
+        padding: 16px;
+    }
+    a {
+        top: 4px;
+    }
+    .car-logo-svg-container {
+        float: right;
+        bottom: 18px;
+        height: 42px;
+        width: 42px;
+        use {
+            stroke: $black;
+            fill: $black;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+:host {
+    .is-active {
+        overflow: visible;
+    }
+    .tab-content-container {
+        padding-top: 16px;
+    }
+}
+:host-context(.nav-hidden) {
+    .tab-content-container {
+        padding-top: 0;
+    }
+}

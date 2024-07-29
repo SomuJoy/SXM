@@ -1,0 +1,69 @@
+<ng-content select="[page-title]"> </ng-content>
+<section role="main" id="follow-on-selection-grid">
+    <!-- 	headline -->
+    <div id="headline-and-lead-offer-end-date">
+        <ng-container id="proactive-header" *ngIf="isProactive; else isReactive">
+            <h5>{{ "sharedSxmUiUiFollowOnSelectionModule.followOnSelectionComponent.TITLE.PROACTIVE_HEADLINE" | translate }}</h5>
+            <span class="small-copy lead-offer-end-txt">{{ "sharedSxmUiUiFollowOnSelectionModule.followOnSelectionComponent.TITLE.PROACTIVE_COPY" | translate }}</span>
+            <span class="choice-error" *ngIf="showChoiceNotAvailableError" data-e2e="rtcFollowOnPlansNotAvailableError">
+                {{ "sharedSxmUiUiFollowOnSelectionModule.followOnSelectionComponent.TITLE.CHOICE_NOT_AVAILABLE_COPY" | translate }}
+            </span>
+        </ng-container>
+
+        <ng-template #isReactive>
+            <ng-container *ngIf="contentReactiveText; else defaultRactiveText">
+                <p class="small-copy header-text">
+                    <ng-content select="[reactive-text-paragraph]"></ng-content>
+                </p>
+            </ng-container>
+
+            <ng-template #defaultRactiveText>
+                <p class="small-copy lead-offer-end-txt">
+                    {{ "sharedSxmUiUiFollowOnSelectionModule.followOnSelectionComponent.TITLE.YOUR_CHOICE" | translate }}
+                </p>
+                <p class="small-copy text-color-gray-dark">
+                    {{ "sharedSxmUiUiFollowOnSelectionModule.followOnSelectionComponent.TITLE.OFFER_DETAILS" | translate }}
+                </p>
+            </ng-template>
+        </ng-template>
+    </div>
+    <!--  follow on offers -->
+    <div id="select-a-follow-on-plan">
+        <!--  Display "In Your Trial" above package that is the lead offer -->
+        <ng-container *ngFor="let package of packages">
+            <div class="user-selection" [class.is-lead-offer]="package.packageName === leadOfferPackageName">
+                <p class="small-copy text-uppercase">
+                    {{ "sharedSxmUiUiFollowOnSelectionModule.followOnSelectionComponent.USER_SELECTION.YOUR_TRIAL" | translate }}
+                </p>
+            </div>
+        </ng-container>
+        <!--  Display follow on packages to choose from -->
+        <ng-container *ngFor="let package of packages; index as i">
+            <ng-container
+                [ngTemplateOutlet]="followOnOptionTemplate"
+                [ngTemplateOutletContext]="{
+                    platform: package.packageName | platformFromPackageName,
+                    packageType:
+                        'app.packageDescriptions.' + (package.parentPackageName || package.packageName) + '.name' | translate | withoutPlatformName: package.packageName
+                }"
+            >
+            </ng-container>
+            <ng-template #followOnOptionTemplate let-platform="platform" let-packageType="packageType">
+                <div
+                    class="follow-on-option"
+                    role="button"
+                    tabindex="0"
+                    (keydown.enter)="selectPackage(package)"
+                    data-e2e="rtcFollowonSelectionOption"
+                    [attr.data-track-click]="platform + ' ' + packageType + ' Option Tab'"
+                    (click)="selectPackage(package)"
+                    [class.follow-on-option-selected]="package.packageName === selectedPackageName"
+                >
+                    <p class="follow-on-option--name">
+                        <span *ngIf="showPlatformName">{{ platform }} <br /></span>{{ packageType }}
+                    </p>
+                </div>
+            </ng-template>
+        </ng-container>
+    </div>
+</section>

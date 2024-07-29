@@ -1,0 +1,11 @@
+<div>
+    <input [formControl]="control" type="radio" id="{{ controlId }}" name="{{ formControlName }}" [value]="value" />
+    <label data-e2e="radioOptionLabel" for="{{ controlId }}">{{ label }}</label>
+    <span>
+        <sxm-ui-tooltip
+            class="tooltip-component {{ alternateStyle ? 'tooltip-display-top' : 'tooltip-display-bottom' }} tooltip-display-right tooltip-display-right-medium-up"
+        >
+            <ng-content select="[htmlContentForTooltip]"></ng-content>
+        </sxm-ui-tooltip>
+    </span>
+</div>

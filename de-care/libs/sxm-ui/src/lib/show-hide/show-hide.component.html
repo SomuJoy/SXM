@@ -1,0 +1,19 @@
+<button id="show-hide-btn" class="component--add-element-title" [class.active]="opened" tabindex="0" type="button" (click)="handleClick()">
+    <span class="button-text">{{ opened ? expandedText : collapsedText }}</span>
+    <div *ngIf="opened; else closed" class="icon-remove-wrapper">
+        <svg class="icon icon-utility small">
+            <use class="icon-collapse" xlink:href="#icon-collapse"></use>
+        </svg>
+    </div>
+    <ng-template #closed>
+        <div class="icon-add-wrapper">
+            <svg class="icon icon-utility small">
+                <use class="icon-expand" xlink:href="#icon-expand"></use>
+            </svg>
+        </div>
+    </ng-template>
+</button>
+
+<div class="add-element-content-container" [attr.aria-expanded]="opened" [class.active]="opened">
+    <ng-content></ng-content>
+</div>

@@ -1,0 +1,8 @@
+{
+    "SharedSxmUiUiPostalCodeFormFieldModule": {
+        "SxmUiPostalCodeFormFieldComponent": {
+            "LABEL_TEXT": "Code postal",
+            "ERROR_MESSAGE_REQUIRED": "Entrez un code postal valide."
+        }
+    }
+}

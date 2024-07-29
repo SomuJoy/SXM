@@ -1,0 +1,14 @@
+{
+    "$schema": "https://json-schema.org/schema",
+    "cli": "nx",
+    "$id": "lib-sxm-ui",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "SXM UI lib name without the ui- prefix.\n\n   (example: alert-pill)",
+            "x-prompt": "SXM UI lib name without the ui- prefix?\n  (example: alert-pill)"
+        }
+    },
+    "required": ["name"]
+}

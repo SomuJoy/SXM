@@ -1,0 +1,10 @@
+{
+    "sharedSxmUiUiEnableShowPasswordModule": {
+        "enableShowPasswordComponent": {
+            "SHOW": "Afficher",
+            "HIDE": "Masquer",
+            "ARIA_SHOW": "Afficher le mot de passe. Attention: ceci affichera votre mot de passe à l’écran.",
+            "ARIA_HIDE": "Masquer le mot de passe"
+        }
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "npmScope": "de-care",
+    "implicitDependencies": {
+        "angular.json": "*",
+        "package.json": {
+            "dependencies": "*",
+            "devDependencies": "*"
+        },
+        "tsconfig.base.json": "*",
+        "tslint.json": "*",
+        "nx.json": "*"
+    },
+    "tasksRunnerOptions": {
+        "default": {
+            "runner": "@nrwl/nx-cloud",
+            "options": {
+                "cacheableOperations": ["test", "lint", "e2e", "component-test", "build-storybook"],
+                "canTrackAnalytics": false,
+                "showUsageWarnings": true
+            }
+        }
+    },
+    "affected": {
+        "defaultBase": "origin/develop"
+    },
+    "cli": {
+        "defaultCollection": "@nrwl/angular"
+    },
+    "defaultProject": "cuwi",
+    "generators": {
+        "@schematics/angular:component": {
+            "styletext": "scss"
+        },
+        "@nrwl/angular:library": {
+            "linter": "eslint",
+            "unitTestRunner": "jest",
+            "style": "scss"
+        },
+        "@nrwl/angular:application": {
+            "style": "scss",
+            "linter": "eslint",
+            "unitTestRunner": "jest",
+            "e2eTestRunner": "cypress"
+        },
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "targetDefaults": {
+        "lint": {
+            "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+        }
+    }
+}

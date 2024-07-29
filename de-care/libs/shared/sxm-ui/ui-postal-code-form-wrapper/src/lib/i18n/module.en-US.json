@@ -1,0 +1,7 @@
+{
+    "SharedSxmUiUiPostalCodeFormWrapperModule": {
+        "PostalCodeFormWrapperComponent": {
+            "INVALID_ZIP": "Enter a valid zip code"
+        }
+    }
+}

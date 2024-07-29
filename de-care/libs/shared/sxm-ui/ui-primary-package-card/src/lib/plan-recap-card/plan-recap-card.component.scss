@@ -1,0 +1,19 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    ::ng-deep {
+        article {
+            min-height: 70px;
+            padding: 16px;
+            border-radius: 4px;
+            background-color: $off-white;
+
+            p {
+                margin: 0;
+                padding: 0;
+                font-size: calculate-rem(12px);
+            }
+        }
+    }
+}

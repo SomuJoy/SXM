@@ -1,0 +1,30 @@
+@import "sxm.phoenix.imports";
+
+.vehicle-subscription {
+    display: flex;
+    column-gap: 14px;
+
+    .icon {
+        height: 40px;
+        width: 40px;
+
+        use {
+            stroke: $black;
+            fill: $black;
+        }
+    }
+
+    .details {
+        p {
+            margin-bottom: 0;
+        }
+
+        p:first-child {
+            font-weight: calculate-font-weight("bold");
+        }
+
+        p:not(:first-child) {
+            color: $gray-dark;
+        }
+    }
+}

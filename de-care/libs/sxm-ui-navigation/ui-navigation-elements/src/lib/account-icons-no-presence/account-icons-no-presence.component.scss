@@ -1,0 +1,19 @@
+:host {
+    display: flex;
+    --icon-spacing: 16px;
+    --panel-margin: 18px; //TODO: find a way to set the default value within the nav-dropdown component instead of here
+    grid-column-gap: var(--icon-spacing);
+}
+
+.fade-in {
+    animation: fadeIn ease-in-out 0.5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

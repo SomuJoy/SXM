@@ -1,0 +1,12 @@
+{
+    "sharedSxmUiUiPackageComparisonModule": {
+        "packagesComparisonComponent": {
+            "MONTHLY_PRICE_AFTER": "Renewal pricing",
+            "CHANNELS_LINEUP": "Channel Lineup",
+            "CHANNEL_LINEUP_TOOLTIP_COPY": "Inside and outside the car lineups vary slightly. Other fees and taxes may apply.",
+            "CHANNELS": "{{packageName}}<br/>Channels",
+            "VIEW_LINEUP": "View Lineup",
+            "YOUR_TRIAL": "In Your Trial"
+        }
+    }
+}

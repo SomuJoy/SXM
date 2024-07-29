@@ -1,0 +1,15 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+header {
+    display: grid;
+    row-gap: 4px;
+    > h1 {
+        @include get-header-style(h4);
+        margin: 0;
+    }
+
+    .breadcrumb {
+        @include step-header;
+    }
+}

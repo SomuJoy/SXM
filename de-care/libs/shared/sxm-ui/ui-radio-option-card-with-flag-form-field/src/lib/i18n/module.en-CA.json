@@ -1,0 +1,8 @@
+{
+    "sharedSxmUiUiRadioOptionCardWithFlagFormField": {
+        "radioOptionCardWithFlagFormField": {
+            "NOT_VEHICLE_OWNER": "I no longer own this car.",
+            "RENEWS": "Next Billing Date:"
+        }
+    }
+}

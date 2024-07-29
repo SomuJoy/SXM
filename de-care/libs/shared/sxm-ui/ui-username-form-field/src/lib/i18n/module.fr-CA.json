@@ -1,0 +1,10 @@
+{
+    "SharedSxmUiUiUsernameFormFieldModule": {
+        "UsernameFormFieldComponent": {
+            "LABEL_TEXT": "Nom d'utilisateur",
+            "ERROR_MESSAGE_REQUIRED": "Veuillez entrer votre nom d'utilisateur.",
+            "USERNAME_IN_USE_ERROR_MSG": "Le nom d’utilisateur ou le courriel est déjà utilisé.",
+            "ERROR_MESSAGE_LENGTH": "Le nom d’utilisateur doit être une adresse courriel valide, ou 6 à 20 caractères, lettres et chiffres seulement."
+        }
+    }
+}

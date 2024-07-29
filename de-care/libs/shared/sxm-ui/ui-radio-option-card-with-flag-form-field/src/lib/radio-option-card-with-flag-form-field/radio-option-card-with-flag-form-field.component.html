@@ -1,0 +1,93 @@
+<ng-container [formGroup]="formGroup">
+    <sxm-ui-content-card [hasGrayBackground]="true" [flagPresent]="false" [headlinePresent]="true">
+        <div htmlContentForHead>
+            <div class="radio-item" [class.not-selectable]="!selectable">
+                <input
+                    (change)="onRadioInputChange()"
+                    [checked]="formGroup.get(radioName).value === value"
+                    [value]="value"
+                    type="radio"
+                    class="radio"
+                    [formControlName]="radioName"
+                    [id]="radioName + id"
+                    data-e2e="radioOption"
+                    [attr.data-track-click]="selectable ? value + ' subscription option' : null"
+                />
+                <label class="input-label" [for]="radioName + id">
+                    <ng-container *ngIf="hasVehicleData; else radioId">
+                        {{ radioOption.vehicleInfo.year }} {{ radioOption.vehicleInfo.make }} {{ radioOption.vehicleInfo.model }}
+                    </ng-container>
+                    <ng-template #radioId>
+                        {{
+                            translateKeyPrefix + "RADIO"
+                                | translate
+                                    : {
+                                          radioId: radioOption.radioId
+                                      }
+                        }}
+                    </ng-template>
+                </label>
+            </div>
+        </div>
+        <div htmlContentForBody>
+            <div>
+                <ng-content select="[warningMessage]"></ng-content>
+            </div>
+            <div class="body">
+                <p *ngIf="hasVehicleData">
+                    {{
+                        translateKeyPrefix + "RADIO"
+                            | translate
+                                : {
+                                      radioId: radioOption.radioId
+                                  }
+                    }}
+                </p>
+                <p *ngIf="!radioOption.isClosed">
+                    {{ "app.packageDescriptions." + radioOption.packageName + ".name" | translate }}
+                </p>
+                <p *ngIf="radioOption.isClosed">
+                    {{ "app.packageDescriptions." + radioOption.packageName + ".name" | translate | withoutPlatformName: radioOption.packageName }}
+                </p>
+                <p>
+                    {{ radioOption.termLength | i18nPlural: (translateKeyPrefix + "PLURAL_MONTH_MAP" | translate) }}
+                </p>
+                <p *ngIf="!!radioOption.nextCycleOn">
+                    {{ translateKeyPrefix + "RENEWS" | translate }}
+                    {{ radioOption.nextCycleOn | date: (dateFormat$ | async):null:locale }}
+                </p>
+                <p *ngIf="!!radioOption.closedDate">
+                    {{ translateKeyPrefix + "DEACTIVATED" | translate }}
+                    {{ radioOption.closedDate | date: (dateFormat$ | async):null:locale }}
+                </p>
+                <p *ngIf="!!radioOption.username">
+                    {{
+                        translateKeyPrefix + "USERNAME"
+                            | translate
+                                : {
+                                      username: radioOption.username
+                                  }
+                    }}
+                </p>
+            </div>
+            <div *ngIf="hasFooter" class="footer">
+                <div class="flag checkbox-item">
+                    <input
+                        type="checkbox"
+                        class="checkbox"
+                        [formControlName]="flagName"
+                        data-e2e="checkboxOption"
+                        [attr.data-track-click]="value + ' no longer own'"
+                        [id]="flagName + id"
+                    />
+                    <label class="input-label" [for]="flagName + id">
+                        <p>
+                            <span>{{ translateKeyPrefix + "NOT_VEHICLE_OWNER" | translate }}</span
+                            ><span>{{ translateKeyPrefix + "REMOVE_FROM_ACCOUNT" | translate }}</span>
+                        </p>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </sxm-ui-content-card>
+</ng-container>

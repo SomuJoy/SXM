@@ -1,0 +1,37 @@
+<header #verifyAddressHeader>
+    <h2>{{ translateKeyPrefix + ".HEADER_TITLE" | translate }}</h2>
+    <p [id]="ariaDescribedbyTextId">
+        {{ translateKeyPrefix + (data.correctedAddresses && data.correctedAddresses?.length > 0 ? ".HEADER_INSTRUCTIONS" : ".NO_CORRECTED_HEADER_INSTRUCTIONS") | translate }}
+    </p>
+</header>
+<section>
+    <p *ngIf="addressSelectionErrorMessage" class="error-feedback">{{ translateKeyPrefix + ".ERROR_CHOOSE_ADDRESS" | translate }}</p>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <h3>{{ translateKeyPrefix + ".YOU_ENTERED_TTILE" | translate }}</h3>
+        <div class="grid-container main">
+            <ng-container *ngIf="data.correctedAddresses && data.correctedAddresses?.length > 0; else noRadioOption">
+                <sxm-ui-radio-option-form-field
+                    formControlName="address"
+                    class="pre-line"
+                    [label]="data.currentAddress | sxmUiAddress"
+                    [value]="0"
+                ></sxm-ui-radio-option-form-field>
+            </ng-container>
+            <ng-template #noRadioOption>
+                <p class="no-radio-option">{{ data.currentAddress | sxmUiAddress }}</p>
+            </ng-template>
+            <button type="button" (click)="editExisting.emit()" [attr.aria-label]="translateKeyPrefix + '.EDIT_ARIA_LABEL' | translate">
+                {{ translateKeyPrefix + ".EDIT_LABEL" | translate }}
+            </button>
+        </div>
+        <h3 *ngIf="data.correctedAddresses && data.correctedAddresses?.length > 0">{{ translateKeyPrefix + ".RECOMMENDED_TITLE" | translate }}</h3>
+        <sxm-ui-radio-option-form-field
+            *ngFor="let option of data.correctedAddresses; let index = index"
+            formControlName="address"
+            class="pre-line"
+            [label]="option | sxmUiAddress"
+            [value]="index + 1"
+        ></sxm-ui-radio-option-form-field>
+        <button type="submit">{{ translateKeyPrefix + ".USE_ADDRESS_LABEL" | translate }}</button>
+    </form>
+</section>

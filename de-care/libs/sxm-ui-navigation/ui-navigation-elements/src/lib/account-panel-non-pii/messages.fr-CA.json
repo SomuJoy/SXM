@@ -1,0 +1,17 @@
+{
+    "WELCOME": "Bienvenue",
+    "MANAGE_MY_ACCOUNT": "Gérer mon compte",
+    "MANAGE_MY_ACCOUNT_URL": "{{careUrl}}/account/login?langpref=fr",
+    "REGISTRATION_STEP_UP": "{{careUrl}}/account/registration/step-up?langpref=fr",
+    "VIEW_MY_BILL": "Voir ma facture",
+    "VIEW_MY_BILL_URL": "{{careUrl}}/account/manage/billing?langpref=fr",
+    "MAKE_A_PAYMENT": "Effectuer un paiement",
+    "MAKE_A_PAYMENT_URL": "/makeccpaymentlogin_view.action?isflepzview=true&langpref=fr#/ccpaymentflepz",
+    "REFRESH_MY_RADIO": "Retransmettez mon signal",
+    "REFRESH_MY_RADIO_URL": "https://care.siriusxm.ca/retailrefresh_view.action?langpref=fr#/refreshradio",
+    "TRANSFER_SUBSCRIPTION": "Service de transfert",
+    "TRANSFER_SUBSCRIPTION_URL": "{{careUrl}}/transfer/radio/login?langpref=fr",
+    "APPS_LOGO_HEADER": "OBTENIR L’APPLI SXM",
+    "SIGN_OUT": "Déconnexion",
+    "ARIA_CLOSE_LABEL": "Fermer le panneau de la gestion de compte"
+}

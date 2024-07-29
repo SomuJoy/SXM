@@ -1,0 +1,19 @@
+{
+    "$schema": "https://json-schema.org/schema",
+    "cli": "nx",
+    "$id": "service-workflow",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Name of the workflow service without the workflow suffix",
+            "x-prompt": "Name of the workflow service without the workflow suffix?"
+        },
+        "project": {
+            "type": "string",
+            "description": "project name",
+            "x-prompt": "Name of the project (lib)?"
+        }
+    },
+    "required": ["name", "project"]
+}

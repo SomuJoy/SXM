@@ -1,0 +1,25 @@
+{
+    "name": "shared-sxm-ui-ui-update-password-form-fields",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/sxm-ui/ui-update-password-form-fields/src",
+    "prefix": "sxm-ui",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/shared/sxm-ui/ui-update-password-form-fields"],
+            "options": {
+                "jestConfig": "libs/shared/sxm-ui/ui-update-password-form-fields/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/sxm-ui/ui-update-password-form-fields/src/**/*.ts", "libs/shared/sxm-ui/ui-update-password-form-fields/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:ui", "scope:shared-ui"]
+}

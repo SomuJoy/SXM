@@ -1,0 +1,8 @@
+{
+    "SharedSxmUiUiPostalCodeFormFieldModule": {
+        "SxmUiPostalCodeFormFieldComponent": {
+            "LABEL_TEXT": "Zip Code",
+            "ERROR_MESSAGE_REQUIRED": "Enter your zip code."
+        }
+    }
+}

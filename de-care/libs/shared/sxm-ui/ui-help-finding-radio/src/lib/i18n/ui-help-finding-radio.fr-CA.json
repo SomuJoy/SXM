@@ -1,0 +1,53 @@
+{
+    "SharedSxmUiUiHelpFindingRadioModule": {
+        "SxmUiHelpFindingRadioComponent": {
+            "TITLE": "Comment puis-je trouver mon code de radio?",
+            "NEED_HELP_TEXT": "Syntonisez la station 0 sur votre radio et le code de votre radio y sera affiché.",
+            "NEED_HELP_TEXT-1": "Syntonisez la station 0 sur votre radio et le code de votre radio y sera affiché. Si cela ne fonctionne pas, essayez d'accéder au menu de fonctions de votre radio (consultez le guide de l'utilisateur pour des instructions précises).",
+            "NEED_HELP_TEXT-2": "Pour certaines radios, vous devrez maintenir appuyé le bouton SAT ou ESN, ou accéder au menu de fonctions de votre radio.",
+            "TEXT_LINK-1": "Obtenez de l'aide pour trouver votre radio",
+            "TEXT_LINK-1_URL": "https://www.siriusxm.ca/trouverradio",
+            "TEXT_LINK-2": "Obtenez de l'aide pour trouver des appareils de marine ou d'aviation",
+            "DONT_HAVE_RADIO": {
+                "HEADLINE": "Vous n'avez pas de radio?",
+                "SUB_HEADLINE": "Pas de problème. Renseignez-vous sur notre essai de",
+                "LINK_TEXT": "SiriusXM En continu",
+                "LINK_URL": "https://www.siriusxm.ca/fr/commencer/en-continu/"
+            }
+        },
+        "SxmUiHelpFindingRadioAndAccountComponent": {
+            "TITLE": "Comment puis-je trouver mon code de radio?",
+            "NEED_HELP_TEXT-1": "Syntonisez la station 0 sur votre radio et le code de votre radio y sera affiché. Si cela ne fonctionne pas, essayez d'accéder au menu de fonctions de votre radio (consultez le guide de l'utilisateur pour des instructions précises).",
+            "NEED_HELP_TEXT-2": "Pour certaines radios, vous devrez maintenir appuyé le bouton SAT ou ESN, ou accéder au menu de fonctions de votre radio.",
+            "NEED_HELP_TEXT-3": "If you still need help finding it, or your Account Number, please ",
+            "CHAT_LINK": "chat with an agent.",
+            "TEXT_LINK-1": "Obtenez de l'aide pour trouver votre radio",
+            "TEXT_LINK-1_URL": "https://www.siriusxm.ca/trouverradio",
+            "TEXT_LINK-2": "Obtenez de l'aide pour trouver des appareils de marine ou d'aviation",
+            "DONT_HAVE_RADIO": {
+                "HEADLINE": "Vous n'avez pas de radio?",
+                "SUB_HEADLINE": "Pas de problème. Renseignez-vous sur notre essai de",
+                "LINK_TEXT": "SiriusXM En continu",
+                "LINK_URL": "https://www.siriusxm.ca/fr/commencer/en-continu/"
+            }
+        },
+        "SxmUiDeviceHelpComponent": {
+            "TITLE": "Recherchez le code de votre appareil de marine ou d'aviation",
+            "MESSAGE": "<strong>Vous pouvez rechercher le code de votre appareil en différents endroits.</strong>",
+            "NOTE": "Note : les codes d'appareils comprennent 8 caractères.",
+            "UNORDERED_LIST": {
+                "item-1": "Pour la plupart des appareils, accédez à votre menu <strong>Diagnostics</strong> ou <strong>Settings</strong> (Paramètres), puis regardez si votre code d'appareil est indiqué.",
+                "item-2": "Vous pouvez aussi voir le code d'appareil au bas de votre appareil ou sur l'emballage. Dans la plupart des cas, vous le trouverez <strong>à côté du numéro de série.</strong>",
+                "item-3": "Si votre appareil dispose aussi de capacités sonores, vous pourriez <strong>syntoniser la station 0</strong> qui affichera le code de votre appareil.",
+                "item-4": ""
+            }
+        },
+        "HelpFindingRadioModalComponent": {
+            "HELP_FINDING_RADIO_TITLE": "Recherche de radio",
+            "RADIO_LOOKUP_MARINE_AVIATION": "Aide relative a l'appareil"
+        },
+        "SxmUiHelpFindingRadioAccordionComponent": {
+            "RADIO_ID_HELP_LABEL": "Comment puis-je trouver mon code de radio?"
+        }
+    }
+}

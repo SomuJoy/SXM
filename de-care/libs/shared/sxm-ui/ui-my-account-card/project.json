@@ -1,0 +1,25 @@
+{
+    "name": "shared-sxm-ui-ui-my-account-card",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/sxm-ui/ui-my-account-card/src",
+    "prefix": "sxm-lib",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/shared/sxm-ui/ui-my-account-card"],
+            "options": {
+                "jestConfig": "libs/shared/sxm-ui/ui-my-account-card/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/sxm-ui/ui-my-account-card/src/**/*.ts", "libs/shared/sxm-ui/ui-my-account-card/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:ui", "scope:shared-ui"]
+}

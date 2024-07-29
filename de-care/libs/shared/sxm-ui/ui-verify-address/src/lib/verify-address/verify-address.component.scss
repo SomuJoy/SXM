@@ -1,0 +1,62 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "components/_buttons";
+
+:host {
+    display: grid;
+    gap: 24px;
+}
+
+h2 {
+    @include get-header-style(h4);
+    margin-bottom: 12px;
+}
+
+section {
+    padding: 0;
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 16px;
+        margin-bottom: 16px;
+        button {
+            @include button-reset;
+            @include text-link-secondary;
+            align-self: start;
+            padding: 9px 0;
+            line-height: 22px;
+        }
+    }
+}
+
+h3 {
+    @include get-body-copy-style(large);
+    font-weight: calculate-font-weight("bold");
+    margin-bottom: 0;
+    @include bp(medium) {
+        font-weight: calculate-font-weight("bold");
+    }
+}
+
+button[type="submit"] {
+    @include button;
+    max-width: none;
+    @include bp(medium) {
+        max-width: none;
+    }
+}
+
+.no-radio-option {
+    white-space: pre-line;
+    padding-top: 9px;
+}
+
+.error-feedback {
+    color: $red;
+    font-weight: calculate-font-weight("bold");
+    margin-bottom: 8px;
+}
+
+.main {
+    word-break: break-word;
+}

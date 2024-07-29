@@ -1,0 +1,31 @@
+{
+    "name": "sweepstakes",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/sweepstakes/src",
+    "prefix": "de-care",
+    "projectType": "library",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/sweepstakes/src/**/*.ts", "libs/sweepstakes/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/sweepstakes/jest.config.js",
+                "tsConfig": "libs/sweepstakes/tsconfig.spec.json",
+                "setupFile": "libs/sweepstakes/src/test-setup.ts",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "styleext": "scss"
+        }
+    },
+    "tags": ["scope:legacy"]
+}

@@ -1,0 +1,16 @@
+<div class="radio-item">
+    <input
+        class="radio"
+        [formControl]="control"
+        type="radio"
+        id="{{ controlId }}"
+        name="{{ formControlName }}"
+        [value]="value"
+        [attr.aria-labelledby]="labelId"
+        data-test="sxmUiRadioOptionFormField"
+    />
+    <label class="input-label" data-e2e="radioOptionLabel" for="{{ controlId }}" [id]="labelId" [attr.aria-label]="ariaLabel"
+        >{{ label }}<br class="line-break" />
+        <span *ngIf="description" class="description" [innerHTML]="description"></span>
+    </label>
+</div>

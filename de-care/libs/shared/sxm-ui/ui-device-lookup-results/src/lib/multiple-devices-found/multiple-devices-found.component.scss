@@ -1,0 +1,13 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+hr {
+    @include hr;
+}
+
+.select-radio {
+    float: right;
+    a {
+        text-decoration: none;
+    }
+}

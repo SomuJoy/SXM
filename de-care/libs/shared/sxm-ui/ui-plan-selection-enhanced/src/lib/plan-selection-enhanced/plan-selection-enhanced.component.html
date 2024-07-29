@@ -1,0 +1,35 @@
+<ng-content select="[page-title]"></ng-content>
+<section role="main" class="plan-selection-grid" data-test="planSelectionGrid">
+    <!--  offers -->
+    <div class="select-a-plan" [ngClass]="'grid-columns-' + numPlans">
+        <!--  Display packages to choose from -->
+        <ng-container *ngFor="let package of packages; index as i">
+            <ng-container
+                [ngTemplateOutlet]="planOptionTemplate"
+                [ngTemplateOutletContext]="{
+                    platform: package.packageName | platformFromPackageName,
+                    packageType:
+                        'app.packageDescriptions.' + (package.parentPackageName || package.packageName) + '.name' | translate | withoutPlatformName: package.packageName
+                }"
+            >
+            </ng-container>
+            <ng-template #planOptionTemplate let-platform="platform" let-packageType="packageType">
+                <div
+                    class="plan-option"
+                    [attr.data-test]="'optionTab' + i"
+                    role="button"
+                    tabindex="0"
+                    (keydown.enter)="onSelectPackage(i)"
+                    data-e2e="rtcFollowonSelectionOption"
+                    [attr.data-track-click]="platform + ' ' + packageType + ' Option Tab'"
+                    (click)="onSelectPackage(i)"
+                    [class.plan-option-selected]="i === selectedPackageIndex"
+                >
+                    <p class="plan-option--name">
+                        <span class="plan-option--name-platform">{{ platform }}</span> <br /><span class="plan-option--name-package">{{ packageType }}</span>
+                    </p>
+                </div>
+            </ng-template>
+        </ng-container>
+    </div>
+</section>

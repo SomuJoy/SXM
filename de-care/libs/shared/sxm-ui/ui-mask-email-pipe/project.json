@@ -1,0 +1,25 @@
+{
+    "name": "shared-sxm-ui-ui-mask-email-pipe",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/sxm-ui/ui-mask-email-pipe/src",
+    "prefix": "sxm-ui",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/shared/sxm-ui/ui-mask-email-pipe"],
+            "options": {
+                "jestConfig": "libs/shared/sxm-ui/ui-mask-email-pipe/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/sxm-ui/ui-mask-email-pipe/src/**/*.ts", "libs/shared/sxm-ui/ui-mask-email-pipe/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:ui", "scope:shared-ui"]
+}

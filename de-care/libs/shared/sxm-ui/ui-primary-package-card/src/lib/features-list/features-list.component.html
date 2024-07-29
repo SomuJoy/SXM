@@ -1,0 +1,14 @@
+<p class="title" *ngIf="data.planName">
+    {{
+        translateKeyPrefix + ".PACKAGE_INCLUDES_TITLE"
+            | translate
+                : {
+                      planName: data.planName
+                  }
+    }}
+</p>
+<ul class="checkmark-list" data-e2e="PrimaryPackageDetailsList">
+    <li *ngFor="let feature of data.features">
+        <span [innerHTML]="feature"></span>
+    </li>
+</ul>

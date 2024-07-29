@@ -1,0 +1,24 @@
+{
+    "name": "shared-sxm-ui-ui-plan-comparison-enhanced-grid",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/sxm-ui/ui-plan-comparison-enhanced-grid/src",
+    "prefix": "sxm-ui",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/shared/sxm-ui/ui-plan-comparison-enhanced-grid"],
+            "options": {
+                "jestConfig": "libs/shared/sxm-ui/ui-plan-comparison-enhanced-grid/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/sxm-ui/ui-plan-comparison-enhanced-grid/src/**/*.ts", "libs/shared/sxm-ui/ui-plan-comparison-enhanced-grid/src/**/*.html"]
+            }
+        }
+    },
+    "tags": ["type:ui", "scope:shared-ui"]
+}

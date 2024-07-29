@@ -1,0 +1,18 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: block;
+    position: relative;
+    width: 100%;
+
+    .icon.icon-utility.large {
+        cursor: pointer;
+        height: 26px;
+        width: 26px;
+        padding: 3px;
+        position: relative;
+        float: right;
+        right: 12px;
+        top: -37px;
+    }
+}

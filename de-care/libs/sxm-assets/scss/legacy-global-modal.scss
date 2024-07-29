@@ -1,0 +1,270 @@
+// TODO: Move the modal specific stuff into our modal component and the input dropdown stuff into our dropdown form component
+
+@import "sxm.phoenix.imports";
+
+@mixin legacy-global-modal {
+    .modal-cover {
+        align-items: center;
+        height: 100vh;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.8);
+        left: 0;
+        height: 100%;
+        position: fixed;
+        overflow-y: auto;
+        top: 0;
+        width: 100%;
+        &.open {
+            display: flex;
+        }
+        @media (max-width: 768px) {
+            justify-content: center;
+        }
+
+        > .content-container {
+            overflow-y: scroll;
+            margin: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            display: block;
+            height: auto;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 1336px;
+            position: relative;
+            @media (max-width: 768px) {
+                position: fixed;
+                height: 100vh;
+                max-width: 1146px;
+                overflow-y: hidden;
+            }
+
+            .row::after,
+            .row::before {
+                content: " ";
+                display: table;
+            }
+            .row::after {
+                display: block;
+                content: "";
+                clear: both;
+            }
+            .row {
+                height: auto;
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0 auto;
+                padding: 0 4px;
+                @media (max-width: 768px) {
+                    height: 100vh;
+                }
+                &.align-center {
+                    justify-content: center;
+                }
+                &.no-padding-small {
+                    padding: 0;
+                    @media (min-width: 768px) {
+                        padding: 0 24px;
+                    }
+                }
+                .section {
+                    position: relative;
+                    width: 100%;
+                }
+                .column {
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    margin: 0 -0.25px;
+                    padding: 0 12px;
+                    position: relative;
+                    height: 100%;
+                    &.small-12 {
+                        width: 100%;
+                    }
+                    &.no-padding-small {
+                        padding: 0 12px;
+                        @media (max-width: 768px) {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+
+            .modal {
+                margin-top: 0;
+                padding-bottom: 48px;
+                height: auto;
+                position: relative;
+                background: $white;
+                height: 100%;
+                max-width: 600px;
+                width: 100%;
+                padding: 0 16px 24px;
+                overflow: auto;
+                z-index: 2;
+                outline: none;
+                @media (min-width: 768px) {
+                    height: auto;
+                    width: 600px;
+                    padding: 0 40px 32px;
+                    padding-bottom: 32px;
+                    overflow: visible;
+                }
+                @media (max-width: 768px) {
+                    height: 100vh;
+                    overflow: hidden;
+                    width: 100%;
+                    max-width: 100vw;
+                    padding-left: 16px;
+                    padding-right: 16px;
+                }
+
+                .modal--title {
+                    color: $white;
+                    margin: 0 -16px 32px;
+                    padding: 12px;
+                    text-align: center;
+                    @media (min-width: 768px) {
+                        margin: 0 -40px;
+                    }
+                    .back-button {
+                        height: 18px;
+                        position: absolute;
+                        left: 16px;
+                        top: 14px;
+                        width: 18px;
+                        color: $white;
+                        font-size: 1.375rem;
+                    }
+                    p:last-of-type {
+                        margin-bottom: 0;
+                    }
+                    p {
+                        margin-top: 0;
+                        &.large-copy {
+                            font-size: 1rem;
+                            line-height: 1.5;
+                        }
+                    }
+                    .modal-close::before {
+                        background: $white;
+                        content: "";
+                        left: 0;
+                        position: absolute;
+                        height: 1px;
+                        top: 8px;
+                        width: 16px;
+                        transform: rotate(45deg);
+                    }
+                    .modal-close::after {
+                        background: $white;
+                        content: "";
+                        left: 0;
+                        position: absolute;
+                        height: 1px;
+                        top: 8px;
+                        width: 16px;
+                        transform: rotate(135deg);
+                    }
+                    .modal-close {
+                        height: 18px;
+                        position: absolute;
+                        right: 16px;
+                        top: 14px;
+                        width: 18px;
+                        cursor: pointer;
+                    }
+                }
+
+                .modal--content {
+                    width: 100%;
+                    height: auto;
+                    padding-top: 25px;
+                    position: relative;
+                    p:last-of-type {
+                        margin-bottom: 0;
+                    }
+                    p {
+                        margin-top: 0;
+                        margin-bottom: 0.625rem;
+                        font-size: 0.875rem;
+                        line-height: 1.57;
+                    }
+                }
+
+                .dropdown {
+                    position: relative;
+                    width: 100%;
+                    cursor: pointer;
+                    .active {
+                        outline: 0;
+                        z-index: 101;
+                        box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
+                    }
+                    ul {
+                        box-sizing: border-box;
+                        list-style: none;
+                        margin-top: 0;
+                        padding-left: 0;
+                        position: absolute;
+                        width: 100%;
+                        max-height: 170px;
+                        overflow: auto;
+                        z-index: 100;
+                        display: none;
+                        background-color: $white;
+                        border: 1px solid $gray-dark;
+                    }
+                    li {
+                        font-size: 0.875rem;
+                        position: relative;
+                        background-color: $white;
+                        height: 56px;
+                        margin-bottom: 0;
+                        display: flex;
+                        align-items: center;
+                        transition: 0.1s ease-in-out;
+                        cursor: pointer;
+                        padding-left: 1em;
+                        &:not(.dropdown-label).selected {
+                            background-color: $blue;
+                            color: $white;
+                        }
+                    }
+                    label {
+                        cursor: pointer;
+                    }
+                    .input-container {
+                        margin-bottom: 0;
+                        z-index: 1;
+                        &.filled.active input {
+                            border-left: 4px solid $blue;
+                        }
+                        &::after {
+                            content: "";
+                            background: url(/svg/chevron_grey.svg) no-repeat;
+                            cursor: pointer;
+                            display: block;
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            right: 10px;
+                            width: 14px;
+                            height: 8px;
+                        }
+                        &:not(.active) ~ ul {
+                            display: none;
+                        }
+                        &.active ~ ul {
+                            outline: none;
+                            box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+<table *ngIf="compactQuoteData as data" class="mb-16" [class.collapsed]="detailsCollapsed">
+    <tr>
+        <th>{{ data.title.label }}</th>
+        <th>{{ data.title.amount }}</th>
+    </tr>
+    <tr>
+        <th colspan="2">{{ translateKeyPrefix + "FUTURE_BILLING_TITLE" | translate }}</th>
+    </tr>
+    <tr *ngFor="let block of data.quoteBlocks; let i = index">
+        <td colspan="2">
+            <sxm-ui-collapsable-line-item [isCollapsed]="detailsCollapsed" [data]="block"></sxm-ui-collapsable-line-item>
+            <hr *ngIf="i !== data.quoteBlocks.length - 1" [class.hidden]="detailsCollapsed" />
+        </td>
+    </tr>
+</table>
+
+<div class="flex align-justify">
+    <button
+        class="details-toggle-btn bold no-print"
+        [class.opened]="!detailsCollapsed"
+        data-icon="dropdown-sm"
+        data-accordion-trigger
+        tabindex="0"
+        type="button"
+        (click)="toggleDetails()"
+    >
+        {{ translateKeyPrefix + (detailsCollapsed ? "SHOW_BUTTON" : "HIDE_BUTTON") | translate }}
+        <div class="icon-dropdown-sm-wrapper">
+            <svg class="icon icon-utility small">
+                <use class="icon-dropdown-sm" xlink:href="#icon-dropdown-sm"></use>
+            </svg>
+        </div>
+    </button>
+    <div class="cancel-note">
+        <span>{{ translateKeyPrefix + "CANCEL_ANYTIME" | translate }}</span>
+        <sxm-ui-tooltip class="no-print">
+            <p>{{ translateKeyPrefix + "CANCEL_TOOLTIP" | translate }}</p>
+        </sxm-ui-tooltip>
+    </div>
+</div>

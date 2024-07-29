@@ -1,0 +1,11 @@
+{
+    "SharedSxmUiUiQuoteModule": {
+        "SxmUiQuoteSummaryComponent": {
+            "CURRENT": {
+                "DUE_TODAY_LABEL": "Total dû maintenant"
+            },
+            "TOTAL_FEES_AND_TAXES": "Frais et taxes",
+            "TAXES_AND_FEES_DETAILS": "Détails"
+        }
+    }
+}

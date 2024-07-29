@@ -1,0 +1,26 @@
+<ng-container *ngrxLet="carouselClicked$ as carouselState">
+    <div class="carousel" #carouselContainer>
+        <div class="carousel-item" [id]="'carousel-container-' + i" *ngFor="let imageSlice of imagesSlice; let i = index; let lastParent = last">
+            <ng-container *ngFor="let image of imageSlice; let lastImage = last">
+                <div class="mask">
+                    <img
+                        data-link-name="Carousel Image"
+                        [style.scroll-snap-align]="lastImage && lastParent ? 'end' : 'start'"
+                        sxmUiDataClickTrack="player"
+                        [src]="image"
+                        (click)="listenNow()"
+                        (load)="lastParent && lastImage ? updateImageStyles(currentState) : ''"
+                    />
+                </div>
+            </ng-container>
+        </div>
+        <div class="carousel-buttons-container">
+            <svg *ngIf="carouselState > 0" class="icon icon-utility large checkmark-circle-outline icon-previous" (click)="carouselClickedSubject$.next(-1)">
+                <use class="icon-check-mark-flex-stroke" xlink:href="#icon-back"></use>
+            </svg>
+            <svg *ngIf="carouselState < imagesSlice.length - 1" class="icon icon-utility large checkmark-circle-outline icon-next" (click)="carouselClickedSubject$.next(1)">
+                <use class="icon-check-mark-flex-stroke" xlink:href="#icon-back"></use>
+            </svg>
+        </div>
+    </div>
+</ng-container>

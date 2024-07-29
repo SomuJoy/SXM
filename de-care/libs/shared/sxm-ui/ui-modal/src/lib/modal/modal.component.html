@@ -1,0 +1,40 @@
+<div class="modal-cover" [class.open]="!closed">
+    <div class="content-container">
+        <div class="row align-center no-padding-small">
+            <div class="column small-12 no-padding-small">
+                <div
+                    class="modal"
+                    data-e2e="sxmUiModal.content"
+                    role="dialog"
+                    tabindex="0"
+                    aria-modal="true"
+                    attr.aria-labelledby="{{ alertHeadingId }}"
+                    attr.aria-describedby="{{ ariaDescribedbyTextId }}"
+                    (keydown.escape)="handleCloseEvent()"
+                    #modalContentRef
+                    cdkTrapFocus
+                    cdkTrapFocusAutoCapture
+                >
+                    <div class="modal--title">
+                        <!-- Modal Back -->
+                        <button *ngIf="showBackButton" class="back-button" (click)="fireBackButton()">&lt;</button>
+                        <!-- Modal Title -->
+                        <p *ngIf="titlePresent" class="large-copy" id="{{ alertHeadingId }}">
+                            <b>{{ title }}</b>
+                        </p>
+                        <!-- Modal Close -->
+                        <button *ngIf="showCloseButton" class="modal-close" (click)="innerClose()" data-e2e="sxmUiModalCloseButton" aria-label="close"></button>
+                    </div>
+                    <!-- Modal Content -->
+                    <div class="modal--content" tabindex="0">
+                        <ng-content></ng-content>
+                    </div>
+                    <!-- Modal Footer -->
+                    <div class="modal--footer">
+                        <ng-content select="[footer]"></ng-content>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

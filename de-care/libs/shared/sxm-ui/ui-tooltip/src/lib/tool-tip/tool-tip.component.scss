@@ -1,0 +1,122 @@
+@import "sxm.phoenix.imports";
+
+.component--tool-tip-button {
+    border: 0;
+}
+// No "Left" option because that's the default tool tip position
+div.component--tool-tip-content {
+    display: none;
+    color: $gray-charcoal;
+    &.active {
+        display: block;
+    }
+}
+
+:host(.tooltip-display-top) {
+    .component--tool-tip .component--tool-tip-content {
+        top: auto;
+        right: 0;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -108px; // half of the max width
+        margin-bottom: 5px;
+        height: fit-content;
+    }
+}
+
+:host(.tooltip-display-right) {
+    .component--tool-tip .component--tool-tip-content {
+        right: 0;
+        margin-left: 5px;
+        left: 105%;
+    }
+}
+:host(.tooltip-display-bottom) {
+    .component--tool-tip .component--tool-tip-content {
+        top: 100%;
+        right: 0;
+        left: 50%;
+        margin-left: -108px; // half of the max width
+        margin-top: 5px;
+    }
+}
+
+@include bp(medium) {
+    :host(.tooltip-display-top-medium-up) {
+        .component--tool-tip .component--tool-tip-content {
+            top: auto;
+            right: 0;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -108px; // half of the max width
+            margin-bottom: 5px;
+            height: fit-content;
+        }
+    }
+    :host(.tooltip-display-right-medium-up) {
+        .component--tool-tip .component--tool-tip-content {
+            top: -40px;
+            right: 0;
+            margin-left: 5px;
+            left: 105%;
+        }
+    }
+    :host(.tooltip-display-bottom-medium-up) {
+        .component--tool-tip .component--tool-tip-content {
+            top: 100%;
+            right: 0;
+            left: 50%;
+            margin-left: -108px; // half of the max width
+            margin-top: 5px;
+        }
+    }
+}
+
+@include bp(large) {
+    :host(.tooltip-display-top-large-up) {
+        .component--tool-tip .component--tool-tip-content {
+            top: auto;
+            right: 0;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -108px; // half of the max width
+            margin-bottom: 5px;
+            height: fit-content;
+        }
+    }
+    :host(.tooltip-display-right-large-up) {
+        .component--tool-tip .component--tool-tip-content {
+            top: -40px;
+            right: 0;
+            margin-left: 5px;
+            left: 105%;
+        }
+    }
+    :host(.tooltip-display-bottom-large-up) {
+        .component--tool-tip .component--tool-tip-content {
+            top: 100%;
+            right: 0;
+            left: 50%;
+            margin-left: -108px; // half of the max width
+            margin-top: 5px;
+        }
+    }
+}
+
+mat-icon {
+    width: 24px;
+    height: 24px;
+    color: $gray-dark;
+    stroke: $gray-dark;
+    fill: $white;
+    &.active {
+        color: $white;
+        stroke: $gray-dark;
+        fill: $gray-dark;
+    }
+}
+:host(.transparent) {
+    mat-icon {
+        fill: transparent;
+    }
+}

@@ -1,0 +1,16 @@
+<div class="package-icon" *ngIf="iconsData.inside.isActive">
+    <mat-icon svgIcon="car"></mat-icon>
+    <div class="label" [innerHTML]="iconsData.inside.label"></div>
+</div>
+<div class="package-icon" *ngIf="iconsData.outside.isActive">
+    <mat-icon svgIcon="streaming"></mat-icon>
+    <div class="label" [innerHTML]="iconsData.outside.label"></div>
+</div>
+<div class="package-icon" *ngIf="iconsData.pandora.isActive">
+    <mat-icon svgIcon="custom-stations"></mat-icon>
+    <div class="label" [innerHTML]="iconsData.pandora.label"></div>
+</div>
+<div class="package-icon" *ngIf="iconsData.perks?.isActive">
+    <mat-icon svgIcon="perks"></mat-icon>
+    <div class="label" [innerHTML]="iconsData.perks.label"></div>
+</div>

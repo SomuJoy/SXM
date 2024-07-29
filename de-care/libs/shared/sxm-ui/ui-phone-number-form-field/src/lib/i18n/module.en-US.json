@@ -1,0 +1,8 @@
+{
+    "SharedSxmUiUiPhoneNumberFormFieldModule": {
+        "SxmUiPhoneNumberFormFieldComponent": {
+            "PHONE_NUMBER_LABEL": "Phone Number",
+            "PHONE_NUMBER_ERROR": "Enter a valid phone number."
+        }
+    }
+}

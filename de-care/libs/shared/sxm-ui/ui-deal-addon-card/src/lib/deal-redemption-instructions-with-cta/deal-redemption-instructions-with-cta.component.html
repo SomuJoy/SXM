@@ -1,0 +1,6 @@
+<img *ngIf="copyContent?.productImage" [attr.src]="copyContent?.productImage" alt="" />
+<div [innerHTML]="copyContent?.title"></div>
+<button sxm-proceed-button sxmUiDataClickTrack="exit" (click)="onCtaClicked()" [secondary]="true">
+    {{ buttonTextCopy }}
+</button>
+<p *ngFor="let description of copyContent?.descriptions" [innerHTML]="description"></p>

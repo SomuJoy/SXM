@@ -1,0 +1,48 @@
+<br />
+<h4>{{ translateKeyPrefix + ".TITLE" | translate }}</h4>
+<br />
+<p>{{ translateKeyPrefix + ".SUB_TITLE" | translate }}</p>
+
+<form [formGroup]="credentialsFormGroup" novalidate>
+    <sxm-ui-text-form-field
+        formControlName="lastname"
+        [labelText]="translateKeyPrefix + '.LASTNAME_LABEL_TEXT' | translate"
+        data-e2e="lastname"
+        [dataTest]="'lastname'"
+        [errorMsg]="
+            credentialsFormGroup.get('lastname').hasError('required')
+                ? (translateKeyPrefix + '.LASTNAME_REQUIRED_TEXT' | translate)
+                : credentialsFormGroup.get('lastname').errors
+                ? (translateKeyPrefix + '.LASTNAME_REQUIRED_TEXT' | translate)
+                : ''
+        "
+    >
+    </sxm-ui-text-form-field>
+
+    <sxm-ui-text-form-field
+        formControlName="email"
+        [labelText]="translateKeyPrefix + '.EMAIL_LABEL_TEXT' | translate"
+        data-e2e="email"
+        [dataTest]="'email'"
+        [errorMsg]="
+            credentialsFormGroup.get('email').hasError('required')
+                ? (translateKeyPrefix + '.EMAIL_REQUIRED_TEXT' | translate)
+                : credentialsFormGroup.get('email').errors
+                ? (translateKeyPrefix + '.EMAIL_REQUIRED_TEXT' | translate)
+                : ''
+        "
+    >
+    </sxm-ui-text-form-field>
+    <ng-content select="[privacyPolicy]" privacyPolicy></ng-content>
+    <button
+        type="button"
+        [loading]="processingSubmission$ | async"
+        sxm-proceed-button
+        sxmUiDataClickTrack="submit"
+        data-e2e="CreateCredentialsFormSubmitButton"
+        data-test="CreateCredentialsFormSubmitButton"
+        (click)="onSubmit()"
+    >
+        {{ translateKeyPrefix + ".BUTTON_TEXT" | translate }}
+    </button>
+</form>

@@ -1,0 +1,59 @@
+{
+    "SharedSxmUiUiCreditCardFormFieldsModule": {
+        "creditCardFormFieldsComponent": {
+            "PAYMENT_INFO_SUBHEADER": "Infos de paiement",
+            "UNEXPECTED_ERROR": "Une erreur inattendue est apparue. Veuillez réessayer.",
+            "TOOLTIP_MESSAGE_1": "Pour Visa et Mastercard, utilisez les 3 chiffres figurant au verso de votre carte.",
+            "TOOLTIP_MESSAGE_2": "Pour American Express, utilisez les 4 chiffres figurant au recto de votre carte.",
+            "NEW_CC": {
+                "CC_CVV": "CVV",
+                "CC_NAME": "Nom sur la carte",
+                "UNAUTHORIZED_ERROR": "Nous sommes dans l'impossibilité d'autoriser votre carte de crédit. Veuillez mettre à jour vos renseignements de paiement.",
+                "ERROR_CC_NAME": "Entrez votre nom comme il apparaît sur votre carte.",
+                "CC_NUM": "Numéro de carte",
+                "ERROR_CC_NUM": "Entrez un numéro de carte de crédit valide.",
+                "ERROR_CC_NUM_FOUND_GC": "Le num\u00E9ro de carte que vous avez entr\u00E9 correspond \u00E0 une carte-cadeau SiriusXM. Veuillez \u00E9changer votre carte-cadeau ci-dessous ou entrer un num\u00E9ro de carte de cr\u00E9dit valide.",
+                "CC_EXP_DATE": "Date d’expiration (MM/AA)",
+                "CC_EXP_DATE_INLINE": "MM/AA",
+                "ERROR_CC_EXP_INVALID": "Entrez une date d’expiration valide.",
+                "ERROR_CC_CVV": "Entrez un Code de sécurité valide."
+            },
+            "ERROR_CVV_FOUND": "Le champ contient des caractères qui ressemblent aux informations de sécurité de la carte de crédit. Pour continuer, veuillez les revoir et apporter les changements appropriés."
+        },
+        "SxmUiChargeAgreementCheckboxFormFieldComponent": {
+            "LABEL_PART_A": "Veuillez débiter ma carte du montant actuellement dû et la carte à mon dossier pour tous les paiements futurs.",
+            "LABEL_PART_B": "En cliquant sur \"{{formButtonTextCopy}}\", j’accepte <a href=\"https://www.siriusxm.ca/conditions\" target=\"_blank\" data-track-click=\"Customer Agreement\">Entente du client</a> et la <a href=\"https://www.siriusxm.ca/fr/politique-de-confidentialite/\" target=\"_blank\" data-track-click=\"Privacy Policy\">Politique de la vie privée</a> de SiriusXM Canada, de recevoir des notifications sur mon compte à l’adresse courriel fournie; ET que mon service <strong><span class=\"underline\">se poursuivra automatiquement</span></strong> et que ma carte de crédit sera débitée du prix régulier alors en vigueur jusqu’à ce que j’annule. Prix régulier sujet à changement sur préavis approprié. Frais et taxes en sus. Je comprends que je peux annuler à tout moment et que je peux appeler SiriusXM Canada au <a href=\"tel:1-888-539-7474\">1 888 539-7474</a> pour annuler mon ou mes abonnements. Je comprends que toute la programmation est sujette à changement",
+            "LABEL_PART_B_RATE_VERSION": "En cliquant sur \"{{formButtonTextCopy}}\", j’accepte <a href=\"https://www.siriusxm.ca/conditions\" target=\"_blank\" data-track-click=\"Customer Agreement\">Entente du client</a> et la <a href=\"https://www.siriusxm.ca/fr/politique-de-confidentialite/\" target=\"_blank\" data-track-click=\"Privacy Policy\">Politique de la vie privée</a> de SiriusXM Canada, de recevoir des notifications sur mon compte à l’adresse courriel fournie; ET que mon service <strong><span class=\"underline\">se prolongera automatiquement</span></strong> et que ma carte de crédit sera débitée du prix régulier alors en vigueur jusqu’à ce que j’annule. Prix régulier sujet à changement sur préavis approprié. Taxes en sus. Je comprends que je peux annuler à tout moment et que je peux appeler SiriusXM Canada au <a href=\"tel:1-888-539-7474\">1 888 539-7474</a> pour annuler mon ou mes abonnements. Je comprends que toute la programmation est sujette à changement.",
+            "LABEL_PART_C_RATE_VERSION": "Les services me sont fournis pour une durée indéterminée et me sont facturés pour la période de facturation convenue.",
+            "LANGUAGE_LINK_TEXT": "",
+            "LANGUAGE_LINK_VALUE": "",
+            "ERROR_REQUIRED": "Veuillez accepter l'accord ci-dessus."
+        },
+        "SxmUiNameOnCardFormFieldComponent": {
+            "PLACEHOLDER": "Nom sur la carte",
+            "ERROR_REQUIRED": "Entrez votre nom comme il apparaît sur votre carte."
+        },
+        "SxmUiCreditCardNumberFormFieldComponent": {
+            "PLACEHOLDER": "Numéro de carte",
+            "ERROR_REQUIRED": "Entrez un numéro de carte de crédit valide.",
+            "CC_AMEX_ARIA_LABEL": "American Express",
+            "CC_DCI_ARIA_LABEL": "Diners Club International",
+            "CC_DISCOVER_ARIA_LABEL": "Discover",
+            "CC_JCB_ARIA_LABEL": "JCB",
+            "CC_MC_ARIA_LABEL": "Mastercard",
+            "CC_VISA_ARIA_LABEL": "Visa",
+            "CC_UNIONPAY_ARIA_LABEL": "UnionPay",
+            "LOCK_ICON_ARIA_LABEL": "Champ sécurisé"
+        },
+        "SxmUiExpirationDateFormFieldComponent": {
+            "PLACEHOLDER": "Exp (MM/AA)",
+            "ERROR_REQUIRED": "Entrez une date d’expiration valide."
+        },
+        "SxmUiCvvFormFieldComponent": {
+            "PLACEHOLDER": "CVV",
+            "TOOLTIP_MESSAGE_1": "Pour Visa et Mastercard, utilisez les 3 chiffres figurant au verso de votre carte.",
+            "TOOLTIP_MESSAGE_2": "Pour American Express, utilisez les 4 chiffres figurant au recto de votre carte.",
+            "ERROR_REQUIRED": "Entrez un Code de sécurité valide (CVV)."
+        }
+    }
+}

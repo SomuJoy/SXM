@@ -1,0 +1,38 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: block;
+    position: relative;
+    width: 100%;
+
+    .icon.icon-utility.large {
+        cursor: pointer;
+        height: 26px;
+        width: 26px;
+        padding: 3px;
+        position: relative;
+        float: right;
+        right: 12px;
+        top: -37px;
+    }
+
+    /* Hide spinner Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Hide spinner Firefox */
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+
+    :host-context(.error-state) .input-container {
+        border: 1px solid $red;
+    }
+
+    :host-context(.error-state) input:focus {
+        border-left: 4px solid $red;
+    }
+}

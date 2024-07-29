@@ -1,0 +1,10 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    background: $watermelon;
+    width: 100%;
+    padding: 25px 25px;
+    color: $white;
+    display: block;
+    font-size: 14px;
+}

@@ -1,0 +1,14 @@
+{
+    "$schema": "https://json-schema.org/schema",
+    "cli": "nx",
+    "$id": "lib-sxm-ui-icon",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Name of the icon without the icon- prefix",
+            "x-prompt": "Name of the icon without the icon- prefix?"
+        }
+    },
+    "required": ["name"]
+}

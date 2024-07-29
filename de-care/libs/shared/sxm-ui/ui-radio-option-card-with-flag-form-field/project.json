@@ -1,0 +1,34 @@
+{
+    "name": "shared-sxm-ui-ui-radio-option-card-with-flag-form-field",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/sxm-ui/ui-radio-option-card-with-flag-form-field/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/shared/sxm-ui/ui-radio-option-card-with-flag-form-field/src/**/*.ts",
+                    "libs/shared/sxm-ui/ui-radio-option-card-with-flag-form-field/src/**/*.html"
+                ]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/shared/sxm-ui/ui-radio-option-card-with-flag-form-field/jest.config.js",
+                "tsConfig": "libs/shared/sxm-ui/ui-radio-option-card-with-flag-form-field/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/shared/sxm-ui/ui-radio-option-card-with-flag-form-field/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:ui", "scope:shared-ui"]
+}

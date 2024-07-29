@@ -1,0 +1,29 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: grid;
+    grid-template-rows: 1fr 12px;
+    article {
+        display: grid;
+        grid-template-columns: 1fr 54px;
+        background-color: $blue-ultra-light;
+        padding: 16px;
+        height: 74px;
+        align-items: center;
+        span {
+            font-weight: 600;
+            grid-column: 1;
+            font-size: 16px;
+        }
+    }
+    footer {
+        display: grid;
+        justify-items: end;
+        img {
+            position: relative;
+            max-width: 70px;
+            max-height: 70px;
+            top: -48px;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+<span>
+    <input [formControl]="control" type="checkbox" id="{{ controlId }}" name="{{ formControlName }}" data-e2e="checkboxFormField" class="checkbox" />
+    <label for="{{ controlId }}"></label>
+</span>
+<span class="checkbox-text" (click)="control.setValue(!control.value)">
+    <ng-content></ng-content>
+</span>

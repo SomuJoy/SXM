@@ -1,0 +1,12 @@
+{
+    "SharedSxmUiUiPrimaryPackageCardModule": {
+        "SxmUiPlanRecapCardComponent": {
+            "PLUS_FEE": " plus fees.",
+            "TERM_AND_PRICE_FOR_ONE": "{{pricePerMonth}}/mo{{dealRecapCardSuffix}}",
+            "FOLLOW_ON_PRICE_QUEBEC": "Then {{retailPricePerMonth}}/mo.",
+            "MRD_DISCOUNT_PRICE": "{{pricePerMonth}}/mo plus fees with Multi-Radio Discount.",
+            "MRD_DISCOUNT_PRICE_QUEBEC": "{{pricePerMonth}}/mo with Multi-Radio Discount.",
+            "MRD_REGULAR_PRICE": "Reg. {{msrpPrice}}/mo."
+        }
+    }
+}

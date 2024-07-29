@@ -1,0 +1,8 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    font-family: $font-standard;
+    color: $black;
+    font-weight: calculate-font-weight("book");
+}

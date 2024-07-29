@@ -1,0 +1,25 @@
+{
+    "name": "sxm-ui-navigation-ui-login",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/sxm-ui-navigation/ui-login/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/sxm-ui-navigation/ui-login"],
+            "options": {
+                "jestConfig": "libs/sxm-ui-navigation/ui-login/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/sxm-ui-navigation/ui-login/src/**/*.ts", "libs/sxm-ui-navigation/ui-login/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:feature", "scope:sxm-ui-navigation-elements"]
+}

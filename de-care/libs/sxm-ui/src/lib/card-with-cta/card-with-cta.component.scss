@@ -1,0 +1,14 @@
+.card-with-cta {
+    width: 100%;
+
+    &--card {
+        padding: 24px;
+        width: 100%;
+    }
+
+    :host-context(.card-with-no-button) &--card {
+        button {
+            display: none;
+        }
+    }
+}

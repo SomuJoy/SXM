@@ -1,0 +1,22 @@
+@import "sxm.phoenix.imports";
+
+sxm-ui-dot-progress-bar {
+    display: block;
+    margin-bottom: 12px;
+}
+h6 {
+    @include font-size(14px);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    color: $gray-dark;
+}
+
+.component {
+    &--step-content {
+        overflow: visible;
+
+        .step-content-container {
+            padding: 0;
+        }
+    }
+}

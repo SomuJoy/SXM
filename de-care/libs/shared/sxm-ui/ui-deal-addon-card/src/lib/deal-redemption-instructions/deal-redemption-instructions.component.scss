@@ -1,0 +1,26 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    padding: 32px 24px;
+    -webkit-box-shadow: inset 0 0 0 4px $off-white;
+    -moz-box-shadow: inset 0 0 0 4px $off-white;
+    box-shadow: inset 0 0 0 4px $off-white;
+    img {
+        width: auto;
+        margin-bottom: 12px;
+    }
+    h5 {
+        margin: 0;
+        font-size: calculate-rem(18px);
+    }
+    p {
+        text-align: center;
+        color: $gray-dark;
+        font-size: calculate-rem(14px);
+    }
+}

@@ -1,0 +1,35 @@
+<section>
+    <button
+        class="close-button"
+        (click)="closed.emit()"
+        sxmUiDataClickTrack="ui"
+        data-link-key="Global Nav"
+        data-link-name="close panel"
+        [attr.aria-label]="translateKeyPrefix + '.ARIA_CLOSE_LABEL' | translate"
+    >
+        <span class="x-shape"></span>
+    </button>
+    <h5 class="header">{{ translateKeyPrefix + ".WELCOME" | translate }}</h5>
+    <div class="hr-container"><hr /></div>
+    <p class="label">{{ translateKeyPrefix + ".SIGN_IN" | translate }}</p>
+    <div class="login-form-container">
+        <slot name="formSlot"></slot>
+    </div>
+    <p class="no-account-label">
+        {{ translateKeyPrefix + ".NO_ACCOUNT_DESCRIPTION" | translate
+        }}<a
+            [href]="translateKeyPrefix + '.NO_ACCOUNT_URL' | translate: { careBaseUrl: careUrl }"
+            target="_blank"
+            sxmUiDataClickTrack="exit"
+            data-link-key="Global Nav"
+            data-link-name="register account"
+            data-test="notLoggedinAccount"
+            >{{ translateKeyPrefix + ".NO_ACCOUNT_LABEL" | translate }}</a
+        >
+    </p>
+</section>
+
+<footer class="cta-container">
+    <p class="app-cta-header">{{ translateKeyPrefix + ".APPS_LOGO_HEADER" | translate }}</p>
+    <sxm-ui-mobile-app-cta [showIOS]="platform === 'desktop' || platform === 'ios'" [showAndroid]="platform === 'desktop' || platform === 'android'"></sxm-ui-mobile-app-cta>
+</footer>

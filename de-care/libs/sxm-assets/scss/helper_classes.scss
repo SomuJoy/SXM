@@ -1,0 +1,169 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.full-width {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+p.legal-copy,
+p.small-copy,
+label.legal-copy,
+label.small-copy {
+    a,
+    .text-link {
+        @include underline(default);
+    }
+}
+
+a.no-underline,
+button.no-underline {
+    @include underline(none);
+}
+
+a.text-link-secondary,
+button.text-link-secondary {
+    color: $blue-secondary;
+    font-size: inherit;
+    font-weight: calculate-font-weight("bold");
+    @include underline(none);
+}
+
+// override default bold for text-links from UI framework
+a.text-link,
+button.text-link {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: 1.5; //Fix long links that wrap onto next line
+}
+
+.legal-copy .alt-text-link {
+    color: inherit;
+    text-decoration: underline;
+}
+
+a {
+    &[href^="tel:"] {
+        @include bp(medium) {
+            color: inherit;
+            cursor: default;
+            @include underline(none);
+            pointer-events: none;
+        }
+    }
+}
+
+.link-inherit-color {
+    a {
+        color: inherit;
+    }
+}
+
+//todo: overwrite z index of from inputs from 50 to 10 to fix bug on modal
+//todo: move to ui lib
+.checkbox-item input,
+.radio-item input,
+.toggle-item input {
+    z-index: 8 !important;
+}
+//todo: overwrite z index of from inputs from 50 to 10 to fix bug on modal
+//todo: move to ui lib
+.checkbox-item label,
+.radio-item label,
+.toggle-item label {
+    z-index: 8 !important;
+}
+
+app-checkout,
+one-step-activation-flow {
+    .invalid-feedback {
+        p {
+            @include font-size(14px);
+        }
+
+        a {
+            color: inherit;
+            font-weight: inherit;
+            &[href^="tel:"] {
+                @include bp(medium) {
+                    @include underline(default);
+                    cursor: default;
+                }
+            }
+        }
+    }
+
+    .input-container {
+        label {
+            color: $gray-dark;
+        }
+        margin-bottom: 16px;
+    }
+}
+
+// default top margin for CTA button is 32px, except when there is a privacy policy before it, then it is 24px
+privacy-policy + button[sxm-proceed-button] {
+    margin-top: 24px;
+}
+
+.text-color-white {
+    // replace .text-white for consistency
+    color: $white;
+    * {
+        color: $white;
+    }
+}
+
+.column.small-6.thin-padding {
+    &:first-child {
+        padding: 0 4px 0 0;
+    }
+    &:last-child {
+        padding: 0 0 0 4px;
+    }
+}
+
+//Move to task processing report component once it's created
+.icon.icon-utility.extra-wide {
+    width: 30px;
+    height: 25px;
+}
+
+.icon-utility.icon.error {
+    use {
+        fill: $red;
+    }
+}
+
+.checkmark-list-with-subdescription {
+    @include checkmark-list-with-subdescription;
+}
+
+.list-with-subdescription {
+    @include list-with-subdescription;
+}
+
+.extra-letter-spacing {
+    letter-spacing: 2px;
+}
+
+a.button-link {
+    text-decoration: none;
+    display: block;
+
+    &::before {
+        display: block;
+    }
+}
+
+.lead-in,
+.lead-in > p {
+    @include lead-in;
+}
+
+// TODO: this is used to overwrite the path in the ui framework, need to refactor the checkmark element to use a different method instead of relying on an inline svg
+div .checkbox-item .checkbox:checked + label:after {
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 10' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath d='M.685 4.991l3.382 3.382 7.248-7.247' stroke-width='2' stroke='%23fff' fill='none'%3E%3C/path%3E%3C/svg%3E")
+        no-repeat;
+    background-size: contain;
+}

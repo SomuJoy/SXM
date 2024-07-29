@@ -1,0 +1,28 @@
+{
+    "sharedSxmUiUiVehicleWithSubscriptionInfoModule": {
+        "vehicleWithSubscriptionInfoComponent": {
+            "RADIO": "Code de radio : {{ radioId }}",
+            "RADIO_AS_TITLE": "Code de radio {{ radioId }}",
+            "USERNAME": "Nom d'utilisateur: {{ username }}",
+            "THE_TRIAL_TEXT": "L’essai",
+            "TRIAL_ENDS": "prend fin le : ",
+            "DATE_STARTS": "Le forfait {{termWord}} commence le : ",
+            "DATE_STARTS_PROMO": "La promo de {{termLength}} mois commence le : ",
+            "DATE_ENDS": "Le forfait {{termWord}} se termine le : ",
+            "DATE_ENDS_PROMO": "La promo de {{termLength}} mois se termine le : ",
+            "DATE_RENEWS": "Le forfait {{termWord}} renouvelable : ",
+            "DATE_RENEWS_PROMO": "La promo de {{termLength}} mois renouvelable : ",
+            "DATE_CLOSED": "Désactivation le : ",
+            "DATE_LIFETIME": "Plan à vie",
+            "TERM_MAP": {
+                "=1": "mensuel",
+                "=3": "trimestriel",
+                "=6": "semestriel",
+                "=12": "annuel",
+                "=24": "de 2 ans",
+                "=36": "de 3 ans",
+                "other": ""
+            }
+        }
+    }
+}

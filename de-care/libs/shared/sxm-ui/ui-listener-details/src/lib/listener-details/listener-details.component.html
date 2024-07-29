@@ -1,0 +1,11 @@
+<div class="sxm-ui-listener-details">
+    <div *ngIf="listenerData.icon" class="icon" data-e2e="listenerDetailsIcon">
+        <svg class="icon icon-content"><use [attr.xlink:href]="listenerData.icon"></use></svg>
+    </div>
+    <div class="details">
+        <p *ngIf="listenerData.eyebrow" class="eyebrow small-copy" data-e2e="listenerDetailsEyebrow">{{ listenerData.eyebrow }}</p>
+        <p *ngIf="listenerData.title" class="title" data-e2e="listenerDetailsTitle">{{ listenerData.title }}</p>
+        <ng-content></ng-content>
+        <p *ngIf="listenerData.footer" class="footer small-copy" [innerHTML]="listenerData.footer" data-e2e="listenerDetailsFooter"></p>
+    </div>
+</div>

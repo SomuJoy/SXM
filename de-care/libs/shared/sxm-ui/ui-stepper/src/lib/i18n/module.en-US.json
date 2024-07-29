@@ -1,0 +1,10 @@
+{
+    "SharedSxmUiUiStepperModule": {
+        "SxmUiStepperProgressBreadcrumbComponent": {
+            "STEPPER_PROGRESS": "Step {{currentStep}} of {{steps}}"
+        },
+        "SxmUiStepperAccordionComponent": {
+            "EDIT_BUTTON_TEXT": "Edit"
+        }
+    }
+}

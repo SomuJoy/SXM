@@ -1,0 +1,9 @@
+{
+    "HEADER": "Nous avons trouvé {{ totalSubscriptionsFound }} radios qui correspondent à votre info.",
+    "SUB_HEADER": "Choisissez la radio que vous voulez activer.",
+    "NO_ACTIVE_SERVICE": "Aucun service actif",
+    "VEHICLE": "{{make}} {{model}} {{year}}",
+    "RADIO_ID_MASKED": "Code de Radio: ****{{maskedRadioId}}",
+    "TRIAL_LABEL": " Trial Subscription",
+    "SELECT_RADIO": "Select"
+}

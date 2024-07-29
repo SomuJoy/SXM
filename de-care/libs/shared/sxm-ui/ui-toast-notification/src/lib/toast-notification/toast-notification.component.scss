@@ -1,0 +1,41 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "libs/sxm-assets/scss/animations";
+
+$animationDuration: 0.4s;
+$holdDuration: 3s;
+
+:host {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.toast-container {
+    display: block;
+    width: auto;
+    max-width: 350px;
+    padding: 0 16px;
+    animation: show $animationDuration ease-in-out forwards, hide $animationDuration ease-in-out $animationDuration + $holdDuration forwards;
+}
+@keyframes show {
+    0% {
+        opacity: 0;
+        transform: translateY(-54px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-54px);
+    }
+}

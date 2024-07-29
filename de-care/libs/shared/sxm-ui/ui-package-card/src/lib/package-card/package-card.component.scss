@@ -1,0 +1,98 @@
+@import "sxm.phoenix.imports";
+
+@import "libs/sxm-assets/scss/mixins.scss";
+:host {
+    display: flex;
+}
+.container {
+    padding: 12px;
+    background-color: $white;
+    box-shadow: 0 2px 15px -4px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 2px 15px -4px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 2px 15px -4px rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+    line-height: 22px;
+    @include bp(small) {
+        width: 200px;
+    }
+    @include bp(medium) {
+        padding: 16px;
+        width: 224px;
+    }
+
+    @include bp(large) {
+        width: 218px;
+    }
+
+    @include bp(xlarge) {
+        width: 216px;
+    }
+
+    .package-name {
+        display: flex;
+        align-items: center;
+        height: 32px;
+        @include bp(medium) {
+            height: auto;
+            margin-bottom: 4px;
+        }
+        .package-title {
+            @include font-size(12px);
+        }
+        h3 {
+            font-weight: bold;
+            margin: 0;
+        }
+    }
+}
+
+svg {
+    stroke-width: 0.5;
+    width: 13px;
+    height: 13px;
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMiAxMCI+PHBhdGggZD0iTS42ODUgNC45OTFsMy4zODIgMy4zODIgNy4yNDgtNy4yNDciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlPSJyZ2IoMCwxMTAsMjE1KSIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==")
+        no-repeat; // TODO: Make Spritesheet work with storybook.
+    margin-right: 4px;
+    vertical-align: middle;
+
+    use {
+        stroke: $blue-secondary;
+    }
+    & + span {
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 22px;
+    }
+}
+
+.price-section {
+    h6 {
+        line-height: 22px;
+        @include font-size(18px);
+        margin-bottom: 4px;
+    }
+}
+
+.offer-details-section {
+    grid-column: 1/6;
+    @include font-size(12px);
+}
+
+.button-get {
+    margin: 16px 0;
+    padding: 10px;
+    min-height: 44px;
+    height: 44px;
+}
+
+a.text-link {
+    color: $black;
+    white-space: nowrap;
+    @include underline(default);
+}
+
+.icons-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}

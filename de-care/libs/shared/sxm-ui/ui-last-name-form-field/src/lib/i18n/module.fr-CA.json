@@ -1,0 +1,8 @@
+{
+    "SharedSxmUiUiLastNameFormFieldModule": {
+        "LastNameFormFieldComponent": {
+            "LABEL_TEXT": "Nom",
+            "ERROR_MESSAGE_REQUIRED": "Entrez votre nom."
+        }
+    }
+}

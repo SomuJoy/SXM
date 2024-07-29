@@ -1,0 +1,91 @@
+<sxm-ui-nav-dropdown
+    #alerts
+    [open]="false"
+    [align]="'right'"
+    [arrowColor]="isKnown || isLoading ? '#e8eef8' : '#ffffff'"
+    (isOpened)="onAlertsOpened()"
+    [buttonAriaLabel]="translateKeyPrefix + '.ALERTS_BUTTON_ARIA' | translate"
+    [buttonLinkKey]="'Global Nav'"
+    [buttonLinkName]="'Snapshot Alert Icon'"
+>
+    <ng-container toggler>
+        <sxm-ui-alerts-icon [alertCount]="alertCount$ | async" [class.critical]="isAlertCritical$ | async"></sxm-ui-alerts-icon>
+    </ng-container>
+    <ng-container content>
+        <ng-container *ngIf="isLoading; else alertsNotLoading">
+            <sxm-ui-alerts-panel-loading-skeleton
+                [attr.aria-label]="translateKeyPrefix + '.ALERTS_PANEL_LOADING_ARIA' | translate"
+                data-test="skeletonAlertsPanelLoading"
+            ></sxm-ui-alerts-panel-loading-skeleton>
+        </ng-container>
+        <ng-template #alertsNotLoading>
+            <div [class.fade-in]="fadeIn">
+                <sxm-ui-alerts-panel-logged-in
+                    *ngIf="isKnown"
+                    (alertLinkClicked)="onAlertLinkClicked($event)"
+                    [data]="{
+                        firstName: firstName$ | async,
+                        alerts: alertsToDisplay$ | async,
+                        convertTrialEndDate: convertTrialEndDate$ | async,
+                        nextBillingPaymentDate: nextBillingPaymentDate$ | async,
+                        priceChangeDate: translateKeyPrefix + '.PRICE_CHANGE_MESSAGE_DATE' | translate,
+                        identificationState: identificationState$ | async
+                    }"
+                    (closed)="closePanels()"
+                ></sxm-ui-alerts-panel-logged-in>
+                <alerts-panel-not-logged-in *ngIf="!isKnown" (closed)="closePanels()" (signInClicked)="onSignInClicked()"></alerts-panel-not-logged-in>
+            </div>
+        </ng-template>
+    </ng-container>
+</sxm-ui-nav-dropdown>
+<sxm-ui-nav-dropdown
+    #user
+    [open]="false"
+    [align]="'right'"
+    [arrowColor]="isKnown || (isLoading && showUserPanelLoading) ? '#e8eef8' : '#ffffff'"
+    (isOpened)="onUserOpened()"
+    [buttonAriaLabel]="translateKeyPrefix + '.USER_BUTTON_ARIA' | translate"
+    [buttonLinkKey]="'Global Nav'"
+    [buttonLinkName]="'Snapshot User Icon'"
+>
+    <ng-container toggler>
+        <sxm-ui-account-presence-icon [loggedIn]="isKnown"></sxm-ui-account-presence-icon>
+    </ng-container>
+    <ng-container content>
+        <ng-container *ngIf="isLoading && showUserPanelLoading; else userNotLoading">
+            <sxm-ui-user-panel-loading-skeleton [attr.aria-label]="translateKeyPrefix + '.ALERTS_PANEL_LOADING_ARIA' | translate"></sxm-ui-user-panel-loading-skeleton>
+        </ng-container>
+        <ng-template #userNotLoading>
+            <div [class.fade-in]="fadeIn">
+                <ng-container *ngIf="identificationState$ | async as iState">
+                    <sxm-ui-account-panel-logged-in
+                        *ngIf="iState === 'LOGGEDIN'"
+                        (logout)="logout()"
+                        [data]="{careUrl, oacUrl, dotComUrl, firstName: firstName$ | async}"
+                        (closed)="closePanels()"
+                    >
+                    </sxm-ui-account-panel-logged-in>
+                    <account-panel-non-pii
+                        *ngIf="iState === 'IDENTIFIED'"
+                        (loggedOut)="onLoggedOut()"
+                        [firstName]="firstName$ | async"
+                        (closed)="closePanels()"
+                    ></account-panel-non-pii>
+                    <account-panel-not-logged-in *ngIf="iState === 'UNIDENTIFIED'" (closed)="closePanels()">
+                        <div slot="formSlot">
+                            <login-form
+                                (fetchedAccountNumber)="onLoggedIn()"
+                                (loginError)="onLoginError()"
+                                [isLoading]="isProcessingLogin"
+                                [failedToLoadAccount]="failedToLoadAccount"
+                                [hasKeepSignedInOption]="true"
+                            ></login-form>
+                        </div>
+                    </account-panel-not-logged-in>
+                </ng-container>
+            </div>
+        </ng-template>
+    </ng-container>
+</sxm-ui-nav-dropdown>
+<input type="hidden" name="nds-pmd" />
+<template id="login-captcha-content"> </template>

@@ -1,0 +1,37 @@
+<section id="radioFoundContent">
+    <h3 id="radioFoundContentTitle">{{ translateKeyPrefix + ".HEADER" | translate }}</h3>
+    <ng-container *ngIf="subscriptionFound">
+        <hr />
+        <p class="bold">
+            <ng-container *ngIf="subscriptionFound?.vehicleInfo; else noVehicleInfo">
+                {{ translateKeyPrefix + ".VEHICLE" | translate: subscriptionFound?.vehicleInfo }}
+            </ng-container>
+            <ng-template #noVehicleInfo>
+                {{ translateKeyPrefix + ".RADIO_ID_MASKED" | translate: { maskedRadioId: subscriptionFound.last4DigitsOfRadioId } }}
+            </ng-template>
+        </p>
+        <p>
+            <ng-container *ngIf="!subscriptionFound.isClosed; else closedRadio">
+                <ng-container *ngFor="let planName of subscriptionFound.planNames">
+                    <span class="plan-name">{{ planName }} {{ translateKeyPrefix + ".TRIAL_LABEL" | translate }}</span>
+                </ng-container>
+            </ng-container>
+            <ng-template #closedRadio>
+                <span class="plan-name">
+                    {{ translateKeyPrefix + ".NO_ACTIVE_SERVICE" | translate }}
+                </span>
+            </ng-template>
+        </p>
+        <hr />
+        <button
+            type="button"
+            (click)="onFormSubmit()"
+            sxmUiDataClickTrack="submit"
+            sxm-proceed-button
+            [loading]="processingSubmission$ | async"
+            data-test="deviceFoundContinueButton"
+        >
+            {{ translateKeyPrefix + ".CONTINUE_BTN_LABEL" | translate }}
+        </button>
+    </ng-container>
+</section>

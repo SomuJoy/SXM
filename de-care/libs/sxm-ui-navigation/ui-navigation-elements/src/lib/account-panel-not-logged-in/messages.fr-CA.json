@@ -1,0 +1,9 @@
+{
+    "WELCOME": "Bienvenue",
+    "SIGN_IN": "Connectez-vous",
+    "NO_ACCOUNT_DESCRIPTION": "Pas de compte? ",
+    "NO_ACCOUNT_URL": "{{careBaseUrl}}/account/registration?langpref=fr",
+    "NO_ACCOUNT_LABEL": "Inscrivez-vous",
+    "APPS_LOGO_HEADER": "OBTENIR L’APPLI SXM",
+    "ARIA_CLOSE_LABEL": "Fermer le panneau de la gestion de compte"
+}

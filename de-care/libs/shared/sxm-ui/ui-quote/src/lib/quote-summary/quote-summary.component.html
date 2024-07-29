@@ -1,0 +1,86 @@
+<table *ngIf="quoteData">
+    <ng-container *ngIf="quoteData.currentCharges">
+        <tr *ngIf="quoteData.currentCharges.planName">
+            <td>{{ quoteData.currentCharges.planName }}</td>
+            <td>{{ quoteData.currentCharges.planSubtotal }}</td>
+        </tr>
+        <tr *ngIf="quoteData.currentCharges.planPricePerMonth">
+            <td colspan="2">
+                {{
+                    translateKeyPrefix + "CURRENT.TERM_AND_PRICE_SUMMARY"
+                        | translate
+                            : {
+                                  termLength: quoteData.currentCharges.planTermLength,
+                                  pricePerMonth: quoteData.currentCharges.planPricePerMonth,
+                                  pluralizedMonth: quoteData.currentCharges.planTermLength | i18nPlural: (translateKeyPrefix + "PLURAL_MAP.MONTH" | translate),
+                                  perMonthAbbreviation:
+                                      quoteData.currentCharges.planTermLength | i18nPlural: (translateKeyPrefix + "PLURAL_MAP.PER_MONTH_ABBREVIATION" | translate)
+                              }
+                }}
+            </td>
+        </tr>
+        <tr *ngIf="quoteData.currentCharges.totalTaxesAndFeesAmount" class="large-copy">
+            <th>{{ translateKeyPrefix + "TOTAL_FEES_AND_TAXES" | translate }}</th>
+            <th>{{ quoteData.currentCharges.totalTaxesAndFeesAmount }}</th>
+        </tr>
+        <tr class="row-pb-16">
+            <td colspan="2">
+                <sxm-ui-accordion-chevron
+                    [collapsedText]="translateKeyPrefix + 'TAXES_AND_FEES_DETAILS' | translate"
+                    [expandedText]="translateKeyPrefix + 'TAXES_AND_FEES_DETAILS' | translate"
+                    [aria]="{
+                        collapsedText: translateKeyPrefix + 'ARIA_SHOW_DETAILS' | translate,
+                        expandedText: translateKeyPrefix + 'ARIA_HIDE_DETAILS' | translate
+                    }"
+                    data-track-click="current quote taxes and fees details"
+                    [opened]="true"
+                >
+                    <table>
+                        <tr *ngFor="let lineItem of quoteData.currentCharges.fees" class="small-copy">
+                            <td>{{ lineItem.label }}</td>
+                            <td>{{ lineItem.amount }}</td>
+                        </tr>
+                        <tr *ngFor="let lineItem of quoteData.currentCharges.taxes" class="small-copy">
+                            <td>{{ lineItem.label }}</td>
+                            <td>{{ lineItem.amount }}</td>
+                        </tr>
+                    </table>
+                </sxm-ui-accordion-chevron>
+            </td>
+        </tr>
+        <tr *ngIf="quoteData.currentCharges.previousBalance as previousBalance" class="large-copy row-pb-16">
+            <th>
+                <span>{{ previousBalance.label }}</span>
+                <sxm-ui-tooltip *ngIf="previousBalance.tooltip" class="tooltip-component tooltip-display-top-medium-up tooltip-display-right-large-up transparent">
+                    <span>{{ previousBalance.tooltip }}</span>
+                </sxm-ui-tooltip>
+            </th>
+            <th>{{ previousBalance.amount }}</th>
+        </tr>
+        <tr class="large-copy bold row-bt">
+            <td>{{ translateKeyPrefix + "CURRENT.DUE_TODAY_LABEL" | translate }}</td>
+            <td>{{ quoteData.currentCharges.totalDue }}</td>
+        </tr>
+    </ng-container>
+    <ng-container *ngIf="quoteData.renewalCharges">
+        <tr>
+            <td colspan="2">{{ translateKeyPrefix + "RENEWAL.ESTIMATED_BILLING_LABEL" | translate }}</td>
+        </tr>
+        <tr>
+            <td>{{ quoteData.renewalCharges.planName }}</td>
+            <td>{{ quoteData.renewalCharges.planSubtotal }}</td>
+        </tr>
+        <tr *ngFor="let lineItem of quoteData.renewalCharges.fees">
+            <td>{{ lineItem.label }}</td>
+            <td>{{ lineItem.amount }}</td>
+        </tr>
+        <tr *ngFor="let lineItem of quoteData.renewalCharges.taxes">
+            <td>{{ lineItem.label }}</td>
+            <td>{{ lineItem.amount }}</td>
+        </tr>
+        <tr>
+            <td>{{ translateKeyPrefix + "RENEWAL.MONTHLY_STARTING" | translate }}{{ quoteData.renewalCharges.startDate }}</td>
+            <td>{{ quoteData.renewalCharges.totalDueOnStartDate }}</td>
+        </tr>
+    </ng-container>
+</table>

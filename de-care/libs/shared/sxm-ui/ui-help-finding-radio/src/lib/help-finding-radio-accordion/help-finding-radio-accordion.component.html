@@ -1,0 +1,13 @@
+<sxm-ui-show-hide
+    [collapsedText]="'SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioAccordionComponent.RADIO_ID_HELP_LABEL' | translate"
+    [expandedText]="'SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioAccordionComponent.RADIO_ID_HELP_LABEL' | translate"
+>
+    <span *ngIf="contentTitle">
+        <ng-content select=".contentTitle"></ng-content>
+    </span>
+    <sxm-ui-help-finding-radio [showSearchByLicensePlateLink]="showSearchByLicensePlateLink" (deviceHelp)="onDeviceHelp()">
+        <ng-container *ngIf="contentTitle" class=".title">
+            <ng-content select=".contentTitle"></ng-content>
+        </ng-container>
+    </sxm-ui-help-finding-radio>
+</sxm-ui-show-hide>

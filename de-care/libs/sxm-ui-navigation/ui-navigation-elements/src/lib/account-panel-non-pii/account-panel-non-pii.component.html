@@ -1,0 +1,76 @@
+<header>
+    <button
+        (click)="closed.emit()"
+        sxmUiDataClickTrack="ui"
+        data-link-key="Global Nav"
+        data-link-name="close panel"
+        [attr.aria-label]="translateKeyPrefix + '.ARIA_CLOSE_LABEL' | translate"
+    >
+        <span class="x-shape"></span>
+    </button>
+    <p>{{ translateKeyPrefix + ".WELCOME" | translate }}</p>
+    <h5>{{ firstName }}</h5>
+</header>
+<div class="nav-content">
+    <div class="nav-item">
+        <a
+            sxmUiDataClickTrack="exit"
+            class="nav-link"
+            data-link-key="Global Nav"
+            data-link-name="manage account"
+            [href]="translateKeyPrefix + (identifiedThroughLogin ? '.REGISTRATION_STEP_UP' : '.MANAGE_MY_ACCOUNT_URL') | translate : { careUrl }"
+            data-test="nonPiiAccountManageMyAccount"
+            >{{ translateKeyPrefix + ".MANAGE_MY_ACCOUNT" | translate }}
+        </a>
+
+        <a
+            sxmUiDataClickTrack="exit"
+            class="nav-sub-link"
+            data-link-key="Global Nav"
+            data-link-name="view bill"
+            [href]="translateKeyPrefix + '.VIEW_MY_BILL_URL' | translate : { careUrl, oacUrl }"
+            data-test="nonPiiAccountViewMyBill"
+        >
+            {{ translateKeyPrefix + ".VIEW_MY_BILL" | translate }}
+        </a>
+        <a
+            sxmUiDataClickTrack="exit"
+            class="nav-sub-link"
+            data-link-key="Global Nav"
+            data-link-name="make payment"
+            [href]="oacUrl + (translateKeyPrefix + '.MAKE_A_PAYMENT_URL' | translate)"
+            data-test="nonPiiAccountMakePayment"
+        >
+            {{ translateKeyPrefix + ".MAKE_A_PAYMENT" | translate }}
+        </a>
+        <a
+            sxmUiDataClickTrack="exit"
+            class="nav-sub-link"
+            data-link-key="Global Nav"
+            data-link-name="refresh radio"
+            [href]="translateKeyPrefix + '.REFRESH_MY_RADIO_URL' | translate"
+            data-test="nonPiiAccountRefreshRadio"
+        >
+            {{ translateKeyPrefix + ".REFRESH_MY_RADIO" | translate }}
+        </a>
+        <a
+            sxmUiDataClickTrack="exit"
+            class="nav-sub-link"
+            data-link-key="Global Nav"
+            data-link-name="transfer subscription"
+            [href]="translateKeyPrefix + '.TRANSFER_SUBSCRIPTION_URL' | translate : { careUrl, dotComUrl }"
+            data-test="nonPiiAccountTransferSubscription"
+        >
+            {{ translateKeyPrefix + ".TRANSFER_SUBSCRIPTION" | translate }}
+        </a>
+    </div>
+    <div class="nav-item" (click)="logout()" data-test="nonPiiLogout">
+        <span class="nav-link sign-out">
+            {{ translateKeyPrefix + ".SIGN_OUT" | translate }}
+        </span>
+    </div>
+</div>
+<div class="cta-container">
+    <p class="app-cta-header">{{ translateKeyPrefix + ".APPS_LOGO_HEADER" | translate }}</p>
+    <sxm-ui-mobile-app-cta [showIOS]="platform === 'desktop' || platform === 'ios'" [showAndroid]="platform === 'desktop' || platform === 'android'"></sxm-ui-mobile-app-cta>
+</div>

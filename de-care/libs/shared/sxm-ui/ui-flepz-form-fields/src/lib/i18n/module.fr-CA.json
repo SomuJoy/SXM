@@ -1,0 +1,23 @@
+{
+    "sharedSxmUiUiFlepzFormFieldsModule": {
+        "flepzFormFieldsComponent": {
+            "YOUR_INFO": "Votre info",
+            "CAR_INFO": "L'info de votre véhicule",
+            "FIRST_NAME": "Prénom",
+            "LAST_NAME": "Nom",
+            "EMAIL": "Courriel",
+            "PHONE_NUMBER": "Numéro de téléphone",
+            "ZIP_CODE": "Code postal",
+            "Continue": "Continuer",
+            "ERROR": {
+                "FIRST_NAME": "Entrez votre prénom.",
+                "LAST_NAME": "Entrez votre nom.",
+                "EMAIL": "Entrez une adresse courriel valide.",
+                "PHONE_NUMBER": "Entrez un numéro de téléphone valide.",
+                "ZIP_CODE": "Entrez un code postal valide.",
+                "USERNAME": "",
+                "CVV_EXCLUDE": "Le champ contient des caract\u00E8res qui ressemblent aux informations de s\u00E9curit\u00E9 de la carte de cr\u00E9dit. Pour continuer, veuillez les revoir et apporter les changements appropri\u00E9s."
+            }
+        }
+    }
+}

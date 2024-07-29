@@ -1,0 +1,21 @@
+{
+    "sharedSxmUiUiRadioOptionCardWithFlagFormField": {
+        "radioOptionCardWithFlagFormField": {
+            "RADIO": "Code de radio : {{radioId}}",
+            "USERNAME": "Nom d'utilisateur : {{username}}",
+            "RENEWS": "Prochaine date de facturation : ",
+            "DEACTIVATED": "Désactivation le :",
+            "PLURAL_MONTH_MAP": {
+                "=1": "Forfait mensuel",
+                "=3": "Forfait trimestriel",
+                "=6": "Forfait semestriel",
+                "=12": "Forfait annuel",
+                "=24": "Forfait de 2 ans",
+                "=36": "Forfait de 3 ans",
+                "other": "Forfait de #-mois"
+            },
+            "NOT_VEHICLE_OWNER": "Je ne suis plus propriétaire de cette voiture.",
+            "REMOVE_FROM_ACCOUNT": "Supprimez-la du compte. (optionnel)"
+        }
+    }
+}

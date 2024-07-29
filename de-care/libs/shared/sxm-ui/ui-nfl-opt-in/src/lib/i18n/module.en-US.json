@@ -1,0 +1,6 @@
+{
+    "NFL_TEXT": {
+        "CHECKBOX_TEXT": "Yes, please share my name and contact information with the NFL (<a href=\"https://www.nfl.com\" target=\"_blank\">www.nfl.com</a>). I acknowledge that use of my personal information by the NFL will be governed by the NFL <a href=\"https://www.nfl.com/legal/privacy\" target=\"_blank\">Privacy Policy</a>.",
+        "CHECKBOX_CONFIRMATION_TEXT": "Would you like to receive offers and promotional information from the NFL?"
+    }
+}

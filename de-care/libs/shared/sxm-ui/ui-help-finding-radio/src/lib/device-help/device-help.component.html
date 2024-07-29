@@ -1,0 +1,11 @@
+<div>
+    <h5 [id]="ariaDescribedbyTextId">{{ "SharedSxmUiUiHelpFindingRadioModule.SxmUiDeviceHelpComponent.TITLE" | translate }}</h5>
+    <p  [innerHTML]="'SharedSxmUiUiHelpFindingRadioModule.SxmUiDeviceHelpComponent.MESSAGE' | translate"></p>
+    <p>{{ "SharedSxmUiUiHelpFindingRadioModule.SxmUiDeviceHelpComponent.NOTE" | translate }}</p>
+    <ul>
+        <li [innerHTML]="'SharedSxmUiUiHelpFindingRadioModule.SxmUiDeviceHelpComponent.UNORDERED_LIST.item-1' | translate"></li>
+        <li [innerHTML]="'SharedSxmUiUiHelpFindingRadioModule.SxmUiDeviceHelpComponent.UNORDERED_LIST.item-2' | translate"></li>
+        <li [innerHTML]="'SharedSxmUiUiHelpFindingRadioModule.SxmUiDeviceHelpComponent.UNORDERED_LIST.item-3' | translate"></li>
+        <li *ngIf="'SharedSxmUiUiHelpFindingRadioModule.SxmUiDeviceHelpComponent.UNORDERED_LIST.item-4' | translate as item4" [innerHTML]="item4"></li>
+    </ul>
+</div>

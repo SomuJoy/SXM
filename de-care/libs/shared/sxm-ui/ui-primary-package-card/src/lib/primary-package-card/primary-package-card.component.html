@@ -1,0 +1,98 @@
+<div *ngIf="packageData" class="primary-package-card">
+    <div class="ppc-content background-white">
+        <div class="ppc-content--platform-plan" qatag="PrimaryPackagePlatformPlan">
+            <p [innerHTML]="packageData.platformPlan"></p>
+        </div>
+        <div class="ppc-content--price-term" qatag="PrimaryPackagePriceTerm">
+            <h4 [innerHTML]="packageData.priceAndTermDescTitle | safeHtml"></h4>
+        </div>
+        <div class="ppc-content--legal text-color-gray-dark" qatag="PrimaryPackageLegal">
+            <p class="legal-copy" [innerHTML]="packageData.processingFeeDisclaimer"></p>
+        </div>
+        <div class="ppc-content--icons" qatag="PrimaryPackageIcons">
+            <sxm-ui-package-icons *ngIf="packageData.icons" [iconsData]="packageData.icons"></sxm-ui-package-icons>
+        </div>
+        <ng-content select="[additionalPrimaryContent]"></ng-content>
+    </div>
+    <div class="ppc--details">
+        <div *ngIf="packageData?.longDescription" [innerHTML]="packageData.longDescription" class="long-description"></div>
+        <div *ngIf="packageData.details && packageData.details.length > 0" class="visible-highlights">
+            <ul class="checkmark-list">
+                <li [innerHTML]="packageData.details[0]"></li>
+            </ul>
+        </div>
+
+        <div class="visible-details">
+            <ul class="checkmark-list no-margin" data-e2e="PrimaryPackageDetailsList">
+                <li *ngFor="let bullet of visibleDetails">
+                    <span [innerHTML]="bullet"></span>
+                </li>
+            </ul>
+            <ng-container *ngFor="let packageFeature of visiblePackageFeatures">
+                <ng-container *ngIf="packageFeature?.features?.length > 0">
+                    <ul class="checkmark-list no-margin" data-e2e="PrimaryPackageFeaturesList">
+                        <li *ngFor="let feature of packageFeature?.features; let i = index" data-icon="checkmark-sm">
+                            <div class="checkmarks-container">
+                                <span class="short-description" [innerHTML]="feature?.shortDescription"></span>
+                                <sxm-ui-tooltip class="tooltip-display-top" *ngIf="feature?.tooltipText">
+                                    <p [innerHtml]="feature?.tooltipText"></p>
+                                </sxm-ui-tooltip>
+                                <span *ngIf="feature?.learnMoreLinkText && feature?.learnMoreInformation">
+                                    <a (click)="learnMoreAboutModalOpen(i)">{{ feature?.learnMoreLinkText }} {{ feature?.name }}</a>
+                                    <sxm-ui-modal #learnMoreAboutModal [titlePresent]="true" [title]="feature?.name" (modalClosed)="learnMoreAboutModalClose(i)">
+                                        <span [innerHTML]="feature?.learnMoreInformation"></span>
+                                    </sxm-ui-modal>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </ng-container>
+            </ng-container>
+        </div>
+        <sxm-ui-accordion-chevron
+            [isInnerAccordion]="true"
+            [collapsedText]="translateKeyPrefix + 'VIEW_DETAILS_COLLAPSED' | translate"
+            [expandedText]="translateKeyPrefix + 'VIEW_DETAILS_EXPANDED' | translate"
+            [aria]="{
+                expandedText: translateKeyPrefix + 'ARIA_VIEW_DETAILS_EXPANDED' | translate: { packageName: packageData?.platformPlan },
+                collapsedText: translateKeyPrefix + 'ARIA_VIEW_DETAILS_COLLAPSED' | translate: { packageName: packageData?.platformPlan }
+            }"
+            [opened]="packageData.presentation === 'Presentation2' || packageData.presentation === 'Presentation5'"
+            data-e2e="PrimaryPackageDetailsLink"
+            sxmUiDataClickTrack="ui"
+            [attr.data-link-key]="chevronClickTrackingTextForDataLinkKey"
+            qatag="PrimaryPackageDetailsLink"
+            [attr.data-track-click]="chevronClickTrackingText"
+        >
+            <ng-container *ngFor="let packageFeature of accordionPackageFeatures">
+                <ng-container *ngIf="packageFeature?.features?.length > 0">
+                    <p *ngIf="packageFeature?.packageName" class="ppc-content--details--list-title" data-e2e="PrimaryPackageFeaturesTitle">
+                        <strong [innerHtml]="translateKeyPrefix + 'PACKAGE_INCLUDES_TITLE' | translate: { packageName: packageFeature?.packageName }"></strong>
+                    </p>
+                    <ul class="checkmark-list" data-e2e="PrimaryPackageFeaturesList">
+                        <li *ngFor="let feature of packageFeature?.features" data-icon="checkmark-sm">
+                            <div class="checkmarks-container">
+                                <span class="short-description" [innerHTML]="feature?.shortDescription"></span>
+                                <sxm-ui-tooltip class="tooltip-display-top" *ngIf="feature?.tooltipText">
+                                    <p [innerHtml]="feature?.tooltipText"></p>
+                                </sxm-ui-tooltip>
+                            </div>
+                        </li>
+                    </ul>
+                </ng-container>
+            </ng-container>
+            <p
+                *ngIf="accordionDetails?.length > 0 && visibleDetails.length === 0"
+                class="ppc-content--details--list-title"
+                [innerHTML]="packageData.detailsTitle || translateKeyPrefix + 'PACKAGE_INCLUDES_TITLE' | translate: { packageName: packageData?.platformPlan }"
+                data-e2e="PrimaryPackageDetailsTitle"
+            ></p>
+            <ul class="checkmark-list" data-e2e="PrimaryPackageDetailsList">
+                <li *ngFor="let bullet of accordionDetails">
+                    <span [innerHTML]="bullet"></span>
+                </li>
+            </ul>
+            <p *ngIf="packageData.footer" class="ppc-content--details--footer" [innerHTML]="packageData.footer" data-e2e="PrimaryPackageDetailsFooter"></p>
+        </sxm-ui-accordion-chevron>
+    </div>
+</div>

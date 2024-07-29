@@ -1,0 +1,60 @@
+@import "sxm.phoenix.imports";
+
+.radio-item,
+.checkbox-item {
+    align-items: center;
+    display: flex;
+}
+
+.radio-item {
+    color: $white;
+    label {
+        font-weight: calculate-font-weight("bold");
+    }
+    &.not-selectable {
+        & > input {
+            visibility: hidden;
+        }
+        & > label {
+            padding-left: 0;
+
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+.checkbox-item {
+    height: 32px;
+    margin: 0;
+}
+
+.body {
+    padding: 16px 12px;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.footer {
+    background-color: $blue-ultra-light;
+    align-items: center;
+    display: flex;
+    padding: 8px 12px;
+
+    label {
+        p {
+            margin: 1px 0 0;
+            @include font-size(12px);
+            span {
+                &:first-child {
+                    font-weight: calculate-font-weight("bold");
+                    margin-right: 4px;
+                }
+            }
+        }
+    }
+}

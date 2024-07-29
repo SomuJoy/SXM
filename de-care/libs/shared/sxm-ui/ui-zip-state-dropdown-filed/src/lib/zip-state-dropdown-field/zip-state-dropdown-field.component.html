@@ -1,0 +1,54 @@
+<ng-container [formGroup]="formGroup">
+    <div class="row no-padding">
+        <div class="column medium-6 small-12 align-left no-padding">
+            <div class="input-container" [class.invalid]="controlIsInvalid(formGroup.controls.zip)" [class.filled]="formGroup.controls.zip.value">
+                <label [for]="zipId">{{ translateKeyPrefix + "ZIP_LABEL" | translate }}</label>
+                <input
+                    type="text"
+                    [id]="zipId"
+                    appMaskZipCode
+                    [zipMaskIsCanada]="settingsService.isCanadaMode"
+                    formControlName="zip"
+                    [minlength]="settingsService.isCanadaMode ? 6 : 5"
+                    [maxlength]="settingsService.isCanadaMode ? 7 : 10"
+                    data-e2e="ZipCode"
+                    qatag="ZipCode"
+                    onFocus
+                    required
+                    autocomplete="postal-code"
+                />
+            </div>
+            <div *ngIf="controlIsInvalid(formGroup.controls.zip)" class="invalid-feedback">
+                <ng-container *ngIf="formGroup.controls.zip.hasError('cvvExclusion'); else zipError">
+                    <p>{{ translateKeyPrefix + "ERROR_CVV_FOUND" | translate }}</p>
+                </ng-container>
+                <ng-template #zipError>
+                    <p>{{ translateKeyPrefix + "ERROR_ZIPCODE_FOUND" | translate }}</p>
+                </ng-template>
+            </div>
+        </div>
+        <div class="column medium-6 small-12 align-right no-padding">
+            <sxm-ui-dropdown
+                class="dropdown"
+                [class.invalid]="controlIsInvalid(formGroup.controls.state)"
+                [id]="stateId"
+                *ngIf="showStateList"
+                [qatag]="'zipStateDropDown'"
+                class="dropdown"
+                tabindex="0"
+                [passedValue]="stateList"
+                key="key"
+                text="key"
+                labelText="{{ translateKeyPrefix + 'STATE_LABEL' | translate }}"
+                formControlName="state"
+            ></sxm-ui-dropdown>
+            <div
+                *ngIf="showStateList && ((formGroup.controls.state.invalid && formGroup.controls.state.touched) || (formGroup.controls.state.invalid && submitted))"
+                class="invalid-feedback"
+                [class.dropdown-error-msg]="formGroup.controls.state.invalid && formGroup.controls.state.touched"
+            >
+                <p>{{ translateKeyPrefix + "ERROR_STATE_FOUND" | translate }}</p>
+            </div>
+        </div>
+    </div>
+</ng-container>

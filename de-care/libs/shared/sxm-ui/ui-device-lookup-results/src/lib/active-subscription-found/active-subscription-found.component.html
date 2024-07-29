@@ -1,0 +1,37 @@
+<section id="activeSubscriptionFoundContent">
+    <h3 id="activeSubscriptionFoundContentTitle">{{ translateKeyPrefix + ".HEADER" | translate }}</h3>
+    <p id="multipleRadioFoundContentSubHeader">{{ translateKeyPrefix + ".SUB_HEADER" | translate }}</p>
+    <ng-container *ngIf="subscriptionFound">
+        <hr />
+        <p class="bold">
+            <ng-container *ngIf="subscriptionFound?.vehicleInfo; else noVehicleInfo">
+                {{ translateKeyPrefix + ".VEHICLE" | translate: subscriptionFound?.vehicleInfo }}
+            </ng-container>
+            <ng-template #noVehicleInfo>
+                {{ translateKeyPrefix + ".RADIO_ID_MASKED" | translate: { maskedRadioId: subscriptionFound.last4DigitsOfRadioId } }}
+            </ng-template>
+        </p>
+        <p>
+            <ng-container *ngIf="!subscriptionFound.isClosed; else closedRadio">
+                <ng-container *ngFor="let planName of subscriptionFound.planNames">
+                    <span class="plan-name">{{ planName }} {{ translateKeyPrefix + ".SUBSCRIPTION_LABEL" | translate }}</span>
+                </ng-container>
+            </ng-container>
+            <ng-template #closedRadio>
+                <span class="plan-name">
+                    {{ translateKeyPrefix + ".NO_ACTIVE_SERVICE" | translate }}
+                </span>
+            </ng-template>
+        </p>
+        <hr />
+        <a
+            class="button primary full-width"
+            sxmUiDataClickTrack="login"
+            (click)="onFormSubmit()"
+            [href]="translateKeyPrefix + '.CONTINUE_BTN_LINK' | translate"
+            data-test="signInToAccountButton"
+        >
+            {{ translateKeyPrefix + ".CONTINUE_BTN_LABEL" | translate }}
+        </a>
+    </ng-container>
+</section>

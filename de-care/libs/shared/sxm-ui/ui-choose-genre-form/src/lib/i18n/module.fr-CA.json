@@ -1,0 +1,11 @@
+{
+    "SharedSxmUiUiChooseGenreFormModule": {
+        "chooseGenreFormComponent": {
+            "HEADER": "Choisissez votre style musical",
+            "HEADER_DESCRIPTION": "Avec L’Aperçu vous obtiendrez 3 chaînes du style musical de votre choix :",
+            "ERROR": "Choisissez un genre ci-dessous.",
+            "BUTTON": "Continuer",
+            "REVIEW_BUTTON": "REVOIR MA COMMANDE"
+        }
+    }
+}

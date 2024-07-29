@@ -1,0 +1,24 @@
+{
+    "$schema": "https://json-schema.org/schema",
+    "cli": "nx",
+    "$id": "cypress-test-for-lib",
+    "type": "object",
+    "title": "Add Cypress component testing",
+    "description": "Add a Cypress component testing configuration to an existing project. Cypress v10.7.0 or higher is required.",
+    "properties": {
+        "project": {
+            "type": "string",
+            "description": "The name of the project to add cypress component testing configuration to",
+            "x-dropdown": "projects",
+            "x-prompt": "What project should we add Cypress component testing to?",
+            "x-priority": "important"
+        },
+        "generateTests": {
+            "type": "boolean",
+            "description": "Generate default component tests for existing components in the project",
+            "x-prompt": "Automatically generate tests for components declared in this project?",
+            "default": false
+        }
+    },
+    "required": ["project"]
+}

@@ -1,0 +1,19 @@
+import { moduleMetadata, Story, Meta } from '@storybook/angular';
+import { SxmUi<%= classify(name) %>Component, SxmUi<%= classify(name) %>ComponentModule } from './<%= dasherize(name) %>.component';
+
+type StoryType = SxmUi<%= classify(name) %>Component;
+
+export default {
+    title: 'Component Library/__uncatagorized__/<%= classify(name) %>Component',
+    component: SxmUi<%= classify(name) %>Component,
+    decorators: [
+        moduleMetadata({
+            imports: [SxmUi<%= classify(name) %>ComponentModule],
+        })
+    ],
+} as Meta<SxmUi<%= classify(name) %>Component>;
+
+export const Default: Story<StoryType> = (args: StoryType) => ({
+  props: args,
+  template: `<sxm-ui-<%= dasherize(name) %>></sxm-ui-<%= dasherize(name) %>>`,
+});

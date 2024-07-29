@@ -1,0 +1,8 @@
+{
+    "SharedSxmUiUiRadioidFormFieldModule": {
+        "SxmUiRadioIdFormFieldComponent": {
+            "LABEL_TEXT": "Le code de radio",
+            "ERROR_MESSAGE_REQUIRED": "Entrez un code de radio valide."
+        }
+    }
+}

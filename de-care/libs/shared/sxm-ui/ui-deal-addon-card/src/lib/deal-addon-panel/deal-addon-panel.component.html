@@ -1,0 +1,3 @@
+<section class="title" [innerHTML]="copyContent?.title"></section>
+<img *ngIf="copyContent?.productImage || copyContent?.partnerImage" [attr.src]="copyContent?.productImage || copyContent?.partnerImage" alt="" />
+<section *ngIf="copyContent?.description" [innerHTML]="copyContent?.description"></section>

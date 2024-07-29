@@ -1,0 +1,13 @@
+<div class="ext-container">
+    <div class="block-container--title">
+        <div class="title-block">
+            <h1>{{ title }}</h1>
+            <p [innerHTML]="mainParagraph"></p>
+        </div>
+    </div>
+    <div class="block-container">
+        <div class="content-block">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>

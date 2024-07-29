@@ -1,0 +1,16 @@
+{
+    "SharedSxmUiUiCreditCardFormFieldsModule": {
+        "SxmUiChargeAgreementCheckboxFormFieldComponent": {
+            "LABEL_PART_A": "Por favor cargue a mi tarjeta de crédito la cantidad que se debe ahora y los cargos recurrentes según descrito arriba. Cuando presiono “{{formButtonTextCopy}}” yo acepto que mi servicio será <strong>RENOVADO AUTOMATICAMENTE y que me cobrarán a mi método de pago las tarifas actuales en el momento de cada renovación, más tarifas e impuestos, hasta que yo cancele.</strong> Yo estoy de acuerdo con el <a href=\"https://www.siriusxm.com/customeragreement#enespanol\" target=\"_blank\" data-track-click=\"Customer Agreement\">Acuerdo de Cliente</a> y <a href=\"https://www.siriusxm.com/privacy-policy#enespanol\" target=\"_blank\" data-track-click=\"Privacy Policy\">Política de Privacidad</a> de SiriusXM, incluyendo recibiendo notificaciones de la cuenta al correo electrónico provisto, la política de reembolso y de cancelación, que incluye métodos en línea o llamando a SiriusXM al <a href=\"tel:1-866-635-2349\">1-866-635-2349</a>.",
+            "LANGUAGE_LINK_TEXT": "In English",
+            "LANGUAGE_LINK_VALUE": "en-US",
+            "ERROR_REQUIRED": "Acepte el acuerdo anterior por favor."
+        },
+        "SxmUiInvoiceAgreementCheckboxFormFieldComponent": {
+            "LABEL_PART_A": "Por favor de cobrar la cantidad que se debe ahora y los cargos recurrentes según descrita arriba, incluyendo la tarifa de factura de $2. Cuando presiono “{{formButtonTextCopy}}”, yo acepto que mis servicios serán <strong>RENOVADO AUTOMATICAMENTE y que serán facturados a las tarifas actuales en el momento de cada renovación, más cargos e impuestos, hasta que yo cancele</strong>. Yo estoy de acuerdo con el <a target='_blank' href='https://www.siriusxm.com/customeragreement#enespanol'>Acuerdo de Cliente</a> y <a target='_blank' href='https://www.siriusxm.com/privacy-policy#enespanol'>Politica de Privacidad</a> de SiriuxXM, incluyendo la política de reembolso y de cancelación, que incluye métodos en línea o llamando a SiriusXM al <a href=\"tel:1-866-635-2349\">1-866-635-2349</a>.",
+            "LANGUAGE_LINK_TEXT": "In English",
+            "LANGUAGE_LINK_VALUE": "en-US",
+            "ERROR_REQUIRED": "Acepte el acuerdo anterior por favor."
+        }
+    }
+}

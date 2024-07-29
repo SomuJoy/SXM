@@ -1,0 +1,13 @@
+{
+    "SharedSxmUiUiChargeAgreementGenericCheckboxFormFieldModule": {
+        "SxmUiChargeAgreementGenericCheckboxFormFieldComponent": {
+            "LABEL_PART_A_RECURRING_PAYMENT": "I authorize this card to be charged for any amount currently due and to be the card on file for all future and recurring payments. I agree to the SiriusXM <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\" data-track-click=\"Customer Agreement\">Customer Agreement</a>, including the refund policy, and <a href=\"https://www.siriusxm.com/privacy-policy\" target=\"_blank\" data-track-click=\"Privacy Policy\">Privacy Policy</a>.",
+            "LABEL_PART_A_ONE_TIME_PAYMENT": "I authorize this card to be charged for the amount shown above. I agree to the SiriusXM <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\" data-track-click=\"Customer Agreement\">Customer Agreement</a>, including the refund policy, and <a href=\"https://www.siriusxm.com/privacy-policy\" target=\"_blank\" data-track-click=\"Privacy Policy\">Privacy Policy</a>.",
+            "LABEL_PART_B": "",
+            "LABEL_PART_B_RATE_VERSION": "",
+            "LANGUAGE_LINK_TEXT": "En Español",
+            "LANGUAGE_LINK_VALUE": "es-US",
+            "ERROR_REQUIRED": "Please accept the above agreement."
+        }
+    }
+}

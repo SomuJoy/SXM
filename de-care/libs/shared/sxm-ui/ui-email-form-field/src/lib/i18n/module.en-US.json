@@ -1,0 +1,9 @@
+{
+    "sharedSxmUiUiEmailFormFieldModule": {
+        "emailFormFieldComponent": {
+            "EMAIL_LABEL": "Email",
+            "EMAIL_ERROR": "Enter a valid email address.",
+            "EMAIL_ALREADY_IN_USE": "Username/Email address already in use."
+        }
+    }
+}

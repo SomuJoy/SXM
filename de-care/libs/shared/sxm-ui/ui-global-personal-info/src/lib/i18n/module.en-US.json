@@ -1,0 +1,9 @@
+{
+    "sharedSxmUiUiGlobalPersonalInfoModule": {
+        "GlobalPersonalInfoComponent": {
+            "vehicle": "Vehicle: {{year}} {{make}} {{model}}",
+            "radio": "Radio ID: (****{{ last4DigitsRadioId }})",
+            "USERNAME": "Username:"
+        }
+    }
+}

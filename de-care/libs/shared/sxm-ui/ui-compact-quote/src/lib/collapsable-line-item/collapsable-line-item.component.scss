@@ -1,0 +1,61 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+@mixin transition {
+    transition: all 400ms ease;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+    @include transition;
+    tr {
+        th,
+        td {
+            vertical-align: top;
+            position: relative;
+            padding-right: 24px;
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+        th {
+            text-align: left;
+            font-weight: calculate-font-weight("book");
+        }
+        td {
+            padding-bottom: 4px;
+            color: $gray-dark;
+            @include transition;
+            &.no-padding {
+                padding: 0;
+            }
+            div {
+                overflow: hidden;
+                max-height: 40px; //artibrary height larger than 2 lines of copy
+                @include transition;
+            }
+        }
+        th:nth-child(2),
+        td:nth-child(2) {
+            text-align: right;
+        }
+    }
+    &.collapsed {
+        margin-bottom: 0;
+        tr {
+            td {
+                padding-bottom: 0;
+                div {
+                    max-height: 0;
+                }
+            }
+        }
+    }
+}
+
+sxm-ui-tooltip {
+    position: absolute;
+    bottom: -2px;
+}

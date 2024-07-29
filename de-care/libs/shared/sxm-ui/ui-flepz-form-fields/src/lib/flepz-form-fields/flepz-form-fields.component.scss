@@ -1,0 +1,43 @@
+@import "sxm.phoenix.imports";
+
+.invalid-feedback {
+    a {
+        color: inherit;
+    }
+}
+
+.column {
+    &.small-7 {
+        &:first-child {
+            padding-left: 0;
+            padding-right: 4px;
+            width: 60%;
+        }
+    }
+
+    &.small-5 {
+        &:last-child {
+            padding-left: 12px;
+            padding-right: 0;
+            width: 40%;
+        }
+    }
+}
+
+@include bp(medium) {
+    .column {
+        &.medium-6 {
+            &:first-child {
+                padding-left: 0;
+                padding-right: 4px;
+            }
+        }
+
+        &.medium-6 {
+            &:last-child {
+                padding-left: 12px;
+                padding-right: 0;
+            }
+        }
+    }
+}

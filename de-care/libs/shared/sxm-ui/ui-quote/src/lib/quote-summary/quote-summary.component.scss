@@ -1,0 +1,47 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+table,
+tr,
+th,
+td {
+    padding: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    th {
+        text-align: left;
+        font-weight: calculate-font-weight("book");
+    }
+    th:nth-child(2),
+    td:nth-child(2) {
+        text-align: right;
+    }
+}
+
+.row-bt {
+    border-top: 1px solid $gray-medium;
+    & > td {
+        padding-top: 16px;
+    }
+}
+
+.row-pb-16 {
+    & > th,
+    & > td {
+        padding-bottom: 16px;
+    }
+}
+
+.small-copy {
+    color: $gray-dark;
+    td {
+        line-height: 24px;
+    }
+}
+
+sxm-ui-tooltip {
+    position: absolute;
+}

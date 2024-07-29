@@ -1,0 +1,31 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: block;
+    position: relative;
+    width: 100%;
+
+    span {
+        position: relative;
+    }
+
+    div {
+        display: flex;
+    }
+
+    sxm-ui-tooltip,
+    mat-icon {
+        position: absolute;
+        right: 10px;
+        top: 15px;
+    }
+    sxm-ui-tooltip {
+        color: $black;
+    }
+    mat-icon {
+        cursor: pointer;
+        color: $gray-dark;
+        stroke: $gray-dark;
+        fill: transparent;
+    }
+}

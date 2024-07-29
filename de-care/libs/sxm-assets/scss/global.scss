@@ -1,0 +1,50 @@
+@import "helper_classes";
+
+@media print {
+    .no-print,
+    .no-print * {
+        display: none !important;
+    }
+    #tfs_invite_DockedInvite_container,
+    .QSIFeedbackButton,
+    .LPMcontainer {
+        display: none !important;
+    }
+}
+
+.modal-cover {
+    .modal--content {
+        > * .row {
+            height: auto;
+        }
+    }
+}
+
+.reset-paragraph-last-of-type-margin {
+    p:last-of-type {
+        margin-bottom: 0.625rem;
+
+        @media (min-width: 768px) {
+            margin-bottom: 0.75rem;
+        }
+    }
+}
+
+#tfs_invite_DockedInvite_container {
+    z-index: 2147483647 !important;
+}
+
+.router-wrapper {
+    display: inline;
+}
+
+//vertical margin helpers, creates sets of margin-top and margin-bottom classes that utilize our most common margins
+$marginsIncrements: (0, 4, 8, 12, 16, 20, 24, 32);
+$directions: (top, bottom);
+@each $margin in $marginsIncrements {
+    @each $direction in $directions {
+        .m#{str-slice($direction, 0, 1)}-#{$margin} {
+            margin-#{$direction}: #{$margin}px;
+        }
+    }
+}

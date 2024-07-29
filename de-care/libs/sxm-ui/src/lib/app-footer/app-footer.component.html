@@ -1,0 +1,106 @@
+<div class="background-offwhite">
+    <footer class="content-container salesflow-footer" role="contentinfo">
+        <div class="row align-left background-offwhite">
+            <div class="column medium-7 small-12 offset-medium-1 no-padding-medium">
+                <ng-container *ngIf="!isCanada; else canadaLinksTemplate">
+                    <div class="footer-links">
+                        <div class="row no-padding">
+                            <div class="column small-12 no-padding">
+                                <ul>
+                                    <li>
+                                        <a href="{{ 'sxmUi.appFooterComponent.WEBSITE_TERMS.LINK_URL' | translate }}" class="tracklink" target="_blank" rel="" name="">{{
+                                            "sxmUi.appFooterComponent.WEBSITE_TERMS.LINK_TEXT" | translate
+                                        }}</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ 'sxmUi.appFooterComponent.CUSTOMER_AGREEMENT.LINK_URL' | translate }}" class="tracklink" target="_blank" rel="" name="">{{
+                                            "sxmUi.appFooterComponent.CUSTOMER_AGREEMENT.LINK_TEXT" | translate
+                                        }}</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ 'sxmUi.appFooterComponent.PRIVACY_POLICY.LINK_URL' | translate }}" class="tracklink" target="_blank" rel="" name="">{{
+                                            "sxmUi.appFooterComponent.PRIVACY_POLICY.LINK_TEXT" | translate
+                                        }}</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ 'sxmUi.appFooterComponent.RETURN_POLICY.LINK_URL' | translate }}" class="tracklink" target="_blank" rel="" name="">{{
+                                            "sxmUi.appFooterComponent.RETURN_POLICY.LINK_TEXT" | translate
+                                        }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="row no-padding">
+                            <div class="column small-12 no-padding">
+                                <ul>
+                                    <li>
+                                        <a href="{{ 'sxmUi.appFooterComponent.DO_NOT_SELL_MY_INFO.LINK_URL' | translate }}" class="tracklink" target="_blank" rel="" name=""
+                                            >{{ "sxmUi.appFooterComponent.DO_NOT_SELL_MY_INFO.LINK_TEXT" | translate
+                                            }}<img src="{{ 'sxmUi.appFooterComponent.DO_NOT_SELL_MY_INFO.LINK_IMG' | translate }}"
+                                        /></a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ 'sxmUi.appFooterComponent.YOUR_AD_CHOICES.LINK_URL' | translate }}" class="tracklink" target="_blank" rel="" name="">{{
+                                            "sxmUi.appFooterComponent.YOUR_AD_CHOICES.LINK_TEXT" | translate
+                                        }}</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ 'sxmUi.appFooterComponent.FCC_PUBLIC_FILE.LINK_URL' | translate }}" class="tracklink" target="_blank" rel="" name="">{{
+                                            "sxmUi.appFooterComponent.FCC_PUBLIC_FILE.LINK_TEXT" | translate
+                                        }}</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ 'sxmUi.appFooterComponent.FCC_INFO.LINK_URL' | translate }}" class="tracklink" target="_blank" rel="" name="">{{
+                                            "sxmUi.appFooterComponent.FCC_INFO.LINK_TEXT" | translate
+                                        }}</a>
+                                    </li>
+                                    <li>
+                                        <a class="ot-sdk-show-settings tracklink" target="_blank" rel="" name="">{{
+                                            "sxmUi.appFooterComponent.COOKIE_SETTINGS.LINK_TEXT" | translate
+                                        }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+                <ng-template #canadaLinksTemplate>
+                    <div class="footer-links single-col-small">
+                        <div class="row no-padding">
+                            <div class="column small-12 no-padding">
+                                <ul>
+                                    <li>
+                                        <a
+                                            href="{{ 'sxmUi.appFooterComponent.TERMS_AND_CONDITIONS.LINK_URL' | translate }}"
+                                            class="tracklink"
+                                            target="_blank"
+                                            rel=""
+                                            name=""
+                                            >{{ "sxmUi.appFooterComponent.TERMS_AND_CONDITIONS.LINK_TEXT" | translate }}</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a href="{{ 'sxmUi.appFooterComponent.PRIVACY_POLICY.LINK_URL' | translate }}" class="tracklink" target="_blank" rel="" name="">{{
+                                            "sxmUi.appFooterComponent.PRIVACY_POLICY.LINK_TEXT" | translate
+                                        }}</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ 'sxmUi.appFooterComponent.SITE_TERMS.LINK_URL' | translate }}" class="tracklink" target="_blank" rel="" name="">{{
+                                            "sxmUi.appFooterComponent.SITE_TERMS.LINK_TEXT" | translate
+                                        }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+            <div class="column small-12 medium-3 align-left copyright-column no-padding-medium">
+                <div class="copyright-content">
+                    © <span class="year">{{ currentYear }}</span> {{ "sxmUi.appFooterComponent.COPYRIGHT_TEXT" | translate }}
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

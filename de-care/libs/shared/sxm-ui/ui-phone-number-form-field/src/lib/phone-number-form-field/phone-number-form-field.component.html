@@ -1,0 +1,20 @@
+<div class="input-container" [class.invalid]="control.invalid && control.touched" [class.filled]="!!control.value" [class.active]="inputIsFocused">
+    <label data-e2e="sxmUIPhoneNumber.label" for="{{ controlId }}">{{ labelText || translateKeyPrefix + "PHONE_NUMBER_LABEL" | translate }}</label>
+    <input
+        id="{{ controlId }}"
+        type="tel"
+        [attr.qatag]="qatagName"
+        [formControl]="control"
+        data-e2e="sxmUIPhoneNumber"
+        data-test="sxmUIPhoneNumber"
+        appMaskPhoneNumber
+        [optional]="true"
+        (focus)="inputIsFocused = true"
+        (blur)="inputIsFocused = false"
+    />
+</div>
+<div *ngIf="control.invalid && control.touched" class="invalid-feedback">
+    <p>
+        {{ errorMsg || translateKeyPrefix + "PHONE_NUMBER_ERROR" | translate }}
+    </p>
+</div>

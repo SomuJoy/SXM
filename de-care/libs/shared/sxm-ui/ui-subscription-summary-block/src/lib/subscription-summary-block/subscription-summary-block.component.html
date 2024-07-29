@@ -1,0 +1,16 @@
+<p class="text-color-gray-dark list-header">
+    {{ translateKeyPrefix + "ACCOUNT_NUMBER_LABEL" | translate }}
+    <span class="masked">••••••••••{{ subscription.last4DigitsOfAccountNumber }}</span>
+</p>
+<p class="text-color-gray-dark list-header">
+    {{ translateKeyPrefix + "RADIO_ID_LABEL" | translate }}
+    <span class="masked">••••{{ subscription.last4DigitsOfRadioId }}</span>
+</p>
+<br />
+<div *ngIf="subscription?.vehicleInfo">
+    <strong class="detail-row">{{ subscription.vehicleInfo.year }} {{ subscription.vehicleInfo.make }} {{ subscription.vehicleInfo.model }}</strong>
+</div>
+<p *ngFor="let name of subscription?.packageNames" class="detail-row text-color-gray-dark m-t" [innerHTML]="'app.packageDescriptions.' + name + '.name' | translate"></p>
+<p *ngIf="!subscription?.packageNames || subscription?.packageNames.length <= 0" class="detail-row text-color-gray-dark m-t">
+    {{ translateKeyPrefix + "NO_ACTIVE_SERVICE" | translate }}
+</p>

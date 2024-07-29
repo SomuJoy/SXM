@@ -1,0 +1,21 @@
+<ol class="ordered-list">
+    <li *ngFor="let task of data.tasks">
+        <div class="task-details-container">
+            <div>{{ task.taskName }}</div>
+            <div class="task-status-icon">
+                <div class="loading-indicator black small" [sxm-loading-indicator]="true"></div>
+
+                <ng-container *ngIf="task.success; else error">
+                    <svg class="icon icon-utility extra-wide">
+                        <use class="icon-checkmark-lg" xlink:href="#icon-checkmark-lg"></use>
+                    </svg>
+                </ng-container>
+                <ng-template #error>
+                    <svg class="icon icon-utility extra-wide no-padding error">
+                        <use class="icon-remove" xlink:href="#icon-remove"></use>
+                    </svg>
+                </ng-template>
+            </div>
+        </div>
+    </li>
+</ol>

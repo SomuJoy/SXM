@@ -1,0 +1,85 @@
+// TODO: Determine if these should be global or if there is another way we can get these scoped to common components
+//       Maybe we need an input container common component that all of our custom form field components use so we can put these styles there?
+
+@mixin legacy-global-input {
+    input {
+        overflow: visible;
+        border-radius: 0;
+        -webkit-appearance: none;
+        line-height: 1.15;
+        margin: 0;
+    }
+    .input-container {
+        color: #eb0a0a;
+        border: 1px solid #736e7d;
+        box-sizing: border-box;
+        height: 56px;
+        margin-bottom: 16px;
+        position: relative;
+        width: 100%;
+    }
+    .input-container.invalid {
+        border: 1px solid #eb0a0a;
+    }
+    .input-container input {
+        border: 0;
+        font-family: inherit;
+        font-size: 0.875rem;
+        height: 100%;
+        outline: 0;
+        padding: 24px 0 16px 10px;
+        width: 100%;
+    }
+    .input-container.active input {
+        border-left: 4px solid #006ed7;
+    }
+    .input-container.invalid.active input {
+        border-left: 4px solid #eb0a0a;
+    }
+    .input-container.filled input,
+    .input-container.filled textarea {
+        border-left: 0;
+        padding-left: 15px;
+    }
+    .input-container.filled.active input,
+    .input-container.filled.active textarea {
+        border-left: 4px solid #006ed7;
+        padding-left: 11px;
+    }
+    .input-container.filled.invalid.active input,
+    .input-container.filled.invalid.active textarea {
+        border-left: 4px solid #eb0a0a;
+    }
+    .input-container input:not(:-webkit-autofill) {
+        -webkit-animation-name: onAutoFillCancel;
+        animation-name: onAutoFillCancel;
+    }
+    .input-container label {
+        color: #736e7d;
+        font-size: 0.875rem;
+        line-height: 20px;
+        position: absolute;
+        transform-origin: top left;
+        transform: translateY(17px) scale(1);
+        margin-left: 14px;
+        transition: 0.1s ease-in-out;
+    }
+    .input-container.active label {
+        transform: translateY(4px) scale(0.75);
+    }
+    .input-container.filled label {
+        transform: translateY(4px) scale(0.75);
+    }
+    .invalid-feedback {
+        margin: -8px 0 16px;
+        padding: 0;
+        width: 100%;
+    }
+    .invalid-feedback p {
+        color: #eb0a0a;
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1.5;
+        text-align: left;
+    }
+}

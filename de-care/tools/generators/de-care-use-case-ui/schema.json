@@ -1,0 +1,38 @@
+{
+    "$schema": "https://json-schema.org/schema",
+    "cli": "nx",
+    "id": "de-care-use-case-ui",
+    "type": "object",
+    "properties": {
+        "useCaseName": {
+            "type": "string",
+            "description": "Name of the use case this is for",
+            "x-prompt": "Name of the use case this is for?"
+        },
+        "name": {
+            "type": "string",
+            "description": "Name of the lib without the ui- prefix\n  (example: checkout-summary)",
+            "x-prompt": "Name of the lib without the ui- prefix?\n  (example: checkout-summary)"
+        },
+        "type": {
+            "type": "string",
+            "default": "shared",
+            "description": "Type of lib.\n\n    shared: for use by multiple feature libs\n\n    feature: specific for a single feature lib",
+            "x-prompt": {
+                "message": "Type of lib?",
+                "type": "list",
+                "items": [
+                    {
+                        "value": "shared",
+                        "label": "SHARED"
+                    },
+                    {
+                        "value": "feature",
+                        "label": "FEATURE"
+                    }
+                ]
+            }
+        }
+    },
+    "required": ["name", "useCaseName", "type"]
+}

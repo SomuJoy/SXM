@@ -1,0 +1,24 @@
+{
+    "LINKS": [
+        {
+            "url": "{{careUrl}}/account/manage/dashboard?langpref=en",
+            "text": "Dashboard",
+            "altText": "Go to my dashboard"
+        },
+        {
+            "url": "{{careUrl}}/account/manage/subscriptions?langpref=en",
+            "text": "Subscriptions",
+            "altText": "View my subscriptions"
+        },
+        {
+            "url": "{{careUrl}}/account/manage/billing?langpref=en",
+            "text": "Billing",
+            "altText": "Go to my billing info"
+        },
+        {
+            "url": "{{careUrl}}/account/manage/account-info/account-information?langpref=en",
+            "text": "Account Info",
+            "altText": "Manage my Account"
+        }
+    ]
+}

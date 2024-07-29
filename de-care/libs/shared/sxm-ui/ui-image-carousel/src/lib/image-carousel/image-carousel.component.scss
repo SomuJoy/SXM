@@ -1,0 +1,103 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    display: grid;
+    position: relative;
+}
+
+.carousel {
+    overflow: auto;
+    display: flex;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0;
+    & > * + * {
+        margin-left: 1rem;
+    }
+    @include bp(medium) {
+        width: 100%;
+        overflow: hidden;
+        scroll-padding: 40px;
+    }
+}
+
+.carousel-item:first-child {
+    & .mask:first-child {
+        @include bp(medium) {
+            padding-left: 32px;
+        }
+    }
+}
+.carousel-item:nth-last-child(-n + 2) {
+    & .mask:nth-last-child(-n + 1) {
+        @include bp(medium) {
+            padding-right: 16px;
+        }
+    }
+}
+.carousel-item {
+    flex-shrink: 0;
+    display: flex;
+    & > * + * {
+        margin-left: 1rem;
+    }
+    scroll-snap-type: x mandatory;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+.mask {
+    > img {
+        height: 200px;
+        width: 200px;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+        scroll-snap-align: start;
+        @include bp(medium) {
+            height: 250px;
+            width: 250px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+.checkmark-circle-outline {
+    @include icon-coin(48px, #0e00ea);
+    background-color: #0e00ea;
+    padding: 7px;
+    use.icon-check-mark-flex-stroke {
+        stroke: #fff;
+        stroke-width: 1px;
+    }
+}
+
+.carousel-buttons-container {
+    display: none;
+    @include bp(medium) {
+        display: block;
+    }
+    svg {
+        position: absolute;
+        top: 100px;
+        &.icon-previous {
+            left: 16px;
+        }
+        &.icon-next {
+            transform: rotate(180deg);
+            right: 16px;
+        }
+    }
+}
+
+.active {
+    opacity: 1;
+}
+.inactive {
+    opacity: 1; // blur only on desktop mode
+    @include bp(medium) {
+        opacity: 0.4;
+    }
+}

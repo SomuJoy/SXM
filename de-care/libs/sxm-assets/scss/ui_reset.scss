@@ -1,0 +1,10 @@
+@import "./spacing.scss";
+@import "./font_family.scss";
+
+/* This file is used as a starting point for including base styles that are normally brought in by the UI Framework */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}

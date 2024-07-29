@@ -1,0 +1,386 @@
+@import "sxm.phoenix.imports";
+
+// full height for page content in a shell
+@mixin page-content-markup($grid-auto-rows) {
+    display: grid;
+    grid-auto-rows: $grid-auto-rows;
+}
+
+// full height that targets legacy main>div and bootstrap style css/markup
+@mixin page-content-legacy-markup($grid-auto-rows) {
+    @include page-content-markup($grid-auto-rows);
+    .content-container {
+        height: 100%;
+        .row {
+            height: 100%;
+            .column {
+                justify-content: flex-start;
+                > .medium-2 {
+                    display: block;
+                }
+            }
+            @media only screen and (max-width: 767px) {
+                .column.medium-2 {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@function toRGB($color) {
+    @return "rgb(#{red($color)},#{green($color)},#{blue($color)})";
+}
+
+// Applies checkmark list style when the ui framework classes are not present
+@mixin checkmark-list {
+    margin: 0 0 16px;
+    padding: 0;
+    list-style: none;
+    li {
+        position: relative;
+        margin: 0 0 2px;
+        padding-left: 20px;
+        line-height: 22px;
+        &::before {
+            content: "";
+            // taken from svg spritesheet (encoded to Base64 for IE support)
+            background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMiAxMCI+PHBhdGggZD0iTS42ODUgNC45OTFsMy4zODIgMy4zODIgNy4yNDgtNy4yNDciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlPSJyZ2IoMCwxMTAsMjE1KSIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==")
+                no-repeat;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 12px;
+            height: 10px;
+        }
+    }
+}
+
+@mixin hr($color: $gray-medium) {
+    border: 0;
+    border-top: 1px solid $color;
+}
+
+@mixin get-body-copy-style($style: default) {
+    @each $bp, $bp-data in $bodycopy-styles {
+        @if $bp == small {
+            @include _get-header-styles-from-map(p, $bp-data);
+        } @else {
+            @include bp(#{$bp}) {
+                @include _get-header-styles-from-map(p, $bp-data);
+            }
+        }
+    }
+    // TODO: change this if large and small copy are added to the $bodycopy-style map
+    @if $style == large {
+        @include font-size(16px);
+        line-height: 1.5;
+    } @else if $style == small {
+        @include font-size(12px);
+        line-height: 1.5;
+    }
+}
+
+// Injects the header styles for a particular h tag
+// usage: @include get-header-style(h2);
+@mixin get-header-style($htag) {
+    @each $bp, $bp-data in $header-styles {
+        @if $bp == small {
+            @include _get-header-styles-from-map($htag, $bp-data);
+        } @else {
+            @include bp(#{$bp}) {
+                @include _get-header-styles-from-map($htag, $bp-data);
+            }
+        }
+    }
+}
+
+// Helper function for get-header-style
+@mixin _get-header-styles-from-map($htag, $data) {
+    @each $head, $head-data in $data {
+        @if $head == $htag {
+            @each $key, $value in $head-data {
+                #{$key}: #{$value};
+            }
+        }
+    }
+}
+
+@mixin checkmark-list-with-subdescription {
+    @include checkmark-list;
+    li {
+        padding-left: 28px;
+        &::before {
+            width: 20px;
+            height: 16px;
+            background: url('data:image/svg+xml,%3Csvg viewBox="0 0 12 10" xmlns="http://www.w3.org/2000/svg" %3E%3Cpath d="M.685 4.991l3.382 3.382 7.248-7.247" stroke-width="1" stroke="#{toRGB($blue-secondary)}" fill="none"%3E%3C/path%3E%3C/svg%3E')
+                no-repeat;
+        }
+        & + li {
+            margin-top: 24px;
+        }
+    }
+    p {
+        margin-bottom: 0;
+    }
+}
+
+@mixin list-with-subdescription {
+    margin: 0 0 16px;
+    padding: 0;
+    list-style: none;
+    li {
+        position: relative;
+        margin: 0 0 2px;
+        line-height: 22px;
+        & + li {
+            margin-top: 24px;
+        }
+    }
+    p {
+        margin-bottom: 0;
+    }
+}
+
+@mixin modal-full-view {
+    .modal-cover {
+        justify-content: center;
+        > .content-container {
+            position: fixed;
+            height: 100vh;
+            max-width: 1146px;
+            overflow-y: hidden;
+            @include ie-styles {
+                max-width: none;
+                position: relative;
+            }
+        }
+        .row {
+            height: 100vh;
+        }
+        .modal {
+            height: 100vh;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100vw;
+            padding-left: 16px;
+            padding-right: 16px;
+            @include bp(medium) {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+        .modal--content {
+            height: 100%;
+            overflow-y: scroll;
+            -ms-overflow-style: none; // Internet Explorer 10+
+            scrollbar-width: none; // Firefox
+            &::-webkit-scrollbar {
+                /* WebKit */
+                display: none;
+            }
+        }
+    }
+}
+
+@mixin icon-coin($size, $color) {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    border: 2px solid $color;
+}
+
+@mixin icon-coin-with-fill($size, $color) {
+    @include icon-coin($size, $color);
+    background-color: $color;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+@mixin underline($thickness: default, $offset: null) {
+    @if $thickness == default {
+        text-decoration: underline;
+        text-decoration-thickness: auto;
+        text-underline-offset: auto;
+    } @else if $thickness == none {
+        text-decoration: none;
+    } @else {
+        text-decoration-thickness: $thickness;
+        @if $offset {
+            text-underline-offset: $offset;
+        } @else {
+            text-underline-offset: $thickness;
+        }
+    }
+}
+
+@mixin error-message-header {
+    padding: 40px 0;
+    text-align: center;
+
+    @include bp(medium) {
+        padding: 64px 0;
+    }
+
+    h2 {
+        margin-bottom: 0;
+    }
+
+    h6 {
+        margin-bottom: 8px;
+        color: $gray-dark;
+        text-transform: uppercase;
+    }
+}
+
+@mixin step-header {
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 800;
+    color: $gray-dark;
+}
+
+@mixin step-title($isInactive: false) {
+    @include font-size(16px);
+    font-weight: bold;
+    line-height: 24px;
+    margin-bottom: 8px;
+
+    @if $isInactive {
+        color: $gray-medium;
+        margin-bottom: 0;
+    }
+}
+
+@mixin deep-gray-subheader {
+    font-weight: bold;
+    color: $gray-dark;
+    margin: 12px 0 0;
+}
+
+@mixin grid-container() {
+    display: grid;
+    max-width: 1248px;
+    width: 100%;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 16px;
+    justify-content: center;
+    padding: 0 16px;
+    margin: 0 auto;
+
+    @include bp(small) {
+        padding: 0 18px;
+    }
+
+    @include bp(medium) {
+        grid-template-columns: repeat(12, 1fr);
+        grid-column-gap: 24px;
+        padding: 0 36px;
+    }
+
+    @include bp(large) {
+        padding: 0 56px;
+    }
+
+    @include bp(xlarge) {
+        padding: 0 12px;
+    }
+}
+
+@mixin list-reset {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin text-overflow-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@mixin icon-size($size) {
+    width: $size;
+    height: $size;
+}
+
+@mixin text-link {
+    font-size: inherit;
+    font-weight: inherit;
+    color: $blue-secondary;
+    cursor: pointer;
+    white-space: normal;
+    @include link-underline-properties;
+    position: relative;
+    border: none;
+}
+
+@mixin text-link-secondary {
+    color: $blue-secondary;
+    font-size: inherit;
+    font-weight: calculate-font-weight("bold");
+    @include underline(none);
+    border: none;
+}
+
+@mixin lead-in {
+    line-height: 19px;
+    margin-bottom: calculate-rem(8px);
+    &.large-copy {
+        line-height: 21px;
+    }
+    &.small-copy {
+        line-height: 16px;
+    }
+}
+
+@mixin button-reset {
+    background: none;
+    border: 0;
+    padding: 0;
+}
+
+@mixin x-shape($sqSide: 14px, $thickness: 2px, $color: $black) {
+    height: $sqSide;
+    width: $sqSide;
+    &:before,
+    &:after {
+        content: "";
+        background: $color;
+        position: absolute;
+        transform: rotate(45deg);
+    }
+    &:before {
+        width: 100%;
+        height: $thickness;
+        top: calc(#{$sqSide} / 2 - #{$thickness} / 2);
+        left: 0;
+    }
+    &:after {
+        width: $thickness;
+        height: 100%;
+        top: 0;
+        left: calc(#{$sqSide} / 2 - #{$thickness} / 2);
+    }
+}
+
+@mixin short-button {
+    @include font-size(12px);
+    line-height: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    min-height: 44px;
+    border: 0;
+}
+
+@mixin screen-reader-only {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}

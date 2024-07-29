@@ -1,0 +1,17 @@
+<div>
+    <div data-test="VehicleInfoComponent" class="vehicle-info-section">
+        <div data-test="VehicleInfoComponentNickName" *ngIf="vehicleInfoVM.nickname" class="ymm">
+            <span class="bold">{{ translateKeyPrefix + ".NICKNAME_LABEL" | translate }} </span>
+            {{ translateKeyPrefix + ".NICKNAME" | translate: { nickname: vehicleInfoVM.nickname } }}
+        </div>
+        <div data-test="VehicleInfoComponentYMM" *ngIf="vehicleInfoVM.yearMakeModel" class="ymm">
+            <span class="bold">{{ translateKeyPrefix + ".VEHICLE_LABEL" | translate }} </span>
+            {{ translateKeyPrefix + ".VEHICLE" | translate: vehicleInfoVM.yearMakeModel }}
+        </div>
+        <div data-test="VehicleInfoComponentRadioId" *ngIf="vehicleInfoVM.last4OfRadioId" class="ymm">
+            <span class="bold">{{ translateKeyPrefix + ".RADIO_ID_MASKED_LABEL" | translate }} </span>
+            {{ translateKeyPrefix + ".RADIO_ID_MASKED" | translate: { lastFour: vehicleInfoVM.last4OfRadioId } }}
+        </div>
+    </div>
+    <hr />
+</div>

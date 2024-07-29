@@ -1,0 +1,6 @@
+{
+    "WELCOME": "Welcome",
+    "SIGN_IN": "<a href=\"{{dotComBaseUrl}}myaccount\">Sign in</a> to manage your account.",
+    "NO_ACCOUNT": "No account? <a href=\"{{careBaseUrl}}/account/registration\">Register</a>",
+    "APPS_LOGO_HEADER": "GET THE SXM APP"
+}

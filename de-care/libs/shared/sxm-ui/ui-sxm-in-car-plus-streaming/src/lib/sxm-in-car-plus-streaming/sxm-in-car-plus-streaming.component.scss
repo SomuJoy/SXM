@@ -1,0 +1,14 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    color: $gray-dark;
+
+    a {
+        color: inherit;
+        font-size: 12px;
+    }
+
+    p {
+        margin-bottom: 6px;
+    }
+}

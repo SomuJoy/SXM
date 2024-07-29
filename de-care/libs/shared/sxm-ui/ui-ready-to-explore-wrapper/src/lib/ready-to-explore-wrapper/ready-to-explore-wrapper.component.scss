@@ -1,0 +1,19 @@
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0.5em;
+}
+
+li {
+    margin-bottom: 16px;
+    padding: 0;
+}
+
+:host {
+    display: block;
+}
+
+.footer-link {
+    margin-top: 16px;
+}

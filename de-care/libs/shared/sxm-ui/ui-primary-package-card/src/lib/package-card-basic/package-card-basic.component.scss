@@ -1,0 +1,47 @@
+@import "sxm.phoenix.imports";
+
+:host-context(.theme-non-retail) {
+    .price-term {
+        font-size: 0.875rem;
+        font-weight: 700;
+        ::ng-deep {
+            span[data-duration],
+            span[data-price] {
+                color: $raspberry;
+                font-size: 1.625rem;
+                font-weight: 800;
+            }
+        }
+    }
+}
+
+:host {
+    display: grid;
+    row-gap: 8px;
+    .platform-plan {
+        font-weight: calculate-font-weight("bold");
+    }
+
+    .price-term {
+        font-weight: calculate-font-weight("bold");
+        @include get-header-style(h4);
+        margin: 0;
+        ::ng-deep {
+            span[data-duration],
+            span[data-price] {
+                display: inline;
+            }
+            span[data-incentive-text] {
+                font-size: calculate-rem(14px);
+                text-transform: uppercase;
+                display: block;
+                color: $raspberry;
+                font-weight: 600;
+            }
+        }
+    }
+    .legal {
+        font-size: calculate-rem(12px);
+        color: $gray-dark;
+    }
+}

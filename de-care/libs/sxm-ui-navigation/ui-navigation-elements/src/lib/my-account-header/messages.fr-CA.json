@@ -1,0 +1,24 @@
+{
+    "LINKS": [
+        {
+            "url": "{{careUrl}}/account/manage/dashboard?langpref=fr",
+            "text": "Tableau de bord",
+            "altText": "Accéder à mon tableau de bord"
+        },
+        {
+            "url": "{{careUrl}}/account/manage/subscriptions?langpref=fr",
+            "text": "Abonnements",
+            "altText": "Afficher mes abonnements"
+        },
+        {
+            "url": "{{careUrl}}/account/manage/billing?langpref=fr",
+            "text": "Facturation",
+            "altText": "Accéder à mes informations de facturation"
+        },
+        {
+            "url": "{{careUrl}}/account/manage/account-info/account-information?langpref=fr",
+            "text": "Infos sur le compte",
+            "altText": "Gérer mon compte"
+        }
+    ]
+}

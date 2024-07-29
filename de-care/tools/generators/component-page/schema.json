@@ -1,0 +1,25 @@
+{
+    "$schema": "https://json-schema.org/schema",
+    "cli": "nx",
+    "$id": "component-page",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Name of the page component without the -page suffix",
+            "x-prompt": "Name of the page component without the -page suffix?"
+        },
+        "project": {
+            "type": "string",
+            "description": "project name",
+            "x-prompt": "Name of the project (lib)?"
+        },
+        "skipTranslationSupport": {
+            "type": "boolean",
+            "description": "Skip translation resource support? (If this component will not have static text copy then this can be set to true)",
+            "x-prompt": "Skip translation resource support? (If this component will not have static text copy then this can be set to true)",
+            "default": false
+        }
+    },
+    "required": ["name", "project"]
+}

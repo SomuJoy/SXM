@@ -1,0 +1,12 @@
+{
+    "SharedSxmUiUiOfferGridModule": {
+        "OfferGridFormComponent": {
+            "PRICE_ROW_TEXT": "Prix mensuel",
+            "CONTINUE_BUTTON_TEXT": "Continuer",
+            "EXPANDED_TEXT": "Masquer",
+            "COLLAPSED_TEXT": "Explorez les détails du forfait",
+            "QUESTIONS": "Des questions? Composez le ",
+            "GET": "Obtenez "
+        }
+    }
+}

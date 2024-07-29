@@ -1,0 +1,27 @@
+{
+    "name": "shared-sxm-ui-ui-skeleton-loader-payment-methods",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/sxm-ui/ui-skeleton-loader-payment-methods/src",
+    "prefix": "sxm-ui",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/shared/sxm-ui/ui-skeleton-loader-payment-methods"],
+            "options": {
+                "jestConfig": "libs/shared/sxm-ui/ui-skeleton-loader-payment-methods/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/shared/sxm-ui/ui-skeleton-loader-payment-methods/src/**/*.ts",
+                    "libs/shared/sxm-ui/ui-skeleton-loader-payment-methods/src/**/*.html"
+                ]
+            }
+        }
+    },
+    "tags": ["type:ui", "scope:shared-ui"]
+}

@@ -1,0 +1,16 @@
+<sxm-ui-content-card [hasGrayBackground]="true" [flagPresent]="false" [headlinePresent]="true">
+    <div htmlContentForHead>
+        <div class="radio-item">
+            <input class="radio" type="radio" [formControl]="control" id="{{ controlId }}" name="{{ formControlName }}" [value]="value" data-e2e="radioOption" />
+            <label [for]="controlId">
+                {{ label }}
+            </label>
+        </div>
+    </div>
+    <div htmlContentForBody>
+        <ng-content select="[bodyContent]"> </ng-content>
+        <sxm-ui-accordion-chevron [collapsedText]="collapsedText" [expandedText]="expandedText" [isInnerAccordion]="true">
+            <ng-content select="[accordionContent]"> </ng-content>
+        </sxm-ui-accordion-chevron>
+    </div>
+</sxm-ui-content-card>

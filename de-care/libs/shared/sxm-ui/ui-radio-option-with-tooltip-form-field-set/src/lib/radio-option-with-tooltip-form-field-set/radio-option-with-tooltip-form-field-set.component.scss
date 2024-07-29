@@ -1,0 +1,24 @@
+@import "sxm.phoenix.imports";
+
+:host-context(.small-bottom-margin) {
+    sxm-ui-radio-option-with-tooltip-form-field {
+        margin-bottom: 6px;
+    }
+}
+
+sxm-ui-radio-option-with-tooltip-form-field {
+    margin-bottom: 16px;
+}
+
+.tooltip-title {
+    font-weight: calculate-font-weight("bold");
+}
+.tooltip-description {
+    ::ng-deep {
+        > ul {
+            list-style: none;
+            padding: 0;
+            margin: 8px 0 0;
+        }
+    }
+}

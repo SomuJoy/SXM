@@ -1,0 +1,6 @@
+<a *ngIf="link; else imageOnly" [href]="link" class="no-decoration" target="_self">
+    <img *ngIf="imageSrc" [src]="imageSrc" [attr.alt]="altText" class="sxm-nav-logo" />
+</a>
+<ng-template #imageOnly>
+    <img *ngIf="imageSrc" [src]="imageSrc" [attr.alt]="altText" class="sxm-nav-logo" />
+</ng-template>

@@ -1,0 +1,121 @@
+<div class="content" *ngIf="parameters$ | async as parameters">
+    <div class="package-plans grid-row">
+        <!--  Display follow on packages to choose from -->
+        <div class="package-option" *ngFor="let packageName of parameters.packageNames; index as i" [class.selected]="packageName === parameters.selectedPackageName">
+            <ng-container
+                [ngTemplateOutlet]="packagesOptionTemplate"
+                [ngTemplateOutletContext]="{
+                    platform: packageName | platformFromPackageName,
+                    packageType: 'app.packageDescriptions.' + packageName + '.name' | translate | withoutPlatformName: packageName
+                }"
+            >
+            </ng-container>
+            <ng-template #packagesOptionTemplate let-platform="platform" let-packageType="packageType">
+                <!--  Display "In Your Trial" above package that is the lead offer -->
+
+                <p *ngIf="i > 0 && hideInYourTrial"></p>
+                <p *ngIf="i > 0 && !hideInYourTrial" class="small-copy text-center text-uppercase">
+                    {{ translateKeyPrefix + "YOUR_TRIAL" | translate }}
+                </p>
+                <div class="package-container" data-e2e="packageSelectionOption" [attr.data-track-click]="platform + ' ' + packageType + ' Option Tab'">
+                    <p>
+                        <span>{{ platform }}<br /></span>{{ packageType }}
+                    </p>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+    <div class="features">
+        <!--   Monthly Price After -->
+        <div class="grid-row monthly-price" data-e2e="packagesComparisonMonthlyPriceContainer">
+            <div>
+                <p
+                    data-e2e="packagesComparisonMonthlyRateText"
+                    [innerHTML]="
+                        translateKeyPrefix + 'MONTHLY_PRICE_AFTER' + ((isQuebec$ | async) ? '_QC' : '')
+                            | translate: { endDate: endDate | date: (dateFormat$ | async):null:locale }
+                    "
+                ></p>
+            </div>
+            <div *ngFor="let priceParam of parameters.prices; let i = index" class="count" [class.selected]="i === parameters.selectedPackageIndex">
+                <p data-e2e="packagesComparisonMonthlyPrice">${{ priceParam.pricePerMonth }}<span *ngIf="familyDiscount && priceParam.mrdEligible">*</span></p>
+            </div>
+        </div>
+        <!--   Channel Count, and, Package Features with Check or X marks-->
+        <div data-e2e="packagesComparisonFeatureContainer" *ngFor="let feature of parameters.features; let i = index" class="grid-row">
+            <div>
+                <p>
+                    <span class="feature-name" data-e2e="packagesComparisonFeatureName" [innerHTML]="feature.name"></span>
+                    <sxm-ui-tooltip
+                        [attr.data-track-click]="
+                            feature.name | planComparisionGridTooltipLinkId: (parameters.selectedName | withoutPlatformName: parameters.selectedPackageName)
+                        "
+                        *ngIf="feature.tooltipText"
+                        class="tooltip-component tooltip-display-top-medium-up tooltip-display-right-large-up"
+                    >
+                        <span [innerHTML]="feature.tooltipText"></span>
+                    </sxm-ui-tooltip>
+                </p>
+            </div>
+            <!-- If count exist, show it. Else, Display Check marks -->
+            <ng-container *ngIf="feature.counts[0]; else showCheckMarks">
+                <div *ngFor="let count of feature.counts; let i = index" class="count" [class.selected]="i === parameters.selectedPackageIndex">
+                    <p data-e2e="packagesComparisonFeatureCount">{{ count }}</p>
+                </div>
+            </ng-container>
+            <ng-template #showCheckMarks>
+                <div
+                    data-e2e="packagesComparisonFeatureMark"
+                    *ngFor="let showCheckMark of feature.checkMarks; let i = index"
+                    [class.selected]="i === parameters.selectedPackageIndex"
+                >
+                    <svg *ngIf="showCheckMark === true" class="icon icon-utility check-mark">
+                        <use class="icon-check-mark-flex-stroke" xlink:href="#icon-check-mark-flex-stroke"></use>
+                    </svg>
+                    <!--  Show dash when feature isn't available -->
+                    <svg *ngIf="showCheckMark !== true" class="icon icon-utility x-mark">
+                        <use class="icon-x-mark-flex-stroke" xlink:href="#icon-x-mark-flex-stroke"></use>
+                    </svg>
+                </div>
+            </ng-template>
+        </div>
+        <!--  Channel Lineup URL -->
+        <div data-e2e="packagesComparisonChannelLineUpContainer" class="grid-row channel-lineup-row">
+            <div>
+                <ng-container
+                    [ngTemplateOutlet]="channelsLineupTemplate"
+                    [ngTemplateOutletContext]="{
+                        channelsLineUpText: translateKeyPrefix + 'CHANNELS_LINEUP' | translate
+                    }"
+                >
+                </ng-container>
+                <ng-template #channelsLineupTemplate let-channelsLineUpText="channelsLineUpText">
+                    <p>
+                        <span data-e2e="packagesComparisonChannelLineUpText" class="feature-name">{{ channelsLineUpText }}</span>
+                        <sxm-ui-tooltip
+                            [attr.data-track-click]="
+                                channelsLineUpText | planComparisionGridTooltipLinkId: (parameters.selectedName | withoutPlatformName: parameters.selectedPackageName)
+                            "
+                            class="tooltip-component tooltip-display-top-medium-up"
+                        >
+                            <span>
+                                {{ translateKeyPrefix + "CHANNEL_LINEUP_TOOLTIP_COPY" + ((isQuebec$ | async) ? "_QC" : "") | translate }}
+                            </span>
+                        </sxm-ui-tooltip>
+                    </p>
+                </ng-template>
+            </div>
+            <div class="text-center" *ngFor="let name of parameters.names; let i = index">
+                <a
+                    class="bold channel-lineup-link"
+                    data-e2e="packagesComparisonChannelLineUpLink"
+                    [class.selected]="i === parameters.selectedPackageIndex"
+                    [href]="parameters.channelLineUpURLs[i]"
+                    target="_blank"
+                    [innerHTML]="translateKeyPrefix + 'VIEW_LINEUP' | translate"
+                >
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

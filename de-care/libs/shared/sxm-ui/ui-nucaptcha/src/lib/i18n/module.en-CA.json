@@ -1,0 +1,16 @@
+{
+    "SharedSxmUiUiNucaptchaModule": {
+        "nucaptchaComponent": {
+            "CAPTCHA": "Enter Captcha",
+            "CAPTCHA_AUDIO": "Audio code",
+            "CAPTCHA_VISUAL": "Visual code",
+            "CAPTCHA_AUDIO_REPLAY": "Replay audio sample",
+            "CAPTCHA_AUDIO_DOWNLOAD": "Download an audio challenge",
+            "CAPTCHA_TRY_NEW": "Try a new code",
+            "ERROR": {
+                "CAPTCHA_BLANK": "Enter the Captcha you see above.",
+                "CAPTCHA_FAILED": "Entered code does not match. Please try again."
+            }
+        }
+    }
+}

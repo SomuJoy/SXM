@@ -1,0 +1,7 @@
+<ng-container [formGroup]="addressFormGroup">
+    <sxm-ui-postal-code-form-field
+        [errorMsg]="invalidZipFromLookup ? ('SharedSxmUiUiPostalCodeFormWrapperModule.PostalCodeFormWrapperComponent.INVALID_ZIP' | translate) : ''"
+        [isCanada]="isCanada"
+        formControlName="zip"
+    ></sxm-ui-postal-code-form-field>
+</ng-container>

@@ -1,0 +1,12 @@
+<div class="content-container card-with-cta">
+    <div class="row no-padding">
+        <div class="column small-12">
+            <div class="card-with-cta--card background-white">
+                <h4 [innerHTML]="title"></h4>
+                <ng-content select="[cardCopy]"></ng-content>
+                <button class="button full-width {{ buttonClass }}" [innerHTML]="buttonCopy" (click)="action.emit()"></button>
+            </div>
+            <ng-content select="[subCardCopy]"></ng-content>
+        </div>
+    </div>
+</div>

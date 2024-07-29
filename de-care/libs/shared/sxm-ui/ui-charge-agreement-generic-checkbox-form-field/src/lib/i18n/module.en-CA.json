@@ -1,0 +1,17 @@
+{
+    "SharedSxmUiUiChargeAgreementGenericCheckboxFormFieldModule": {
+        "SxmUiChargeAgreementGenericCheckboxFormFieldComponent": {
+            "LABEL_PART_A_RECURRING_PAYMENT": "Please charge my card for the amount currently owed and to be the card on file for all future payments. A copy of my credentials, which may include my payment card, account number or payment token, will be stored by SiriusXM for future charges.",
+            "LABEL_PART_A_ONE_TIME_PAYMENT": "",
+            "LABEL_PART_B": "I agree to the SiriusXM Canada <a href=\"https://www.siriusxm.ca/terms\" target=\"_blank\" data-track-click=\"Customer Agreement\">Customer Agreement</a> which includes the refund policy, and <a href=\"https://www.siriusxm.ca/privacy\" target=\"_blank\" data-track-click=\"Privacy Policy\">Privacy Policy</a>.",
+            "LABEL_PART_B_RATE_VERSION": "I agree to the SiriusXM Canada <a href=\"https://www.siriusxm.ca/terms\" target=\"_blank\" data-track-click=\"Customer Agreement\">Customer Agreement</a> which includes the refund policy, and <a href=\"https://www.siriusxm.ca/privacy\" target=\"_blank\" data-track-click=\"Privacy Policy\">Privacy Policy</a>.",
+            "LABEL_PART_C_ONE_TIME_PAYMENT": "I agree that my service will continue and that my credit card will be charged the then-applicable regular price until I cancel (regular price subject to change upon proper notice). A copy of my credentials, which may include my payment card, account number or payment token, will be stored by SiriusXM for future charges. Fees and taxes extra. I acknowledge that I can cancel anytime and may call SiriusXM Canada at 1-888-539-7474 to cancel my subscription(s). I agree that all programming is subject to change.",
+            "LABEL_PART_C_ONE_TIME_PAYMENT_RATE_VERSION": "I agree that my service will continue and that my credit card will be charged the then-applicable regular rate until I cancel (regular rate subject to change upon proper notice). A copy of my credentials, which may include my payment card, account number or payment token, will be stored by SiriusXM for future charges. Taxes extra. Services are provided to me for an indeterminate term and billed to me for the agreed-upon billing period. I acknowledge that I can cancel anytime and may call SiriusXM Canada at 1-888-539-7474 to cancel my subscription(s). I agree that all programming is subject to change.",
+            "LABEL_PART_C_RECURRING_PAYMENT": "I agree that my service will continue and that my credit card will be charged the then-applicable regular price until I cancel (regular price subject to change upon proper notice). Fees and taxes extra. I acknowledge that I can cancel anytime and may call SiriusXM Canada at 1-888-539-7474 to cancel my subscription(s). I agree that all programming is subject to change.",
+            "LABEL_PART_C_RECURRING_PAYMENT_RATE_VERSION": "I agree that my service will continue and that my credit card will be charged the then-applicable regular rate until I cancel (regular rate subject to change upon proper notice). Taxes extra. Services are provided to me for an indeterminate term and billed to me for the agreed-upon billing period. I acknowledge that I can cancel anytime and may call SiriusXM Canada at 1-888-539-7474 to cancel my subscription(s). I agree that all programming is subject to change.",
+            "LANGUAGE_LINK_TEXT": "",
+            "LANGUAGE_LINK_VALUE": "",
+            "ERROR_REQUIRED": "Please accept the above agreement."
+        }
+    }
+}

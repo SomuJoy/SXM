@@ -1,0 +1,28 @@
+import { CommonModule } from '@angular/common';
+import { Component, NgModule, ChangeDetectionStrategy } from '@angular/core';
+import { ComponentLocale, ComponentWithLocale, LanguageResources, TranslationsForComponentService } from '@de-care/shared/translation';
+import { TranslateModule } from '@ngx-translate/core';
+
+@ComponentLocale({
+    languageResources: {
+        'en-CA': { ...require('./messages.en-CA.json') },
+        'en-US': { ...require('./messages.en-US.json') },
+        'fr-CA': { ...require('./messages.fr-CA.json') },
+    },
+})
+@Component({
+    selector: 'sxm-ui-<%= dasherize(name) %>',
+    templateUrl: './<%= dasherize(name) %>.component.html',
+    styleUrls: ['./<%= dasherize(name) %>.component.scss'],
+    standalone: true,
+    imports: [TranslateModule],
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class SxmUi<%= classify(name) %>Component implements ComponentWithLocale {
+    languageResources: LanguageResources;
+    translateKeyPrefix: string;
+
+    constructor(readonly translationsForComponentService: TranslationsForComponentService) {
+        translationsForComponentService.init(this);
+    }
+}

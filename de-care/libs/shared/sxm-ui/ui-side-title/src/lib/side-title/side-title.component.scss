@@ -1,0 +1,67 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    display: block;
+}
+
+.ext-container {
+    text-align: center;
+    background-color: $blue;
+}
+.block-container {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background-color: $blue;
+    height: auto;
+    @include bp(medium) {
+        display: inline-block;
+        width: 50%;
+        overflow: hidden;
+        max-width: 492px;
+    }
+
+    &--title {
+        @extend .block-container;
+        max-width: 600px;
+    }
+}
+
+.content-block {
+    background-color: $white;
+    padding: 16px;
+    @include bp(medium) {
+        margin: 32px 60px 32px 32px;
+        padding: 24px;
+    }
+}
+
+.title-block {
+    padding: 32px 16px 24px 16px;
+    @include bp(medium) {
+        position: absolute;
+        top: 70px;
+        width: 55%;
+        max-width: 550px;
+        margin: 0 60px 0 12px;
+        padding-right: 60px;
+    }
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 14px;
+    color: $white;
+    @include bp(medium) {
+        font-size: 59px;
+    }
+}
+
+p {
+    font-size: 14px;
+    color: $white;
+    @include bp(medium) {
+        font-size: 16px;
+    }
+}

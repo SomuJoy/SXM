@@ -1,0 +1,14 @@
+// TODO: Ideally we want to completely move away from using this so p tags behave as normal and styling can be altered
+//       per component if required
+
+@mixin legacy-global-paragraph {
+    p {
+        margin-top: 0;
+        margin-bottom: 0.625rem;
+        font-size: 0.875rem;
+        line-height: 1.57;
+    }
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+}

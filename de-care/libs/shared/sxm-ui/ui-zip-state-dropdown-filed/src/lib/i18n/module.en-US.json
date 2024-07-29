@@ -1,0 +1,11 @@
+{
+    "SharedSxmUiUiZipStateDropdownFiledModule": {
+        "SxmUiZipStateDropdownFieldComponent": {
+            "ERROR_CVV_FOUND": "The field contains characters that resemble credit card security information. Please review and make appropriate changes to continue.",
+            "ERROR_ZIPCODE_FOUND": "Enter your zip code.",
+            "ZIP_LABEL": "Zip Code",
+            "STATE_LABEL": "State",
+            "ERROR_STATE_FOUND": "Enter your state."
+        }
+    }
+}

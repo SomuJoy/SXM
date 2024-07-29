@@ -1,0 +1,24 @@
+@import "sxm.phoenix.imports";
+
+:host-context(.hide-header-text) {
+    .header-text {
+        display: none;
+    }
+}
+
+.header {
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+sxm-ui-radio-option-with-tooltip-form-field {
+    margin-bottom: 16px;
+}
+
+button {
+    margin-top: 32px;
+}
+
+.tooltip-title {
+    font-weight: calculate-font-weight("bold");
+}

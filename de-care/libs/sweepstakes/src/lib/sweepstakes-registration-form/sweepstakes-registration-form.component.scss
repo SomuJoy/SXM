@@ -1,0 +1,44 @@
+@import "sxm.phoenix.imports";
+
+h4 {
+    margin-bottom: 10px;
+}
+
+.sub-header {
+    margin-bottom: 20px;
+}
+
+.grid-container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "top top" "left right";
+    grid-gap: 25px 25px;
+}
+
+.top {
+    grid-area: top;
+}
+
+.left {
+    grid-area: left;
+}
+
+.checkbox-item {
+    margin-top: 16px;
+}
+
+.error-text {
+    color: $red;
+    font-weight: bold;
+}
+
+.error.checkbox-item label:before {
+    border: 2px solid $red;
+}
+
+.check-error {
+    margin-top: 8px;
+}

@@ -1,0 +1,6 @@
+{
+    "WELCOME": "Bienvenue",
+    "SIGN_IN": "<a href=\"{{dotComBaseUrl}}myaccount\">Connectez-vous</a> pour gérer votre compte.",
+    "NO_ACCOUNT": "Pas de compte? <a href=\"{{careBaseUrl}}/account/registration?langpref=fr\">Inscrivez-vous</a>",
+    "APPS_LOGO_HEADER": "OBTENIR L’APPLI SXM"
+}

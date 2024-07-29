@@ -1,0 +1,58 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+$pill-color: #fff9d5;
+
+sxm-ui-alert-pill {
+    position: absolute;
+    top: 0px;
+    margin: 20px;
+    @include bp(medium) {
+        margin: 40px;
+    }
+    background: $pill-color;
+}
+
+.pill-text {
+    color: $black;
+    font-size: 16px;
+}
+
+.paragraph {
+    top: 40%;
+    padding: 0 56px;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+@keyframes fadeInslideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-block {
+    animation-name: fadeInslideUp;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+
+    &.fade {
+        animation-delay: 1s;
+        animation-name: fadeIn;
+    }
+}

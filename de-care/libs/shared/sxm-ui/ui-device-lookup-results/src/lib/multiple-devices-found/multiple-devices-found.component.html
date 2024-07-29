@@ -1,0 +1,33 @@
+<section id="multipleRadioFoundContent">
+    <h3 id="multipleRadioFoundContentTitle">{{ translateKeyPrefix + ".HEADER" | translate: { totalSubscriptionsFound: viewModel.numberOfSubscriptionsFound } }}</h3>
+    <p id="multipleRadioFoundContentSubHeader">{{ translateKeyPrefix + ".SUB_HEADER" | translate }}</p>
+    <ng-container *ngFor="let subscriptionFound of viewModel.flepzResultsForDisplay">
+        <hr />
+        <p class="bold">
+            <span>
+                <ng-container *ngIf="subscriptionFound?.vehicleInfo; else noVehicleInfo">
+                    {{ translateKeyPrefix + ".VEHICLE" | translate: subscriptionFound?.vehicleInfo }}
+                </ng-container>
+                <ng-template #noVehicleInfo>
+                    {{ translateKeyPrefix + ".RADIO_ID_MASKED" | translate: { maskedRadioId: subscriptionFound.last4DigitsOfRadioId } }}
+                </ng-template>
+            </span>
+            <span class="select-radio"
+                ><a (click)="onFormSubmit(subscriptionFound.last4DigitsOfRadioId)">{{ translateKeyPrefix + ".SELECT_RADIO" | translate }}</a></span
+            >
+        </p>
+        <p>
+            <ng-container *ngIf="!subscriptionFound.isClosed; else closedRadio">
+                <ng-container *ngFor="let planName of subscriptionFound.planNames">
+                    <span class="plan-name">{{ planName }} {{ translateKeyPrefix + ".TRIAL_LABEL" | translate }}</span>
+                </ng-container>
+            </ng-container>
+            <ng-template #closedRadio>
+                <span class="plan-name">
+                    {{ translateKeyPrefix + ".NO_ACTIVE_SERVICE" | translate }}
+                </span>
+            </ng-template>
+        </p>
+    </ng-container>
+    <hr />
+</section>

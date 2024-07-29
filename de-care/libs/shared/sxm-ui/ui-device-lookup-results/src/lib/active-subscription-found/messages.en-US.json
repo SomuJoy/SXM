@@ -1,0 +1,9 @@
+{
+    "HEADER": "Looks like you already have a subscription.",
+    "SUB_HEADER": "Sign in to modify your subscription.",
+    "VEHICLE": "{{year}} {{make}} {{model}}",
+    "RADIO_ID_MASKED": "RadioID: ****{{maskedRadioId}}",
+    "SUBSCRIPTION_LABEL": " Subscription",
+    "CONTINUE_BTN_LABEL": "SIGN IN TO ACCOUNT",
+    "CONTINUE_BTN_LINK": "https://care.siriusxm.com/login_view.action"
+}

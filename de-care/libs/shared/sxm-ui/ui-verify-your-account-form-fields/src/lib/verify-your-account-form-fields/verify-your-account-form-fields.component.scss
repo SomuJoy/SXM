@@ -1,0 +1,71 @@
+@import "sxm.phoenix.imports";
+
+hr {
+    border: 1px solid $gray-light;
+}
+
+form {
+    margin-top: 28px;
+    .text_color {
+        color: #736e7d;
+        font-weight: 500;
+    }
+    .text_spacing {
+        letter-spacing: 1.7px;
+    }
+}
+
+.error {
+    // TODO: get all these from sxm SCSS mixin for (invalid-feedback)
+    color: #d90909;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+sxm-ui-radio-option-form-field {
+    margin-top: 24px;
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.additional-data {
+    padding: 12px 0 0 30px;
+}
+
+sxm-ui-checkbox-with-label-form-field {
+    margin-top: 16px;
+    .invalid-feedback {
+        margin: 6px 0 0;
+    }
+}
+
+.extra-bottom-padding {
+    padding-bottom: 16px;
+}
+
+.chat-with-agent {
+    margin-top: 16px;
+}
+
+::ng-deep {
+    svg.icon-utility {
+        cursor: pointer;
+    }
+}
+
+sxm-ui-tooltip {
+    float: right;
+    margin: -3.5rem 0.5rem 0;
+}
+
+.tool-tip-error {
+    margin: -5rem 0.5rem 0 !important;
+}
+
+.hidden-field {
+    visibility: hidden;
+}

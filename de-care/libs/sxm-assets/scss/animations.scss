@@ -1,0 +1,72 @@
+//Keyframes
+@keyframes showElement {
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes hideElement {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes showThenHideElement {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    50% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes collapseElement {
+    to {
+        height: 0;
+    }
+}
+
+@keyframes skeletonLoadingShimmer {
+    0% {
+        background-position: 120% 50%;
+    }
+    75% {
+        background-position: 0% 50%;
+    }
+}
+
+//Mixins
+@mixin slideUp($value) {
+    @keyframes slideUp {
+        from {
+            transform: translateY($value);
+        }
+        to {
+            transform: none;
+        }
+    }
+}
+
+@mixin slideDown($value) {
+    @keyframes slideDown {
+        to {
+            transform: translateY(-$value);
+        }
+    }
+}
+
+@mixin changeOpacity($value) {
+    @keyframes changeOpacity {
+        to {
+            opacity: $value;
+        }
+    }
+}

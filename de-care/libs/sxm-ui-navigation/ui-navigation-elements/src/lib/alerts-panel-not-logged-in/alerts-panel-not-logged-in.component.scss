@@ -1,0 +1,61 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "libs/sxm-assets/scss/ui_reset.scss";
+
+:host {
+    font-family: $font-standard;
+    color: $black;
+}
+
+.alerts-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 162px;
+    padding: 24px;
+    @include bp(mobile-medium) {
+        height: 265px;
+    }
+    button {
+        @include button-reset;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        padding: 6px;
+        @include bp(mobile-medium) {
+            display: none;
+        }
+        .x-shape {
+            display: block;
+            position: relative;
+            @include x-shape;
+        }
+    }
+    h6 {
+        @include get-header-style(h5);
+    }
+    p {
+        margin: 0;
+        @include font-size(14px);
+        font-weight: calculate-font-weight("book");
+        line-height: 22px;
+        color: $gray-dark;
+        text-align: center;
+        white-space: normal;
+        ::ng-deep {
+            a {
+                padding: 12px 0;
+                text-decoration: underline;
+                text-underline-offset: 3px;
+                text-decoration-thickness: 2px;
+                color: $blue-secondary;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.no-margin {
+    margin: 0;
+}

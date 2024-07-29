@@ -1,0 +1,34 @@
+<div #dropdown>
+    <button [attr.aria-label]="buttonLabel?.ariaLabel" (click)="onClick()" [class.opened]="opened" [attr.aria-expanded]="opened">
+        <span>{{ buttonLabel?.label }}</span>
+        <div class="icon-dropdown-sm-wrapper">
+            <svg class="icon icon-utility small">
+                <use class="icon-dropdown-sm" xlink:href="#icon-dropdown-sm"></use>
+            </svg>
+        </div>
+    </button>
+    <ul [ngClass]="opened ? 'active' : 'hide'">
+        <ng-container *ngIf="listData && listData.length > 0; else loadingList">
+            <li *ngFor="let item of listData">
+                <a *ngIf="item.routerLinkObject" [routerLink]="item.routerLinkObject" skipLocationChange (click)="closeDropdownMenu()">{{ item.label }}</a>
+                <a
+                    *ngIf="item.routerLink"
+                    [routerLink]="['/' + item.routerLink]"
+                    [queryParams]="{
+                        subscriptionId: item.subscriptionId,
+                        langpref: item.langpref ? item.langpref : null,
+                        oemsetuptype: item.oemsetuptype ? item.oemsetuptype : null
+                    }"
+                >
+                    {{ item.label }}
+                </a>
+                <a *ngIf="item.url" [attr.href]="item.url" [attr.target]="item.target">
+                    {{ item.label }}
+                </a>
+            </li>
+        </ng-container>
+        <ng-template #loadingList>
+            <li class="loading"><span></span><span></span><span></span></li>
+        </ng-template>
+    </ul>
+</div>

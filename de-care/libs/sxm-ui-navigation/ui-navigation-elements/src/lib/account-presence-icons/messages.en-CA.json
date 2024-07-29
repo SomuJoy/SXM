@@ -1,0 +1,43 @@
+{
+    "ALERTS_BUTTON_ARIA": "Account Alerts",
+    "USER_BUTTON_ARIA": "Manage my account",
+    "ALERTS_PANEL_LOADING_ARIA": "Alerts are loading",
+    "USER_PANEL_LOADING_ARIA": "User information is loading",
+    "PRICE_CHANGE_MESSAGE_DATE": "03/14/2023",
+    "PAYMENT": {
+        "LINK_URL": "{{oacUrl}}/makeccpaymentlogin_view.action?isflepzview=true&langpref=en#/ccpaymentflepz",
+        "LINK_URL_LOGGEDIN": "{{careUrl}}/account/pay/make-payment?langpref=en"
+    },
+    "PAYMENT_REMINDER": {
+        "LINK_URL": "{{oacUrl}}/makeccpaymentlogin_view.action?isflepzview=true&langpref=en#/ccpaymentflepz",
+        "LINK_URL_LOGGEDIN": "{{careUrl}}/account/pay/make-payment?langpref=en"
+    },
+    "SC_AC": {
+        "LINK_URL": "{{careUrl}}/transfer/radio/login?langpref=en"
+    },
+    "CONVERT": {
+        "LINK_URL": "{{careUrl}}/subscribe/checkout?radioid=**{{radioId}}&programcode=CAMORESELECT&upcode=UMOREALLACCESS&isIdentifiedUser=true&langpref=en"
+    },
+    "UPGRADE": {
+        "LINK_URL": "{{careUrl}}/account/login?task=upgrade&esn={{radioId}}&langpref=en",
+        "LINK_URL_LOGGEDIN": "{{careUrl}}/subscription/change?subscriptionId={{subscriptionId}}&langpref=en"
+    },
+    "DEVICES": {
+        "LINK_URL": "https://www.siriusxm.ca/actssdevice"
+    },
+    "CONTENT": {
+        "LINK_URL": "https://www.siriusxm.ca/acctssplayer"
+    },
+    "CREDENTIALS": {
+        "LINK_URL": "{{careUrl}}/onboarding/setup-credentials?langpref=en",
+        "LINK_URL_NO_REGISTRATION": "{{careUrl}}/account/registration?langpref=en",
+        "LINK_URL_NO_REGISTRATION_STEP_UP": "{{careUrl}}/account/registration/step-up?langpref=en",
+        "LINK_URL_LOGGEDIN": "{{oacUrl}}/updateinternetcredentials_view.action?subscriptionNumber={{subscriptionId}}&langpref=en"
+    },
+    "REACTIVATE": {
+        "LINK_URL": "{{careUrl}}/subscribe/checkout/purchase/satellite/add-radio-router/activate-radio-init?radioid=**{{radioId}}"
+    },
+    "PRICE_MSG": {
+        "LINK_URL": "https://www.siriusxm.ca/mar2023rates"
+    }
+}

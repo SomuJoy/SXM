@@ -1,0 +1,23 @@
+{
+    "extends": ["../../../../.eslintrc.json"],
+    "ignorePatterns": ["!**/*"],
+    "overrides": [
+        {
+            "files": ["*.ts"],
+            "extends": ["plugin:@nrwl/nx/angular", "plugin:@angular-eslint/template/process-inline-templates"],
+            "rules": {}
+        },
+        {
+            "files": ["*.html"],
+            "extends": ["plugin:@nrwl/nx/angular-template"],
+            "rules": {}
+        },
+        {
+            "files": ["*.ts"],
+            "extends": ["../../../../.eslintrc.json"],
+            "rules": {
+                "no-input-rename": "off"
+            }
+        }
+    ]
+}

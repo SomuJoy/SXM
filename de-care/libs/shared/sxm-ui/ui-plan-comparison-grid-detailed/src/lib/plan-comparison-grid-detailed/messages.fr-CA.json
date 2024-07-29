@@ -1,0 +1,20 @@
+{
+    "LABEL_BEST_VALUE": "Best Value",
+    "CHANNELS_INCLUDED": "Stations incluses",
+    "CHANNEL_COUNT": "{{channelCount}} Channels",
+    "LABEL_PROMO_COST": "Initial Promo Plus fees and taxes",
+    "LABEL_RENEWAL_COST": "Renewal",
+    "LABEL_WHERE_TO_LISTEN": "Where to Listen",
+    "COMPATABILITY_SOME": "Some",
+    "LABEL_CHANNEL_LINEUP": "Channel lineup",
+    "LINK_TEXT_CHANNEL_LINEUP": "View lineup",
+    "PROMO_COST": "{{termLength}} mois pour {{price}}",
+    "PRICE_PER_MONTH": "{{price}}/mo",
+    "PRICE_ZERO": "{{price}}",
+    "TERM_LENGTH": "pour {{termLength}} mois",
+    "RENEWAL_COST": "{{price}}/mo.",
+    "SHOW_MORE": "Show more",
+    "SHOW_LESS": "Show less",
+    "BUTTON_GET_LABEL": "Get",
+    "GET_ARIA_LABEL": "GET {{packageName}}"
+}

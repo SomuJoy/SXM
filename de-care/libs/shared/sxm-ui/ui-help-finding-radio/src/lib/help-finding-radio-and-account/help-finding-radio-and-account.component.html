@@ -1,0 +1,57 @@
+<h5 *ngIf="title; else defaultTitle">
+    <ng-content select=".title"></ng-content>
+</h5>
+
+<ng-template #defaultTitle>
+    <h5>{{ "SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioAndAccountComponent.TITLE" | translate }}</h5>
+</ng-template>
+
+<ng-container *ngIf="contentParagraphOne; else defaultParagraphOne"><ng-content select=".paragraph-1"></ng-content></ng-container>
+
+<ng-template #defaultParagraphOne>
+    <p>{{ "SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioAndAccountComponent.NEED_HELP_TEXT-1" | translate }}</p>
+</ng-template>
+
+<ng-container *ngIf="contentParagraphTwo; else defaultParagraphTwo"><ng-content select=".paragraph-2"></ng-content></ng-container>
+<ng-template #defaultParagraphTwo>
+    <p>{{ "SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioAndAccountComponent.NEED_HELP_TEXT-2" | translate }}</p>
+</ng-template>
+
+<ng-container *ngIf="contentParagraphThree; else defaultParagraphThree"><ng-content select=".paragraph-3"></ng-content></ng-container>
+<ng-template #defaultParagraphThree>
+    <p>
+        <span>{{ "SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioAndAccountComponent.NEED_HELP_TEXT-3" | translate }} </span>
+        <span>
+            <chat-with-agent-link
+                [sxmUiDataClickTrack]="'chat'"
+                [chatLinkText]="'SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioAndAccountComponent.CHAT_LINK' | translate"
+                [queue]="'general'"
+                [inheritColor]="false"
+            ></chat-with-agent-link>
+        </span>
+    </p>
+</ng-template>
+
+<ul class="link-list">
+    <li *ngIf="showSearchByLicensePlateLink">
+        <a class="text-link" href="" (click)="$event.preventDefault(); licensePlateHelp.emit()">{{ "identification.helpFindingRadioComponent.TEXT_LINK-0" | translate }}</a>
+    </li>
+    <li>
+        <a class="text-link" href="{{ 'SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioAndAccountComponent.TEXT_LINK-1_URL' | translate }}" target="_blank">{{
+            "SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioAndAccountComponent.TEXT_LINK-1" | translate
+        }}</a>
+    </li>
+    <li>
+        <a class="text-link" (click)="$event.preventDefault(); deviceHelp.emit()">{{
+            "SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioAndAccountComponent.TEXT_LINK-2" | translate
+        }}</a>
+    </li>
+</ul>
+
+<div class="help-finding-radio" *ngIf="showDontHaveRadio">
+    <h4>{{ "SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioAndAccountComponent.DONT_HAVE_RADIO.HEADLINE" | translate }}</h4>
+    <p class="text-color-gray-dark">{{ "SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioAndAccountComponent.DONT_HAVE_RADIO.SUB_HEADLINE" | translate }}</p>
+    <a href="{{ 'SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioAndAccountComponent.DONT_HAVE_RADIO.LINK_URL' | translate }}" target="_blank">{{
+        "SharedSxmUiUiHelpFindingRadioModule.SxmUiHelpFindingRadioAndAccountComponent.DONT_HAVE_RADIO.LINK_TEXT" | translate
+    }}</a>
+</div>

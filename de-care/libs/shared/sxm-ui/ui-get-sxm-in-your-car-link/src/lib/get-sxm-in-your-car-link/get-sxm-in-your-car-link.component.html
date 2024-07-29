@@ -1,0 +1,9 @@
+<div>
+    <p class="small-copy" [innerHTML]="linkData?.titleText"></p>
+    <a class="radio-plus-streaming small-copy" target="_blank" sxmUiDataClickTrack="exit" (click)="trackGetSXMInYourCarLink()" [href]="linkData?.linkURL">
+        {{ linkData?.linkText }}
+    </a>
+    <svg class="icon car-logo-svg-container">
+        <use xlink:href="#icon-car"></use>
+    </svg>
+</div>

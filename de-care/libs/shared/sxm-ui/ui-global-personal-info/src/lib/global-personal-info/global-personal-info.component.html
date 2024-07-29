@@ -1,0 +1,16 @@
+<div id="personal-info" data-e2e="personalInfo">
+    <!--TODO: Consider handling the vehicle info with a shared pipe-->
+    <p class="no-margin" qatag="DeviceDetailsVehicleInfo" *ngIf="vehicleInfo?.model || vehicleInfo?.make || vehicleInfo?.year">
+        {{
+            "sharedSxmUiUiGlobalPersonalInfoModule.GlobalPersonalInfoComponent.vehicle"
+                | translate: { model: vehicleInfo.model || "", make: vehicleInfo.make || "", year: vehicleInfo.year || "" }
+        }}
+    </p>
+
+    <p qatag="DeviceDetailsRadioInfo" *ngIf="last4DigitsRadioId">
+        {{ "sharedSxmUiUiGlobalPersonalInfoModule.GlobalPersonalInfoComponent.radio" | translate: { last4DigitsRadioId: last4DigitsRadioId } }}
+    </p>
+    <p *ngIf="!last4DigitsRadioId && isStreaming && !!maskedUsername">
+        {{ "sharedSxmUiUiGlobalPersonalInfoModule.GlobalPersonalInfoComponent.USERNAME" | translate }} ({{ maskedUsername }})
+    </p>
+</div>

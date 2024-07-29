@@ -1,0 +1,21 @@
+<div class="progress-bar">
+    <div class="markers">
+        <div
+            *ngFor="let step of steps; let i = index"
+            [class.step]="true"
+            [class.active]="i + 1 === currentStepData.step && currentStepData.subStep === 1"
+            [class.partial]="i + 1 === currentStepData.step && currentStepData.subStep > 1"
+            [class.done]="i + 1 < currentStepData.step"
+        >
+            <div class="dot">
+                <span></span>
+            </div>
+            <ng-container *ngIf="step.subSteps?.length > 0">
+                <div *ngFor="let subStep of step.subSteps" class="break"></div>
+            </ng-container>
+        </div>
+    </div>
+
+    <div class="bar default"></div>
+    <div [ngStyle]="{ width: progressWidth }" class="bar progress"></div>
+</div>

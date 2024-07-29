@@ -1,0 +1,28 @@
+{
+    "sharedSxmUiUiVehicleWithSubscriptionInfoModule": {
+        "vehicleWithSubscriptionInfoComponent": {
+            "RADIO": "Radio ID: {{ radioId }}",
+            "RADIO_AS_TITLE": "Radio ID {{ radioId }}",
+            "USERNAME": "Username: {{ username }}",
+            "THE_TRIAL_TEXT": "",
+            "TRIAL_ENDS": "Trial Ends: ",
+            "DATE_STARTS": "{{termWord}} Plan Starts: ",
+            "DATE_STARTS_PROMO": "{{termLength}}-Month Promo Starts: ",
+            "DATE_ENDS": "{{termWord}} Plan Expires: ",
+            "DATE_ENDS_PROMO": "{{termLength}}-Month Promo Expires: ",
+            "DATE_RENEWS": "{{termWord}} Plan Renews: ",
+            "DATE_RENEWS_PROMO": "{{termLength}}-Month Promo Renews: ",
+            "DATE_CLOSED": "Deactivated: ",
+            "DATE_LIFETIME": "Lifetime Plan",
+            "TERM_MAP": {
+                "=1": "Monthly",
+                "=3": "Quarterly",
+                "=6": "Semiannual",
+                "=12": "Annual",
+                "=24": "2-Year",
+                "=36": "3-Year",
+                "other": ""
+            }
+        }
+    }
+}

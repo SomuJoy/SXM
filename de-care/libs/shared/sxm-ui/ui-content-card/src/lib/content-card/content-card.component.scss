@@ -1,0 +1,81 @@
+@import "sxm.phoenix.imports";
+sxm-ui-content-card {
+    display: block;
+    &.no-head-padding {
+        .content-card-head {
+            padding: 0;
+        }
+    }
+}
+
+.full-width {
+    width: 100%;
+}
+
+.p-16 {
+    padding: 16px;
+}
+
+sxm-ui-content-card.purple-background {
+    .content-card {
+        .content-card-head {
+            color: $white;
+            background-color: $raspberry;
+        }
+    }
+}
+
+sxm-ui-content-card.gray-background {
+    .content-card {
+        .content-card-head {
+            color: $black;
+            background-color: $off-white;
+            border-color: $gray-medium;
+            p {
+                color: $black;
+            }
+        }
+    }
+}
+
+.content-card {
+    box-sizing: border-box;
+    margin: 0 0 16px 0;
+    .content-card-flag {
+        padding: 7px 0;
+        background-color: $watermelon;
+        border: 1px solid transparent;
+        p {
+            font-weight: 700;
+            color: $white;
+            font-size: 12px;
+            margin: 0;
+        }
+    }
+    .content-card-head {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        background-color: $purple;
+        font-weight: calculate-font-weight("bold");
+        border: 1px solid transparent;
+        color: $white;
+
+        p {
+            color: $white;
+            font-size: 14px;
+        }
+    }
+
+    .content-card-body {
+        border: 1px solid $gray-medium;
+        border-top: 0;
+        &.no-header {
+            border-top: 1px solid $gray-medium;
+        }
+    }
+}
+
+// remove top bottom padding if there is a radio/checkbox option in the header
+offer-card-form-field-option div.content-card div.content-card-head {
+    padding: 0;
+}

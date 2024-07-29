@@ -1,0 +1,36 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/loading.scss";
+
+:host {
+    display: grid;
+    position: relative;
+    .gradient-animation {
+        @include skeletonLoadingPanel;
+    }
+    article {
+        display: grid;
+        grid-template-rows: auto auto auto 1fr;
+        row-gap: 16px;
+        color: $gray-medium;
+        p {
+            font-weight: calculate-font-weight("bold");
+            font-size: calculate-rem(14px);
+        }
+        .skeleton-radio-input {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            column-gap: 14px;
+            input[type="radio"] {
+                width: 20px;
+                height: 20px;
+                border: 2px solid $gray-medium;
+                border-radius: 50%;
+            }
+            span {
+                background-color: $gray-light;
+                border-radius: 2px;
+                max-width: 300px;
+            }
+        }
+    }
+}

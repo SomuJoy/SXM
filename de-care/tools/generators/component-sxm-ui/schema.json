@@ -1,0 +1,25 @@
+{
+    "$schema": "https://json-schema.org/schema",
+    "cli": "nx",
+    "$id": "component-sxm-ui",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Name of the presentational component without the sxm-ui- prefix",
+            "x-prompt": "Name of the presentational component without the sxm-ui- prefix?"
+        },
+        "project": {
+            "type": "string",
+            "description": "Name of the project (lib)?",
+            "x-prompt": "Name of the project (lib)?"
+        },
+        "skipTranslationSupport": {
+            "type": "boolean",
+            "description": "Skip translation resource support? (If this component will not have static text copy then this can be set to true)",
+            "x-prompt": "Skip translation resource support? (If this component will not have static text copy then this can be set to true)",
+            "default": false
+        }
+    },
+    "required": ["name", "project"]
+}

@@ -1,0 +1,19 @@
+<section *ngIf="optionData?.callout as callout" class="callout">
+    <header *ngIf="callout.text as text">{{ text }}</header>
+    <img *ngIf="callout.imageUrl as imageUrl" [src]="imageUrl" [title]="callout?.text" alt="" />
+</section>
+<aside>
+    <input
+        type="radio"
+        [formControl]="control"
+        id="{{ controlId }}"
+        name="{{ formControlName }}"
+        [value]="optionData?.value"
+        data-test="radioOptionCardWithRadioSelectFormField"
+    />
+    <svg class="icon icon-utility checkmark-circle">
+        <use class="icon-checkmark-sm" xlink:href="#icon-checkmark-sm"></use>
+    </svg>
+</aside>
+<div class="title">{{ optionData?.title }}</div>
+<div class="description" [innerHTML]="optionData?.description || ''"></div>

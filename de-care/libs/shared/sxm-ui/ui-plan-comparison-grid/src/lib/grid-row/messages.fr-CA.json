@@ -1,0 +1,4 @@
+{
+    "OPTION_NAME_IS_INCLUDED_IN_ITEM_NAME": "{{optionName}} est inclus dans {{itemName}}.",
+    "OPTION_NAME_IS_NOT_INCLUDED_IN_ITEM_NAME": "{{optionName}} n'est pas inclus dans {{itemName}}."
+}

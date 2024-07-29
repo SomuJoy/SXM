@@ -1,0 +1,152 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: block;
+    width: 100%;
+
+    @include bp(large) {
+        width: 100%;
+    }
+}
+
+.plan-selection-grid {
+    padding-top: 0;
+    padding-bottom: 15px;
+    @include bp(large) {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        padding-bottom: 20px;
+        width: auto;
+    }
+
+    p.small-copy {
+        margin: 0;
+    }
+
+    .select-a-plan {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-rows: auto minmax(16px, auto) minmax(70px, auto) 10px;
+        grid-template-rows: auto minmax(16px, auto) minmax(70px, auto) 10px;
+        margin-top: 12px;
+        grid-column-gap: 16px;
+        width: 100%;
+        @include bp(large) {
+            margin-top: 0;
+            -ms-grid-rows: minmax(16px, auto) minmax(70px, auto) 10px;
+            grid-template-rows: minmax(16px, auto) minmax(70px, auto) 10px;
+            grid-column-gap: 24px;
+        }
+
+        .user-selection {
+            text-align: center;
+            letter-spacing: 1.05px;
+            padding: 8px 0;
+            @include bp(large) {
+                padding: 4px 0;
+            }
+        }
+
+        .plan-option {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            background-color: $blue-ultra-light;
+            padding: 8px 4px;
+
+            .plan-option--name {
+                font-weight: calculate-font-weight("bold");
+                @include font-size(12px);
+                margin-bottom: 0;
+                color: $blue;
+                text-align: center;
+                @include bp(medium) {
+                    &-platform {
+                        @include font-size(14px);
+                    }
+                    &-package {
+                        @include font-size(16px);
+                    }
+                }
+            }
+
+            &.plan-option-selected {
+                background-color: $purple;
+                position: relative;
+
+                .plan-option--name {
+                    color: $white;
+                }
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: -10px;
+                    width: 0;
+                    height: 0;
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    border-top: 10px solid $purple;
+                    left: 46%;
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .headline-and-lead-offer-end-date {
+        grid-column: 1/-1;
+        @include bp(large) {
+            grid-column: 1/2;
+            grid-row: 1/3;
+        }
+    }
+}
+
+// allows dynamic spacing of columns
+$min-cols: 2;
+$max-cols: 3;
+
+@for $i from $min-cols through $max-cols {
+    .grid-columns-#{$i} {
+        -ms-grid-rows: 1fr (15px 1fr) [$i];
+        grid-template-columns: repeat($i, 1fr);
+        @include bp(large) {
+            grid-template-columns: repeat($i + 1, 1fr);
+        }
+    }
+}
+
+:host-context(.stick-to-top) {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding-top: 15px;
+    background-color: $white;
+    z-index: 20;
+}
+
+.choice-error {
+    font-weight: calculate-font-weight("bold");
+    margin-top: 16px;
+    margin-bottom: 28px;
+}
+
+:host-context(.cancel-offer-grid) {
+    .plan-option--name {
+        &-platform,
+        br {
+            display: none;
+        }
+    }
+}

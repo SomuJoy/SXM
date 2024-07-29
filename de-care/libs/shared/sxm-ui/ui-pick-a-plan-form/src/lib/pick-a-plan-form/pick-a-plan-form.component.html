@@ -1,0 +1,30 @@
+<ng-container>
+    <main class="background-offwhite">
+        <div class="content-container">
+            <div class="row align-center no-padding-small">
+                <div class="column small-12 medium-10 background-white raised">
+                    <sxm-ui-plan-selection
+                        [isProactive]="true"
+                        (packageNameSelected)="onSelectedPackageName($event)"
+                        [planSelectionData]="availableOffers$ | async"
+                        [showChoiceNotAvailableError]="showChoiceNotAvailableError$ | async"
+                        (packageIndexSelected)="onSelectedPackageIndex($event)"
+                        [currentOrExpiredTrialPackage]="currentOrExpiredTrialPackage"
+                        [selectedPackageIndex]="selectedPackageIndex"
+                    ></sxm-ui-plan-selection>
+                    <sxm-ui-plan-comparison-grid
+                        [isProactive]="true"
+                        [packageNames]="packageNames$ | async"
+                        [planComparisonGridParams]="data || (planComparisonGridParams$ | async)"
+                        [retailPrices]="retailPrices$ | async"
+                        [selectedPackageIndex]="selectedPackageIndex"
+                        [displayCallsToAction]="authenticatedCustomer"
+                        (continue)="onPlanComparisonContinue()"
+                        [activateExpandable]="activateExpandable"
+                        [questionsPhoneNumber]="translateKeyPrefix + ((containsChoicePackages$ | async) ? '.CHOICE_QUESTIONS_TFN' : '.PROACTIVE_QUESTIONS_TFN') | translate"
+                    ></sxm-ui-plan-comparison-grid>
+                </div>
+            </div>
+        </div>
+    </main>
+</ng-container>

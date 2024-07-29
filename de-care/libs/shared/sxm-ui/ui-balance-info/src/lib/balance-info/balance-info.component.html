@@ -1,0 +1,184 @@
+<ng-container *ngIf="balanceDataValues?.reactivationAmount; else currentDue">
+    <ng-container
+        *ngTemplateOutlet="
+            balanceTemplate;
+            context: {
+                balanceItem: {
+                    accordionState: accordionState,
+                    amount: balanceDataValues?.totalAmountDue,
+                    header: translateKeyPrefix + '.INCLUDES_PAST_BALANCE_HEADER' | translate,
+                    paragraph: translateKeyPrefix + '.INCLUDES_PAST_DUE_BALANCE' + (withoutFees ? '_WO_FEES' : '') | translate
+                }
+            }
+        "
+    ></ng-container>
+    <sxm-ui-accordion-chevron
+        data-test="ReactivationBalanceAccordion"
+        class="vertical-spacing"
+        #accordionState
+        [expandedText]="translateKeyPrefix + '.CHEVRON_EXPANDED_HEADER' | translate"
+        [collapsedText]="translateKeyPrefix + '.CHEVRON_COLLAPSED_HEADER' | translate"
+        [opened]="false"
+    >
+        <ng-container
+            *ngTemplateOutlet="
+                balanceTemplate;
+                context: {
+                    balanceItem: {
+                        withInAccordion: true,
+                        amount: balanceDataValues.currentBalanceDue,
+                        header: translateKeyPrefix + '.PAST_DUE_BALANCE_HEADER' | translate,
+                        tooltip:
+                            translateKeyPrefix +
+                                (canSelectPaymentFrequency
+                                    ? withoutFees
+                                        ? '.PAST_DUE_BALANCE_TOOLTIP_INVOICE_WO_FEES'
+                                        : '.PAST_DUE_BALANCE_TOOLTIP_INVOICE'
+                                    : withoutFees
+                                    ? '.PAST_DUE_BALANCE_TOOLTIP_CC_WO_FEES'
+                                    : '.PAST_DUE_BALANCE_TOOLTIP_CC') | translate,
+                        paragraph:
+                            translateKeyPrefix +
+                                (canSelectPaymentFrequency
+                                    ? withoutFees
+                                        ? '.PAST_DUE_BALANCE_PARAGRAPH_INVOICE_WO_FEES'
+                                        : '.PAST_DUE_BALANCE_PARAGRAPH_INVOICE'
+                                    : withoutFees
+                                    ? '.PAST_DUE_BALANCE_PARAGRAPH_CC_WO_FEES'
+                                    : '.PAST_DUE_BALANCE_PARAGRAPH_CC') | translate
+                    }
+                }
+            "
+        ></ng-container>
+        <div class="balance-item--container with-border with-in-accordion">
+            <ng-container *ngIf="+balanceDataValues.reactivationAmount">
+                <div class="balance-item--title">
+                    <h6>
+                        {{ translateKeyPrefix + ".REACTIVATION_CHARGES_HEADER" | translate }}
+                    </h6>
+                </div>
+                <div class="balance-item--amount">
+                    <h6>{{ +balanceDataValues.reactivationAmount | currency: "USD":"symbol-narrow":undefined:(currentLang$ | async) }}</h6>
+                </div>
+            </ng-container>
+            <div class="balance-item--feeAmounts">
+                <ng-container *ngIf="+balanceDataValues.remainingServiceBalanceFee">
+                    <div class="balance-item--paragraph">
+                        <p>
+                            {{ translateKeyPrefix + ".REMAINING_SERVICE_BALANCE" | translate }}
+                            <sxm-ui-tooltip class="balance-item--tooltip tooltip-component tooltip-display-top tooltip-display-right-medium-up">
+                                <p [innerHTML]="translateKeyPrefix + '.REMAINING_SERVICE_BALANCE_TOOLTIP' | translate"></p>
+                            </sxm-ui-tooltip>
+                        </p>
+                    </div>
+                    <div class="balance-item--amount">
+                        <p>
+                            {{ +balanceDataValues.remainingServiceBalanceFee | currency: "USD":"symbol-narrow":undefined:(currentLang$ | async) }}
+                        </p>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="+balanceDataValues.royaltyFee">
+                    <div class="balance-item--paragraph">
+                        <p>
+                            {{ translateKeyPrefix + ".MUSIC_ROYALTY_FEES" | translate }}
+                            <sxm-ui-tooltip class="balance-item--tooltip tooltip-component tooltip-display-bottom tooltip-display-right-medium-bottom">
+                                <p [innerHTML]="translateKeyPrefix + '.MUSIC_ROYALTY_FEE_TOOLTIP' | translate"></p>
+                            </sxm-ui-tooltip>
+                        </p>
+                    </div>
+                    <div class="balance-item--amount">
+                        <p>{{ +balanceDataValues.royaltyFee | currency: "USD":"symbol-narrow":undefined:(currentLang$ | async) }}</p>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="+balanceDataValues.stateTax">
+                    <div class="balance-item--paragraph">
+                        <p>
+                            {{ translateKeyPrefix + ".TAXES" | translate }}
+                        </p>
+                    </div>
+                    <div class="balance-item--amount">
+                        <p>{{ +balanceDataValues.stateTax | currency: "USD":"symbol-narrow":undefined:(currentLang$ | async) }}</p>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <div class="balance-item--container with-border balance-item--summary">
+            <div class="balance-item--title">
+                <h6>
+                    {{ translateKeyPrefix + ".INCLUDES_PAST_BALANCE_HEADER" | translate }}
+                </h6>
+            </div>
+            <div class="balance-item--amount">
+                <h6>{{ +balanceDataValues?.totalAmountDue | currency: "USD":"symbol-narrow":undefined:(currentLang$ | async) }}</h6>
+            </div>
+        </div>
+    </sxm-ui-accordion-chevron>
+</ng-container>
+
+<ng-template #currentDue>
+    <ng-container *ngIf="balanceDataValues?.currentBalanceDue">
+        <ng-container
+            *ngTemplateOutlet="
+                balanceTemplate;
+                context: {
+                    balanceItem: {
+                        amount: balanceDataValues.currentBalanceDue,
+                        header: translateKeyPrefix + '.CURRENT_BALANCE_HEADER' | translate,
+                        paragraph: translateKeyPrefix + '.CURRENT_BALANCE_PARAGRAPH' + (withoutFees ? '_WO_FEES' : '') | translate
+                    }
+                }
+            "
+        ></ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="balanceDataValues?.nextPaymentAmount">
+        <ng-container
+            *ngTemplateOutlet="
+                balanceTemplate;
+                context: {
+                    balanceItem: {
+                        amount: balanceDataValues.nextPaymentAmount,
+                        header: (translateKeyPrefix + '.NEXT_PAYMENT_HEADER' | translate),
+                        paragraph:
+                            (translateKeyPrefix + '.NEXT_PAYMENT_PARAGRAPH'
+                            | translate: { dueDate: balanceDataValues.nextPaymentDueDate | date: (dateFormat$ | async):null:(currentLang$ | async) })
+                    }
+                }
+            "
+        ></ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="balanceDataValues?.reactivationAmount">
+        <ng-container
+            *ngTemplateOutlet="
+                balanceTemplate;
+                context: {
+                    balanceItem: {
+                        amount: balanceDataValues.reactivationAmount,
+                        header: translateKeyPrefix + '.INCLUDES_PAST_BALANCE_HEADER' | translate,
+                        paragraph: translateKeyPrefix + '.INCLUDES_PAST_DUE_BALANCE' + (withoutFees ? '_WO_FEES' : '') | translate
+                    }
+                }
+            "
+        ></ng-container>
+    </ng-container>
+</ng-template>
+
+<ng-template #balanceTemplate let-balanceData="balanceItem">
+    <div class="balance-item--container" [ngClass]="balanceData.withInAccordion ? 'with-in-accordion' : ''" [class.accordion-expanded]="balanceData?.accordionState?.opened">
+        <div class="balance-item--title">
+            <h6 data-test="BalanceBoxTitle">
+                {{ balanceData.header }}
+                <sxm-ui-tooltip class="balance-item--tooltip tooltip-component tooltip-display-top tooltip-display-right-medium-up" *ngIf="balanceData.tooltip">
+                    <p [innerHtml]="balanceData.tooltip"></p>
+                </sxm-ui-tooltip>
+            </h6>
+        </div>
+        <div class="balance-item--amount">
+            <h6>{{ +balanceData.amount | currency: "USD":"symbol-narrow":undefined:(currentLang$ | async) }}</h6>
+        </div>
+        <div class="balance-item--paragraph">
+            <p>{{ balanceData.paragraph }}</p>
+        </div>
+    </div>
+</ng-template>

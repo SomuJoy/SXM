@@ -1,0 +1,31 @@
+{
+    "name": "shared-sxm-ui-ui-enable-show-password",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/sxm-ui/ui-enable-show-password/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/sxm-ui/ui-enable-show-password/src/**/*.ts", "libs/shared/sxm-ui/ui-enable-show-password/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/shared/sxm-ui/ui-enable-show-password/jest.config.js",
+                "tsConfig": "libs/shared/sxm-ui/ui-enable-show-password/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/shared/sxm-ui/ui-enable-show-password/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:ui", "scope:shared-ui"]
+}

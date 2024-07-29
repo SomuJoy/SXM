@@ -1,0 +1,20 @@
+// TODO: We might want to have these as desired global styles
+//       If so, then put into index.html
+//       But another thing to consider is common components that we want to enforce this styling on, in those cases we need to put this styling in those components
+
+@mixin legacy-global-anchor {
+    .text-link,
+    a {
+        font-size: inherit;
+        font-weight: inherit;
+        color: #006ed7;
+        cursor: pointer;
+        white-space: normal;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-decoration-thickness: 2px;
+        -webkit-text-decoration-color: inherit;
+        text-decoration-color: inherit;
+        position: relative;
+    }
+}

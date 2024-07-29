@@ -1,0 +1,33 @@
+{
+    "SharedSxmUiUiCreditCardFormFieldsModule": {
+        "SxmUiChargeAgreementCheckboxFormFieldComponent": {
+            "LABEL_PART_A": "Please charge my card for the amount currently due and the card on file for all future payments.",
+            "LABEL_PART_B": "By clicking \"{{formButtonTextCopy}}\" I agree: to the SiriusXM Canada <a href=\"https://www.siriusxm.ca/terms\" target=\"_blank\" data-track-click=\"Customer Agreement\">Customer Agreement</a> and <a href=\"https://www.siriusxm.ca/privacy\" target=\"_blank\" data-track-click=\"Privacy Policy\">Privacy Policy</a>; to receive account notifications at the email address provided; AND that my service will <strong><span class=\"underline\">automatically continue</span></strong> and that my credit card will be charged the then-applicable regular price until I cancel. Regular price subject to change upon proper notice. Fees and taxes extra. I acknowledge that I can cancel anytime and may call SiriusXM Canada at <a href=\"tel:1-888-539-7474\">1-888-539-7474</a> to cancel my subscription(s). I agree that all programming is subject to change.",
+            "LABEL_PART_B_RATE_VERSION": "By clicking \"{{formButtonTextCopy}}\" I agree: to the SiriusXM Canada <a href=\"https://www.siriusxm.ca/terms\" target=\"_blank\" data-track-click=\"Customer Agreement\">Customer Agreement</a> and <a href=\"https://www.siriusxm.ca/privacy\" target=\"_blank\" data-track-click=\"Privacy Policy\">Privacy Policy</a>; to receive account notifications at the email address provided; AND that my service will <strong><span class=\"underline\">automatically continue</span></strong> and that my credit card will be charged the then-applicable regular price until I cancel. Regular price subject to change upon proper notice. Taxes extra. I acknowledge that I can cancel anytime and may call SiriusXM Canada at <a href=\"tel:1-888-539-7474\">1-888-539-7474</a> to cancel my subscription(s). I agree that all programming is subject to change. Services are provided to me for an indeterminate term and billed to me for the agreed-upon billing period.",
+            "LANGUAGE_LINK_TEXT": "En Español",
+            "LANGUAGE_LINK_VALUE": "es-US",
+            "ERROR_REQUIRED": "Please accept the above agreement."
+        },
+        "SxmUiCreditCardNumberFormFieldComponent": {
+            "PLACEHOLDER": "Card Number",
+            "ERROR_REQUIRED": "Enter a valid credit card number.",
+            "CC_AMEX_ARIA_LABEL": "American Express",
+            "CC_DCI_ARIA_LABEL": "Diners Club International",
+            "CC_DISCOVER_ARIA_LABEL": "Discover",
+            "CC_JCB_ARIA_LABEL": "JCB",
+            "CC_MC_ARIA_LABEL": "Mastercard",
+            "CC_VISA_ARIA_LABEL": "Visa",
+            "CC_UNIONPAY_ARIA_LABEL": "UnionPay",
+            "LOCK_ICON_ARIA_LABEL": "Secure Field"
+        },
+        "creditCardFormFieldsComponent": {
+            "NEW_CC": {
+                "CC_CVV": "CVV",
+                "CC_STATE": "Province",
+                "ERROR_CC_STATE": "Select your province.",
+                "CC_ZIPCODE": "Postal Code",
+                "ERROR_CC_ZIPCODE": "Enter a valid postal code"
+            }
+        }
+    }
+}

@@ -1,0 +1,116 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+// TODO: see about getting this added to sxm lib color variables
+$blue-light-alt: #e8eef8;
+
+:host {
+    border-style: none;
+    padding: 0;
+    -webkit-appearance: button;
+    appearance: button;
+    overflow: visible;
+    border-color: transparent;
+
+    cursor: pointer;
+    display: block;
+    font-size: 0.875rem;
+    font-weight: calculate-font-weight("bold");
+    letter-spacing: 2px;
+    min-height: 53px;
+    line-height: 1.42;
+    padding: 17px;
+    position: relative;
+    transition: background 0.1s ease-in-out, color 0.1s ease-in-out;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    white-space: normal;
+    background: $blue;
+    color: $white;
+    border: 2px solid;
+    border-color: $blue;
+    &::before {
+        background: transparent;
+        border: 4px solid;
+        border-top-color: currentcolor;
+        border-right-color: currentcolor;
+        border-bottom-color: currentcolor;
+        border-left-color: currentcolor;
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        pointer-events: none;
+        bottom: 0;
+        opacity: 1;
+        width: 100%;
+        transition: border 0.1s ease-in-out, color 0.1s ease-in-out;
+        border-color: $blue;
+    }
+    &:hover {
+        border-color: $white;
+        background: $white;
+        color: $blue;
+    }
+}
+:host-context(.theme-flat-matte-white) {
+    background: $white;
+    color: $blue;
+    border-color: $white;
+    &::before {
+        border: none;
+    }
+    &:hover {
+        border-color: transparent;
+        background: $blue-light;
+        color: $blue;
+    }
+}
+:host-context(.theme-light) {
+    background: $blue-light-alt;
+    color: $blue;
+    border-color: $blue-light-alt;
+    &::before {
+        border-color: $blue-light-alt;
+    }
+    &:hover {
+        &::before {
+            border-color: $blue-light-alt;
+        }
+        background: $white;
+        color: $blue;
+        border-color: transparent;
+    }
+}
+:host-context(.theme-text-only-light) {
+    background: transparent;
+    color: $blue-light-alt;
+    border-color: transparent;
+    &::before {
+        border: none;
+    }
+    &:hover {
+        border-color: transparent;
+        background: $blue-light-alt;
+        color: $blue;
+    }
+}
+:host-context(.theme-border-only-light) {
+    background: transparent;
+    color: $blue-light-alt;
+    border-color: $blue-light-alt;
+    &::before {
+        border-color: $blue-light-alt;
+        border: 2px solid;
+    }
+    &:hover {
+        &::before {
+            border-color: $blue-light-alt;
+        }
+        border-color: $blue-light-alt;
+        background: $blue-light-alt;
+        color: $blue;
+    }
+}

@@ -1,0 +1,40 @@
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    display: grid;
+    row-gap: 8px;
+    .checkmark-list {
+        @include checkmark-list;
+        &.no-margin {
+            margin: 0;
+        }
+        li {
+            margin: 0 0 4px;
+            .checkmarks-container {
+                .short-description {
+                    padding-right: 24px;
+                }
+                sxm-ui-tooltip {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-left: -24px;
+                }
+                ul {
+                    list-style-type: "-";
+                    padding-left: 8px;
+
+                    li::before {
+                        background: none !important;
+                    }
+                }
+            }
+            ul li {
+                padding-left: 8px;
+            }
+        }
+    }
+
+    .title {
+        font-weight: calculate-font-weight(bold);
+    }
+}

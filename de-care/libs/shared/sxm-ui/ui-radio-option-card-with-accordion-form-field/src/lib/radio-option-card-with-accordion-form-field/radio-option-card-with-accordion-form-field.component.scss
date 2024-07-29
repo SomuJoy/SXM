@@ -1,0 +1,10 @@
+@import "sxm.phoenix.imports";
+.radio-item {
+    display: flex;
+    align-items: center;
+    height: 38px;
+
+    label {
+        color: $white;
+    }
+}

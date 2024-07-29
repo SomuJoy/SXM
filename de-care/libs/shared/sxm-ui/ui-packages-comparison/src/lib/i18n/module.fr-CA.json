@@ -1,0 +1,14 @@
+{
+    "sharedSxmUiUiPackageComparisonModule": {
+        "packagesComparisonComponent": {
+            "MONTHLY_PRICE_AFTER": "Prix mensuel plus frais après {{endDate}}",
+            "MONTHLY_PRICE_AFTER_QC": "Tarif mensuel par la suite {{endDate}}",
+            "CHANNELS_LINEUP": "Liste des stations",
+            "VIEW_LINEUP": "Voir la programmation",
+            "CHANNELS": "Stations {{packageName}}",
+            "YOUR_TRIAL": "DANS VOTRE ABONNEMENT",
+            "CHANNEL_LINEUP_TOOLTIP_COPY": "Les listes de stations diffèrent légèrement entre l’écoute à l’intérieur et à l’extérieur de la voiture. D’autres frais et taxes peuvent s’appliquer.",
+            "CHANNEL_LINEUP_TOOLTIP_COPY_QC": "Les listes de stations diffèrent légèrement entre l’écoute à l’intérieur et à l’extérieur de la voiture. Des taxes peuvent s’appliquer."
+        }
+    }
+}

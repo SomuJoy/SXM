@@ -1,0 +1,26 @@
+{
+    "HEADING": "Votre abonnement actuel:",
+    "HEADING_FOLLOW_ON": "Votre abonnement une fois l'essai terminé :",
+    "TERM": {
+        "PER_MONTH": "Votre durée initiale de {{termLength}} mois pour"
+    },
+    "PRICE": {
+        "PER_MONTH": "{{price}}/mois plus frais",
+        "PER_MONTH_WO_PLUS_FEES": "{{price}}/mois",
+        "TOTAL": "{{price}} plus frais",
+        "TOTAL_WO_PLUS_FEES": "{{price}}",
+        "FREE": "Essai gratuit"
+    },
+    "PROMO_INFO": {
+        "PROMO": "Puis {{ renewalPrice }}/mois le {{ startDate }}",
+        "PROMO_MCP": "Puis {{ renewalPrice }}/mois le {{ startDate }}",
+        "TRIAL": "Fin de l'essai {{ startDate }}",
+        "TRIAL_EXT": "Puis {{ renewalPrice }}/mois le {{ startDate }}"
+    },
+    "PLURAL_MAP": {
+        "MONTH": {
+            "=1": "mois",
+            "other": "mois"
+        }
+    }
+}

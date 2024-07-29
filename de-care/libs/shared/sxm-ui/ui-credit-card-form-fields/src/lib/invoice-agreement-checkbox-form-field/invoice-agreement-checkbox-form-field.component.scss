@@ -1,0 +1,22 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    display: block;
+    .invalid-feedback {
+        margin: 10px 0 0 30px;
+    }
+    label {
+        display: grid;
+        grid-gap: 12px;
+        color: $gray-dark;
+        button[role="switch"] {
+            width: fit-content;
+            text-align: left;
+            text-decoration: underline;
+            color: $blue-secondary;
+            font-weight: normal;
+            font-size: calculate-rem(12px);
+        }
+    }
+}

@@ -1,0 +1,34 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+mat-icon[svgIcon="cc-amex"],
+mat-icon[svgIcon="cc-dci"],
+mat-icon[svgIcon="cc-discover"],
+mat-icon[svgIcon="cc-jcb"],
+mat-icon[svgIcon="cc-mc"],
+mat-icon[svgIcon="cc-visa"],
+mat-icon[svgIcon="cc-unionpay"] {
+    position: absolute;
+    top: 3px;
+    height: 48px;
+    right: 52px;
+    display: none;
+    width: 44px;
+}
+mat-icon[svgIcon="lock"] {
+    position: absolute;
+    top: 13px;
+    right: 23px;
+    display: block;
+    width: 14px;
+    color: $gray-dark;
+}
+.cc-amex ~ mat-icon[svgIcon="cc-amex"],
+.cc-dci ~ mat-icon[svgIcon="cc-dci"],
+.cc-discover ~ mat-icon[svgIcon="cc-discover"],
+.cc-jcb ~ mat-icon[svgIcon="cc-jcb"],
+.cc-mc ~ mat-icon[svgIcon="cc-mc"],
+.cc-visa ~ mat-icon[svgIcon="cc-visa"],
+.cc-unionpay ~ mat-icon[svgIcon="cc-unionpay"] {
+    display: block;
+}

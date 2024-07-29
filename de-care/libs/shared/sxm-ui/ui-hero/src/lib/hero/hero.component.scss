@@ -1,0 +1,144 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.ui-hero {
+    position: relative;
+    &-background {
+        background-color: $blue;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &-content {
+        flex-flow: column-reverse;
+        @include bp(medium) {
+            flex-flow: row;
+            flex-wrap: wrap;
+        }
+        .ui-hero-copy {
+            padding: 32px 16px 24px;
+            margin-bottom: 0;
+            color: $white;
+            @include bp(medium) {
+                padding: 40px 12px 32px;
+            }
+            .title-container {
+                width: 100%;
+                @include bp(medium) {
+                    justify-content: center;
+                }
+            }
+            &--title {
+                margin-bottom: 8px;
+                @include bp(medium) {
+                    margin-bottom: 16px;
+                }
+            }
+            &--subtitle {
+                padding: 0;
+                margin-bottom: 8px; //to mimic the title margin bottom so the spacing is the same as if there were no subtitle
+                align-self: flex-start;
+                @include bp(medium) {
+                    margin-bottom: 0;
+                }
+                &.center {
+                    @include bp(medium) {
+                        align-self: center;
+                        text-align: center;
+                    }
+                }
+                &::ng-deep {
+                    p {
+                        margin-bottom: 8px;
+                    }
+                    // applying default list styling to subtitles.  Design from megawinback
+                    ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0 0 8px;
+                        li {
+                            @include get-header-style(h5);
+                            @include bp(medium) {
+                                display: inline-block;
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.with-image {
+        // TODO: determine how this will work after getting the image from microservice
+        background-color: $white;
+        background-image: url("~apps/de-care/src/assets/img/tokenized-sales-hero-bkg-2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        .ui-hero-copy {
+            padding: 16px 16px 32px;
+            margin-bottom: 0;
+            background-color: $white;
+            color: $black;
+            @include bp(medium) {
+                background-color: transparent;
+                color: $white;
+            }
+        }
+        .ui-hero-image {
+            max-height: 300px;
+            overflow: hidden;
+            justify-content: flex-start;
+            @include bp(medium) {
+                max-height: none;
+            }
+            img {
+                flex-shrink: 0;
+                @include bp(medium) {
+                    margin: 0;
+                    max-width: none;
+                }
+            }
+        }
+    }
+}
+
+:host-context(.bottom-padding) {
+    .ui-hero {
+        &-background {
+            bottom: -70px;
+            height: auto;
+            @include bp(medium) {
+                bottom: -54px;
+            }
+        }
+        &-content {
+            .ui-hero-copy {
+                padding: 24px 16px 24px;
+                @include bp(medium) {
+                    padding: 40px 12px 32px;
+                }
+            }
+        }
+    }
+}
+
+:host-context(.extra-bottom-padding) {
+    .ui-hero {
+        &-background {
+            bottom: -180px;
+            @include bp(medium) {
+                bottom: -164px;
+            }
+        }
+        &-content {
+            .ui-hero-copy {
+                padding: 24px 16px 24px;
+                @include bp(medium) {
+                    padding: 40px 12px 32px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+<form [formGroup]="form">
+    <br />
+    <p>
+        <strong>{{ "NFL_TEXT.CHECKBOX_CONFIRMATION_TEXT" | translate }}</strong>
+    </p>
+    <sxm-ui-checkbox-with-label-form-field (change)="onSelect()" formControlName="optInForNFL" class="optIn-checkbox">
+        <p>
+            <span [innerHTML]="'NFL_TEXT.CHECKBOX_TEXT' | translate"></span>
+        </p>
+    </sxm-ui-checkbox-with-label-form-field>
+</form>

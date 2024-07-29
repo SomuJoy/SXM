@@ -1,0 +1,23 @@
+import { moduleMetadata, Story, Meta } from '@storybook/angular';
+import { SxmUi<%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { TRANSLATE_PROVIDERS, withTranslation } from '@de-care/shared/storybook/util-helpers';
+import { TRANSLATION_SETTINGS } from '@de-care/shared/configuration-tokens-locales';
+
+type StoryType = SxmUi<%= classify(name) %>Component;
+
+export default {
+    title: 'Component Library/__uncatagorized__/<%= classify(name) %>Component',
+    decorators: [
+        moduleMetadata({
+            imports: [TranslateModule.forRoot(), SxmUi<%= classify(name) %>Component],
+            providers: [...TRANSLATE_PROVIDERS, { provide: TRANSLATION_SETTINGS, useValue: { canToggleLanguage: true, languagesSupported: ['en-US', 'en-CA', 'fr-CA'] } }],
+        }),
+        withTranslation,
+    ],
+} as Meta<SxmUi<%= classify(name) %>Component>;
+
+export const Default: Story<StoryType> = (args: StoryType) => ({
+  props: args,
+  template: `<sxm-ui-<%= dasherize(name) %>></sxm-ui-<%= dasherize(name) %>>`,
+});

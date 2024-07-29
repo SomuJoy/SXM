@@ -1,0 +1,6 @@
+{
+    "SHOW_TOGGLE": "Explore plan details",
+    "HIDE_TOGGLE": "Hide",
+    "ARIA_SHOW_TOGGLE": "Explore plan details - {{packageName}}",
+    "ARIA_HIDE_TOGGLE": "Hide plan details - {{packageName}}"
+}

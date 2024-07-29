@@ -1,0 +1,25 @@
+{
+    "SharedSxmUiUiHelpFindingRadioModule": {
+        "SxmUiHelpFindingRadioComponent": {
+            "NEED_HELP_TEXT": "Tune your radio dial to channel 0 and the radio ID should display.",
+            "NEED_HELP_TEXT-1": "Tune your radio dial to channel 0 and your Radio ID should display. If that doesn’t work, try accessing the menu function on your radio (refer to your owner’s manual for specific instructions).",
+            "NEED_HELP_TEXT-2": "For some radios, you will need to press and hold the SAT or ESN button, or access your radio’s menu functions.",
+            "TEXT_LINK-1": "Get help finding your radio",
+            "TEXT_LINK-1_URL": "https://www.siriusxm.ca/findradio",
+            "DONT_HAVE_RADIO": {
+                "LINK_URL": "https://www.siriusxm.ca/listen-everywhere/"
+            }
+        },
+        "SxmUiDeviceHelpComponent": {
+            "TITLE": "Lookup your Marine or Aviation Device ID",
+            "MESSAGE": "<strong>There are a few places you can look to find your Device ID.</strong>",
+            "NOTE": "Note: Device IDs are 8 characters.",
+            "UNORDERED_LIST": {
+                "item-1": "For most devices, access your <strong>Diagnostics</strong> or <strong>Settings</strong> menu, and then look for your Device ID to be listed.",
+                "item-2": "You may also look on the bottom of the device or the packaging for the Device ID. In many cases, you may find <strong>it next to the serial number.</strong>",
+                "item-3": "If your device also has audio capability, you may be able to <strong>tune to channel 0</strong> and it will display your Device ID.",
+                "item-4": ""
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+<div class="content-card">
+    <!--Flag -->
+    <div *ngIf="flagPresent" class="content-card-flag">
+        <div #htmlContentForFlag>
+            <div class="content-container">
+                <div class="row no-padding">
+                    <div class="column small-12 align-left">
+                        <ng-content select="[htmlContentForFlag]"></ng-content>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span *ngIf="htmlContentForFlag.children.length == 0">Default Flag</span>
+    </div>
+
+    <!--Headline-->
+    <div *ngIf="headlinePresent" class="content-card-head">
+        <div #htmlContentForHead class="content-container">
+            <div class="row no-padding">
+                <div class="column small-12 align-left">
+                    <ng-content select="[htmlContentForHead]"></ng-content>
+                </div>
+            </div>
+        </div>
+        <span *ngIf="htmlContentForHead.children.length == 0">Default Flag</span>
+    </div>
+
+    <!-- Content Card expects parent container to pass in ng-content with the custom attribute 'htmlContentForBody'-->
+    <!-- If it doesn't receive this data from its parent container, then it will show default content instead-->
+    <div class="content-card-body" [class.p-16]="!hasGrayBackground" [class.no-header]="!flagPresent && !headlinePresent">
+        <div #htmlContentForBodyRef>
+            <ng-content select="[htmlContentForBody]"></ng-content>
+        </div>
+        <span *ngIf="htmlContentForBodyRef.children.length == 0">
+            Default body
+        </span>
+    </div>
+</div>
+<div class="content-card" *ngIf="footerPresent === true">
+    <div class="content-card-body no-header" [class.p-16]="!hasGrayBackground">
+        <ng-content select="[htmlContentForFooter]"></ng-content>
+    </div>
+</div>

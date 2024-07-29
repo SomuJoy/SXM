@@ -1,0 +1,9 @@
+{
+    "WELCOME": "Welcome",
+    "SIGN_IN": "SIGN IN",
+    "NO_ACCOUNT_DESCRIPTION": "No account? ",
+    "NO_ACCOUNT_URL": "{{careBaseUrl}}/account/registration",
+    "NO_ACCOUNT_LABEL": "Register",
+    "APPS_LOGO_HEADER": "GET THE SXM APP",
+    "ARIA_CLOSE_LABEL": "close manage account panel"
+}

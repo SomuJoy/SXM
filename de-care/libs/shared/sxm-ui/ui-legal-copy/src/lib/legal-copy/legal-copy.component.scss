@@ -1,0 +1,16 @@
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.sxm-ui-legal-copy {
+    .padding-vertical {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+    .legal-copy > p {
+        font-size: inherit;
+        font-weight: inherit;
+        a,
+        u {
+            @include underline(default);
+        }
+    }
+}

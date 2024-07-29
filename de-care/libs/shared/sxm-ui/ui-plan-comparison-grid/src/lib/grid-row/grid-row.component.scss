@@ -1,0 +1,182 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.grid-row {
+    padding-bottom: 16px;
+    padding-top: 16px;
+    display: -ms-grid;
+    display: grid;
+    grid-auto-rows: auto minmax(40px, auto);
+    -ms-grid-columns: 1fr 15px 1fr 15px 1fr;
+    grid-column-gap: 15px;
+    justify-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-bottom: 1px solid $gray-medium;
+    .grid-row-first-column {
+        grid-column: 1/-1;
+        -ms-grid-columns: auto;
+        grid-template-columns: auto;
+        padding: 0 25px 8px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        text-align: center;
+        -ms-grid-row-align: center;
+        @include bp(medium) {
+            text-align: left;
+        }
+        p {
+            position: relative;
+        }
+        .tooltip-component {
+            position: absolute;
+            bottom: 0;
+            ::ng-deep {
+                @media screen and (max-width: 1024px) {
+                    .component--tool-tip-content {
+                        right: 20px;
+                    }
+                }
+            }
+        }
+        .feature-name {
+            @include font-size(16px);
+            line-height: 24px;
+        }
+    }
+    div:not(.grid-row-first-column) {
+        color: $gray-dark;
+        p {
+            text-align: center;
+            &:not(.small-copy) {
+                @include font-size(16px);
+                @include bp(medium) {
+                    @include font-size(20px);
+                }
+            }
+        }
+        mat-icon {
+            color: $gray-dark;
+            stroke-width: 0.5;
+        }
+        mat-icon[svgIcon="x-mark"] {
+            width: 20px;
+            height: 20px;
+            @include bp(medium) {
+                width: 26px;
+                height: 26px;
+            }
+        }
+        mat-icon[svgIcon="check-mark"] {
+            width: 24px;
+            height: 24px;
+            @include bp(medium) {
+                width: 30px;
+                height: 30px;
+            }
+        }
+        &.selected {
+            color: $purple;
+            p.feature-p-el {
+                font-weight: calculate-font-weight("bold");
+            }
+            mat-icon {
+                color: $purple;
+                stroke-width: 2;
+            }
+        }
+    }
+    a.text-link {
+        font-weight: calculate-font-weight("bold");
+        @include underline(none);
+    }
+    .icon.where-you-can-listen {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+}
+
+// allows dynamic spacing of columns
+$min-cols: 2;
+$max-cols: 3;
+
+@for $i from $min-cols through $max-cols {
+    .grid-columns-#{$i} {
+        @extend .grid-row;
+        -ms-grid-rows: 1fr (15px 1fr) [$i];
+        grid-template-columns: repeat($i, 1fr);
+        @include bp(large) {
+            grid-template-columns: repeat($i + 1, 1fr);
+        }
+    }
+}
+
+:host-context(.cancel-offer-grid) {
+    .grid-row {
+        grid-auto-rows: auto;
+        @include bp(large) {
+            grid-template-rows: minmax(40px, auto);
+        }
+    }
+}
+
+@include bp(large) {
+    .grid-row {
+        padding-bottom: 16px;
+        display: -ms-grid;
+        display: grid;
+        grid-auto-rows: auto;
+        grid-column-gap: 25px;
+        -ms-grid-rows: 70px;
+        grid-template-rows: minmax(70px, auto);
+        border-bottom: 1.5px solid $gray-medium;
+        .grid-row-first-column {
+            padding: 0;
+            -ms-grid-column: 1;
+            grid-column: 1;
+            -webkit-box-pack: start;
+            -ms-flex-pack: start;
+            justify-content: start;
+            -ms-grid-column-align: start;
+            justify-self: start;
+        }
+        :last-of-type {
+            border-bottom: 0;
+        }
+    }
+
+    .grid-row > *:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+
+    .grid-row > *:nth-child(2) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 3;
+        -ms-grid-column-align: center;
+        -ms-grid-row-align: center;
+    }
+
+    .grid-row > *:nth-child(3) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 5;
+        -ms-grid-column-align: center;
+        -ms-grid-row-align: center;
+    }
+
+    .grid-row > *:nth-child(4) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 7;
+        -ms-grid-column-align: center;
+        -ms-grid-row-align: center;
+    }
+}

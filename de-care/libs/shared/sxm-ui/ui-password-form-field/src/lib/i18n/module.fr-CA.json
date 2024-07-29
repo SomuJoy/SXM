@@ -1,0 +1,27 @@
+{
+    "sharedSxmUiUiPasswordFormFieldModule": {
+        "passwordStrengthComponent": {
+            "TIPS": {
+                "HEADER_1": "Votre mot de passe doit contenir :",
+                "HEADER_2": "Aussi 3 éléments parmi les suivants :",
+                "MINIMUM_8": "au moins 8 caractères",
+                "NUMBER": "<strong>0-9</strong>&nbsp; un chiffre",
+                "LOWER_CASE_LETTERS": "<strong>a-z</strong>&nbsp; une lettre minuscule",
+                "UPPER_CASE_LETTERS": "<strong>A-Z</strong>&nbsp; une lettre majuscule",
+                "SPECIAL_CHARS": "<strong class=\"extra-letter-spacing\">!%&amp;@#$^*?()-_=,+</strong>&nbsp; un caractère spécial"
+            }
+        },
+        "PasswordFormFieldComponent": {
+            "LABEL_TEXT": "Mot de passe",
+            "ERROR_MESSAGE_REQUIRED": "Veuillez entrer votre mot de passe.",
+            "ERROR_MESSAGE_LENGTH": "Votre mot de passe doit comporter au moins {{ requiredLength }} caractères.",
+            "ERROR_MESSAGE_POLICY": "Votre mot de passe doit contenir au minimum un caractère appartenant à au moins 3 groupes différents, comme indiqué dans notre politique de mot de passe.",
+            "ERROR_MESSAGE_RESERVED_WORD": "Votre mot de passe ne peut pas inclure le mot {{word}}",
+            "ERROR_MESSAGE_PII_DATA": "Le mot de passe ne peut pas inclure prénom, nom de famille ou adresse courriel.",
+            "ERROR_MESSAGE_GENERIC": "Le mot de passe ne peut inclure que les caractères spéciaux suivants conformément à notre politique de mot de passe :<br /> ! % & @ # $ ^ ? ( ) - = , * _ +"
+        },
+        "SxmUiPasswordRequirementsCopyComponent": {
+            "REQUIREMENTS_COPY": "Votre mot de passe doit avoir un minimum de 8 caractères, dont 3 des suivants : (a) une lettre majuscule (b) une lettre minuscule (c) un chiffre ou (d) un caractère spécial."
+        }
+    }
+}

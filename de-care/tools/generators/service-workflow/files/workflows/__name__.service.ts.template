@@ -1,0 +1,12 @@
+import { Injectable } from '@angular/core';
+import { DataWorkflow } from '@de-care/shared/util-workflow-interface';
+import { Observable, of } from 'rxjs';
+
+@Injectable({ providedIn: 'root' })
+export class <%= classify(name) %>Service implements DataWorkflow<void, boolean> {
+    constructor() {}
+
+    build(): Observable<boolean> {
+        return of(true);
+    }
+}

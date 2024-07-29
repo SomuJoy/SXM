@@ -1,0 +1,8 @@
+{
+    "sharedSxmUiUiStreamingPlayerLinkModule": {
+        "streamingPlayerLinkComponent": {
+            "LISTEN_NOW_LINK_TEXT": "LISTEN NOW",
+            "LISTEN_NOW_LINK": "https://www.siriusxm.com/downloadstreaming"
+        }
+    }
+}

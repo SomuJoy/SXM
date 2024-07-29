@@ -1,0 +1,10 @@
+//vertical margin helpers, creates sets of margin-top and margin-bottom classes that utilize our most common margins
+$marginsIncrements: (0, 4, 8, 12, 16, 20, 24, 32);
+$directions: (top, bottom);
+@each $margin in $marginsIncrements {
+    @each $direction in $directions {
+        .m#{str-slice($direction, 0, 1)}-#{$margin} {
+            margin-#{$direction}: #{$margin}px;
+        }
+    }
+}

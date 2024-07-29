@@ -1,0 +1,43 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    background-color: $background-white;
+    width: 100%;
+}
+
+.full-width-of-comparison {
+    width: 100%;
+    p.copy-under-cta {
+        font-size: 14px !important;
+        margin-top: 15px;
+        color: $black;
+    }
+}
+
+$min-cols: 2;
+$max-cols: 3;
+
+@for $i from $min-cols through $max-cols {
+    .grid-columns-total-width-#{$i} {
+        @include bp(large) {
+            width: calc(#{$i} * 100% / (#{$i} + 1));
+        }
+    }
+}
+
+@include bp(large) {
+    .grid-wrapper {
+        width: auto;
+    }
+}
+
+.family-discount {
+    p {
+        @include font-size(16px);
+        color: $gray-dark;
+        margin-top: 16px;
+        @include bp(medium) {
+            @include font-size(20px);
+        }
+    }
+}

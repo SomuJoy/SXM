@@ -1,0 +1,17 @@
+<div class="input-container" [class.invalid]="control.invalid && control.touched">
+    <label for="{{ controlId }}">{{ labelText }}</label>
+    <input
+        id="{{ controlId }}"
+        type="number"
+        [attr.qatag]="qatagName"
+        data-e2e="sxmUINumericFormField"
+        [formControl]="control"
+        min="{{ minNumber }}"
+        max="{{ maxNumber }}"
+        #InputElement
+        onFocus
+    />
+</div>
+<div *ngIf="control.invalid && control.touched" class="invalid-feedback">
+    <p [innerHTML]="errorMsg">Invalid</p>
+</div>

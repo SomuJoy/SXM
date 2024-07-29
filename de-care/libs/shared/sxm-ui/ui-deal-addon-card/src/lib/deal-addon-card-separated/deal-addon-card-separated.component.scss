@@ -1,0 +1,72 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.deal-addon-card {
+    $common-body-spacing: 16px;
+    $common-medium-body-spacing: 24px;
+    @mixin handling-body-spacings($type, $padding-top: 0, $padding-bottom: 0) {
+        #{$type}: #{$padding-top} $common-body-spacing #{$padding-bottom};
+        @include bp(medium) {
+            #{$type}: #{$padding-top} $common-medium-body-spacing #{$padding-bottom};
+        }
+    }
+    .content-card-flag {
+        p {
+            margin: 0;
+        }
+    }
+    .content-card-body {
+        padding: 16px 0 0;
+        .common-body-padding {
+            @include handling-body-spacings(padding);
+        }
+        .partner-image {
+            margin-bottom: 16px;
+            width: 28%;
+            margin-left: 16px;
+            align-items: flex-start;
+            img {
+                max-height: 80px;
+                width: auto;
+                max-width: 110px;
+            }
+        }
+        .product-image {
+            margin-bottom: 16px;
+            width: 60%;
+            align-items: flex-start;
+            img {
+                max-width: 250px;
+                max-height: 89px;
+            }
+        }
+        .title {
+            flex: 1;
+            min-width: 60%;
+            font-weight: calculate-font-weight("bold");
+            sub {
+                color: $gray-dark;
+                font-size: 0.75rem;
+                font-weight: 400;
+            }
+        }
+        .static-description {
+            @include handling-body-spacings(padding);
+            ul {
+                @include checkmark-list;
+            }
+        }
+        hr {
+            @include hr;
+            @include handling-body-spacings(margin, 20px, 24px);
+        }
+        .accordion-content-wrapper {
+            @include handling-body-spacings(padding);
+            .accordion-content-container {
+                ul {
+                    @include checkmark-list;
+                }
+            }
+        }
+    }
+}

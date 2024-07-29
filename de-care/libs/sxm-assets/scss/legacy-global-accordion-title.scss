@@ -1,0 +1,27 @@
+// TODO: put these styles into the accordion component(s) that needs them
+
+@mixin legacy-global-accordion-title {
+    .component--accordion-title {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        position: relative;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 22px;
+        cursor: pointer;
+    }
+    .component--accordion-title[data-icon="dropdown-sm"] {
+        padding-right: 16px;
+    }
+    .component--accordion-title[data-icon="dropdown-sm"] .icon-dropdown-sm-wrapper {
+        height: 20px;
+        position: absolute;
+        right: 0;
+        top: 2px;
+    }
+
+    .component--accordion-title[data-icon="dropdown-sm"].active .icon-dropdown-sm-wrapper {
+        transform: rotate(180deg);
+    }
+}

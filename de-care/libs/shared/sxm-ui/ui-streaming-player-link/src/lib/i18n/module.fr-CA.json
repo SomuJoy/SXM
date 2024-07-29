@@ -1,0 +1,8 @@
+{
+    "sharedSxmUiUiStreamingPlayerLinkModule": {
+        "streamingPlayerLinkComponent": {
+            "LISTEN_NOW_LINK_TEXT": "ÉCOUTER MAINTENANT",
+            "LISTEN_NOW_LINK": "https://siriusxm.ca/telechargerenligne"
+        }
+    }
+}

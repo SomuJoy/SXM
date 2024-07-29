@@ -1,0 +1,27 @@
+{
+    "sharedSxmUiUiPasswordFormFieldModule": {
+        "passwordStrengthComponent": {
+            "TIPS": {
+                "HEADER_1": "Your password must have:",
+                "HEADER_2": "Also 3 of the following:",
+                "MINIMUM_8": "a minimum of 8 characters",
+                "NUMBER": "<strong>0-9</strong>&nbsp; a number",
+                "LOWER_CASE_LETTERS": "<strong>a-z</strong>&nbsp; a lowercase letter",
+                "UPPER_CASE_LETTERS": "<strong>A-Z</strong>&nbsp; an uppercase letter",
+                "SPECIAL_CHARS": "<strong class=\"extra-letter-spacing\">!%&amp;@#$^*?()-_=,+</strong>&nbsp; one of these symbols"
+            }
+        },
+        "PasswordFormFieldComponent": {
+            "LABEL_TEXT": "Password",
+            "ERROR_MESSAGE_REQUIRED": "Please enter a password.",
+            "ERROR_MESSAGE_LENGTH": "Your password must be at least {{ requiredLength }} characters long.",
+            "ERROR_MESSAGE_POLICY": "Your password must contain at least one character from at least 3 different groups, as explained in our password policy.",
+            "ERROR_MESSAGE_RESERVED_WORD": "Your password cannot include the word {{word}}",
+            "ERROR_MESSAGE_PII_DATA": "Password cannot contain first name, last name or email address.",
+            "ERROR_MESSAGE_GENERIC": "Password may only include the following special characters as part of our password policy:<br /> ! % & @ # $ ^ ? ( ) - = , * _ +"
+        },
+        "SxmUiPasswordRequirementsCopyComponent": {
+            "REQUIREMENTS_COPY": "Your password must have a minimum of 8 characters with 3 of the following: (a) an uppercase letter (b) a lowercase letter (c) a number or (d) special character."
+        }
+    }
+}

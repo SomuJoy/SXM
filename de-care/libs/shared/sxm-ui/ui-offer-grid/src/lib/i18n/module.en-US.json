@@ -1,0 +1,20 @@
+{
+    "SharedSxmUiUiOfferGridModule": {
+        "OfferGridFormComponent": {
+            "PRICE_ROW_TEXT": "Monthly price",
+            "CHANNEL_COUNT_ROW_TEXT": "Channels included",
+            "CHANNEL_COUNT_ROW_TOOLTIP": "",
+            "AD_FREE_CHANNEL_COUNT_ROW_TEXT": "Ad-free channels",
+            "AD_FREE_CHANNEL_COUNT_ROW_TOOLTIP": "",
+            "CHANNEL_LINEUP_ROW_TEXT": "Channel lineup",
+            "CHANNEL_LINEUP_ROW_TOOLTIP": "",
+            "CHANNEL_LINEUP_LINK_TEXT": "View Lineup",
+            "CONTINUE_BUTTON_TEXT": "Continue",
+            "PHONE": "855-734-2658",
+            "QUESTIONS": "Questions? Call ",
+            "EXPANDED_TEXT": "Hide",
+            "COLLAPSED_TEXT": "Show more features",
+            "GET": "GET "
+        }
+    }
+}

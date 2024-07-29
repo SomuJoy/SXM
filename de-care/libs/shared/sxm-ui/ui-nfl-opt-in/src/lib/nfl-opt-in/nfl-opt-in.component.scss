@@ -1,0 +1,15 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    .optIn-checkbox {
+        z-index: 0;
+    }
+}
+
+sxm-ui-checkbox-with-label-form-field::ng-deep {
+    span {
+        label {
+            display: initial;
+        }
+    }
+}

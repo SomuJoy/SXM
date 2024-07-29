@@ -1,0 +1,36 @@
+@import "sxm.phoenix.imports";
+
+.sxm-ui-listener-details {
+    display: flex;
+
+    .icon {
+        height: 40px;
+        width: 40px;
+        margin-right: 16px;
+
+        use {
+            stroke: $black;
+            fill: $black;
+        }
+    }
+
+    .details {
+        color: $black;
+        p {
+            margin-bottom: 0;
+        }
+        .eyebrow {
+            font-weight: calculate-font-weight(book);
+            text-transform: none;
+            margin-bottom: 4px;
+        }
+        .title {
+            font-weight: calculate-font-weight(bold);
+        }
+        .footer {
+            margin-top: 4px;
+            font-weight: calculate-font-weight(bold);
+            color: $gray-charcoal;
+        }
+    }
+}

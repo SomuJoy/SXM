@@ -1,0 +1,11 @@
+<ng-container [formGroup]="formGroup">
+    <ng-container *ngIf="nameOnCardAsHiddenInput; else nameOnCard">
+        <input type="hidden" formControlName="nameOnCard" />
+    </ng-container>
+    <ng-template #nameOnCard>
+        <sxm-ui-name-on-card-form-field formControlName="nameOnCard"></sxm-ui-name-on-card-form-field>
+    </ng-template>
+    <sxm-ui-credit-card-number-form-field formControlName="cardNumber"></sxm-ui-credit-card-number-form-field>
+    <sxm-ui-expiration-date-form-field formControlName="expirationDate"></sxm-ui-expiration-date-form-field>
+    <sxm-ui-cvv-form-field formControlName="cvv"></sxm-ui-cvv-form-field>
+</ng-container>

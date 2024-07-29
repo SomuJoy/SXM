@@ -1,0 +1,38 @@
+<div class="input-container" [ngClass]="{ filled: currentLabel, active: isActive }">
+    <label for="{{ _uniqueId }}">{{ labelText }}</label>
+    <input
+        #inputField
+        type="text"
+        id="{{ _uniqueId }}"
+        [attr.qatag]="qatag"
+        [attr.data-test]="qatag"
+        [(ngModel)]="currentLabel"
+        onFocus
+        required
+        [autocomplete]="autocomplete"
+    />
+    <!--Used in some browsers because we are using a disabled input-->
+    <div class="helper-div"></div>
+</div>
+<ul id="droplist" (mouseenter)="listMouseOn()" (mouseleave)="listMouseLeave()" (blur)="listBlur()" tabindex="0">
+    <ng-container *ngFor="let dropDownValue of dropDownvalues">
+        <li
+            *ngIf="!(dropDownValue.selected && filterSelected)"
+            [appSetFocus]="dropDownValue.focused"
+            tabindex="0"
+            data-test="sxmDropDownItem"
+            data-e2e="sxmDropDownItem"
+            (blur)="optionBlur(dropDownValue)"
+            (mouseenter)="optionMouseOn(dropDownValue)"
+            (mouseleave)="optionLeave()"
+            (click)="$event.stopPropagation(); selectItem()"
+            [class.selected]="dropDownValue.selected"
+            [title]="dropDownValue.label"
+        >
+            {{ dropDownValue.label }}
+        </li>
+    </ng-container>
+</ul>
+<div *ngIf="(control.invalid && control.touched) || showErrorMsg" class="invalid-feedback">
+    <p [innerHTML]="errorMsg">Invalid</p>
+</div>

@@ -1,0 +1,214 @@
+{
+    "SharedSxmUiUiUsStateDropdownFormFieldModule": {
+        "USStateDropdownFormFieldComponent": {
+            "PLACEHOLDER_TEXT": "State",
+            "ERROR_MESSAGE": "A state is required.",
+            "STATES": [
+                {
+                    "label": "ALASKA",
+                    "key": "AK"
+                },
+                {
+                    "label": "ALABAMA",
+                    "key": "AL"
+                },
+                {
+                    "label": "ARKANSAS",
+                    "key": "AR"
+                },
+                {
+                    "label": "ARIZONA",
+                    "key": "AZ"
+                },
+                {
+                    "label": "CALIFORNIA",
+                    "key": "CA"
+                },
+                {
+                    "label": "COLORADO",
+                    "key": "CO"
+                },
+                {
+                    "label": "CONNECTICUT",
+                    "key": "CT"
+                },
+                {
+                    "label": "DISTRICT OF COLUMBIA",
+                    "key": "DC"
+                },
+                {
+                    "label": "DELAWARE",
+                    "key": "DE"
+                },
+                {
+                    "label": "FLORIDA",
+                    "key": "FL"
+                },
+                {
+                    "label": "GEORGIA",
+                    "key": "GA"
+                },
+                {
+                    "label": "HAWAII",
+                    "key": "HI"
+                },
+                {
+                    "label": "IOWA",
+                    "key": "IA"
+                },
+                {
+                    "label": "IDAHO",
+                    "key": "ID"
+                },
+                {
+                    "label": "ILLINOIS",
+                    "key": "IL"
+                },
+                {
+                    "label": "INDIANA",
+                    "key": "IN"
+                },
+                {
+                    "label": "KANSAS",
+                    "key": "KS"
+                },
+                {
+                    "label": "KENTUCKY",
+                    "key": "KY"
+                },
+                {
+                    "label": "LOUISIANA",
+                    "key": "LA"
+                },
+                {
+                    "label": "MASSACHUSETTS",
+                    "key": "MA"
+                },
+                {
+                    "label": "MARYLAND",
+                    "key": "MD"
+                },
+                {
+                    "label": "MAINE",
+                    "key": "ME"
+                },
+                {
+                    "label": "MICHIGAN",
+                    "key": "MI"
+                },
+                {
+                    "label": "MINNESOTA",
+                    "key": "MN"
+                },
+                {
+                    "label": "MISSOURI",
+                    "key": "MO"
+                },
+                {
+                    "label": "MISSISSIPPI",
+                    "key": "MS"
+                },
+                {
+                    "label": "MONTANA",
+                    "key": "MT"
+                },
+                {
+                    "label": "NORTH CAROLINA",
+                    "key": "NC"
+                },
+                {
+                    "label": "NORTH DAKOTA",
+                    "key": "ND"
+                },
+                {
+                    "label": "NEW ENGLAND",
+                    "key": "NE"
+                },
+                {
+                    "label": "NEW HAMPSHIRE",
+                    "key": "NH"
+                },
+                {
+                    "label": "NEW JERSEY",
+                    "key": "NJ"
+                },
+                {
+                    "label": "NEW MEXICO",
+                    "key": "NM"
+                },
+                {
+                    "label": "NEVADA",
+                    "key": "NV"
+                },
+                {
+                    "label": "NEW YORK",
+                    "key": "NY"
+                },
+                {
+                    "label": "OHIO",
+                    "key": "OH"
+                },
+                {
+                    "label": "OKLAHOMA",
+                    "key": "OK"
+                },
+                {
+                    "label": "OREGON",
+                    "key": "OR"
+                },
+                {
+                    "label": "PENNSYLVANIA",
+                    "key": "PA"
+                },
+                {
+                    "label": "RHODE ISLAND",
+                    "key": "RI"
+                },
+                {
+                    "label": "SOUTH CAROLINA",
+                    "key": "SC"
+                },
+                {
+                    "label": "SOUTH DAKOTA",
+                    "key": "SD"
+                },
+                {
+                    "label": "TENNESSEE",
+                    "key": "TN"
+                },
+                {
+                    "label": "TEXAS",
+                    "key": "TX"
+                },
+                {
+                    "label": "UTAH",
+                    "key": "UT"
+                },
+                {
+                    "label": "VIRGINIA",
+                    "key": "VA"
+                },
+                {
+                    "label": "VERMONT",
+                    "key": "VT"
+                },
+                {
+                    "label": "WASHINGTON",
+                    "key": "WA"
+                },
+                {
+                    "label": "WISCONSIN",
+                    "key": "WI"
+                },
+                {
+                    "label": "WEST VIRGINIA",
+                    "key": "WV"
+                },
+                {
+                    "label": "WYOMING",
+                    "key": "WY"
+                }
+            ]
+        }
+    }
+}

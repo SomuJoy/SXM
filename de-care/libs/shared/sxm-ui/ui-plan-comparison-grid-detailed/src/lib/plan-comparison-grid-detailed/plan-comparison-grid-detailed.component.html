@@ -1,0 +1,122 @@
+<ng-container *ngIf="data">
+    <table [ngClass]="{ 'half-width': onePlanToShow }" data-test="PlanComparisonGrid">
+        <thead>
+            <tr>
+                <th class="plan-options-title" [ngClass]="{ 'half-width': onePlanToShow }">
+                    <h2 class="plan-options-title">{{ translateKeyPrefix + ".PLAN_OPTIONS" | translate }}</h2>
+                </th>
+                <th *ngFor="let plan of gridPlans" class="plan-tab" [ngClass]="{ 'half-width': onePlanToShow }">
+                    <div *ngIf="data.bestValuePlanCode === plan?.planCode" class="best-value">{{ translateKeyPrefix + ".LABEL_BEST_VALUE" | translate }}</div>
+                    <h2 data-test="planName">
+                        {{ plan?.packageName }}
+                    </h2>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="resizable-rows">
+            <tr>
+                <td class="one-offer" [ngClass]="{ 'half-width': onePlanToShow }">{{ translateKeyPrefix + ".CHANNELS_INCLUDED" | translate }}</td>
+                <td *ngFor="let plan of gridPlans" class="channel-count" [ngClass]="{ 'half-width': onePlanToShow }">
+                    {{ translateKeyPrefix + ".CHANNEL_COUNT" | translate: { channelCount: plan.channelCount } }}
+                </td>
+            </tr>
+            <tr>
+                <td class="one-offer" [ngClass]="{ 'half-width': onePlanToShow }">{{ translateKeyPrefix + ".LABEL_PROMO_COST" | translate }}</td>
+                <td [ngClass]="{ 'half-width': onePlanToShow }" *ngFor="let plan of gridPlans">
+                    <div class="price-normal">
+                        {{
+                            translateKeyPrefix + ".PROMO_COST"
+                                | translate: { termLength: plan.promoTermLength, price: (plan.promoPricePerMonth | currency: "USD":"symbol-narrow":"1.0-2") }
+                        }}
+                    </div>
+                    <div class="price-highlighted">
+                        <p class="bold-price">
+                            {{
+                                translateKeyPrefix + (plan.promoPricePerMonth ? ".PRICE_PER_MONTH" : ".PRICE_ZERO")
+                                    | translate: { price: (plan.promoPricePerMonth | currency: "USD":"symbol-narrow":"1.0-2") }
+                            }}
+                        </p>
+                        <p class="term-length">{{ translateKeyPrefix + ".TERM_LENGTH" | translate: { termLength: plan.promoTermLength } }}</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>{{ translateKeyPrefix + ".LABEL_RENEWAL_COST" | translate }}</td>
+                <td *ngFor="let plan of gridPlans">
+                    {{ translateKeyPrefix + ".RENEWAL_COST" | translate: { price: (plan.pricePerMonth | currency: "USD":"symbol-narrow":"1.0-2") } }}
+                </td>
+            </tr>
+            <tr>
+                <td>{{ translateKeyPrefix + ".LABEL_WHERE_TO_LISTEN" | translate }}</td>
+                <td *ngFor="let plan of gridPlans">
+                    <ng-template [ngTemplateOutlet]="whereToListenIcons" [ngTemplateOutletContext]="{ listenOn: plan.listenOn, packageName: plan.packageName }"></ng-template>
+                </td>
+            </tr>
+        </tbody>
+        <tbody [@featuresExpand]="isExpanded ? 'expanded' : 'collapsed'" class="resizable-rows">
+            <tr *ngFor="let feature of features; trackBy: trackByFeatureName" data-test="feature-row">
+                <td [innerHTML]="feature.name"></td>
+                <td *ngFor="let capability of feature.capabilities" class="compatability" [ngClass]="{ 'half-width': onePlanToShow }">
+                    <ng-template [ngTemplateOutlet]="compatability" [ngTemplateOutletContext]="{ compatability: capability }"></ng-template>
+                </td>
+            </tr>
+            <tr>
+                <td>{{ translateKeyPrefix + ".LABEL_CHANNEL_LINEUP" | translate }}</td>
+                <td [ngClass]="{ 'half-width': onePlanToShow }" *ngFor="let plan of gridPlans">
+                    <a [href]="plan.channelLineupUrl" target="_blank" sxmUiDataClickTrack="exit">{{ translateKeyPrefix + ".LINK_TEXT_CHANNEL_LINEUP" | translate }}</a>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot class="resizable-rows">
+            <tr>
+                <td>
+                    <button
+                        class="show-more"
+                        type="button"
+                        (click)="isExpanded = !isExpanded"
+                        sxmUiDataClickTrack="ui"
+                        [attr.data-link-key]="'plan grid features toggle'"
+                        data-test="showFeaturesToggleButton"
+                    >
+                        {{ translateKeyPrefix + (isExpanded ? ".SHOW_LESS" : ".SHOW_MORE") | translate }}
+                        <mat-icon svgIcon="dropdown-arrow-small" [class.flipped]="isExpanded"></mat-icon>
+                    </button>
+                    <p class="cancel-anytime-text">{{ translateKeyPrefix + ".CANCEL_ANYTIME" | translate }}</p>
+                </td>
+                <td [ngClass]="{ 'half-width': onePlanToShow }" *ngFor="let plan of gridPlans">
+                    <button
+                        class="button primary cta"
+                        type="button"
+                        (click)="onSelectedPlan(plan.planCode, plan.packageCodeName)"
+                        sxmUiDataClickTrack="submit"
+                        [attr.data-link-key]="plan.packageName"
+                        [attr.aria-label]="translateKeyPrefix + '.GET_ARIA_LABEL' | translate: { packageName: plan.packageName }"
+                        data-test="selectPlanButton"
+                    >
+                        {{ translateKeyPrefix + ".BUTTON_GET_LABEL" | translate }}
+                    </button>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</ng-container>
+
+<ng-template #whereToListenIcons let-listenOn="listenOn" let-packageName="packageName">
+    <span class="listen-on">
+        <span class="icon" *ngIf="listenOn.insideTheCar" [attr.aria-label]="packageName + ' listen inside the car'">
+            <mat-icon class="car" svgIcon="car"></mat-icon>
+        </span>
+        <span class="icon" *ngIf="listenOn.outsideTheCar" [attr.aria-label]="packageName + ' listen outside the car'">
+            <mat-icon class="streaming" svgIcon="streaming"></mat-icon>
+        </span>
+    </span>
+</ng-template>
+<ng-template #compatability let-compatability="compatability">
+    <ng-container [ngSwitch]="compatability">
+        <ng-container *ngSwitchCase="'ALL'">
+            <mat-icon class="checkmark" svgIcon="checkmark"></mat-icon>
+        </ng-container>
+        <ng-container *ngSwitchCase="'SOME'">{{ translateKeyPrefix + ".COMPATABILITY_SOME" | translate }}</ng-container>
+        <ng-container *ngSwitchCase="'NONE'"></ng-container>
+    </ng-container>
+</ng-template>

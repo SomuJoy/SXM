@@ -1,0 +1,10 @@
+{
+    "sharedSxmUiUiFlepzFormFieldsModule": {
+        "flepzFormFieldsComponent": {
+            "ZIP_CODE": "Postal Code",
+            "ERROR": {
+                "ZIP_CODE": "Enter a valid postal code."
+            }
+        }
+    }
+}

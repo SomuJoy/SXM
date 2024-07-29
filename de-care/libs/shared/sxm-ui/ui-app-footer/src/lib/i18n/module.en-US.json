@@ -1,0 +1,43 @@
+{
+    "SharedSxmUiUiAppFooterModule": {
+        "SxmUiAppFooterComponent": {
+            "WEBSITE_TERMS": {
+                "LINK_TEXT": "Website Terms",
+                "LINK_URL": "https://www.siriusxm.com/sxm-web-terms-of-use?intcmp=OTHER_NA_www:Home_WebsiteTerms"
+            },
+            "CUSTOMER_AGREEMENT": {
+                "LINK_TEXT": "Customer Agreement",
+                "LINK_URL": "https://www.siriusxm.com/customeragreement?intcmp=GN_FOOTER_NEW_CustomerAgreement"
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.com/privacy-policy?intcmp=GN_FOOTER_NEW_PrivacyPolicy"
+            },
+            "YOUR_AD_CHOICES": {
+                "LINK_TEXT": "Your Ad Choices",
+                "LINK_URL": "https://www.siriusxm.com/youradchoices?intcmp=GN_FOOTER_NEW_YourAdChoices"
+            },
+            "DO_NOT_SELL_MY_INFO": {
+                "LINK_TEXT": "Your Privacy Choices",
+                "LINK_URL": "https://www.siriusxm.com/yourprivacychoices",
+                "LINK_IMG": "assets/img/your_privacy_choices.png"
+            },
+            "RETURN_POLICY": {
+                "LINK_TEXT": "Return Policy",
+                "LINK_URL": "https://shop.siriusxm.com/return-policy.html?intcmp=GN_FOOTER_NEW_ReturnPolicy"
+            },
+            "FCC_PUBLIC_FILE": {
+                "LINK_TEXT": "FCC Public File",
+                "LINK_URL": "https://www.siriusxm.com/fccpublicfile?intcmp=GN_FOOTER_NEW_FCCPublicFile"
+            },
+            "FCC_INFO": {
+                "LINK_TEXT": "FCC Info",
+                "LINK_URL": "https://www.siriusxm.com/fccinfo?intcmp=GN_FOOTER_NEW_FCCInfo"
+            },
+            "COOKIE_SETTINGS": {
+                "LINK_TEXT": "Cookie Settings"
+            },
+            "COPYRIGHT_TEXT": "Sirius XM Radio Inc."
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@import "sxm.phoenix.imports";
+
+.sticky-container {
+    position: sticky;
+    position: -webkit-sticky;
+    bottom: -1px;
+    background-color: transparent;
+    margin: 0 -16px;
+    padding: 16px;
+    transition: all 0.1s ease;
+    border-top: 1px solid $gray-medium;
+    @include bp(small) {
+        background-color: inherit;
+        position: relative;
+    }
+    &.is-sticky {
+        box-shadow: 0 2px 15px -4px rgba(0, 0, 0, 0.15);
+        border: none;
+        background: $white;
+        @include bp(small) {
+            box-shadow: none;
+            border-top: 1px solid $gray-medium;
+            background: inherit;
+        }
+    }
+    & > button + button {
+        margin-top: 8px;
+    }
+}

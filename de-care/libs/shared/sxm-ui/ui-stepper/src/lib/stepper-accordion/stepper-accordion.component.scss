@@ -1,0 +1,44 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    display: grid;
+    grid-gap: 16px;
+    height: fit-content;
+    p {
+        padding: 0;
+    }
+    > section {
+        display: grid;
+        margin: 0;
+        padding: 0 0 16px 0;
+        border-bottom: 1px solid $gray-medium;
+
+        &:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        &.active {
+            padding-bottom: 32px;
+
+            &:last-child {
+                padding-bottom: 40px-32px;
+            }
+        }
+
+        > header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+    }
+
+    .step-title {
+        @include step-title;
+
+        &.inactive {
+            @include step-title($isInactive: true);
+        }
+    }
+}

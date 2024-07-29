@@ -1,0 +1,22 @@
+@import "sxm.phoenix.imports";
+
+.step-item {
+    padding: 0 16px;
+    @include bp(medium) {
+        padding: 0;
+    }
+}
+
+:host-context(.width-complete) .step-item {
+    padding: 0;
+}
+
+.component {
+    &--step-content {
+        overflow: visible;
+
+        .step-content-container {
+            padding: 0;
+        }
+    }
+}

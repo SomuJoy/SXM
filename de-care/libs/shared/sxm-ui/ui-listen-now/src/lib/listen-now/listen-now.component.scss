@@ -1,0 +1,17 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    width: 100%;
+}
+
+.listen-now-component-subhead {
+    margin: 10px 0;
+}
+
+.recirculation {
+    &--single {
+        &::before {
+            width: 100%;
+        }
+    }
+}

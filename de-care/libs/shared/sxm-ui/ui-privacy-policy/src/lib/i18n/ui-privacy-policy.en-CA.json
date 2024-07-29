@@ -1,0 +1,8 @@
+{
+    "sharedSxmUiUiPrivacyPolicyModule": {
+        "privacyPolicyComponent": {
+            "LINK_TEXT": "Privacy Policy",
+            "LINK_URL": "https://www.siriusxm.ca/privacy"
+        }
+    }
+}

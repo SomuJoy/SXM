@@ -1,0 +1,40 @@
+@import "sxm.phoenix.imports";
+
+:host-context(.label-bold) {
+    label {
+        font-weight: calculate-font-weight("bold");
+    }
+}
+
+:host-context(.description-inline) {
+    br.line-break {
+        display: none;
+    }
+}
+
+:host-context(.description-light-text-small) {
+    .description {
+        color: $gray-dark;
+        @include font-size(12px);
+    }
+}
+
+:host-context(.pre-line) {
+    label {
+        white-space: pre-line;
+    }
+}
+
+:host {
+    display: block;
+    position: relative;
+}
+
+.radio-item {
+    margin-top: 0;
+}
+
+.description {
+    @include font-size(14px);
+    font-weight: normal;
+}

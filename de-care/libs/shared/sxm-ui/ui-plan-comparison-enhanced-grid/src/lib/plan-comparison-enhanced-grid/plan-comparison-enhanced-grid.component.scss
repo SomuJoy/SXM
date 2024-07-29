@@ -1,0 +1,109 @@
+@import "sxm.phoenix.imports";
+
+.grid-container {
+    display: grid;
+    grid-row-gap: 16px;
+}
+
+hr {
+    grid-column: 1/-1;
+    width: 100%;
+    border-top: 1px solid #d4d4d4;
+}
+
+// allows dynamic spacing of columns
+$min-cols: 2;
+$max-cols: 3;
+
+@for $i from $min-cols through $max-cols {
+    .grid-columns-#{$i} {
+        grid-template-columns: repeat($i, 1fr);
+        @include bp(medium) {
+            grid-template-columns: repeat($i + 1, 1fr);
+        }
+    }
+}
+
+.grid-title-row {
+    display: grid;
+    grid-column: 1/-1;
+    justify-content: center;
+    @include bp(medium) {
+        padding-right: 25%;
+        grid-column: 1/2;
+        justify-content: start;
+    }
+    .title {
+        line-height: 24px;
+        @include font-size(16px);
+    }
+    .sub-title {
+        line-height: 18px;
+        @include font-size(12px);
+    }
+}
+
+.col {
+    text-align: center;
+    display: grid;
+    align-items: center;
+}
+.col.selected {
+    font-weight: bold;
+    color: $purple;
+}
+
+.icon {
+    use {
+        stroke: $gray-dark;
+    }
+    &.x-mark,
+    &.check-mark {
+        use {
+            stroke-width: 0.5;
+        }
+    }
+    &.x-mark {
+        width: 20px;
+        height: 20px;
+        @include bp(medium) {
+            width: 26px;
+            height: 26px;
+        }
+    }
+    &.check-mark {
+        width: 24px;
+        height: 24px;
+        @include bp(medium) {
+            stroke-width: 0.5;
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+.selected .icon {
+    use {
+        stroke: $purple;
+    }
+    &.x-mark,
+    &.check-mark {
+        use {
+            stroke-width: 2;
+        }
+    }
+}
+
+.accordion-chevron {
+    grid-column: 1/-1;
+}
+.chevron-checkmark {
+    text-align: center;
+}
+
+.grid-accordion-container {
+    padding-top: 16px;
+}
+
+.feature-p-el {
+    @include font-size(16px);
+}

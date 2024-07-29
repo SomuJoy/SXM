@@ -1,0 +1,7 @@
+{
+    "sharedSxmUiUiDotProgressBarStepperModule": {
+        "dotProgressBarStepperComponent": {
+            "STEPPER_PROGRESS": "Step {{ currentStep }} of {{ steps }}"
+        }
+    }
+}

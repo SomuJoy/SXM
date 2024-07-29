@@ -1,0 +1,73 @@
+{
+    "sxmUi": {
+        "flepzFormFieldsComponent": {
+            "YOUR_INFO": "Your Info",
+            "FIRST_NAME": "First Name",
+            "LAST_NAME": "Last Name",
+            "EMAIL": "Email",
+            "PHONE_NUMBER": "Phone Number",
+            "ZIP_CODE": "Zip Code",
+            "Continue": "Continue",
+            "ERROR": {
+                "FIRST_NAME": "Enter your first name.",
+                "LAST_NAME": "Enter your last name.",
+                "EMAIL": "Enter a valid email address.",
+                "PHONE_NUMBER": "Enter a valid phone number.",
+                "ZIP_CODE": "Enter a valid zip code.",
+                "USERNAME": "Username/Email address already in use.",
+                "CVV_EXCLUDE": "The field contains characters that resemble credit card security information. Please review and make appropriate changes to continue."
+            }
+        },
+        "appFooterComponent": {
+            "WEBSITE_TERMS": {
+                "LINK_TEXT": "Website Terms",
+                "LINK_URL": "https://www.siriusxm.com/sxm-web-terms-of-use?intcmp=OTHER_NA_www:Home_WebsiteTerms"
+            },
+            "CUSTOMER_AGREEMENT": {
+                "LINK_TEXT": "Customer Agreement",
+                "LINK_URL": "https://www.siriusxm.com/customeragreement?intcmp=GN_FOOTER_NEW_CustomerAgreement"
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.com/privacy-policy?intcmp=GN_FOOTER_NEW_PrivacyPolicy"
+            },
+            "YOUR_AD_CHOICES": {
+                "LINK_TEXT": "Your Ad Choices",
+                "LINK_URL": "https://www.siriusxm.com/youradchoices?intcmp=GN_FOOTER_NEW_YourAdChoices"
+            },
+            "DO_NOT_SELL_MY_INFO": {
+                "LINK_TEXT": "Your Privacy Choices",
+                "LINK_URL": "https://www.siriusxm.com/yourprivacychoices",
+                "LINK_IMG": "assets/img/your_privacy_choices.png"
+            },
+            "RETURN_POLICY": {
+                "LINK_TEXT": "Return Policy",
+                "LINK_URL": "https://shop.siriusxm.com/return-policy.html?intcmp=GN_FOOTER_NEW_ReturnPolicy"
+            },
+            "FCC_PUBLIC_FILE": {
+                "LINK_TEXT": "FCC Public File",
+                "LINK_URL": "https://www.siriusxm.com/fccpublicfile?intcmp=GN_FOOTER_NEW_FCCPublicFile"
+            },
+            "FCC_INFO": {
+                "LINK_TEXT": "FCC Info",
+                "LINK_URL": "https://www.siriusxm.com/fccinfo?intcmp=GN_FOOTER_NEW_FCCInfo"
+            },
+            "COOKIE_SETTINGS": {
+                "LINK_TEXT": "Cookie Settings"
+            },
+            "COPYRIGHT_TEXT": "Sirius XM Radio Inc."
+        },
+        "nucaptchaComponent": {
+            "CAPTCHA": "Enter Captcha",
+            "CAPTCHA_AUDIO": "Audio code",
+            "CAPTCHA_VISUAL": "Visual code",
+            "CAPTCHA_AUDIO_REPLAY": "Replay audio sample",
+            "CAPTCHA_AUDIO_DOWNLOAD": "Download an audio challenge",
+            "CAPTCHA_TRY_NEW": "Try a new code",
+            "ERROR": {
+                "CAPTCHA_BLANK": "Enter the Captcha you see above.",
+                "CAPTCHA_FAILED": "Entered code does not match. Please try again."
+            }
+        }
+    }
+}

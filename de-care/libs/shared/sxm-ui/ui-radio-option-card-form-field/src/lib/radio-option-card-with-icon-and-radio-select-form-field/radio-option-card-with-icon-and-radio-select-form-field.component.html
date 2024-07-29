@@ -1,0 +1,17 @@
+<article>
+    <div class="icon">
+        <ng-content select="[icon]"></ng-content>
+    </div>
+    <label for="{{ controlId }}" class="label">{{ data?.label }}</label>
+    <aside>
+        <input
+            type="radio"
+            [formControl]="control"
+            id="{{ controlId }}"
+            name="{{ formControlName }}"
+            [value]="data?.value"
+            data-test="radioOptionCardWithIconAndRadioSelectFormField"
+        />
+        <mat-icon svgIcon="checkmark"></mat-icon>
+    </aside>
+</article>

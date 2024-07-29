@@ -1,0 +1,13 @@
+<sxm-ui-content-card [hasGrayBackground]="true" [flagPresent]="false" [headlinePresent]="true">
+    <div htmlContentForHead>
+        <div class="radio">
+            <input type="radio" [formControl]="control" id="{{ controlId }}" name="{{ formControlName }}" [value]="value" data-e2e="radioOption" />
+            <label [for]="controlId">
+                {{ label }}
+            </label>
+        </div>
+    </div>
+    <div htmlContentForBody>
+        <ng-content> </ng-content>
+    </div>
+</sxm-ui-content-card>

@@ -1,0 +1,20 @@
+import { NgModule } from '@angular/core';
+import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
+
+const ICON = `
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    
+</svg>
+`;
+
+@NgModule({
+    exports: [MatIconModule],
+    imports: [MatIconModule],
+})
+export class <%= classify(module) %>Module {
+    constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+        iconRegistry.addSvgIconLiteral('<%= name %>', sanitizer.bypassSecurityTrustHtml(ICON));
+    }
+}
