@@ -1,0 +1,15 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "email": "BPRUSF.PEIA@SIRIUSXM.COM",
+        "status": "SUCCESS",
+        "radioId": "4810",
+        "subscriptionId": "10000194759",
+        "accountNumber": "10000192839",
+        "isEligibleForRegistration": true,
+        "isOfferStreamingEligible": true,
+        "isUserNameSameAsEmail": false
+    }
+}

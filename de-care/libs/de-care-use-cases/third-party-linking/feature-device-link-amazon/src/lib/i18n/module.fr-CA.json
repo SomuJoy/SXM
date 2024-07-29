@@ -1,0 +1,22 @@
+{
+    "deCareUseCasesThirdPartyLinkingFeatureDeviceLinkAmazonModule": {
+        "landingPageComponent": {
+            "TITLE": "Vous êtes redirigé vers Amazon.com",
+            "PENDING_ACTION_TITLE": "Liez votre compte sur Amazon.com",
+            "PENDING_ACTION_INSTRUCTIONS": "Si vous n'avez pas été automatiquement redirigé vers Amazon, veuillez ",
+            "PENDING_ACTION_INSTRUCTIONS_LINK": "cliquez ici",
+            "INSTRUCTIONS": "Si vous rencontrez toujours des problèmes, veuillez vérifier votre navigateur de blocage des fenêtres pop-up ou les paramètres de votre application."
+        },
+        "successPageComponent": {
+            "TITLE": "Vos comptes ont bien été liés",
+            "MESSAGE": "Vous avez réussi à activer la « skill » SiriusXM sur votre ou vos appareils Alexa d'Amazon. ",
+            "INSTRUCTIONS": "Vous pouvez maintenant demander à Alexa de jouer vos stations SiriusXM préférées."
+        },
+        "errorPageComponent": {
+            "TITLE": "Oups, quelque chose n'a pas fonctionné.",
+            "INSTRUCTIONS": "Il y a un problème pour lier votre compte SiriusXM à votre compte Amazon. Veuillez ",
+            "INSTRUCTIONS_LINK": "visiter notre page d'aide.",
+            "HELP_URL": "https://www.siriusxm.ca/lwa-aide"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "deCareUseCasesTrialActivationUiSl2cForm": {
+        "sl2cFormComponent": {
+            "Label": {
+                "RADIO_ID_OR_VIN": "Radio ID/VIN",
+                "FIRST_NAME": "First Name",
+                "LAST_NAME": "Last Name",
+                "PHONE_NUMBER": "Phone Number (Optional)",
+                "EMAIL": "Email (Optional)"
+            },
+            "ValidationError": {
+                "RADIO_ID_OR_VIN_MSG": "Enter a valid Radio ID or VIN.",
+                "FIRST_NAME_MSG": "Enter your first name.",
+                "LAST_NAME_MSG": "Enter your last name.",
+                "PHONE_NUMBER_MSG": "Enter a valid phone number.",
+                "EMAIL_MSG": "Enter a valid email address."
+            },
+            "PrivacyPolicy": {
+                "LINK_URL": "https://www.siriusxm.com/privacy-policy",
+                "LINK_TEXT": "Privacy Policy"
+            },
+            "ACTIVATE_TRIAL_BUTTON": "ACTIVATE TRIAL",
+            "UNEXPECTED_ERROR": "An unexpected error occurred. Please try again.",
+            "RADIO_LOOKUP_LABEL": "Radio Lookup",
+            "NEED_HELP_TEXT_LABEL": "Need Help?",
+            "CONFIRM_YOUR_ADDRESS": "Please confirm your address"
+        }
+    }
+}

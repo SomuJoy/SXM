@@ -1,0 +1,29 @@
+<main class="background-blue">
+    <div class="content-container mt-3">
+        <div class="row align-center no-padding-small">
+            <div class="column medium-2 no-padding background-blue"></div>
+            <div class="column small-12 medium-6 background-blue text-white">
+                <div class="align-left">
+                    <div class="header flex align-justify align-middle">
+                        <h5>{{ translateKeyPrefix + ".TITLE" | translate }}</h5>
+                    </div>
+                    <br />
+                    <p>
+                        {{ translateKeyPrefix + ".INSTRUCTIONS" | translate }}
+                        <a
+                            href="{{ translateKeyPrefix + '.HELP_URL' | translate }}"
+                            target="_blank"
+                            data-link-name="visit our support page"
+                            sxmUiDataClickTrack="exit"
+                            class="text-link text-white"
+                        >
+                            {{ translateKeyPrefix + ".INSTRUCTIONS_LINK" | translate }}</a
+                        >{{ translateKeyPrefix + ".INFO" | translate }}
+                    </p>
+                </div>
+                <div class="text-center loading"><span></span><span></span><span></span></div>
+            </div>
+            <div class="column medium-2 no-padding background-blue"></div>
+        </div>
+    </div>
+</main>

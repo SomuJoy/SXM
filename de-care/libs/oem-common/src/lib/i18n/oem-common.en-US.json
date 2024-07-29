@@ -1,0 +1,57 @@
+{
+    "oemCommon": {
+        "oemFlowComponent": {
+            "STEP_PAGE_TITLES": {
+                "OFFER_STEP": "Choose a Package",
+                "PAYMENT_STEP": "Enter Payment Info",
+                "BILLING_ADDRESS_STEP": "Billing Address",
+                "ADDRESS_CONFIRMATION_STEP": "Confirm Address",
+                "SUMMARY_STEP": "Order Summary",
+                "CONFIRMATION_STEP": "Confirmation"
+            }
+        },
+        "subscriptionConfirmationComponent": {
+            "TITLE": "Congratulations! You're all set.",
+            "MESSAGE": "Your Customer Agreement will be sent to you as a link in your confirmation email.",
+            "MESSAGE2": "Close your browser to return to the SiriusXM app.",
+            "LEGAL_COPY": "Your subscription starts on the date indicated on the prior Order Summary screen. The subscription plan you chose will automatically renew thereafter and be charged to the card on file at then-current rates plus fees and taxes. You have agreed to the SiriusXM Customer Agreement at siriusxm.com/agreements, including the refund policy, and how to cancel, which includes calling us at 1-866-635-2349. The Customer Agreement will remain legally binding unless you cancel your subscription within 7 days after it begins. If you would like to receive a copy of the Customer Agreement by mail, you can call 1-866-635-2349."
+        },
+        "subscriptionErrorComponent": {
+            "TITLE": "Please call SiriusXM at 1-855-607-7523 to subscribe or manage account.",
+            "LEGAL_COPY": "You can read our <strong>Customer Agreement</strong> and <strong>Privacy Policy</strong> at siriusxm.com/agreements.",
+            "PAGE_TITLE": "SiriusXM - Subscribe"
+        },
+        "manageAccountComponent": {
+            "TITLE": "Please call SiriusXM at 1-855-607-7523 to subscribe or manage account.",
+            "LEGAL_COPY": "You can read our <strong>Customer Agreement</strong> and <strong>Privacy Policy</strong> at siriusxm.com/agreements.",
+            "PAGE_TITLE": "SiriusXM - Manage Your Account"
+        },
+        "paymentInfoComponent": {
+            "SUBMIT_PAYMENT_INFO_ERROR": "We were unable to authorize your credit card. Please update your payment information.",
+            "NAME_LABEL": "Name As It Appears On Card",
+            "CC_NUMBER_LABEL": "Card Number",
+            "EXPIRATION_MONTH_LABEL": "Expiration Month (MM)",
+            "EXPIRATION_YEAR_LABEL": "Expiration Year (YYYY)",
+            "ERROR_CC_EXP_MONTH": "Enter a valid expiration month",
+            "ERROR_CC_EXP_YEAR": "Enter a valid expiration year",
+            "ERROR_CC_EXP_EARLY": "Expiration cannot be prior to the current month",
+            "CVV_LABEL": "Security Code",
+            "NOTE": "Note: This information is never stored in the car. View Privacy Policy at siriusxm.com/agreements",
+            "BUTTON_TEXT": "NEXT"
+        },
+        "billingAddressComponent": {
+            "ADDRESS_NOTE": "Note: This information is never stored in the car. View Privacy Policy at siriusxm.com/agreements",
+            "BUTTON_TEXT": "Next",
+            "EMAIL": "Email Address",
+            "ERROR_EMAIL": "Enter a valid email address."
+        },
+        "offerStepComponent": {
+            "SUBSCRIBE_NOW": "Subscribe Now"
+        },
+        "summaryStepComponent": {
+            "CHARGE_AGREEMENT": "Please charge this credit card for any amount due now, and all future and recurring charges billed to my account. I agree that my subscription will automatically renew at then-current rates plus fees and taxes. I agree to the SiriusXM Privacy Policy and Customer Agreement at siriusxm.com/agreements, including the refund policy, and how to cancel, which includes calling SiriusXM at 1-866-635-2349. I understand that fees and programming are subject to change. I consent that my subscription will automatically renew.",
+            "INSTRUCTIONS": "Please accept the above agreement.",
+            "BUTTON_TEXT": "Complete My Order"
+        }
+    }
+}

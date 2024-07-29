@@ -1,0 +1,22 @@
+{
+    "LABEL_TEXT": "Mot de passe",
+    "BUTTON_TEXT": "CONTINUER",
+    "TITLE": "Réinitialisons votre mot de passe",
+    "SUB_TITLE": "Réinitialisez votre mot de passe.",
+    "SYSTEM_ERROR": "Nous sommes désolés. Un problème est survenu. Veuillez réessayer.",
+    "UPDATE_FAIL_ERROR": "Nous sommes désolés. Un problème est survenu. Veuillez réessayer.",
+    "ERRORS": {
+        "REQUIRED": "Entrez un mot de passe.",
+        "LENGTH": "Votre mot de passe doit contenir de {{min}} à {{max}} caractères.",
+        "POLICY": "Votre mot de passe doit contenir au minimum un caractère appartenant à au moins 3 groupes différents, comme indiqué dans notre politique de mot de passe.",
+        "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}",
+        "GENERIC": "Nous sommes désolés, votre nouveau mot de passe n'est pas conforme à notre politique. Veuillez réessayer."
+    },
+    "PLURAL_MAP": {
+        "MONTH": {
+            "=1": "mois",
+            "other": "mois"
+        }
+    },
+    "FORGOT_PASSWORD_PAGE_TITLE": "Réinitialiser mon mot de passe | SiriusXM "
+}

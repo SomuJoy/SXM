@@ -1,0 +1,14 @@
+<sxm-ui-card-with-cta [title]="'oemCommon.subscriptionConfirmationComponent.TITLE' | translate" class="card-with-no-button">
+    <p cardCopy>{{ "oemCommon.subscriptionConfirmationComponent.MESSAGE" | translate }}</p>
+    <p cardCopy>{{ "oemCommon.subscriptionConfirmationComponent.MESSAGE2" | translate }}</p>
+    <p
+        *ngIf="!settingsService.isCanadaMode; else importantInfoCA"
+        subCardCopy
+        class="legal-copy"
+        [innerHTML]="'oemCommon.subscriptionConfirmationComponent.LEGAL_COPY' | translate"
+    ></p>
+
+    <ng-template #importantInfoCA>
+        <important-info></important-info>
+    </ng-template>
+</sxm-ui-card-with-cta>

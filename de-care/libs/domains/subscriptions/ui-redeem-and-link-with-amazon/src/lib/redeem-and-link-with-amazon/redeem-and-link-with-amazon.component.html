@@ -1,0 +1,9 @@
+<sxm-ui-deal-redemption-instructions-with-cta
+    *ngIf="redemptionStatus === 'REDEEM'; else showStatus"
+    [copyContent]="dealRedemptionInstructions$ | async"
+    [buttonTextCopy]="translateKeyPrefix + 'CTA_BUTTON_LABEL' | translate"
+    (ctaClicked)="onCtaClicked()"
+></sxm-ui-deal-redemption-instructions-with-cta>
+<ng-template #showStatus>
+    <redemption-status [status]="redemptionStatus"></redemption-status>
+</ng-template>

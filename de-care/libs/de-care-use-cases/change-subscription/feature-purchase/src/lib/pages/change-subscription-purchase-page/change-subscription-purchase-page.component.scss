@@ -1,0 +1,168 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    @include page-content-markup(auto 1fr);
+}
+
+.trial-accordion-container {
+    width: 100%;
+}
+
+.skip-link-container {
+    margin-top: 28px;
+}
+
+.step-container {
+    padding-bottom: 16px;
+}
+
+sxm-ui-accordion-stepper.pick-your-package::ng-deep {
+    span.component--accordion-title.active {
+        margin-bottom: 8px;
+    }
+    .accordion-item:first-child {
+        padding-top: 0;
+    }
+}
+
+.current-plan-container {
+    margin-top: 1.5rem;
+    margin-left: 16px;
+    margin-bottom: 32px;
+    align-self: flex-start;
+
+    @include bp(medium) {
+        margin-left: 0;
+    }
+}
+
+.margin-top-1 {
+    margin-top: 1.5rem;
+}
+
+.follow-on-plans {
+    de-care-your-current-plan:first-child {
+        margin-top: 1.5rem;
+    }
+}
+
+order-summary {
+    margin-bottom: 32px;
+}
+
+.charge-form {
+    margin-top: 32px;
+}
+
+charge-agreement-with-validation {
+    margin-bottom: 24px;
+}
+
+$modal-padding: 40px;
+
+::ng-deep {
+    .plan-change-modal {
+        hr {
+            background-color: $gray-medium;
+            border: 0;
+            height: 1px;
+            margin: 16px 0 16px 0;
+        }
+        div.modal {
+            overflow: hidden;
+        }
+        div.modal--content {
+            padding: 32px 0 0 0;
+        }
+        &--header {
+            padding: 0 16px 40px;
+            @include bp(medium) {
+                padding: 0 0 40px;
+            }
+        }
+        &--diff {
+            background-color: $off-white;
+            padding-top: 16px;
+            margin: -16px -24px;
+            @include bp(medium) {
+                margin: -24px -40px;
+            }
+            &--container {
+                .list-item-for-x-mark {
+                    display: grid;
+                    grid-template-columns: min-content auto;
+                    .text-next-to-x-mark {
+                        padding-left: 5px;
+                    }
+                }
+                .icon-utility {
+                    display: inline-block;
+                    top: 2.5px;
+                    &.large {
+                        height: 16px;
+                        width: 16px;
+                        padding: 3px;
+                        @include bp(medium) {
+                            height: 18px;
+                            width: 18px;
+                            padding: 3px;
+                        }
+                    }
+                    .icon-x-mark-flex-stroke {
+                        stroke-width: 2;
+                        stroke: $black;
+                        margin-right: 10px;
+                    }
+                }
+                padding: 0 $modal-padding 32px;
+                &--header {
+                    font-weight: 500;
+                }
+                .keep-my-selection {
+                    margin-top: 16px;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+offer-infotainment-form {
+    display: block;
+    margin-top: 16px;
+}
+
+.selected-infotainment-names:not(:first-child) {
+    margin-top: 0.5rem;
+}
+
+.change-subscription-error-container {
+    hr {
+        background-color: $gray-medium;
+        border: 0;
+        height: 1px;
+        margin: 20px 0;
+    }
+}
+
+.change-subscription-error-pill {
+    padding-top: 20px;
+    sxm-ui-alert-pill {
+        background-color: $vanilla;
+        width: 100%;
+    }
+}
+
+.blue-background {
+    background-color: $blue;
+}
+
+.no-infotainment-selected-error-container {
+    margin-top: 32px;
+}
+
+.trial-first-step-header {
+    margin-bottom: 16px;
+}

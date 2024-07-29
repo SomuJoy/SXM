@@ -1,0 +1,33 @@
+@import "sxm.phoenix.imports";
+
+@keyframes fadeInslideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+:host-context(.dark-theme) {
+    sxm-ui-modal {
+        color: $black;
+    }
+}
+
+.gray-text {
+    font-weight: 500;
+    color: $gray-dark;
+}
+
+:host-context(.animate-component) {
+    .animate-block {
+        animation-name: fadeInslideUp;
+        animation-duration: 0.4s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: both;
+        animation-delay: 1.8s;
+    }
+}

@@ -1,0 +1,22 @@
+<p class="sign-in-instructions">
+    {{ translateKeyPrefix + "ALREADY_HAVE_LOGIN" | translate }}
+    <a class="text-link" (click)="signInRequested.emit()">{{ translateKeyPrefix + "SIGN_IN_LINK_TEXT" | translate }}</a>
+</p>
+<div *ngIf="showSystemError$ | async" class="invalid-feedback">
+    <p>{{ translateKeyPrefix + "SYSTEM_ERROR" | translate }}</p>
+</div>
+
+<div *ngIf="isInvalidFirstNameErrorsToForm" class="invalid-feedback">
+    <p>{{ translateKeyPrefix + "INVALID_FIRST_NAME" | translate }}</p>
+</div>
+<div *ngIf="isInvalidEmailErrorsToForm" class="invalid-feedback">
+    <p>{{ translateKeyPrefix + "INVALID_EMAIL" | translate }}</p>
+</div>
+
+<form [formGroup]="form">
+    <sxm-ui-flepz-form-fields formControlName="flepz" [submitted]="submitInitiated"></sxm-ui-flepz-form-fields>
+    <ng-content select="[privacyPolicy]"></ng-content>
+    <button type="button" (click)="onFormSubmit()" sxmUiDataClickTrack="submit" sxm-proceed-button [loading]="processingSubmission$ | async" data-e2e="FlepzFormSubmitButton">
+        {{ translateKeyPrefix + "CONTINUE_BUTTON_TEXT" | translate }}
+    </button>
+</form>

@@ -1,0 +1,27 @@
+{
+    "name": "domains-quotes-ui-order-summary",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/domains/quotes/ui-order-summary/src",
+    "projectType": "library",
+    "generators": {},
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/quotes/ui-order-summary/src/**/*.ts", "libs/domains/quotes/ui-order-summary/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/quotes/ui-order-summary/jest.config.js",
+                "tsConfig": "libs/domains/quotes/ui-order-summary/tsconfig.spec.json",
+                "setupFile": "libs/domains/quotes/ui-order-summary/src/test-setup.ts",
+                "configPath": "./jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": ["type:ui", "scope:domain-ui"]
+}

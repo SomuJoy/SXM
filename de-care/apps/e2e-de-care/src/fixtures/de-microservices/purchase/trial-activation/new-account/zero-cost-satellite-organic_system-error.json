@@ -1,0 +1,12 @@
+{
+    "status": "FAILURE",
+    "httpStatusCode": 500,
+    "httpStatus": "INTERNAL_SERVER_ERROR",
+    "error": {
+        "errorCode": "500",
+        "errorPropKey": "error.common.unhandled.generic.error",
+        "errorType": "SYSTEM",
+        "errorStackTrace": "AccountNumber:  | RadioId:  | x-forwarded-for: [10.128.33.186] | URL: /services/trial-activation/new-account | Exception: NullPointerException#null | StackTrace: PurchaseServiceRequest.java:241 | ErrorType: SYSTEM | ErrorMessage: null | FullStackTrace: ",
+        "logId": "141f734f-0bce-4ed4-b4a6-38a997e0493d"
+    }
+}

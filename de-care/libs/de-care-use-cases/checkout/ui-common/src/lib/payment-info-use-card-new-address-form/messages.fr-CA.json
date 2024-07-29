@@ -1,0 +1,11 @@
+{
+    "BILLING_DETAILS_TITLE": "Infos de paiement",
+    "SAVED_CARD": "Utilisez ma carte {{ type }} inscrite se terminant par {{ last4Digits }}",
+    "NEW_CC_PROMPT": "Entrez une nouvelle carte de crédit",
+    "NEW_CC_NOTE": "(Note : Celle-ci remplacera votre carte de crédit actuelle)",
+    "CONTINUE_BUTTON_TEXT": "Revoir Ma Commande",
+    "CONFIRM_YOUR_ADDRESS": "Veuillez confirmer votre adresse",
+    "PAYMENT_METHOD_NOT_SELECTED_ERROR": "Veuillez choisir une option de paiement",
+    "CREDIT_CARD_PROCESSING_ERROR": "Nous sommes dans l'impossibilité d'autoriser votre carte de crédit. Veuillez mettre à jour vos renseignements de paiement.",
+    "UNEXPECTED_ERROR": "Une erreur inattendue est apparue. Veuillez réessayer."
+}

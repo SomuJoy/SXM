@@ -1,0 +1,8 @@
+{
+    "image": {
+        "src": "assets/img/device-echodot-gen4.png"
+    },
+    "SUCCESS_TITLE": "<h5><b>Your accounts were linked.</b></h5><p>You have successfully enabled the SiriusXM skill on your new Amazon Alexa device.</p>",
+    "ERROR_TITLE": "<h5><b>Oops. Something went wrong.</b></h5><p>There was an issue linking your SiriusXM account to your Amazon account. Once you receive your device, refer to the Helpful links section in your Thank You email or <a class='no-underline' href='https://www.amazon.com/dp/B06X9NK3KD/' target='_blank'>visit our support page</a>.</p>",
+    "DESCRIPTION": "Redemption codes will be delivered upon verification and may take up to 2 weeks. Your Echo Dot is fulfilled directly by Amazon and delivery is subject to Amazon inventory availability and may take up to 8 weeks for delivery. Periods of high demand may cause delays, so redeem as soon as your codes are received."
+}

@@ -1,0 +1,11 @@
+@import "sxm.phoenix.imports";
+@import "components/buttons";
+
+.button-minor {
+    @include button;
+    background: transparent;
+    color: $blue;
+    &::before {
+        content: none;
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "name": "channel-discovery-e2e",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "apps/channel-discovery-e2e/src",
+    "projectType": "application",
+    "targets": {
+        "e2e": {
+            "executor": "@nrwl/cypress:cypress",
+            "options": {
+                "cypressConfig": "apps/channel-discovery-e2e/cypress.json",
+                "devServerTarget": "channel-discovery:serve:development"
+            },
+            "configurations": {
+                "production": {
+                    "devServerTarget": "channel-discovery:serve:production"
+                }
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["apps/channel-discovery-e2e/**/*.{js,ts}"]
+            }
+        }
+    },
+    "tags": [],
+    "implicitDependencies": ["channel-discovery"]
+}

@@ -1,0 +1,46 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    // resets
+    section {
+        padding: 0;
+        width: 100%;
+    }
+    a {
+        margin: 0;
+    }
+
+    display: grid;
+    row-gap: 24px;
+    justify-items: center;
+    text-align: center;
+    padding: 24px;
+    mat-icon {
+        color: $gray-dark;
+        height: 64px;
+        width: 64px;
+        display: block;
+    }
+    .plan-description {
+        display: grid;
+        row-gap: 8px;
+        justify-items: center;
+        text-align: center;
+        h4 {
+            margin: 0;
+            ::ng-deep {
+                span {
+                    color: $raspberry;
+                }
+            }
+        }
+        p {
+            text-align: center;
+        }
+    }
+    .ctas {
+        display: grid;
+        row-gap: 16px;
+    }
+}

@@ -1,0 +1,115 @@
+{
+    "root": true,
+    "ignorePatterns": ["**/*"],
+    "plugins": ["@nrwl/nx"],
+    "overrides": [
+        {
+            "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+            "rules": {
+                "@nrwl/nx/enforce-module-boundaries": [
+                    "error",
+                    {
+                        "allow": [],
+                        "depConstraints": [
+                            {
+                                "sourceTag": "*",
+                                "onlyDependOnLibsWithTags": ["*"]
+                            },
+                            {
+                                "sourceTag": "scope:de-care-use-case-feature-main",
+                                "onlyDependOnLibsWithTags": [
+                                    "scope:de-care-use-case-feature",
+                                    "scope:de-care-use-case-feature-state",
+                                    "scope:de-care-use-case-feature-ui",
+                                    "scope:de-care-use-case-shared-ui",
+                                    "scope:shared-ui",
+                                    "scope:shared-ui-util",
+                                    "scope:shared-util",
+                                    "scope:domain-ui",
+                                    "scope:shared-behaviors"
+                                ]
+                            },
+                            {
+                                "sourceTag": "scope:de-care-use-case-feature",
+                                "onlyDependOnLibsWithTags": [
+                                    "scope:de-care-use-case-sub-feature",
+                                    "scope:de-care-use-case-feature-state",
+                                    "scope:de-care-use-case-feature-ui",
+                                    "scope:de-care-use-case-shared-ui",
+                                    "scope:shared-ui",
+                                    "scope:shared-ui-util",
+                                    "scope:shared-util",
+                                    "scope:domain-ui",
+                                    "scope:shared-behaviors"
+                                ]
+                            },
+                            {
+                                "sourceTag": "scope:de-care-use-case-sub-feature",
+                                "onlyDependOnLibsWithTags": [
+                                    "scope:de-care-use-case-feature-state",
+                                    "scope:de-care-use-case-feature-ui",
+                                    "scope:de-care-use-case-shared-ui",
+                                    "scope:shared-ui",
+                                    "scope:shared-ui-util",
+                                    "scope:shared-util",
+                                    "scope:domain-ui",
+                                    "scope:shared-behaviors"
+                                ]
+                            },
+                            {
+                                "sourceTag": "scope:de-care-use-case-feature-state",
+                                "onlyDependOnLibsWithTags": [
+                                    "scope:de-care-use-case-feature-state",
+                                    "scope:de-care-use-case-shared-state",
+                                    "scope:shared-state",
+                                    "scope:domain-state",
+                                    "scope:shared-util",
+                                    "scope:shared-behaviors"
+                                ]
+                            },
+                            {
+                                "sourceTag": "scope:domain-state",
+                                "onlyDependOnLibsWithTags": ["scope:shared-util", "scope:domain-state", "scope:shared-behaviors", "scope:shared-router-state"]
+                            },
+                            {
+                                "sourceTag": "scope:shared-ui",
+                                "onlyDependOnLibsWithTags": [
+                                    "scope:shared-ui",
+                                    "scope:shared-util",
+                                    "scope:shared-ui-util",
+                                    "scope:shared-behaviors-ui",
+                                    "scope:storybook-helpers-deprecated"
+                                ]
+                            },
+                            {
+                                "sourceTag": "scope:domain-ui",
+                                "onlyDependOnLibsWithTags": [
+                                    "scope:shared-ui",
+                                    "scope:shared-ui-util",
+                                    "scope:shared-util",
+                                    "scope:domain-ui",
+                                    "scope:shared-behaviors-ui",
+                                    "scope:domain-state"
+                                ]
+                            },
+                            {
+                                "sourceTag": "id:domains-data-layer-state-tracking",
+                                "onlyDependOnLibsWithTags": ["scope:shared-util", "scope:shared-behaviors", "scope:shared-behaviors-ui"]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "files": ["*.ts", "*.tsx"],
+            "extends": ["plugin:@nrwl/nx/typescript"],
+            "rules": {}
+        },
+        {
+            "files": ["*.js", "*.jsx"],
+            "extends": ["plugin:@nrwl/nx/javascript"],
+            "rules": {}
+        }
+    ]
+}

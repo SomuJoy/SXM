@@ -1,0 +1,243 @@
+<div *ngIf="registrationCompleted; else accountForm" class="small-12 align-left register-account-thanks">
+    <p>
+        <mat-icon svgIcon="checkmark"></mat-icon>
+        <b>{{ "register.RegisterYourAccountComponent.SUCCESS_MSG" | translate }}</b>
+    </p>
+</div>
+<ng-template #accountForm>
+    <div class="row register-account-header no-padding">
+        <div class="column small-12 align-left no-padding">
+            <h5 qatag="RegisterHeader">{{ "register.RegisterYourAccountComponent." + registerAccountType + ".REG_HEADER" | translate }}</h5>
+        </div>
+        <div *ngIf="credentialState !== CredentialStates.None" class="column small-12 align-left no-padding">
+            <p qatag="RegisterText">
+                {{
+                    "register.RegisterYourAccountComponent." + registerAccountType + "." + (credentialState.showUsername ? "HEADER_EMAIL_ALREADY_USED" : "HEADER")
+                        | translate: registerObject
+                }}
+            </p>
+            <p *ngIf="registerAccountType !== RegisterAccountTypeEnum.TrialActivation" qatag="RegisterText">
+                <b>{{ "register.RegisterYourAccountComponent.EMAIL.HEADER" | translate }}</b>
+                <br />
+                {{ isTwoFactorAuthNeeded ? (registerObject.email | maskEmail: 3) : registerObject.email }}
+            </p>
+        </div>
+        <div *ngIf="credentialState === CredentialStates.None" class="column small-12 align-left no-padding">
+            <p qatag="RegisterText">
+                {{ "register.RegisterYourAccountComponent.COMPLETE.HEADER" | translate: registerObject }}
+            </p>
+        </div>
+    </div>
+    <form *ngIf="registerFg" [formGroup]="registerFg" class="register-account-form" (ngSubmit)="registerFormSubmit()" #paymentFormRef="ngForm" novalidate>
+        <div class="row no-padding" *ngIf="credentialState.showUsername">
+            <div class="column small-12 no-padding">
+                <div class="input-container" [class.invalid]="controlIsInvalid(registerFgControls.userName)">
+                    <label for="regActUserName">{{ "register.RegisterYourAccountComponent.REGISTER_FORM.USERNAME.LABEL" | translate }}</label>
+                    <input id="regActUserName" formControlName="userName" type="text" onFocus />
+                </div>
+                <div *ngIf="controlIsInvalid(registerFgControls.userName)" class="invalid-feedback">
+                    <p *ngIf="registerFgControls.userName.errors.required">{{ "register.RegisterYourAccountComponent.REGISTER_FORM.USERNAME.ERRORS.REQUIRED" | translate }}</p>
+                    <p *ngIf="registerFgControls.userName.errors.usernameInUse">
+                        {{ "register.RegisterYourAccountComponent.REGISTER_FORM.USERNAME.ERRORS.USERNAME_IN_USE" | translate }}
+                    </p>
+                    <p *ngIf="registerFgControls.userName.errors.invalidUsername">
+                        {{ "register.RegisterYourAccountComponent.REGISTER_FORM.USERNAME.ERRORS.INVALID_USERNAME" | translate }}
+                    </p>
+                    <p *ngIf="registerFgControls.userName.errors.pattern">{{ "register.RegisterYourAccountComponent.REGISTER_FORM.USERNAME.ERRORS.PATTERN" | translate }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row no-padding" *ngIf="credentialState.showPassword && registerFg.contains('password')">
+            <div class="column small-12 no-padding">
+                <sxm-ui-password-strength
+                    formControlName="password"
+                    [labelText]="'register.RegisterYourAccountComponent.REGISTER_FORM.PASSWORD.LABEL' | translate"
+                    qatagName="RegisterPassword"
+                    id="regActPass"
+                    [reservedWords]="reservedWords"
+                    [passwordGenericError]="passwordGenericError"
+                    [alwaysDisplayPasswordHint]="alwaysDisplayPasswordHint"
+                    [class.invalid]="controlIsInvalid(registerFgControls.password)"
+                    (hintToggled)="passwordHintVisible = $event"
+                    #passwordComponentRef
+                ></sxm-ui-password-strength>
+                <div *ngIf="controlIsInvalid(registerFgControls.password) && !passwordHintVisible" class="invalid-feedback">
+                    <p *ngIf="registerFgControls.password.hasError('required')">
+                        {{ "register.RegisterYourAccountComponent.REGISTER_FORM.PASSWORD.ERRORS.REQUIRED" | translate }}
+                    </p>
+                    <p *ngIf="registerFgControls.password.hasError('length')">
+                        {{ "register.RegisterYourAccountComponent.REGISTER_FORM.PASSWORD.ERRORS.LENGTH" | translate: registerFgControls.password.errors.length }}
+                    </p>
+                    <p *ngIf="registerFgControls.password.hasError('policy')">
+                        {{ "register.RegisterYourAccountComponent.REGISTER_FORM.PASSWORD.ERRORS.POLICY" | translate }}
+                    </p>
+                    <p *ngIf="registerFgControls.password.hasError('generic')">
+                        {{ "register.RegisterYourAccountComponent.REGISTER_FORM.PASSWORD.ERRORS.GENERIC" | translate }}
+                    </p>
+                    <p *ngIf="registerFgControls.password.errors?.reservedWords as reservedWordsError">
+                        {{
+                            "register.RegisterYourAccountComponent.REGISTER_FORM.PASSWORD.ERRORS.RESERVED_WORDS"
+                                | translate
+                                    : {
+                                          pluralWord: reservedWordsError.words.length | i18nPlural: ("register.RegisterYourAccountComponent.PLURAL_MAP.WORD" | translate),
+                                          reservedWords: reservedWordsError.words.join(", ")
+                                      }
+                        }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <ng-container *ngIf="displaysecurityQuestions">
+            <div class="row register-account-subheader no-padding" data-e2e="registerYourAccount.securityQuestions">
+                <div class="column small-12 align-left text-color-gray-medium no-padding">
+                    <p qatag="RegisterSecurityQSubheader">
+                        <b>{{ "register.RegisterYourAccountComponent.REGISTER_FORM.SECURITY_QUESTIONS.HEADER" | translate }}</b>
+                    </p>
+                </div>
+            </div>
+            <div class="row no-padding">
+                <div class="column small-12 no-padding">
+                    <sxm-ui-dropdown
+                        [filterSelected]="true"
+                        [passedValue]="registerObject.security | recoverPasswordQuestions: registerFgControls.question1.value:registerFgControls.question2.value"
+                        text="question"
+                        key="id"
+                        class="dropdown"
+                        [labelText]="'register.RegisterYourAccountComponent.REGISTER_FORM.SECURITY_QUESTIONS.LABEL' | translate"
+                        tabindex="0"
+                        formControlName="question0"
+                        qatag="RegisterQ1"
+                        data-e2e="security.question1"
+                        [class.invalid]="controlIsInvalid(registerFgControls.question0)"
+                    >
+                    </sxm-ui-dropdown>
+                    <div *ngIf="controlIsInvalid(registerFgControls.question0)" class="invalid-feedback">
+                        <p *ngIf="registerFgControls.question0.errors.required">
+                            {{ "register.RegisterYourAccountComponent.REGISTER_FORM.SECURITY_QUESTIONS.ERRORS.SELECT_A_QUESTION" | translate }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row no-padding">
+                <div class="column small-12 no-padding">
+                    <div class="input-container" [class.invalid]="controlIsInvalid(registerFgControls.answer0)" qatag="RegisterA1" data-test="securityQuestionAnswer1">
+                        <label for="regActSecAnswer0">{{ "register.RegisterYourAccountComponent.REGISTER_FORM.SECURITY_QUESTIONS.ANSWER" | translate }}</label>
+                        <input id="regActSecAnswer0" formControlName="answer0" type="text" minlength="3" onFocus data-e2e="security.answer1" />
+                    </div>
+                    <div *ngIf="controlIsInvalid(registerFgControls.answer0)" class="invalid-feedback">
+                        <p *ngIf="registerFgControls.answer0.errors.required">
+                            {{ "register.RegisterYourAccountComponent.REGISTER_FORM.SECURITY_QUESTIONS.ERRORS.REQUIRED" | translate }}
+                        </p>
+                        <p *ngIf="registerFgControls.answer0.errors.minlength">
+                            {{ "register.RegisterYourAccountComponent.REGISTER_FORM.SECURITY_QUESTIONS.ERRORS.MIN_LENGTH" | translate }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row no-padding">
+                <div class="column small-12 no-padding">
+                    <sxm-ui-dropdown
+                        [filterSelected]="true"
+                        [passedValue]="registerObject.security | recoverPasswordQuestions: registerFgControls.question0.value:registerFgControls.question2.value"
+                        text="question"
+                        key="id"
+                        class="dropdown"
+                        [labelText]="'register.RegisterYourAccountComponent.REGISTER_FORM.SECURITY_QUESTIONS.LABEL' | translate"
+                        tabindex="0"
+                        formControlName="question1"
+                        qatag="RegisterQ2"
+                        data-e2e="security.question2"
+                        [class.invalid]="controlIsInvalid(registerFgControls.question1)"
+                    >
+                    </sxm-ui-dropdown>
+                    <div *ngIf="controlIsInvalid(registerFgControls.question1)" class="invalid-feedback">
+                        <p *ngIf="registerFgControls.question1.errors.required">
+                            {{ "register.RegisterYourAccountComponent.REGISTER_FORM.SECURITY_QUESTIONS.ERRORS.SELECT_A_QUESTION" | translate }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row no-padding">
+                <div class="column small-12 no-padding">
+                    <div class="input-container" [class.invalid]="controlIsInvalid(registerFgControls.answer1)" qatag="RegisterA2" data-test="securityQuestionAnswer2">
+                        <label for="regActSecAnswer1">{{ "register.RegisterYourAccountComponent.REGISTER_FORM.SECURITY_QUESTIONS.ANSWER" | translate }}</label>
+                        <input id="regActSecAnswer1" formControlName="answer1" type="text" minlength="3" onFocus data-e2e="security.answer2" />
+                    </div>
+                    <div *ngIf="controlIsInvalid(registerFgControls.answer1)" class="invalid-feedback">
+                        <p *ngIf="registerFgControls.answer1.errors.required">
+                            {{ "register.RegisterYourAccountComponent.REGISTER_FORM.SECURITY_QUESTIONS.ERRORS.REQUIRED" | translate }}
+                        </p>
+                        <p *ngIf="registerFgControls.answer1.errors.minlength">
+                            {{ "register.RegisterYourAccountComponent.REGISTER_FORM.SECURITY_QUESTIONS.ERRORS.MIN_LENGTH" | translate }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row no-padding">
+                <div class="column small-12 no-padding">
+                    <sxm-ui-dropdown
+                        [class.invalid]="controlIsInvalid(registerFgControls.question2)"
+                        [filterSelected]="true"
+                        [passedValue]="registerObject.security | recoverPasswordQuestions: registerFgControls.question0.value:registerFgControls.question1.value"
+                        text="question"
+                        key="id"
+                        class="dropdown"
+                        [labelText]="'register.RegisterYourAccountComponent.REGISTER_FORM.SECURITY_QUESTIONS.LABEL' | translate"
+                        tabindex="0"
+                        formControlName="question2"
+                        data-e2e="security.question3"
+                        qatag="RegisterQ3"
+                    >
+                    </sxm-ui-dropdown>
+                    <div *ngIf="controlIsInvalid(registerFgControls.question2)" class="invalid-feedback">
+                        <p *ngIf="registerFgControls.question2.errors.required">
+                            {{ "register.RegisterYourAccountComponent.REGISTER_FORM.SECURITY_QUESTIONS.ERRORS.SELECT_A_QUESTION" | translate }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row no-padding">
+                <div class="column small-12 no-padding">
+                    <div class="input-container" [class.invalid]="controlIsInvalid(registerFgControls.answer2)" qatag="RegisterA3" data-test="securityQuestionAnswer3">
+                        <label for="regActSecAnswer2">{{ "register.RegisterYourAccountComponent.REGISTER_FORM.SECURITY_QUESTIONS.ANSWER" | translate }}</label>
+                        <input id="regActSecAnswer2" formControlName="answer2" type="text" minlength="3" onFocus data-e2e="security.answer3" />
+                    </div>
+                    <div *ngIf="controlIsInvalid(registerFgControls.answer2)" class="invalid-feedback">
+                        <p *ngIf="registerFgControls.answer2.errors.required">
+                            {{ "register.RegisterYourAccountComponent.REGISTER_FORM.SECURITY_QUESTIONS.ERRORS.REQUIRED" | translate }}
+                        </p>
+                        <p *ngIf="registerFgControls.answer2.errors.minlength">
+                            {{ "register.RegisterYourAccountComponent.REGISTER_FORM.SECURITY_QUESTIONS.ERRORS.MIN_LENGTH" | translate }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </form>
+
+    <div class="row no-padding">
+        <div class="column small-12 align-left no-padding">
+            <a class="text-link privacy-policy" href="{{ 'register.RegisterYourAccountComponent.PRIVACY_POLICY.LINK_URL' | translate }}" target="_blank">
+                {{ "register.RegisterYourAccountComponent.PRIVACY_POLICY.LINK_TEXT" | translate }}
+            </a>
+        </div>
+    </div>
+    <div class="row align-center no-padding">
+        <div class="column small-12 no-padding">
+            <button
+                class="button secondary text-center align-justify full-width"
+                type="submit"
+                qatag="RegisterButton"
+                [loading]="isProcessingRegistration$ | async"
+                sxm-proceed-button
+                (click)="registerFormContinue()"
+                (mouseenter)="mouseEnterOnRegisterButton()"
+                (mouseleave)="mouseLeaveOnContinueButton()"
+                #registerButtonRef
+                data-e2e="register.button"
+            >
+                {{ "register.RegisterYourAccountComponent.REGISTER" | translate }}
+            </button>
+        </div>
+    </div>
+</ng-template>

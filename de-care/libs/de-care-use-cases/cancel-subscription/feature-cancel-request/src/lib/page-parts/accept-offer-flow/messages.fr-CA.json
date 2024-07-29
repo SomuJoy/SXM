@@ -1,0 +1,16 @@
+{
+    "STEP_PAGE_TITLES": {
+        "PICK_PACKAGE": "Choisir votre forfait",
+        "PICK_TERM": "Choisir votre forfait de facturation",
+        "ENTER_PAYMENT_INFO": "Entrez vos renseignements de paiement",
+        "REVIEW": "Revoyez et terminez votre commande"
+    },
+    "STEP_EDIT_LABEL": "Modifier",
+    "SELECTED_TERM_ANNUAL": "Annuel  - {{amount}}/an",
+    "SELECTED_TERM_MONTHLY": "{{termLength}} Mois pour {{amount}}/mois",
+    "SELECTED_TERM_SEMI_ANNUAL": "{{termLength}} Mois pour {{amount}}",
+    "SELECTED_TERM_OTHER": "{{termLength}} Mois pour {{amount}}",
+    "SELECTED_TERM_MONTH_TO_MONTH": "Mensuel - {{amount}}/mois",
+    "PAYMENT_INFO_INACTIVE": "{{cardType}} se terminant par {{cardNumber}}",
+    "SUBMIT_CHANGE_BUTTON": "Terminer Ma Commande"
+}

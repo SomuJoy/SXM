@@ -1,0 +1,9 @@
+<router-outlet></router-outlet>
+<sxm-ui-loading-overlay-sxm-logo *ngIf="showFullViewLoader$ | async"></sxm-ui-loading-overlay-sxm-logo>
+<sxm-ui-loading-with-alert-message
+    *ngIf="displayIneligibleLoader$ | async"
+    [isLoading]="true"
+    [pillMessage]="fallbackMessageKeyPrefix + '.ALERT' | translate"
+    [paragraph]="fallbackMessageKeyPrefix + '.BODY' | translate"
+    (loadingCompleted)="onLoadingWithAlertMessageComplete($event)"
+></sxm-ui-loading-with-alert-message>

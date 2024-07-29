@@ -1,0 +1,24 @@
+{
+    "name": "shared-sxm-ui-quotes-ui-quote-skeletons",
+    "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/sxm-ui/quotes/ui-quote-skeletons/src",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/shared/sxm-ui/quotes/ui-quote-skeletons"],
+            "options": {
+                "jestConfig": "libs/shared/sxm-ui/quotes/ui-quote-skeletons/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/sxm-ui/quotes/ui-quote-skeletons/**/*.ts", "libs/shared/sxm-ui/quotes/ui-quote-skeletons/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:ui", "scope:shared-ui"]
+}

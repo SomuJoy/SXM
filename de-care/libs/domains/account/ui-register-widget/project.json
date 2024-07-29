@@ -1,0 +1,25 @@
+{
+    "name": "domains-account-ui-register-widget",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/account/ui-register-widget/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/domains/account/ui-register-widget"],
+            "options": {
+                "jestConfig": "libs/domains/account/ui-register-widget/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/account/ui-register-widget/src/**/*.ts", "libs/domains/account/ui-register-widget/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:ui", "scope:domain-ui"]
+}

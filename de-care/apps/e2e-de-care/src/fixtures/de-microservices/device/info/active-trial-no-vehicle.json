@@ -1,0 +1,35 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "deviceInformation": {
+            "radioId": "X65100BL",
+            "deviceStatus": "ESN in use",
+            "primaryBrandId": "12177",
+            "primaryDealerId": "0",
+            "secondaryBrandId": "12177",
+            "secondaryDealerId": "0",
+            "promoCode": "LEX3AUTRWETL",
+            "vehicle": {
+                "vin": null,
+                "year": null,
+                "make": null,
+                "model": null
+            },
+            "service": {
+                "accountNumber": "10000210311",
+                "status": "Active",
+                "provisionDate": null,
+                "plan": {
+                    "name": "OEM Trial - Music & Entertainment - 3mo - 0.00",
+                    "packageType": "SIR_AUD_EVT",
+                    "startDate": "2022-09-16-04:00",
+                    "endDate": "2022-12-16-05:00",
+                    "renewalDate": null
+                }
+            },
+            "capabilityList": ["AUD", "BOF", "OVR"]
+        }
+    }
+}

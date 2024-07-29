@@ -1,0 +1,9 @@
+{
+    "TITLE": "Configurez votre paiement",
+    "CANCEL_ANYTIME": "Annulez en tout temps.",
+    "INELIGIBLE_LOADING_ALERT": "Cette offre est réservée aux nouveaux abonnés, mais voici une autre option pour vous.",
+    "INELIGIBLE_LOADING_BODY": "Trouver un autre bon plan pour vous.",
+    "CONTINUE_BUTTON_TEXT": "Terminer Ma Commande",
+    "FEES_AND_TAXES_APPLY": "",
+    "PRICE_AND_TERM_SUBTEXT": "Des frais de {{etfAmount}} de résiliation anticipée peuvent s’appliquer si vous annulez dans les premiers {{etfTerm}} mois."
+}

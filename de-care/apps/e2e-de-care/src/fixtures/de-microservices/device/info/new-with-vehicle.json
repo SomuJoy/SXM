@@ -1,0 +1,19 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "deviceInformation": {
+            "radioId": "B3R0004H",
+            "deviceStatus": "ESN not in use",
+            "primaryBrandId": "7777",
+            "primaryDealerId": "0",
+            "secondaryBrandId": "7777",
+            "secondaryDealerId": "0",
+            "promoCode": null,
+            "vehicle": { "vin": null, "year": 2022, "make": "Kia", "model": "Telluride" },
+            "service": null,
+            "capabilityList": ["AUD", "BOF"]
+        }
+    }
+}

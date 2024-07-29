@@ -1,0 +1,5 @@
+{
+    "HEADER": "There is no payment due at this time.",
+    "DESCRIPTION": "You will automatically be charged on {{date}}.",
+    "DATE_FORMAT": "M/d/yy"
+}

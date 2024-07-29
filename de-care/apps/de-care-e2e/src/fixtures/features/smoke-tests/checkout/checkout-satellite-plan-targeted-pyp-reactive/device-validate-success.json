@@ -1,0 +1,13 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "last4DigitsOfRadioId": "00AH",
+        "deviceStatus": "USED",
+        "channelId": "102",
+        "primaryBrandId": "12177",
+        "capabilityList": ["AUD", "BOF", "OVR"],
+        "promoCode": "LEX3AUTRWETL"
+    }
+}

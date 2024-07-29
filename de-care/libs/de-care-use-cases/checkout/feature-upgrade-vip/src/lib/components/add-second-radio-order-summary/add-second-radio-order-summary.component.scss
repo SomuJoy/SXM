@@ -1,0 +1,12 @@
+sxm-ui-standalone-line-item {
+    margin-top: 12px;
+    display: block;
+    &::ng-deep {
+        table {
+            border: 1px solid #d4d4d4;
+            td {
+                padding: 8px 12px;
+            }
+        }
+    }
+}

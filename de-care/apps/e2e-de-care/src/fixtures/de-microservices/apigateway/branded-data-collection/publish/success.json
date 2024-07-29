@@ -1,0 +1,11 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "code": "0",
+        "data": true,
+        "error": false,
+        "message": "Success"
+    }
+}

@@ -1,0 +1,55 @@
+@import "sxm.phoenix.imports";
+
+.input-label {
+    a {
+        color: $blue-secondary;
+    }
+}
+.small-copy {
+    color: $gray-dark;
+}
+
+.display-flex {
+    display: flex;
+}
+
+:host-context(.oem-theme) {
+    .checkbox-item {
+        .checkbox {
+            &:checked + label::after {
+                top: 10px;
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        label {
+            padding-left: 48px;
+
+            &::before {
+                top: 6px;
+                width: 36px;
+                height: 36px;
+                border: 0;
+            }
+        }
+    }
+
+    a {
+        color: inherit;
+    }
+}
+
+.pseudo-link {
+    text-decoration: underline;
+    white-space: normal;
+    color: $blue-secondary;
+    cursor: pointer;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.checkbox-item .input-label.small-copy {
+    @include font-size(12px);
+    line-height: 1.5;
+}

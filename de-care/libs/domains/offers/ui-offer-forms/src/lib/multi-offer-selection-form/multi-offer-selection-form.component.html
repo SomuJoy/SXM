@@ -1,0 +1,36 @@
+<form
+    *ngIf="offerOptions?.mainOffers?.length > 0 || offerOptions?.additionalOffers?.length > 0"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+    data-test="multiPackageSelectionForm"
+    data-e2e="multiPackageSelectionForm"
+>
+    <div *ngIf="validationError$ | async" class="invalid-feedback">
+        <ng-content select="[validationErrorCopy]"></ng-content>
+    </div>
+    <offer-card-form-field-option
+        *ngFor="let offer of offerOptions?.mainOffers; trackBy: trackBy"
+        formControlName="planCode"
+        [formControl]="optionFormControl"
+        [formGroup]="form"
+        [hideHead]="offerOptions?.mainOffers?.length === 1 && (!offerOptions?.additionalOffers || offerOptions?.additionalOffers?.length === 0)"
+        [offerOptionData]="offer"
+    ></offer-card-form-field-option>
+    <sxm-ui-accordion-chevron
+        *ngIf="offerOptions?.additionalOffers?.length > 0"
+        class="extra-top-margin remove-padding"
+        [collapsedText]="translateKeyPrefix + 'VIEW_MORE_PACKAGES' | translate"
+        [expandedText]="translateKeyPrefix + 'HIDE_PACKAGES' | translate"
+    >
+        <offer-card-form-field-option
+            *ngFor="let offer of offerOptions?.additionalOffers"
+            formControlName="planCode"
+            [formControl]="optionFormControl"
+            [formGroup]="form"
+            [offerOptionData]="offer"
+        ></offer-card-form-field-option>
+    </sxm-ui-accordion-chevron>
+    <button data-test="multiPackageSelectionFormSubmitButton" sxm-proceed-button [loading]="processing$ | async" type="submit">
+        {{ submitButtonLabel || translateKeyPrefix + "SUBMIT_BUTTON_LABEL" | translate }}
+    </button>
+</form>

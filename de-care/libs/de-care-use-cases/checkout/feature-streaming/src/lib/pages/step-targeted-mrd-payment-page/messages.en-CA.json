@@ -1,0 +1,9 @@
+{
+    "TITLE": "Set up your payment",
+    "BODY": "Cancel anytime.",
+    "CONTINUE_BUTTON_TEXT": "Review Order",
+    "INELIGIBLE_LOADING_ALERT": "That offer is for new subscribers, but here’s another option for you.",
+    "INELIGIBLE_LOADING_BODY": "Finding another great plan for you.",
+    "MRD_RECAP_CARD": "<strong>{{platformAndPlanName}} ({{channelCount}}+ Channels)</strong><br/>{{mrdPrice}}/mo plus fees with Multi-Radio Discount. <s>Reg. {{msrpPrice}}/mo</s>",
+    "MRD_RECAP_CARD_QUEBEC": "<strong>{{platformAndPlanName}} ({{channelCount}}+ Channels)</strong><br/>{{mrdPrice}}/mo with Multi-Radio Discount. <s>Reg. {{msrpPrice}}/mo</s>"
+}

@@ -1,0 +1,8 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.sub-header {
+    @include lead-in;
+    margin-bottom: 20px;
+    font-size: calculate-rem(14px);
+}

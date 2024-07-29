@@ -1,0 +1,28 @@
+<section class="plan-description">
+    <mat-icon svgIcon="add-car"></mat-icon>
+    <h4
+        [innerHTML]="
+            translateKeyPrefix + '.TITLE_WITH_PRICE'
+                | translate
+                    : {
+                          monthsPluralized: data.termLength | i18nPlural: (translateKeyPrefix + '.PLURAL_MAP.MONTH' | translate),
+                          termLength: data?.termLength,
+                          price: data?.price | sxmUiCurrency
+                      }
+        "
+    ></h4>
+    <p>
+        {{ translateKeyPrefix + ".DISCLAIMER" + (data?.price === 0 ? "_NO_FEES_NO_TAXES" : data.noFees ? "_NO_FEES" : "") | translate }}
+    </p>
+</section>
+<section class="ctas">
+    <a
+        class="button primary full-width button-link"
+        (click)="addCarSubscriptionButtonClick.next(null)"
+        [sxmUiDataClickTrack]="data?.clickTrackType || 'ui'"
+        data-test="addCarSubscriptionButton"
+    >
+        {{ translateKeyPrefix + ".ADD_SUB_CTA_BUTTON_LABEL" | translate }}
+    </a>
+    <ng-content select="[extraCta]"></ng-content>
+</section>

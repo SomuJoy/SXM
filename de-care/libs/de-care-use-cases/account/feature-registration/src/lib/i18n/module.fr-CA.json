@@ -1,0 +1,143 @@
+{
+    "deCareUseCasesAccountFeatureRegistration": {
+        "Shared": {
+            "PAGE_TITLE": "Register Your Account"
+        },
+        "identificationPageComponent": {
+            "TITLE": "Enregistrez votre compte",
+            "INSTRUCTIONS": "<strong>Gérer vos abonnements, vos modes de paiement et configurer vos identifiants d'écoute en continu — ce ne sont que quelques-unes des actions que vous pouvez effectuer quand vous enregistrez votre compte SiriusXM.</strong>",
+            "HAVE_ACCOUNT": "Vous avez déjà un compte?",
+            "UNEXPECTED_ERROR": "Nous sommes désolés. Un problème est survenu. Veuillez réessayer.",
+            "SIGN_IN": "Connexion",
+            "CONTINUE_BUTTON": "Continuer",
+            "CTA": {
+                "VANITY_URL": "https://care.siriusxm.ca?langpref=fr"
+            }
+        },
+        "selectAccountAndVerifyComponent": {
+            "TITLE_MULTIPLE_ACCOUNTS": "Nous avons trouvé quelques comptes qui correspondent à vos infos.",
+            "TITLE": "Nous avons trouvé un compte qui correspond à vos infos.",
+            "NOTE_MULTIPLE_ACCOUNTS": "Choisissez le compte que vous aimeriez vérifier.",
+            "LINK_ACCOUNT_TEXT": "Vous ne voyez pas votre compte?",
+            "CONTINUE_BUTTON": "Continuer",
+            "ACCOUNT_LOOKUP_MODAL": {
+                "MODAL_TITLE": "Recherche de compte",
+                "TITLE": "Trouvons votre compte",
+                "DESCRIPTION": "Utilisez l'une des options de recherche de compte cidessous."
+            }
+        },
+        "accountLookupPageComponent": {
+            "TITLE": "Aucun compte trouvé",
+            "SUBTITLE": "Essayons autre chose. Entrez le code de votre radio ou le numéro de compte pour trouver votre compte."
+        },
+        "UiLookupByRadioIdOrAccountNumberComponent": {
+            "RADIO_ID_LABEL": "Entrez le code de radio",
+            "RADIO_ID_PLACEHOLDER": "Code de radio",
+            "RADIO_LABEL": "Comment puis-je trouver mon code de radio?",
+            "RADIO_LINK_TITLE": "Aide pour code de radio",
+            "DEVICE_HELP": "Aide relative à l'appareil",
+            "ACCOUNT_NUMBER_LABEL": "Entrez le numéro de compte",
+            "ACCOUNT_NUMBER_PLACEHOLDER": "Numéro de compte",
+            "TOOLTIP": "Votre code de radio comprend 8 ou 12 caractères.",
+            "ERROR_MESSAGE_RADIO_ID": "Entrez un code de radio valide.",
+            "ERROR_MESSAGE_ACCOUNT_NUMBER": "Entrez un numéro de compte valide.",
+            "ERROR_ACCOUNT_CANNOT_BE_VERIFIED": "Un problème empêche l'enregistrement de votre compte. Veuillez clavarder avec un préposé pour obtenir de l'aide.",
+            "RADIO_UNBRANDED_ERROR": "Cette radio ne peut pas être gérée actuellement en ligne. Si vous avez acheté votre véhicule au cours des sept derniers jours, ce pourrait être parce que nous n'avons pas encore reçu l'information concernant la vente. Pour une aide immédiate, veuillez appeler le service à la clientèle au <a href='tel:18666350565' target='_blank'>1 866 635-0565</a>.",
+            "ACCOUNT_NUMBER_ERROR": "Le numéro entré ne correspond pas au numéro de votre compte. Veuillez essayer de nouveau ou appeler le service à la clientèle au <a href='tel:18666350565' target='_blank'>1 866 635-0565</a>.",
+            "CONTINUE_BUTTON": "CONTINUER",
+            "RADIO_ID_INVALID": "Le code de radio que vous avez entré ne correspond pas à nos dossiers. Veuillez essayer de nouveau ou appeler le service à la clientèle au <a href='tel:18666350565' target='_blank'>1 866 635-0565</a>."
+        },
+        "HelpFindRadioIdModalComponent": {
+            "RADIO_LINK_TITLE": "Aide pour code de radio",
+            "RADIO_LINK_SUBTITLE": "Comment puis-je trouver mon code de radio?",
+            "RADIO_LINK_INSTRUCTIONS": "<p>Syntonisez votre radio à la station 0 et le code de radio devrait s’afficher.<br /><br />Pour certaines radios Sirius. Vous devrez presser et maintenir appuyé le bouton SAT ou ESN, ou accéder aux fonctions du menu de votre radio.",
+            "RADIO_SIRIUS_LINK": "https://www.siriusxm.ca/trouverradio",
+            "RADIO_LINK_SIRIUS_LINK_TEXT": "Obtenir plus d’aide pour les radios Sirius",
+            "RADIO_LINK_MARINE_AVIATIONS_LINK": "Obtenir de l’aide pour les appareils de marine et d’aviation"
+        },
+        "LookupYourMarineOrAviationDeviceModalComponent": {
+            "DEVICE_HELP": "Aide relative à l'appareil",
+            "TITLE": "Recherchez le code de votre appareil de marine ou d'aviation",
+            "MESSAGE": "<strong>Vous pouvez rechercher le code de votre appareil en différents endroits.</strong>",
+            "NOTE": "Note : les codes d'appareils comprennent 8 caractères.",
+            "UNORDERED_LIST": {
+                "item-1": "Pour la plupart des appareils, accédez à votre menu <strong>Diagnostics</strong> ou <strong>Settings</strong> (Paramètres), puis regardez si votre code d'appareil est indiqué.",
+                "item-2": "Vous pouvez aussi voir le code d'appareil au bas de votre appareil ou sur l'emballage. Dans la plupart des cas, vous le trouverez <strong>à côté du numéro de série.</strong>",
+                "item-3": "Si votre appareil dispose aussi de capacités sonores, vous pourriez <strong>syntoniser la station 0</strong> qui affichera le code de votre appareil."
+            }
+        },
+        "CNAComponent": {
+            "TITLE": "Nous avons trouvé votre voiture.",
+            "DESCRIPTION": "Vous devez juste finir d'enregistrer votre compte avant de pouvoir commencer à écouter.",
+            "CNA_FORM": {
+                "TITLE": "Entrez l'adresse du service",
+                "FIRST_NAME": "Prénom",
+                "LAST_NAME": "Nom",
+                "EMAIL": "Adresse courriel",
+                "ADDRESS": "Adresse (incluant app./bureau/unité)",
+                "CITY": "Ville",
+                "STATE": "Province",
+                "ZIP": "Code postal",
+                "PHONE": "Numéro de téléphone",
+                "CONFIRM_YOUR_ADDRESS": "Veuillez confirmer votre adresse",
+                "ERROR": {
+                    "FIRST_NAME": "Entrez votre prénom.",
+                    "LAST_NAME": "Entrez votre nom.",
+                    "EMAIL": "Entrez une adresse courriel valide.",
+                    "ADDRESS": "Entrez une adresse valide.",
+                    "CITY": "Entrez votre ville.",
+                    "STATE": "Sélectionnez votre province.",
+                    "ZIP": "Entrez un code postal valide.",
+                    "PHONE": "Entrez un numéro de téléphone valide."
+                }
+            }
+        },
+        "registerPageComponent": {
+            "STEP_EMAIL": {
+                "TITLE": "Confirmez le courriel",
+                "INSTRUCTIONS": "Merci d'avoir vérifié votre compte, {{firstName}}. Confirmez ou entrez une nouvelle adresse courriel que vous voulez lier à votre compte.",
+                "INPUT_LABEL_EMAIL": "Courriel",
+                "ERROR_MESSAGE": "Entrez une adresse courriel valide."
+            },
+            "STEP_PHONE_NUMBER": {
+                "TITLE": "Confirmez le numéro de téléphone",
+                "INSTRUCTIONS": "Confirmez ou entrez un nouveau numéro de téléphone que vous voulez lier à votre compte.",
+                "INPUT_LABEL_PHONE_NUMBER": "numéro de téléphone",
+                "ERROR_MESSAGE": "Entrez un numéro de téléphone valide."
+            },
+            "STEP_SECURITY_QUESTIONS": {
+                "TITLE": "Créez des questions de sécurité",
+                "PRE_INSTRUCTIONS": "Merci d'avoir vérifié votre compte, {{firstName}}.",
+                "INSTRUCTIONS": "Sélectionnez trois questions de sécurité parmi celles indiquées ci-dessous. Ces questions nous aideront à vérifier votre identité si vous oubliez votre mot de passe."
+            },
+            "STEP_USERNAME_AND_PASSWORD": {
+                "TITLE": "Créez un nom d'utilisateur et un mot de passe",
+                "INSTRUCTIONS": "Vous pouvez utiliser ces identifiants pour gérer et rétablir votre compte."
+            },
+            "STEP_PASSWORD": {
+                "TITLE": "Créez un mot de passe",
+                "INSTRUCTIONS": "Créez simplement un mot de passe pour finir l'enregistrement de votre compte pour <strong>{{email}}</strong>."
+            },
+            "CONTINUE_BUTTON": "CONTINUER",
+            "COMPLETE_REGISTRATION_BUTTON": "TERMINER L'ENREGISTREMENT"
+        },
+        "registrationCompletedPageComponent": {
+            "COMPLETED": {
+                "TITLE": "Merci de votre enregistrement, {{firstName}}.",
+                "INSTRUCTIONS": "Vous pouvez gérer votre compte en ligne et écouter sur votre téléphone, votre ordi, votre télé intelligente, vos haut-parleurs ou autres avec l’Appli SXM.",
+                "GO_TO_MY_ACCOUNT_BUTTON": "ALLER À MON COMPTE",
+                "LISTEN_NOW_LINK_TEXT": "ÉCOUTER MAINTENANT",
+                "LISTEN_NOW_LINK": "https://player.siriusxm.ca/fr",
+                "CTA": {
+                    "VANITY_URL": "https://care.siriusxm.ca?langpref=fr"
+                }
+            },
+            "STREAMING_PLAYER_LINK": ""
+        },
+        "accountAlreadyRegisteredComponent": {
+            "TITLE": "Ce compte est déjà enregistré.",
+            "DESCRIPTION": "Vous pouvez aller à la page de connexion pour vous connecter à votre compte, trouver votre nom d'utilisateur ou réinitialiser votre mot de passe.",
+            "SIGN_IN_BUTTON": "ALLER À CONNEXION"
+        }
+    }
+}

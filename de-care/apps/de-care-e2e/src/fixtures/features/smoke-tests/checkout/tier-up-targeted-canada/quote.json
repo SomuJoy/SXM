@@ -1,0 +1,105 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "quote": {
+            "currentQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "0.00",
+                "totalTaxesAndFeesAmount": "0.00",
+                "totalAmount": "0.00",
+                "discountAmount": "0.00",
+                "pricePerMonth": "0.00",
+                "currentBalance": "0.00",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "0.00",
+                "fees": [],
+                "taxes": [],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Select Add-on - 1mo|Promo $0/mo Select Upgrade for 3mos - Monthly",
+                        "packageName": "SIR_CAN_EVT_ADDON",
+                        "termLength": 1,
+                        "priceAmount": "0.00",
+                        "taxAmount": "0.00",
+                        "feeAmount": "0.00",
+                        "totalTaxesAndFeesAmount": "0.00",
+                        "taxes": [],
+                        "fees": [],
+                        "startDate": "2022-01-13",
+                        "endDate": "2022-02-13",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "UPGRADE",
+                        "dealType": "",
+                        "isStudent": false,
+                        "isAdvantage": false
+                    }
+                ],
+                "isUpgraded": false,
+                "isProrated": false
+            },
+            "futureQuote": null,
+            "proRatedRenewalQuote": null,
+            "promoRenewalQuote": {
+                "totalTaxAmount": "2.03",
+                "totalFeesAmount": "2.61",
+                "totalTaxesAndFeesAmount": "4.64",
+                "totalAmount": "17.63",
+                "discountAmount": "0.00",
+                "pricePerMonth": "12.99",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [{ "description": "Music_Royalty_and_Administrative_Fee", "amount": "2.61" }],
+                "taxes": [{ "description": "Harmonized_Sales_Tax_HST", "amount": "2.03" }],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Select Add-on - 1mo|Promo $0/mo Select Upgrade for 3mos - Monthly",
+                        "packageName": "SIR_CAN_EVT_ADDON",
+                        "termLength": 1,
+                        "priceAmount": "0.00",
+                        "taxAmount": "0.00",
+                        "feeAmount": "0.00",
+                        "totalTaxesAndFeesAmount": "0.00",
+                        "taxes": [],
+                        "fees": [],
+                        "startDate": "2022-02-13",
+                        "endDate": "2022-03-13",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "UPGRADE",
+                        "dealType": null,
+                        "isStudent": false,
+                        "isAdvantage": false
+                    },
+                    {
+                        "planCode": "Mostly Music - 1mo - wActv",
+                        "packageName": "SIR_CAN_MM",
+                        "termLength": 1,
+                        "priceAmount": "12.99",
+                        "taxAmount": "2.03",
+                        "feeAmount": "2.61",
+                        "totalTaxesAndFeesAmount": "4.64",
+                        "taxes": [{ "description": "Harmonized_Sales_Tax_HST", "amount": "2.03" }],
+                        "fees": [{ "description": "Music_Royalty_and_Administrative_Fee", "amount": "2.61" }],
+                        "startDate": "2022-02-13",
+                        "endDate": "2022-03-13",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "",
+                        "dealType": null,
+                        "isStudent": false,
+                        "isAdvantage": false
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            },
+            "renewalQuote": null
+        }
+    }
+}

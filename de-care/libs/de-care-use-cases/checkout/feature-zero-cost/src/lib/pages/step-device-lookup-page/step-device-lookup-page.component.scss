@@ -1,0 +1,33 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "../page.scss";
+
+:host {
+    @include page-host(auto 1fr auto);
+    sxm-ui-hero {
+        width: 100%;
+    }
+    section#mainContent {
+        display: grid;
+        position: relative;
+        grid-row-gap: 12px;
+        top: -32px;
+        @include bp(medium) {
+            top: -48px;
+        }
+        sxm-ui-primary-package-card {
+            margin-bottom: 18px;
+        }
+        sxm-ui-step-header ::ng-deep {
+            header {
+                padding-bottom: 0;
+                p {
+                    margin-bottom: 0;
+                }
+            }
+            h1 {
+                @include get-header-style(h6);
+            }
+        }
+    }
+}

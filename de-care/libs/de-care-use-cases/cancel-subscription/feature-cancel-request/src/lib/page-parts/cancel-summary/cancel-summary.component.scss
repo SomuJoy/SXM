@@ -1,0 +1,43 @@
+@import "sxm.phoenix.imports";
+
+.package-and-term-plan {
+    margin-top: 4px;
+    p:not(.regular-plan) {
+        margin-bottom: 0px;
+    }
+}
+
+.review-list-container {
+    margin-top: 24px;
+    p:first-child {
+        margin-bottom: 8px;
+    }
+}
+
+.trial-plan-description {
+    margin-top: 16px;
+    p:last-child {
+        color: $gray-dark;
+    }
+}
+.review-list {
+    display: grid;
+    grid-row-gap: 8px;
+    grid-template-columns: 8px 1fr;
+    grid-column-gap: 10px;
+    p {
+        margin-bottom: 8px;
+    }
+    mat-icon {
+        height: 18px;
+        width: 9px;
+        margin-top: 2px;
+        color: black;
+    }
+}
+
+.current-plan {
+    padding: 12px;
+    background-color: $off-white;
+    font-weight: calculate-font-weight(bold);
+}

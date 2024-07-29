@@ -1,0 +1,22 @@
+<!-- TODO: refactor away from async as vm to individual streams per step component -->
+<oem-stepper #stepper *ngIf="vm$ | async as vm" (selectionChange)="onSelectionChange($event)">
+    <oem-step [label]="'oemCommon.oemFlowComponent.STEP_PAGE_TITLES.OFFER_STEP' | translate" [dataLayerTitle]="componentNameEnum.OemOffer" #offerStep>
+        <offer-step [offer]="vm.selectedOffer" [legalCopy]="vm.legalCopy" (submitted)="onSubmission($event)"></offer-step>
+    </oem-step>
+    <oem-step [label]="'oemCommon.oemFlowComponent.STEP_PAGE_TITLES.PAYMENT_STEP' | translate" [dataLayerTitle]="componentNameEnum.OemPaymentInfo" #paymentInfoStep>
+        <payment-info-step
+            [includeCvvField]="includeCvvField"
+            [submitPaymentInfoError]="vm.submitPaymentInfoError"
+            (completed)="handlePaymentInfo($event)"
+        ></payment-info-step>
+    </oem-step>
+    <oem-step [label]="'oemCommon.oemFlowComponent.STEP_PAGE_TITLES.BILLING_ADDRESS_STEP' | translate" [dataLayerTitle]="componentNameEnum.OemBillingAddress">
+        <billing-address-step [hasEmailAddress]="(account$ | async)?.hasEmailAddressOnFile" (submitted)="handleBillingAddress($event)"></billing-address-step>
+    </oem-step>
+    <oem-step [label]="'oemCommon.oemFlowComponent.STEP_PAGE_TITLES.SUMMARY_STEP' | translate" [dataLayerTitle]="componentNameEnum.OemOrderSummary">
+        <summary-step [offer]="vm.selectedOffer" [quote]="vm.quote" [isClosedRadio]="vm.isClosedRadio" (completed)="handleSummary()"></summary-step>
+    </oem-step>
+    <oem-step [label]="'oemCommon.oemFlowComponent.STEP_PAGE_TITLES.CONFIRMATION_STEP' | translate" [dataLayerTitle]="componentNameEnum.OemConfirmation" #confirmationStep>
+        <subscription-confirmation-step (done)="onDone()"></subscription-confirmation-step>
+    </oem-step>
+</oem-stepper>

@@ -1,0 +1,8 @@
+<offer-description-oem [offerInfo]="offerInfo" [excludePriceAndTermDisplay]="excludePriceAndTermDisplay"></offer-description-oem>
+<plan-description-channels-oem [channels]="packageDescriptionViewModel?.channels"></plan-description-channels-oem>
+<ng-container *ngIf="packageDescriptionViewModel?.footer">
+    <p class="tiny-copy text-color-gray-dark" [innerHtml]="'app.packageDescriptions.' + offer.packageName + '.promoFooter' | translate"></p>
+</ng-container>
+<ng-container *ngIf="packageDescriptionViewModel?.description">
+    <p [innerHtml]="packageDescriptionViewModel.description"></p>
+</ng-container>

@@ -1,0 +1,12 @@
+<main de-care-page-main>
+    <sxm-ui-alert-pill *ngIf="isThirdPartyError" style="background-color: #fff9d5" class="alert-icon-notification straight-corners">
+        <p class="pill-text">
+            <span class="error-paragraph bottom-padding">{{ translateKeyPrefix + ".THIRD_PARTY_ERROR_MESSAGE" | translate }}</span>
+            <span class="error-paragraph bottom-padding">{{ translateKeyPrefix + ".THIRD_PARTY_SUB_ERROR_MESSAGE" | translate }}</span>
+            <span class="error-paragraph"><a class="text-link" [href]="translateKeyPrefix + '.LISTEN_NOW_LINK' | translate" target="_blank">{{ translateKeyPrefix + ".THIRD_PARTY_LISTEN_NOW" | translate }}</a></span>
+        </p> 
+    </sxm-ui-alert-pill>
+    <sxm-ui-forgot-username-form (lookupCompleted)="onLookupCompleted($event)">
+        <privacy-policy privacyPolicy></privacy-policy>
+    </sxm-ui-forgot-username-form>
+</main>

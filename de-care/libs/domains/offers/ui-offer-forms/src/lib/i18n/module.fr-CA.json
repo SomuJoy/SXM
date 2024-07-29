@@ -1,0 +1,9 @@
+{
+    "DomainsOffersUiOfferFormsModule": {
+        "MultiOfferSelectionFormComponent": {
+            "VIEW_MORE_PACKAGES": "Voir plus de forfaits",
+            "HIDE_PACKAGES": "Cacher les forfaits",
+            "SUBMIT_BUTTON_LABEL": "Continuer"
+        }
+    }
+}

@@ -1,0 +1,125 @@
+{
+    "id": "military25",
+
+    "defaultRedirects": {
+        "defaultUrl": "/military25/package",
+        "authRegister": "/military25/account/register",
+        "firstPaymentCompUrl": "/military25/pages/checkout/interstitial",
+        "error500Url": "/military25/issue"
+    },
+
+    "authRequiredModules": [
+        {
+            "moduleName": "checkout"
+        }
+    ],
+
+    "appRoutes": [
+        {
+            "moduleName": "package",
+            "sortOrder": 1,
+            "desc": "Package (lazy loaded module)",
+            "isAuthRequired": false,
+            "moduleGeo": {
+                "previous": null,
+                "next": "account"
+            },
+            "components": [
+                {
+                    "componentName": "package",
+                    "sortOrder": "1",
+                    "componentRoute": "/military25/package",
+                    "isAuthRequired": false,
+                    "redirects": {
+                        "next": "/military25/account/interstitial",
+                        "previous": null
+                    }
+                }
+            ]
+        },
+        {
+            "moduleName": "account",
+            "sortOrder": 2,
+            "desc": "Account (lazy loaded module)",
+            "isAuthRequired": false,
+            "moduleGeo": {
+                "previous": "package",
+                "next": "checkout"
+            },
+            "components": [
+                {
+                    "componentName": "interstitial",
+                    "sortOrder": 1,
+                    "componentRoute": "/military25/account/interstitial",
+                    "isAuthRequired": false,
+                    "redirects": {
+                        "next": "/military25/account/register",
+                        "previous": "/military25/account/interstitial"
+                    }
+                },
+                {
+                    "componentName": "register",
+                    "sortOrder": 2,
+                    "componentRoute": "/military25/account/register",
+                    "isAuthRequired": false,
+                    "redirects": {
+                        "next": "/military25/pages/checkout/interstitial",
+                        "previous": "/military25/package"
+                    }
+                }
+            ]
+        },
+        {
+            "moduleName": "checkout",
+            "sortOrder": 3,
+            "desc": "Checkout (lazy loaded module)",
+            "isAuthRequired": true,
+            "moduleGeo": {
+                "previous": "account",
+                "next": null
+            },
+            "components": [
+                {
+                    "componentName": "interstitial",
+                    "sortOrder": 1,
+                    "componentRoute": "/military25/pages/checkout/interstitial",
+                    "isAuthRequired": true,
+                    "redirects": {
+                        "next": "/military25/pages/checkout/payment",
+                        "previous": "/military25/package"
+                    }
+                },
+                {
+                    "componentName": "payment",
+                    "sortOrder": 2,
+                    "componentRoute": "/military25/pages/checkout/payment",
+                    "isAuthRequired": true,
+                    "redirects": {
+                        "next": "/military25/pages/checkout/review",
+                        "previous": "/military25/pages/checkout/interstitial"
+                    }
+                },
+                {
+                    "componentName": "review",
+                    "sortOrder": 3,
+                    "isAuthRequired": true,
+                    "componentRoute": "/military25/pages/checkout/review",
+                    "redirects": {
+                        "next": "/military25/pages/checkout/thanks",
+                        "previous": "/military25/pages/checkout/payment"
+                    }
+                },
+                {
+                    "componentName": "thanks",
+                    "sortOrder": 4,
+                    "componentRoute": "/military25/pages/checkout/thanks",
+                    "isAuthRequired": true,
+                    "redirects": {
+                        "next": null,
+                        "previous": "/military25/package"
+                    }
+                }
+            ]
+        }
+    ]
+}

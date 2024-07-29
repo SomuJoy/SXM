@@ -1,0 +1,13 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "status": "FAILURE",
+        "last4DigitsOfRadioId": null,
+        "usedCarBrandingType": null,
+        "errorCode": "103",
+        "devicePromoCode": "",
+        "offerTypeForProgramCode": "RTP_OFFER"
+    }
+}

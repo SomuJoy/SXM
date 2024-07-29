@@ -1,0 +1,102 @@
+<ng-container *ngrxLet="infoForConfirmationPage$ as infoForConfirmationPage">
+    <div class="main">
+        <div class="confirmation-page-container">
+            <section class="confirmation-page-container--userInfo">
+                <div>
+                    {{ translateKeyPrefix + ".CUSTOMER_GREETING" | translate: { customerName: (infoForConfirmationPage.userName | titlecase) } }}
+                </div>
+                <div>
+                    {{ translateKeyPrefix + ".ACCOUNT_NUMBER" | translate: { accountNumber: infoForConfirmationPage.accountNumber } }}
+                </div>
+            </section>
+            <ng-container *ngIf="infoForConfirmationPage.isUpdatePaymentMethodOnly; else thankyoupayment">
+                <section class="confirmation-page-container--detail confirmation-page-container--updatedPayment" data-test="update-payment-header">
+                    <h3>{{ translateKeyPrefix + ".PAYMENT_INFO_UPDATED" | translate }}</h3>
+                </section>
+            </ng-container>
+
+            <ng-template #thankyoupayment>
+                <section class="confirmation-page-container--detail">
+                    <h3>{{ translateKeyPrefix + ".THANK_YOU_FOR_PAYMENT" | translate }}</h3>
+                </section>
+                <section class="confirmation-page-container--instructions">
+                    <p class="instructions">
+                        {{ translateKeyPrefix + ".COPY_OF_RECEIPT_EMAILED" | translate: { email: infoForConfirmationPage.emailAddress } }}
+                    </p>
+                    <a (click)="printConfirmationPage()">
+                        {{ translateKeyPrefix + ".PRINT_RECEIPT" | translate }}
+                    </a>
+                </section>
+            </ng-template>
+
+            <hr class="confirmation-page-container--divider1" />
+            <div class="confirmation-page-container--refresh-signal no-print" warningMessage *ngIf="infoForConfirmationPage.accountHasSuspendedSubscriptions">
+                <refresh-signal [phone]="infoForConfirmationPage.phone"></refresh-signal>
+            </div>
+            <div class="confirmation-page-container--balance-item" *ngIf="!infoForConfirmationPage.isUpdatePaymentMethodOnly">
+                <div class="confirmation-page-container--balance-item--title">
+                    <h6>
+                        {{ translateKeyPrefix + ".AMOUNT_PAID" | translate }}
+                    </h6>
+                </div>
+                <div class="confirmation-page-container--balance-item--amount">
+                    <h6>{{ +infoForConfirmationPage.paymentAmount | currency: "USD":"symbol-narrow":undefined:(currentLang$ | async) }}</h6>
+                </div>
+                <div class="confirmation-page-container--balance-item--paragraph">
+                    <ng-container *ngIf="infoForConfirmationPage.accountHasSuspendedSubscriptions">
+                        <span
+                            >{{
+                                translateKeyPrefix +
+                                    (infoForConfirmationPage.copiesExcludeFees
+                                        ? ".INCLUDES_SERVICE_CHARGES_SUSPENDED_RADIOS_NO_FEES"
+                                        : ".INCLUDES_SERVICE_CHARGES_SUSPENDED_RADIOS") | translate
+                            }}
+                        </span>
+                    </ng-container>
+                    <ng-container *ngIf="!infoForConfirmationPage.accountHasSuspendedSubscriptions">
+                        <span
+                            >{{
+                                translateKeyPrefix +
+                                    (infoForConfirmationPage.copiesExcludeFees
+                                        ? infoForConfirmationPage.hasPaidNextPaymentAmount
+                                            ? ".INCLUDES_SERVICE_CHARGES_UPCOMING_PAYMENT_NO_FEES"
+                                            : ".INCLUDES_SERVICE_CHARGES_NO_FEES"
+                                        : infoForConfirmationPage.hasPaidNextPaymentAmount
+                                        ? ".INCLUDES_SERVICE_CHARGES_UPCOMING_PAYMENT"
+                                        : ".INCLUDES_SERVICE_CHARGES") | translate
+                            }}
+                        </span>
+                    </ng-container>
+                </div>
+            </div>
+            <hr *ngIf="infoForConfirmationPage.accountHasSuspendedSubscriptions" class="confirmation-page-container--divider2" />
+            <div
+                class="confirmation-page-container--billing-address"
+                [ngClass]="infoForConfirmationPage.accountHasSuspendedSubscriptions ? '' : 'confirmation-page-container--billing-address-halfwidth'"
+            >
+                <h6>{{ translateKeyPrefix + ".BILLING_ADDRESS" | translate }}</h6>
+                <div>{{ infoForConfirmationPage.billingDetails.streetAddress }}</div>
+                <div>{{ infoForConfirmationPage.billingDetails.city }}, {{ infoForConfirmationPage.billingDetails.state }}</div>
+                <div>
+                    {{
+                        infoForConfirmationPage.useFullPostalCode
+                            ? infoForConfirmationPage.billingDetails.postalCode
+                            : (infoForConfirmationPage.billingDetails.postalCode | slice: 0:5)
+                    }}
+                </div>
+            </div>
+            <div class="confirmation-page-container--payment-info">
+                <h6>{{ translateKeyPrefix + ".PAYMENT_INFO" | translate }}</h6>
+                <div>{{ infoForConfirmationPage.cardInfo.nameOnCard }}</div>
+                <div>
+                    {{ infoForConfirmationPage.cardInfo.cardType | titlecase }}
+                    <span class="payment-info--cardNumber">{{ infoForConfirmationPage.cardInfo.maskedCardNumber }}</span>
+                </div>
+                <div>{{ translateKeyPrefix + ".EXPIRES" | translate }} {{ infoForConfirmationPage.cardInfo.expires }}</div>
+            </div>
+            <button class="full-width primary button confirmation-page-container-backBtn no-print" (click)="goToMyAccount()">
+                {{ translateKeyPrefix + ".GO_TO_MY_ACCOUNT_BUTTON" | translate }}
+            </button>
+        </div>
+    </div>
+</ng-container>

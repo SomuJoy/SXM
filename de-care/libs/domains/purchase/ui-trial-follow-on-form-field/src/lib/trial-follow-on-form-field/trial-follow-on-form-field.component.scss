@@ -1,0 +1,47 @@
+@import "sxm.phoenix.imports";
+trial-follow-on-form-field {
+    display: block;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.trial-follow-on-form-field-content-card {
+    box-sizing: border-box;
+    margin: 0 0 10px 0;
+    .content-card-flag {
+        padding: 7px 0;
+        background-color: $watermelon;
+        border: 1px solid transparent;
+        p {
+            font-weight: 700;
+            color: $white;
+            font-size: 12px;
+        }
+    }
+    .trial-follow-on-form-field-content-card-head {
+        padding-top: 17px;
+        padding-bottom: 17px;
+        background-color: $purple;
+        font-weight: 500;
+        border: 1px solid transparent;
+
+        &.short {
+            padding: 8px 0;
+        }
+
+        p {
+            color: $white;
+            font-size: 14px;
+        }
+    }
+    .trial-follow-on-form-field-content-card-body {
+        border: 1px solid $gray-medium;
+        border-top: 0;
+        padding: 16px;
+        &.no-header {
+            border-top: 1px solid $gray-medium;
+        }
+    }
+}

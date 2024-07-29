@@ -1,0 +1,47 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <sxm-ui-content-card
+        *ngFor="let infotainmentPlan of planOptions; let i = index"
+        [hasGrayBackground]="true"
+        [flagPresent]="infotainmentPlan.bundleSavingsAmount > 0"
+        [headlinePresent]="true"
+    >
+        <div htmlContentForFlag>
+            <ng-container *ngIf="infotainmentPlan.bundleSavingsAmount > 0">
+                <p class="small-copy text-uppercase" qatag="BundleAndSave" data-e2e="OfferInfotainmentForm.infotainmentBundle">
+                    {{ translationKeyPrefix + "CONTENT_CARD_FLAG" | translate }}
+                    {{ infotainmentPlan.bundleSavingsAmount | currency: "USD":"symbol-narrow":undefined:(currentLang$ | async) }}
+                </p>
+            </ng-container>
+        </div>
+        <div htmlContentForHead>
+            <div class="checkbox-item">
+                <input
+                    [formControlName]="infotainmentPlan.planCode"
+                    [id]="inputID + '_' + i"
+                    class="checkbox"
+                    type="checkbox"
+                    (click)="onClickedInfotainment(infotainmentPlan.planCode)"
+                    [attr.data-e2e]="
+                        infotainmentPlan.isBundlePlan ? 'OfferInfotainmentForm.infotainmentPlanCheckboxBundle' : 'OfferInfotainmentForm.infotainmentPlanCheckboxIndividual'
+                    "
+                />
+
+                <label class="input-label text-color-white large-copy" [for]="inputID + '_' + i">
+                    <ng-container *ngIf="infotainmentPlan.currentlyHave; else defaultTextCopy">
+                        {{ translationKeyPrefix + "CONTENT_CARD_KEEP_PACKAGE" | translate }}
+                    </ng-container>
+                    <ng-template #defaultTextCopy>
+                        {{ translationKeyPrefix + "CONTENT_CARD_ADD_PACKAGE" | translate }}
+                    </ng-template>
+                </label>
+            </div>
+        </div>
+        <div htmlContentForBody>
+            <sxm-ui-primary-package-card *ngIf="planOptions" [packageData]="planOptions[i]?.data"> </sxm-ui-primary-package-card>
+        </div>
+    </sxm-ui-content-card>
+
+    <button sxm-proceed-button type="submit" data-e2e="OfferInfotainmentForm.submit">
+        {{ translationKeyPrefix + "SUBMIT_BUTTON" | translate }}
+    </button>
+</form>

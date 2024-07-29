@@ -1,0 +1,40 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+@mixin page-host($grid-auto-rows: 1fr) {
+    height: 100%;
+    display: grid;
+    grid-auto-rows: $grid-auto-rows;
+    justify-items: center;
+    background-color: $white;
+
+    section#mainContent {
+        display: grid;
+        grid-auto-columns: minmax(auto, 440px);
+        align-content: start;
+        padding: 32px 0;
+        margin: 0 16px;
+        max-width: 440px;
+    }
+
+    section#legalCopySection {
+        padding: 0;
+        background-color: $off-white;
+
+        div {
+            padding: 24px 0;
+            border-bottom: 1px solid $gray-medium;
+            font-size: 0.75rem;
+            font-weight: 400;
+
+            ::ng-deep > p {
+                font-size: inherit;
+                font-weight: inherit;
+
+                a {
+                    @include underline(default);
+                }
+            }
+        }
+    }
+}

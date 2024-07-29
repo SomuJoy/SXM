@@ -1,0 +1,64 @@
+{
+    "app": {
+        "switchLanguage": {
+            "label": "EN",
+            "value": "en-CA"
+        },
+        "Title": "FR_SiriusXM CUWI Application",
+        "pageTitle": "Abonnez-vous à SiriusXM",
+        "areas": [
+            {
+                "label": "ALBERTA",
+                "key": "AB"
+            },
+            {
+                "label": "COLOMBIE-BRITANNIQUE",
+                "key": "BC"
+            },
+            {
+                "label": "MANITOBA",
+                "key": "MB"
+            },
+            {
+                "label": "NOUVEAU-BRUNSWICK",
+                "key": "NB"
+            },
+            {
+                "label": "TERRE-NEUVE-ET-LABRADOR",
+                "key": "NL"
+            },
+            {
+                "label": "TERRITOIRES DU NORD-OUEST",
+                "key": "NT"
+            },
+            {
+                "label": "NOUVELLE-ÉCOSSE",
+                "key": "NS"
+            },
+            {
+                "label": "NUNAVUT",
+                "key": "NU"
+            },
+            {
+                "label": "ONTARIO",
+                "key": "ON"
+            },
+            {
+                "label": "ÎLE-DU-PRINCE-ÉDOUARD",
+                "key": "PE"
+            },
+            {
+                "label": "QUÉBEC",
+                "key": "QC"
+            },
+            {
+                "label": "SASKATCHEWAN",
+                "key": "SK"
+            },
+            {
+                "label": "YUKON",
+                "key": "YT"
+            }
+        ]
+    }
+}

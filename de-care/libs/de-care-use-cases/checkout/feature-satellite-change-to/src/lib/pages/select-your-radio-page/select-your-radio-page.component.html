@@ -1,0 +1,43 @@
+<ng-container *ngrxLet="viewModel$ as viewModel">
+    <section id="mainContent">
+        <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+            <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+            <ng-container body>
+                <p>{{ translateKeyPrefix + ".BODY" | translate }}</p>
+            </ng-container>
+        </sxm-ui-step-header>
+        <sxm-ui-plan-recap-card [data]="viewModel.planRecap"></sxm-ui-plan-recap-card>
+
+        <form class="selectRadioForm" [formGroup]="form" (ngSubmit)="onSubmit()">
+            <sxm-ui-radio-option-form-field
+                data-test="SelectYourRadioFormOption"
+                *ngFor="let radio of viewModel.radios"
+                class="label-bold"
+                formControlName="selectedRadioOption"
+                [label]="
+                    radio.nickname
+                        ? radio.nickname
+                        : radio?.vehicleInfo?.year === null && radio?.vehicleInfo?.make === null && radio?.vehicleInfo?.model === null
+                        ? (translateKeyPrefix + '.RADIO_ID' | translate: radio)
+                        : (translateKeyPrefix + '.VEHICLE' | translate: radio.vehicleInfo)
+                "
+                [value]="radio.radioId"
+            >
+            </sxm-ui-radio-option-form-field>
+            <sxm-ui-radio-option-form-field
+                data-test="SelectYourRadioFormOption"
+                class="label-bold"
+                formControlName="selectedRadioOption"
+                [label]="translateKeyPrefix + '.DEVICE_LOOK_UP' | translate"
+                value="DEVICE_LOOK_UP"
+            >
+            </sxm-ui-radio-option-form-field>
+            <button type="submit" sxm-proceed-button data-test="SelectYourRadioFormSubmit">
+                {{ translateKeyPrefix + ".CONTINUE_BUTTON" | translate }}
+            </button>
+        </form>
+    </section>
+    <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+        <div [innerHTML]="viewModel.legalCopy"></div>
+    </section>
+</ng-container>

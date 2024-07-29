@@ -1,0 +1,10 @@
+{
+    "deCareUseCasesTrialActivationRtpFeatureReviewModule": {
+        "reviewComponent": {
+            "STEP_NUMBER": "STEP {{totalSteps}} OF {{totalSteps}}",
+            "HEADER": "Review and complete your order",
+            "COMPLETE_MY_ORDER_BUTTON": "COMPLETE MY ORDER",
+            "FOOTER": ""
+        }
+    }
+}

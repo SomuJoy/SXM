@@ -1,0 +1,22 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: block;
+}
+
+de-care-sl2c-form {
+    padding: 16px 0 32px;
+}
+
+.partner-copy {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 16px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+sxm-ui-modal {
+    position: relative;
+    z-index: 101;
+}

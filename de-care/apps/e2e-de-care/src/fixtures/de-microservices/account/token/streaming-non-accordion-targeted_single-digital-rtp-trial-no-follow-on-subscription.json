@@ -1,0 +1,52 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "DSASDDASADS",
+            "accountProfile": { "accountRegistered": false },
+            "accountState": { "isInPreTrial": false },
+            "serviceAddress": { "state": "NY", "country": "US" },
+            "subscriptions": [
+                {
+                    "id": "10000208799",
+                    "plans": [
+                        {
+                            "code": "Trial - Premier Streaming - 3mo - $1.00",
+                            "label": "Trial - Streaming Platinum - 3mo - $1.00",
+                            "packageName": "SIR_IP_SA",
+                            "termLength": 3,
+                            "startDate": "2022-11-26T00:00:00-05:00",
+                            "endDate": "2023-02-26T00:00:00-05:00",
+                            "nextCycleOn": null,
+                            "marketType": "trial:streaming",
+                            "type": "TRIAL",
+                            "capabilities": ["IPAUD"],
+                            "price": 1.0,
+                            "isBasePlan": true,
+                            "dataCapable": false
+                        }
+                    ],
+                    "followonPlans": [],
+                    "radioService": null,
+                    "streamingService": { "id": "10000210847", "maskedUserName": "jus******@siriusxm.com", "status": "Active", "randomCredentials": false },
+                    "status": "Active",
+                    "devicePromoCode": null,
+                    "isPrimary": true
+                }
+            ],
+            "billingSummary": { "creditCard": { "last4Digits": "5100", "type": "MASTER CARD", "status": "ACTIVE" }, "isPaymentTypeInvoice": false },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true,
+            "maskedEmail": "JUS******@SIRIUSXM.COM",
+            "isEmailinTokenSameAsEmailOnFile": false,
+            "isAccountIdentifiedUsingFLEPZOrVIN": false
+        },
+        "maskedUserNameFromToken": "JUS******@SIRIUSXM.COM",
+        "marketingId": null,
+        "marketingAcctId": "1103",
+        "email": null,
+        "isUserNameInTokenSameAsAccount": true
+    }
+}

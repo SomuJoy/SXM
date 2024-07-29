@@ -1,0 +1,52 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    // OVERRIDES - START
+    sxm-ui-postal-code-form-field ::ng-deep {
+        .column.small-6.align-left {
+            padding-right: 4px;
+        }
+        .column.small-6.align-right {
+            padding-left: 4px;
+        }
+    }
+    // OVERRIDES - END
+
+    display: grid;
+    row-gap: 16px;
+    h3 {
+        margin: 0;
+    }
+    section {
+        padding: 0;
+        header {
+            margin-bottom: 16px;
+        }
+    }
+    form {
+        display: grid;
+        row-gap: 16px;
+        h3 {
+            margin: 0;
+        }
+        section {
+            padding: 0;
+            header {
+                margin-bottom: 16px;
+            }
+        }
+        button[sxm-proceed-button] {
+            margin: 8px 0 0 0;
+        }
+        > p {
+            &::ng-deep {
+                .text-link {
+                    color: $blue-secondary;
+                    font-weight: inherit;
+                    font-size: inherit;
+                }
+            }
+        }
+    }
+}

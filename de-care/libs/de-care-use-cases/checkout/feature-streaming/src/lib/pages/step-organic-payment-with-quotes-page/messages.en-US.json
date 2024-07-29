@@ -1,0 +1,9 @@
+{
+    "TITLE": "Set up your payment",
+    "CANCEL_ANYTIME": "Cancel online anytime.",
+    "INELIGIBLE_LOADING_ALERT": "That offer is for new subscribers, but here’s another option for you. Please confirm your payment.",
+    "INELIGIBLE_LOADING_BODY": "Finding another great plan for you.",
+    "CONTINUE_BUTTON_TEXT": "Complete My Order",
+    "FEES_AND_TAXES_APPLY": "Fees & taxes apply.",
+    "PRICE_AND_TERM_SUBTEXT": "An early termination fee of ({{etfAmount}}) may apply if you cancel within the first {{etfTerm}} months."
+}

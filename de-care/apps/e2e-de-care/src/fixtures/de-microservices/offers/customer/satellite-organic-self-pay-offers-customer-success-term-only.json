@@ -1,0 +1,49 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "offers": [
+            {
+                "planCode": "Promo - Select - 5mo - 24.99 (5FOR25) - 1X",
+                "packageName": "1_SIR_AUD_EVT",
+                "packageUpgrade": null,
+                "promoCode": "WBGA",
+                "termLength": 5,
+                "type": "PROMO",
+                "marketType": "self-pay:promo",
+                "price": 24.99,
+                "pricePerMonth": 5.0,
+                "retailPrice": 17.99,
+                "packageUpgradePrice": null,
+                "msrpPrice": 17.99,
+                "processingFee": null,
+                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                "deal": null,
+                "priceChangeMessagingType": "",
+                "planEndDate": null,
+                "minimumFollowOnTerm": 1,
+                "order": null,
+                "bundledSavingPrice": null,
+                "bundleSubPackageNames": null,
+                "parentPackageName": "",
+                "fallbackReason": "",
+                "capability": ["AUD", "IPAUD"],
+                "mrdEligible": false,
+                "invoiceEligible": false,
+                "advantage": false,
+                "student": false,
+                "fallback": false,
+                "streaming": false,
+                "upgradeOffer": false,
+                "bestPackage": false,
+                "leadOffer": false,
+                "dataCapable": false,
+                "bundled": null
+            }
+        ],
+        "presentment": null,
+        "digitalSegment": null,
+        "presentmentTestCell": null
+    }
+}

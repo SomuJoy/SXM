@@ -1,0 +1,13 @@
+{
+    "domainsOffersUiPlanGridModule": {
+        "planGridComponent": {
+            "INSIDE_THE_CAR": "Inside<br/>the Car",
+            "INSIDE_THE_CAR_VIP": "Listen<br/>in 2 Cars",
+            "OUTSIDE_THE_CAR": "On the<br/>SXM App",
+            "OUTSIDE_THE_CAR_VIP": "2 Logins<br/>to Stream",
+            "PANDORA_STATIONS": "Pandora<br/>Stations",
+            "CUSTOM_STATIONS": "Custom<br/>Stations",
+            "VIP_PERKS": "VIP<br/>Perks"
+        }
+    }
+}

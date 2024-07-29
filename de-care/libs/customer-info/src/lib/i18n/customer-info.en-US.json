@@ -1,0 +1,309 @@
+{
+    "customerInfo": {
+        "verifyAddressComponent": {
+            "INVALID_FEEDBACK": "We were unable to validate your address with the United States Postal Service.",
+            "U_SURE": "Are you sure that the address below is a good address?",
+            "THIS_ADDRESS": "Use this Address",
+            "NEW_ADDRESS": "Enter New Address",
+            "CORRECTED_ADDRESS": "The following address has been recommended:",
+            "MULTIPLE_CORRECTED_ADDRESSES": "Please select your address from the list below.",
+            "ERROR_CHOOSE_ADDRESS": "Choose an address to continue"
+        },
+        "paymentInfoComponent": {
+            "CONTINUE_BUTTON": "Continue",
+            "REVIEW_BEFORE": "You'll get to review your order before subscribing. Remember, you can change or cancel anytime.",
+            "YOUR_INFO": "Your Info",
+            "ACCOUNT_INFO": "Account Info",
+            "ENJOYING_YOUR_TRIAL": "You'll get to review your order before subscribing. Remember, you can change or cancel anytime.",
+            "PAYMENT_INFO_SUBHEADER": "Payment Info",
+            "UNEXPECTED_ERROR": "An unexpected error occurred. Please try again.",
+            "AUTH_ERROR": "We were unable to authorize your credit card. Please update your payment information.",
+            "LOGIN_INFO_SUBHEADER": "Login Info",
+            "CREATE_LOGIN": "Create your password to listen on your phone, at home, and online.",
+            "EMAIL": {
+                "LABEL": "Email",
+                "CVV_EXCLUDE": "The field contains characters that resemble credit card security information. Please review and make appropriate changes to continue.",
+                "ALREADY_IN_USE_ERROR": "Username/Email address already in use.",
+                "INVALID_ERROR": "Enter a valid email address."
+            },
+            "PASSWORD": {
+                "LABEL": "Password",
+                "ERRORS": {
+                    "REQUIRED": "Enter a password.",
+                    "LENGTH": "Your password must be {{ min }} to {{ max }} characters long.",
+                    "POLICY": "Your password must contain at least one character from at least 3 different groups, as explained in our password policy.",
+                    "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}",
+                    "GENERIC": "We're sorry, your new password does not comply with our policy. Please try again."
+                }
+            },
+            "PLURAL_MAP": {
+                "WORD": {
+                    "=1": "word",
+                    "other": "words"
+                }
+            },
+            "CC_SELECT": {
+                "SAVED_CARD": "Use my saved {{ type }} ending in {{ last4Digits }}",
+                "ERROR_EXPIRED": "Your credit card has expired. Please enter new payment information",
+                "NEW_CC_PROMPT": "Enter a new credit card",
+                "NEW_CC_NOTE": "(Note: This will replace your current credit card)",
+                "ERROR_CHOOSE_OPTION": "Please choose a payment option",
+                "TOOLTIP_MESSAGE_1": "For Visa and Mastercard, use the 3 digits on the back of your card.",
+                "TOOLTIP_MESSAGE_2": "For American Express, use the 4 digits on the front of your card."
+            },
+            "NEW_CC": {
+                "CC_CVV": "CVV",
+                "CC_NAME": "Name on Card",
+                "UNAUTHORIZED_ERROR": "We were unable to authorize your credit card. Please update your payment information.",
+                "ERROR_CC_NAME": "Enter your name as it appears on your card.",
+                "CC_NUM": "Card Number",
+                "ERROR_CC_NUM": "Enter a valid credit card number.",
+                "ERROR_CC_NUM_FOUND_GC": "The card number you have entered is for a SiriusXM gift card. Please redeem your gift card below or enter a valid credit card number.",
+                "CC_EXP_DATE": "Expiration Date (MM/YY)",
+                "CC_EXP_DATE_INLINE": "Exp (MM/YY)",
+                "ERROR_CC_EXP_INVALID": "Enter a valid expiration date.",
+                "ERROR_CC_CVV": "Enter a valid security code (CVV).",
+                "CC_ADDRESS": "Address (include Apt/Suite/Unit)",
+                "ERROR_CC_ADDRESS": "Enter a valid street address.",
+                "CC_CITY": "City",
+                "ERROR_CC_CITY": "Enter your city.",
+                "INVALID_CC_CITY": "Enter a valid city.",
+                "CC_STATE": "State",
+                "ERROR_CC_STATE": "Select your state.",
+                "CC_ZIPCODE": "Zip Code",
+                "ERROR_CC_ZIPCODE": "Enter your zip code."
+            },
+            "ADDRESS": {
+                "CONFIRM_YOUR_BILLING_ADDRESS": "Please confirm your billing address",
+                "CONFIRM_YOUR_SERVICE_ADDRESS": "Please confirm your service address",
+                "SERVICE_ADDRESS_LABEL": "Service address is the same",
+                "SERVICE_ADDRESS": "Service Address"
+            },
+            "PREPAID": {
+                "REDEEM_LABEL": "Redeem prepaid or gift card",
+                "ADD_CARD": "Add a Gift Card, Prepaid Service Card or Digital Service PIN (optional)",
+                "PIN_NUMBER": "Card Number or PIN",
+                "APPLY": "Apply",
+                "REMOVE_LABEL": "Remove a prepaid or gift card",
+                "CARD_APPLIED": "Your prepaid or gift card was applied",
+                "ERROR_VALID_PIN": "Enter a valid card number or PIN.",
+                "GC_CVV": "CVV",
+                "GC_EXP_Y": "Exp (YYYY)",
+                "GC_EXP_M": "Exp (MM)",
+                "ERROR_VALID_MONTH": "Select your expiration month.",
+                "ERROR_VALID_YEAR": "Select your expiration year.",
+                "ERROR_VALID_CVV": "Enter a valid cvv"
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.com/privacy-policy"
+            },
+            "ERROR_CVV_FOUND": "The field contains characters that resemble credit card security information. Please review and make appropriate changes to continue."
+        },
+        "PaymentInfoStreamingOrganicComponent": {
+            "CONTINUE_BUTTON": "Continue",
+            "ACCOUNT_INFO": "Account Info",
+            "PAYMENT_INFO_SUBHEADER": "Payment Info",
+            "UNEXPECTED_ERROR": "An unexpected error occurred. Please try again.",
+            "AUTH_ERROR": "We were unable to authorize your credit card. Please update your payment information.",
+            "LOGIN_INFO_SUBHEADER": "Login Info",
+            "CREATE_LOGIN": "Create your password to listen on your phone, at home, and online.",
+            "EMAIL": {
+                "LABEL": "Email",
+                "CVV_EXCLUDE": "The field contains characters that resemble credit card security information. Please review and make appropriate changes to continue.",
+                "ALREADY_IN_USE_ERROR": "Username/Email address already in use.",
+                "INVALID_ERROR": "Enter a valid email address."
+            },
+            "PASSWORD": {
+                "LABEL": "Password",
+                "ERRORS": {
+                    "REQUIRED": "Enter a password.",
+                    "LENGTH": "Your password must be {{ min }} to {{ max }} characters long.",
+                    "POLICY": "Your password must contain at least one character from at least 3 different groups, as explained in our password policy.",
+                    "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}"
+                }
+            },
+            "PLURAL_MAP": {
+                "WORD": {
+                    "=1": "word",
+                    "other": "words"
+                }
+            },
+            "CC_SELECT": {
+                "SAVED_CARD": "Use my saved {{ type }} ending in {{ last4Digits }}",
+                "ERROR_EXPIRED": "Your credit card has expired. Please enter new payment information",
+                "NEW_CC_PROMPT": "Enter a new credit card",
+                "NEW_CC_NOTE": "(Note: This will replace your current credit card)",
+                "ERROR_CHOOSE_OPTION": "Please choose a payment option",
+                "TOOLTIP_MESSAGE_1": "For Visa and Mastercard, use the 3 digits on the back of your card.",
+                "TOOLTIP_MESSAGE_2": "For American Express, use the 4 digits on the front of your card."
+            },
+            "NEW_CC": {
+                "CC_CVV": "CVV",
+                "CC_NAME": "Name on Card",
+                "UNAUTHORIZED_ERROR": "We were unable to authorize your credit card. Please update your payment information.",
+                "ERROR_CC_NAME": "Enter your name as it appears on your card.",
+                "CC_NUM": "Card Number",
+                "ERROR_CC_NUM": "Enter a valid credit card number.",
+                "ERROR_CC_NUM_FOUND_GC": "The card number you have entered is for a SiriusXM gift card. Please redeem your gift card below or enter a valid credit card number.",
+                "CC_EXP_DATE": "Expiration Date (MM/YY)",
+                "CC_EXP_DATE_INLINE": "Exp (MM/YY)",
+                "ERROR_CC_EXP_INVALID": "Enter a valid expiration date.",
+                "ERROR_CC_CVV": "Enter a valid security code (CVV).",
+                "CC_ADDRESS": "Address (include Apt/Suite/Unit)",
+                "ERROR_CC_ADDRESS": "Enter a valid street address.",
+                "CC_CITY": "City",
+                "ERROR_CC_CITY": "Enter your city.",
+                "INVALID_CC_CITY": "Enter a valid city.",
+                "CC_STATE": "State",
+                "ERROR_CC_STATE": "Select your state.",
+                "CC_ZIPCODE": "Zip Code",
+                "ERROR_CC_ZIPCODE": "Enter your zip code."
+            },
+            "ADDRESS": {
+                "CONFIRM_YOUR_BILLING_ADDRESS": "Please confirm your billing address",
+                "CONFIRM_YOUR_SERVICE_ADDRESS": "Please confirm your service address",
+                "SERVICE_ADDRESS_LABEL": "Service address is the same",
+                "SERVICE_ADDRESS": "Service Address"
+            },
+            "PREPAID": {
+                "REDEEM_LABEL": "Redeem prepaid or gift card",
+                "ADD_CARD": "Add a Gift Card, Prepaid Service Card or Digital Service PIN (optional)",
+                "PIN_NUMBER": "Card Number or PIN",
+                "APPLY": "Apply",
+                "REMOVE_LABEL": "Remove a prepaid or gift card",
+                "CARD_APPLIED": "Your prepaid or gift card was applied",
+                "ERROR_VALID_PIN": "Enter a valid card number or PIN.",
+                "GC_CVV": "CVV",
+                "GC_EXP_Y": "Exp (YYYY)",
+                "GC_EXP_M": "Exp (MM)",
+                "ERROR_VALID_MONTH": "Select your expiration month.",
+                "ERROR_VALID_YEAR": "Select your expiration year.",
+                "ERROR_VALID_CVV": "Enter a valid cvv"
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.com/privacy-policy"
+            },
+            "ERROR_CVV_FOUND": "The field contains characters that resemble credit card security information. Please review and make appropriate changes to continue."
+        },
+        "PaymentInfoWithInvoiceComponent": {
+            "CONTINUE_BUTTON": "Continue",
+            "REVIEW_BEFORE": "You'll get to review your order before subscribing. Remember, you can change or cancel anytime.",
+            "ACCOUNT_INFO": "Account Info",
+            "ENJOYING_YOUR_TRIAL": "You won't be charged until your trial subscription is over. Remember, you can change or cancel anytime.",
+            "PAYMENT_INFO_SUBHEADER": "Payment Info",
+            "UNEXPECTED_ERROR": "An unexpected error occurred. Please try again.",
+            "AUTH_ERROR": "We were unable to authorize your credit card. Please update your payment information.",
+            "LOGIN_INFO_SUBHEADER": "Login Info",
+            "CREATE_LOGIN": "Create your password to listen on your phone, at home, and online.",
+            "EMAIL": {
+                "LABEL": "Email",
+                "CVV_EXCLUDE": "The field contains characters that resemble credit card security information. Please review and make appropriate changes to continue.",
+                "ALREADY_IN_USE_ERROR": "Username/Email address already in use.",
+                "INVALID_ERROR": "Enter a valid email address."
+            },
+            "PASSWORD": {
+                "LABEL": "Password",
+                "ERRORS": {
+                    "REQUIRED": "Enter a password.",
+                    "LENGTH": "Your password must be {{ min }} to {{ max }} characters long.",
+                    "POLICY": "Your password must contain at least one character from at least 3 different groups, as explained in our password policy.",
+                    "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}",
+                    "GENERIC": "We're sorry, your new password does not comply with our policy. Please try again."
+                }
+            },
+            "PLURAL_MAP": {
+                "WORD": {
+                    "=1": "word",
+                    "other": "words"
+                }
+            },
+            "INVOICE_SELECT": {
+                "INVOICE": "Send me an invoice for future charges",
+                "INVOICE_NOTE": "($2 invoice fee may apply)"
+            },
+            "CC_SELECT": {
+                "SAVED_CARD": "Use my saved {{ type }} ending in {{ last4Digits }}",
+                "ERROR_EXPIRED": "Your credit card has expired. Please enter new payment information",
+                "NEW_CC_PROMPT": "Enter a new credit card",
+                "NEW_CC_PROMPT_W_INVOICE": "Enter credit card",
+                "NEW_CC_NOTE": "(Note: This will replace your current credit card)",
+                "ERROR_CHOOSE_OPTION": "Please choose a payment option",
+                "TOOLTIP_MESSAGE_1": "For Visa and Mastercard, use the 3 digits on the back of your card.",
+                "TOOLTIP_MESSAGE_2": "For American Express, use the 4 digits on the front of your card."
+            },
+            "NEW_CC": {
+                "CC_CVV": "CVV",
+                "CC_NAME": "Name on Card",
+                "UNAUTHORIZED_ERROR": "We were unable to authorize your credit card. Please update your payment information.",
+                "ERROR_CC_NAME": "Enter your name as it appears on your card.",
+                "CC_NUM": "Card Number",
+                "ERROR_CC_NUM": "Enter a valid credit card number.",
+                "ERROR_CC_NUM_FOUND_GC": "The card number you have entered is for a SiriusXM gift card. Please redeem your gift card below or enter a valid credit card number.",
+                "CC_EXP_DATE": "Expiration Date (MM/YY)",
+                "CC_EXP_DATE_INLINE": "Exp (MM/YY)",
+                "ERROR_CC_EXP_INVALID": "Enter a valid expiration date.",
+                "ERROR_CC_CVV": "Enter a valid security code (CVV).",
+                "CC_ADDRESS": "Address (include Apt/Suite/Unit)",
+                "ERROR_CC_ADDRESS": "Enter a valid street address.",
+                "CC_CITY": "City",
+                "ERROR_CC_CITY": "Enter your city.",
+                "INVALID_CC_CITY": "Enter a valid city.",
+                "CC_STATE": "State",
+                "ERROR_CC_STATE": "Select your state.",
+                "CC_ZIPCODE": "Zip Code",
+                "ERROR_CC_ZIPCODE": "Enter your zip code."
+            },
+            "ADDRESS": {
+                "CONFIRM_YOUR_BILLING_ADDRESS": "Please confirm your billing address",
+                "CONFIRM_YOUR_SERVICE_ADDRESS": "Please confirm your service address",
+                "SERVICE_ADDRESS_LABEL": "Service address is the same",
+                "SERVICE_ADDRESS": "Service Address"
+            },
+            "PREPAID": {
+                "REDEEM_LABEL": "Redeem prepaid or gift card",
+                "ADD_CARD": "Add a Gift Card, Prepaid Service Card or Digital Service PIN (optional)",
+                "PIN_NUMBER": "Card Number or PIN",
+                "APPLY": "Apply",
+                "REMOVE_LABEL": "Remove a prepaid or gift card",
+                "CARD_APPLIED": "Your prepaid or gift card was applied",
+                "ERROR_VALID_PIN": "Enter a valid card number or PIN.",
+                "GC_CVV": "CVV",
+                "GC_EXP_Y": "Exp (YYYY)",
+                "GC_EXP_M": "Exp (MM)",
+                "ERROR_VALID_MONTH": "Select your expiration month.",
+                "ERROR_VALID_YEAR": "Select your expiration year.",
+                "ERROR_VALID_CVV": "Enter a valid cvv"
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.com/privacy-policy"
+            },
+            "ERROR_CVV_FOUND": "The field contains characters that resemble credit card security information. Please review and make appropriate changes to continue."
+        },
+        "yourDeviceInfoComponent": {
+            "NO_ACTIVE_SERVICE": "No Active Service",
+            "VEHICLE": "{{year}} {{make}} {{model}}",
+            "CLOSED": "Closed",
+            "EXPIRES": "Expires"
+        },
+        "addressFormFieldsOemComponent": {
+            "ADDRESS_LINE_1": "Address Line 1",
+            "ADDRESS_LINE_2": "Address Line 2",
+            "ERROR_ADDRESS": "Enter a valid street address.",
+            "CITY": "City",
+            "ERROR_CITY": "Enter your city.",
+            "STATE": "State",
+            "ERROR_STATE": "Enter your state.",
+            "ERROR_STATE_INACCURATE": "Enter a valid state.",
+            "ZIPCODE": "Zip Code",
+            "ERROR_ZIPCODE": "Enter your zip code.",
+            "ERROR_CVV_FOUND": "The field contains characters that resemble credit card security information. Please review and make appropriate changes to continue."
+        },
+        "invalidAddressMessageComponent": {
+            "INVALID_BILLING_ADDRESS_ERROR": "According to the Postal Service records your billing address is invalid or is missing important information. Please update the billing address to continue.",
+            "INVALID_SERVICE_ADDRESS_ERROR": "According to the Postal Service records your service address is invalid or is missing important information. Please update the service address to continue."
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "domainsPurchaseUiCreditCardFormFieldsModule": {
+        "creditCardFormFieldsComponent": {
+            "NEW_CC": {
+                "CC_CVV": "CVV",
+                "CC_STATE": "Province",
+                "ERROR_CC_STATE": "Select your province.",
+                "CC_ZIPCODE": "Postal Code",
+                "ERROR_CC_ZIPCODE": "Enter a valid postal code"
+            }
+        }
+    }
+}

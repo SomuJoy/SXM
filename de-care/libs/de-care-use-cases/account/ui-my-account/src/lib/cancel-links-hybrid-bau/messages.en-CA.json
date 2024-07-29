@@ -1,0 +1,19 @@
+{
+    "TITLE": "Thinking of leaving? Choose an option below:",
+    "CANCEL_PRELINK": "I want to ",
+    "CANCEL_LABEL": "view other great offers or cancel",
+    "CANCEL_POSTLINK": ".",
+    "CANCEL_NO_OFFER_PRELINK": "I want to ",
+    "CANCEL_NO_OFFER_LABEL": "cancel online",
+    "CANCEL_NO_OFFER_POSTLINK": ".",
+    "CHAT_CANCEL_PRELINK": "I want to ",
+    "CHAT_CANCEL_LABEL": "view other great offers or chat to cancel",
+    "CHAT_CANCEL_POSTLINK": ".",
+    "TRANSFER_PRELINK": "I want to ",
+    "TRANSFER_LABEL": "transfer my subscription",
+    "TRANSFER_POSTLINK": " to another radio.",
+    "CHAT_PRELINK": "I want to ",
+    "CHAT_LABEL": "chat with an agent",
+    "CHAT_POSTLINK": " about my options or cancel.",
+    "CALL": "Call us to cancel at 1-888-539-7474."
+}

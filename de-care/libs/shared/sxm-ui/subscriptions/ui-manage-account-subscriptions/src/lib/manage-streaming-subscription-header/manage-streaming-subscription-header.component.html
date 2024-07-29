@@ -1,0 +1,24 @@
+<div class="button-container">
+    <button class="back-button" type="button" (click)="back.emit()" data-test="manageStreamingBackButton">
+        <div>
+            <svg class="icon">
+                <use xlink:href="#icon-back"></use>
+            </svg>
+            <span class="back-label">
+                {{ translateKeyPrefix + ".BACK_BUTTON_LABEL" | translate }}
+            </span>
+        </div>
+    </button>
+</div>
+
+<div class="grid-container">
+    <h2 class="streaming-header">
+        {{ translateKeyPrefix + ".STREAMING_HEADER" | translate }}
+    </h2>
+    <div class="icon-division show-mobile-medium-up">
+        <svg class="icon icon-content">
+            <use xlink:href="#icon-streaming"></use>
+        </svg>
+    </div>
+</div>
+<p class="platform-info small-copy lead-in">{{ translateKeyPrefix + ".STREAMING_PLATFORM" | translate }}</p>

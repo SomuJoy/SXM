@@ -1,0 +1,34 @@
+{
+    "doNotCall": {
+        "doNotCallFlowComponent": {
+            "TITLE": "Add your phone number to the SiriusXM Do Not Call list",
+            "DESCRIPTION": "This will stop SiriusXM from placing telemarketing calls to your phone number.",
+            "NOTE": "Please note: You will still continue to receive important service messages by phone concerning your account.",
+            "HELP": {
+                "TITLE": "Need more help managing your contact preferences?",
+                "DESCRIPTION": "Call <strong>1-866-303-5603</strong> or login to your account online to update your preferences.",
+                "LOGIN": "Log In",
+                "HREF": "http://care.siriusxm.com/"
+            },
+            "SUCCESS": {
+                "TITLE": "Thank you.",
+                "DESCRIPTION": [
+                    "We have updated phone number <strong>{{phoneNumber}}</strong> with your request NOT TO call you with telemarketing calls.",
+                    "Please be aware that you will still receive important service messages to this number.  It may take about 3-5 days to update our systems.  During that time, it is possible that you may receive a few more telemarketing calls due to campaigns still in progress."
+                ]
+            },
+            "ERROR": {
+                "TITLE": "We're Sorry.",
+                "DESCRIPTION": "Please call 1-866-303-5603 to speak with an agent and continue adding phone numbers to SiriusXM's Do Not Call list."
+            }
+        },
+        "doNotCallFormComponent": {
+            "TITLE": "Enter Phone Number",
+            "PHONE_NUMBER": "Phone Number",
+            "BUTTON": "Continue",
+            "ERROR": {
+                "PHONE_NUMBER": "Enter a valid phone number."
+            }
+        }
+    }
+}

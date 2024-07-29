@@ -1,0 +1,61 @@
+<div>
+    <ng-container *ngIf="displayVehicleSection">
+        <p>
+            <b>{{ "offers.differentPlatformComponent.SIRIUS.RADIO_INFO" | translate }}</b>
+        </p>
+        <p *ngIf="radio?.vehicleInfo">
+            {{ "offers.differentPlatformComponent.VEHICLE" | translate: radio.vehicleInfo }}
+        </p>
+        <ng-container *ngFor="let plan of currentSubscription?.plans">
+            <p
+                *ngIf="plan?.packageName"
+                data-test="currentPlan"
+                innerHTML="
+                        {{ 'app.packageDescriptions.' + plan.packageName + '.name' | translate }}
+                        {{ plan.type === trialPlanType ? ('offers.differentPlatformComponent.TRIAL' | translate) : '' }}
+                        {{ 'offers.differentPlatformComponent.SIRIUS.SUBSCRIPTION' | translate }}
+                    "
+            ></p>
+            <p *ngIf="plan?.endDate">
+                {{ "offers.differentPlatformComponent.EXPIRES" | translate }}:
+                {{ plan.endDate | date: (dateFormat$ | async):timeZone:locale }}
+            </p>
+        </ng-container>
+    </ng-container>
+</div>
+<div class="upsell-container">
+    <div *ngIf="(timer$ | async) !== 0; else upsell" class="loading-banner">
+        <h5>
+            {{ "offers.differentPlatformComponent.SIRIUS.LOADER_MSG_TOP" | translate }}<br />
+            {{ "offers.differentPlatformComponent.SIRIUS.LOADER_MSG_BOTTOM" | translate }}
+        </h5>
+        <div class="loading"><span></span><span></span><span></span></div>
+    </div>
+    <ng-template #upsell>
+        <h6 class="sub-header">
+            {{ "offers.differentPlatformComponent.SIRIUS.NEW_PACKAGE" | translate }}
+        </h6>
+        <ng-container *ngIf="platformChangePlan?.packageName">
+            <h4 [innerHTML]="'app.packageDescriptions.' + platformChangePlan.packageName + '.name' | translate"></h4>
+        </ng-container>
+        <h5 class="discludes" data-test="siriusExcludes">
+            {{ "offers.differentPlatformComponent.SIRIUS.EXCLUDES" | translate }}
+        </h5>
+        <ul class="checkmark-list">
+            <ng-container *ngFor="let channels of excludedChannels">
+                <li *ngFor="let description of channels.descriptions" data-icon="xmark-sm">
+                    <span [innerHTML]="description"></span>
+                    <div class="icon-remove-wrapper">
+                        <svg class="icon icon-utility small">
+                            <use class="icon-remove" xlink:href="#icon-remove"></use>
+                        </svg>
+                    </div>
+                </li>
+            </ng-container>
+        </ul>
+
+        <button (click)="acceptClicked()" class="button primary full-width" data-e2e="differentPlatformAcceptButton" data-test="DifferentPlatformAcceptButton">
+            {{ "offers.differentPlatformComponent.SIRIUS.ACCEPT" | translate }}
+        </button>
+    </ng-template>
+</div>

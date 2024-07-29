@@ -1,0 +1,30 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+main {
+    height: 100%;
+    position: relative;
+
+    &::after {
+        content: "";
+        height: 2px;
+        width: 100%;
+        background: $white;
+        display: block;
+        position: absolute;
+        bottom: -1px;
+        z-index: 1;
+    }
+}
+
+.error-message-header {
+    @include error-message-header;
+}
+
+.recirculation-wrapper {
+    margin: 40px 0;
+
+    @include bp(medium) {
+        margin: 48px 0 65px 0;
+    }
+}

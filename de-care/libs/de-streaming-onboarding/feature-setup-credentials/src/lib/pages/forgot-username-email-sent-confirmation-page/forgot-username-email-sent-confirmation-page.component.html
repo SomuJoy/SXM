@@ -1,0 +1,15 @@
+<h4>{{ translateKeyPrefix + ".TITLE" | translate }}</h4>
+<br />
+<p>
+    {{
+        translateKeyPrefix + ".SUB_TITLE_TEXT"
+            | translate
+                : {
+                      maskedEmail: maskedEmail$ | async
+                  }
+    }}
+</p>
+
+<button type="button" class="button secondary full-width" (click)="onSignIn()" data-link-name="BACK TO SIGN IN" sxmUiDataClickTrack="player">
+    {{ translateKeyPrefix + ".BUTTON_TEXT" | translate }}
+</button>

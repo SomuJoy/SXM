@@ -1,0 +1,16 @@
+<section id="heroSection">
+    <sxm-ui-hero
+        [heroData]="{
+            title: (translateKeyPrefix + '.HERO_COPY' | translate: { termLength: offerTermLength$ | async }),
+            classes: 'with-main-text-padding'
+        }"
+    ></sxm-ui-hero>
+</section>
+<div class="row align-center background-offwhite">
+    <div class="column medium-2 no-padding background-white"></div>
+    <div class="column small-12 medium-6 background-white bottom-padding">
+        <listen-now [infoForToken]="{ subscriptionId: subscriptionId$ | async }" [customLink]="translateKeyPrefix + '.STREAMING_PLAYER_LINK' | translate"></listen-now>
+    </div>
+    <div class="column medium-2 no-padding background-white"></div>
+    <div></div>
+</div>

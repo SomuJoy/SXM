@@ -1,0 +1,44 @@
+<div class="button-container">
+    <button class="back-button" type="button" (click)="back.emit()" data-test="manageSubscriptionsHeaderBackButton">
+        <div>
+            <svg class="icon">
+                <use xlink:href="#icon-back"></use>
+            </svg>
+            <span class="back-label">
+                {{ translateKeyPrefix + ".BACK_BUTTON_LABEL" | translate }}
+            </span>
+        </div>
+    </button>
+</div>
+
+<div class="grid-container">
+    <div>
+        <h2 class="nickname-info">
+            {{ data.nickname }}
+        </h2>
+        <div>
+            <button class="edit-radio-nickname" (click)="editNickname.emit()" data-test="manageSubscriptionsHeaderEditNicknameButton">
+                {{ translateKeyPrefix + ".EDIT_RADIO_NICKNAME_LINK" | translate }}
+            </button>
+        </div>
+    </div>
+    <div class="icon-division show-mobile-medium-up">
+        <svg class="icon icon-content" *ngIf="data.vehicleType === 'CAR'">
+            <use xlink:href="#icon-car"></use>
+        </svg>
+        <svg class="icon icon-content" *ngIf="data.vehicleType === 'AVIATION'">
+            <use xlink:href="#icon-aviation"></use>
+        </svg>
+        <svg class="icon icon-content" *ngIf="data.vehicleType === 'MARINE'">
+            <use xlink:href="#icon-marine"></use>
+        </svg>
+    </div>
+</div>
+<p class="ymm-info small-copy lead-in mb-4" *ngIf="data?.yearMakeModelInfo">{{ data?.yearMakeModelInfo }}</p>
+
+<div class="tool-tip-grid">
+    <p class="radioId-info small-copy lead-in" *ngIf="data?.radioId">
+        {{ translateKeyPrefix + ".RADIO_ID_INFO" | translate: { radioId: data.radioId, platform: data.platform } }}
+    </p>
+    <sxm-ui-tooltip *ngIf="data?.is360L" class="tooltip-display-right"> <div [innerHTML]="translateKeyPrefix + '.360L_TOOLTIP' | translate"></div></sxm-ui-tooltip>
+</div>

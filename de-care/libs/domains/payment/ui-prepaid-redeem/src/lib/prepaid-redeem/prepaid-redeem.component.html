@@ -1,0 +1,123 @@
+<button
+    id="prepaid-btn"
+    class="component--add-element-title"
+    [ngClass]="{ active: formExpand }"
+    data-add-element-trigger
+    data-open="add-element-prepaid"
+    data-icon="add,remove"
+    tabindex="0"
+    collapsed-text="Redeem a prepaid card"
+    expanded-text="Redeem a prepaid card"
+    data-track-click="Redeem prepaid or gift card"
+    [attr.aria-expanded]="formExpand"
+    [attr.aria-controls]="prepaidRedeemedId"
+    (click)="togglePrepaid()"
+    type="button"
+>
+    <ng-container *ngIf="!redeemSuccess; else removeIcon">
+        <span class="button-text">{{ translateKey + "REDEEM_LABEL" | translate }}</span>
+        <div class="icon-add-wrapper" *ngIf="!formExpand">
+            <svg class="icon icon-utility small">
+                <use class="icon-expand" xlink:href="#icon-expand"></use>
+            </svg>
+        </div>
+        <div class="icon-remove-wrapper" *ngIf="formExpand">
+            <svg class="icon icon-utility small">
+                <use class="icon-collapse" xlink:href="#icon-collapse"></use>
+            </svg>
+        </div>
+    </ng-container>
+    <ng-template #removeIcon>
+        <span class="button-text">{{ translateKey + "REMOVE_LABEL" | translate }}</span>
+        <div class="icon-remove-wrapper">
+            <svg class="icon icon-utility small">
+                <use class="icon-remove" xlink:href="#icon-remove"></use>
+            </svg>
+        </div>
+    </ng-template>
+</button>
+<form [formGroup]="prepaidForm" #paymentFormRef="ngForm" [id]="prepaidRedeemedId" novalidate>
+    <div [class.active]="formExpand" id="prepaid-content">
+        <div class="add-element-content-container">
+            <div>
+                <p *ngIf="!redeemSuccess" qatag="AddPrepaidText">{{ translateKey + "ADD_CARD" | translate }}</p>
+                <svg *ngIf="redeemSuccess" class="icon icon-utility large" qatag="YourPrepaidCardWasAppliedCheckmark">
+                    <use class="icon-checkmark-sm" xlink:href="#icon-checkmark-sm"></use>
+                </svg>
+                <p qatag="YourPrepaidCardWasAppliedText" *ngIf="redeemSuccessEmitter$ | async">
+                    <strong>{{ translateKey + "CARD_APPLIED" | translate }}</strong>
+                </p>
+            </div>
+            <div
+                *ngIf="!redeemSuccess"
+                class="input-container"
+                [class.invalid]="(prepaidForm.get('pinNumber') | formControlInvalid: submitted) || redeemSuccess === null"
+                [class.filled]="f['pinNumber'].value"
+            >
+                <label for="prepaid">{{ translateKey + "PIN_NUMBER" | translate }}</label>
+                <input
+                    type="text"
+                    id="prepaid"
+                    qatag="PrepaidPinNumberTextfield"
+                    #prepaid
+                    onFocus
+                    formControlName="pinNumber"
+                    (blur)="prepaidBlur()"
+                    (keyup)="checkBlkHwkPttrn()"
+                />
+            </div>
+            <div *ngIf="(prepaidForm.get('pinNumber') | formControlInvalid: submitted) || redeemSuccess === null" class="invalid-feedback">
+                <p>{{ translateKey + "ERROR_VALID_PIN" | translate }}</p>
+            </div>
+            <ng-container *ngIf="isBlackHawk && !isCanada">
+                <div *ngIf="!redeemSuccess" class="row align-top no-padding">
+                    <div class="column small-6 align-left no-padding giftcard-mm">
+                        <sxm-ui-dropdown
+                            class="dropdown"
+                            formControlName="gcExpM"
+                            [class.invalid]="(prepaidForm.get('gcExpM') | formControlInvalid: submitted) || prepaidForm.hasError('validDate')"
+                            tabindex="0"
+                            [passedValue]="months"
+                            labelText="{{ translateKey + 'GC_EXP_M' | translate }}"
+                        ></sxm-ui-dropdown>
+                        <div *ngIf="prepaidForm.get('gcExpM') | formControlInvalid: submitted" class="invalid-feedback giftcard-exp-error">
+                            <p>{{ translateKey + "ERROR_VALID_MONTH" | translate }}</p>
+                        </div>
+                    </div>
+
+                    <div class="column small-6 align-right no-padding giftcard-yy">
+                        <sxm-ui-dropdown
+                            class="dropdown"
+                            formControlName="gcExpY"
+                            [class.invalid]="(prepaidForm.get('gcExpY') | formControlInvalid: submitted) || prepaidForm.hasError('validDate')"
+                            tabindex="0"
+                            [passedValue]="years"
+                            labelText="{{ translateKey + 'GC_EXP_Y' | translate }}"
+                        >
+                        </sxm-ui-dropdown>
+                        <div *ngIf="prepaidForm.get('gcExpY') | formControlInvalid: submitted" class="invalid-feedback giftcard-exp-error">
+                            <p>{{ translateKey + "ERROR_VALID_YEAR" | translate }}</p>
+                        </div>
+                    </div>
+                    <div *ngIf="prepaidForm.hasError('validDate') && !controlIsInvalid(f['gcExpM'])" class="invalid-feedback giftcard-exp-error">
+                        <p>{{ translateKey + "ERROR_CC_EXP_INVALID" | translate }}</p>
+                    </div>
+                </div>
+
+                <div *ngIf="!redeemSuccess" class="column small-12 no-padding">
+                    <div class="input-container" [class.invalid]="prepaidForm.get('gcCVV') | formControlInvalid: submitted">
+                        <label for="gcCVV">{{ translateKey + "GC_CVV" | translate }}</label>
+                        <input type="password" id="gccvv" minlength="3" maxlength="3" formControlName="gcCVV" onFocus />
+                    </div>
+                    <div *ngIf="prepaidForm.get('gcCVV') | formControlInvalid: submitted" class="invalid-feedback">
+                        <p>{{ translateKey + "ERROR_VALID_CVV" | translate }}</p>
+                    </div>
+                </div>
+            </ng-container>
+
+            <button *ngIf="!redeemSuccess" class="button secondary full-width apply-btn" qatag="ApplyPrepaidButton" data-track-click="Apply" (click)="submitPrepaid()">
+                {{ translateKey + "APPLY" | translate }}
+            </button>
+        </div>
+    </div>
+</form>

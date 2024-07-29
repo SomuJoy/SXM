@@ -1,0 +1,15 @@
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.sign-in-instructions {
+    margin-bottom: 1.5rem;
+}
+.invalid-feedback p:last-of-type {
+    margin-bottom: 1.75rem;
+}
+sxm-ui-flepz-form-fields {
+    margin-bottom: 0.2rem;
+    display: block;
+}
+button[type="submit"] {
+    margin-top: 32px;
+}

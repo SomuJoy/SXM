@@ -1,0 +1,34 @@
+{
+    "name": "de-care-use-cases-trial-activation-ui-important-info",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care-use-cases/trial-activation/ui-important-info/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/de-care-use-cases/trial-activation/ui-important-info/src/**/*.ts",
+                    "libs/de-care-use-cases/trial-activation/ui-important-info/src/**/*.html"
+                ]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/trial-activation/ui-important-info/jest.config.js",
+                "tsConfig": "libs/de-care-use-cases/trial-activation/ui-important-info/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/de-care-use-cases/trial-activation/ui-important-info/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:ui", "scope:de-care"]
+}

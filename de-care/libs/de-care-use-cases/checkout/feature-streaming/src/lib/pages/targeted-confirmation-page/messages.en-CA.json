@@ -1,0 +1,6 @@
+{
+    "TITLE": "Thank you for subscribing",
+    "STREAMING_PLAYER_LINK": "",
+    "PRICE_AND_TERM_SUBTEXT": "An early termination fee of ({{etfAmount}}) may apply if you cancel within the first {{etfTerm}} months.",
+    "USERNAME": "Username: {{username}}"
+}

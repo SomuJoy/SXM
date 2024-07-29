@@ -1,0 +1,27 @@
+<div>
+    <account-lookup (continue)="onContinue($event)" [email]="email"></account-lookup>
+</div>
+
+<sxm-ui-modal
+    #accountFoundModal
+    [ariaDescribedbyTextId]="accountLookupStepyourSubsModalAriaDescribedbyTextId"
+    (modalClosed)="onAccountFoundModalClose()"
+    [title]="'purchase.accountLookupStepComponent.ACCOUNT_FOUND_MODAL_TITLE' | translate"
+    [titlePresent]="true"
+>
+    <your-subscriptions [ariaDescribedbyTextId]="accountLookupStepyourSubsModalAriaDescribedbyTextId" [subscriptions]="accountLookupState.streamingSubscriptions$ | async" (actionClicked)="onSubscriptionAction($event)"></your-subscriptions>
+</sxm-ui-modal>
+
+<sxm-ui-modal
+    #verifyAccountModal
+    [ariaDescribedbyTextId]="accountLookupStepModalAriaDescribedbyTextId"
+    (modalClosed)="onVerifyAccountModalClose()"
+    [title]="'purchase.accountLookupStepComponent.VERIFY_MODAL_TITLE' | translate"
+    [titlePresent]="true"
+    [showBackButton]="true"
+    (backButton)="backToAccountFound()"
+>
+    <h5>{{ "purchase.accountLookupStepComponent.VERIFY_MODAL_HEADER_TITLE" | translate }}</h5>
+    <p [id]="accountLookupStepModalAriaDescribedbyTextId">{{ "purchase.accountLookupStepComponent.VERIFY_MODAL_HEADER_COPY" | translate }}</p>
+    <validate-lpz-form #lpzForm (verified)="onAccountVerified()" (invalidUserInfo)="onAccountInvalid()"></validate-lpz-form>
+</sxm-ui-modal>

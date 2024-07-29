@@ -1,0 +1,29 @@
+<p class="legal-copy">
+    <strong>{{ "trialActivation.offerDetailsComponent.LABEL" | translate }}</strong>
+    <span
+        *ngIf="!isCanada || !(isQuebec$ | async); else offerDetailsQuebec"
+        [innerHTML]="
+            'trialActivation.offerDetailsComponent.BODY'
+                | translate
+                    : {
+                          length: termLength,
+                          offerName: 'app.packageDescriptions.' + packageName + '.name' | translate | withoutPlatformName: packageName,
+                          pluralizedMonth: termLength | i18nPlural: ('trialActivation.offerDetailsComponent.TERM_LENGTH.PLURAL_MAP.MONTHS' | translate: { length: termLength })
+                      }
+        "
+    ></span>
+    <ng-template #offerDetailsQuebec>
+        <span
+            [innerHTML]="
+                'trialActivation.offerDetailsComponent.BODY_QUEBEC'
+                    | translate
+                        : {
+                              length: termLength,
+                              offerName: 'app.packageDescriptions.' + packageName + '.name' | translate | withoutPlatformName: packageName,
+                              pluralizedMonth:
+                                  termLength | i18nPlural: ('trialActivation.offerDetailsComponent.TERM_LENGTH.PLURAL_MAP.MONTHS' | translate: { length: termLength })
+                          }
+            "
+        ></span>
+    </ng-template>
+</p>

@@ -1,0 +1,7 @@
+{
+    "DomainsIdentificationUiValidateLpzFormModule": {
+        "ValidateLpzFormComponent": {
+            "PHONE_INVALID_PREFIX": "We're unable to confirm your account. Please verify the information you entered and try again. For more help, call <a href=\"tel:+1-833-838-7846\">1-833-838-7846 </a> or chat with an agent."
+        }
+    }
+}

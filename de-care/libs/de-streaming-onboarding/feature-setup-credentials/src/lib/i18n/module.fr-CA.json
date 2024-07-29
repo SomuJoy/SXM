@@ -1,0 +1,114 @@
+{
+    "DeStreamingOnboardingFeatureSetupCredentialsModule": {
+        "PrivacyPolicyComponent": {
+            "LINK_TEXT": "Politique de la vie privée",
+            "LINK_URL": "http://www.siriusxm.ca/vieprivee"
+        },
+        "FindAccountPageComponent": {
+            "HEADLINE": "Configurez votre identifiant pour écouter sur l’application.",
+            "HEADLINE_CODE_127": "Nous avons trouvé un compte actif associé à votre courriel qui comprend déjà la diffusion en continu.",
+            "INSTRUCTIONS": "Tout d’abord, nous avons besoin de quelques renseignements pour trouver votre abonnement.",
+            "INSTRUCTIONS_CODE_127": "Entrez votre info pour configurer votre identifiant.",
+            "ALREADY_HAVE_LOGIN": "Vous avez déjà un identifiant de diffusion en continu?",
+            "SIGN_IN_LINK_TEXT": "Connexion",
+            "CONTINUE_BUTTON_TEXT": "CONTINUER",
+            "SYSTEM_ERROR": "Nous sommes désolés, Quelque chose n'a pas fonctionné. Nous rencontrons des problèmes techniques et travaillons à les résoudre. Veuillez réessayer.",
+            "INVALID_FIRST_NAME": "Please enter a valid first name.",
+            "INVALID_EMAIL": "Please enter a valid email address.",
+            "PAGE_TITLE": "Set Up Your SXM App Login"
+        },
+        "AccountNotFoundPageComponent": {
+            "HEADLINE": "Apparemment, vous ne connaissez peut-être pas SiriusXM.",
+            "INSTRUCTIONS": "<p>Nous n’arrivons pas à trouver un abonnement existant associé à vos renseignements. Si vous avez SiriusXM dans votre voiture, nous pouvons utiliser le code de votre radio pour en chercher un.</p><p>Vous pouvez aussi explorer notre contenu et nos options d’abonnement.</p>",
+            "PREVIEW_BUTTON_TEXT": "Continuer",
+            "ENTER_RADIO_ID_LINK_TEXT": "Entrez un code de radio"
+        },
+        "IneligibleNonPayPageComponent": {
+            "HEADLINE": "Votre abonnement est dû.",
+            "INSTRUCTIONS": "<p>Vous pouvez reprendre l’écoute dès que nous recevrons un paiement. Entre temps, vous pouvez explorer la prévisualisation gratuite.</p>",
+            "PREVIEW_BUTTON_TEXT": "Diffusez en continu dans l’application"
+        },
+        "IneligibleNonConsumerComponent": {
+            "HEADLINE": "Votre essai SiriusXM est expiré",
+            "INSTRUCTIONS": "<p>Vous pouvez prévisualiser notre contenu. Ou, abonnez-vous à SiriusXM et connectez-vous pour écouter sur l'application et en ligne.</p>",
+            "PREVIEW_BUTTON_TEXT": "Diffusez en continu dans l’application"
+        },
+        "IneligibleExpiredAATrialComponent": {
+            "HEADLINE": "Votre essai SiriusXM est expiré",
+            "MESSAGE_WITH_PHONE_NUMBER": "Vous ne pouvez pas réactiver votre abonnement d’auto ici (veuillez contacter SiriusXM pour le faire), mais vous pouvez essayer gratuitement l’application SiriusXM ou vous abonner à un forfait de diffusion en continu uniquement.",
+            "MESSAGE_WITHOUT_PHONE_NUMBER": "Vous ne pouvez pas réactiver votre abonnement d’auto ici (veuillez contacter SiriusXM pour le faire), mais vous pouvez essayer gratuitement l’application SiriusXM ou vous abonner à un forfait de diffusion en continu uniquement.",
+            "PREVIEW_BUTTON_TEXT": "Abonnez-vous à l’application SXM"
+        },
+        "IneligibleMaxLifetimeTrialsComponent": {
+            "HEADLINE": "Votre essai SiriusXM est expiré",
+            "INSTRUCTIONS": "<p>Vous pouvez prévisualiser notre contenu. Ou, abonnez-vous à SiriusXM et connectez-vous pour écouter sur l'application et en ligne.</p>",
+            "PREVIEW_BUTTON_TEXT": "Diffusez en continu dans l’application"
+        },
+        "IneligibleInsufficientPackageComponent": {
+            "HEADLINE": "Vous pouvez explorer la prévisualisation gratuite. Ou abonnez-vous à SiriusXM et connectez-vous pour écouter sur l’application et en ligne.",
+            "INSTRUCTIONS": "",
+            "PREVIEW_BUTTON_TEXT": "Diffusez en continu dans l’application"
+        },
+        "IneligibleNoAudioComponent": {
+            "HEADLINE": "Nous avons trouvé votre abonnement, mais il n'inclut pas le streaming.",
+            "MESSAGE_WITH_PHONE_NUMBER": "Vous ne pouvez pas surclasser l’abonnement pour votre véhicule ici (veuillez composer le 1-833-838-7846), mais vous pouvez essayer l’Appli SXM gratuitement ou vous abonner à un forfait d’écoute en continu uniquement.",
+            "MESSAGE_WITHOUT_PHONE_NUMBER": "Vous ne pouvez pas surclasser l’abonnement pour votre véhicule ici (Veuillez contacter SiriusXM pour le faire), mais vous pouvez essayer l’Appli SXM gratuitement ou vous abonner à un forfait d’écoute en continu uniquement.",
+            "PREVIEW_BUTTON_TEXT": "Diffusez en continu dans l’application"
+        },
+        "ClosedSubscriptionComponent": {
+            "HEADLINE": "Nous avons trouvé votre abonnement, mais il a expiré",
+            "MESSAGE_WITH_PHONE_NUMBER": "<p>Vous ne pouvez pas réactiver l’abonnement pour votre véhicule ici (veuillez composer le 1-833-838-7846), mais vous pouvez essayer l’Appli SXM gratuitement ou vous abonner à un forfait d’écoute en continu uniquement.</p>",
+            "MESSAGE_WITHOUT_PHONE_NUMBER": "<p>Vous ne pouvez pas réactiver l’abonnement pour votre véhicule ici (Veuillez contacter SiriusXM pour le faire), mais vous pouvez essayer l’Appli SXM gratuitement ou vous abonner à un forfait d’écoute en continu uniquement.</p>",
+            "PREVIEW_BUTTON_TEXT": "Abonnez-vous à l’application SXM"
+        },
+        "RadioIdPageComponent": {
+            "HEADLINE": "Apparemment, vous ne connaissez peut-être pas SiriusXM.",
+            "INSTRUCTIONS": "<p>Nous n'avons pas trouvé votre abonnement avec les informations que vous avez saisies, mais nous pouvons rechercher à nouveau en utilisant votre identifiant radio ou votre VIN.</p>",
+            "INSTRUCTIONS_TEXT": "<p>Si vous n’avez pas de radio d’auto SiriusXM, ou si seule la diffusion en continu vous intéresse, vous pouvez essayer gratuitement l’application SiriusXM ou vous abonner à un forfait de diffusion en continu uniquement.</p>",
+            "FIND_RADIO_ID_TEXT": "Comment puis-je trouver mon code de radio?",
+            "PREVIEW_BUTTON_TEXT": "Diffusez en continu dans l’application",
+            "BUTTON_TEXT": "CHERCHER",
+            "FIND_RADIO_ID_MODAL_HEADER_TEXT": "Aide pour code de radio",
+            "FIND_RADIO_ID_MODAL_TITLE": "Comment puis-je trouver mon code de radio?",
+            "FIND_RADIO_ID_MODAL_SUBTITLE": "<p>Il y a 2 façons de trouver votre code de radio (appelé aussi NSE ou SID). Pour la plupart des radios, le code de radio sera affiché en syntonisant la station 0. Si ce n’est pas le cas, vous pouvez utiliser la fonction « Menu » de votre radio pour l’afficher.</p><p>Vous pouvez aussi utiliser le NIV ou la plaque d’immatriculation de votre voiture pour trouver votre abonnement.</p>",
+            "MESSAGE_WITH_PHONE_NUMBER": "Si vous avez besoin d’aide supplémentaire, veuillez composer le 1 844 287-9225.",
+            "MESSAGE_WITHOUT_PHONE_NUMBER": "Si vous avez besoin d’aide supplémentaire, veuillez contacter SiriusXM",
+            "FIND_RADIO_ID_MODAL_BUTTON_TEXT": "FERMER",
+            "PLACEHOLDER_TEXT": "Code de radio ou NIV",
+            "TOOLTIP_TEXT": "Votre code de radio comprendra 8 ou 12 caractères.",
+            "ERROR_MSG": "Entrez un code de radio valide.",
+            "SERVICE_ERROR_MESSAGES": {
+                "INVALID_RADIO_ID": "Le numéro entré ne correspond pas à nos dossiers. Veuillez essayer de nouveau.",
+                "SYSTEM_ERROR": "Nous sommes désolés, Quelque chose n'a pas fonctionné. Nous rencontrons des problèmes techniques et travaillons à les résoudre. Veuillez réessayer."
+            }
+        },
+        "SingleMatchSetupLoginConfirmationPageComponent": {
+            "HEADLINE": "Tout est prêt pour vous permettre d’écouter.",
+            "INSTRUCTIONS": "<p>Utilisez votre nom d’utilisateur et votre mot de passe pour vous connecter à l’application et commencer à écouter.</p>",
+            "BUTTON_TEXT": "ÉCOUTEZ MAINTENANT",
+            "STREAMING_PLAYER_LINK": ""
+        },
+        "MultipleSubscriptionsPageComponent": {
+            "HEADLINE": "Nous avons trouvé un ou plusieurs abonnements qui comprennent la diffusion en continu.",
+            "INSTRUCTIONS": "<p>Choisissez-en un pour commencer à écouter.</p>",
+            "NO_MATCH_HEADLINE": "Nous avons trouvé votre abonnement, mais il n'inclut pas le streaming.",
+            "CTA_Link_LOGIN_TEXT": "Créez un identifiant",
+            "CTA_Link_LISTEN_TEXT": "Écoutez maintenant",
+            "CTA_FREE_PREVIEW_GREY": "La diffusion en continu n’est pas comprise",
+            "CTA_Link_FREE_TEXT": "Essayez-la",
+            "DONT_SEE_ACCOUNT_TEXT": "Vous ne voyez pas votre compte?",
+            "LOAD_RADIO_BUTTON_TEXT": "AFFICHER PLUS DE RADIOS",
+            "LOAD_PREVIOUS_RADIO_BUTTON_TEXT": "Charger les radios précédentes"
+        },
+        "SingleMatchOACPageComponent": {
+            "HEADLINE": "Bonnes nouvelles. Vous avez déjà un identifiant pour écouter sur l’application et en ligne..",
+            "INSTRUCTIONS": "<p>Connectez-vous simplement à l’application avec le nom d’utilisateur et le mot de passe que vous avez créés quand vous vous êtes enregistré la dernière fois.</p>",
+            "BUTTON_TEXT": "CONNEXION",
+            "ACCOUNT_TEXT": {
+                "LABEL": "COMPTE",
+                "RADIO_TEXT": "CODE DE RADIO"
+            },
+            "FORGOT_TEXT": "Vous avez oublié votre nom d’utilisateur ou votre mot de passe?"
+        }
+    }
+}

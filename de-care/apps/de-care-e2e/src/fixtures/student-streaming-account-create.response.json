@@ -1,0 +1,14 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 201,
+    "httpStatus": "CREATED",
+    "data": {
+        "email": "htodd1589812377414@siriusxm.com",
+        "status": "SUCCESS",
+        "radioId": null,
+        "subscriptionId": "10000361233",
+        "isOfferStreamingEligible": true,
+        "isEligibleForRegistration": true,
+        "isUserNameSameAsEmail": true
+    }
+}

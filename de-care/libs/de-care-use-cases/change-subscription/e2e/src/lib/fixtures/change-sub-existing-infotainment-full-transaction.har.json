@@ -1,0 +1,1127 @@
+[
+    {
+        "request": {
+            "method": "GET",
+            "url": "/services/utility/env-info",
+            "postData": ""
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Thu, 25 Feb 2021 18:58:55 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Transfer-Encoding",
+                    "value": "chunked"
+                },
+                {
+                    "name": "Connection",
+                    "value": "keep-alive"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": ": ALLOW-FROM https://www.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Security-Policy",
+                    "value": ": frame-ancestors https://*.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "mode": "test",
+                        "country": "us",
+                        "buildInfo": {
+                            "tag": "project/CARE_RELEASE_0062000",
+                            "smsDependency": "",
+                            "smsUser": "web1",
+                            "smsHost": "10.98.144.117:25301",
+                            "pvtTime": "2021-02-25 13:58:55.0"
+                        },
+                        "sessionInfo": {
+                            "id": "dd73fbdb-52af-476e-8ff4-7a79d1692b72",
+                            "idleTimeout": "20",
+                            "absoluteTimeout": "Thu Feb 25 14:18:40 EST 2021"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/account",
+            "postData": {
+                "accountNumber": "10000210922"
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Thu, 25 Feb 2021 18:58:56 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Transfer-Encoding",
+                    "value": "chunked"
+                },
+                {
+                    "name": "Connection",
+                    "value": "keep-alive"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://dex-dev.corp.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": ": ALLOW-FROM https://www.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Security-Policy",
+                    "value": ": frame-ancestors https://*.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "mrdCapable": true,
+                        "accountNumber": "10000210922",
+                        "firstName": "demo",
+                        "lastName": "phase two",
+                        "phone": "2123334444",
+                        "userName": "demo@siriusxm.com",
+                        "email": "DEMO@SIRIUSXM.COM",
+                        "accountProfile": {
+                            "profileNumber": "10000210458",
+                            "billingStatus": "Active",
+                            "accountRegistered": false,
+                            "createdOnDate": "2021-02-25T12:47:19-05:00"
+                        },
+                        "serviceAddress": {
+                            "streetAddress": "1 River Rd",
+                            "city": "Schenectady",
+                            "state": "NY",
+                            "postalCode": "12345-6000",
+                            "country": "USA",
+                            "isAVSValidated": true
+                        },
+                        "billingAddress": {
+                            "streetAddress": "1 River Rd",
+                            "city": "Schenectady",
+                            "state": "NY",
+                            "postalCode": "12345-6000",
+                            "country": "USA",
+                            "isAVSValidated": true
+                        },
+                        "subscriptions": [
+                            {
+                                "id": "10000209434",
+                                "status": "Active",
+                                "plans": [
+                                    {
+                                        "code": "Select - 1mo - wActv",
+                                        "packageName": "1_SIR_AUD_EVT",
+                                        "termLength": 1,
+                                        "minimumFollowOnTerm": 0,
+                                        "startDate": "2021-02-25T00:00:00-05:00",
+                                        "endDate": null,
+                                        "nextCycleOn": "2021-03-25T00:00:00-04:00",
+                                        "marketType": "self-pay:standard",
+                                        "type": "SELF_PAID",
+                                        "status": "active",
+                                        "capabilities": ["IPAUD", "AUD"],
+                                        "price": 16.99,
+                                        "product": null,
+                                        "isPreTiering": false,
+                                        "isChangePlanAllowed": false,
+                                        "isBasePlan": true,
+                                        "isFamiliyDiscountApplied": false
+                                    },
+                                    {
+                                        "code": "NavTraffic + NavWeather - 1mo - wActv",
+                                        "packageName": "1_SIR_DATA_NAVTRAF_NAVWEAT",
+                                        "termLength": 1,
+                                        "minimumFollowOnTerm": 0,
+                                        "startDate": "2021-02-25T00:00:00-05:00",
+                                        "endDate": null,
+                                        "nextCycleOn": "2021-03-25T00:00:00-04:00",
+                                        "marketType": "self-pay:standard",
+                                        "type": "SELF_PAID",
+                                        "status": "active",
+                                        "capabilities": ["NTR", "NWT"],
+                                        "price": 7,
+                                        "product": null,
+                                        "isPreTiering": false,
+                                        "isChangePlanAllowed": true,
+                                        "isBasePlan": false,
+                                        "isFamiliyDiscountApplied": false
+                                    },
+                                    {
+                                        "code": "Travel-Link - 1mo - wActv",
+                                        "packageName": "1_SIR_DATA_TRVLLNK",
+                                        "termLength": 1,
+                                        "minimumFollowOnTerm": 0,
+                                        "startDate": "2021-02-25T00:00:00-05:00",
+                                        "endDate": null,
+                                        "nextCycleOn": "2021-03-25T00:00:00-04:00",
+                                        "marketType": "self-pay:standard",
+                                        "type": "SELF_PAID",
+                                        "status": "active",
+                                        "capabilities": ["TRV"],
+                                        "price": 1.99,
+                                        "product": null,
+                                        "isPreTiering": false,
+                                        "isChangePlanAllowed": true,
+                                        "isBasePlan": false,
+                                        "isFamiliyDiscountApplied": false
+                                    }
+                                ],
+                                "followonPlans": [],
+                                "radioService": {
+                                    "id": "10000211482",
+                                    "status": "Active",
+                                    "radioId": "ANT000CK",
+                                    "last4DigitsOfRadioId": "00CK",
+                                    "vehicleInfo": {
+                                        "year": null,
+                                        "make": null,
+                                        "model": null
+                                    },
+                                    "capabilities": ["TRV", "NTR", "AUD", "BOF", "NWT"],
+                                    "is360LCapable": false
+                                },
+                                "streamingService": {
+                                    "maskedUserName": "dem******@siriusxm.com",
+                                    "id": "10000208154",
+                                    "userName": "demo@siriusxm.com",
+                                    "status": "Active",
+                                    "randomCredentials": false
+                                },
+                                "devicePromoCode": null,
+                                "isPrimary": true,
+                                "isMrdDriving": true
+                            }
+                        ],
+                        "billingSummary": {
+                            "paymentType": "creditCard",
+                            "creditCard": {
+                                "last4Digits": "1111",
+                                "type": "VISA",
+                                "expiryMonth": 2,
+                                "expiryYear": 2024,
+                                "status": "ACTIVE"
+                            },
+                            "amountDue": 0
+                        },
+                        "consolidatedAccountNumbers": [],
+                        "closedDevicesMap": {},
+                        "closedDevices": []
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/offers/customer/change",
+            "postData": {
+                "subscriptionId": 10000209434
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Thu, 25 Feb 2021 18:59:01 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Transfer-Encoding",
+                    "value": "chunked"
+                },
+                {
+                    "name": "Connection",
+                    "value": "keep-alive"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://dex-dev.corp.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": ": ALLOW-FROM https://www.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Security-Policy",
+                    "value": ": frame-ancestors https://*.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "offers": [
+                            {
+                                "planCode": "All Access - 12mo - wActv",
+                                "packageName": "1_SIR_AUD_ALLACCESS",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 263.88,
+                                "pricePerMonth": 21.99,
+                                "retailPrice": 21.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 21.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 1,
+                                "bundledSavingPrice": null,
+                                "bundleSubPackageNames": null,
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": true,
+                                "bestPackage": true,
+                                "dataCapable": false,
+                                "bundled": false
+                            },
+                            {
+                                "planCode": "All Access - 1mo - wActv",
+                                "packageName": "1_SIR_AUD_ALLACCESS",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 21.99,
+                                "pricePerMonth": 21.99,
+                                "retailPrice": 21.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 21.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 1,
+                                "bundledSavingPrice": null,
+                                "bundleSubPackageNames": null,
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": true,
+                                "bestPackage": true,
+                                "dataCapable": false,
+                                "bundled": false
+                            },
+                            {
+                                "planCode": "All Access Family Friendly - 12mo - wActv",
+                                "packageName": "1_SIR_AUD_ALLACCESS_FF",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 251.88,
+                                "pricePerMonth": 20.99,
+                                "retailPrice": 20.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 20.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 2,
+                                "bundledSavingPrice": null,
+                                "bundleSubPackageNames": null,
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "bestPackage": false,
+                                "dataCapable": false,
+                                "bundled": false
+                            },
+                            {
+                                "planCode": "All Access Family Friendly - 1mo - wActv",
+                                "packageName": "1_SIR_AUD_ALLACCESS_FF",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 20.99,
+                                "pricePerMonth": 20.99,
+                                "retailPrice": 20.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 20.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 2,
+                                "bundledSavingPrice": null,
+                                "bundleSubPackageNames": null,
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "bestPackage": false,
+                                "dataCapable": false,
+                                "bundled": false
+                            },
+                            {
+                                "planCode": "Select - 1mo - wActv",
+                                "packageName": "1_SIR_AUD_EVT",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 16.99,
+                                "pricePerMonth": 16.99,
+                                "retailPrice": 16.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 16.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 3,
+                                "bundledSavingPrice": null,
+                                "bundleSubPackageNames": null,
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "bestPackage": false,
+                                "dataCapable": false,
+                                "bundled": false
+                            },
+                            {
+                                "planCode": "Select - 12mo - wActv",
+                                "packageName": "1_SIR_AUD_EVT",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 203.88,
+                                "pricePerMonth": 16.99,
+                                "retailPrice": 16.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 16.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 3,
+                                "bundledSavingPrice": null,
+                                "bundleSubPackageNames": null,
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "bestPackage": false,
+                                "dataCapable": false,
+                                "bundled": false
+                            },
+                            {
+                                "planCode": "Select Family Friendly - 1mo - wActv",
+                                "packageName": "1_SIR_AUD_FF",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 15.99,
+                                "pricePerMonth": 15.99,
+                                "retailPrice": 15.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 15.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 4,
+                                "bundledSavingPrice": null,
+                                "bundleSubPackageNames": null,
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "bestPackage": false,
+                                "dataCapable": false,
+                                "bundled": false
+                            },
+                            {
+                                "planCode": "Select Family Friendly - 12mo - wActv",
+                                "packageName": "1_SIR_AUD_FF",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 191.88,
+                                "pricePerMonth": 15.99,
+                                "retailPrice": 15.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 15.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 4,
+                                "bundledSavingPrice": null,
+                                "bundleSubPackageNames": null,
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "bestPackage": false,
+                                "dataCapable": false,
+                                "bundled": false
+                            },
+                            {
+                                "planCode": "Mostly Music - 1mo - wActv",
+                                "packageName": "1_SIR_AUD_PKG_MM",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 12.99,
+                                "pricePerMonth": 12.99,
+                                "retailPrice": 12.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 12.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 5,
+                                "bundledSavingPrice": null,
+                                "bundleSubPackageNames": null,
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "bestPackage": false,
+                                "dataCapable": false,
+                                "bundled": false
+                            },
+                            {
+                                "planCode": "Mostly Music - 12mo - wActv",
+                                "packageName": "1_SIR_AUD_PKG_MM",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 155.88,
+                                "pricePerMonth": 12.99,
+                                "retailPrice": 12.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 12.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 5,
+                                "bundledSavingPrice": null,
+                                "bundleSubPackageNames": null,
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "bestPackage": false,
+                                "dataCapable": false,
+                                "bundled": false
+                            },
+                            {
+                                "planCode": "News-Sports-Talk - 1mo - wActv",
+                                "packageName": "1_SIR_AUD_PKG_NS",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 10.99,
+                                "pricePerMonth": 10.99,
+                                "retailPrice": 10.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 10.99,
+                                "processingFee": null,
+                                "supportedServices": ["UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 6,
+                                "bundledSavingPrice": null,
+                                "bundleSubPackageNames": null,
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "bestPackage": false,
+                                "dataCapable": false,
+                                "bundled": false
+                            },
+                            {
+                                "planCode": "News-Sports-Talk - 12mo - wActv",
+                                "packageName": "1_SIR_AUD_PKG_NS",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 131.88,
+                                "pricePerMonth": 10.99,
+                                "retailPrice": 10.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 10.99,
+                                "processingFee": null,
+                                "supportedServices": ["UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 6,
+                                "bundledSavingPrice": null,
+                                "bundleSubPackageNames": null,
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "bestPackage": false,
+                                "dataCapable": false,
+                                "bundled": false
+                            },
+                            {
+                                "planCode": "NavTraffic + NavWeather - 1mo - wActv",
+                                "packageName": "1_SIR_DATA_NAVTRAF_NAVWEAT",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 7,
+                                "pricePerMonth": 7,
+                                "retailPrice": 7,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 7,
+                                "processingFee": null,
+                                "supportedServices": ["UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": null,
+                                "bundledSavingPrice": 8.93,
+                                "bundleSubPackageNames": ["1_SIR_DATA_NAVTRAF", "1_SIR_DATA_NAVWEAT"],
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "bestPackage": false,
+                                "dataCapable": true,
+                                "bundled": true
+                            },
+                            {
+                                "planCode": "NavTraffic + NavWeather - 12mo - wActv",
+                                "packageName": "1_SIR_DATA_NAVTRAF_NAVWEAT",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 84,
+                                "pricePerMonth": 7,
+                                "retailPrice": 7,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 7,
+                                "processingFee": null,
+                                "supportedServices": ["UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": null,
+                                "bundledSavingPrice": null,
+                                "bundleSubPackageNames": ["1_SIR_DATA_NAVTRAF", "1_SIR_DATA_NAVWEAT"],
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "bestPackage": false,
+                                "dataCapable": true,
+                                "bundled": true
+                            },
+                            {
+                                "planCode": "Travel-Link - 1mo - wActv",
+                                "packageName": "1_SIR_DATA_TRVLLNK",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 1.99,
+                                "pricePerMonth": 1.99,
+                                "retailPrice": 1.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 1.99,
+                                "processingFee": null,
+                                "supportedServices": ["UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": null,
+                                "bundledSavingPrice": null,
+                                "bundleSubPackageNames": null,
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "bestPackage": false,
+                                "dataCapable": true,
+                                "bundled": false
+                            },
+                            {
+                                "planCode": "Travel-Link - 12mo - wActv",
+                                "packageName": "1_SIR_DATA_TRVLLNK",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 23.88,
+                                "pricePerMonth": 1.99,
+                                "retailPrice": 1.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 1.99,
+                                "processingFee": null,
+                                "supportedServices": ["UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": null,
+                                "bundledSavingPrice": null,
+                                "bundleSubPackageNames": null,
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "bestPackage": false,
+                                "dataCapable": true,
+                                "bundled": false
+                            },
+                            {
+                                "planCode": "NavTraffic - 1mo - wActv",
+                                "packageName": "1_SIR_DATA_NAVTRAF",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 3.99,
+                                "pricePerMonth": 3.99,
+                                "retailPrice": 3.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 3.99,
+                                "processingFee": null,
+                                "supportedServices": ["UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": null,
+                                "bundledSavingPrice": null,
+                                "bundleSubPackageNames": null,
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "bestPackage": false,
+                                "dataCapable": true,
+                                "bundled": false
+                            },
+                            {
+                                "planCode": "NavTraffic - 12mo - wActv",
+                                "packageName": "1_SIR_DATA_NAVTRAF",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 47.88,
+                                "pricePerMonth": 3.99,
+                                "retailPrice": 3.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 3.99,
+                                "processingFee": null,
+                                "supportedServices": ["UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": null,
+                                "bundledSavingPrice": null,
+                                "bundleSubPackageNames": null,
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "bestPackage": false,
+                                "dataCapable": true,
+                                "bundled": false
+                            },
+                            {
+                                "planCode": "NavWeather - 12mo - wActv",
+                                "packageName": "1_SIR_DATA_NAVWEAT",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 119.4,
+                                "pricePerMonth": 9.95,
+                                "retailPrice": 9.95,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 9.95,
+                                "processingFee": null,
+                                "supportedServices": ["UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": null,
+                                "bundledSavingPrice": null,
+                                "bundleSubPackageNames": null,
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "bestPackage": false,
+                                "dataCapable": true,
+                                "bundled": false
+                            },
+                            {
+                                "planCode": "NavWeather - 1mo - wActv",
+                                "packageName": "1_SIR_DATA_NAVWEAT",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 9.95,
+                                "pricePerMonth": 9.95,
+                                "retailPrice": 9.95,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 9.95,
+                                "processingFee": null,
+                                "supportedServices": ["UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": null,
+                                "bundledSavingPrice": null,
+                                "bundleSubPackageNames": null,
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "bestPackage": false,
+                                "dataCapable": true,
+                                "bundled": false
+                            }
+                        ],
+                        "presentment": null
+                    }
+                }
+            }
+        }
+    }
+]

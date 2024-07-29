@@ -1,0 +1,22 @@
+@import "sxm.phoenix.imports";
+
+.order-confirmation--container {
+    padding: 0 16px 32px;
+    margin-top: -1px; //hides thin line between hero and content
+    @include bp(medium) {
+        padding: 16px 0 32px;
+        margin: 0;
+    }
+}
+
+hr {
+    background-color: $gray-medium;
+    border: 0;
+    height: 1px;
+    margin: 32px 0 32px;
+    width: 100%;
+}
+
+.important-info-container {
+    padding: 24px 0;
+}

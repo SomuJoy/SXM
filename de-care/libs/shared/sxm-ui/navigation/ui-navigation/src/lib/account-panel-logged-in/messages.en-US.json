@@ -1,0 +1,16 @@
+{
+    "WELCOME": "WELCOME",
+    "MANAGE_MY_ACCOUNT": "Manage My Account",
+    "MANAGE_MY_ACCOUNT_URL": "{{careUrl}}/account/manage/dashboard",
+    "VIEW_MY_BILL": "View My Bill",
+    "VIEW_MY_BILL_URL": "{{careUrl}}/account/manage/billing",
+    "MAKE_A_PAYMENT": "Make a Payment",
+    "MAKE_A_PAYMENT_URL": "{{careUrl}}/account/pay/make-payment",
+    "REFRESH_MY_RADIO": "Refresh My Radio",
+    "REFRESH_MY_RADIO_URL": "{{dotComUrl}}/refresh",
+    "TRANSFER_SUBSCRIPTION": "Transfer Subscription",
+    "TRANSFER_SUBSCRIPTION_URL": "{{careUrl}}/transfer/radio/login",
+    "APPS_LOGO_HEADER": "GET THE SXM APP",
+    "ARIA_CLOSE_LABEL": "close manage account panel",
+    "SIGN_OUT": "Sign Out"
+}

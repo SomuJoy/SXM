@@ -1,0 +1,37 @@
+{
+    "DeCareUseCasesTrialActivationFeatureSl2cModule": {
+        "DeCareUseCasesTrialActivationSl2CMainComponent": {
+            "TERM_LENGTH": {
+                "DEFAULT": "{{termLength}} month"
+            },
+            "SLTC_SERVICE_LANE": {
+                "OFFER_DETAILS": {
+                    "DEFAULT": "Available only on eligible, inactive factory-equipped satellite radios. Your {{offerName}} service will automatically stop at the end of your existing {{trialTerm}} subscription unless you decide to purchase another subscription. See our <a href=\"https://www.siriusxm.ca/terms\" target=\"_blank\">Customer Agreement</a> and <a href=\"https://www.siriusxm.ca/privacy-policy/\" target=\"_blank\">Privacy Policy</a> for complete terms. All fees and programming are subject to change.",
+                    "QUEBEC": "Available only on eligible, inactive factory-equipped satellite radios. Your {{offerName}} service will automatically stop at the end of your existing {{trialTerm}} subscription unless you decide to purchase another subscription. See our <a href=\"https://www.siriusxm.ca/terms\" target=\"_blank\">Customer Agreement</a> and <a href=\"https://www.siriusxm.ca/privacy-policy/\" target=\"_blank\">Privacy Policy</a> for complete terms. All fees and programming are subject to change."
+                },
+                "partnerText": {
+                    "NO_PARTNER": "Your free SiriusXM trial is your perk for servicing your vehicle.",
+                    "WITH_PARTNER": "Your free SiriusXM trial is your perk for servicing your vehicle with {{partnerName}}."
+                }
+            },
+            "SLTC_USED_CAR": {
+                "OFFER_DETAILS": {
+                    "DEFAULT": "Available only on eligible, inactive factory-equipped satellite radios. Your {{offerName}} service will automatically stop at the end of your existing {{trialTerm}} subscription unless you decide to purchase another subscription. See our <a href=\"https://www.siriusxm.ca/terms\" target=\"_blank\">Customer Agreement</a> and <a href=\"https://www.siriusxm.ca/privacy-policy/\" target=\"_blank\">Privacy Policy</a> for complete terms. All fees and programming are subject to change.",
+                    "QUEBEC": "Available only on eligible, inactive factory-equipped satellite radios. Your {{offerName}} service will automatically stop at the end of your existing {{trialTerm}} subscription unless you decide to purchase another subscription. See our <a href=\"https://www.siriusxm.ca/terms\" target=\"_blank\">Customer Agreement</a> and <a href=\"https://www.siriusxm.ca/privacy-policy/\" target=\"_blank\">Privacy Policy</a> for complete terms. All fees and programming are subject to change."
+                },
+                "partnerText": {
+                    "NO_PARTNER": "Your free SiriusXM trial is your perk for buying your vehicle.",
+                    "WITH_PARTNER": "Your free SiriusXM trial is your perk for buying your vehicle with {{partnerName}}."
+                }
+            },
+            "INVALID_SERVICE_ADDRESS_ERROR": "According to Canada Post records your service address is invalid or is missing important information. Please update the service address to continue."
+        },
+        "DeCareUseCasesTrialActivationSl2CConfirmationComponent": {
+            "READY_TO_EXPLORE_LINKS": [
+                "<a data-track-click='View Program Schedule' class='text-link' href='https://siriusxm.ca/program-schedule' target='_blank'>View Program Schedules</a>",
+                "<a data-track-click='Live Sports Schedule' class='text-link' href='https://www.siriusxm.ca/live-sports-schedule' target='_blank'>Live Sports Schedules</a>"
+            ],
+            "STREAMING_PLAYER_LINK": ""
+        }
+    }
+}

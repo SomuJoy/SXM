@@ -1,0 +1,23 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "valid": true,
+        "emailValidation": null,
+        "usernameValidation": null,
+        "billingAddressValidation": {
+            "confidenceLevel": "Verified",
+            "correctedAddress": [{ "addressLine1": "1234 street road", "addressLine2": " ", "city": "town", "state": "AB", "zip": "M1K6A7" }],
+            "resultCode": "SUCCESS",
+            "validationStatus": "VALID"
+        },
+        "serviceAddressValidation": {
+            "confidenceLevel": "Verified",
+            "correctedAddress": [{ "addressLine1": "1234 street road", "addressLine2": " ", "city": "town", "state": "AB", "zip": "M1K6A7" }],
+            "resultCode": "SUCCESS",
+            "validationStatus": "VALID"
+        },
+        "ccValidation": { "valid": true }
+    }
+}

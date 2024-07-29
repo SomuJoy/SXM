@@ -1,0 +1,31 @@
+{
+    "name": "domains-utility-state-environment-info",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/utility/state-environment-info/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/utility/state-environment-info/src/**/*.ts", "libs/domains/utility/state-environment-info/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/utility/state-environment-info/jest.config.js",
+                "tsConfig": "libs/domains/utility/state-environment-info/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/utility/state-environment-info/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

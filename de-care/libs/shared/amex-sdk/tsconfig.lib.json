@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../../../dist/out-tsc",
+        "declaration": true,
+        "types": []
+    },
+    "include": ["**/*.ts", "../amex-config/src/amex.tokens.ts", "../amex-config/src/amex.types.ts"],
+    "exclude": ["**/*.spec.ts"]
+}

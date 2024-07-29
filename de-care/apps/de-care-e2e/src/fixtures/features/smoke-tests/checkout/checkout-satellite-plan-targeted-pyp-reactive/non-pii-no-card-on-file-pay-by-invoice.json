@@ -1,0 +1,53 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "JOHN",
+            "accountProfile": { "accountRegistered": false },
+            "accountState": { "isInPreTrial": false },
+            "serviceAddress": { "state": "NY", "country": "USA" },
+            "subscriptions": [
+                {
+                    "id": "10000205769",
+                    "plans": [
+                        {
+                            "code": "OEM Trial - Select - 3mo - 0.00",
+                            "packageName": "SXM_SIR_AUD_EVT",
+                            "termLength": 3,
+                            "startDate": "2021-12-03T00:00:00-05:00",
+                            "endDate": "2022-03-03T00:00:00-05:00",
+                            "nextCycleOn": null,
+                            "marketType": "trial:new-car",
+                            "type": "TRIAL",
+                            "capabilities": ["IPAUD", "AUD"],
+                            "price": 0,
+                            "isBasePlan": true,
+                            "dataCapable": false
+                        }
+                    ],
+                    "followonPlans": [],
+                    "radioService": {
+                        "id": "10000207817",
+                        "last4DigitsOfRadioId": "00AH",
+                        "devicePromoCode": "LEX3AUTRWETL",
+                        "vehicleInfo": { "year": null, "make": null, "model": null },
+                        "is360LCapable": false
+                    },
+                    "streamingService": { "id": "10000205865", "maskedUserName": "dym******@siriusxm.com", "status": "Active", "randomCredentials": false },
+                    "status": "Active",
+                    "devicePromoCode": "LEX3AUTRWETL",
+                    "isPrimary": true
+                }
+            ],
+            "billingSummary": { "creditCard": null, "isPaymentTypeInvoice": true },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true,
+            "isAccountIdentifiedUsingFLEPZOrVIN": false
+        },
+        "marketingId": "X65100AH",
+        "marketingAcctId": "6537",
+        "email": null
+    }
+}

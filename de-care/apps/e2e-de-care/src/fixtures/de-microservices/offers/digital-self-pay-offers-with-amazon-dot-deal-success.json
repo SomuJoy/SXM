@@ -1,0 +1,53 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "offers": [
+            {
+                "planCode": "Promo - Streaming - 12mo - 99.00 - wETF (6mo25) - AMZ DOT - G4",
+                "packageName": "SIR_IP_SA",
+                "packageUpgrade": null,
+                "promoCode": "SXIRPROMOS",
+                "termLength": 12,
+                "type": "RTP_OFFER",
+                "marketType": "self-pay:promo",
+                "price": 99.0,
+                "pricePerMonth": 8.25,
+                "retailPrice": 10.99,
+                "packageUpgradePrice": null,
+                "msrpPrice": 10.99,
+                "processingFee": null,
+                "supportedServices": ["SIR", "UNIVERSAL_LOGIN"],
+                "deal": {
+                    "partnerBundle": false,
+                    "type": "AMZ_DOT",
+                    "etfAmount": 25.0,
+                    "etfTerm": 6
+                },
+                "priceChangeMessagingType": "",
+                "planEndDate": null,
+                "minimumFollowOnTerm": 1,
+                "order": null,
+                "bundledSavingPrice": null,
+                "bundleSubPackageNames": null,
+                "parentPackageName": "",
+                "fallbackReason": "",
+                "capability": ["IPAUD"],
+                "mrdEligible": false,
+                "invoiceEligible": false,
+                "advantage": false,
+                "student": false,
+                "fallback": false,
+                "streaming": false,
+                "upgradeOffer": false,
+                "bestPackage": true,
+                "leadOffer": false,
+                "dataCapable": false,
+                "bundled": null
+            }
+        ],
+        "presentment": null,
+        "digitalSegment": null
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "name": "domains-cms-state-channels",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/cms/state-channels/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/domains/cms/state-channels"],
+            "options": {
+                "jestConfig": "libs/domains/cms/state-channels/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/cms/state-channels/src/**/*.ts", "libs/domains/cms/state-channels/src/**/*.html"]
+            }
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

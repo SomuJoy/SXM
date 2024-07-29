@@ -1,0 +1,30 @@
+{
+    "DomainsAccountUiSubscriptionStreamingModule": {
+        "SetupSubscriptionCredentialsFormComponent": {
+            "SUB_HEADLINE": "Create a username and password",
+            "CONFIRM_EMAIL_UPDATE_MODAL_TITLE": "Account Update",
+            "CONFIRM_EMAIL_UPDATE_MODAL_SUBTITLE": "The email you entered is different than the one currently on your account. Would you like to replace your existing email?",
+            "CONFIRM_EMAIL_UPDATE_MODAL_FROM_EMAIL": "REPLACE",
+            "CONFIRM_EMAIL_UPDATE_MODAL_TO_EMAIL": "WITH",
+            "EMAIL_UPDATE_MSG": "Your account will be updated with the email address you provided",
+            "USERNAME": {
+                "LABEL": "Username/Email",
+                "ERRORS": {
+                    "REQUIRED": "Enter a username/valid email.",
+                    "ALREADY_EXIST": "That username/email is associated with another account."
+                }
+            },
+            "EMAIL": {
+                "LABEL": "Email",
+                "ERRORS": {
+                    "REQUIRED": "Enter a valid email.",
+                    "ALREADY_EXIST": "That email is associated with another account."
+                }
+            }
+        },
+        "CredentialsFoundSignInComponent": {
+            "HEADLINE": "Good news. You already have a login to listen on the SXM App.",
+            "INSTRUCTIONS": "Simply log in to the SXM App with username and password you created when you last registered. If you've forgotten your login, we can help you retrieve it."
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "name": "de-care-use-cases-account-feature-my-account-billing",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care-use-cases/account/feature-my-account-billing/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/de-care-use-cases/account/feature-my-account-billing"],
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/account/feature-my-account-billing/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/de-care-use-cases/account/feature-my-account-billing/src/**/*.ts",
+                    "libs/de-care-use-cases/account/feature-my-account-billing/src/**/*.html"
+                ]
+            }
+        }
+    },
+    "tags": ["type:feature", "scope:de-care-use-case-sub-feature"]
+}

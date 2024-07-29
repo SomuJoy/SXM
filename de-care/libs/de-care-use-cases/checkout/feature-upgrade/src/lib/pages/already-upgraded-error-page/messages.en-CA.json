@@ -1,0 +1,12 @@
+{
+    "HERO": {
+        "TITLE": "You've already upgraded your subscription."
+    },
+    "MESSAGE_TEXT": "To modify your subscription and manage your account, please continue to sign in.",
+    "MANAGE_ACCOUNT_BUTTON_TEXT": "MANAGE ACCOUNT",
+    "CURRENT_PLAN": {
+        "TITLE": "Your current subscription:",
+        "NAME_AND_PRICE": "{{name}} - {{price}}/mo",
+        "NAME_AND_PRICE_ANNUAL": "{{name}} - {{price}}/yr"
+    }
+}

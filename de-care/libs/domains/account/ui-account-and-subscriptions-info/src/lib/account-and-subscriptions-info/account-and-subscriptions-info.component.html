@@ -1,0 +1,31 @@
+<div class="list-header">
+    <span class="text-color-gray-dark">
+        {{ "DomainsAccountUiAccountAndSubscriptionsInfoModule.AccountAndSubscriptionsInfoComponent.ACCOUNT_LABEL" | translate }}
+        <span class="masked">{{ accountDataInfo.accountLast4Digits }}</span>
+    </span>
+    <span class="verify-link" data-e2e="accountSubscriptionsInfo.verifyLink" *ngIf="displayVerifyLink">
+        <a (click)="onVerifyClicked()">{{ "DomainsAccountUiAccountAndSubscriptionsInfoModule.AccountAndSubscriptionsInfoComponent.VERIFY_LINK_TEXT" | translate }}</a>
+    </span>
+</div>
+<ng-container *ngIf="!!accountDataInfo.subscriptions">
+    <div class="list-row" *ngFor="let subscription of accountDataInfo.subscriptions">
+        <strong *ngIf="subscription?.vehicle?.year || subscription?.vehicle?.make || subscription?.vehicle?.model; else radioID" class="detail-row">
+            {{ { year: subscription.vehicle.year, make: subscription.vehicle.make, model: subscription.vehicle.model } | concatElements }}
+        </strong>
+        <ng-template #radioID>
+            <div [class.radio-id]="subscription.plans.length > 1">
+                <span *ngIf="!!subscription?.radioIDLast4Digits">
+                    <strong class="detail-row">
+                        <span [innerHTML]="'DomainsAccountUiAccountAndSubscriptionsInfoModule.AccountAndSubscriptionsInfoComponent.RADIO_ID_LABEL' | translate"></span>
+                        <span class="maskedRadioID">{{ subscription?.radioIDLast4Digits }}</span>
+                    </strong>
+                </span>
+                <strong *ngIf="!subscription?.radioIDLast4Digits && !!subscription?.maskedUserName" class="detail-row">
+                    <span [innerHTML]="'DomainsAccountUiAccountAndSubscriptionsInfoModule.AccountAndSubscriptionsInfoComponent.USERNAME' | translate"></span>
+                    <span>{{ subscription.maskedUserName }}</span>
+                </strong>
+            </div>
+        </ng-template>
+        <p *ngFor="let plan of subscription.plans" class="detail-row text-color-gray-dark" [innerHTML]="'app.packageDescriptions.' + plan + '.name' | translate"></p>
+    </div>
+</ng-container>

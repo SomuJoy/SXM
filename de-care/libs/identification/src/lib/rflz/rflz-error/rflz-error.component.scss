@@ -1,0 +1,49 @@
+@import "sxm.phoenix.imports";
+
+::ng-deep {
+    .invalid-feedback {
+        a,
+        .text-link {
+            color: $blue-secondary;
+            font-weight: inherit;
+            font-size: inherit;
+        }
+
+        chat-with-agent-link a {
+            // TODO: Find a way to remove this important style, whole block may not be necessary after updates to base link styles
+            color: $blue-secondary !important;
+            font-weight: inherit;
+            font-size: inherit;
+            text-decoration: none;
+        }
+    }
+}
+
+sxm-ui-alert-pill {
+    background: $vanilla;
+    border-radius: 0;
+    box-shadow: none;
+    margin-top: 16px;
+}
+
+:host-context(.non-bold) {
+    sxm-ui-alert-pill {
+        .pill-text {
+            .error-paragraph {
+                font-weight: 400;
+                a {
+                    font-weight: 400 !important;
+                }
+            }
+            .bottom-padding {
+                display: inline-block;
+                padding-bottom: 8px;
+            }
+        }
+    }
+}
+
+.pill-text {
+    color: $black;
+    font-size: 16px;
+}

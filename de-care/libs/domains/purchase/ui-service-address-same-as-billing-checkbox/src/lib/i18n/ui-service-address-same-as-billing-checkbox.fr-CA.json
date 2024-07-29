@@ -1,0 +1,7 @@
+{
+    "domainsPurchaseUiServiceAddressSameAsBillingCheckboxModule": {
+        "serviceAddressSameAsBillingCheckboxComponent": {
+            "LABEL": "L'adresse de facturation est la m\u00EAme"
+        }
+    }
+}

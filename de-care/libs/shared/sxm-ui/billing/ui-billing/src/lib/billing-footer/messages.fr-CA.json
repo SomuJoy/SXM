@@ -1,0 +1,5 @@
+{
+    "DETAIL": "Un paiement de {{amount}} a été reçu le {{date}}.",
+    "DETAIL_TODAY": "Un paiement de {{amount}} a été reçu aujourd’hui.",
+    "DATE_FORMAT": "d MMM y"
+}

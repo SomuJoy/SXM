@@ -1,0 +1,14 @@
+{
+    "HEADLINE": "Sign in to SiriusXM",
+    "SUB_HEADLINE": "To connect with Sonos, sign in to SiriusXM.",
+    "FORM_ERROR_INVALID_CREDENTIALS": "We don't recognize your username or password. Please try again.",
+    "FORM_ERROR_SYSTEM": "We’re sorry, something went wrong. Please try again.",
+    "LINK_FORGOT_PASSWORD_TEXT": "Forgot username or password?",
+    "CONTINUE_BUTTON_TEXT": "SIGN IN",
+    "SETUP_STREAMING_HEADLINE": "No account? No problem!",
+    "SETUP_STREAMING_LINK_TEXT": "Set up your streaming login",
+    "FORM_FIELD_USERNAME_LABEL": "Username/Email",
+    "FORM_ERROR_INVALID_ACTIVATION_CODE_PIECES": {
+        "PART_1": "Your activation code has expired. Please return to the Sonos app and try again."
+    }
+}

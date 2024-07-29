@@ -1,0 +1,33 @@
+{
+    "domainsCancellationUiCancel": {
+        "cancelReasonComponent": {
+            "TITLE": "Tell us why you’re thinking of leaving.",
+            "INSTRUCTIONS": "Please select your reason(s) for cancelling",
+            "CONTINUE_BUTTON": "continue",
+            "ERROR_REQUIRED": "Pick your reason for cancelling.",
+            "cancelReasons": {
+                "EXPENSIVE": "My subscription is too expensive",
+                "NO_LISTENTING_OPTIONS": "I can't find what I want to listen to",
+                "DONT_LISTEN": "I don't listen enough",
+                "TECHNICAL_ISSUES": "I'm experiencing technical issues",
+                "OTHER": "I have other reasons"
+            }
+        },
+        "billingTermFormComponent": {
+            "CHOOSE_PROMO_LENGTH_TEXT": "Choose the length of your promotional offer. See Offer Details below. ",
+            "COMPATIBLE_OFFER_PAY_MONTHLY_TEXT": "Pay monthly for {{termlength}} {{pluralizedMonth}} {{price}}/mo",
+            "COMPATIBLE_OFFER_PAY_UPFRONT_TEXT": "Pay {{termlength}} months up front for {{price}}",
+            "RETAIL_PRICE_AFTER": "Then {{retailPrice}}/mo.",
+            "NO_BILLING_SELECTED_ERROR": "Pick a billing plan to continue.",
+            "CONTINUE_BUTTON": "continue",
+            "TERM_LENGTH": {
+                "PLURAL_MAP": {
+                    "MONTHS": {
+                        "=1": "month",
+                        "other": "months"
+                    }
+                }
+            }
+        }
+    }
+}

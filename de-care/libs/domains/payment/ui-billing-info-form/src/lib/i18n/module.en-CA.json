@@ -1,0 +1,23 @@
+{
+    "DomainsPaymentUiBillingInfoFormModule": {
+        "BillingInfoFormComponent": {
+            "NEW_CC": {
+                "CC_CVV": "CVV",
+                "CC_STATE": "Province",
+                "ERROR_CC_STATE": "Select your province.",
+                "CC_ZIPCODE": "Postal Code",
+                "ERROR_CC_ZIPCODE": "Enter a valid postal code"
+            },
+            "PREPAID": {
+                "ADD_CARD": "Add a SiriusXM Prepaid Service Card (optional)",
+                "REDEEM_LABEL": "Redeem a prepaid service gift card",
+                "REMOVE_LABEL": "Remove the prepaid service gift card",
+                "CARD_APPLIED": "Your prepaid service gift card was applied."
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.ca/privacy"
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "name": "do-not-call",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/de-care-use-cases/do-not-call/src",
+    "projectType": "library",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/de-care-use-cases/do-not-call/src/**/*.ts", "libs/de-care-use-cases/do-not-call/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/do-not-call/jest.config.js",
+                "tsConfig": "libs/de-care-use-cases/do-not-call/tsconfig.spec.json",
+                "setupFile": "libs/de-care-use-cases/do-not-call/src/test-setup.ts",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "styleext": "scss"
+        }
+    },
+    "tags": ["type:feature"]
+}

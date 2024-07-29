@@ -1,0 +1,243 @@
+<sxm-ui-modal [titlePresent]="true" [title]="translateKeyPrefix + 'MODALS.STREAMING_LOGIN.TITLE' | translate" #accountSearchModal>
+    <setup-login-credentials
+        class="new-line-margin"
+        [hidePrivacyPolicyLink]="false"
+        [isNotStreamingAccountCreation]="true"
+        (credentialsCreated)="setStreamingAfterContinueAccount($event)"
+    >
+        <ng-container loginFormHeader>
+            <h6 class="description">{{ translateKeyPrefix + "MODALS.STREAMING_LOGIN.HEADER" | translate }}</h6>
+        </ng-container>
+        <ng-container loginCompletedPresentment>
+            <de-care-listen-to-radio [isFrench]="currentLangIsFrench$ | async"></de-care-listen-to-radio>
+        </ng-container>
+    </setup-login-credentials>
+</sxm-ui-modal>
+<ng-template #secondRadioInfo let-control="control" let-info="info" [formGroup]="form">
+    <sxm-ui-radio-option-form-field
+        class="label-bold"
+        [formControl]="control"
+        (change)="radioButtonSelected()"
+        [label]="
+            info.vehicle
+                | vehicleInfoTranslate
+                    : {
+                          defaultText: translateKeyPrefix + 'RADIO' | translate: { radioId: info.radioId },
+                          isFrench: currentLangIsFrench$ | async
+                      }
+        "
+        [description]="
+            translateKeyPrefix + 'RADIO_STATUS.' + info.status
+                | translate
+                    : {
+                          packageName: ('app.packageDescriptions.' + info.packageName | translate).name
+                      }
+        "
+        [value]="info.radioId"
+    >
+    </sxm-ui-radio-option-form-field>
+</ng-template>
+
+<ng-template #streamingAccountsTemplate let-control="control" let-info="info" [formGroup]="form">
+    <sxm-ui-radio-option-form-field
+        (change)="radioButtonSelected()"
+        class="label-bold"
+        [formControl]="control"
+        [label]="info?.maskedUserName"
+        [description]="('app.packageDescriptions.' + info?.packageName | translate).name"
+        [value]="info"
+    >
+    </sxm-ui-radio-option-form-field>
+</ng-template>
+
+<ng-template #moreOptions let-control="control" [formGroup]="form" let-type="type">
+    <sxm-ui-radio-option-form-field
+        class="label-bold"
+        [formControl]="control"
+        (change)="radioButtonSelected()"
+        [label]="translateKeyPrefix + type + '_SECOND_RADIO' | translate"
+        [value]="findAsecondRadio"
+        data-e2e="firstStepForm.findAsecondRadio"
+    ></sxm-ui-radio-option-form-field>
+
+    <sxm-ui-radio-option-form-field
+        class="label-bold"
+        [formControl]="control"
+        [label]="translateKeyPrefix + 'CREATE_STREAMING_LOGIN' | translate"
+        [value]="createStreamingAccount"
+        (change)="radioButtonSelected()"
+        data-test="firstStepForm.createStreamingLogin"
+        data-e2e="firstStepForm.createStreamingLogin"
+    ></sxm-ui-radio-option-form-field>
+
+    <sxm-ui-radio-option-form-field
+        *ngIf="couldSkipRadioSelection"
+        class="label-bold"
+        [formControl]="control"
+        [label]="translateKeyPrefix + 'ADD_SECOND_RADIO_LATER' | translate"
+        [description]="translateKeyPrefix + 'ADD_SECOND_RADIO_LATER_PARAGRAPH' | translate"
+        [value]="addSecondRadioLater"
+        (change)="radioButtonSelected()"
+        data-test="firstStepForm.addSecondRadioLater"
+        data-e2e="firstStepForm.addSecondRadioLater"
+    ></sxm-ui-radio-option-form-field>
+</ng-template>
+
+<form [formGroup]="form">
+    <ng-container *ngIf="enablePVIPStreamingFlag">
+        <ng-container
+            *ngFor="let info of streamingAccounts"
+            [ngTemplateOutlet]="streamingAccountsTemplate"
+            [ngTemplateOutletContext]="{ info: info, control: form.controls.selectedRadio }"
+        ></ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="secondVehicles?.length > 0; else noSecondRadiosFound">
+        <ng-container
+            *ngFor="let info of displayedVehicles"
+            [ngTemplateOutlet]="secondRadioInfo"
+            [ngTemplateOutletContext]="{ info: info, control: form.controls.selectedRadio }"
+        ></ng-container>
+        <ng-container
+            *ngIf="moreVehicles?.length === 0; else moreVehiclesTemplate"
+            [ngTemplateOutlet]="moreOptions"
+            [ngTemplateOutletContext]="{ control: form.controls.selectedRadio, type: 'FIND' }"
+        ></ng-container>
+        <ng-template #moreVehiclesTemplate>
+            <sxm-ui-accordion-chevron [collapsedText]="translateKeyPrefix + 'VIEW_MORE_RADIOS' | translate" [expandedText]="translateKeyPrefix + 'HIDE_RADIOS' | translate">
+                <ng-container
+                    *ngFor="let info of moreVehicles"
+                    [ngTemplateOutlet]="secondRadioInfo"
+                    [ngTemplateOutletContext]="{ info: info, control: form.controls.selectedRadio }"
+                ></ng-container>
+                <ng-container [ngTemplateOutlet]="moreOptions" [ngTemplateOutletContext]="{ control: form.controls.selectedRadio, type: 'FIND' }"></ng-container>
+            </sxm-ui-accordion-chevron>
+        </ng-template>
+    </ng-container>
+    <ng-template #noSecondRadiosFound>
+        <ng-container [ngTemplateOutlet]="moreOptions" [ngTemplateOutletContext]="{ control: form.controls.selectedRadio, type: 'ADD' }"></ng-container>
+    </ng-template>
+    <div>
+        <!-- TODO: need to updated to chat with agent function/widget -->
+        <p>
+            {{ translateKeyPrefix + "CUSTOMER_INFO_COPY_ABOVE_CONTINUE" | translate }}
+            <span
+                ><a href="https://www.siriusxm.com/contactus" target="_blank">{{ translateKeyPrefix + "CHAT_WITH_AGENT" | translate }}</a></span
+            >
+        </p>
+    </div>
+    <button
+        [ngClass]="shouldDisableContinueButton()"
+        sxm-proceed-button
+        [loading]="isLoading"
+        (click)="onContinue()"
+        data-test="firstStepForm.continueButton"
+        data-e2e="firstStepForm.continueButton"
+    >
+        {{ translateKeyPrefix + "CONTINUE_BUTTON" | translate }}
+    </button>
+</form>
+
+<device-lookup-wizard
+    (noAccountFound)="onNoAccountFound($event)"
+    (selectionFinished)="onSelectionFinished($event)"
+    #lookupWizardComponent
+    [options]="{
+        translationOverrides: translationOverrides.deviceLookupWizardComponent,
+        radioLookupOptionsSubtitle: translateKeyPrefix + 'RADIO_LOOKUP_OPTIONS_SUBTITLE' | translate
+    }"
+></device-lookup-wizard>
+<sxm-ui-modal [titlePresent]="true" [title]="translateKeyPrefix + 'MODALS.ARE_YOU_SURE.TITLE' | translate" #areYouSureModal>
+    <div class="full-width are-you-sure-container">
+        <h5>{{ translateKeyPrefix + "MODALS.ARE_YOU_SURE.HEADER" | translate }}</h5>
+        <p>{{ translateKeyPrefix + "MODALS.ARE_YOU_SURE.BODY" | translate }}</p>
+        <button
+            data-track-click="Continue with One"
+            (click)="onContinueWithOneInAreYouSureModal()"
+            class="button primary full-width text-center align-justify"
+            data-test="areYouSureModal.submitButton"
+            data-e2e="areYouSureModal.submitButton"
+        >
+            {{ translateKeyPrefix + "MODALS.ARE_YOU_SURE.BUTTON" | translate }}
+        </button>
+        <div class="full-width text-center choose-second-radio">
+            <a class="text-link" (click)="onChooseASecondRadioFromAreYouSureModal()"> {{ translateKeyPrefix + "MODALS.ARE_YOU_SURE.CHOOSE_A_SECOND_RADIO" | translate }}</a>
+        </div>
+    </div>
+</sxm-ui-modal>
+<sxm-ui-modal [titlePresent]="true" [title]="translateKeyPrefix + 'MODALS.CONFIRM_RADIO.TITLE' | translate" data-e2e="confirmRadioModal" #confirmRadioModal>
+    <div *ngIf="secondRadioToConfirm" class="full-width confirm-radio-modal-container">
+        <h5>{{ translateKeyPrefix + "MODALS.CONFIRM_RADIO.HEADER" | translate }}</h5>
+        <p>
+            <strong>{{
+                secondRadioToConfirm.vehicleInfo
+                    | vehicleInfoTranslate
+                        : {
+                              defaultText: translateKeyPrefix + "RADIO" | translate: { radioId: secondRadioToConfirm.last4DigitsOfRadioId },
+                              isFrench: currentLangIsFrench$ | async
+                          }
+            }}</strong>
+        </p>
+        <p>{{ translateKeyPrefix + "RADIO_STATUS.CLOSED" | translate }}</p>
+        <button (click)="onContinueFromConfirmRadioModal()" class="button primary full-width text-center align-justify" data-e2e="confirmRadioModal.submitButton">
+            {{ translateKeyPrefix + "MODALS.CONFIRM_RADIO.BUTTON" | translate }}
+        </button>
+    </div>
+</sxm-ui-modal>
+<sxm-ui-modal [titlePresent]="true" [title]="translateKeyPrefix + 'MODALS.NOT_ELIGIBLE.TITLE' | translate" data-e2e="notEligibleRadioModal" #notEligibleRadio>
+    <div class="full-width not-eligible-radio-modal-container">
+        <ng-container *ngIf="couldSkipRadioSelection; else mandatoryRadioSelection">
+            <h5>{{ translateKeyPrefix + "MODALS.NOT_ELIGIBLE.HEADER" | translate }}</h5>
+            <p>
+                {{ translateKeyPrefix + "MODALS.NOT_ELIGIBLE.BODY.FIRST" | translate }}
+                <ng-container *ngIf="currentLangIsNotFrench$ | async">
+                    <chat-with-agent-link [chatLinkText]="translateKeyPrefix + 'MODALS.NOT_ELIGIBLE.BODY.CHAT' | translate" [queue]="'general'"></chat-with-agent-link>
+                    {{ translateKeyPrefix + "MODALS.NOT_ELIGIBLE.BODY.LAST" | translate }}
+                </ng-container>
+            </p>
+            <button (click)="onContinueWithOneInNotEligibleRadioModal()" class="button primary full-width text-center align-justify">
+                {{ translateKeyPrefix + "MODALS.NOT_ELIGIBLE.BUTTON" | translate }}
+            </button>
+            <div class="full-width text-center choose-second-radio">
+                <a class="text-link" (click)="onChooseASecondRadioFromNotEligibleRadioModal()">
+                    {{ translateKeyPrefix + "MODALS.NOT_ELIGIBLE.CHOOSE_A_SECOND_RADIO" | translate }}</a
+                >
+            </div>
+        </ng-container>
+        <ng-template #mandatoryRadioSelection>
+            <h5>{{ translateKeyPrefix + "MODALS.NOT_ELIGIBLE_MANDATORY_RADIO_SELECTION.HEADER" | translate }}</h5>
+            <p>
+                {{ translateKeyPrefix + "MODALS.NOT_ELIGIBLE_MANDATORY_RADIO_SELECTION.BODY.FIRST" | translate }}
+                <ng-container *ngIf="currentLangIsNotFrench$ | async">
+                    <chat-with-agent-link
+                        [chatLinkText]="translateKeyPrefix + 'MODALS.NOT_ELIGIBLE_MANDATORY_RADIO_SELECTION.BODY.CHAT' | translate"
+                        [queue]="'general'"
+                        class="text-color-blue-secondary"
+                    ></chat-with-agent-link>
+                    {{ translateKeyPrefix + "MODALS.NOT_ELIGIBLE_MANDATORY_RADIO_SELECTION.BODY.LAST" | translate }}
+                </ng-container>
+            </p>
+            <button (click)="onChooseASecondRadioFromNotEligibleRadioModal()" class="button primary full-width text-center align-justify">
+                {{ translateKeyPrefix + "MODALS.NOT_ELIGIBLE_MANDATORY_RADIO_SELECTION.BUTTON" | translate }}
+            </button>
+        </ng-template>
+    </div>
+</sxm-ui-modal>
+<sxm-ui-modal
+    #validateUserRadioModal
+    [showBackButton]="true"
+    [ariaDescribedbyTextId]="validateRadioModalAriaDescribedbyTextId"
+    (backButton)="onValidateUserBackButton()"
+    [titlePresent]="true"
+    [title]="translateKeyPrefix + 'MODALS.VALIDATE_USER_INFO.TITLE' | translate"
+>
+    <validate-user-radio
+        #validateUserContent
+        [ariaDescribedbyTextId]="validateRadioModalAriaDescribedbyTextId"
+        [last4DigitsOfRadioId]="radioIdToValidate"
+        [isRadioClosed]="false"
+        (validUserInfo)="onValidUserInfoFromValidateUserRadio()"
+        (editInfo)="onValidateUserBackButton()"
+    >
+    </validate-user-radio>
+</sxm-ui-modal>

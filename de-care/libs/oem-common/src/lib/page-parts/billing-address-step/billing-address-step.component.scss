@@ -1,0 +1,15 @@
+@import "sxm.phoenix.imports";
+
+.hero-sales--plan-card {
+    margin: 0;
+    width: 100%;
+
+    @include bp(medium) {
+        margin-top: 0;
+        padding: 24px;
+    }
+}
+
+.hidden {
+    display: none;
+}

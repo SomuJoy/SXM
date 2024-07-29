@@ -1,0 +1,19 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "email": "QVMLVG.ZJDZ@SIRIUSXM.COM",
+        "status": "SUCCESS",
+        "radioId": "6821",
+        "subscriptionId": "10000209673",
+        "maskedStreamingUserName": "********cwtc",
+        "accountNumber": "10000210923",
+        "maskedPhoneNumber": null,
+        "isUserNameSameAsEmail": true,
+        "isTwoFactorAuthNeeded": false,
+        "isEligibleForRegistration": false,
+        "isOfferStreamingEligible": true,
+        "isEligibleForStreamingCredentialsOnly": true
+    }
+}

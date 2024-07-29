@@ -1,0 +1,20 @@
+<h1 class="mb-24" data-e2e="servicePortabilityPaymentHeadline">{{ translateKeyPrefix + "HEADLINE" | translate }}</h1>
+<div class="mb-24">
+    <sxm-ui-listener-details [listenerData]="subscriptionAfterTrialDetails$ | async" data-e2e="servicePortabilityPaymentListenerDetails">
+        <p [innerHTML]="ymmOrRadioId"></p>
+        <p [innerHTML]="resumeDate"></p>
+    </sxm-ui-listener-details>
+</div>
+<hr class="mb-24" />
+<div>
+    <billing-info-form
+        *ngIf="selectAccount$ | async as accountData"
+        [accountData]="accountData"
+        [hidePaymentOptions]="true"
+        (paymentFormCompleted)="onPaymentFormComplete($event)"
+        [isPrepaidAllowed]="false"
+        [loading]="getSubmitTransactionAsProcessing$ | async"
+        [formButtonTextCopy]="translateKeyPrefix + 'CTA_BUTTON' | translate"
+        [serviceError]="serviceError"
+    ></billing-info-form>
+</div>

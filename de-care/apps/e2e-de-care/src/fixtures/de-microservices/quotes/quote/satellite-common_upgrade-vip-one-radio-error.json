@@ -1,0 +1,10 @@
+{
+    "status": "FAILURE",
+    "httpStatusCode": 400,
+    "httpStatus": "BAD_REQUEST",
+    "error": {
+        "errorCode": "SYSTEM",
+        "errorPropKey": "error.purchase.service.system",
+        "errorType": "BUSINESS"
+    }
+}

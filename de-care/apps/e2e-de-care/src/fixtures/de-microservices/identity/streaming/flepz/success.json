@@ -1,0 +1,26 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": [
+        {
+            "closed": true,
+            "id": null,
+            "status": "Closed",
+            "plans": [],
+            "followonPlans": null,
+            "radioService": {
+                "last4DigitsOfRadioId": "9830",
+                "vehicleInfo": {
+                    "model": null,
+                    "make": null,
+                    "year": null
+                },
+                "maskedRadioId": "****9830"
+            },
+            "streamingService": null,
+            "nickname": null,
+            "duplicateVehicleInfo": null
+        }
+    ]
+}

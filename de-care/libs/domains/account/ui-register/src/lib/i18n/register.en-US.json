@@ -1,0 +1,71 @@
+{
+    "register": {
+        "RegisterYourAccountComponent": {
+            "SUCCESS_MSG": "You have successfully registered",
+            "PLURAL_MAP": {
+                "WORD": {
+                    "=1": "word",
+                    "other": "words"
+                }
+            },
+            "REGISTER_FORM": {
+                "USERNAME": {
+                    "LABEL": "Username",
+                    "ERRORS": {
+                        "REQUIRED": "Enter a username",
+                        "USERNAME_IN_USE": "The Username entered is already being used, please try a different Username.",
+                        "INVALID_USERNAME": "Please enter a username that's 6-20 characters - letters and numbers only.",
+                        "PATTERN": "Please enter a username that's 6-20 characters - letters and numbers only."
+                    }
+                },
+                "PASSWORD": {
+                    "LABEL": "Password",
+                    "ERRORS": {
+                        "REQUIRED": "Enter a password.",
+                        "LENGTH": "Your password must be {{ min }} to {{ max }} characters long.",
+                        "POLICY": "Your password must contain at least one character from at least 3 different groups, as explained in our password policy.",
+                        "PATTERN": "",
+                        "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}",
+                        "GENERIC": "We're sorry, your new password does not comply with our policy. Please try again."
+                    }
+                },
+                "SECURITY_QUESTIONS": {
+                    "HEADER": "Security Questions",
+                    "LABEL": "Select a question",
+                    "ANSWER": "Answer",
+                    "ERRORS": {
+                        "SELECT_A_QUESTION": "Select security question.",
+                        "REQUIRED": "Enter answer.",
+                        "MIN_LENGTH": "Answer must be at least 3 characters long"
+                    }
+                }
+            },
+            "AUDIO": {
+                "REG_HEADER": "Complete account setup.",
+                "HEADER": "Create your password to manage your account.",
+                "HEADER_EMAIL_ALREADY_USED": "Register your account to manage your subscriptions online."
+            },
+            "STREAMING": {
+                "REG_HEADER": "Complete account setup to listen on your computer and devices with the SXM App.",
+                "HEADER": "Create your password to listen on your phone, at home, online and to manage your account.",
+                "HEADER_EMAIL_ALREADY_USED": "Register your account to manage your subscription and stream online"
+            },
+            "EMAIL": {
+                "HEADER": "Email/Username: "
+            },
+            "TRIAL_ACTIVATION": {
+                "REG_HEADER": "Register your account",
+                "HEADER": "Register your account for {{email}} to be able to manage your subscriptions and stream online.",
+                "HEADER_EMAIL_ALREADY_USED": "Register your account to manage your subscription and stream online"
+            },
+            "COMPLETE": {
+                "HEADER": "Complete your registration for {{email}} to be able to manage your subscriptions online."
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.com/privacy-policy"
+            },
+            "REGISTER": "Complete Setup"
+        }
+    }
+}

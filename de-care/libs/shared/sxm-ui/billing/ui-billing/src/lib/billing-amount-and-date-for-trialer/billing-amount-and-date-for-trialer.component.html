@@ -1,0 +1,12 @@
+<div class="billing-amount-and-date-for-trialer">
+    <div class="amount">
+        <p class="text-gray label bold">{{ translateKeyPrefix + ".TRIAL" | translate }}</p>
+        <p class="text-value mt-1">{{ translateKeyPrefix + ".FREE" | translate }}</p>
+    </div>
+    <div class="date">
+        <p class="text-gray label bold">{{ translateKeyPrefix + ".ENDS" | translate }}</p>
+        <p class="text-value mt-1">
+            {{ data?.date | sxmUiDate: (translateKeyPrefix + ".DATE_FORMAT" | translate) }}
+        </p>
+    </div>
+</div>

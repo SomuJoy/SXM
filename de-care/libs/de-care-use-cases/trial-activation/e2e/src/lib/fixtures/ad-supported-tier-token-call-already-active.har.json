@@ -1,0 +1,96 @@
+[
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/trial-activation/last-one-click",
+            "postData": {
+                "token": "45834f85-1201-4d6d-b21c-ff0b9f570d84"
+            }
+        },
+        "response": {
+            "status": 500,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Wed, 18 Nov 2020 18:20:46 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Transfer-Encoding",
+                    "value": "chunked"
+                },
+                {
+                    "name": "Connection",
+                    "value": "keep-alive"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "http://lpp7dj6mh2.corp.siriusxm.com:4200"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "FAILURE",
+                    "httpStatusCode": 500,
+                    "httpStatus": "INTERNAL_SERVER_ERROR",
+                    "error": {
+                        "errorCode": "ACCOUNT_TOKEN_INFO_NOT_MATCHED",
+                        "errorPropKey": "error.activation.service.ineligible.for.last",
+                        "errorType": "SYSTEM",
+                        "errorStackTrace": "AccountNumber: 10000256519 | RadioId: X65100CL | x-forwarded-for: null | URL: /services/trial-activation/last-one-click | Exception: PurchaseServiceException#null | StackTrace: OneClickServiceImpl.java:57 | ErrorType: SYSTEM | ErrorMessage: ERROR : [errorCode : ACCOUNT_TOKEN_INFO_NOT_MATCHED, errorPropKey : error.activation.service.ineligible.for.last, errorType : UNCHECKED, errorLevel : ACTION, statusCode : 500 INTERNAL_SERVER_ERROR, errorMessage : null | , sourceErrorCode : null] | FullStackTrace: "
+                    }
+                }
+            }
+        }
+    }
+]

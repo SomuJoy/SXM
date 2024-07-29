@@ -1,0 +1,31 @@
+{
+    "name": "shared-state-feature-flags",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/state-feature-flags/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/state-feature-flags/src/**/*.ts", "libs/shared/state-feature-flags/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/shared/state-feature-flags/jest.config.js",
+                "tsConfig": "libs/shared/state-feature-flags/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/shared/state-feature-flags/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:state", "scope:shared-state"]
+}

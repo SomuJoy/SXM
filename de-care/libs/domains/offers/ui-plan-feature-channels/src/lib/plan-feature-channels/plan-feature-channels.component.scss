@@ -1,0 +1,29 @@
+// the following styles are there to set the accordion checkmark list in line with checkmark list
+// that is visible outside the accordion, so it appears to be a single list when fully opened
+@import "sxm.phoenix.imports";
+
+:host-context(offer-card-with-partial-channels-visible sxm-ui-accordion-chevron) {
+    .checkmark-list {
+        padding-top: 0;
+    }
+}
+:host-context(offer-card-with-partial-channels-visible) {
+    .checkmark-list {
+        margin: 0;
+    }
+}
+
+.checkmark-list {
+    padding-top: 0;
+}
+
+.checkmarks-container {
+    span {
+        padding-right: 24px;
+    }
+    sxm-ui-tooltip {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: -24px;
+    }
+}

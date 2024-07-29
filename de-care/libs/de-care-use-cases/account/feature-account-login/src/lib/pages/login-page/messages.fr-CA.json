@@ -1,0 +1,19 @@
+{
+    "TITLE": "Connexion",
+    "SUB_TITLE": "Connectez-vous pour gérer votre compte, consulter votre abonnement, effectuer un paiement, mettre à jour vos renseignements, etc.",
+    "SIGN_IN_FORM_TITLE": "Vous n'avez pas de compte?",
+    "REGISTRATION_LINK_TEXT": "Enregistrez-vous",
+    "SIGN_IN_BUTTON_TEXT": "Connexion",
+    "NEED_HELP": "Besoin d’aide supplémentaire?",
+    "HELP_LINKS": [
+        { "TEXT": "Payer ma facture", "URL": "https://www.siriusxm.ca/payer-facture-from-OAC", "linkName": "Pay My Bill", "linkType": "exit" },
+        { "TEXT": "Abonnez-vous", "URL": "https://www.siriusxm.ca/abonner-de-OAC", "linkName": "Subscribe", "linkType": "exit" },
+        { "TEXT": "Retransmettre mon signal de radio satellite", "URL": "https://www.siriusxm.ca/retransmettre-de-oac", "linkName": "Refresh My Radio", "linkType": "exit" },
+        { "TEXT": "Obtenez l'Appli SXM", "URL": "https://player.siriusxm.ca/fr", "linkName": "Get the SiriusXM App", "linkType": "player" }
+    ],
+    "PARTNER_LOGIN_REQUIRED_TITLE": "Votre abonnement SiriusXM est géré via {{partnerName}}.",
+    "PARTNER_LOGIN_REQUIRED_DESCRIPTION": "Veuillez vous rendre sur {{partnerName}} pour gérer votre abonnement SiriusXM.",
+    "PAGE_TITLE": "Se connecter, payer une facture et gérer mon compte | SiriusXM",
+    "IAP_FREE_TIER_PARTNER_LOGIN_REQUIRED_TITLE": "Il semble qu’un ou plusieurs de vos abonnements soient gérés par {{partnerName}}.",
+    "IAP_FREE_TIER_PARTNER_LOGIN_REQUIRED_DESCRIPTION": "Vous pouvez gérer ces abonnements directement avec {{partnerName}} , ou dans certains cas par la boutique d’applications ou les paramètres de votre appareil. <a href=\"https://www.siriusxm.ca/iapfaqfr\" target=\"_blank\">Consultez les instructions</a> précises pour savoir où trouver ces options. Pour les abonnements acquis directement auprès de SiriusXM, appelez le 1-888-539-7474 pour obtenir de l’aide pour vous connecter."
+}

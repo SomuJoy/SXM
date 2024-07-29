@@ -1,0 +1,11 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "offers": [],
+        "presentment": null,
+        "digitalSegment": null,
+        "presentmentTestCell": null
+    }
+}

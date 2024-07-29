@@ -1,0 +1,21 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "../page.scss";
+
+:host {
+    @include page-host;
+    sxm-ui-plan-recap-card,
+    .user-info {
+        margin-bottom: 15px;
+    }
+}
+
+.label {
+    margin: 0;
+    @include get-body-copy-style();
+    color: $gray-dark;
+    font-weight: calculate-font-weight("bold");
+    @include bp(medium) {
+        font-weight: calculate-font-weight("bold");
+    }
+}

@@ -1,0 +1,6 @@
+<div class="text-center">
+    <mat-icon svgIcon="subscription-unavailable"></mat-icon>
+    <p class="large-copy bold mb-4">{{ translateKeyPrefix + ".TITLE" | translate }}</p>
+    <p class="description">{{ translateKeyPrefix + ".DESCRIPTION" | translate }}</p>
+    <button class="text-link" (click)="findSubscription.emit()" data-test="findSubscriptionButton">{{ translateKeyPrefix + ".FIND_SUBSCRIPTION_LINK" | translate }}</button>
+</div>

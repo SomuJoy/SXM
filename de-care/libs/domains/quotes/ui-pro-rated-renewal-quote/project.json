@@ -1,0 +1,31 @@
+{
+    "name": "domains-quotes-ui-pro-rated-renewal-quote",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/quotes/ui-pro-rated-renewal-quote/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/quotes/ui-pro-rated-renewal-quote/src/**/*.ts", "libs/domains/quotes/ui-pro-rated-renewal-quote/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/quotes/ui-pro-rated-renewal-quote/jest.config.js",
+                "tsConfig": "libs/domains/quotes/ui-pro-rated-renewal-quote/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/quotes/ui-pro-rated-renewal-quote/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:ui", "scope:domain-ui"]
+}

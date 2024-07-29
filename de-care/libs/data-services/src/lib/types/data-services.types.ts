@@ -1,0 +1,1 @@
+export type HttpMethodsType = 'DELETE' | 'GET' | 'POST' | 'PUT';

@@ -1,0 +1,74 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": [
+        {
+            "closed": false,
+            "id": "10000231403",
+            "status": "Active",
+            "plans": [
+                {
+                    "code": "Trial - Premier Streaming - 3mo - $0.00",
+                    "packageName": "SIR_IP_SA",
+                    "termLength": "3",
+                    "endDate": "2022-02-18T00:00:00-05:00",
+                    "type": "TRIAL",
+                    "marketType": "trial:streaming",
+                    "capabilities": ["IPAUD"]
+                }
+            ],
+            "followonPlans": [
+                {
+                    "code": "Premier Streaming - Monthly",
+                    "packageName": "SIR_IP_SA",
+                    "termLength": "1",
+                    "endDate": null,
+                    "type": "SELF_PAID",
+                    "marketType": "self-pay:standard",
+                    "capabilities": ["IPAUD"]
+                }
+            ],
+            "radioService": null,
+            "streamingService": { "status": "Active", "maskedUserName": "cat******@siriusxm.com", "randomCredentials": false }
+        },
+        {
+            "closed": false,
+            "id": "10000229467",
+            "status": "Active",
+            "plans": [
+                {
+                    "code": "Premier Streaming - Annual",
+                    "packageName": "SIR_IP_SA",
+                    "termLength": "12",
+                    "endDate": null,
+                    "type": "SELF_PAID",
+                    "marketType": "self-pay:standard",
+                    "capabilities": ["IPAUD"]
+                }
+            ],
+            "followonPlans": [],
+            "radioService": null,
+            "streamingService": { "status": "Active", "maskedUserName": "*******ream", "randomCredentials": false }
+        },
+        {
+            "closed": false,
+            "id": "10000228090",
+            "status": "Active",
+            "plans": [
+                {
+                    "code": "Trial - Essential Streaming - 2mo - $0.00 - (RTD)",
+                    "packageName": "SIR_IP_SA_ESNTL",
+                    "termLength": "2",
+                    "endDate": "2022-01-18T00:00:00-05:00",
+                    "type": "TRIAL",
+                    "marketType": "trial:streaming",
+                    "capabilities": ["IPAUD"]
+                }
+            ],
+            "followonPlans": [],
+            "radioService": null,
+            "streamingService": { "status": "Active", "maskedUserName": "*******ream", "randomCredentials": false }
+        }
+    ]
+}

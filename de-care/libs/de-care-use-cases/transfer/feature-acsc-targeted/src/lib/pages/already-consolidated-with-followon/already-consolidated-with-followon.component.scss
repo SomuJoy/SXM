@@ -1,0 +1,71 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    background-color: $white;
+    .recirculation--single {
+        position: relative;
+        &:before {
+            left: 0;
+            transform: none;
+            width: 100%;
+        }
+    }
+}
+.error-hero {
+    background-color: $purple;
+    color: $white;
+    padding: 40px 0;
+    margin-bottom: 40px;
+    text-align: center;
+    @include bp(medium) {
+        padding: 64px 0;
+        margin-bottom: 48px;
+    }
+    h2 {
+        margin-bottom: 12px;
+    }
+}
+h4 {
+    margin-bottom: 8px;
+}
+.content-image {
+    @include bp(medium) {
+        margin-bottom: 48px;
+    }
+}
+.content-copy {
+    padding-top: 12px;
+    margin-bottom: 48px;
+    @include bp(medium) {
+        padding: 20px 0 0 24px;
+    }
+}
+.stack {
+    display: block;
+    @include bp(medium) {
+        display: inline-block;
+    }
+}
+
+.recirculation--single {
+    margin-bottom: 64px;
+    chat-with-agent-link {
+        color: $blue-secondary;
+    }
+    .stack {
+        margin-bottom: 8px;
+        @include bp(medium) {
+            margin-bottom: 0;
+            &:first-child {
+                &:after {
+                    content: "";
+                    display: inline-block;
+                    border: 1px solid $gray-medium;
+                    width: 0;
+                    height: 12px;
+                    margin: 0 8px;
+                }
+            }
+        }
+    }
+}

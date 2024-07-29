@@ -1,0 +1,31 @@
+{
+    "name": "domains-payment-ui-billing-info-form",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/payment/ui-billing-info-form/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/payment/ui-billing-info-form/src/**/*.ts", "libs/domains/payment/ui-billing-info-form/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/payment/ui-billing-info-form/jest.config.js",
+                "tsConfig": "libs/domains/payment/ui-billing-info-form/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/payment/ui-billing-info-form/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:ui", "scope:domain-ui"]
+}

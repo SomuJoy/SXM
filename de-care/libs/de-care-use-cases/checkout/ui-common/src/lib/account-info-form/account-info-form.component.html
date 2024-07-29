@@ -1,0 +1,32 @@
+<form [formGroup]="form">
+    <section>
+        <header>
+            <h3>{{ translateKeyPrefix + ".DETAILS_TITLE" | translate }}</h3>
+        </header>
+        <div *ngIf="unexpectedSubmissionError$ | async" class="invalid-feedback" id="unexpectedProcessingError">
+            <p>{{ translateKeyPrefix + ".UNEXPECTED_ERROR" | translate }}</p>
+        </div>
+        <sxm-ui-first-name-form-field formControlName="firstName" data-e2e="AccountInfoFirstName"></sxm-ui-first-name-form-field>
+        <sxm-ui-last-name-form-field formControlName="lastName" data-e2e="AccountInfoLastName"></sxm-ui-last-name-form-field>
+        <sxm-ui-email-form-field
+            formControlName="email"
+            data-e2e="AccountInfoEmail"
+            [errorMsg]="form.controls.email.errors?.emailInUse ? (translateKeyPrefix + '.USERNAME_IN_USE_ERROR' | translate) : ''"
+        ></sxm-ui-email-form-field>
+        <sxm-ui-phone-number-form-field formControlName="phoneNumber" data-e2e="AccountInfoPhoneNumber"></sxm-ui-phone-number-form-field>
+        <sxm-ui-address-form-fields addressType="service" formControlName="serviceAddress" [submitted]="submitted" data-e2e="AccountInfoAddress"></sxm-ui-address-form-fields>
+        <input type="hidden" formControlName="country" />
+        <privacy-policy></privacy-policy>
+        <button type="submit" sxm-proceed-button [loading]="processing$ | async" sxmUiDataClickTrack="submit" (click)="submitInfo()" data-e2e="AccountInfoConfirmationButton">
+            {{ translateKeyPrefix + ".CONTINUE_BUTTON_TEXT" | translate }}
+        </button>
+    </section>
+</form>
+<sxm-ui-modal [closed]="true" (modalClosed)="onEditExistingAddress()" #verifyAddressModal [ariaDescribedbyTextId]="accountInfoFormModalAriaDescribedbyTextId">
+    <customer-verify-address
+        [ariaDescribedbyTextId]="accountInfoFormModalAriaDescribedbyTextId"
+        [data]="verifyAddressesDataViewModel$ | async"
+        (editAddress)="onUseAddressFromValidation($event)"
+        (editExisting)="onEditExistingAddress()"
+    ></customer-verify-address>
+</sxm-ui-modal>

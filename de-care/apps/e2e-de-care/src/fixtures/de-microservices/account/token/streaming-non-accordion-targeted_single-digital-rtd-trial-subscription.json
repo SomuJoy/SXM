@@ -1,0 +1,66 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "ADSDS",
+            "accountProfile": {
+                "accountRegistered": false
+            },
+            "accountState": {
+                "isInPreTrial": false
+            },
+            "serviceAddress": {
+                "state": "NY",
+                "country": "US"
+            },
+            "subscriptions": [
+                {
+                    "id": "10000207745",
+                    "plans": [
+                        {
+                            "code": "Trial - Premier Streaming - 2mo - $0.00 - (RTD)",
+                            "label": "Trial - Streaming Platinum - 2mo - $0.00",
+                            "packageName": "SIR_IP_SA",
+                            "termLength": 2,
+                            "startDate": "2022-12-01T00:00:00-05:00",
+                            "endDate": "2023-02-01T00:00:00-05:00",
+                            "nextCycleOn": null,
+                            "marketType": "trial:streaming",
+                            "type": "TRIAL",
+                            "capabilities": ["IPAUD"],
+                            "price": 0,
+                            "isBasePlan": true,
+                            "dataCapable": false
+                        }
+                    ],
+                    "followonPlans": [],
+                    "radioService": null,
+                    "streamingService": {
+                        "id": "10000203841",
+                        "userName": "cesartest4@siriusxm.com",
+                        "maskedUserName": "ces******@siriusxm.com",
+                        "status": "Active",
+                        "randomCredentials": false
+                    },
+                    "status": "Active",
+                    "devicePromoCode": null,
+                    "isPrimary": true
+                }
+            ],
+            "billingSummary": {
+                "creditCard": null,
+                "isPaymentTypeInvoice": false
+            },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true,
+            "isAccountIdentifiedUsingFLEPZOrVIN": false
+        },
+        "maskedUserNameFromToken": "ces******@siriusxm.com",
+        "marketingId": null,
+        "marketingAcctId": "5441",
+        "email": null,
+        "isUserNameInTokenSameAsAccount": true
+    }
+}

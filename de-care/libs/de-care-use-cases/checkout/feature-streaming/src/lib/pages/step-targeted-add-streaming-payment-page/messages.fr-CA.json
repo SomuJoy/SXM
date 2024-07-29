@@ -1,0 +1,9 @@
+{
+    "TITLE": "Configurez votre paiement",
+    "BODY": "Annulez en tout temps.",
+    "CONTINUE_BUTTON_TEXT": "Revoir Ma Commande",
+    "INELIGIBLE_LOADING_ALERT": "Cette offre est réservée aux nouveaux abonnés, mais voici une autre option pour vous.",
+    "INELIGIBLE_LOADING_BODY": "Trouver un autre bon plan pour vous.",
+    "MRD_RECAP_CARD": "<strong>{{platformAndPlanName}} ({{channelCount}}+ Chaînes)</strong><br/>{{mrdPrice}}/mois, plus frais avec rabais Multi-Radio. <s>Rég. {{msrpPrice}}/mois</s>",
+    "MRD_RECAP_CARD_QUEBEC": "<strong>{{platformAndPlanName}} ({{channelCount}}+ Chaînes)</strong><br/>{{mrdPrice}}/mois avec rabais Multi-Radio. <s>Rég. {{msrpPrice}}/mois</s>"
+}

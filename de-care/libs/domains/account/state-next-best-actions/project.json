@@ -1,0 +1,25 @@
+{
+    "name": "domains-account-state-next-best-actions",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/account/state-next-best-actions/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/domains/account/state-next-best-actions"],
+            "options": {
+                "jestConfig": "libs/domains/account/state-next-best-actions/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/account/state-next-best-actions/src/**/*.ts", "libs/domains/account/state-next-best-actions/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

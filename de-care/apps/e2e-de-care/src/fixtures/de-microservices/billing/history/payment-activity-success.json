@@ -1,0 +1,22 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "billItems": [
+            {
+                "eventType": "Payment",
+                "startDate": "",
+                "endDate": "",
+                "transactionDate": "02/02/2023",
+                "billNumber": "",
+                "serviceFor": "",
+                "description": "Credit Card Payment",
+                "amount": -42.91,
+                "radioId": "",
+                "planLabel": "",
+                "sXIRLogin": ""
+            }
+        ]
+    }
+}

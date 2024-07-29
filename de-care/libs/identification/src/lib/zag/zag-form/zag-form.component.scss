@@ -1,0 +1,47 @@
+@import "sxm.phoenix.imports";
+
+.invalid-feedback {
+    a {
+        color: inherit;
+    }
+}
+
+.column {
+    &.small-5 {
+        &:first-child {
+            padding-left: 0;
+            padding-right: 4px;
+        }
+    }
+
+    &.small-7 {
+        &:last-child {
+            padding-left: 12px;
+            padding-right: 0;
+        }
+    }
+}
+
+@include bp(medium) {
+    .column {
+        &.medium-5 {
+            &:first-child {
+                padding-left: 0;
+                padding-right: 4px;
+            }
+        }
+
+        &.medium-7 {
+            &:last-child {
+                padding-left: 12px;
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+.invalid-feedback {
+    &.dropdown-error-msg {
+        margin-top: -32px;
+    }
+}

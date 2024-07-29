@@ -1,0 +1,24 @@
+{
+    "domainsAccountUiNewAccountFormFieldsModule": {
+        "newAccountFormFieldsComponent": {
+            "YOUR_INFO": "Your Info",
+            "STATE": {
+                "LABEL": "Province",
+                "ERRORS": {
+                    "REQUIRED": "Enter your Province."
+                }
+            },
+            "ZIP_CODE": {
+                "LABEL": "Postal Code",
+                "ERRORS": {
+                    "REQUIRED": "Enter a valid Postal code."
+                }
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.ca/privacy"
+            },
+            "BUTTON_TEXT": "I consent to receiving marketing communications by email and mail"
+        }
+    }
+}

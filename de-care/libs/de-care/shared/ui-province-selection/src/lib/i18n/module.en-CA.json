@@ -1,0 +1,15 @@
+{
+    "DeCareSharedUiProvinceSelectionModule": {
+        "CurrentProvinceComponent": {
+            "PROVINCE_LABEL_TEXT": "Province: "
+        },
+        "ProvinceSelectionComponent": {
+            "EDIT_LINK_TEXT": "Edit",
+            "MODAL_TITLE": "Site settings",
+            "PROVINCE_CHANGE_TITLE": "Confirm your province",
+            "PROVINCE_CHANGE_INSTRUCTIONS": "Pricing may vary by province.",
+            "SELECT_PROVINCE_DROPDOWN_PLACEHOLDER": "Province",
+            "PROVINCE_CHANGE_CONTINUE_BUTTON_TEXT": "Save Settings"
+        }
+    }
+}

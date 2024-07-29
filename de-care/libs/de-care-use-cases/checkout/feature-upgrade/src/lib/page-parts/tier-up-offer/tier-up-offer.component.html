@@ -1,0 +1,15 @@
+<sxm-ui-content-card class="offer-card purple-background" [headlinePresent]="true" *ngIf="data">
+    <div htmlContentForHead>
+        <p class="offer-card--header">{{ translateKeyPrefix + ".TITLE" | translate }}</p>
+    </div>
+    <div htmlContentForBody>
+        <h5 class="margin-bottom-small" [innerHTML]="data.header"></h5>
+        <p *ngFor="let description of data.descriptions" [innerHTML]="description | safeHtml"></p>
+        <div *ngIf="data.additionalFeatures" class="additional-features">
+            <p class="additional-features--header">{{ translateKeyPrefix + ".UPGRADE_INCLUDES" | translate }}</p>
+            <ul class="additional-features--list">
+                <li *ngFor="let additionalFeatures of data.additionalFeatures" [innerHTML]="additionalFeatures"></li>
+            </ul>
+        </div>
+    </div>
+</sxm-ui-content-card>

@@ -1,0 +1,118 @@
+{
+    "name": "de-oem",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "apps/de-oem/src",
+    "projectType": "application",
+    "prefix": "app",
+    "generators": {},
+    "targets": {
+        "build": {
+            "executor": "@angular-devkit/build-angular:browser",
+            "options": {
+                "outputPath": "dist/apps/de-oem",
+                "index": "apps/de-oem/src/index.html",
+                "main": "apps/de-oem/src/main.ts",
+                "polyfills": "apps/de-oem/src/polyfills.ts",
+                "tsConfig": "apps/de-oem/tsconfig.app.json",
+                "assets": ["apps/de-oem/src/favicon.ico", "apps/de-oem/src/assets"],
+                "styles": ["apps/de-oem/src/styles.scss", "./node_modules/sxm/assets/dist/css/minified/sxm.min.css"],
+                "stylePreprocessorOptions": {
+                    "includePaths": ["./node_modules/sxm/assets/src/scss/"]
+                },
+                "scripts": ["./node_modules/sxm/assets/dist/js/minified/sxm.min.js"],
+                "vendorChunk": true,
+                "extractLicenses": false,
+                "buildOptimizer": false,
+                "sourceMap": true,
+                "optimization": false,
+                "namedChunks": true
+            },
+            "configurations": {
+                "production": {
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/de-oem/src/environments/environment.ts",
+                            "with": "apps/de-oem/src/environments/environment.prod.ts"
+                        }
+                    ],
+                    "optimization": true,
+                    "outputHashing": "all",
+                    "sourceMap": false,
+                    "namedChunks": false,
+                    "extractLicenses": true,
+                    "vendorChunk": false,
+                    "buildOptimizer": true,
+                    "budgets": [
+                        {
+                            "type": "initial",
+                            "maximumWarning": "2mb",
+                            "maximumError": "5mb"
+                        }
+                    ]
+                },
+                "canada": {
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/de-oem/src/environments/environment.ts",
+                            "with": "apps/de-oem/src/environments/environment.canada.ts"
+                        }
+                    ]
+                },
+                "local": {
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/de-oem/src/environments/environment.ts",
+                            "with": "apps/de-oem/src/environments/environment.local.ts"
+                        }
+                    ]
+                }
+            },
+            "defaultConfiguration": ""
+        },
+        "serve": {
+            "executor": "@angular-devkit/build-angular:dev-server",
+            "options": {
+                "browserTarget": "de-oem:build",
+                "host": "0.0.0.0",
+                "disableHostCheck": true,
+                "port": 4210
+            },
+            "configurations": {
+                "production": {
+                    "browserTarget": "de-oem:build:production"
+                },
+                "canada": {
+                    "browserTarget": "de-oem:build:canada",
+                    "port": 4211
+                },
+                "local": {
+                    "browserTarget": "de-oem:build:local"
+                }
+            }
+        },
+        "extract-i18n": {
+            "executor": "@angular-devkit/build-angular:extract-i18n",
+            "options": {
+                "browserTarget": "de-oem:build"
+            }
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "apps/de-oem/jest.config.js",
+                "tsConfig": "apps/de-oem/tsconfig.spec.json",
+                "setupFile": "apps/de-oem/src/test-setup.ts",
+                "configPath": "./jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["apps/de-oem/src/**/*.ts", "apps/de-oem//src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:app", "scope:de-oem"]
+}

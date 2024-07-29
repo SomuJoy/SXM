@@ -1,0 +1,12 @@
+@import "sxm.phoenix.imports";
+
+.column {
+    &.bottom-padding {
+        padding-top: 2vh;
+        padding-bottom: 20vh;
+
+        @include bp(small) {
+            padding-bottom: 38vh;
+        }
+    }
+}

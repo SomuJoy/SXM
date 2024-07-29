@@ -1,0 +1,67 @@
+<div id="offer-description" *ngIf="offerInfo">
+    <p class="no-margin" qatag="PromoPackageName" *ngIf="offerInfo.packageName">
+        <strong
+            [innerHTML]="
+                {
+                    packageName: offerInfo.parentPackageName && offerInfo.isPickAPlan ? offerInfo.parentPackageName : offerInfo.packageName,
+                    type: offerInfo.type,
+                    isAdvantage: offerInfo | translateIsAdvantageOffer
+                } | translateOfferName
+            "
+        ></strong>
+    </p>
+    <h4 *ngIf="!excludePriceAndTermDisplay" class="no-margin price-term" data-e2e="PromoPriceAndTermDesc" qatag="PromoPriceAndTermDesc">
+        <span
+            [innerHTML]="
+                'domainsOffersUiOfferDescriptionModule.offerDescriptionComponent.' + offerTermAndPrice
+                    | translate
+                        : {
+                              termLength: offerInfo.termLength,
+                              monthsPluralized:
+                                  offerInfo.termLength | i18nPlural: ('domainsOffersUiOfferDescriptionModule.offerDescriptionComponent.PLURAL_MAP.MONTH' | translate),
+                              price: offerInfo.price | currency: 'USD':'symbol-narrow':priceDecimalFormat:currentLang,
+                              pricePerMonth: offerInfo.pricePerMonth | currency: 'USD':'symbol-narrow':pricePerMonthDecimalFormat:currentLang
+                          }
+            "
+        ></span>
+    </h4>
+    <p class="legal-copy text-color-gray-dark no-padding" *ngIf="offerInfo.price === 0 && offerInfo.processingFee" [class.is-RTC]="isRTC">
+        {{
+            "domainsOffersUiOfferDescriptionModule.offerDescriptionComponent.FEES"
+                | translate: { price: offerInfo.processingFee | currency: "USD":"symbol-narrow":undefined:currentLang }
+        }}
+    </p>
+    <p
+        *ngIf="offerInfo.mrdEligible"
+        class="legal-copy text-color-gray-dark mrd-copy"
+        data-e2e="offerDescriptionMrdCopy"
+        [innerHTML]="
+            'domainsOffersUiOfferDescriptionModule.offerDescriptionComponent.MRD_OFFER_COPY'
+                | translate
+                    : {
+                          msrpPrice: offerInfo.msrpPrice | currency: 'USD':'symbol-narrow':msrpPricePerMonthDecimalFormat:currentLang
+                      }
+        "
+    ></p>
+    <p
+        class="legal-copy text-color-gray-dark"
+        qatag="SeeOfferText"
+        [class.is-RTC]="isRTC"
+        [innerHTML]="
+            advantageTextCopyData
+                ? ('domainsOffersUiOfferDescriptionModule.offerDescriptionComponent.' + advantageOfferDataKey
+                  | translate
+                      : {
+                            price: advantageTextCopyData.offerRetailPrice | currency: 'USD':'symbol-narrow':priceDecimalFormat:currentLang,
+                            savingsAmount: advantageTextCopyData.savingsAmount | currency: 'USD':'symbol-narrow':priceDecimalFormat:currentLang
+                        })
+                : ('domainsOffersUiOfferDescriptionModule.offerDescriptionComponent.SEE_OFFER_BELOW' +
+                      ((showFollowOnPrice() ? '_PROMO' : '') + (showNewSubscribersMessage ? '_NEW' : ''))
+                  | translate: { retailPrice: renewalOfferRetailPrice | currency: 'USD':'symbol-narrow':_determinePriceDecimalFormat(renewalOfferRetailPrice):currentLang })
+        "
+    ></p>
+    <p *ngIf="offerShortDescription" class="short-description">
+        {{ offerShortDescription }}
+    </p>
+    <p *ngIf="offerSubDescription" class="small-copy text-color-gray-dark">{{ offerSubDescription }}</p>
+</div>

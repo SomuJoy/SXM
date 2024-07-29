@@ -1,0 +1,18 @@
+{
+    "oemCommon": {
+        "paymentInfoComponent": {
+            "NOTE": "Note: This information is never stored in the car. View Privacy Policy at siriusxm.ca/privacy"
+        },
+        "billingAddressComponent": {
+            "ADDRESS_NOTE": "Note: This information is never stored in the car. View Privacy Policy at siriusxm.ca/privacy"
+        },
+        "subscriptionErrorComponent": {
+            "TITLE": "Please call SiriusXM at 1-844-823-0844 to subscribe or manage account.<br>Veuillez téléphoner à SiriusXM au 1-844-823-0844 pour vous abonner ou gérer votre compte.",
+            "LEGAL_COPY": "You can read our <strong>Customer Agreement</strong> and <strong>Privacy Policy</strong> at siriusxm.ca/agreements.<br>Vous pouvez lire <strong>L’entente du client</strong> et <strong>la Politique de la vie privée</strong> à siriusxm.ca/ententes."
+        },
+        "manageAccountComponent": {
+            "TITLE": "Please call SiriusXM at 1-844-823-0844 to subscribe or manage account.",
+            "LEGAL_COPY": "You can read our <strong>Customer Agreement</strong> and <strong>Privacy Policy</strong> at siriusxm.ca/agreements."
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "TITLE": "Retransmettre mon signal de radio satellite",
+    "SUB_TITLE": "Êtes-vous près de votre voiture ou votre radio?",
+    "YES_TEXT": "Oui",
+    "NO_TEXT": "Non",
+    "YES_POINT_ONE": "Allumez votre radio et réglez-la sur le mode Satellite.",
+    "YES_POINT_TWO": "Assurez-vous que la radio a une vue dégagée vers le ciel (non bloquée par un garage, de grands arbres ou des bâtiments). Veuillez noter que la réinitialisation peut prendre jusqu’à 15 minutes.",
+    "YES_BUTTON_TEXT": "RETRANSMETTRE LE SIGNAL SATELLITE",
+    "FIND_RADIO_ID_HYPERLINK": "Comment puis-je trouver mon code de radio?",
+    "NO_INSTRUCTIONS": "Nous vous enverrons des instructions par message texte pour que vous puissiez renvoyer le signal de votre radio satellite une fois que vous serez près de votre radio.",
+    "MOBILE_FORM_PLACEHOLDER": "Numéro de téléphone cellulaire",
+    "CUSTOMER_AGREEMENT_CHECKBOX_TEXT": "J'accepte de recevoir un message texte unique et certifie qu'il s'agit de mon numéro de mobile. Des frais de messagerie texte et de transmission de données standard peuvent s’appliquer. Consultez nos <a target=\"_blank\" href=\"https://www.siriusxm.ca/smsfr\"> Conditions générales d'utilisation des messages textes </a> et <a target=\"_blank\" href=\"https://www.siriusxm.ca/privee\"> Politique de confidentialité</a>.",
+    "NO_BUTTON_TEXT": "ENVOYER LES INSTRUCTIONS",
+    "ERROR": {
+        "MOBILE_REQUIRED": "Saisissez un numéro de téléphone valide.",
+        "MESSAGE_AGREE_TO_TEXT_MESSAGE": "Veuillez confirmer que vous avez lu et accepté les conditions générales et la politique de confidentialité."
+    },
+    "SUCCESS_MESSAGE": "Le signal satellite a été envoyé avec succès.",
+    "NO_ACTIVE_SUBSCRIPTION_ONE": "Il semble que vous n’ayez pas d’abonnement SiriusXM en cours dans votre véhicule, ou pour votre radio. Veuillez vous ",
+    "REACTIVATE_TEXT": "abonner ",
+    "NO_ACTIVE_SUBSCRIPTION_TWO": "pour écouter.",
+    "NON_PAY_ERROR": "Le solde de votre compte est en souffrance. Veuillez vous connecter à votre compte et ",
+    "MAKE_A_PAYMENT": "effectuer un paiement",
+    "TO_CONTINUE_LISTENING": " pour continuer à écouter.",
+    "REACTIVATE_LINK": "https://siriusxm.ca/retransmettrereactiver",
+    "SYSTEM_ERROR": {
+        "PART1": "Un problème est survenu lors du renvoi du signal de votre radio satellite. Veuillez réessayer ou appeler le service à la clientèle au 1 888 539-7474.",
+        "CHAT_TEXT": "",
+        "PART2": ""
+    },
+    "INVALID_VIRTUAL_RADIO_ID": {
+        "PART1": "Votre radio semble ne pas avoir besoin d’un signal de radio satellite pour être retransmise. Téléphonez au 1 888 539-7474 pour en savoir plus.",
+        "CHAT_TEXT": "",
+        "PART2": ""
+    }
+}

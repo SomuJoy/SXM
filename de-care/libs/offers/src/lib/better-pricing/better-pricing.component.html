@@ -1,0 +1,31 @@
+<svg class="icon icon-utility large">
+    <use class="icon-checkmark-sm" xlink:href="#icon-checkmark-sm"></use>
+</svg>
+<p class="description">
+    {{ "offers.betterPricingComponent." + (pricingInfo?.isPartnerIneligible ? "BETTER_OFFER_DESCRIPTION" : "DESCRIPTION") | translate }}
+</p>
+<p class="new-price">
+    {{
+        "offers.betterPricingComponent.NEW_PRICE" + (pricingInfo?.isMCP ? "_MCP" : "")
+            | translate
+                : {
+                      newTerm: pricingInfo.newTerm,
+                      monthsPluralized: pricingInfo.newTerm | i18nPlural: ("offers.offerDescriptionComponent.PLURAL_MAP.MONTH" | translate),
+                      newPrice: pricingInfo.newPrice | currency: "USD":"symbol-narrow":priceFormat:currentLang
+                  }
+    }}
+</p>
+<p class="original-price">
+    {{
+        "offers.betterPricingComponent." + originalPriceKey
+            | translate
+                : {
+                      originalTerm: pricingInfo.originalTerm,
+                      monthsPluralized: pricingInfo.newTerm | i18nPlural: ("offers.offerDescriptionComponent.PLURAL_MAP.MONTH" | translate),
+                      originalPrice: pricingInfo.originalPrice | currency: "USD":"symbol-narrow":priceFormat:currentLang
+                  }
+    }}
+</p>
+<p class="details">
+    {{ "offers.betterPricingComponent.DETAILS" | translate }}
+</p>

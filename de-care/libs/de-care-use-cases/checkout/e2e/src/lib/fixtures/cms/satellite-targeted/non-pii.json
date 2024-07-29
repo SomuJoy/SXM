@@ -1,0 +1,46 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "MIKE",
+            "accountProfile": { "accountRegistered": false },
+            "serviceAddress": { "state": "NY" },
+            "subscriptions": [
+                {
+                    "id": "10000220157",
+                    "plans": [
+                        {
+                            "dataCapable": false,
+                            "code": "OEM Trial - Select - 12mo - 0.00",
+                            "packageName": "SXM_SIR_AUD_EVT",
+                            "termLength": 12,
+                            "startDate": "2021-03-03T00:00:00-05:00",
+                            "endDate": "2022-03-03T00:00:00-05:00",
+                            "nextCycleOn": null,
+                            "type": "TRIAL",
+                            "capabilities": ["IPAUD", "AUD"]
+                        }
+                    ],
+                    "followonPlans": [],
+                    "radioService": {
+                        "id": "10000216067",
+                        "last4DigitsOfRadioId": "00AR",
+                        "vehicleInfo": { "year": null, "make": null, "model": null },
+                        "is360LCapable": false
+                    },
+                    "streamingService": { "id": "10000217091", "maskedUserName": "umd******@siriusxm.com", "status": "Active" },
+                    "status": "Active",
+                    "devicePromoCode": "XMAMBSSDR"
+                }
+            ],
+            "billingSummary": { "creditCard": { "last4Digits": "1111", "type": "VISA", "status": "ACTIVE" } },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true,
+            "isAccountIdentifiedUsingFLEPZOrVIN": false
+        },
+        "marketingId": "X65100AR",
+        "marketingAcctId": "7853"
+    }
+}

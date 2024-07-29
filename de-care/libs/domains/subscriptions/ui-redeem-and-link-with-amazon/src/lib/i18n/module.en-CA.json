@@ -1,0 +1,16 @@
+{
+    "DomainsSubscriptionsUiRedeemAndLinkWithAmazonModule": {
+        "RedeemAndLinkWithAmazonComponent": {
+            "DEAL_REDEMPTION_INSTRUCTIONS": {
+                "image": {
+                    "src": "assets/img/device-echodot-gen4.png"
+                },
+                "TITLE": "<h5><b>Enable SiriusXM on all your Alexa devices now!</b></h5><p>Start using voice commands like, \"Alexa, play Hits 1 on SiriusXM.\"</p>",
+                "DESCRIPTION": [
+                    "You'll receive email instructions to redeem your free Amazon device. Your Echo Dot is fulfilled directly by Amazon and delivery is subject to Amazon inventory availability. Periods of high demand may cause delays, so redeem today."
+                ]
+            },
+            "CTA_BUTTON_LABEL": "LINK WITH AMAZON"
+        }
+    }
+}

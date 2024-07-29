@@ -1,0 +1,15 @@
+<ng-container *ngrxLet="viewModel$ as viewModel">
+    <section id="mainContent">
+        <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+            <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+            <ng-container body>
+                <p>{{ translateKeyPrefix + ".BODY" | translate }}</p>
+            </ng-container>
+        </sxm-ui-step-header>
+        <sxm-ui-closed-device-lookup-inline-fields-widget
+            [allowLicensePlate]="viewModel.allowLicensePlateLookup"
+            (deviceIdSelected)="onDeviceIdSelected($event)"
+        ></sxm-ui-closed-device-lookup-inline-fields-widget>
+    </section>
+</ng-container>
+<sxm-ui-loading-overlay-sxm-logo *ngIf="showFullViewLoader$ | async"></sxm-ui-loading-overlay-sxm-logo>

@@ -1,0 +1,43 @@
+<div class="grid-container">
+    <mat-icon svgIcon="marine"></mat-icon>
+    <p class="large-copy span-2 lead-in center-horz-align bold text-overflow-ellipsis mb-20">
+        {{ data?.nickname ?? data?.vehicle ?? (translateKeyPrefix + ".RADIO_ID" | translate: { radioId: data?.radioId }) }}
+    </p>
+    <hr class="span-2" />
+    <p class="label-column lead-in bold label-title">
+        {{ translateKeyPrefix + ".PLAN_TITLE" | translate: { plansPlural: data?.plans?.length | i18nPlural: (translateKeyPrefix + ".PLURAL_MAP.PLANS" | translate) } }}
+    </p>
+    <p class="right-align no-margin top-align link-column">
+        <button
+            class="text-link-secondary"
+            (click)="manage.emit()"
+            sxmUiDataClickTrack="exit"
+            [attr.data-link-name]="'Manage|' + (data?.index === 0 ? 'Primary' : (data?.index ?? 0) + 1)"
+            [attr.data-link-key]="'MarineSubscriptionActions'"
+            data-test="manageMarineSubscriptionsButton"
+        >
+            {{ translateKeyPrefix + ".MANAGE_LINK" | translate }}
+        </button>
+    </p>
+    <p
+        *ngFor="let plan of data?.plans"
+        class="lead-in label-column plan-name"
+        [innerHTML]="data?.isTrial ? (translateKeyPrefix + '.PLAN_NAME_TRIAL' | translate: { plan }) : plan"
+    ></p>
+    <ng-container *ngIf="data.streamingServiceStatus">
+        <div class="label-column tool-tip-grid">
+            <p class="lead-in bold label-title" [innerHTML]="translateKeyPrefix + '.STREAMING_TITLE' | translate"></p>
+            <sxm-ui-tooltip class="tooltip-display-right"
+                ><p>{{ translateKeyPrefix + ".SXM_APP_TOOLTIP" | translate }}</p></sxm-ui-tooltip
+            >
+        </div>
+        <p class="right-align top-align link-column">
+            <button class="text-link-secondary" (click)="editUsername.emit()" data-test="marineEditOrCreateUsernameButton">
+                {{ translateKeyPrefix + (data.username ? ".EDIT_LINK" : ".CREATE_LINK") | translate }}
+            </button>
+        </p>
+        <p class="label-column lead-in" [class.text-overflow-ellipsis]="data?.username">
+            {{ data?.username ? data.username : (translateKeyPrefix + ".CREATE_INSTRUCTIONS" | translate) }}
+        </p>
+    </ng-container>
+</div>

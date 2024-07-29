@@ -1,0 +1,19 @@
+<section id="mainContent">
+    <svg class="icon icon-utility large checkmark-circle-outline">
+        <use class="icon-check-mark-flex-stroke" xlink:href="#icon-check-mark-flex-stroke"></use>
+    </svg>
+    <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+        <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+    </sxm-ui-step-header>
+    <ul id="benefitsList" *ngrxLet="getPaymentInterstitialBulletsViewModel$ as paymentInterstitialBullets">
+        <li *ngFor="let bullet of paymentInterstitialBullets">
+            <svg class="icon icon-utility">
+                <use class="icon-checkmark-sm" xlink:href="#icon-checkmark-sm"></use>
+            </svg>
+            <span [innerHtml]="bullet"></span>
+        </li>
+    </ul>
+    <a class="button primary full-width" [routerLink]="pageStepRouteConfiguration.routeUrlNext" queryParamsHandling="preserve" sxmUiDataClickTrack="routing">
+        {{ translateKeyPrefix + ".CONTINUE_BUTTON_TEXT" | translate }}
+    </a>
+</section>

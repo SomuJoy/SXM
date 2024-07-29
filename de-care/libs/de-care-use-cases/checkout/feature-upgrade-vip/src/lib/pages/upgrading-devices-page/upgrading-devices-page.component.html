@@ -1,0 +1,16 @@
+<ng-container *ngIf="taskData$ | async as taskData">
+    <main class="background-transparent" de-care-page-main>
+        <p class="large-copy animate-block">{{ translateKeyPrefix + "PROCESSING" | translate }}</p>
+
+        <div class="animate-block">
+            <sxm-ui-task-processing-report [data]="taskData" class="animated"></sxm-ui-task-processing-report>
+        </div>
+
+        <ng-container *ngIf="tasksSuccessStatus; else upgradeError">
+            <p class="large-copy animate-block">{{ translateKeyPrefix + "UPGRADED" | translate }}</p>
+        </ng-container>
+        <ng-template #upgradeError>
+            <p class="large-copy animate-block">{{ translateKeyPrefix + "NOT_UPGRADED" | translate }}</p>
+        </ng-template>
+    </main>
+</ng-container>

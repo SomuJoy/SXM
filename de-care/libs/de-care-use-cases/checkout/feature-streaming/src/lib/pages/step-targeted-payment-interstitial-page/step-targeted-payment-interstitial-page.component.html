@@ -1,0 +1,12 @@
+<section id="mainContent">
+    <svg class="icon icon-utility large checkmark-circle-outline">
+        <use class="icon-check-mark-flex-stroke" xlink:href="#icon-check-mark-flex-stroke"></use>
+    </svg>
+    <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+        <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+    </sxm-ui-step-header>
+    <de-care-payment-interstitial-info></de-care-payment-interstitial-info>
+    <button data-test="continueButton" type="button" sxm-proceed-button (click)="goToNextStep()" sxmUiDataClickTrack="routing">
+        {{ translateKeyPrefix + ".CONTINUE_BUTTON_TEXT" | translate }}
+    </button>
+</section>

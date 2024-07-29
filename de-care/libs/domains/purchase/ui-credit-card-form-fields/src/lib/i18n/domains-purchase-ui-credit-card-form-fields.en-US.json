@@ -1,0 +1,24 @@
+{
+    "domainsPurchaseUiCreditCardFormFieldsModule": {
+        "creditCardFormFieldsComponent": {
+            "PAYMENT_INFO_SUBHEADER": "Payment Info",
+            "UNEXPECTED_ERROR": "An unexpected error occurred. Please try again.",
+            "TOOLTIP_MESSAGE_1": "For Visa and Mastercard, use the 3 digits on the back of your card.",
+            "TOOLTIP_MESSAGE_2": "For American Express, use the 4 digits on the front of your card.",
+            "NEW_CC": {
+                "CC_CVV": "CVV",
+                "CC_NAME": "Name on Card",
+                "UNAUTHORIZED_ERROR": "We were unable to authorize your credit card. Please update your payment information.",
+                "ERROR_CC_NAME": "Enter your name as it appears on your card.",
+                "CC_NUM": "Card Number",
+                "ERROR_CC_NUM": "Enter a valid credit card number.",
+                "ERROR_CC_NUM_FOUND_GC": "The card number you have entered is for a SiriusXM gift card. Please redeem your gift card below or enter a valid credit card number.",
+                "CC_EXP_DATE": "Expiration Date (MM/YY)",
+                "CC_EXP_DATE_INLINE": "Exp (MM/YY)",
+                "ERROR_CC_EXP_INVALID": "Enter a valid expiration date.",
+                "ERROR_CC_CVV": "Enter a valid security code (CVV)"
+            },
+            "ERROR_CVV_FOUND": "The field contains characters that resemble credit card security information. Please review and make appropriate changes to continue."
+        }
+    }
+}

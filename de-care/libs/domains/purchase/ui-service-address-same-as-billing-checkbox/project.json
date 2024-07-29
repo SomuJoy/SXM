@@ -1,0 +1,34 @@
+{
+    "name": "domains-purchase-ui-service-address-same-as-billing-checkbox",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/purchase/ui-service-address-same-as-billing-checkbox/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/domains/purchase/ui-service-address-same-as-billing-checkbox/src/**/*.ts",
+                    "libs/domains/purchase/ui-service-address-same-as-billing-checkbox/src/**/*.html"
+                ]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/purchase/ui-service-address-same-as-billing-checkbox/jest.config.js",
+                "tsConfig": "libs/domains/purchase/ui-service-address-same-as-billing-checkbox/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/purchase/ui-service-address-same-as-billing-checkbox/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:ui", "scope:domain-ui"]
+}

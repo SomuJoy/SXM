@@ -1,0 +1,63 @@
+{
+    "app": {
+        "switchLanguage": {
+            "label": "FR",
+            "value": "fr-CA"
+        },
+        "Title": "CA_EN_SiriusXM CUWI Application",
+        "areas": [
+            {
+                "label": "ALBERTA",
+                "key": "AB"
+            },
+            {
+                "label": "BRITISH COLUMBIA",
+                "key": "BC"
+            },
+            {
+                "label": "MANITOBA",
+                "key": "MB"
+            },
+            {
+                "label": "NEW BRUNSWICK",
+                "key": "NB"
+            },
+            {
+                "label": "NEWFOUNDLAND & LABRADOR",
+                "key": "NL"
+            },
+            {
+                "label": "NORTHWEST TERRITORIES",
+                "key": "NT"
+            },
+            {
+                "label": "NOVA SCOTIA",
+                "key": "NS"
+            },
+            {
+                "label": "NUNAVUT",
+                "key": "NU"
+            },
+            {
+                "label": "ONTARIO",
+                "key": "ON"
+            },
+            {
+                "label": "PRINCE EDWARD ISLAND",
+                "key": "PE"
+            },
+            {
+                "label": "QUEBEC",
+                "key": "QC"
+            },
+            {
+                "label": "SASKATCHEWAN",
+                "key": "SK"
+            },
+            {
+                "label": "YUKON",
+                "key": "YT"
+            }
+        ]
+    }
+}

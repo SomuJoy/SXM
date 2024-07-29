@@ -1,0 +1,41 @@
+{
+    "DeCareUseCasesCheckoutFeatureStreamingModule": {
+        "COMMON": {
+            "STREAMING_PLAYER_LINK": "?contentType=live&channelName=home&site_id=home&creative_id=NA_NA_DL-OTH-live-home-home-APPHOME-JAN22CONFRIMPGTEST-NA-All-20220127-NA&cp_5=home&cp_6=home&cp_7=ALL&cp_8=APPHOME&cp_9=JAN22CONFRIMPGTEST&cp_10=OTH"
+        },
+        "PurchaseTargetedPageComponent": {
+            "STEP_PAGE_TITLES": {
+                "": ""
+            }
+        },
+        "ConfirmationPageComponent": {
+            "TITLE": "Thank you for subscribing",
+            "USERNAME": "Username:",
+            "TITLE_WITH_SXM_STREAMING": "Thank you for subscribing to SXM Streaming",
+            "PRICE_AND_TERM_SUBTEXT": "An early termination fee of ({{etfAmount}}) may apply if you cancel within the first {{etfTerm}} months."
+        },
+        "NuCaptchaFormFieldComponent": {
+            "CAPTCHA_AUDIO_REPLAY": "Replay audio sample",
+            "CAPTCHA_AUDIO_DOWNLOAD": "Download an audio challenge",
+            "CAPTCHA_AUDIO": "Audio code",
+            "CAPTCHA_VISUAL": "Visual code",
+            "CAPTCHA_TRY_NEW": "Try a new code",
+            "CAPTCHA": "Enter Captcha",
+            "ERROR": {
+                "CAPTCHA_BLANK": "Enter the Captcha you see above.",
+                "CAPTCHA_FAILED": "Entered code does not match. Please try again."
+            }
+        },
+        "IneligibleErrorPageComponent": {
+            "LOADER_SUBTEXT": "Finding another great plan for you.",
+            "3494": "Unfortunately, we can’t find your radio. However, you can stream on the SXM App with a Platinum subscription.",
+            "103": "Unfortunately, your radio is not equipped for satellite service. However, you can stream on the SXM App with a Platinum subscription.",
+            "5035": "Unfortunately, the radio you entered is not capable of receiving audio. However, you can stream on the SXM App with a Platinum subscription.",
+            "101": "Unfortunately, a trial subscription is not eligible for this radio. However, you can start enjoying SiriusXM with this great subscription offer.",
+            "109": "Looks like you currently have an active trial. You can add a subscription, so you won’t miss a beat when your trial ends.",
+            "111": "Looks like you currently have a 3-month active trial. You can add a subscription, so you won’t miss a beat when your trial ends.",
+            "112": "Unfortunately, your trial recently ended and your radio is ineligible for a trial subscription. However, you can start enjoying SiriusXM with this great subscription offer.",
+            "113": "Unfortunately, your trial or paid subscription recently ended and your radio is ineligible for a trial subscription. However, you can start enjoying SiriusXM with this great subscription offer."
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "name": "de-care-use-cases-shared-ui-header-bar",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care-use-cases/shared/ui-header-bar/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/de-care-use-cases/shared/ui-header-bar/src/**/*.ts", "libs/de-care-use-cases/shared/ui-header-bar/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/shared/ui-header-bar/jest.config.js",
+                "tsConfig": "libs/de-care-use-cases/shared/ui-header-bar/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/de-care-use-cases/shared/ui-header-bar/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:ui", "scope:de-care"]
+}

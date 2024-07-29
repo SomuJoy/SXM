@@ -1,0 +1,6 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": { "firstName": "john", "lastName": "smith", "zipCode": "80918", "email": null, "phoneNumber": null }
+}

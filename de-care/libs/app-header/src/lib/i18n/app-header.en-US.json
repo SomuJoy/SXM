@@ -1,0 +1,19 @@
+{
+    "appHeader": {
+        "headerBarComponent": {
+            "SELECT_PROVINCE_LABEL": "Province:",
+            "EDIT_PROVINCE": "Edit",
+            "SWITCH_LANGUAGE": {
+                "LABEL": "FR",
+                "VALUE": "fr-CA"
+            },
+            "PROVINCE_SELECTOR_MODAL_TITLE": "Site settings"
+        },
+        "provinceSelectorComponent": {
+            "HEADER_TITLE": "Confirm your province",
+            "PRICING_VARY": "Pricing may vary by province.",
+            "SELECT_PROVINCE_DROPDOWN": "Province",
+            "SUBMIT_BUTTON": "Save settings"
+        }
+    }
+}

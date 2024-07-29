@@ -1,0 +1,12 @@
+<main de-care-page-main>
+    <sxm-ui-dot-progress-bar-stepper [staticStepData]="{ step: 1, subStep: 1 }">
+        <sxm-ui-dot-progress-bar-step>
+            <h1>{{ translateKey + ".TITLE" | translate }}</h1>
+            <p>{{ translateKey + ".SUBTITLE" | translate }}</p>
+            <ui-lookup-by-radio-id-or-account-number></ui-lookup-by-radio-id-or-account-number>
+        </sxm-ui-dot-progress-bar-step>
+        <!-- TODO: Temporary use of dummy stepper. Registration flow need to be refactored.-->
+        <sxm-ui-dot-progress-bar-step> </sxm-ui-dot-progress-bar-step>
+        <sxm-ui-dot-progress-bar-step> </sxm-ui-dot-progress-bar-step>
+    </sxm-ui-dot-progress-bar-stepper>
+</main>

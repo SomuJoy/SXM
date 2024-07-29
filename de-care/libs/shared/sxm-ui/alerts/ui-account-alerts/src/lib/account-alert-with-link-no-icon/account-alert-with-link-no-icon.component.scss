@@ -1,0 +1,45 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "libs/sxm-assets/scss/ui_reset.scss";
+
+:host {
+    font-family: $font-standard;
+
+    .grid-container {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr 34px;
+        grid-template-rows: auto;
+        column-gap: 16px;
+        align-items: center;
+
+        .payment-alert-message {
+            color: $black;
+            @include font-size(14px);
+            font-weight: calculate-font-weight("book");
+            letter-spacing: 0;
+            line-height: 19px;
+        }
+
+        a {
+            color: $black;
+            @include font-size(14px);
+            font-weight: calculate-font-weight("bold");
+            letter-spacing: 0;
+            line-height: 19px;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 2px;
+            padding: 12px 0;
+            cursor: pointer;
+        }
+    }
+}
+
+:host-context(.highlight-link) {
+    .grid-container {
+        a {
+            color: $raspberry;
+        }
+    }
+}

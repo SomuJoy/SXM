@@ -1,0 +1,9 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    @include page-content-markup(1fr);
+}
+hr {
+    border: 1px solid $gray-light;
+}

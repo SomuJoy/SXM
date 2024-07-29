@@ -1,0 +1,12 @@
+{
+    "BILLING_DETAILS_TITLE": "Credit Card Details",
+    "CARD_TYPE_ICONS": ["visa", "mc", "amex"],
+    "SAVED_CARD": "Use my saved {{ type }} ending in {{ last4Digits }}",
+    "NEW_CC_PROMPT": "Enter a new credit card",
+    "NEW_CC_NOTE": "(Note: This will replace your current credit card)",
+    "CONTINUE_BUTTON_TEXT": "Review My Order",
+    "PAYMENT_METHOD_NOT_SELECTED_ERROR": "Please choose a payment option",
+    "INVALID_ZIP_FROM_LOOKUP_ERROR": "Enter a valid zip code",
+    "CREDIT_CARD_PROCESSING_ERROR": "We were unable to authorize your credit card. Please update your payment information.",
+    "CONFIRM_YOUR_ADDRESS": "Please confirm your address"
+}

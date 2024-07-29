@@ -1,0 +1,160 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    height: 100%;
+    grid-template-rows: auto 1fr;
+    background-color: $off-white;
+    display: block;
+}
+
+section {
+    padding: 0;
+    margin: 0;
+
+    .section {
+        &--title {
+            margin-bottom: 0;
+        }
+
+        &--balance {
+            margin-top: -12px;
+        }
+    }
+
+    h1 {
+        @include get-header-style(h4);
+        margin-bottom: 0;
+    }
+}
+
+.main {
+    @include grid-container();
+}
+
+.submission-page-container {
+    display: grid;
+    background-color: $off-white;
+    grid-column: 1/7;
+    grid-row-gap: 16px;
+
+    .instructions {
+        margin-top: 16px;
+    }
+
+    &--userInfo {
+        text-align: start;
+        display: flex;
+        justify-content: space-between;
+        background: white;
+        padding: 12px 16px;
+        margin-bottom: 0px;
+        width: calc(100% + 32px);
+        margin-left: -16px;
+
+        @include bp(medium) {
+            margin-left: 0;
+            padding: 0;
+            background-color: transparent;
+            width: 100%;
+        }
+
+        > div:first-child {
+            font-weight: bold;
+        }
+    }
+
+    &--updatePaymentSubHeader {
+        margin-top: 16px;
+    }
+
+    &--payment-form {
+        margin-top: 8px;
+        grid-column: 1/12;
+
+        @include bp(medium) {
+            margin-top: 16px;
+        }
+    }
+
+    &--userInfo,
+    &--detail,
+    &--alertInfo {
+        grid-column: 1/12;
+    }
+
+    @include bp(medium) {
+        justify-content: space-between;
+        grid-column: 1/-1;
+        grid-template-columns: repeat(11, 1fr);
+
+        &--detail {
+            h1 {
+                margin-bottom: 0;
+            }
+            grid-row-start: 2;
+        }
+
+        &--detail,
+        &--alertInfo {
+            grid-column: 1/6;
+        }
+
+        &--userInfo {
+            grid-column: 8/12;
+        }
+
+        &--userInfo {
+            display: block;
+            text-align: right;
+        }
+    }
+
+    @include bp(xlarge) {
+        justify-content: center;
+    }
+
+    &--divider1 {
+        grid-column: 1/12;
+        width: 100%;
+        border: 0;
+        border-top: 1px solid $gray-medium;
+    }
+
+    &-backBtn {
+        grid-column: 1/12;
+
+        @include bp(medium) {
+            margin-top: 24px;
+            grid-column: 1/2;
+        }
+    }
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    color: $black;
+    font-weight: bold;
+    margin-left: -16px;
+    margin-top: 16px;
+    max-width: fit-content;
+
+    .icon-previous {
+        width: 36px;
+        height: 36px;
+        padding: 3px;
+    }
+
+    use {
+        stroke: $blue-secondary;
+    }
+
+    grid-row-start: 2;
+    grid-column: 1/12;
+
+    @include bp(medium) {
+        margin-top: 24px;
+        grid-row-start: 1;
+    }
+}

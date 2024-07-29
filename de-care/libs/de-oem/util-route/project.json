@@ -1,0 +1,31 @@
+{
+    "name": "de-oem-util-route",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-oem/util-route/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/de-oem/util-route/src/**/*.ts", "libs/de-oem/util-route/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/de-oem/util-route/jest.config.js",
+                "tsConfig": "libs/de-oem/util-route/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/de-oem/util-route/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "SCSS"
+        }
+    },
+    "tags": ["typ:ui-util", "scope:de-oem"]
+}

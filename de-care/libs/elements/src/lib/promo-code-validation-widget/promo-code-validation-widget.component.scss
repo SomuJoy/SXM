@@ -1,0 +1,40 @@
+@import "sxm.phoenix.imports";
+:host {
+    padding: 24px 15px 16px;
+    max-width: 366px;
+    display: block;
+    @include bp(medium) {
+        padding: 24px 24px 16px;
+    }
+    p {
+        &::ng-deep {
+            b {
+                font-weight: 700;
+            }
+        }
+    }
+    ::ng-deep {
+        &[href^="tel:"] {
+            @include bp(medium) {
+                color: inherit;
+                text-decoration: none;
+                cursor: default;
+            }
+            &::before {
+                @include bp(medium) {
+                    content: none;
+                }
+            }
+        }
+    }
+}
+
+h5 {
+    margin-bottom: 24px;
+}
+
+p {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 12px;
+}

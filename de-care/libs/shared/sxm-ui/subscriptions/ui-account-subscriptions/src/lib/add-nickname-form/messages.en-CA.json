@@ -1,0 +1,12 @@
+{
+    "ADD_TITLE": "Add a subscription nickname",
+    "EDIT_TITLE": "Update nickname",
+    "DESCRIPTION": "Easily tell your subscriptions apart by adding a personalized nickname.",
+    "RADIO_ID": "ESN/Radio ID: {{radioId}}",
+    "NICKNAME": "Nickname (eg. Jim\"s car)",
+    "ERROR_MESSAGE_NICKNAME": "Please enter a valid nickname up to 15 characters. Only letters, numbers, dashes, and apostrophes are allowed.",
+    "ERROR_MESSAGE": "An unexpected error occurred. Please try again.",
+    "UPDATE_BUTTON": "UPDATE NICKNAME",
+    "ADD_BUTTON": "ADD NICKNAME",
+    "CANCEL_BUTTON": "CANCEL"
+}

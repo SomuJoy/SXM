@@ -1,0 +1,51 @@
+<section id="heroSection" *ngIf="heroViewModel$ | async as heroData">
+    <sxm-ui-hero [heroData]="heroData"></sxm-ui-hero>
+</section>
+<div deCarePageMainContent id="mainContent" *ngrxLet="currentLang$ as currentLang">
+    <section id="your-plan-and-offer" *ngIf="selectedDeviceSubscriptionViewModel$ | async as selectedDeviceSubscriptionViewModel">
+        <article class="your-plan">
+            <p class="your-plan--header">{{ translateKeyPrefix + "CURRENT_PLAN.TITLE" | translate }}</p>
+            <p *ngFor="let plan of selectedDeviceSubscriptionViewModel">
+                {{
+                    translateKeyPrefix + "CURRENT_PLAN.NAME_AND_PRICE" + (plan.isAnnual ? "_ANNUAL" : "")
+                        | translate: { name: plan.name, price: plan.price | currency: "USD":"symbol-narrow":undefined:currentLang }
+                }}
+                {{ (includePlusFees$ | async) ? (translateKeyPrefix + "PLUS_FEES" | translate) : "" }}
+            </p>
+        </article>
+        <de-care-tier-up-offer [data]="upgradeSummaryViewModel$ | async"></de-care-tier-up-offer>
+    </section>
+    <section id="purchaseStepsSection">
+        <sxm-ui-stepper-accordion #stepper>
+            <sxm-ui-step-accordion
+                (active)="onBillingInformationStepActive()"
+                [label]="translateKeyPrefix + 'STEPS.PAYMENT_INFO.TITLE' | translate"
+                (editClicked)="onEditBillingInformationClick()"
+            >
+                <p class="billing-info-text">{{ translateKeyPrefix + "STEPS.PAYMENT_INFO.REMEMBER_TEXT" | translate }}</p>
+                <de-care-payment-info-form
+                    [options]="paymentMethodOptionsViewModel$ | async"
+                    [continueButtonTextOverride]="translateKeyPrefix + 'STEPS.PAYMENT_INFO.CONTINUE_BUTTON_TEXT' | translate"
+                    (formCompleted)="onPaymentInfoCollected($event)"
+                ></de-care-payment-info-form>
+                <ng-template #inactiveContent>{{
+                    translateKeyPrefix + "STEPS.PAYMENT_INFO.SELECTED_PAYMENT_METHOD_SUMMARY" | translate: (selectedPaymentMethodSummaryViewModel$ | async)
+                }}</ng-template>
+            </sxm-ui-step-accordion>
+            <sxm-ui-step-accordion (active)="onReviewStepActive()" [label]="translateKeyPrefix + 'STEPS.REVIEW.TITLE' | translate">
+                <de-care-tier-up-current-charges-message [extraData]="{ isUpgradePkg: true, isAnnual: (isAnnual$ | async) }"></de-care-tier-up-current-charges-message>
+                <de-care-review-quote-and-approve-form
+                    *ngIf="quoteViewModel$ | async as quoteViewModel"
+                    [quoteViewModel]="quoteViewModel"
+                    [shouldIncludeNuCaptcha]="displayNuCaptcha$ | async"
+                    [continueButtonTextOverride]="translateKeyPrefix + 'STEPS.REVIEW.CONTINUE_BUTTON_TEXT' | translate"
+                    [extraData]="{ isUpgradePkg: true, isAnnual: (isAnnual$ | async) }"
+                    (formCompleted)="submitTransaction()"
+                ></de-care-review-quote-and-approve-form>
+            </sxm-ui-step-accordion>
+        </sxm-ui-stepper-accordion>
+    </section>
+</div>
+<section id="legalCopySection" deCarePageFullWidthContent>
+    <div *ngrxLet="legalCopyViewModel$ as legalCopy" [innerHTML]="legalCopy"></div>
+</section>

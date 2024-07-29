@@ -1,0 +1,18 @@
+{
+    "offerUpsell": {
+        "offerUpsellComponent": {
+            "ADDITIONAL_COST": "Add premium channels plus streaming for an additional {{ price }}*",
+            "TERM_UPSELL_MONTHS_QUEBEC": "Add {{addMoreMonths}} more months for an additional {{ desiredCurrency }}**",
+            "TERM_UPSELL_MONTHS": "Add {{addMoreMonths}} more months for an additional {{ desiredCurrency }}**",
+            "PLUS_TAXES_AND_FEES_QUEBEC": "*Plus taxes, based on a prepayment of {{ price }}.",
+            "PLUS_TAXES_AND_FEES": "*Plus fees and taxes, based on a prepayment of {{ price }}.",
+            "PLUS_TAXES_AND_FEES_MCP": "*Plus fees and taxes",
+            "PLUS_TAXES_AND_FEES_QUEBEC_MCP": "*Plus taxes",
+            "PER_MONTH_MCP": " per month.",
+            "OFFER_COMPARISION_QUEBEC": "Compared to the {{ originalOffer }}-month deal after {{ termLength }} months. Based on regular {{ retailPrice }} /mo rate. Taxes apply. See offer details.",
+            "TERM_PRICE_DIFFERENCE_QUEBEC": "Compared to the {{ packageUpsell }}-month deal after {{ term }} months. Based on regular {{ desiredCurrency }} /mo rate. Taxes apply. See offer details.",
+            "SEE_OFFER_BELOW_ADVANTAGE": "Reg <strike>{{ price }}/mo</strike> plus fees. Save {{ savingsAmount }}/mo for as long as you choose to maintain your subscription. See <strong>Offer Details</strong> below.",
+            "SEE_OFFER_BELOW_ADVANTAGE_QUEBEC": "Reg <strike>{{ price }}/mo</strike>. Save {{ savingsAmount }}/mo for as long as you choose to maintain your subscription. See <strong>Offer Details</strong> below."
+        }
+    }
+}

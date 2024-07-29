@@ -1,0 +1,12 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.dark-gray-header {
+    @include deep-gray-subheader;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.margin-bottom-12px {
+    margin-bottom: 12px;
+}

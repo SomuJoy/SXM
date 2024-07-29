@@ -1,0 +1,14 @@
+<div class="row no-padding" [attr.data-e2e]="lineItemData.parentDataAttribute">
+    <div class="column small-8 align-left no-padding" [attr.data-e2e]="lineItemData.titleE2e">
+        <p *ngIf="lineItemData.title" class="line-item-description">
+            <span class="line-item-description-title">{{ lineItemData.title }}</span>
+            <ng-content select="sxm-ui-tooltip"></ng-content>
+        </p>
+    </div>
+
+    <div [attr.data-e2e]="lineItemData.amountE2e" class="column small-4 align-right no-padding">
+        <p class="line-item-amount">
+            <span>{{ lineItemData.amount }}</span>
+        </p>
+    </div>
+</div>

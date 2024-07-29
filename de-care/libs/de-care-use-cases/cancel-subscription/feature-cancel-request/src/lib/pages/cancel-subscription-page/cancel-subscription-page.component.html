@@ -1,0 +1,365 @@
+<ng-container *ngrxLet="newOfferExperienceDetails$ as newOfferExperienceDetails">
+    <div *ngIf="newOfferExperienceDetails?.newOffersPageEnabled && offersStepActive; else heroTemplate" class="new-offers-header">
+        <div class="content-container hero-container">
+            <div class="row align-center">
+                <div class="column new-offers-step" [ngClass]="fullWidthSteps ? 'no-padding' : 'no-padding-small'">
+                    <h2>
+                        {{
+                            translateKeyPrefix +
+                                (newOfferExperienceDetails?.showOnlyOneOffer ? "HERO.NEW_OFFERS_SECTION.HEADER_ONE_OFFER" : "HERO.NEW_OFFERS_SECTION.HEADER_OFFERS")
+                                | translate
+                        }}
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #heroTemplate>
+        <hero-component
+            *ngIf="showAcceptOfferFlow; else cancelHero"
+            [headerState]="translateKeyPrefix + 'HERO.ACCEPT_OFFER_FLOW' | translate"
+            [alignLeftMediumUp]="true"
+            class="no-package-card-padding"
+        ></hero-component>
+        <ng-template #cancelHero>
+            <ng-container *ngIf="showHero">
+                <!-- the cancel confirmation step has different hero copy depending on if the subscription is cancelled now or later -->
+                <ng-container *ngIf="willBeCancelledLater$ | async; else notCancelledLater">
+                    <hero-component
+                        [headerState]="translateKeyPrefix + 'HERO.' + heroTranslateKey + '_LATER' | translate"
+                        [alignLeftMediumUp]="true"
+                        class="no-package-card-padding"
+                        [ngClass]="{
+                            'padding-with-elevated-header': heroTranslateKey === 'CANCEL_STEP_CONFIRMATION'
+                        }"
+                    ></hero-component>
+                </ng-container>
+                <ng-template #notCancelledLater>
+                    <hero-component
+                        [headerState]="translateKeyPrefix + 'HERO.' + heroTranslateKey | translate"
+                        [alignLeftMediumUp]="true"
+                        [ngClass]="{
+                            'padding-with-elevated-header': heroTranslateKey === 'CANCEL_STEP_CONFIRMATION',
+                            'white-title-background reduced-padding': heroTranslateKey === 'CANCEL_STEP_SUMMARY',
+                            'no-package-card-padding': heroTranslateKey !== 'CANCEL_STEP_SUMMARY' && heroTranslateKey !== 'CANCEL_STEP_CONFIRMATION'
+                        }"
+                    ></hero-component>
+                </ng-template>
+            </ng-container>
+        </ng-template>
+    </ng-template>
+    <main
+        [ngClass]="heroTranslateKey === 'CANCEL_STEP_SUMMARY' || heroTranslateKey === 'CANCEL_STEP_CONFIRMATION' ? 'background-white' : 'background-offwhite'"
+        [class.full-width-steps]="fullWidthSteps"
+    >
+        <div *ngIf="yourCurrentPlan$ | async as currentPlan" class="content-container">
+            <div class="row no-padding-small align-center" [class.new-offers-row]="newOfferExperienceDetails?.newOffersPageEnabled && offersStepActive">
+                <div
+                    class="column small-12 medium-10 offset-medium-1 align-top"
+                    [ngClass]="
+                        (fullWidthSteps ? 'no-padding' : 'no-padding-small') +
+                        ' ' +
+                        (newOfferExperienceDetails?.newOffersPageEnabled && offersStepActive ? 'background-offwhite new-offers-step' : 'background-white')
+                    "
+                >
+                    <sxm-ui-stepper
+                        #cancelStepper
+                        [class.new-offers-step]="newOfferExperienceDetails?.newOffersPageEnabled && offersStepActive"
+                        [class.half-width]="heroTranslateKey === 'CANCEL_STEP_CONFIRMATION'"
+                        [class.hide]="showAcceptOfferFlow"
+                        [class.offer-grid-padding]="!showHero"
+                        [class.width-complete]="fullWidthSteps"
+                    >
+                        <sxm-ui-step (active)="onCancelReasonStepActive()">
+                            <de-care-cancel-reason
+                                (reasonSubmitted)="onCancelReasonSubmitted($event)"
+                                [cancelReasons]="cancelReasons"
+                                [loading]="isProcessingOffers"
+                            ></de-care-cancel-reason>
+                        </sxm-ui-step>
+                        <sxm-ui-step (active)="onInterstitialStepActive()">
+                            <de-care-interstitial-blocks *ngIf="enableCancelInterstitial" (continueToNext)="onContinueToNextFromInterstitial()"></de-care-interstitial-blocks>
+                        </sxm-ui-step>
+                        <sxm-ui-step class="no-padding-step" (active)="onPreSelectedPlanActive()">
+                            <de-care-pre-selected-plan
+                                *ngIf="enablePreSelectedPlan"
+                                [currentPlan]="currentPlan"
+                                [preSelectedPlanInfo]="preSelectedPlanInfo$ | async"
+                                (switchPlan)="onGetPreSelectedPlan()"
+                                (cancelPlan)="onCancelPlanFromPreselected()"
+                                (keepCurrentPlan)="backToMyAccount()"
+                            ></de-care-pre-selected-plan>
+                            <de-care-pre-selected-second-plan
+                                *ngIf="enablePreSelectedSecondPlan"
+                                [currentPlan]="currentPlan"
+                                [preSelectedPlanInfo]="preSelectedPlanInfo$ | async"
+                                (switchPlan)="onGetPreSelectedSecondPlan()"
+                                (cancelPlan)="onCancelPlanFromPreselected()"
+                                (keepCurrentPlan)="backToMyAccount()"
+                            ></de-care-pre-selected-second-plan>
+                        </sxm-ui-step>
+
+                        <sxm-ui-step (active)="onOffersStepActive()" *ngIf="(cancelOnly$ | async) === false && (preSelectedPlanInfo$ | async)?.planName !== null">
+                            <ng-container *ngIf="newOfferExperienceDetails?.newOffersPageEnabled; else offersGridTemplate">
+                                <de-care-offers-presentment
+                                    [packageData]="newOfferExperienceDetails.packagesData"
+                                    [currentPlan]="currentPlan"
+                                    [enableContinueButton]="newOfferExperienceDetails?.cancelOnlineEnabled"
+                                    (navigateToGrid)="onNavigateToGrid()"
+                                    (packageSelected)="onPackageSelected($event)"
+                                    (continueToCancel)="onDeclineOffers()"
+                                    (backToMyAccount)="backToMyAccount()"
+                                ></de-care-offers-presentment>
+                            </ng-container>
+
+                            <ng-template #offersGridTemplate>
+                                <div *ngIf="showOfferCurrentSubscription" class="current-plan-container">
+                                    <sxm-ui-your-current-plan [planData]="currentPlan"></sxm-ui-your-current-plan>
+                                    <ng-container *ngIf="followonPlan$ | async as followonPlan">
+                                        <sxm-ui-your-current-plan [planData]="followonPlan" class="margin-top-1"></sxm-ui-your-current-plan>
+                                    </ng-container>
+                                </div>
+                                <ng-container *ngIf="offersAreAvailable; else noOffers">
+                                    <ng-container *ngIf="showOfferGrid; else showOfferStacked">
+                                        <div *ngIf="numGridOffers$ | async as numGridOffers" class="cancel-offer-grid full-screen-wrapper" data-e2e="cancelOfferGrid">
+                                            <div class="cancel-offer-grid-content">
+                                                <p class="grid-header large-copy">
+                                                    {{
+                                                        translateKeyPrefix +
+                                                            ((hasSubscriptionWithTrailAndFollowon$ | async)
+                                                                ? "OFFER_GRID_HEADER_FOR_TRIAL_WITH_FOLLOWON"
+                                                                : "OFFER_GRID_HEADER") | translate
+                                                    }}
+                                                </p>
+
+                                                <ng-container *ngIf="gridSelectionVM$ | async as gridSelectionVM">
+                                                    <sxm-ui-plan-selection
+                                                        *ngIf="!gridSelectionVM.testOfferExperience"
+                                                        [planSelectionData]="gridSelectionVM.planSelectionData"
+                                                        [currentOrExpiredTrialPackage]="gridSelectionVM.currentPlanName"
+                                                        (packageNameSelected)="onGridSelectedPackageName($event)"
+                                                        [selectedPackageIndex]="0"
+                                                        (packageIndexSelected)="selectedGridIndex = $event"
+                                                    >
+                                                        <div #contentCurrentPlanText current-plan-text>
+                                                            {{
+                                                                translateKeyPrefix +
+                                                                    ((hasSubscriptionWithTrailAndFollowon$ | async) ? "OFFER_GRID_RENEWAL_PLAN" : "OFFER_GRID_CURRENT_PLAN")
+                                                                    | translate
+                                                            }}
+                                                        </div>
+                                                    </sxm-ui-plan-selection>
+                                                    <sxm-ui-plan-selection-enhanced
+                                                        *ngIf="gridSelectionVM.testOfferExperience"
+                                                        [planSelectionData]="gridSelectionVM.planSelectionData"
+                                                        [currentOrExpiredTrialPackage]="gridSelectionVM.currentPlanName"
+                                                        (packageNameSelected)="onGridSelectedPackageName($event)"
+                                                        [selectedPackageIndex]="0"
+                                                        (packageIndexSelected)="selectedGridIndex = $event"
+                                                    >
+                                                    </sxm-ui-plan-selection-enhanced>
+                                                </ng-container>
+                                                <ng-container *ngIf="offerGridVM$ | async as offerGridVM">
+                                                    <sxm-ui-plan-comparison-grid
+                                                        *ngIf="!offerGridVM.testOfferExperience"
+                                                        [packageNames]="offerGridVM.packageNames"
+                                                        [offersData]="offerGridVM.offersData"
+                                                        [selectedPackageIndex]="selectedGridIndex"
+                                                        [activateExpandable]="true"
+                                                        [additionalGridRows]="vipWhereToListenGridRow"
+                                                        [hasWhereToListenRow]="!containsVipSubscription"
+                                                        [displayCallsToAction]="false"
+                                                    ></sxm-ui-plan-comparison-grid>
+                                                    <sxm-ui-plan-comparison-enhanced-grid
+                                                        *ngIf="offerGridVM.testOfferExperience"
+                                                        [packageNames]="offerGridVM.packageNames"
+                                                        [withOutFees]="offerGridVM.withOutFees"
+                                                        [offersData]="offerGridVM.offersData"
+                                                        [selectedPackageIndex]="selectedGridIndex"
+                                                        [activateExpandable]="true"
+                                                        [additionalGridRows]="vipWhereToListenGridRow"
+                                                        [hasWhereToListenRow]="!containsVipSubscription"
+                                                        [displayCallsToAction]="false"
+                                                    >
+                                                    </sxm-ui-plan-comparison-enhanced-grid>
+                                                </ng-container>
+                                                <div class="special-paragraph" *ngIf="vipIncludedButNotSelected$ | async">
+                                                    <p [innerHTML]="translateKeyPrefix + 'SPECIAL_VIP_PARAGRAPH_BOLD_NOTE' | translate"></p>
+                                                </div>
+                                                <div class="cta-container" [ngClass]="'grid-columns-total-width-' + numGridOffers">
+                                                    <button
+                                                        sxm-proceed-button
+                                                        data-test="cancelOfferGridCta"
+                                                        data-e2e="cancelOfferGridCta"
+                                                        (click)="onOfferGridContinue()"
+                                                        data-track-click="Select Offer from Grid"
+                                                    >
+                                                        <ng-container *ngIf="selectedGridIndex === 0; else newContinue">
+                                                            {{ translateKeyPrefix + "OFFER_GRID_CONTINUE_EXISTING" | translate }}
+                                                        </ng-container>
+                                                        <ng-template #newContinue>
+                                                            {{ translateKeyPrefix + "OFFER_GRID_CONTINUE_NEW" | translate }}
+                                                        </ng-template>
+                                                    </button>
+                                                    <ng-container *ngTemplateOutlet="chatTemplate"></ng-container>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-container>
+                                    <ng-template #showOfferStacked>
+                                        <h6 *ngIf="savingsInfo$ | async as savingsInfo">
+                                            <ng-container *ngIf="savingsInfo.offerType !== 'SELF_PAY' && savingsInfo.savings > 0; else noSavings">
+                                                {{ translateKeyPrefix + "CLAIM_SAVE" | translate: { savings: savingsInfo.savings } }}
+                                            </ng-container>
+                                            <ng-template #noSavings>
+                                                {{ translateKeyPrefix + "CLAIM_SELF_PAY" | translate }}
+                                            </ng-template>
+                                        </h6>
+                                        <p *ngIf="!isCanadaMode">{{ translateKeyPrefix + "OFFER_INSTRUCTIONS" | translate }}</p>
+                                        <div *ngIf="noOfferSelectedError" class="invalid-feedback no-offer-selected-error">
+                                            <p>{{ translateKeyPrefix + "NO_OFFER_SELECTED_ERROR" | translate }}</p>
+                                        </div>
+                                        <multi-package-selection-form
+                                            [data]="multiPackageData$ | async"
+                                            [usePromotionalTextCopy]="true"
+                                            (packageClicked)="onPackageClicked($event)"
+                                            (continue)="onOfferSelected($event)"
+                                        ></multi-package-selection-form>
+                                        <ng-container *ngTemplateOutlet="chatTemplate"></ng-container>
+                                    </ng-template>
+                                </ng-container>
+                                <ng-template #noOffers>
+                                    <h6 data-test="cancelNoOffersHeader">{{ translateKeyPrefix + "NO_OFFERS_OPTIONS.HEADING" | translate }}</h6>
+
+                                    <ng-container *ngIf="(isCanadaMode && (is247ChatOpen$ | async) !== true) || isCanadaFrenchLangMode; else noOffersInstructions">
+                                        <p [innerHTML]="translateKeyPrefix + 'CALL_US' | translate"></p>
+                                    </ng-container>
+
+                                    <ng-template #noOffersInstructions>
+                                        <p>{{ translateKeyPrefix + "NO_OFFERS_OPTIONS.INSTRUCTIONS" | translate }}</p>
+                                    </ng-template>
+                                    <ng-container *ngTemplateOutlet="chatTemplate"></ng-container>
+                                </ng-template>
+                            </ng-template>
+                        </sxm-ui-step>
+                        <sxm-ui-step (active)="onCancelSummaryStepActive()">
+                            <de-care-cancel-summary [planInfo]="currentPlan"></de-care-cancel-summary>
+                            <button
+                                data-test="cancelSubscriptionButton"
+                                [loading]="isProcessingCancellation"
+                                sxm-proceed-button
+                                qatag="FinalCancelSubscriptionButton"
+                                data-e2e="finalCancelSubscriptionButton"
+                                (click)="onCancelSubscription()"
+                            >
+                                {{ translateKeyPrefix + "CANCEL_SUBSCRIPTION_LABEL" | translate }}
+                            </button>
+                            <button sxm-proceed-button class="secondary alternative" (click)="backToMyAccount()" data-track-click="backToMyAccount" [secondary]="true">
+                                {{ translateKeyPrefix + "BACK_BUTTON.TEXT" | translate }}
+                            </button>
+                            <div class="text-link-container" *ngIf="(allowGoBackToOffers$ | async) === true">
+                                <a class="text-link margin-top-1" (click)="onGoBackToOffers()" data-track-click="backToViewOffers">
+                                    {{ translateKeyPrefix + "GO_BACK_TO_OFFERS" | translate }}
+                                </a>
+                            </div>
+                            <div class="instructions-container">
+                                <p *ngIf="!currentPlan?.isEndOfCycle">{{ translateKeyPrefix + "INSTRUCTIONS_PRO_RATED" | translate }}</p>
+                                <p class="refunds-text" [innerHtml]="translateKeyPrefix + 'CC_REFUNDS' | translate"></p>
+                            </div>
+                        </sxm-ui-step>
+                        <sxm-ui-step (active)="onConfirmationStepActive()">
+                            <de-care-cancel-confirmation [cancellationDetails]="cancellationDetails$ | async" [planInfo]="currentPlan"></de-care-cancel-confirmation>
+                        </sxm-ui-step>
+                    </sxm-ui-stepper>
+                    <de-care-accept-offer-flow
+                        [currentPlan]="currentPlan"
+                        [isFlowActive]="showAcceptOfferFlow"
+                        [displayBillingTerms]="displayAdditionalBillingTerms$ | async"
+                        [stepIndex]="acceptFlowStepIndex"
+                        [class.hide]="!showAcceptOfferFlow"
+                        [warningMessage]="(vipIncludedButNotSelected$ | async) ? (translateKeyPrefix + 'SPECIAL_VIP_PARAGRAPH' | translate) : null"
+                        (editPackageStep)="onEditPackageStep()"
+                    ></de-care-accept-offer-flow>
+                </div>
+            </div>
+        </div>
+    </main>
+</ng-container>
+<div class="grid-justify-centered" [class.full-width-transparent]="fullWidthSteps">
+    <div class="offer-details-grid-container" *ngIf="showOfferDetails">
+        <offer-details [details]="getOfferTypeForOfferDetails$ | async"></offer-details>
+    </div>
+</div>
+
+<!-- chat template -->
+<ng-template #chatTemplate>
+    <ng-container *ngrxLet="cancelOptions$ as cancelOptions">
+        <!-- US chat template -->
+        <ng-container *ngIf="!isCanadaMode; else canadaAndFrenchChatTemplate">
+            <button
+                class="button secondary full-width"
+                [class.hide]="!cancelOptions.showCancelOnline"
+                (click)="onDeclineOffers()"
+                data-at="continue-to-cancel-btn"
+                data-track-click="continueToCancel"
+                data-e2e="declineCancelOffersButton"
+            >
+                {{ translateKeyPrefix + "CONTINUE_TO_CANCEL" | translate }}
+            </button>
+            <div class="text-link-container">
+                <ng-container *ngIf="(cancelOptions.showCancelViaChat || cancelOptions.showCancelOnline) && isChatOpen$ | async; else chatIsClosed">
+                    <chat-with-agent-link
+                        sxmUiDataClickTrack="chat"
+                        [chatLinkText]="translateKeyPrefix + (!subscriptionIsStreaming ? 'NO_THANKS_CHAT_WITH_AGENT' : 'CHAT_WITH_AGENT') | translate"
+                        [queue]="'cancelOnline'"
+                    ></chat-with-agent-link>
+                </ng-container>
+                <ng-template #chatIsClosed>
+                    <p *ngIf="cancelOptions.showCancelViaChat" class="bold">
+                        {{ translateKeyPrefix + "CHAT_CLOSED" | translate: { chatHourClosed: chatHourClosed$ | async } }}
+                    </p>
+                </ng-template>
+            </div>
+        </ng-container>
+        <!-- Canada and French Chat Template -->
+        <ng-template #canadaAndFrenchChatTemplate>
+            <ng-container *ngrxLet="is247ChatOpen$ as is247ChatOpen">
+                <button
+                    class="button secondary full-width"
+                    (click)="onDeclineOffers()"
+                    data-at="continue-to-cancel-btn"
+                    data-track-click="continueToCancel"
+                    data-e2e="declineCancelOffersButton"
+                    *ngIf="(isCanadaEnglishLangMode && !is247ChatOpen) || isCanadaFrenchLangMode"
+                >
+                    {{ translateKeyPrefix + "CONTINUE_TO_CANCEL" | translate }}
+                </button>
+                <div class="text-link-container" *ngIf="is247ChatOpen && !isCanadaFrenchLangMode">
+                    <chat-with-agent-link
+                        sxmUiDataClickTrack="chat"
+                        [chatLinkText]="translateKeyPrefix + 'CHAT_WITH_AGENT' | translate"
+                        [queue]="'cancelOnline'"
+                        [isInChatLinkStage]="isInChatLinkStage"
+                    ></chat-with-agent-link>
+                </div>
+            </ng-container>
+        </ng-template>
+    </ng-container>
+</ng-template>
+
+<sxm-ui-modal
+    [closed]="false"
+    [ariaDescribedbyTextId]="showGenreModalAriaDescribedbyTextId"
+    (modalClosed)="genreModalClosed()"
+    (backButton)="genreModalClosed()"
+    *ngIf="showGenreModal"
+    [showBackButton]="true"
+    [showCloseButton]="false"
+    [titlePresent]="true"
+    [title]="translateKeyPrefix + 'CHOICE_MODAL_HEADER' | translate"
+    data-e2e="chooseGenreModal"
+>
+    <sxm-ui-choose-genre-form [formOptions]="choiceGenrePackageOptions$ | async" (stepComplete)="setSelectedGenre($event)" [ariaDescribedbyTextId]="showGenreModalAriaDescribedbyTextId"></sxm-ui-choose-genre-form>
+</sxm-ui-modal>
+
+<router-outlet (deactivate)="onDeactivatePlanGridModal()" name="modal"></router-outlet>

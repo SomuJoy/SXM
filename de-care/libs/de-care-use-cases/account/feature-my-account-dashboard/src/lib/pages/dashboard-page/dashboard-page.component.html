@@ -1,0 +1,403 @@
+<main>
+    <ng-container *ngIf="dashboardVM$ | async as vm">
+        <ng-container *ngFor="let section of vm.sections">
+            <section *ngIf="!(vm.hideTrending && section === 'TRENDING')" class="grid-container">
+                <ng-container [ngSwitch]="section">
+                    <ng-container *ngSwitchCase="'BILLING'">
+                        <header>
+                            <div
+                                class="section-header col-2"
+                                [ngClass]="{
+                                    'grid-half-medium': vm.billingHeaderSpan?.medium === 1,
+                                    'grid-full-medium': vm.billingHeaderSpan?.medium === 2,
+                                    'grid-half-large': vm.billingHeaderSpan?.large === 1,
+                                    'grid-full-large': vm.billingHeaderSpan?.large === 2
+                                }"
+                            >
+                                <h2>{{ translateKeyPrefix + ".BILLING_TITLE" | translate }}</h2>
+                                <a
+                                    class="section-cta"
+                                    routerLink="/account/manage/billing"
+                                    routerLinkActive="active"
+                                    sxmUiDataClickTrack="routing"
+                                    data-link-key="DashboardPage"
+                                    data-test="gotoBillingForActiveSubscriptions"
+                                    [attr.aria-label]="translateKeyPrefix + '.BILLING_LINK_ARIA' | translate"
+                                    >{{ translateKeyPrefix + ".BILLING_LINK_LABEL" | translate }}
+                                </a>
+                            </div>
+                        </header>
+                        <div
+                            *ngFor="let card of vm.billingCards"
+                            class="billing card-container"
+                            [ngClass]="{
+                                'grid-half-medium': card.span?.medium === 1,
+                                'grid-full-medium': card.span?.medium === 2,
+                                'grid-half-large': card.span?.large === 1,
+                                'grid-full-large': card.span?.large === 2
+                            }"
+                        >
+                            <sxm-ui-my-account-card
+                                [ngClass]="{
+                                    'flat no-padding transparent-background': card.type === 'MARKETING',
+                                    'vertical-center': card.type === 'BILLING_WITH_TRIALER_NO_PAYMENT_DUE_WITH_FOLLOWON'
+                                }"
+                                data-test="billingTrialerNoPaymentDue"
+                            >
+                                <ng-container body [ngSwitch]="card.type">
+                                    <ng-container *ngSwitchCase="'BILLING_WITH_MAKE_PAYMENT'">
+                                        <sxm-ui-billing-with-make-payment
+                                            [showWarning]="card.data?.isPastDue"
+                                            [data]="card.data"
+                                            (makePayment)="onMakePayment()"
+                                            data-test="billingMakePayment"
+                                        ></sxm-ui-billing-with-make-payment>
+                                    </ng-container>
+                                    <ng-container *ngSwitchCase="'BILLING_WITH_AUTOMATED_PAYMENT'">
+                                        <sxm-ui-billing-with-automated-payment
+                                            [showWarning]="card.data?.expireDate"
+                                            [allowPaymentUpdate]="card.data?.expireDate"
+                                            [data]="card.data"
+                                            data-test="billingAutomatedPayment"
+                                        ></sxm-ui-billing-with-automated-payment>
+                                    </ng-container>
+                                    <ng-container *ngSwitchCase="'BILLING_WITH_NO_PAYMENT_DUE'">
+                                        <sxm-ui-billing-with-no-payment-due [data]="card.data" data-test="billingNoPaymentDue"></sxm-ui-billing-with-no-payment-due>
+                                    </ng-container>
+                                    <ng-container *ngSwitchCase="'BILLING_WITH_NO_PAYMENT_DUE_AUTOMATED'">
+                                        <sxm-ui-billing-with-no-payment-due-automated
+                                            [data]="card.data"
+                                            data-test="billingNoPaymentDueAutomated"
+                                        ></sxm-ui-billing-with-no-payment-due-automated>
+                                    </ng-container>
+                                    <ng-container *ngSwitchCase="'BILLING_WITH_TRIALER_NO_PAYMENT_DUE_WITH_FOLLOWON'">
+                                        <sxm-ui-billing-with-trialer-no-payment-due-with-followon
+                                            data-test="billingTrialerNoPayemntDueWithFollowon"
+                                        ></sxm-ui-billing-with-trialer-no-payment-due-with-followon>
+                                    </ng-container>
+                                    <ng-container *ngSwitchCase="'BILLING_WITH_TRIALER_NO_PAYMENT_DUE'">
+                                        <sxm-ui-billing-with-trialer-no-payment-due
+                                            [data]="card.data"
+                                            data-test="billingTrialerNoPayemntDueWithFollowon"
+                                        ></sxm-ui-billing-with-trialer-no-payment-due>
+                                    </ng-container>
+                                    <ng-container *ngSwitchCase="'MARKETING'">
+                                        <my-account-offer-card
+                                            [data]="card.offerInfoVM"
+                                            (offerCtaClicked)="onOfferCtaClicked($event)"
+                                            data-test="offerCard"
+                                        ></my-account-offer-card>
+                                    </ng-container>
+                                </ng-container>
+
+                                <ng-container footer *ngIf="card.footer as footer">
+                                    <my-account-inner-strip>
+                                        <sxm-ui-billing-footer [data]="card.data"></sxm-ui-billing-footer>
+                                    </my-account-inner-strip>
+                                </ng-container>
+                            </sxm-ui-my-account-card>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'SUBSCRIPTIONS'">
+                        <header>
+                            <div
+                                class="section-header col-2 grid-full-medium"
+                                [ngClass]="{
+                                    'grid-two-thirds-large': vm.subscriptionHeaderSpan?.large === 2,
+                                    'grid-full-large': vm.subscriptionHeaderSpan?.large === 3
+                                }"
+                            >
+                                <h2>{{ translateKeyPrefix + ".SUBSCRIPTIONS_TITLE" | translate }}</h2>
+                                <!-- TODO: get aria label for this link, "View All" lacks full context -->
+                                <a class="section-cta" routerLink="../subscriptions" data-test="linkToViewAllSubscriptions">{{
+                                    translateKeyPrefix + ".SUBSCRIPTIONS_LINK_LABEL" | translate
+                                }}</a>
+                            </div>
+                        </header>
+                        <div
+                            *ngFor="let card of vm.subscriptionCards"
+                            class="card-container subscription-card"
+                            [ngClass]="{
+                                'grid-half-medium': card.span?.medium === 1,
+                                'grid-full-medium': card.span?.medium === 2,
+                                'grid-third-large': card.span?.large === 1,
+                                'grid-two-thirds-large': card.span?.large === 2,
+                                'grid-full-large': card.span?.large === 3
+                            }"
+                            data-test="dashboardSubscriptionCard"
+                        >
+                            <sxm-ui-my-account-card
+                                [ngClass]="{
+                                    'flat no-padding': card.type === 'MARKETING',
+                                    'vertical-center': card.type === 'ADD_SUBSCRIPTION' || card.type === 'NEW_SUBSCRIPTION',
+                                    'extra-padding-bottom':
+                                        !card.footer &&
+                                        card.type !== 'INACTIVE_SUBSCRIPTION' &&
+                                        card.type !== 'INACTIVE_SUBSCRIPTION_DUE_TO_SEASONAL_SUSPENSION' &&
+                                        card.type !== 'INACTIVE_STREAMING_SUBSCRIPTION_DUE_TO_SEASONAL_SUSPENSION' &&
+                                        card.type !== 'INACTIVE_STREAMING_SUBSCRIPTION' &&
+                                        card.type !== 'MARKETING'
+                                }"
+                                data-test="dashboardMyAccountCard"
+                            >
+                                <ng-container body [ngSwitch]="card.type">
+                                    <ng-container *ngSwitchCase="'ACTIVE_SUBSCRIPTION'">
+                                        <sxm-ui-active-subscription-actions
+                                            [data]="card.data"
+                                            (manage)="onManageSubscription({ subId: card.data?.id })"
+                                            (editOrCreateUsername)="
+                                                onEditOrCreateUsername({
+                                                    subId: card.data?.id,
+                                                    sameAsAccountUsername: card.data?.isStreamingServiceSameAsAccountUsername,
+                                                    redirectToPhx: card.data?.redirectToPhx
+                                                })
+                                            "
+                                        >
+                                        </sxm-ui-active-subscription-actions>
+                                    </ng-container>
+                                    <ng-container *ngSwitchCase="'STREAMING_SUBSCRIPTION'">
+                                        <sxm-ui-streaming-subscription-actions
+                                            [data]="card.data"
+                                            (manage)="onManageSubscription({ subId: card.data?.id })"
+                                            (editUsername)="
+                                                onEditOrCreateUsername({
+                                                    subId: card.data?.id,
+                                                    sameAsAccountUsername: card.data?.isStreamingServiceSameAsAccountUsername,
+                                                    redirectToPhx: card.data?.redirectToPhx
+                                                })
+                                            "
+                                            data-test="streamingSubscription"
+                                        ></sxm-ui-streaming-subscription-actions>
+                                    </ng-container>
+                                    <ng-container *ngSwitchCase="'AVIATION_SUBSCRIPTION'">
+                                        <sxm-ui-aviation-subscription-actions
+                                            [data]="card.data"
+                                            (manage)="onManageSubscription({ subId: card.data?.id })"
+                                            (editUsername)="
+                                                onEditOrCreateUsername({
+                                                    subId: card.data?.id,
+                                                    sameAsAccountUsername: card.data?.isStreamingServiceSameAsAccountUsername,
+                                                    redirectToPhx: card.data?.redirectToPhx
+                                                })
+                                            "
+                                            data-test="aviationSubscription"
+                                        >
+                                        </sxm-ui-aviation-subscription-actions>
+                                    </ng-container>
+                                    <ng-container *ngSwitchCase="'MARINE_SUBSCRIPTION'">
+                                        <sxm-ui-marine-subscription-actions
+                                            [data]="card.data"
+                                            (manage)="onManageSubscription({ subId: card.data?.id })"
+                                            (editUsername)="
+                                                onEditOrCreateUsername({
+                                                    subId: card.data?.id,
+                                                    sameAsAccountUsername: card.data?.isStreamingServiceSameAsAccountUsername,
+                                                    redirectToPhx: card.data?.redirectToPhx
+                                                })
+                                            "
+                                            data-test="marineSubscription"
+                                        ></sxm-ui-marine-subscription-actions>
+                                    </ng-container>
+                                    <ng-container *ngSwitchCase="'INACTIVE_SUBSCRIPTION'">
+                                        <sxm-ui-inactive-subscription-actions
+                                            [data]="card.data"
+                                            (removeDevice)="openRemoveInactiveRadioFormModal(card?.data?.radioId)"
+                                            (activate)="onActivateSubscription({ isAccountNonPay: card.data?.isInactiveDueToNonPay, radioId: card.data?.radioId })"
+                                            (cancelInactiveDevice)="cancelInactiveDevice(card.data?.id)"
+                                            data-test="inactiveSubscription"
+                                        ></sxm-ui-inactive-subscription-actions>
+                                    </ng-container>
+                                    <ng-container *ngSwitchCase="'INACTIVE_SUBSCRIPTION_DUE_TO_SEASONAL_SUSPENSION'">
+                                        <sxm-ui-seasonally-suspended-inactive-subscriptions
+                                            [data]="card.data"
+                                            (activateSuspendedDevice)="openActivateSeasonalSuspendedSubscriptionModal()"
+                                            (cancelSuspendedDevice)="cancelInactiveDevice(card.data?.id)"
+                                            data-test="seasonalSuspendedInactiveSubscription"
+                                        ></sxm-ui-seasonally-suspended-inactive-subscriptions>
+                                    </ng-container>
+                                    <ng-container *ngSwitchCase="'INACTIVE_STREAMING_SUBSCRIPTION_DUE_TO_SEASONAL_SUSPENSION'">
+                                        <sxm-ui-seasonally-suspended-streaming-inactive-subscriptions
+                                            [data]="card.data"
+                                            (activateSuspendedDevice)="openActivateSeasonalSuspendedSubscriptionModal()"
+                                            (cancelSuspendedDevice)="cancelInactiveDevice(card.data?.id)"
+                                            data-test="seasonalSuspendedStreamingInactiveSubscription"
+                                        ></sxm-ui-seasonally-suspended-streaming-inactive-subscriptions>
+                                    </ng-container>
+                                    <ng-container *ngSwitchCase="'INACTIVE_STREAMING_SUBSCRIPTION'">
+                                        <sxm-ui-inactive-streaming-subscription-actions
+                                            [data]="card.data"
+                                            (cancelInactiveDevice)="cancelInactiveDevice(card.data?.id)"
+                                            data-test="inactiveStreamingSubscription"
+                                        ></sxm-ui-inactive-streaming-subscription-actions>
+                                    </ng-container>
+                                    <ng-container *ngSwitchCase="'ADD_SUBSCRIPTION'">
+                                        <sxm-ui-add-subscription-actions
+                                            (carAndStreaming)="onCarAndStreaming()"
+                                            (streaming)="onStreaming()"
+                                            data-test="addSubscriptionAction"
+                                        ></sxm-ui-add-subscription-actions>
+                                    </ng-container>
+                                    <ng-container *ngSwitchCase="'NEW_SUBSCRIPTION'">
+                                        <sxm-ui-new-subscription-actions
+                                            (carAndStreaming)="onCarAndStreaming()"
+                                            (streaming)="onStreaming()"
+                                            data-test="newSubscriptionAction"
+                                        ></sxm-ui-new-subscription-actions>
+                                    </ng-container>
+                                    <ng-container *ngSwitchCase="'MARKETING'">
+                                        <my-account-offer-card
+                                            [data]="card.offerInfoVM"
+                                            (offerCtaClicked)="onOfferCtaClicked($event)"
+                                            [ngClass]="{
+                                                'full-width': card.span?.medium === 2 && card.span?.large === 3,
+                                                'lg-width': card.span?.large === 2,
+                                                'sm-width': card.span?.large === 1
+                                            }"
+                                        ></my-account-offer-card>
+                                    </ng-container>
+                                </ng-container>
+                                <ng-container footer *ngIf="card.footer as footer">
+                                    <my-account-inner-strip>
+                                        <ng-container body [ngSwitch]="footer.type">
+                                            <ng-container *ngSwitchCase="'UPGRADE'">
+                                                <sxm-ui-upgrade-subscription-single-action [data]="footer.data"></sxm-ui-upgrade-subscription-single-action>
+                                            </ng-container>
+                                            <ng-container *ngSwitchCase="'TRIAL'">
+                                                <sxm-ui-trial-subscription-single-action [data]="footer.data"></sxm-ui-trial-subscription-single-action>
+                                            </ng-container>
+                                            <ng-container *ngSwitchCase="'ACTIVATE'">
+                                                <sxm-ui-activate-radio-single-action [data]="footer.data"></sxm-ui-activate-radio-single-action>
+                                            </ng-container>
+                                        </ng-container>
+                                    </my-account-inner-strip>
+                                </ng-container>
+                            </sxm-ui-my-account-card>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'FAQ'">
+                        <header>
+                            <div class="section-header col-2 grid-full-medium">
+                                <h2>{{ translateKeyPrefix + ".FAQ_TITLE" | translate }}</h2>
+                                <a class="section-cta" [href]="translateKeyPrefix + '.FAQ_URL' | translate: { dotComUrl }" target="_blank">{{
+                                    translateKeyPrefix + ".FAQ_LINK_LABEL" | translate
+                                }}</a>
+                            </div>
+                        </header>
+                        <ng-container *ngIf="vm.faqCardType as cardType">
+                            <ng-container *ngIf="(translateKeyPrefix + '.' + cardType + '_FAQ' | translate) !== translateKeyPrefix + '.' + cardType + '_FAQ'">
+                                <div *ngFor="let card of translateKeyPrefix + '.' + cardType + '_FAQ' | translate" class="card-container grid-half-medium">
+                                    <sxm-ui-account-help-faq-card (activate)="onActivateFaq(card.LINK)" (keyup)="keyup($event, card.LINK)" tabindex="0">
+                                        <ng-container>
+                                            <sxm-ui-account-help-with-right-arrow-icon [data]="card.COPY"> </sxm-ui-account-help-with-right-arrow-icon>
+                                        </ng-container>
+                                    </sxm-ui-account-help-faq-card>
+                                </div>
+                            </ng-container>
+                        </ng-container>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'TRENDING'">
+                        <ng-container *ngIf="trending$ | async as trending">
+                            <ng-container *ngIf="trending.pending">
+                                <header>
+                                    <div class="section-header grid-full-large">
+                                        <!-- TODO: replace this with skeleton placeholder -->
+                                        Loading...
+                                    </div>
+                                </header>
+                                <div class="card-container grid-third-large">
+                                    <!-- TODO: replace this with skeleton placeholder -->
+                                    Loading...
+                                </div>
+                                <div class="card-container grid-third-large">
+                                    <!-- TODO: replace this with skeleton placeholder -->
+                                    Loading...
+                                </div>
+                                <div class="card-container grid-third-large">
+                                    <!-- TODO: replace this with skeleton placeholder -->
+                                    Loading...
+                                </div>
+                            </ng-container>
+                            <ng-container *ngIf="trending.value">
+                                <header>
+                                    <div class="section-header grid-full">
+                                        <h2>{{ trending.value.title }}</h2>
+                                    </div>
+                                </header>
+                                <div class="scroll-container grid-container card-container grid-full">
+                                    <div class="card-container" *ngFor="let card of trending.value.cards">
+                                        <sxm-ui-my-account-card class="no-padding">
+                                            <ng-container body>
+                                                <sxm-ui-image-with-caption [data]="{ imageUrl: card.imageUrl, bodyContent: card.body }"></sxm-ui-image-with-caption>
+                                            </ng-container>
+                                        </sxm-ui-my-account-card>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </ng-container>
+                    </ng-container>
+                </ng-container>
+            </section>
+        </ng-container>
+    </ng-container>
+</main>
+
+<sxm-ui-modal
+    #RemoveInactiveRadioFormModal
+    [ariaDescribedbyTextId]="removeInactiveRadioModalAriaDescribedbyTextId"
+    [closed]="true"
+    titlePresent="true"
+    [title]="translateKeyPrefix + '.SUBSCRIPTIONS_TITLE' | translate"
+    (modalClosed)="onRemoveInactiveRadioFormModalClose()"
+    data-test="removeInactiveRadioModal"
+>
+    <sxm-ui-remove-inactive-radio-form
+        #RemoveInactiveRadioForm
+        [ariaDescribedbyTextId]="removeInactiveRadioModalAriaDescribedbyTextId"
+        [loading]="removeInactiveRadioLoading"
+        [removeInactiveRadioServerError]="removeInactiveRadioServerError"
+        (userCancel)="onRemoveInactiveRadioFormModalClose()"
+        (userSelectedReason)="onUserSelectedReasonToRemoveInactiveRadio($event)"
+        data-test="removeInactiveRadioForm"
+    ></sxm-ui-remove-inactive-radio-form>
+</sxm-ui-modal>
+
+<sxm-ui-modal #CancelLinksHybridBauModal [closed]="true" titlePresent="true" [title]="translateKeyPrefix + '.SUBSCRIPTIONS_TITLE' | translate">
+    <my-account-cancel-links-hybrid-bau [data]="linkData" [allowOnlyCancelOnline]="allowOnlyCancelOnline$ | async"></my-account-cancel-links-hybrid-bau>
+</sxm-ui-modal>
+
+<sxm-ui-modal
+    #AddSecondRadioPvipModal
+    [ariaDescribedbyTextId]="addSecondRadioPvipModalAriaDescribedbyTextId"
+    [closed]="true"
+    [title]="translateKeyPrefix + '.DASHBOARD_TITLE' | translate"
+    [titlePresent]="true"
+    [showBackButton]="true"
+    (backButton)="updateStatePvipOverlayShowStatus()"
+    (modalClosed)="updateStatePvipOverlayShowStatus()"
+>
+    <sxm-ui-add-second-radio-to-platinum-vip
+        [ariaDescribedbyTextId]="addSecondRadioPvipModalAriaDescribedbyTextId"
+        [pvipSubId]="pvipSubIdOnOverlayShowEligibile$ | async"
+        (addSecondRadio)="addSecondRadio($event)"
+    ></sxm-ui-add-second-radio-to-platinum-vip>
+</sxm-ui-modal>
+
+<sxm-ui-modal
+    #PlatinumBundleNextOrForwardModal
+    [closed]="true"
+    [title]="translateKeyPrefix + '.DASHBOARD_TITLE' | translate"
+    [titlePresent]="true"
+    [showBackButton]="true"
+    [ariaDescribedbyTextId]="platinumBundleNextOrFrwdModalAriaDescribedbyTextId"
+    (backButton)="updateStatePlatinumBundleOverlayShowStatus()"
+    (modalClosed)="updateStatePlatinumBundleOverlayShowStatus()"
+>
+    <sxm-ui-add-second-radio-to-platinum-two-device-bundle
+        data-test="platinumTwoDeviceBundle"
+        [ariaDescribedbyTextId]="platinumBundleNextOrFrwdModalAriaDescribedbyTextId"
+    ></sxm-ui-add-second-radio-to-platinum-two-device-bundle>
+</sxm-ui-modal>
+
+<sxm-ui-modal #ReactivateSeasonalSuspendedSubscriptions [closed]="true" (modalClosed)="closeActivateSeasonalSuspendedSubscriptionModal()" [ariaDescribedbyTextId]="ReactivateSeasonalSuspendedModalAriaDescribedbyTextId">
+    <sxm-ui-reactivate-seasonal-suspended-subscriptions (userClosed)="closeActivateSeasonalSuspendedSubscriptionModal()"  [ariaDescribedbyTextId]="ReactivateSeasonalSuspendedModalAriaDescribedbyTextId"></sxm-ui-reactivate-seasonal-suspended-subscriptions>
+</sxm-ui-modal>

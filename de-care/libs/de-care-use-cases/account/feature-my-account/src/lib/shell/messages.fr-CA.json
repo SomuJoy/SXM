@@ -1,0 +1,66 @@
+{
+    "NAV_LINKS": {
+        "DASHBOARD": {
+            "TEXT": "Tableau de bord"
+        },
+        "SUBSCRIPTIONS": {
+            "TEXT": "Abonnements"
+        },
+        "BILLING": {
+            "TEXT": "Facturation"
+        },
+        "ACCOUNT_INFO": {
+            "TEXT": "Infos sur le compte"
+        },
+        "ACCOUNT_INFORMATION": {
+            "TEXT": "Renseignements sur le compte"
+        },
+        "CONTACT_PREFERENCES": {
+            "TEXT": "Préférences de contact"
+        }
+    },
+    "CUSTOMER_GREETING": "Bonjour, {{customerName}}",
+    "ACCOUNT_NUMBER": "Compte: {{accountNumber}}",
+    "SWITCH_LANGUAGE": {
+        "LABEL": "EN",
+        "VALUE": "en-CA",
+        "ARIA_LABEL": "langue : English"
+    },
+    "ALERTS_BUTTON_ARIA": "alertes du compte",
+    "SXM_URL_LINK": "https://www.siriusxm.ca/fr",
+    "USER_BUTTON_ARIA": "gérer mon compte",
+    "PRICE_CHANGE_MESSAGE_DATE": "03/14/2023",
+    "PRICE_CHANGE_MESSAGE_URL": "https://www.siriusxm.com/mar2023rates",
+    "PAYMENT": {
+        "LINK_URL": "{{oacUrl}}/makeccpaymentlogin_view.action?isflepzview=true&langpref=fr#/ccpaymentflepz",
+        "LINK_ROUTER_LOGGEDIN": "/account/pay/make-payment?langpref=fr"
+    },
+    "PAYMENT_REMINDER": {
+        "LINK_URL": "{{oacUrl}}/makeccpaymentlogin_view.action?isflepzview=true&langpref=fr#/ccpaymentflepz",
+        "LINK_ROUTER_LOGGEDIN": "/account/pay/make-payment?langpref=fr"
+    },
+    "SC_AC": {
+        "LINK_ROUTER": "/transfer/radio/login?langpref=fr"
+    },
+    "CONVERT": {
+        "LINK_ROUTER": "/subscribe/checkout?radioid=**{{radioId}}&programcode=CAMORESELECT&upcode=UMOREALLACCESS&isIdentifiedUser=true&langpref=fr"
+    },
+    "UPGRADE": {
+        "LINK_ROUTER_LOGGEDIN": "/subscription/change?subscriptionId={{subscriptionId}}&langpref=fr",
+        "LINK_ROUTER": "/account/login?task=upgrade&esn={{radioId}}&langpref=fr"
+    },
+    "DEVICES": {
+        "LINK_URL": "https://www.siriusxm.ca/actssdevicefr"
+    },
+    "CONTENT": {
+        "LINK_URL": "https://www.siriusxm.ca/acctssplayerfr"
+    },
+    "CREDENTIALS": {
+        "LINK_ROUTER": "/onboarding/setup-credentials?langpref=fr",
+        "LINK_ROUTER_NO_REGISTRATION": "/account/registration?langpref=fr",
+        "LINK_URL_LOGGEDIN": "{{oacUrl}}/updateinternetcredentials_view.action?subscriptionNumber={{subscriptionId}}&langpref=fr"
+    },
+    "REACTIVATE": {
+        "LINK_ROUTER": "/subscribe/checkout/purchase/satellite/add-radio-router/activate-radio-init"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "email": "NEONED.CKVK@SIRIUSXM.COM",
+        "status": "SUCCESS",
+        "radioId": "00BH",
+        "subscriptionId": "10000200077",
+        "isUserNameSameAsEmail": true,
+        "isOfferStreamingEligible": true,
+        "isEligibleForRegistration": true
+    }
+}

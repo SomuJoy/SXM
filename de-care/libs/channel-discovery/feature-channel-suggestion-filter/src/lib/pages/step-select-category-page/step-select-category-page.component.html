@@ -1,0 +1,26 @@
+<h1>{{ translateKeyPrefix + ".INSTRUCTIONS" | translate }}</h1>
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <ng-container *ngIf="categoryOptions$ | async as categories">
+        <ng-container *ngIf="categories.pending || categories.error">
+            <section>
+                <sxm-ui-skeleton-loader-panel></sxm-ui-skeleton-loader-panel>
+                <sxm-ui-skeleton-loader-panel></sxm-ui-skeleton-loader-panel>
+                <sxm-ui-skeleton-loader-panel></sxm-ui-skeleton-loader-panel>
+                <sxm-ui-skeleton-loader-panel></sxm-ui-skeleton-loader-panel>
+            </section>
+        </ng-container>
+        <ng-container *ngIf="categories.value">
+            <section>
+                <sxm-ui-checkbox-card-with-icon-and-label-form-field
+                    *ngFor="let category of categories.value"
+                    class="theme-flat-matte-white"
+                    [formControlName]="category.id"
+                    [label]="category.label"
+                >
+                </sxm-ui-checkbox-card-with-icon-and-label-form-field>
+            </section>
+            <button type="submit" sxmUiButtonCta class="theme-border-only-light">Submit</button>
+            <button type="button" sxmUiButtonCta class="theme-text-only-light">Back</button>
+        </ng-container>
+    </ng-container>
+</form>

@@ -1,0 +1,11 @@
+<h5>{{ translateKeyPrefix + ".RADIO_LINK_SUBTITLE" | translate }}</h5>
+<p innerHtml="{{ translateKeyPrefix + '.RADIO_LINK_INSTRUCTIONS' | translate }}"></p>
+<br />
+<div class="extra-bottom-padding">
+    <a class="text-link" [href]="translateKeyPrefix + '.RADIO_SIRIUS_LINK' | translate" target="_blank">{{
+        translateKeyPrefix + ".RADIO_LINK_SIRIUS_LINK_TEXT" | translate
+    }}</a>
+</div>
+<div class="extra-bottom-padding">
+    <a class="text-link" (click)="openMarineAviationDevicesModal.emit($event)">{{ translateKeyPrefix + ".RADIO_LINK_MARINE_AVIATIONS_LINK" | translate }}</a>
+</div>

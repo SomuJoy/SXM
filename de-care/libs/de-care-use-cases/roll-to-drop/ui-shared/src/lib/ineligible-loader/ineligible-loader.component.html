@@ -1,0 +1,8 @@
+<sxm-ui-loading-with-alert-message
+    data-e2e="subscribePage.loader"
+    *ngIf="displayLoader"
+    [isLoading]="true"
+    [paragraph]="translateKeyPrefix + '.LOADER_TEXT' | translate"
+    [pillMessage]="translateKeyPrefix + '.LOADER_PILL_TEXT' | translate"
+    (loadingCompleted)="onLoadingWithAlertMessageComplete($event)"
+></sxm-ui-loading-with-alert-message>

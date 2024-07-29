@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <base href="/" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <!-- ADOBE DTM Launch -->
+        <script src="assets/settings.js"></script>
+        <script>
+            //prehiding snippet for Adobe Target with asynchronous Launch deployment
+            (function(g, b, d, f) {
+                (function(a, c, d) {
+                    if (a) {
+                        var e = b.createElement("style");
+                        e.id = c;
+                        e.innerHTML = d;
+                        a.appendChild(e);
+                    }
+                })(b.getElementsByTagName("head")[0], "at-body-style", d);
+                setTimeout(function() {
+                    var a = b.getElementsByTagName("head")[0];
+                    if (a) {
+                        var c = b.getElementById("at-body-style");
+                        c && a.removeChild(c);
+                    }
+                }, f);
+            })(window, document, "body {opacity: 0 !important}", 3e3);
+        </script>
+
+        <script src="//assets.adobedtm.com/launch-EN58fe6dd75d494580a6eda5b3c1a0b9a4-development.min.js" async></script>
+    </head>
+    <body>
+        <app-root></app-root>
+    </body>
+</html>

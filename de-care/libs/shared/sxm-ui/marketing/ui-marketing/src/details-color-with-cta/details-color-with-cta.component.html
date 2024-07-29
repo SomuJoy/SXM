@@ -1,0 +1,15 @@
+<h4 *ngIf="data?.title" [innerHTML]="data?.title"></h4>
+<p *ngIf="data?.subtitle" class="subtitle lead-in" [class.mb-24]="data?.buttonLabel" [innerHTML]="data?.subtitle"></p>
+<button
+    *ngIf="data?.buttonLabel"
+    sxm-proceed-button
+    [loading]="loading"
+    [fullWidth]="false"
+    sxmUiDataClickTrack="exit"
+    (click)="loading = true; ctaClicked.emit()"
+    type="submit"
+    class="mb-12"
+>
+    {{ data?.buttonLabel }}
+</button>
+<p *ngIf="data?.legalCopy" class="legal-copy lead-in" [innerHTML]="data?.legalCopy"></p>

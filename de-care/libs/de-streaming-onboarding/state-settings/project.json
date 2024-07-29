@@ -1,0 +1,31 @@
+{
+    "name": "de-streaming-onboarding-state-settings",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-streaming-onboarding/state-settings/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/de-streaming-onboarding/state-settings/src/**/*.ts", "libs/de-streaming-onboarding/state-settings/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/de-streaming-onboarding/state-settings/jest.config.js",
+                "tsConfig": "libs/de-streaming-onboarding/state-settings/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/de-streaming-onboarding/state-settings/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:state", "scope:de-streaming-onboarding"]
+}

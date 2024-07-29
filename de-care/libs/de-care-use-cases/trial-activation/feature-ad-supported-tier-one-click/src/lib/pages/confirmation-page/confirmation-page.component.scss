@@ -1,0 +1,42 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.now-active {
+    margin: 27px 0 32px;
+    hr {
+        margin: 16px 0 0;
+    }
+}
+.refresh-signal {
+    hr {
+        margin: 32px 0 32px;
+    }
+}
+
+.ready-to-explore {
+    .before-you-go {
+        margin-top: 24px;
+    }
+    margin-bottom: 32px;
+}
+
+.important-information {
+    margin: 32px 6px 24px;
+    p {
+        font-size: 12px;
+    }
+}
+
+.confirmation-page-container {
+    margin: 0 18px;
+    @include bp(medium) {
+        margin: 0;
+    }
+}
+
+hr {
+    background-color: $gray-medium;
+    border: 0;
+    height: 1px;
+    width: 100%;
+}

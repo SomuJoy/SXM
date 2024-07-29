@@ -1,0 +1,29 @@
+{
+    "DeCareUseCasesPickAPlanFeaturePlanSelectionOrganicModule": {
+        "LandingPageComponent": {
+            "HERO": {
+                "TITLE": "Select any plan and get your first {{termLength}} {{pluralizedMonth}} for ${{price}}",
+                "SUBTITLE": "${{processingFee}} processing fee plus taxes apply. <br /> See <strong>Offer Details</strong> below. Change or cancel anytime.",
+                "TITLE_PROMO_MCP": "Choose from one of these great offers",
+                "SUBTITLE_PROMO_MCP": "<br /> See <strong>Offer Details</strong> below."
+            },
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "month",
+                    "other": "months"
+                }
+            },
+            "CHOICE_QUESTIONS_TFN": "855-749-1635",
+            "REACTIVE_QUESTIONS_TFN": "855-734-2658",
+            "PROACTIVE_QUESTIONS_TFN": "855-734-2663"
+        },
+        "FindYourAccountCardComponent": {
+            "TITLE": "First, let's find your account.",
+            "INSTRUCTIONS": "You'll find your Radio ID and Account # on the letter you received from us.",
+            "NO_RADIO": "No radio?",
+            "OUTSIDE_THE_CAR_LINK_TEXT": "Get the SXM App",
+            "OUTSIDE_THE_CAR_LINK_URL": "https://care.siriusxm.com/sirpromoplanselection_view.action?intcmp=NPR_all_SXIRES-launch_Ready_3for0_040819_ES&programCode=USDOTPRERTP3MO15",
+            "QUESTIONS": "Questions? Call"
+        }
+    }
+}

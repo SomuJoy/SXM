@@ -1,0 +1,8 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "last4DigitsOfRadioId": "00M6"
+    }
+}

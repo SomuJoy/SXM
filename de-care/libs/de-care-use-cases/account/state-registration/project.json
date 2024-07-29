@@ -1,0 +1,31 @@
+{
+    "name": "de-care-use-cases-account-state-registration",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care-use-cases/account/state-registration/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/de-care-use-cases/account/state-registration/src/**/*.ts", "libs/de-care-use-cases/account/state-registration/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/account/state-registration/jest.config.js",
+                "tsConfig": "libs/de-care-use-cases/account/state-registration/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/de-care-use-cases/account/state-registration/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:state", "scope:de-care"]
+}

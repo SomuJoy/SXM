@@ -1,0 +1,36 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "../page.scss";
+
+$pill-color: #fff9d5;
+
+:host {
+    @include page-host(1fr auto);
+    #mainContent {
+        row-gap: 24px;
+        sxm-ui-alert-pill {
+            background: $pill-color;
+            box-shadow: none;
+        }
+        .pill-text {
+            color: $black;
+            font-size: 14px;
+        }
+    }
+    form {
+        display: grid;
+        row-gap: 16px;
+        h3 {
+            margin: 0;
+        }
+        section {
+            padding: 0;
+            header {
+                margin-bottom: 16px;
+            }
+        }
+        button[sxm-proceed-button] {
+            margin: 8px 0 0 0;
+        }
+    }
+}

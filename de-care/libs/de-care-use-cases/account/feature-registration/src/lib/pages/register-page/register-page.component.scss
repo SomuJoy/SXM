@@ -1,0 +1,22 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    @include page-content-markup(1fr);
+}
+
+h4 {
+    margin: 0 0 12px 0;
+}
+
+p {
+    // TODO: There is a global style that causes havoc because it sets the final P tag to have no bottom margin.
+    //       We should fix this (maybe at the global Angular app styling level)
+    &:last-of-type {
+        margin-bottom: 24px;
+    }
+}
+
+privacy-policy {
+    margin-bottom: 8px;
+}

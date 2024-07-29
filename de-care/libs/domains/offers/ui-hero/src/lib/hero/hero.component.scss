@@ -1,0 +1,344 @@
+@import "sxm.phoenix.imports";
+
+:host-context(.renewal) {
+    p::ng-deep {
+        span:first-child {
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+    }
+    .hero--content-copy.column {
+        max-width: 400px;
+    }
+
+    /*    @media screen and (max-width: 768px) {
+        hero row hero--content no-padding-small align-center {
+            justify-content: start;
+        }
+    }*/
+    @include bp(medium) {
+        .hero--content-copy.column {
+            margin-left: 80px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            max-width: 450px;
+            @include bp(large) {
+                margin-left: 100px;
+            }
+        }
+
+        p {
+            max-width: 350px;
+        }
+
+        .hero--content.row {
+            justify-content: flex-start;
+        }
+    }
+}
+
+:host-context(.no-offer-description) {
+    .hero {
+        &--content {
+            &-copy {
+                &.column {
+                    @include bp(medium) {
+                        padding-bottom: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// this is a fix for IE11
+div.row.hero--content {
+    div.hero--content-copy.align-center-medium-up {
+        @include bp(large) {
+            text-align: center;
+            h2.hero--content-copy--title {
+                &.autoWidthTitle {
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
+.hero {
+    &--content {
+        flex-flow: column-reverse;
+        @include bp(medium) {
+            flex-flow: row;
+            flex-wrap: wrap;
+        }
+        &-copy {
+            min-height: 0;
+
+            &--title {
+                margin: 0;
+                color: $white;
+                text-transform: none;
+                text-align: left;
+
+                @include bp(medium) {
+                    @include font-size(30px);
+                }
+
+                @include bp(large) {
+                    @include font-size(44px);
+                }
+            }
+
+            &--subtitle {
+                padding: 8px 0 0 0;
+            }
+
+            &.column {
+                background: transparent;
+                padding-bottom: 32px;
+                padding-top: 24px;
+
+                @include bp(medium) {
+                    padding-top: 40px;
+                    padding-bottom: 138px;
+                    padding-left: 12px;
+                    padding-right: 12px;
+                }
+            }
+
+            :host-context(.with-main-text-padding) &.column {
+                padding-top: 32px;
+                padding-bottom: 32px;
+            }
+        }
+
+        &--image {
+            flex-shrink: 0;
+            @include bp(small) {
+                margin-top: -10%;
+            }
+            @include bp(medium) {
+                margin: 0;
+                max-width: none;
+            }
+        }
+
+        .inner-content-align-start {
+            p,
+            h2 {
+                align-self: start;
+            }
+        }
+    }
+
+    &.hero-package {
+        background: $blue;
+
+        &.image-state {
+            background: $off-white url("~apps/de-care/src/assets/img/tokenized-sales-hero-bkg-2.jpg") no-repeat;
+            background-size: cover;
+
+            .hero--content {
+                &-copy {
+                    background: $white;
+
+                    &--title {
+                        color: $black;
+                        margin-top: 24px;
+                        margin-bottom: 32px;
+
+                        @include bp(medium) {
+                            color: $white;
+                            padding-right: 16px;
+                        }
+                    }
+                }
+
+                .column {
+                    padding-bottom: 0;
+                    padding-top: 0;
+
+                    @include bp(medium) {
+                        background: transparent;
+                    }
+
+                    &:last-of-type {
+                        height: 300px;
+                        overflow: hidden;
+                        justify-content: flex-start;
+
+                        @include bp(medium) {
+                            height: auto;
+                            min-height: 300px;
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.military {
+            background-image: url("~apps/de-care/src/assets/img/military-confirmation-bg.jpg");
+        }
+    }
+}
+
+:host::ng-deep {
+    .package-upgrade-subtitle {
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: bold;
+        span {
+            display: block;
+            @include bp(medium) {
+                display: inline-block;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+:host-context(.reduced-hero-padding) {
+    //Needs option to make hero have less padding in some casses
+    .hero {
+        &--content {
+            &-copy {
+                &.column {
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    @include bp(medium) {
+                        padding-top: 20px;
+                        padding-bottom: 20px;
+                    }
+                    @include bp(large) {
+                        padding-top: 40px;
+                        padding-bottom: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// case where there is no package card overlapping the hero
+:host-context(.no-package-card-padding) {
+    .hero {
+        &--content {
+            &-copy {
+                &.column {
+                    padding-top: 24px;
+                    padding-bottom: 24px;
+                    @include bp(medium) {
+                        padding-top: 40px;
+                        padding-bottom: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//TODO: For consumption streaming logic in Canada, the hero component to use depends on CMS availability
+:host-context(.extra-bottom-padding) {
+    .hero {
+        &--content {
+            padding-top: 160px;
+            margin-bottom: -160px;
+            @include bp(medium) {
+                padding-top: 100px;
+                margin-bottom: -100px;
+            }
+
+            &-copy {
+                top: -160px;
+                @include bp(medium) {
+                    top: -100px;
+                }
+            }
+        }
+    }
+    .ui-hero {
+        &-background {
+            bottom: -180px;
+            @include bp(medium) {
+                bottom: -164px;
+            }
+        }
+        &-content {
+            .ui-hero-copy {
+                padding: 24px 16px 24px;
+                @include bp(medium) {
+                    padding: 40px 12px 32px;
+                }
+            }
+        }
+    }
+}
+
+:host-context(.white-title-background) {
+    .hero--content-copy.column {
+        padding-top: 40px;
+        padding-bottom: 0;
+    }
+    .hero {
+        &--content {
+            &-copy {
+                &--title {
+                    color: $black;
+                    @include font-size(24px);
+                    @include bp(medium) {
+                        padding-top: 0;
+                        @include font-size(32px);
+                    }
+                }
+                &.column {
+                    padding-top: 24px;
+                    padding-bottom: 0;
+                    @include bp(medium) {
+                        padding-top: 40px;
+                        padding-bottom: 40px;
+                    }
+                }
+            }
+        }
+
+        &.hero-package {
+            background: $white;
+        }
+    }
+}
+
+:host-context(.padding-with-elevated-header) {
+    .hero--content-copy.column {
+        padding: 28px 16px 64px;
+        h2 {
+            align-self: center;
+        }
+        @include bp(medium) {
+            width: 88.3%;
+            margin-left: 8.33333%;
+            align-items: center;
+            padding-bottom: 96px;
+        }
+    }
+}
+
+:host-context(.reduced-padding) {
+    .hero--content-copy.column {
+        h2 {
+            align-self: flex-start;
+        }
+        @include bp(medium) {
+            h2 {
+                align-self: inherit;
+                width: 60%;
+            }
+            width: 83.33333%;
+            margin-left: 8.33333%;
+            align-items: center;
+            padding-bottom: 0;
+        }
+    }
+}

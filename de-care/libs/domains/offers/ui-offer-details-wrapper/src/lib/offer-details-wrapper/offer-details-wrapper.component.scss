@@ -1,0 +1,30 @@
+@import "sxm.phoenix.imports";
+
+.legal-container {
+    max-width: 1336px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+:host {
+    .legal-container {
+        .legal-copy {
+            strong.label {
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+:host.no-uppercase-label {
+    .legal-container {
+        .legal-copy {
+            strong.label {
+                text-transform: none;
+            }
+        }
+    }
+}

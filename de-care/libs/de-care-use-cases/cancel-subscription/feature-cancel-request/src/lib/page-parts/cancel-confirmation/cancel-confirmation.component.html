@@ -1,0 +1,117 @@
+<ng-container *ngIf="planInfo">
+    <section class="hero-header">
+        <h5>{{ translateKeyPrefix + ".SORRY_TO_SEE_YOU_GO" | translate }}</h5>
+        <p class="text-color-gray-dark listen-now-component-subhead">
+            {{ translateKeyPrefix + ".CANCELLED_SUB_HEADER" | translate }}
+        </p>
+        <button class="button primary back-button" (click)="backToMyAccount()" data-track-click="backToMyAccount">
+            {{ translateKeyPrefix + ".BACK_BUTTON" | translate }}
+        </button>
+    </section>
+    <ng-container *ngIf="planInfo.hasSubscriptionWithTrialAndFollowOn">
+        <strong>
+            {{ translateKeyPrefix + ".CANCELLED_SUBSCRIPTIONS" | translate }}
+        </strong>
+        <p>
+            <span [innerHTML]="planInfo?.name"></span>
+            <span
+                [innerHTML]="
+                    translateKeyPrefix + '.PLAN'
+                        | translate
+                            : {
+                                  length: planInfo.followOnPlan?.termLength,
+                                  pluralizedMonth: planInfo.followOnPlan?.termLength | i18nPlural: (translateKeyPrefix + '.TERM_LENGTH.PLURAL_MAP.LENGTH' | translate)
+                              }
+                "
+            ></span>
+        </p>
+
+        <p>
+            {{
+                translateKeyPrefix + ".TRIAL_STILL_TAKE_ADVANTAGE"
+                    | translate
+                        : {
+                              endDate: planInfo.endDate | date: (dateFormat$ | async)
+                          }
+            }}
+        </p>
+    </ng-container>
+</ng-container>
+
+<ng-container *ngIf="cancellationDetails">
+    <p
+        *ngIf="cancellationDetails.cancellationNumber"
+        class="margin-top-3m"
+        [innerHTML]="
+            translateKeyPrefix + '.CONFIRMATION_NUMBER'
+                | translate
+                    : {
+                          cancellationNumber: cancellationDetails.cancellationNumber
+                      }
+        "
+    ></p>
+    <!--TODO update to present based on various scenarios 0 balance -ve bal etc-->
+    <sxm-ui-content-card class="gray-background" [headlinePresent]="true" data-test="cancellationDetailsHeader">
+        <div htmlContentForHead>
+            <p class="large-copy">
+                <strong>{{ translateKeyPrefix + ".CANCELLATION_DETAILS_HEADER" | translate }}</strong>
+            </p>
+        </div>
+        <div htmlContentForBody>
+            <div class="content-container">
+                <div *ngIf="!cancellationDetails.amountDue">
+                    <div *ngIf="cancellationDetails.refundAmount || cancellationDetails.refundAmount === 0" class="row no-padding">
+                        <div class="column small-8 align-left no-padding">
+                            <p>
+                                {{ translateKeyPrefix + ".REFUND_AMT_TEXT" | translate }}
+                            </p>
+                        </div>
+                        <div class="column small-4 align-right align-top no-padding">
+                            <p class="large-copy">
+                                {{ cancellationDetails.refundAmount | currency: "USD":"symbol-narrow" }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div *ngIf="cancellationDetails.creditRemainingOnAccount" class="row no-padding line-item">
+                        <div class="column small-8 align-left no-padding">
+                            <p>
+                                {{ translateKeyPrefix + ".CREDIT_REMAINING_ACCOUNT" | translate }}
+                            </p>
+                        </div>
+                        <div class="column small-4 align-right align-top no-padding">
+                            <p class="large-copy">
+                                {{ cancellationDetails.creditRemainingOnAccount | currency: "USD":"symbol-narrow" }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="cancellationDetails.amountDue">
+                    <div class="row no-padding">
+                        <div class="column small-8 align-left no-padding">
+                            <p>
+                                {{ translateKeyPrefix + ".REMAINING_BAL_DUE" | translate }}
+                                <!--TODO: add tooltip text when FRD gets updated with it
+                                <sxm-ui-tooltip class="no-padding">
+                                </sxm-ui-tooltip> -->
+                            </p>
+                        </div>
+                        <div class="column small-4 align-right align-top no-padding">
+                            <p class="large-copy">
+                                {{ cancellationDetails.amountDue | currency: "USD":"symbol-narrow" }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </sxm-ui-content-card>
+    <div class="text-link-container" *ngIf="cancellationDetails.amountDue">
+        <a class="text-link margin-top-1" [routerLink]="['/account/pay/make-payment']" routerLinkActive="router-link-active" data-track-click="makeAPayment">
+            {{ translateKeyPrefix + ".MAKE_A_PAYMENT" | translate }}
+        </a>
+    </div>
+    <p class="margin-top-3m">{{ translateKeyPrefix + ".FINAL_CONFIRMATION_MSG" | translate }}</p>
+    <p *ngIf="!cancellationDetails.amountDue">{{ translateKeyPrefix + ".FINAL_ETF_MSG" | translate }}</p>
+</ng-container>

@@ -1,0 +1,27 @@
+<ng-container *ngIf="headlineAndInstructionsTranslateKeys$ | async as headlineAndInstructionsKeys">
+    <h4>{{ translateKeyPrefix + headlineAndInstructionsKeys.headline | translate }}</h4>
+    <br />
+    <p [innerHTML]="translateKeyPrefix + headlineAndInstructionsKeys.instructions | translate"></p>
+</ng-container>
+<hr />
+<p>
+    {{ translateKeyPrefix + "ALREADY_HAVE_LOGIN" | translate }}
+    <a class="text-link" sxmUiDataClickTrack="player" (click)="onSignInClick()">{{ translateKeyPrefix + "SIGN_IN_LINK_TEXT" | translate }}</a>
+</p>
+<br />
+<div *ngIf="showSystemError$ | async" class="invalid-feedback">
+    <p>{{ translateKeyPrefix + "SYSTEM_ERROR" | translate }}</p>
+</div>
+<div *ngIf="isInvalidFirstNameError | async" class="invalid-feedback">
+    <p>{{ translateKeyPrefix + "INVALID_FIRST_NAME" | translate }}</p>
+</div>
+<div *ngIf="isInvalidEmailError | async" class="invalid-feedback">
+    <p>{{ translateKeyPrefix + "INVALID_EMAIL" | translate }}</p>
+</div>
+<form [formGroup]="form">
+    <sxm-ui-flepz-form-fields formControlName="flepz" [submitted]="lookupSubmitInitiated"></sxm-ui-flepz-form-fields>
+    <de-streaming-onboarding-privacy-policy></de-streaming-onboarding-privacy-policy>
+    <button type="button" (click)="onFormSubmit()" sxmUiDataClickTrack="submit" sxm-proceed-button [loading]="loading$ | async" data-e2e="FlepzFormSubmitButton">
+        {{ translateKeyPrefix + "CONTINUE_BUTTON_TEXT" | translate }}
+    </button>
+</form>

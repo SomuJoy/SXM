@@ -1,0 +1,75 @@
+{
+    "NAME_PROMPT": "Alerts For",
+    "NO_ALERTS": "Your account is all set",
+    "ARIA_CLOSE_LABEL": "close alerts panel",
+    "PAYMENT": {
+        "CONTENT": "Your payment is past due.",
+        "LINK_LABEL": "Make a payment",
+        "LINK_NAME": "Make a Payment now",
+        "LINK_KEY": "Account Snapshot Alert"
+    },
+    "PAYMENT_REMINDER": {
+        "CONTENT_WITH_DUE_DATE": "Your next payment is due on {{nextBillingPaymentDate}}.",
+        "CONTENT": "Your payment is due soon.",
+        "LINK_LABEL": "Make a Payment",
+        "LINK_NAME": "Make a Payment now",
+        "LINK_KEY": "Account Snapshot Alert"
+    },
+    "SC_AC": {
+        "CONTENT": "Got a new car?",
+        "LINK_LABEL": "Transfer your subscription",
+        "LINK_NAME": "Transfer sub",
+        "LINK_KEY": "Account Snapshot Alert"
+    },
+    "CONVERT": {
+        "CONTENT_WITH_DUE_DAYS": "Your trial ends on {{convertTrialEndDate}}.",
+        "CONTENT": "Your trial ends soon.",
+        "LINK_LABEL": "Get 3 more months for $2.00",
+        "LINK_NAME": "Trial Conversion",
+        "LINK_NAME_WITH_DUE_DAYS": "Trial Conversion 30 days or less",
+        "LINK_KEY": "Account Snapshot Alert"
+    },
+    "UPGRADE": {
+        "CONTENT": "Like what you hear? Upgrade to get even more great content.",
+        "LINK_LABEL": "Upgrade now",
+        "LINK_NAME": "Change Plan Upgrade",
+        "LINK_KEY": "Account Snapshot Alert"
+    },
+    "DEVICES": {
+        "CONTENT": "Want to stream SiriusXM on your home devices?",
+        "LINK_LABEL": "Get connected",
+        "LINK_NAME": "Device Setup",
+        "LINK_KEY": "Account Snapshot Alert"
+    },
+    "CONTENT": {
+        "CONTENT": "Jump back in and catch the latest on {{favoriteChannel}}.",
+        "CONTENT_WITHOUT_FAVORITE_CHANNEL": "Check out what’s happening live on SXM right now.",
+        "LINK_LABEL": "Listen now",
+        "LINK_LABEL_WITHOUT_FAVORITE_CHANNEL": "Start streaming",
+        "LINK_NAME": "Listen Now",
+        "LINK_KEY": "Account Snapshot Alert"
+    },
+    "CREDENTIALS": {
+        "CONTENT": "Want to stream SiriusXM anywhere with SXM App?",
+        "LINK_LABEL": "Create App login",
+        "LINK_NAME": "Streaming Credentials",
+        "LINK_KEY": "Account Snapshot Alert",
+        "CONTENT_TRIAL": "Welcome to your trial!",
+        "LINK_LABEL_TRIAL": "Register your account online",
+        "LINK_NAME_TRIAL_SELFPAY": "Register",
+        "CONTENT_SELFPAY": "Did you know you can manage your account online? It's easy!",
+        "LINK_LABEL_SELFPAY": "Register now"
+    },
+    "REACTIVATE": {
+        "CONTENT": "Missing SiriusXM? We’ve got a great offer for you.",
+        "LINK_LABEL": "Subscribe",
+        "LINK_NAME": "Reactivate closed radio",
+        "LINK_KEY": "Account Snapshot Alert"
+    },
+    "PRICE_MSG": {
+        "CONTENT": "<strong>Important Notice:</strong> Effective {{priceChangeDate}}, the monthly rate for your plan will increase.",
+        "LINK_LABEL": "Learn more",
+        "LINK_NAME": "Price increase message",
+        "LINK_KEY": "Account Snapshot Alert"
+    }
+}

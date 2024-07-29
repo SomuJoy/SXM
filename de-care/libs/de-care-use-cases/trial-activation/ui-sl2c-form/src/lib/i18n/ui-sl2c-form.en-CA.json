@@ -1,0 +1,17 @@
+{
+    "deCareUseCasesTrialActivationUiSl2cForm": {
+        "sl2cFormComponent": {
+            "Label": {
+                "FIRST_NAME": "First Name",
+                "LAST_NAME": "Last Name"
+            },
+            "PrivacyPolicy": {
+                "LINK_URL": "https://www.siriusxm.ca/privacy",
+                "LINK_TEXT": "Privacy Policy"
+            },
+            "AGREEMENT_TEXT": "I consent to receiving marketing communications by email, mail and phone once trial is activated.",
+            "ACCEPT_AGREEMENT": "Please accept the above agreement.",
+            "ACTIVATE_TRIAL_BUTTON": "ACTIVATE MY TRIAL"
+        }
+    }
+}

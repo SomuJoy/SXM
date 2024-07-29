@@ -1,0 +1,34 @@
+<div id="offer-description" *ngIf="offerInfo">
+    <h2 class="no-margin" qatag="PromoPackageName" *ngIf="offerInfo.packageName">
+        {{ "app.packageDescriptions." + offerInfo.packageName + ".name" | translate | withoutPlatformName: offerInfo.packageName }}
+    </h2>
+    <h4 *ngIf="!excludePriceAndTermDisplay" class="no-margin price-term" qatag="PromoPriceAndTermDesc">
+        <span
+            [innerHTML]="
+                'domainsOffersUiOfferDescriptionModule.offerDescriptionComponent.' + offerTermAndPrice
+                    | translate
+                        : {
+                              termLength: offerInfo.termLength,
+                              monthsPluralized:
+                                  offerInfo.termLength | i18nPlural: ('domainsOffersUiOfferDescriptionModule.offerDescriptionComponent.PLURAL_MAP.MONTH' | translate),
+                              price: offerInfo.price | currency: 'USD':'symbol-narrow':undefined:currentLang,
+                              pricePerMonth: offerInfo.pricePerMonth | currency: 'USD':'symbol-narrow':undefined:currentLang
+                          }
+            "
+        ></span>
+    </h4>
+    <p
+        class="tiny-copy see-offer legal-copy text-color-gray-dark"
+        qatag="SeeOfferText"
+        [innerHTML]="'domainsOffersUiOfferDescriptionModule.offerDescriptionComponent.SEE_OFFER_BELOW' | translate"
+    ></p>
+
+    <p class="tiny-copy savings-offer text-color-watermelon">
+        <strong>{{ "domainsOffersUiOfferDescriptionModule.offerDescriptionComponent.SAVINGS_OFFER" | translate }}</strong>
+    </p>
+
+    <!-- TODO: Is this the description property from the PackageDescriptionViewModel? -->
+    <h4 class="offer-tagline">
+        {{ "domainsOffersUiOfferDescriptionModule.offerDescriptionComponent.OFFER_TAGLINE" | translate }}
+    </h4>
+</div>

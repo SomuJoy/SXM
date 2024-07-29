@@ -1,0 +1,107 @@
+<main de-care-page-main *ngrxLet="viewModel$ as viewModel">
+    <sxm-ui-stepper #stepper>
+        <sxm-ui-step>
+            <h4>
+                {{
+                    translateKeyPrefix + "STEP_EMAIL_LOOKUP.TITLE"
+                        | translate
+                            : {
+                                  numberOfDays: viewModel.remainingNumberOfDays | i18nPlural: (translateKeyPrefix + "PLURAL_DAYS_MAP" | translate)
+                              }
+                }}
+            </h4>
+            <br />
+            <p>{{ translateKeyPrefix + "STEP_EMAIL_LOOKUP.INSTRUCTIONS" | translate: { endDateText: viewModel.endDate | date: "MMM d" } }}</p>
+            <br />
+            <hr />
+            <br />
+            <p>
+                {{ translateKeyPrefix + "STEP_EMAIL_LOOKUP.ALREADY_HAVE_LOGIN" | translate }}
+                <a (click)="onSignInClick()" sxmUiDataClickTrack="player">{{ translateKeyPrefix + "STEP_EMAIL_LOOKUP.SIGN_IN_LINK_TEXT" | translate }}</a>
+            </p>
+            <br />
+            <form [formGroup]="form">
+                <div *ngIf="showSystemerror$ | async" class="invalid-feedback">
+                    <p>{{ translateKeyPrefix + "STEP_EMAIL_LOOKUP.ERRORS.SYSTEM_ERROR" | translate }}</p>
+                </div>
+                <sxm-ui-email-form-field
+                    formControlName="email"
+                    [errorMsg]="translateKeyPrefix + 'STEP_EMAIL_LOOKUP.EMAIL_ERROR_GENERAL' | translate"
+                ></sxm-ui-email-form-field>
+                <div *ngIf="showInvalidEmailerror$ | async" class="invalid-feedback">
+                    <p>{{ translateKeyPrefix + "STEP_EMAIL_LOOKUP.ERRORS.INVALID_EMAIL_ERROR" | translate }}</p>
+                </div>
+                <div *ngIf="showInvalidPhoneerror$ | async" class="invalid-feedback">
+                    <p>{{ translateKeyPrefix + "STEP_EMAIL_LOOKUP.ERRORS.INVALID_PHONE_ERROR" | translate }}</p>
+                </div>
+                <div *ngIf="showInvalidUsernameerror$ | async" class="invalid-feedback">
+                    <p>{{ translateKeyPrefix + "STEP_EMAIL_LOOKUP.ERRORS.INVALID_USERNAME_ERROR" | translate }}</p>
+                </div>
+                <div *ngIf="showInvalidZiperror$ | async" class="invalid-feedback">
+                    <p>{{ translateKeyPrefix + "STEP_EMAIL_LOOKUP.ERRORS.INVALID_ZIPCODE_ERROR" | translate }}</p>
+                </div>
+                <privacy-policy></privacy-policy>
+                <button type="button" (click)="onSubmit()" sxm-proceed-button [loading]="processingEmailLookup$ | async">
+                    {{ translateKeyPrefix + "STEP_EMAIL_LOOKUP.CONTINUE_BUTTON_TEXT" | translate }}
+                </button>
+            </form>
+            <sxm-ui-modal #ineligibleModal [titlePresent]="true" [title]="translateKeyPrefix + 'STEP_EMAIL_LOOKUP.MODAL_TITLE' | translate" [ariaDescribedbyTextId]="ineligibleModalAriaDescribedbyTextId">
+                <h4>{{ translateKeyPrefix + "STEP_EMAIL_LOOKUP.INELIGIBLE_TITLE" | translate }}</h4>
+                <br />
+                <p [id]="ineligibleModalAriaDescribedbyTextId">{{ translateKeyPrefix + "STEP_EMAIL_LOOKUP.INELIGIBLE_INSTRUCTIONS" | translate }}</p>
+                <a
+                    class="button primary full-width button-link"
+                    (click)="getSiriusXM(translateKeyPrefix + 'STEP_EMAIL_LOOKUP.GET_SIRIUS_REDIRECT_LINK')"
+                    sxmUiDataClickTrack="routing"
+                >
+                    {{ translateKeyPrefix + "STEP_EMAIL_LOOKUP.GET_SIRIUS_LINK_TEXT" | translate }} </a
+                ><br />
+                <a (click)="ineligibleModal.close()">
+                    {{ translateKeyPrefix + "STEP_EMAIL_LOOKUP.CLOSE_LINK_TEXT" | translate }}
+                </a>
+            </sxm-ui-modal>
+            <sxm-ui-modal #existingAccountModal [titlePresent]="true" [title]="translateKeyPrefix + 'STEP_EMAIL_LOOKUP.MODAL_TITLE' | translate"  [ariaDescribedbyTextId]="existingAccountModalAriaDescribedbyTextId">
+                <h4>{{ translateKeyPrefix + "STEP_EMAIL_LOOKUP.EXISTING_ACCOUNT_TITLE" | translate }}</h4>
+                <br />
+                <p [id]="existingAccountModalAriaDescribedbyTextId">{{ translateKeyPrefix + "STEP_EMAIL_LOOKUP.EXISTING_ACCOUNT_INSTRUCTIONS" | translate }}</p>
+                <a
+                    class="button primary full-width button-link"
+                    (click)="recoverCred(translateKeyPrefix + 'STEP_EMAIL_LOOKUP.RECOVER_CREDENTIALS_LINK')"
+                    sxmUiDataClickTrack="routing"
+                >
+                    {{ translateKeyPrefix + "STEP_EMAIL_LOOKUP.RECOVER_CREDENTIALS_LINK_TEXT" | translate }} </a
+                ><br />
+                <a (click)="onSignInClick()" sxmUiDataClickTrack="player">
+                    {{ translateKeyPrefix + "STEP_EMAIL_LOOKUP.SIGN_IN_LINK_TEXT" | translate }}
+                </a>
+            </sxm-ui-modal>
+        </sxm-ui-step>
+        <sxm-ui-step>
+            <h4>{{ translateKeyPrefix + "STEP_ACTIVATION.TITLE" | translate }}</h4>
+            <br />
+            <p class="text-color-gray-dark list-header">
+                <strong>{{ translateKeyPrefix + "STEP_ACTIVATION.USERNAME_TITLE" | translate }}</strong>
+            </p>
+            <strong>{{ form.value.email }}</strong>
+            <br />
+            <br />
+            <hr />
+            <br />
+            <p>{{ translateKeyPrefix + "STEP_ACTIVATION.END_ON_TEXT" | translate: { endDateText: viewModel.endDate | date: "MMM d, y" } }}</p>
+            <p>
+                {{ translateKeyPrefix + "STEP_ACTIVATION.AGREEMENT_INSTRUCTIONS" | translate }}
+                <a [href]="translateKeyPrefix + 'STEP_ACTIVATION.AGREEMENT_LINK_URL' | translate" sxmUiDataClickTrack="exit">
+                    {{ translateKeyPrefix + "STEP_ACTIVATION.AGREEMENT_LINK_TEXT" | translate }}
+                </a>
+            </p>
+            <p>
+                {{ translateKeyPrefix + "STEP_ACTIVATION.AGREEMENT_CONSENT_PART_1" | translate }}
+                <privacy-policy></privacy-policy>
+                {{ translateKeyPrefix + "STEP_ACTIVATION.AGREEMENT_CONSENT_PART_2" | translate }}
+            </p>
+            <button type="button" sxm-proceed-button (click)="onActivate()" [loading]="processingActivation$ | async">
+                {{ translateKeyPrefix + "STEP_ACTIVATION.CONTINUE_BUTTON_TEXT" | translate }}
+            </button>
+        </sxm-ui-step>
+    </sxm-ui-stepper>
+</main>

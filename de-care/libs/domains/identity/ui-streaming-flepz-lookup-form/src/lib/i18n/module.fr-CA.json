@@ -1,0 +1,16 @@
+{
+    "DomainsIdentityUiStreamingFlepzLookupFormModule": {
+        "StreamingFlepzLookupFormComponent": {
+            "ALREADY_HAVE_LOGIN": "Vous avez déjà un identifiant de diffusion en continu?",
+            "SIGN_IN_LINK_TEXT": "Connexion",
+            "CONTINUE_BUTTON_TEXT": "CONTINUER",
+            "SYSTEM_ERROR": "Nous sommes désolés, Quelque chose n'a pas fonctionné. Nous rencontrons des problèmes techniques et travaillons à les résoudre. Veuillez réessayer.",
+            "INVALID_FIRST_NAME": "Please enter a valid first name.",
+            "INVALID_EMAIL": "Please enter a valid email address."
+        },
+        "StreamingFlepzLookupComponent": {
+            "HEADLINE": "Configurez votre identifiant pour écouter sur l’appli SXM",
+            "INSTRUCTIONS": "Tout d’abord, nous avons besoin de quelques renseignements pour trouver votre abonnement."
+        }
+    }
+}

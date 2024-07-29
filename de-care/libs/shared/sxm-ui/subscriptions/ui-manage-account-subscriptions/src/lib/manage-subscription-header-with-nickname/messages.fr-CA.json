@@ -1,0 +1,6 @@
+{
+    "BACK_BUTTON_LABEL": "RETOUR",
+    "EDIT_RADIO_NICKNAME_LINK": "Modifier votre pseudo radio",
+    "RADIO_ID_INFO": "{{platform}} Code de radio/ Numéro NSE: {{radioId}}",
+    "360L_TOOLTIP": "<p>Cette radio de nouvelle génération offre une expérience interactive et personnalisée :</p><ul><li>Recommandations personnalisées</li><li>Recherche vocale</li><li>Gestion de compte</li><li>Profils des auditeurs</li><li>Possibilité de synchroniser la voiture avec le téléphone</li><li>Contenu élargi en fonction du forfait</li></ul>"
+}

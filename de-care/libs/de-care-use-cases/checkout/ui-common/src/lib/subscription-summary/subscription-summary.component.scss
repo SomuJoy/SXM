@@ -1,0 +1,12 @@
+:host {
+    display: block;
+    article {
+        margin-bottom: 16px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        p {
+            margin: 0;
+        }
+    }
+}

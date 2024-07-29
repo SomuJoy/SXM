@@ -1,0 +1,18 @@
+<h4>{{ translateKeyPrefix + "HEADLINE" | translate }}</h4>
+
+<br />
+
+<div [innerHTML]="translateKeyPrefix + 'INSTRUCTIONS' | translate"></div>
+<br />
+
+<de-streaming-onboarding-privacy-policy></de-streaming-onboarding-privacy-policy>
+
+<button type="button" sxmUiDataClickTrack="player" sxm-proceed-button (click)="onPreviewClick()">
+    {{ translateKeyPrefix + "PREVIEW_BUTTON_TEXT" | translate }}</button
+><br />
+
+<div class="text-center">
+    <a routerLink="../radio-id-lookup" class="enter-radio-id" sxmUiDataClickTrack="submit">
+        {{ translateKeyPrefix + "ENTER_RADIO_ID_LINK_TEXT" | translate }}
+    </a>
+</div>

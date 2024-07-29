@@ -1,0 +1,89 @@
+<main>
+    <section class="grid-container header-section">
+        <header class="header-container">
+            <div class="button-container">
+                <button class="back-button" type="button" [attr.aria-label]="translateKeyPrefix + '.BACK_BUTTON_LABEL' | translate" (click)="onBack()">
+                    <span>
+                        <svg class="icon">
+                            <use xlink:href="#icon-back"></use>
+                        </svg>
+                        <span class="back-label">
+                            {{ translateKeyPrefix + ".BACK_BUTTON_LABEL" | translate }}
+                        </span>
+                    </span>
+                </button>
+            </div>
+            <h2 class="edit-header">
+                {{ translateKeyPrefix + ".HEADER" | translate }}
+            </h2>
+            <p [innerHTML]="translateKeyPrefix + '.HEADER_DESCRIPTION' | translate"></p>
+        </header>
+        <hr />
+    </section>
+    <section class="grid-container">
+        <div class="edit-contact-info-form-container">
+            <form [formGroup]="editContactInfoForm" data-e2e="editContactInfoForm" novalidate (submit)="editContactInfoFormSubmit()">
+                <div *ngIf="editContactInfoServerError" class="server-error">
+                    <p>{{ translateKeyPrefix + ".INVALID_SERVICE_ADDRESS_ERROR" | translate }}</p>
+                </div>
+                <div>
+                    <h6 class="contact-info">{{ translateKeyPrefix + ".CONTACT_INFO_TITLE" | translate }}</h6>
+                    <sxm-ui-first-name-form-field formControlName="firstName" data-test="ContactInfoFirstName" data-e2e="ContactInfoFirstName"></sxm-ui-first-name-form-field>
+                    <sxm-ui-last-name-form-field formControlName="lastName" data-test="ContactInfoLastName" data-e2e="ContactInfoLastName"></sxm-ui-last-name-form-field>
+                    <sxm-ui-phone-number-form-field
+                        formControlName="phoneNumber"
+                        data-test="ContactInfoPhoneNumber"
+                        data-e2e="ContactInfoPhoneNumber"
+                    ></sxm-ui-phone-number-form-field>
+                    <sxm-ui-email-form-field formControlName="email" data-test="ContactInfoEmail" data-e2e="ContactInfoEmail"></sxm-ui-email-form-field>
+                </div>
+                <div>
+                    <h6 class="address">{{ translateKeyPrefix + ".SERVICE_ADDRESS_TITLE" | translate }}</h6>
+                    <p class="server-error" *ngIf="showInvalidServiceAddressError">{{ translateKeyPrefix + ".INVALID_SERVICE_ADDRESS_ERROR" | translate }}</p>
+                    <sxm-ui-address-form-fields formControlName="serviceAddress" [submitted]="submitted" #editServiceAddress></sxm-ui-address-form-fields>
+                    <sxm-ui-checkbox-with-label-form-field formControlName="billingAddressSame" data-e2e="billingAddressSame">
+                        <span class="checkbox-text-data">{{ translateKeyPrefix + ".BILLING_ADDRESS_CHECKBOX_LABEL" | translate }}</span>
+                    </sxm-ui-checkbox-with-label-form-field>
+                    <button
+                        class="button primary full-width"
+                        type="submit"
+                        sxm-proceed-button
+                        [attr.aria-label]="translateKeyPrefix + '.SAVE_BUTTON' | translate"
+                        sxmUiDataClickTrack="ui"
+                        data-link-key="EditServiceAddressForm"
+                        data-test="saveEditServiceAddressForm"
+                    >
+                        {{ translateKeyPrefix + ".SAVE_BUTTON" | translate }}
+                    </button>
+                </div>
+            </form>
+            <button
+                class="full-width cancel-cta"
+                (click)="onCancel()"
+                sxmUiDataClickTrack="ui"
+                [attr.aria-label]="translateKeyPrefix + '.CANCEL_BUTTON' | translate"
+                data-link-key="EditBillingAddressForm"
+                data-test="cancelEditBillingAddressForm"
+            >
+                {{ translateKeyPrefix + ".CANCEL_BUTTON" | translate }}
+            </button>
+        </div>
+    </section>
+    <sxm-ui-modal
+        [closed]="true"
+        [ariaDescribedbyTextId]="editContactInfoModalAriaDescribedbyTextId"
+        (modalClosed)="onEditExistingAddress()"
+        data-test="editServiceAddressModal"
+        [title]="translateKeyPrefix + '.ACCOUNT_INFO_TITLE' | translate"
+        [titlePresent]="true"
+        #editServiceAddressModal
+    >
+        <sxm-ui-verify-address
+            [data]="verifyAddressesDataViewModel$ | async"
+            [ariaDescribedbyTextId]="editContactInfoModalAriaDescribedbyTextId"
+            (useAddress)="onUseAddressFromValidation($event)"
+            (editExisting)="onEditExistingAddress()"
+            data-test="verifyEditServiceAddress"
+        ></sxm-ui-verify-address>
+    </sxm-ui-modal>
+</main>

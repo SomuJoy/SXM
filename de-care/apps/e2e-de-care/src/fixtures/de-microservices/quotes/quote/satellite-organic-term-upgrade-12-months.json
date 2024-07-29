@@ -1,0 +1,108 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "quote": {
+            "currentQuote": null,
+            "futureQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "21.19",
+                "totalTaxesAndFeesAmount": "21.19",
+                "totalAmount": "120.19",
+                "discountAmount": "0.00",
+                "pricePerMonth": "8.25",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [
+                    {
+                        "description": "U.S. Music Royalty Fee",
+                        "amount": "21.19"
+                    }
+                ],
+                "taxes": [],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Promo - Select - 12mo - 99.00 - (1X)",
+                        "packageName": "1_SIR_AUD_EVT",
+                        "termLength": 12,
+                        "priceAmount": "99.00",
+                        "taxAmount": "0.00",
+                        "feeAmount": "21.19",
+                        "totalTaxesAndFeesAmount": "21.19",
+                        "taxes": [],
+                        "fees": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "amount": "21.19"
+                            }
+                        ],
+                        "startDate": "2023-04-03",
+                        "endDate": "2024-04-03",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "PROMO",
+                        "dealType": "",
+                        "isStudent": false,
+                        "isAdvantage": false,
+                        "isMilitary": false
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            },
+            "proRatedRenewalQuote": null,
+            "promoRenewalQuote": null,
+            "renewalQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "46.20",
+                "totalTaxesAndFeesAmount": "46.20",
+                "totalAmount": "262.08",
+                "discountAmount": "0.00",
+                "pricePerMonth": "17.99",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [
+                    {
+                        "description": "U.S. Music Royalty Fee",
+                        "amount": "46.20"
+                    }
+                ],
+                "taxes": [],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Select - 12mo - wActv",
+                        "packageName": "1_SIR_AUD_EVT",
+                        "termLength": 12,
+                        "priceAmount": "215.88",
+                        "taxAmount": "0.00",
+                        "feeAmount": "46.20",
+                        "totalTaxesAndFeesAmount": "46.20",
+                        "taxes": [],
+                        "fees": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "amount": "46.20"
+                            }
+                        ],
+                        "startDate": "2024-04-03",
+                        "endDate": "2025-04-03",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "",
+                        "dealType": null,
+                        "isStudent": false,
+                        "isAdvantage": false,
+                        "isMilitary": false
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            }
+        }
+    }
+}

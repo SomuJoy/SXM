@@ -1,0 +1,112 @@
+<ng-container *ngIf="isStreaming$ | async; else streamingConfirmation">
+    <div deCarePageMainContent *ngrxLet="confirmationData$ as confirmationData">
+        <section id="mainContent">
+            <section class="title full-width text-left">
+                <h4>{{ translateKeyPrefix + "STREAMING_TITLE" | translate }}</h4>
+            </section>
+            <div class="streaming-account">
+                <svg class="icon icon-utility large">
+                    <use class="icon-checkmark-lg" xlink:href="#icon-checkmark-lg"></use>
+                </svg>
+                <div class="package-name">
+                    <b>{{ translateKeyPrefix + "PLATINUM_STREAMING" | translate }}</b>
+                    <br /><br />
+                    {{ maskedUserName$ | async }}
+                </div>
+                <b class="listen-anchor" [innerHTML]="translateKeyPrefix + 'LISTEN' | translate"></b>
+            </div>
+            <section>
+                <h5>{{ translateKeyPrefix + "CONFIRMATION.TITLE" | translate }}</h5>
+                <add-second-radio-order-summary [data]="confirmationData.orderSummary"></add-second-radio-order-summary>
+                <a class="text-link" data-track-click="Print This Page" (click)="onPrintClick()">{{ translateKeyPrefix + "QUOTES_SECTION.PRINT_LINK" | translate }}</a>
+            </section>
+            <section class="ready-to-explore">
+                <button type="button" sxm-proceed-button (click)="onGoToMyAccount()">
+                    {{ translateKeyPrefix + "READY_TO_EXPLORE.GO_TO_MY_ACCOUNT_BUTTON" | translate }}
+                </button>
+            </section>
+        </section>
+    </div>
+    <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+        <div>
+            <p>
+                <strong>{{ translateKeyPrefix + "LEGAL_COPY.TITLE" | translate }}</strong>
+            </p>
+            <p [innerHTML]="translateKeyPrefix + 'LEGAL_COPY.BODY' | translate"></p>
+        </div>
+    </section>
+</ng-container>
+<ng-template #streamingConfirmation>
+    <div deCarePageMainContent *ngrxLet="confirmationData$ as confirmationData">
+        <section id="mainContent">
+            <section class="title full-width text-left">
+                <h4>{{ translateKeyPrefix + "TITLE" | translate }}</h4>
+            </section>
+            <section class="login-credentials">
+                <h5>{{ translateKeyPrefix + "LOGIN_INFO.TITLE" | translate }}</h5>
+                <p>{{ translateKeyPrefix + "LOGIN_INFO.SUB_TITLE" | translate }}</p>
+                <div class="login-setup">
+                    <de-care-listen-to-radio
+                        *ngIf="confirmationData.alreadyRegistered; else setupLoginCredentials"
+                        [maskedUserName]="confirmationData?.secondDeviceExistingMaskedUsername"
+                        [device]="confirmationData?.secondDevice"
+                        [isFrench]="currentLangIsFrench$ | async"
+                    ></de-care-listen-to-radio>
+                    <ng-template #setupLoginCredentials>
+                        <setup-login-credentials
+                            class="new-line-margin"
+                            [hidePrivacyPolicyLink]="true"
+                            [radioId]="confirmationData?.secondDevice?.radioId"
+                            (credentialsCreated)="secondRadioMaskedUsername = $event"
+                        >
+                            <ng-container loginFormHeader>
+                                <p class="radio-header-margin bold">
+                                    {{
+                                        confirmationData?.secondDevice?.vehicle
+                                            | vehicleInfoTranslate
+                                                : {
+                                                      defaultText: translateKeyPrefix + "RADIO" | translate : { radioId: confirmationData?.secondDevice?.radioId },
+                                                      isFrench: currentLangIsFrench$ | async
+                                                  }
+                                    }}
+                                </p>
+                                <p class="radio-text-margin">{{ translateKeyPrefix + "LOGIN_INFO.SETUP_LOGIN" | translate }}</p>
+                            </ng-container>
+                            <ng-container loginCompletedPresentment>
+                                <de-care-listen-to-radio
+                                    [maskedUserName]="secondRadioMaskedUsername"
+                                    [device]="confirmationData?.secondDevice"
+                                    [isFrench]="currentLangIsFrench$ | async"
+                                ></de-care-listen-to-radio>
+                            </ng-container>
+                        </setup-login-credentials>
+                    </ng-template>
+                </div>
+            </section>
+            <section>
+                <h5>{{ translateKeyPrefix + "CONFIRMATION.TITLE" | translate }}</h5>
+                <add-second-radio-order-summary [data]="confirmationData.orderSummary"></add-second-radio-order-summary>
+            </section>
+            <section>
+                <refresh-signal *ngIf="confirmationData.isRefreshAllowed" [radioId]="confirmationData?.platinumSubscriptionLast4"></refresh-signal>
+            </section>
+            <section class="ready-to-explore">
+                <h5>{{ translateKeyPrefix + "READY_TO_EXPLORE.TITLE" | translate }}</h5>
+                <a *ngFor="let linkInfo of translateKeyPrefix + 'READY_TO_EXPLORE.LINKS' | translate" class="text-link" [href]="linkInfo.URL" target="_blank">{{
+                    linkInfo.TEXT
+                }}</a>
+                <button type="button" sxm-proceed-button (click)="onGoToMyAccount()">
+                    {{ translateKeyPrefix + "READY_TO_EXPLORE.GO_TO_MY_ACCOUNT_BUTTON" | translate }}
+                </button>
+            </section>
+        </section>
+    </div>
+    <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+        <div>
+            <p>
+                <strong>{{ translateKeyPrefix + "LEGAL_COPY.TITLE" | translate }}</strong>
+            </p>
+            <p [innerHTML]="translateKeyPrefix + 'LEGAL_COPY.BODY' | translate"></p>
+        </div>
+    </section>
+</ng-template>

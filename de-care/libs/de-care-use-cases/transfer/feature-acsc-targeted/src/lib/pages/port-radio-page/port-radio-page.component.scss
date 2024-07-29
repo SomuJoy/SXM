@@ -1,0 +1,21 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    sxm-ui-stepper ::ng-deep {
+        .step-item {
+            padding: 0;
+        }
+    }
+}
+
+.back-button {
+    text-align: center;
+    button {
+        @include font-size(12px);
+        font-weight: calculate-font-weight("bold");
+        text-transform: uppercase;
+        color: $blue;
+        letter-spacing: 1.7px;
+    }
+}

@@ -1,0 +1,5 @@
+<p class="lead-in bold mb-4 title">{{ translateKeyPrefix + ".ACTIVATE_TITLE" | translate: { plan: data.plan } }}</p>
+<p class="lead-in no-margin">
+    {{ translateKeyPrefix + ".ACTIVATE_INSTRUCTIONS" | translate: { plan: data.plan, price: data.price } }}
+    <button class="text-link" (click)="activateRadio.emit()" data-test="activateRadioButton">{{ translateKeyPrefix + ".ACTIVATE_LINK" | translate }}</button>
+</p>

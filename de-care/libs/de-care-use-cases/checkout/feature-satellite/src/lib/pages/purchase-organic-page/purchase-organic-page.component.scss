@@ -1,0 +1,113 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    height: 100%;
+    display: grid;
+    grid-auto-rows: auto 1fr auto;
+    justify-items: center;
+    background-color: $white;
+    grid-gap: 32px;
+
+    #mainContent {
+        grid-auto-rows: auto 1fr;
+    }
+
+    section {
+        padding: 0;
+    }
+
+    section#hero {
+        background-color: $white;
+        color: $black;
+
+        h1 {
+            @include get-header-style(h2);
+            padding-top: 24px;
+            padding-bottom: 40px-32px;
+            margin: 0;
+
+            @include bp(medium) {
+                padding-top: 32px;
+            }
+        }
+    }
+
+    section#offerCard {
+        position: relative;
+        box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.1);
+
+        //Remove box shadow in primary pc?
+        ::ng-deep .primary-package-card {
+            box-shadow: none;
+        }
+
+        @include bp(medium) {
+            margin: 0 -24px 0;
+        }
+
+        article#radioInfo {
+            background-color: $white;
+            padding: 16px 16px 0 16px;
+
+            @include bp(medium) {
+                padding: 16px 24px 0 24px;
+            }
+
+            hr {
+                width: 100%;
+                height: 1px;
+                border: 0;
+                margin: 12px 0 0;
+                background-color: $gray-medium;
+            }
+        }
+    }
+
+    section#mainContent {
+        sxm-ui-stepper-accordion {
+            section {
+                margin: 0;
+                padding: 0;
+            }
+        }
+        .step-title {
+            @include step-title;
+        }
+        .step-inactive-header {
+            font-weight: calculate-font-weight("bold");
+            @include font-size(16px);
+        }
+    }
+    section#legalCopySection {
+        background-color: $off-white;
+        div {
+            padding: 24px 0;
+            border-bottom: 1px solid $gray-medium;
+            font-size: 0.75rem;
+            font-weight: 400;
+            ::ng-deep > p {
+                font-size: inherit;
+                font-weight: inherit;
+                a {
+                    @include underline(default);
+                }
+            }
+        }
+    }
+
+    section#yourPlanSection {
+        .your-plan {
+            &--header {
+                @include deep-gray-subheader;
+            }
+            &--change {
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    de-care-subscription-summary {
+        margin-top: 16px;
+    }
+}

@@ -1,0 +1,289 @@
+{
+    "DeCareUseCasesCheckoutFeatureUpgradeVipModule": {
+        "PurchasePageComponent": {
+            "NO_RADIO": {
+                "NO_RADIO": "Pas de radio?",
+                "LINK_URL": "https://www.siriusxm.ca/NOUVencontinu",
+                "LINK_TEXT": "Écoutez SiriusXM hors de la voiture"
+            },
+            "STEP_PAGE_TITLES": {
+                "YOUR_RADIOS": {
+                    "ACTIVE": "Vos forfaits",
+                    "INACTIVE": "Vos forfaits",
+                    "EDIT": "Modifier"
+                },
+                "BILLING_INFORMATION": {
+                    "ACTIVE": "Vos données de facturation",
+                    "INACTIVE": "Vos données de facturation",
+                    "EDIT": "Modifier"
+                },
+                "REVIEW_ORDER": {
+                    "ACTIVE": "Revoyez et terminez votre commande",
+                    "INACTIVE": "Revoyez et terminez votre commande",
+                    "EDIT": "Modifier"
+                }
+            },
+            "PAYMENT_INFO_INACTIVE": "{{cardType}} se terminant par {{cardNumber}}",
+            "ERROR": {
+                "ACCOUNT_NUMBER_MISMATCH": {
+                    "HEADER": "Désolé, nous avons des difficultés pour répondre à cette demande.",
+                    "MESSAGE": "Composez le <a href=\"tel:+1-833-838-7846\">1-833-838-7846</a>."
+                },
+                "SUBSCRIPTION_HAS_VIP_PLATINUM_PACKAGE": {
+                    "HEADER": "Cette radio est déjà active sur le forfait L’Ultime.",
+                    "MESSAGE": "Veuillez vous connecter au Centre des comptes en lignes <a href=\"{{oacUrl}}\">ici</a> pour gérer votre compte L’Ultime."
+                },
+                "INELIGIBLE_FOR_SECOND_RADIO": {
+                    "HEADER": "Désolés. Votre radio n’est pas admissible à un essai.",
+                    "MESSAGE": ""
+                },
+                "SUBSCRIPTION_HAS_INELIGIBLE_PLAN": {
+                    "HEADER": "Désolé, nous avons des difficultés pour répondre à cette demande.",
+                    "MESSAGE": "Composez le <a href=\"tel:+1-833-838-7846\">1-833-838-7846</a>."
+                },
+                "DEFAULT": {
+                    "HEADER": "Désolé, nous avons des difficultés pour répondre à cette demande.",
+                    "MESSAGE": "Composez le <a href=\"tel:+1-833-838-7846\">1-833-838-7846</a>."
+                }
+            },
+            "RADIO": "Code de radio : ****{{ radioId }}",
+            "COMPLETE_ORDER_BUTTON": "Terminer Ma Commande",
+            "REVIEW_STEP": {
+                "HEADER": {
+                    "SINGULAR": "Ensuite, nous transférerons votre radio au forfait L’Ultime.",
+                    "PLURAL": "Ensuite, nous transférerons chacune de vos deux radios au forfait L’Ultime."
+                }
+            },
+            "ENTER_A_CAPTCHA_TO_FINISH": "Veuillez entrer le CAPTCHA pour terminer",
+            "IconLabels": {
+                "SATELLITE": "Écoutez</br>dans 2 voitures",
+                "STREAMING": " 2 comptes</br>d’écoute en ligne",
+                "PANDORA": "Stations<br/>personnalisées",
+                "PERKS": "Avantages<br/>VIP"
+            }
+        },
+        "uiLoadingWithAlertMessageComponent": {
+            "pill": "Cette offre est réservée aux nouveaux abonnés, mais voici une autre option pour vous.",
+            "paragraph": "Nous recherchons un autre excellent forfait pour vous."
+        },
+        "OrganicPageComponent": {
+            "NO_RADIO": {
+                "TEXT": "Pas de radio?",
+                "LINK_URL": "https://www.siriusxm.ca/NOUVencontinu",
+                "LINK_TEXT": "Écoutez SiriusXM hors de la voiture"
+            },
+            "STEP_PAGE_TITLES": {
+                "YOUR_RADIOS": {
+                    "ACTIVE": "Vos forfaits",
+                    "INACTIVE": "Vos forfaits",
+                    "EDIT": "Modifier"
+                },
+                "VERIFY_YOUR_DEVICE": {
+                    "ACTIVE": "Vérifiez votre appareil",
+                    "INACTIVE": "Vérifiez votre appareil",
+                    "EDIT": "Modifier"
+                },
+                "BILLING_INFORMATION": {
+                    "ACTIVE": "Vos données de facturation",
+                    "INACTIVE": "Vos données de facturation",
+                    "EDIT": "Modifier"
+                },
+                "REVIEW_ORDER": {
+                    "ACTIVE": "Revoyez et terminez votre commande",
+                    "INACTIVE": "Revoyez et terminez votre commande",
+                    "EDIT": "Modifier"
+                }
+            },
+            "PAYMENT_INFO_INACTIVE": "{{cardType}} se terminant par {{cardNumber}}",
+            "ERROR": {
+                "DEFAULT": {
+                    "HEADER": "Désolé, nous avons des difficultés pour répondre à cette demande.",
+                    "MESSAGE": "Composez le <a href=\"tel:+1-833-838-7846\">1-833-838-7846</a> for help"
+                },
+                "ALREADY_ACTIVATED": {
+                    "HEADER": "Cette radio est déjà active sur le forfait L’Ultime.",
+                    "MESSAGE": "Veuillez vous connecter au Centre des comptes en lignes <a href=\"{{oacUrl}}\">ici</a> pour gérer votre compte L’Ultime."
+                }
+            },
+            "RADIO": "Code de radio : ****{{ radioId }}",
+            "COMPLETE_ORDER_BUTTON": "Terminer Ma Commande",
+            "ENTER_A_CAPTCHA_TO_FINISH": "Veuillez entrer le CAPTCHA pour terminer",
+            "IconLabels": {
+                "SATELLITE": "Écoutez</br>dans 2 voitures",
+                "STREAMING": " 2 comptes</br>d’écoute en ligne",
+                "PANDORA": "Stations<br/>personnalisées",
+                "PERKS": "Avantages<br/>VIP"
+            }
+        },
+        "FirstStepComponent": {
+            "CREATE_STREAMING_LOGIN": "Créer une nouvelle connexion à l'écoute en continu",
+            "NO_SERVICE": "Aucun service actif",
+            "SECOND_RADIO_TITLE": "Associer un deuxième forfait:",
+            "ADD_SECOND_RADIO": "Ajouter une seconde radio",
+            "FIND_SECOND_RADIO": "Trouver une seconde radio",
+            "YOUR_SUBSCRIPTION": "Bonjour {{firstName}}. Voici la première radio inscrite à votre forfait L’Ultime :",
+            "VIEW_MORE_RADIOS": "Voir plus de radios",
+            "HIDE_RADIOS": "Masquer les radios",
+            "CONTINUE_BUTTON": "Continuer",
+            "FIND_SECOND_RADIO_BUTTON": "Trouver La Seconde Radio",
+            "WILL_FIND_SECOND_RADIO": "Nous trouverons votre seconde radio ensuite.",
+            "RADIO": "Code de radio : ****{{ radioId }}",
+            "RADIO_LOOKUP_OPTIONS_SUBTITLE": "Choisissez l’une de ces options de recherche :",
+            "TRIAL_PACKAGE_DESC": "Essai {{packageName}}",
+            "TRIAL_TOOLTIP": "Vous passerez du forfait Le Complet au forfait l’Ultime dès que votre transaction sera complétée."
+        },
+        "UpgradingDevicesPageComponent": {
+            "PROCESSING": "Veuillez attendre pendant que nous transférons vos radios.",
+            "UPGRADED": "Vos radios sont maintenant connectées au forfait Le Complet.",
+            "NOT_UPGRADED": "Une de vos radios n’est pas transférée. Veuillez attendre. Nous passerons avec vous à la prochaine étape pour terminer le processus.",
+            "UPGRADING": "Transfert de votre",
+            "RADIO": "Code de radio : ****{{ radioId }}",
+            "STREAMINGPLAN": "Le Complet en ligne: ****{{streamingPlan}}"
+        },
+        "ConfirmationPageComponent": {
+            "TITLE": "Profitez de Platine VIP",
+            "ERROR_PILL": {
+                "FIRST": "Une de vos radios n’est pas transférée. Veuillez appeler au <a href=\"tel:+1-866-635-5027\">1 866-635-5027</a> ou ",
+                "CHAT": "clavardez avec un préposé",
+                "LAST": " pour terminer votre rehaussement au forfait L’Ultime."
+            },
+            "PARTNER_INFO": {
+                "TITLE": "Accédez à Stitcher et nugs.net",
+                "BODY": "Nous vous enverrons vos détails d’activation pour chaque service par courriel dans l’heure qui suit."
+            },
+            "LOGIN_SECTION": {
+                "PENDING_CRENDENTIALS": {
+                    "TITLE": "Configurez un identifiant pour écouter en ligne.",
+                    "BODY": "Chaque identifiant de l’Appli SXM vous donne accès à votre compte nugs.net."
+                },
+                "NON_PENDING_CREDENTIALS": {
+                    "TITLE": "Vous êtes prêt à profiter de SiriusXM",
+                    "BODY": "Chaque identifiant de l’Appli SXM vous donne accès à votre compte nugs.net."
+                }
+            },
+            "DYNAMIC_FORM_FOR_RADIOS": {
+                "FIRST_RADIO": {
+                    "TEXT": "Cet identifiant est aussi utilisé pour gérer votre compte en ligne."
+                },
+                "SECOND_RADIO": {
+                    "TEXT": "Configurez votre accès à l’écoute en ligne."
+                },
+                "RADIO": "Code de radio : ****{{ radioId }}"
+            },
+            "LISTEN_TO_RADIO": {
+                "RADIO": "Code de radio : ****{{ radioId }}",
+                "STREAMING_PLAYER_LINK": ""
+            },
+            "QUOTES_SECTION": {
+                "TITLE": "Confirmation de votre commande",
+                "RADIO": "Code de radio : ****{{ radioId }}",
+                "PRINT_LINK": "Imprimez le sommaire de votre commande"
+            },
+            "IMPORTANT_INFORMATION_SECTION": {
+                "TITLE": "Renseignements importants au sujet de votre abonnement :"
+            }
+        },
+        "AccountLookupStepComponent": {
+            "CONTINUE_BUTTON": "Continuer",
+            "NO_SERVICE": "Aucun service actif",
+            "RADIO": "Code de radio : ****{{ radioId }}",
+            "HEAD_LINE": "Veuillez vérifier votre compte à l’aide de votre code de radio et de votre nom de famille :",
+            "RADIO_LOOKUP": "Recherche de radio",
+            "MODALS": {
+                "RADIO_LOOKUP": {
+                    "HEADER": "Nous avons trouvé 1 radio qui correspondent à votre info.",
+                    "TRIAL_PACKAGE_DESC": "Essai {{packageName}}"
+                },
+                "LPZ": {
+                    "TITLE": "L'info de votre véhicule",
+                    "RADIO_LABEL": "Le code de radio :",
+                    "EDIT": "Modifier",
+                    "ACCOUNT_VERIFY": "Vérifiez votre compte",
+                    "MESSAGE": "Pour protéger votre compte de tout accès non autorisé, nous avons besoin de faire correspondre les informations dans notre système.",
+                    "TEXT-LINK": "Pour plus de renseignements sur la manière dont nous utilisons vos informations, consultez notre"
+                }
+            },
+            "TABS": {
+                "ACCOUNT_INFO": "Infos du compte"
+            }
+        },
+        "VipLayoutComponent": {
+            "SIRIUSXM_LOGO_SRC": "assets/img/sxm-logo-white.png",
+            "SIRIUSXM_LOGO_LINK": "https://siriusxm.ca/",
+            "SIRIUSXM_LOGO_ALT": "SiriusXM"
+        },
+        "ReviewStepHeaderComponent": {
+            "RADIO": "Code de radio : ****{{ radioId }}",
+            "RADIO_STATUS_LINE": {
+                "SELF_PAY": "Cette radio fera l’objet d’un surclassement au forfait  L’Ultime dès que vous aurez complété votre commande.",
+                "CLOSED": "Cette radio fera l’objet d’une activation L’Ultime dès que vous aurez complété votre commande.",
+                "SAME_STATUS": "Ces radios fera l’objet d’une activation L’Ultime dès que vous aurez complété votre commande.",
+                "ACTIVE_TRIAL": "Vous pouvez commencer à profiter des avantages  L’Ultime sur cette radio dès aujourd’hui. Lorsque votre période d’essai prendra fin, le service continuera en vertu du forfait L’Ultime.",
+                "ONLY_FIRST_RADIO": "Vous pouvez commencer à profiter des avantages  L’Ultime sur cette radio dès aujourd’hui. Lorsque votre période d’essai prendra fin, le service continuera en vertu du forfait L’Ultime."
+            }
+        },
+        "AddSecondRadioPageComponent": {
+            "HERO": "Associez un forfait à votre abonnement Le Complet VIP",
+            "BLUE_PILL": {
+                "WANT_STREAMING_ONLY": "Je veux du streaming uniquement?",
+                "NEW_STREAMING_LINK": "Ajouter un nouveau compte de streaming",
+                "ADD_SECOND_RADIO_ANYTIME": "Vous pouvez ajouter une deuxième radio à tout moment, sans frais supplémentaires en contactant le service client."
+            },
+            "STEPS": {
+                "FIND_SECOND_RADIO": {
+                    "TITLE": "Associez votre deuxième forfait",
+                    "PARAGRAPH_ONLY_RADIO": "Associez une radio à votre abonnement Le Complet VIP sans frais supplémentaires.",
+                    "PARAGRAPH_WITH_STREAMING": "Associez une radio ou un forfait actuel à votre abonnement Le Complet VIP sans frais supplémentaires."
+                }
+            }
+        },
+        "SecondRadioLookupComponent": {
+            "RADIO_STATUS": {
+                "CLOSED": "Aucun service actif",
+                "TRIAL": "Essai {{packageName}}",
+                "SELF_PAID": "{{packageName}}",
+                "INTRODUCTORY": "{{packageName}}"
+            },
+            "CREATE_STREAMING_LOGIN": "Créer une nouvelle connexion à l'écoute en continu",
+            "NO_SERVICE": "Aucun service actif",
+            "ADD_SECOND_RADIO": "Ajouter une seconde radio",
+            "FIND_SECOND_RADIO": "Trouver une seconde radio",
+            "VIEW_MORE_RADIOS": "Voir plus de radios",
+            "HIDE_RADIOS": "Masquer les radios",
+            "CONTINUE_BUTTON": "Continuer",
+            "ADD_SECOND_RADIO_LATER": "Continuer avec une radio",
+            "ADD_SECOND_RADIO_LATER_PARAGRAPH": "Vous pouvez ajouter une deuxième option d'écoute plus tard.",
+            "FIND_SECOND_RADIO_BUTTON": "Trouver La Seconde Radio",
+            "WILL_FIND_SECOND_RADIO": "Nous trouverons votre seconde radio ensuite.",
+            "RADIO": "Code de radio : ****{{ radioId }}",
+            "RADIO_LOOKUP_OPTIONS_SUBTITLE": "Choisissez l’une de ces options de recherche :",
+            "MODALS": {
+                "ARE_YOU_SURE": {
+                    "TITLE": "L’Ultime",
+                    "HEADER": "Êtes-vous sûr de vouloir continuer avec une radio?",
+                    "BODY": "Rappelez-vous que le forfait L’Ultime comprend l’écoute sur 2 radios, plus un identifiant de diffusion en continu pour chacune. Vous pouvez sélectionner une seconde radio maintenant ou continuer avec une radio et en ajouter une autre plus tard.",
+                    "BUTTON": "Continuer Aver Une",
+                    "CHOOSE_A_SECOND_RADIO": "Choisir une seconde radio"
+                },
+                "STREAMING_LOGIN": {
+                    "TITLE": "Connectez-vous à l'écoute en continu",
+                    "HEADER": "Créer une connexion à l'écoute en continu"
+                },
+                "CONFIRM_RADIO": {
+                    "TITLE": "Votre Compte",
+                    "HEADER": "Est-ce la deuxième radio que vous souhaitez surclasser avec Le Complet?",
+                    "BUTTON": "Oui, poursuivez"
+                },
+                "NOT_ELIGIBLE": {
+                    "TITLE": "L’Ultime",
+                    "HEADER": "Cette radio n’est pas admissible au forfait Le Complet",
+                    "BODY": {
+                        "FIRST": "Vous pouvez poursuivre avec une radio."
+                    },
+                    "BUTTON": "Continuer Avec Une",
+                    "CHOOSE_A_SECOND_RADIO": "Choisir une autre radio"
+                }
+            }
+        }
+    }
+}

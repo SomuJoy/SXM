@@ -1,0 +1,116 @@
+{
+    "DeStreamingOnboardingFeatureSetupCredentialsModule": {
+        "PrivacyPolicyComponent": {
+            "LINK_TEXT": "Privacy Policy"
+        },
+        "FindAccountPageComponent": {
+            "HEADLINE": "Set up your login for listening on the SXM App.",
+            "HEADLINE_CODE_127": "We found an active account associated with your email that already includes streaming.",
+            "INSTRUCTIONS": "First, we need some info to find your subscription.",
+            "INSTRUCTIONS_CODE_127": "Enter your info to set up your login.",
+            "ALREADY_HAVE_LOGIN": "Already have a login to stream?",
+            "SIGN_IN_LINK_TEXT": "Sign In",
+            "CONTINUE_BUTTON_TEXT": "Continue",
+            "SYSTEM_ERROR": "We’re sorry… something went wrong. We’re experiencing technical issues and are working on resolving it. Please try again.",
+            "INVALID_FIRST_NAME": "Please enter a valid first name.",
+            "INVALID_EMAIL": "Please enter a valid email address.",
+            "PAGE_TITLE": "Set Up Your SXM App Login"
+        },
+        "AccountNotFoundPageComponent": {
+            "HEADLINE": "Let's try something else.",
+            "INSTRUCTIONS": "<p>We didn’t find your subscription with the info you entered, but we can look again using your Radio ID.</p><p>If you’re new here and want to try streaming with the SXM App, you can preview our content or subscribe.</p>",
+            "PREVIEW_BUTTON_TEXT": "Preview or Subscribe",
+            "ENTER_RADIO_ID_LINK_TEXT": "ENTER RADIO ID"
+        },
+        "IneligibleNonPayPageComponent": {
+            "HEADLINE": "Your subscription is past due.",
+            "INSTRUCTIONS": "<p>You can resume listening as soon as we receive payment. In the meantime, you can preview our content.</p>",
+            "PREVIEW_BUTTON_TEXT": "STREAM IN THE APP"
+        },
+        "IneligibleNonConsumerComponent": {
+            "HEADLINE": "Unfortunately, you are not eligible for a trial.",
+            "MESSAGE_WITH_PHONE_NUMBER": "<p>You can't upgrade your car subscription here (please call 1-844-287-9225 to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "MESSAGE_WITHOUT_PHONE_NUMBER": "<p>You can't upgrade your car subscription here (please contact SiriusXM to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "PREVIEW_BUTTON_TEXT": "TRY OR SUBSCRIBE"
+        },
+        "IneligibleInsufficientPackageComponent": {
+            "HEADLINE": "We found your subscription, but it does not include streaming.",
+            "MESSAGE_WITH_PHONE_NUMBER": "<p>You can't upgrade your car subscription here (please call 1-844-287-9225 to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "MESSAGE_WITHOUT_PHONE_NUMBER": "<p>You can't upgrade your car subscription here (please contact SiriusXM to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "PREVIEW_BUTTON_TEXT": "TRY IT OUT"
+        },
+        "IneligibleExpiredAATrialComponent": {
+            "HEADLINE": "We found your subscription, but it has expired.",
+            "MESSAGE_WITH_PHONE_NUMBER": "<p>You can't reactivate your car subscription here (please call 1-844-287-9225 to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "MESSAGE_WITHOUT_PHONE_NUMBER": "<p>You can't reactivate your car subscription here (please contact SiriusXM to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "PREVIEW_BUTTON_TEXT": "SUBSCRIBE TO THE SXM APP"
+        },
+        "IneligibleMaxLifetimeTrialsComponent": {
+            "HEADLINE": "Your SiriusXM streaming trial has expired.",
+            "MESSAGE_WITH_PHONE_NUMBER": "<p>You can't upgrade your car subscription here (please call 1-844-287-9225 to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "MESSAGE_WITHOUT_PHONE_NUMBER": "<p>You can't upgrade your car subscription here (please contact SiriusXM to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "PREVIEW_BUTTON_TEXT": "TRY OR SUBSCRIBE"
+        },
+        "IneligibleNoAudioComponent": {
+            "HEADLINE": "We found your subscription, but it does not include streaming.",
+            "MESSAGE_WITH_PHONE_NUMBER": "<p>You can't upgrade your car subscription here (please call 1-844-287-9225 to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "MESSAGE_WITHOUT_PHONE_NUMBER": "<p>You can't upgrade your car subscription here (please contact SiriusXM to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "PREVIEW_BUTTON_TEXT": "STREAM IN THE APP"
+        },
+        "ClosedSubscriptionComponent": {
+            "HEADLINE": "We found your subscription, but it has expired.",
+            "MESSAGE_WITH_PHONE_NUMBER": "<p>You can't reactivate your car subscription here (please call 1-844-287-9225 to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "MESSAGE_WITHOUT_PHONE_NUMBER": "<p>You can't reactivate your car subscription here (please contact SiriusXM to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "PREVIEW_BUTTON_TEXT": "STREAM IN THE APP"
+        },
+        "RadioIdPageComponent": {
+            "HEADLINE": "Let's try something else.",
+            "INSTRUCTIONS": "<p>We didn't find your subscription with the info you entered, but we can look again using your Radio ID or VIN.</p>",
+            "INSTRUCTIONS_TEXT": "<p>If you don't have a SiriusXM car radio, or you're only interested in streaming, you can try out the SXM App for free or subscribe to a streaming-only plan.</p>",
+            "PREVIEW_BUTTON_TEXT": "STREAM IN THE APP",
+            "FIND_RADIO_ID_TEXT": "How do I find my Radio ID?",
+            "BUTTON_TEXT": "SEARCH",
+            "FIND_RADIO_ID_MODAL_HEADER_TEXT": "Radio ID Help",
+            "FIND_RADIO_ID_MODAL_TITLE": "How do I find my Radio ID?",
+            "FIND_RADIO_ID_MODAL_SUBTITLE": "<p>There are 2 ways to find your Radio ID (also called an ESN or SID). For most radios, the Radio ID will be displayed by tuning to channel 0. If it’s not, you can use the “Menu” function of your radio to display it.</p><p>You can also use your car's VIN to find your subscription.</p>",
+            "MESSAGE_WITH_PHONE_NUMBER": "If you need additional help, please call 1-844-287-9225.",
+            "MESSAGE_WITHOUT_PHONE_NUMBER": "If you need additional help, please contact SiriusXM.",
+            "FIND_RADIO_ID_MODAL_BUTTON_TEXT": "CLOSE",
+            "PLACEHOLDER_TEXT": "Radio ID or VIN",
+            "TOOLTIP_TEXT": "Your Radio ID will be either 8 or 12 digits.",
+            "ERROR_MSG": "Enter a valid Radio ID",
+            "SERVICE_ERROR_MESSAGES": {
+                "INVALID_RADIO_ID": "The number entered does not match our records. Please try again.",
+                "SYSTEM_ERROR": "We’re sorry… something went wrong. We’re experiencing technical issues and are working on resolving it. Please try again."
+            }
+        },
+        "SingleMatchSetupLoginConfirmationPageComponent": {
+            "HEADLINE": "You’re all set up to listen.",
+            "INSTRUCTIONS": "<p>Use your username and password to log into the SXM App to start listening.</p>",
+            "BUTTON_TEXT": "Start Listening",
+            "STREAMING_PLAYER_LINK": "?contentType=landing"
+        },
+        "MultipleSubscriptionsPageComponent": {
+            "HEADLINE": "We found one or more subscriptions that include streaming.",
+            "INSTRUCTIONS": "<p>Choose one to start listening.</p>",
+            "NO_MATCH_HEADLINE": "We found your subscription, but it does not include streaming.",
+            "CTA_Link_LOGIN_TEXT": "Create Login",
+            "CTA_Link_LISTEN_TEXT": "Listen Now",
+            "CTA_FREE_PREVIEW_GREY": "Streaming not included",
+            "CTA_Link_FREE_TEXT": "Try it out",
+            "DONT_SEE_ACCOUNT_TEXT": "Don’t see your account?",
+            "LOAD_RADIO_BUTTON_TEXT": "LOAD MORE RADIOS",
+            "LOAD_PREVIOUS_RADIO_BUTTON_TEXT": "LOAD PREVIOUS RADIOS"
+        },
+        "SingleMatchOACPageComponent": {
+            "HEADLINE": "Good news. You already have a login to listen on the SXM App.",
+            "INSTRUCTIONS": "<p>Simply log in to the SXM App  with the username and password you created when you last registered. If you’ve forgotten your login, we can help you retrieve it.</p>",
+            "BUTTON_TEXT": "Sign In",
+            "ACCOUNT_TEXT": {
+                "LABEL": "ACCOUNT",
+                "RADIO_TEXT": "RADIO ID"
+            },
+            "FORGOT_TEXT": "Forgot your username or password?"
+        }
+    }
+}

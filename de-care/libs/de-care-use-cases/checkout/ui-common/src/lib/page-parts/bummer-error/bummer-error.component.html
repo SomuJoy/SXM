@@ -1,0 +1,14 @@
+<section id="header">
+    <h6 class="sorry">{{ translateKeyPrefix + ".HEADER" | translate }}</h6>
+    <h2>{{ errorMessage }}</h2>
+</section>
+<section id="help">
+    <div class="box">
+        <strong class="dont-worry">{{ translateKeyPrefix + ".DONT_WORRY" | translate }}</strong>
+        <p>{{ translateKeyPrefix + ".CONTINUE" | translate }}</p>
+        <a class="text-link" (click)="redirectCtaLink()" [attr.aria-label]="translateKeyPrefix + '.SEE_AVAILABLE_OFFER' | translate">{{
+            translateKeyPrefix + ".SEE_AVAILABLE_OFFER" | translate
+        }}</a>
+    </div>
+</section>
+<sxm-ui-loading-overlay-sxm-logo *ngIf="displayLoader"></sxm-ui-loading-overlay-sxm-logo>

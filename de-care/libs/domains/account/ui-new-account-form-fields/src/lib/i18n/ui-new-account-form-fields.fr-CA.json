@@ -1,0 +1,54 @@
+{
+    "domainsAccountUiNewAccountFormFieldsModule": {
+        "newAccountFormFieldsComponent": {
+            "LOGIN_SUB_HEADER": "Diffusez SiriusXM en continu en ligne et gérez vos abonnements.",
+            "YOUR_INFO": "Votre info",
+            "LOGIN_INFO": "Info de connexion",
+            "FIRST_NAME": {
+                "LABEL": "Prénom",
+                "ERRORS": {
+                    "REQUIRED": "Entrez votre prénom."
+                }
+            },
+            "LAST_NAME": {
+                "LABEL": "Nom",
+                "ERRORS": {
+                    "REQUIRED": "Entrez votre nom."
+                }
+            },
+            "PHONE_NUMBER": {
+                "LABEL": "Numéro de téléphone",
+                "ERRORS": {
+                    "REQUIRED": "Entrez un numéro de téléphone valide."
+                }
+            },
+            "ADDRESS_LINE": {
+                "LABEL": "Adresse (incluant app./bureau/unité)",
+                "ERRORS": {
+                    "REQUIRED": "Entrez une adresse valide."
+                }
+            },
+            "CITY": {
+                "LABEL": "Ville",
+                "ERRORS": {
+                    "REQUIRED": "Entrez votre ville."
+                }
+            },
+            "STATE": {
+                "LABEL": "Province",
+                "ERRORS": {
+                    "REQUIRED": "Sélectionnez votre province"
+                }
+            },
+            "ZIP_CODE": {
+                "LABEL": "Code postal",
+                "ERRORS": {
+                    "REQUIRED": "Entrez un code postal valide."
+                }
+            },
+            "BUTTON_TEXT": "Je consens à recevoir des communications marketing par courriel et courier",
+            "CONFIRM_YOUR_ADDRESS": "Veuillez confirmer votre adresse",
+            "UNEXPECTED_ERROR": "Une erreur inattendue est apparue. Veuillez réessayer."
+        }
+    }
+}

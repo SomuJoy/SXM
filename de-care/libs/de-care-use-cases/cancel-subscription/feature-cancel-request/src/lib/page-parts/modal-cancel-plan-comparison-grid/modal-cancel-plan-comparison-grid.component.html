@@ -1,0 +1,26 @@
+<sxm-ui-modal
+    class="modal--grid-view-no-padding"
+    [closed]="false"
+    titlePresent="true"
+    [title]="translateKeyPrefix + '.TITLE' | translate"
+    (modalClosed)="onClosed()"
+    data-test="cancelPlanComparisonGridModal"
+>
+    <div class="general-container">
+        <div class="general-item">
+            <sxm-ui-plan-comparison-grid-detailed
+                class="columns-with-borders"
+                [data]="data$ | async"
+                (packageNameSelected)="onPackageNameSelected($event)"
+                [isExpanded]="true"
+            ></sxm-ui-plan-comparison-grid-detailed>
+        </div>
+        <div class="general-item">
+            <div class="grid-justify-centered offer-details-container">
+                <div class="offer-details-grid-container">
+                    <offer-details class="reduced-padding" [details]="getOfferTypeForOfferDetails$ | async"></offer-details>
+                </div>
+            </div>
+        </div>
+    </div>
+</sxm-ui-modal>

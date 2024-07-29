@@ -1,0 +1,148 @@
+<ng-container *ngIf="offerData$ | async as offerObj">
+    <ng-container *ngIf="!offerNotAvailableReason; else offerNotAvailableTemplate">
+        <ng-container *ngIf="offerObj.offer && offerObj.offerDetails && vm$ | async as vm">
+            <sxm-ui-hero [heroData]="vm.salesHeroData" data-e2e="rtd.streaming.hero" [class]="vm.salesHeroData.classes"></sxm-ui-hero>
+            <lead-offer-details
+                [offer]="offerObj.offer"
+                [isStreaming]="offerObj.offerDetails.isStreaming"
+                [offerDescriptionData]="vm.offerDescriptionData"
+                [isLegacyMode]="false"
+            >
+            </lead-offer-details>
+            <main class="background-offwhite">
+                <div class="content-container">
+                    <div class="row align-center no-padding-small">
+                        <div class="column medium-2 no-padding background-white"></div>
+                        <div class="column small-12 medium-6 no-padding-small background-white">
+                            <div class="rtd-accordion-container background-white">
+                                <sxm-ui-accordion-stepper dataGroup="flow-steps" #stepper class="pick-your-package" [showStepHeader]="true">
+                                    <sxm-ui-accordion-step
+                                        label="{{ translateKeyPrefix + '.ENTER_YOUR_EMAIL_STEP' | translate }}"
+                                        editButtonLabel="{{ translateKeyPrefix + '.EDIT_BUTTON_LABEL' | translate }}"
+                                        id="accordion-step1-email"
+                                        (editClicked)="stepEditClicked($event)"
+                                        (active)="onAccountLookupStepActive()"
+                                    >
+                                        <div class="step-container">
+                                            <account-lookup-form
+                                                [email]="attemptedEmail"
+                                                [closeVerifyAccountModal]="closeVerifyAccountModal$ | async"
+                                                (accountLoadedForSubscription)="handleAccountLoadedForSubscription($event)"
+                                                (stepComplete)="handleAccountLookupStepComplete($event)"
+                                                (subscribeLinkClicked)="handleSubscribeLinkClicked($event)"
+                                            >
+                                            </account-lookup-form>
+                                        </div>
+                                    </sxm-ui-accordion-step>
+
+                                    <sxm-ui-accordion-step
+                                        label="{{ translateKeyPrefix + '.ENTER_YOUR_INFO_STEP' | translate }}"
+                                        editButtonLabel="{{ translateKeyPrefix + '.EDIT_BUTTON_LABEL' | translate }}"
+                                        id="accordion-step2-info"
+                                        (editClicked)="stepEditClicked($event)"
+                                        (active)="onYourInfoStepActive()"
+                                    >
+                                        <div class="step-container">
+                                            <de-care-enter-your-information
+                                                *ngIf="account"
+                                                [accountData]="{ account: account, isNewAccount: account.isNewAccount, hasEmailAddressOnFile: account.hasEmailAddressOnFile }"
+                                                [isStreamingFlow]="true"
+                                                [reducedFields]="reducedFields"
+                                                [followOnData]="followOnData$ | async"
+                                                [loading]="isLoading$ | async"
+                                                [ccError]="ccError"
+                                                [passwordError]="passwordError"
+                                                (submitYourInfoForm)="handleYourInfo($event)"
+                                                (paymentFormCompleted)="handleEnteredPaymentInfo()"
+                                                (noPaymentFormCompleted)="handleNotEnteredPaymentInfo()"
+                                                (setCCError)="setCCError($event)"
+                                                [prefilledSessionCustomerData]="prefilledSessionCustomerData$ | async"
+                                                [displayNucaptcha]="displayNucaptcha$ | async"
+                                                #enterYourInfoStep
+                                            >
+                                            </de-care-enter-your-information>
+                                        </div>
+                                    </sxm-ui-accordion-step>
+
+                                    <sxm-ui-accordion-step
+                                        *ngIf="followOnOptionSelected$ | async"
+                                        label="{{ translateKeyPrefix + '.REVIEW_YOUR_ORDER_STEP' | translate }}"
+                                        editButtonLabel="{{ translateKeyPrefix + '.EDIT_BUTTON_LABEL' | translate }}"
+                                        id="accordion-step3-review"
+                                        (editClicked)="stepEditClicked($event)"
+                                        (active)="onReviewStepActive()"
+                                    >
+                                        <div class="step-container">
+                                            <feature-toggle-provider [features]="enableQuoteSummaryFeatureToggle$ | async">
+                                                <ng-container *featureToggle="'enableQuoteSummary'">
+                                                    <quote-summary
+                                                        *ngIf="orderSummaryData$ | async as orderSummaryData"
+                                                        [showUnusedCreditLine]="true"
+                                                        [giftCardUsed]="false"
+                                                        [isNewAccount]="false"
+                                                        [isClosedRadio]="false"
+                                                        [isChangeSubscription]="true"
+                                                        [isCurrentSubscriptionTrial]="false"
+                                                        [quote]="orderSummaryData.quotes"
+                                                    ></quote-summary>
+                                                </ng-container>
+
+                                                <ng-container *featureToggle="'!enableQuoteSummary'">
+                                                    <order-summary
+                                                        *ngIf="orderSummaryData$ | async as orderSummaryData"
+                                                        [showUnusedCreditLine]="true"
+                                                        [giftCardUsed]="false"
+                                                        [isNewAccount]="false"
+                                                        [isClosedRadio]="false"
+                                                        [isChangeSubscription]="true"
+                                                        [isCurrentSubscriptionTrial]="false"
+                                                        [quote]="orderSummaryData.quotes"
+                                                    ></order-summary>
+                                                </ng-container>
+                                            </feature-toggle-provider>
+
+                                            <form (submit)="onReviewAndSubmit($event)">
+                                                <charge-agreement-with-validation [submitted]="orderSubmitted" (checkChange)="agreementAccepted = $event">
+                                                </charge-agreement-with-validation>
+
+                                                <ng-container *ngIf="displayNucaptcha$ | async">
+                                                    <hr />
+                                                    <strong>{{ translateKeyPrefix + ".ENTER_A_CAPTCHA_TO_FINISH" | translate }}</strong>
+                                                    <sxm-ui-nucaptcha
+                                                        #nuCaptcha
+                                                        [(ngModel)]="captchaAnswer"
+                                                        [submitted]="orderSubmitted"
+                                                        [captchaAnswerWrong]="captchaAnswerWrong"
+                                                        (gotCaptcha)="gotCaptcha()"
+                                                        name="captchaAnswer"
+                                                    ></sxm-ui-nucaptcha>
+                                                </ng-container>
+                                                <button
+                                                    [ngClass]="{ 'complete-order-button-captcha': displayNucaptcha$ | async }"
+                                                    sxm-proceed-button
+                                                    type="submit"
+                                                    [loading]="isLoading$ | async"
+                                                    data-e2e="subscribePage.orderSubmitButton"
+                                                >
+                                                    {{ translateKeyPrefix + ".SUBMIT_ORDER_BUTTON" | translate }}
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </sxm-ui-accordion-step>
+                                </sxm-ui-accordion-stepper>
+                            </div>
+                        </div>
+                        <div class="column medium-2 no-padding background-white"></div>
+                    </div>
+                </div>
+            </main>
+            <sxm-ui-legal-copy [legalCopy]="vm.legalCopyData" data-e2e="rtd.streaming.legalCopy"></sxm-ui-legal-copy>
+        </ng-container>
+    </ng-container>
+</ng-container>
+
+<ng-template #offerNotAvailableTemplate>
+    <offer-not-available-confirmation [offerNotAvailableReason]="offerNotAvailableReason" (continueRequested)="continueToFallbackOffer()"></offer-not-available-confirmation>
+</ng-template>
+
+<de-care-ineligible-loader [displayLoader]="displayIneligibleLoader$ | async"></de-care-ineligible-loader>

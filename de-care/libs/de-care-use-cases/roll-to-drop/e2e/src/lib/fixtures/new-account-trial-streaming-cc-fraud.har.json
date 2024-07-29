@@ -1,0 +1,1308 @@
+[
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/offers",
+            "postData": {
+                "programCode": "USTPSRTD3MOFREE",
+                "streaming": true,
+                "student": false
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Thu, 10 Sep 2020 19:02:03 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Connection",
+                    "value": "close"
+                },
+                {
+                    "name": "ADRUM_0",
+                    "value": "g:9ca3760b-6e27-49f2-af39-c6dd0216b86e"
+                },
+                {
+                    "name": "ADRUM_1",
+                    "value": "n:siriusxm_90926817-4b84-4aa3-86cd-3d922f88ea0e"
+                },
+                {
+                    "name": "ADRUM_2",
+                    "value": "i:1541195"
+                },
+                {
+                    "name": "ADRUM_3",
+                    "value": "e:1003"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://care.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-store"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "Thu, 10 Sep 2020 19:02:02 GMT"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                },
+                {
+                    "name": "X-CDN",
+                    "value": "Incapsula"
+                },
+                {
+                    "name": "X-Iinfo",
+                    "value": "1-8218350-8218362 NNNN CT(34 56 0) RT(1599764522224 235) q(0 0 1 -1) r(9 9) U5"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "offers": [
+                            {
+                                "planCode": "Trial - Premier Streaming - 3mo - $0.00 - (RTD)",
+                                "packageName": "SIR_IP_SA",
+                                "packageUpgrade": null,
+                                "promoCode": "PSFREERTD3MO",
+                                "termLength": 3,
+                                "type": "RTD_OFFER",
+                                "marketType": "trial:streaming",
+                                "price": 0,
+                                "pricePerMonth": 0,
+                                "retailPrice": 13,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 13,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "fallbackReason": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": null,
+                                "streaming": false,
+                                "mrdEligible": false,
+                                "fallback": false,
+                                "upgradeOffer": false
+                            }
+                        ],
+                        "presentment": null
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/offers/renewal",
+            "postData": {
+                "planCode": "Trial - Premier Streaming - 3mo - $0.00 - (RTD)",
+                "streaming": true
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Thu, 10 Sep 2020 19:02:05 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Connection",
+                    "value": "close"
+                },
+                {
+                    "name": "ADRUM_0",
+                    "value": "g:6d6d0603-36bb-41bb-ad94-7a728c8beae5"
+                },
+                {
+                    "name": "ADRUM_1",
+                    "value": "n:siriusxm_90926817-4b84-4aa3-86cd-3d922f88ea0e"
+                },
+                {
+                    "name": "ADRUM_2",
+                    "value": "i:1541195"
+                },
+                {
+                    "name": "ADRUM_3",
+                    "value": "e:1105"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://care.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-store"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "Thu, 10 Sep 2020 19:02:04 GMT"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                },
+                {
+                    "name": "X-CDN",
+                    "value": "Incapsula"
+                },
+                {
+                    "name": "X-Iinfo",
+                    "value": "13-37699293-37699393 NNNN CT(34 36 0) RT(1599764524037 395) q(0 0 1 -1) r(10 10) U5"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "offers": [
+                            {
+                                "planCode": "Premier Streaming - Monthly",
+                                "packageName": "SIR_IP_SA",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 13,
+                                "pricePerMonth": 13,
+                                "retailPrice": 13,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 13,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "fallbackReason": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": null,
+                                "streaming": false,
+                                "fallback": false,
+                                "mrdEligible": false,
+                                "upgradeOffer": false
+                            }
+                        ],
+                        "presentment": null
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/identity/customer/email",
+            "postData": {
+                "email": "batman@siriusxm.com"
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Thu, 10 Sep 2020 19:03:14 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Connection",
+                    "value": "close"
+                },
+                {
+                    "name": "ADRUM_0",
+                    "value": "g:aa745d8d-96fe-4403-ba8d-0f5b67930599"
+                },
+                {
+                    "name": "ADRUM_1",
+                    "value": "n:siriusxm_90926817-4b84-4aa3-86cd-3d922f88ea0e"
+                },
+                {
+                    "name": "ADRUM_2",
+                    "value": "i:1541203"
+                },
+                {
+                    "name": "ADRUM_3",
+                    "value": "e:701"
+                },
+                {
+                    "name": "ADRUM_4",
+                    "value": "s:f"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://care.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-store"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "Thu, 10 Sep 2020 19:03:13 GMT"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                },
+                {
+                    "name": "X-CDN",
+                    "value": "Incapsula"
+                },
+                {
+                    "name": "X-Iinfo",
+                    "value": "12-34442444-34442465 NNNN CT(35 47 0) RT(1599764593212 80) q(0 1 1 -1) r(6 6) U5"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": []
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/validate/password",
+            "postData": {
+                "value": "harsh45&*JK"
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Thu, 10 Sep 2020 19:04:00 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Connection",
+                    "value": "close"
+                },
+                {
+                    "name": "ADRUM_0",
+                    "value": "g:e077afc9-a983-41b4-9b5e-9b5e67c6ab2b"
+                },
+                {
+                    "name": "ADRUM_1",
+                    "value": "n:siriusxm_90926817-4b84-4aa3-86cd-3d922f88ea0e"
+                },
+                {
+                    "name": "ADRUM_2",
+                    "value": "i:1541201"
+                },
+                {
+                    "name": "ADRUM_3",
+                    "value": "e:523"
+                },
+                {
+                    "name": "ADRUM_4",
+                    "value": "s:f"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://care.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-store"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "Thu, 10 Sep 2020 19:03:59 GMT"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                },
+                {
+                    "name": "X-CDN",
+                    "value": "Incapsula"
+                },
+                {
+                    "name": "X-Iinfo",
+                    "value": "2-12566148-12566156 NNNN CT(35 37 0) RT(1599764639810 33) q(0 0 1 -1) r(2 2) U5"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "validationErrorKey": "",
+                        "validationErrorFailedWord": "",
+                        "valid": true
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/validate/customer-info",
+            "postData": {
+                "serviceAddress": {
+                    "addressLine1": "1234 street road",
+                    "city": "colorado springs",
+                    "state": "CT",
+                    "zip": "80918"
+                },
+                "billingAddress": {
+                    "addressLine1": "1234 street road",
+                    "city": "colorado springs",
+                    "state": "CT",
+                    "zip": "80918"
+                },
+                "creditCard": {
+                    "creditCardNumber": "4111111111111111"
+                }
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Thu, 10 Sep 2020 19:04:37 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Connection",
+                    "value": "close"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "ADRUM_BTa=R:79|g:a021d268-53d6-4a7f-bc8a-e541648267b0; Max-Age=30; Expires=Thu, 10-Sep-2020 19:05:06 GMT; Path=/"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "ADRUM_BTa=R:79|g:a021d268-53d6-4a7f-bc8a-e541648267b0|n:siriusxm_90926817-4b84-4aa3-86cd-3d922f88ea0e; Max-Age=30; Expires=Thu, 10-Sep-2020 19:05:06 GMT; Path=/"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "ADRUM_BT1=R:79|i:1541201; Max-Age=30; Expires=Thu, 10-Sep-2020 19:05:06 GMT; Path=/"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "ADRUM_BT1=R:79|i:1541201|e:523; Max-Age=30; Expires=Thu, 10-Sep-2020 19:05:06 GMT; Path=/"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "ADRUM_BTs=R:79|s:f; Max-Age=30; Expires=Thu, 10-Sep-2020 19:05:06 GMT; Path=/"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://care.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-store"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "Thu, 10 Sep 2020 19:04:36 GMT"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                },
+                {
+                    "name": "X-CDN",
+                    "value": "Incapsula"
+                },
+                {
+                    "name": "X-Iinfo",
+                    "value": "5-26693117-26693128 NNNN CT(40 37 0) RT(1599764676223 115) q(0 0 1 -1) r(12 12) U5"
+                }
+            ],
+            "cookies": [
+                {
+                    "name": "ADRUM_BTa",
+                    "value": "R:79|g:a021d268-53d6-4a7f-bc8a-e541648267b0",
+                    "path": "/",
+                    "domain": "care.siriusxm.com",
+                    "expires": "2020-09-10T19:05:06.352Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "ADRUM_BTa",
+                    "value": "R:79|g:a021d268-53d6-4a7f-bc8a-e541648267b0|n:siriusxm_90926817-4b84-4aa3-86cd-3d922f88ea0e",
+                    "path": "/",
+                    "domain": "care.siriusxm.com",
+                    "expires": "2020-09-10T19:05:06.352Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "ADRUM_BT1",
+                    "value": "R:79|i:1541201",
+                    "path": "/",
+                    "domain": "care.siriusxm.com",
+                    "expires": "2020-09-10T19:05:06.352Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "ADRUM_BT1",
+                    "value": "R:79|i:1541201|e:523",
+                    "path": "/",
+                    "domain": "care.siriusxm.com",
+                    "expires": "2020-09-10T19:05:06.352Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "ADRUM_BTs",
+                    "value": "R:79|s:f",
+                    "path": "/",
+                    "domain": "care.siriusxm.com",
+                    "expires": "2020-09-10T19:05:06.352Z",
+                    "httpOnly": false,
+                    "secure": false
+                }
+            ],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "valid": true,
+                        "emailValidation": null,
+                        "usernameValidation": null,
+                        "billingAddressValidation": {
+                            "confidenceLevel": "None",
+                            "correctedAddress": [
+                                {
+                                    "addressLine1": " ",
+                                    "addressLine2": " ",
+                                    "city": " ",
+                                    "state": " ",
+                                    "zip": " "
+                                }
+                            ],
+                            "resultCode": "SUCCESS",
+                            "validationStatus": "NOT_VALID"
+                        },
+                        "serviceAddressValidation": {
+                            "confidenceLevel": "None",
+                            "correctedAddress": [
+                                {
+                                    "addressLine1": " ",
+                                    "addressLine2": " ",
+                                    "city": " ",
+                                    "state": " ",
+                                    "zip": " "
+                                }
+                            ],
+                            "resultCode": "SUCCESS",
+                            "validationStatus": "NOT_VALID"
+                        },
+                        "ccValidation": {
+                            "valid": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/quotes/quote",
+            "postData": {
+                "planCodes": ["Trial - Premier Streaming - 3mo - $0.00 - (RTD)"],
+                "serviceAddress": {
+                    "streetAddress": "1234 street road",
+                    "city": "colorado springs",
+                    "state": "CT",
+                    "postalCode": "80918",
+                    "country": "us"
+                },
+                "renewalPlanCode": "Premier Streaming - Monthly"
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Thu, 10 Sep 2020 19:04:40 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Connection",
+                    "value": "close"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "ADRUM_BTa=R:79|g:a021d268-53d6-4a7f-bc8a-e541648267b0|n:siriusxm_90926817-4b84-4aa3-86cd-3d922f88ea0e; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "ADRUM_BT1=R:79|i:1541201|e:523; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "ADRUM_BTs=R:79|s:f; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "ADRUM_BTa=R:79|g:a85b545d-0dd6-4556-8749-e7e85e3ff656; Max-Age=30; Expires=Thu, 10-Sep-2020 19:05:09 GMT; Path=/"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "ADRUM_BTa=R:79|g:a85b545d-0dd6-4556-8749-e7e85e3ff656|n:siriusxm_90926817-4b84-4aa3-86cd-3d922f88ea0e; Max-Age=30; Expires=Thu, 10-Sep-2020 19:05:09 GMT; Path=/"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "ADRUM_BT1=R:79|i:1541200; Max-Age=30; Expires=Thu, 10-Sep-2020 19:05:09 GMT; Path=/"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "ADRUM_BT1=R:79|i:1541200|e:2372; Max-Age=30; Expires=Thu, 10-Sep-2020 19:05:09 GMT; Path=/"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://care.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-store"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "Thu, 10 Sep 2020 19:04:39 GMT"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                },
+                {
+                    "name": "X-CDN",
+                    "value": "Incapsula"
+                },
+                {
+                    "name": "X-Iinfo",
+                    "value": "10-26387837-26387861 NNNN CT(34 36 0) RT(1599764679534 82) q(0 0 0 -1) r(7 7) U5"
+                }
+            ],
+            "cookies": [
+                {
+                    "name": "ADRUM_BTa",
+                    "value": "R:79|g:a021d268-53d6-4a7f-bc8a-e541648267b0|n:siriusxm_90926817-4b84-4aa3-86cd-3d922f88ea0e",
+                    "path": "/",
+                    "domain": "care.siriusxm.com",
+                    "expires": "2020-09-10T19:04:39.738Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "ADRUM_BT1",
+                    "value": "R:79|i:1541201|e:523",
+                    "path": "/",
+                    "domain": "care.siriusxm.com",
+                    "expires": "2020-09-10T19:04:39.738Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "ADRUM_BTs",
+                    "value": "R:79|s:f",
+                    "path": "/",
+                    "domain": "care.siriusxm.com",
+                    "expires": "2020-09-10T19:04:39.738Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "ADRUM_BTa",
+                    "value": "R:79|g:a85b545d-0dd6-4556-8749-e7e85e3ff656",
+                    "path": "/",
+                    "domain": "care.siriusxm.com",
+                    "expires": "2020-09-10T19:05:09.738Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "ADRUM_BTa",
+                    "value": "R:79|g:a85b545d-0dd6-4556-8749-e7e85e3ff656|n:siriusxm_90926817-4b84-4aa3-86cd-3d922f88ea0e",
+                    "path": "/",
+                    "domain": "care.siriusxm.com",
+                    "expires": "2020-09-10T19:05:09.738Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "ADRUM_BT1",
+                    "value": "R:79|i:1541200",
+                    "path": "/",
+                    "domain": "care.siriusxm.com",
+                    "expires": "2020-09-10T19:05:09.738Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "ADRUM_BT1",
+                    "value": "R:79|i:1541200|e:2372",
+                    "path": "/",
+                    "domain": "care.siriusxm.com",
+                    "expires": "2020-09-10T19:05:09.738Z",
+                    "httpOnly": false,
+                    "secure": false
+                }
+            ],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "quote": {
+                            "currentQuote": {
+                                "totalTaxAmount": "0.00",
+                                "totalFeesAmount": "0.00",
+                                "totalTaxesAndFeesAmount": "0.00",
+                                "totalAmount": "0.00",
+                                "discountAmount": "0.00",
+                                "pricePerMonth": "0.00",
+                                "currentBalance": "0.00",
+                                "consolidatedCreditAmount": "",
+                                "previousBalance": "0.00",
+                                "fees": [],
+                                "taxes": [],
+                                "details": [
+                                    {
+                                        "planCode": "Trial - Premier Streaming - 3mo - $0.00 - (RTD)",
+                                        "packageName": "SIR_IP_SA",
+                                        "termLength": 3,
+                                        "priceAmount": "0.00",
+                                        "taxAmount": "0.00",
+                                        "feeAmount": "0.00",
+                                        "totalTaxesAndFeesAmount": "0.00",
+                                        "taxes": [],
+                                        "fees": [],
+                                        "startDate": "2020-09-10",
+                                        "endDate": "2020-12-10",
+                                        "isMrdEligible": false,
+                                        "balanceType": null
+                                    }
+                                ],
+                                "isUpgraded": false,
+                                "isProrated": false
+                            },
+                            "futureQuote": null,
+                            "proRatedRenewalQuote": null,
+                            "promoRenewalQuote": null,
+                            "renewalQuote": {
+                                "totalTaxAmount": "0.00",
+                                "totalFeesAmount": "1.14",
+                                "totalTaxesAndFeesAmount": "1.14",
+                                "totalAmount": "14.14",
+                                "discountAmount": "0.00",
+                                "pricePerMonth": "13.00",
+                                "currentBalance": "",
+                                "consolidatedCreditAmount": "",
+                                "previousBalance": "",
+                                "fees": [
+                                    {
+                                        "description": "U.S. Music Royalty Fee",
+                                        "amount": "1.14"
+                                    }
+                                ],
+                                "taxes": [],
+                                "details": [
+                                    {
+                                        "planCode": "Premier Streaming - Monthly",
+                                        "packageName": "SIR_IP_SA",
+                                        "termLength": 1,
+                                        "priceAmount": "13.00",
+                                        "taxAmount": "0.00",
+                                        "feeAmount": "1.14",
+                                        "totalTaxesAndFeesAmount": "1.14",
+                                        "taxes": [],
+                                        "fees": [
+                                            {
+                                                "description": "U.S. Music Royalty Fee",
+                                                "amount": "1.14"
+                                            }
+                                        ],
+                                        "startDate": "2020-12-10",
+                                        "endDate": "2021-01-10",
+                                        "isMrdEligible": false,
+                                        "balanceType": null
+                                    }
+                                ],
+                                "isUpgraded": null,
+                                "isProrated": false
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/purchase/new-account",
+            "postData": {
+                "plans": [
+                    {
+                        "planCode": "Trial - Premier Streaming - 3mo - $0.00 - (RTD)"
+                    }
+                ],
+                "followOnPlans": [
+                    {
+                        "planCode": "Premier Streaming - Monthly"
+                    }
+                ],
+                "billingAddress": {
+                    "city": "colorado springs",
+                    "state": "CT",
+                    "country": "us",
+                    "streetAddress": "1234 street road",
+                    "postalCode": "80918",
+                    "avsvalidated": false,
+                    "addressType": "person",
+                    "firstName": "bruce",
+                    "lastName": "wayne",
+                    "email": "charles.baker@siriusxm.com",
+                    "phone": "2543345546"
+                },
+                "serviceAddress": {
+                    "city": "colorado springs",
+                    "state": "CT",
+                    "country": "us",
+                    "streetAddress": "1234 street road",
+                    "postalCode": "80918",
+                    "avsvalidated": false,
+                    "addressType": "person",
+                    "firstName": "bruce",
+                    "lastName": "wayne",
+                    "email": "charles.baker@siriusxm.com",
+                    "phone": "2543345546"
+                },
+                "paymentInfo": {
+                    "useCardOnfile": false,
+                    "paymentType": "creditCard",
+                    "cardInfo": {
+                        "nameOnCard": "bruce wayne",
+                        "cardNumber": 4111111111111111,
+                        "expiryMonth": 3,
+                        "expiryYear": 25
+                    },
+                    "transactionId": "OAC-9a1903ed-6487-4ed3-89bd-ec7be1ad9045"
+                },
+                "streamingInfo": {
+                    "login": "charles.baker@siriusxm.com",
+                    "password": "harsh45&*JK",
+                    "firstName": "bruce",
+                    "lastName": "wayne",
+                    "emailAddress": "charles.baker@siriusxm.com"
+                }
+            }
+        },
+        "response": {
+            "status": 400,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Thu, 10 Sep 2020 19:04:44 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Connection",
+                    "value": "close"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "ADRUM_BTa=R:79|g:a85b545d-0dd6-4556-8749-e7e85e3ff656|n:siriusxm_90926817-4b84-4aa3-86cd-3d922f88ea0e; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "ADRUM_BT1=R:79|i:1541200|e:2372; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "ADRUM_BTa=R:79|g:dab38a1e-22ee-4081-8d85-6746b884ebed; Max-Age=30; Expires=Thu, 10-Sep-2020 19:05:13 GMT; Path=/"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "ADRUM_BTa=R:79|g:dab38a1e-22ee-4081-8d85-6746b884ebed|n:siriusxm_90926817-4b84-4aa3-86cd-3d922f88ea0e; Max-Age=30; Expires=Thu, 10-Sep-2020 19:05:13 GMT; Path=/"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "ADRUM_BT1=R:79|i:1541202; Max-Age=30; Expires=Thu, 10-Sep-2020 19:05:13 GMT; Path=/"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "ADRUM_BT1=R:79|i:1541202|e:4495; Max-Age=30; Expires=Thu, 10-Sep-2020 19:05:13 GMT; Path=/"
+                },
+                {
+                    "name": "Set-Cookie",
+                    "value": "ADRUM_BTs=R:79|s:f; Max-Age=30; Expires=Thu, 10-Sep-2020 19:05:13 GMT; Path=/"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://care.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "X-CDN",
+                    "value": "Incapsula"
+                },
+                {
+                    "name": "X-Iinfo",
+                    "value": "5-26694339-26694364 NNNN CT(35 36 0) RT(1599764683491 124) q(0 0 0 -1) r(4 4) U5"
+                }
+            ],
+            "cookies": [
+                {
+                    "name": "ADRUM_BTa",
+                    "value": "R:79|g:a85b545d-0dd6-4556-8749-e7e85e3ff656|n:siriusxm_90926817-4b84-4aa3-86cd-3d922f88ea0e",
+                    "path": "/",
+                    "domain": "care.siriusxm.com",
+                    "expires": "2020-09-10T19:04:43.667Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "ADRUM_BT1",
+                    "value": "R:79|i:1541200|e:2372",
+                    "path": "/",
+                    "domain": "care.siriusxm.com",
+                    "expires": "2020-09-10T19:04:43.667Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "ADRUM_BTa",
+                    "value": "R:79|g:dab38a1e-22ee-4081-8d85-6746b884ebed",
+                    "path": "/",
+                    "domain": "care.siriusxm.com",
+                    "expires": "2020-09-10T19:05:13.667Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "ADRUM_BTa",
+                    "value": "R:79|g:dab38a1e-22ee-4081-8d85-6746b884ebed|n:siriusxm_90926817-4b84-4aa3-86cd-3d922f88ea0e",
+                    "path": "/",
+                    "domain": "care.siriusxm.com",
+                    "expires": "2020-09-10T19:05:13.667Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "ADRUM_BT1",
+                    "value": "R:79|i:1541202",
+                    "path": "/",
+                    "domain": "care.siriusxm.com",
+                    "expires": "2020-09-10T19:05:13.667Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "ADRUM_BT1",
+                    "value": "R:79|i:1541202|e:4495",
+                    "path": "/",
+                    "domain": "care.siriusxm.com",
+                    "expires": "2020-09-10T19:05:13.667Z",
+                    "httpOnly": false,
+                    "secure": false
+                },
+                {
+                    "name": "ADRUM_BTs",
+                    "value": "R:79|s:f",
+                    "path": "/",
+                    "domain": "care.siriusxm.com",
+                    "expires": "2020-09-10T19:05:13.667Z",
+                    "httpOnly": false,
+                    "secure": false
+                }
+            ],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "FAILURE",
+                    "httpStatusCode": 400,
+                    "httpStatus": "BAD_REQUEST",
+                    "error": {
+                        "errorCode": "CC_FRAUD_REJECT",
+                        "errorPropKey": "error.purchase.service.creditcard.fraud.reject",
+                        "errorType": "BUSINESS"
+                    }
+                }
+            }
+        }
+    }
+]

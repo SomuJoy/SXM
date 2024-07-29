@@ -1,0 +1,31 @@
+{
+    "name": "domains-offers-ui-plan-grid",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/offers/ui-plan-grid/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/offers/ui-plan-grid/src/**/*.ts", "libs/domains/offers/ui-plan-grid/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/offers/ui-plan-grid/jest.config.js",
+                "tsConfig": "libs/domains/offers/ui-plan-grid/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/offers/ui-plan-grid/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:ui", "scope:domain-ui"]
+}

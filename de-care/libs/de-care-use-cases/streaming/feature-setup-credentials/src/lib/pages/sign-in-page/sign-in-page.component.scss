@@ -1,0 +1,14 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    @include page-content-markup(1fr);
+
+    .instructions {
+        margin-bottom: 1.5rem;
+    }
+
+    .setup-streaming {
+        margin-top: 2rem;
+    }
+}

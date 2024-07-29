@@ -1,0 +1,25 @@
+{
+    "name": "domains-utility-state-ip-location",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/utility/state-ip-location/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/domains/utility/state-ip-location"],
+            "options": {
+                "jestConfig": "libs/domains/utility/state-ip-location/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/utility/state-ip-location/src/**/*.ts", "libs/domains/utility/state-ip-location/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

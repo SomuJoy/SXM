@@ -1,0 +1,25 @@
+<ng-container>
+    <section id="mainContent">
+        <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+            <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+            <ng-container body> </ng-container>
+        </sxm-ui-step-header>
+        <!-- <section
+            *ngIf="organicPaymentViewModel?.offerInfoLegalCopy as legalCopy"
+            id="legalCopySection"
+            deCarePageFullWidthContent="fullWidthContent"
+            data-test="offerLegalCopy"
+        >
+            <div [innerHTML]="legalCopy"></div>
+        </section> -->
+        <a
+            class="button primary full-width"
+            data-test="continueButton"
+            [routerLink]="pageStepRouteConfiguration.routeUrlNext"
+            queryParamsHandling="preserve"
+            sxmUiDataClickTrack="routing"
+        >
+            {{ translateKeyPrefix + ".CONTINUE_BUTTON_TEXT" | translate }}
+        </a>
+    </section>
+</ng-container>

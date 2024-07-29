@@ -1,0 +1,24 @@
+<main>
+    <section class="grid-container">
+        <header>
+            <h2>{{ translateKeyPrefix + ".CONTACT_PREFERENCES_TITLE" | translate }}</h2>
+            <p class="lead-in instructions">
+                {{ translateKeyPrefix + ".INSTRUCTIONS" | translate }}
+            </p>
+        </header>
+        <div *ngIf="!showIframe" class="loading-container">
+            <sxm-ui-skeleton-loader-panel></sxm-ui-skeleton-loader-panel>
+            <sxm-ui-skeleton-loader-panel></sxm-ui-skeleton-loader-panel>
+            <sxm-ui-skeleton-loader-panel></sxm-ui-skeleton-loader-panel>
+            <sxm-ui-skeleton-loader-panel></sxm-ui-skeleton-loader-panel>
+            <sxm-ui-skeleton-loader-panel></sxm-ui-skeleton-loader-panel>
+            <sxm-ui-skeleton-loader-panel></sxm-ui-skeleton-loader-panel>
+        </div>
+        <div class="iframe-container" [class.visible]="showIframe">
+            <form ngNoForm [action]="url" method="POST" target="preferencesIframe" #contactPreferencesForm>
+                <input name="account_info" type="hidden" [value]="encryptedPayload" />
+            </form>
+            <iframe id="preferencesIframe" (load)="iframeLoaded()" name="preferencesIframe" width="100%" height="100%" title="Contact preferences" frameBorder="0"></iframe>
+        </div>
+    </section>
+</main>

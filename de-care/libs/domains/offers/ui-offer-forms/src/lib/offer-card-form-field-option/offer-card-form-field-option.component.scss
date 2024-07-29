@@ -1,0 +1,19 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.card-header {
+    padding: 9px 0;
+    @include bp(medium) {
+        padding-left: 10px;
+    }
+}
+
+.sub-header {
+    font-weight: calculate-font-weight("bold");
+    padding-bottom: 9px;
+}
+
+.large-headline {
+    font-size: 13px;
+    margin: 2px;
+}

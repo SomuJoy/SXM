@@ -1,0 +1,9 @@
+{
+    "DomainsIdentificationUiRadioIdAndLastnameLookupFormModule": {
+        "RadioIdAndLastnameLookupFormComponent": {
+            "LOOKUP_ERROR": "Nous n'avons pas pu trouver votre compte.",
+            "SYSTEM_ERROR": "",
+            "SUBMIT_BUTTON": "Continuer"
+        }
+    }
+}

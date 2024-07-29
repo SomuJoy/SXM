@@ -1,0 +1,48 @@
+<div [class.hidden]="needsConfirmation">
+    <div class="row no-padding" *ngIf="!hasEmailAddress">
+        <div class="column small-12">
+            <div class="input-container" [class.invalid]="controlIsInvalid(email)" [class.filled]="email.value">
+                <label for="email">{{ "oemCommon.billingAddressComponent.EMAIL" | translate }}</label>
+                <input type="email" id="email" [formControl]="email" minlength="2" maxlength="100" qatag="Email" onFocus required />
+            </div>
+            <div *ngIf="controlIsInvalid(email)" class="invalid-feedback">
+                <p>{{ "oemCommon.billingAddressComponent.ERROR_EMAIL" | translate }}</p>
+            </div>
+        </div>
+    </div>
+    <sxm-ui-address-form-fields-oem [submitted]="hasBeenSubmitted" #addressComponent></sxm-ui-address-form-fields-oem>
+    <div class="row align-center no-padding">
+        <div class="column small-12 align-left">
+            <p>{{ "oemCommon.billingAddressComponent.ADDRESS_NOTE" | translate }}</p>
+        </div>
+    </div>
+    <div class="row align-center no-padding-small">
+        <div class="column small-12">
+            <button
+                class="button primary full-width text-center align-justify"
+                data-e2e="oem.billingAddress.submit"
+                qatag="BillingAddress"
+                [class.loading]="submitting"
+                [disabled]="submitting"
+                type="submit"
+                (click)="checkAddress(addressComponent.addressForm)"
+                loading-button-trigger
+            >
+                <ng-container *ngIf="!submitting">
+                    {{ "oemCommon.billingAddressComponent.BUTTON_TEXT" | translate }}
+                </ng-container>
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="content-container" [class.hidden]="!needsConfirmation">
+    <div class="row align-center no-padding">
+        <div class="column small-12">
+            <div class="hero-sales--plan-card background-white">
+                <verify-address [data]="addressVerificationData" (editAddress)="setAddressAndContinue($event)" (editExisting)="enterNewAddress()"></verify-address>
+            </div>
+        </div>
+    </div>
+</div>

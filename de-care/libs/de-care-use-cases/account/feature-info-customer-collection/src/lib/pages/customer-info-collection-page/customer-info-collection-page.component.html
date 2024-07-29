@@ -1,0 +1,49 @@
+<section id="mainContent">
+    <section class="header">
+        <div>
+            <h1>{{ translateKeyPrefix + ".ENTER_INFO_TITLE" | translate }}</h1>
+        </div>
+    </section>
+
+    <section class="container">
+        <section class="form-container">
+            <div class="details">
+                <p class="details--msg">
+                    {{ translateKeyPrefix + ".DETAILS_PROTECTED" | translate }}
+                </p>
+
+                <p class="details--error" *ngIf="formErrors$ | async as errorCounter">
+                    <span>
+                        <svg class="icon icon-utility small">
+                            <use class="icon-x-mark-flex-stroke" xlink:href="#icon-x-mark-flex-stroke"></use>
+                        </svg>
+                    </span>
+                    {{ translateKeyPrefix + ".FIX_ERRORS" | translate: {errorCounter,pluralizedValue: errorCounter | i18nPlural: (translateKeyPrefix + '.PLURAL_MAP' | translate)} }}
+                </p>
+            </div>
+            <div></div>
+            <form [formGroup]="infoForm" (ngSubmit)="onSubmit()">
+                <sxm-ui-first-name-form-field *ngIf="fieldFlag?.firstName" formControlName="firstName"></sxm-ui-first-name-form-field>
+                <sxm-ui-last-name-form-field *ngIf="fieldFlag?.lastName" formControlName="lastName"></sxm-ui-last-name-form-field>
+                <sxm-ui-street-address-form-field *ngIf="fieldFlag?.streetAddress" formControlName="streetAddress"></sxm-ui-street-address-form-field>
+                <sxm-ui-city-form-field *ngIf="fieldFlag?.city" formControlName="city"></sxm-ui-city-form-field>
+                <sxm-ui-us-state-dropdown-form-field *ngIf="fieldFlag?.state" formControlName="state"></sxm-ui-us-state-dropdown-form-field>
+                <sxm-ui-phone-number-form-field *ngIf="fieldFlag?.phone" formControlName="phone"></sxm-ui-phone-number-form-field>
+                <sxm-ui-email-form-field *ngIf="fieldFlag?.email" formControlName="email"></sxm-ui-email-form-field>
+                <sxm-ui-postal-code-form-field *ngIf="fieldFlag?.zip" formControlName="zip"></sxm-ui-postal-code-form-field>
+                <sxm-ui-radio-id-form-field *ngIf="fieldFlag?.esn" formControlName="esn"></sxm-ui-radio-id-form-field>
+                <sxm-ui-account-number-form-field *ngIf="fieldFlag?.accountNumber" formControlName="accountNumber"></sxm-ui-account-number-form-field>
+                <sxm-ui-date-of-birth-form-field *ngIf="fieldFlag?.dateOfBirth" formControlName="dateOfBirth"></sxm-ui-date-of-birth-form-field>
+
+                <button sxm-proceed-button class="button primary full-width" type="submit" [loading]="loading$ | async">
+                    {{ translateKeyPrefix + ".SUBMIT_BUTTON" | translate }}
+                </button>
+            </form>
+            <div class="link-container">
+                <a class="text-link" href="{{ translateKeyPrefix + '.PRIVACY_POLICY_LINK_URL' | translate }}" target="_blank" data-track-click="Privacy Policy">{{
+                    translateKeyPrefix + ".PRIVACY_POLICY_LINK_TEXT" | translate
+                }}</a>
+            </div>
+        </section>
+    </section>
+</section>

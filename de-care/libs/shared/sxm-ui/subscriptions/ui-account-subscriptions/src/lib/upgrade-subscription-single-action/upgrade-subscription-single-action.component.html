@@ -1,0 +1,6 @@
+<p class="lead-in bold mb-4 title">{{ translateKeyPrefix + ".UPGRADE_TITLE" | translate: { plan: data.plan } }}</p>
+<!-- the upgrade instructions might end up being data coming in -->
+<p class="lead-in no-margin">
+    {{ translateKeyPrefix + ".UPGRADE_INSTRUCTIONS" | translate: { price: data.price } }}
+    <button class="text-link" (click)="upgradePlan.emit()" data-test="upgradeInstructionsButton">{{ translateKeyPrefix + ".UPGRADE_LINK" | translate }}</button>
+</p>

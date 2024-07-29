@@ -1,0 +1,29 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "locales": [
+            {
+                "locale": "en_US",
+                "upsellOfferInfo": {
+                    "packageUpsellOfferInfo": null,
+                    "termUpsellOfferInfo": {
+                        "title": "Choose a Streaming Platinum annual plan and get a Free Echo Dot.",
+                        "description": "Then $10.99 /mo. plus fees &amp; taxes. <strong>Offer Details</strong> below.",
+                        "upsellDeals": [
+                            {
+                                "name": "ANNUAL_DOT",
+                                "header": "<strong>+ FREE AMAZON ECHO DOT</strong>",
+                                "deviceImage": "http://cms-author.corp.siriusxm.com/content/dam/sxm-com/devices/amazon/amz-dot-gen4-transparent-bg.png"
+                            }
+                        ],
+                        "showToggleLabel": "Explore plan details",
+                        "hideToggleLabel": "Hide"
+                    },
+                    "packageAndTermUpsellOfferInfo": null
+                }
+            }
+        ]
+    }
+}

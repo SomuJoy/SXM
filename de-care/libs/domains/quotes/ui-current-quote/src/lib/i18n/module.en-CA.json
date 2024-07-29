@@ -1,0 +1,55 @@
+{
+    "DomainsQuotesUiCurrentQuoteModule": {
+        "CurrentQuoteComponent": {
+            "CURRENT_QUOTE": {
+                "HEADER": {
+                    "PROMO_PLAN": "When your trial ends, your one-time charge during your promotion period will be {{amount}} due {{startDate}}."
+                }
+            },
+            "ORDER_DETAILS": {
+                "ACCORDION_CHEVRON": {
+                    "ARIA_COLLAPSED_TEXT_TAXES_ONLY": "{{packageName}} Taxes: details",
+                    "ARIA_EXPANDED_TEXT_TAXES_ONLY": "{{packageName}} Taxes: close details"
+                },
+                "TOOLTIP": {
+                    "MUSIC_ROYALTY_FEE": "<p><strong>Music Royalty and Administrative Fee (MRF):</strong></p><p><a class=\"text-color-blue-secondary\" href=\"https://www.siriusxm.ca/about-music-royalty-and-administrative-fees-faq/\" target=\"_blank\">View MRF FAQ</a></p>"
+                },
+                "MRD_ELEGIBLE": "Multi-Radio Discount {{monthlyExpression}}",
+                "FEES_AND_TAXES": "Fees and Taxes",
+                "TAXES_ONLY": "Taxes"
+            },
+            "PACKAGES": {
+                "PREPAID": {
+                    "NAME": "Prepaid Service Gift Card"
+                }
+            },
+            "UPGRADE_DESCRIPTIONS": {
+                "PACKAGE_UPGRADE_FEE": "{{termLength}} mo. {{packageName}} Free Upgrade",
+                "APPLE_MUSIC_6_MONTHS": "6 mo. Free Apple Music"
+            },
+            "FEES_AND_TAXES_DESCRIPTIONS": {
+                "CANADIAN_MUSIC_ROYALTY_FEE": "Music Royalty and Administrative Fee",
+                "MUSIC_ROYALTY_AND_ADMINISTRATIVE_FEE": "Music Royalty and Administrative Fee",
+                "HARMONIZED_SALES_TAX_HST": "Harmonized Sales Tax (HST)",
+                "GOODS_AND_SERVICES_TAX_GST": "Goods and Services Tax (GST)",
+                "QUEBEC_SALES_TAX_QST": "Quebec Sales Tax (QST)",
+                "PROVINCIAL_SALES_TAX_PST": "Provincial Sales Tax (PST)",
+                "CANADIAN_PROCESSING_FEE": "Processing Fee",
+                "OTHER_TAX": "Other Taxes",
+                "ACTIVATION_FEES": "Activation Fee",
+                "SWAP_FEE": "Replacement Fee"
+            },
+            "NOTES": {
+                "IMPORTANT_NOTE_STUDENTS": "<span class=\"bold-text\">Important Note:</span> SiriusXM requires that you re-verify your student status near the end of your {{termlength}} {{month}} subscription in order to maintain your eligibility for our reduced rate for Premier Streaming.  <span class=\"bold-text\">If your student status cannot be verified after {{termlength}} {{month}}, service will automatically renew thereafter every month on the Premier Streaming package at then-current rates (currently {{premierFullPrice}}/month, plus fees and taxes).</span>"
+            },
+            "STUDENTS_QUOTE": {
+                "FOOTER": {
+                    "LABEL": "Plan Continuation",
+                    "STUDENTS_MCP_PLAN": "Your estimated recurring monthly subscription charge during your promotion period will be {{amount}} starting on {{startDate}}. Remember, you can cancel any time."
+                }
+            },
+            "GST": "SiriusXM Canada GST Number: 857294342",
+            "QST": "SiriusXM Canada QST Number: 1208160032"
+        }
+    }
+}

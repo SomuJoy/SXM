@@ -1,0 +1,81 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "../page.scss";
+
+:host {
+    @include page-host(1fr auto);
+    #mainContent {
+        row-gap: 24px;
+        sxm-ui-step-header {
+            ::ng-deep {
+                header {
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+    #upsellForm {
+        header {
+            font-weight: calculate-font-weight("bold");
+        }
+        section {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            gap: 8px;
+        }
+    }
+    button[sxm-proceed-button] {
+        margin: 8px 0 0 0;
+    }
+    sxm-ui-alert-pill.streaming-eligibility {
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        margin-bottom: 15px;
+        background: $vanilla;
+        @include bp(medium) {
+            margin-bottom: 20px;
+        }
+    }
+    h3 {
+        margin: 0;
+    }
+    button[sxm-proceed-button] {
+        margin: 8px 0 0 0;
+    }
+
+    .billing-field-set h3 {
+        @include get-body-copy-style();
+        color: $gray-dark;
+        font-weight: calculate-font-weight("bold");
+        @include bp(medium) {
+            font-weight: calculate-font-weight("bold");
+        }
+    }
+    section {
+        padding: 0;
+        header {
+            margin-bottom: 0px;
+        }
+    }
+    .credit-card-fields {
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .credit-card-icons-list {
+                list-style: none;
+                display: flex;
+                justify-content: space-between;
+                margin: 0;
+                width: fit-content;
+                gap: 4px;
+                padding: 0;
+                svg {
+                    width: 24px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+}

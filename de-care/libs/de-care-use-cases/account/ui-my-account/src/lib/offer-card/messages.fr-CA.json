@@ -1,0 +1,184 @@
+{
+    "OFFER_DESTINATIONS": {
+        "CHECKOUT": {
+            "ROUTER_LINK": "subscribe/checkout",
+            "URL": "",
+            "QUERY_PARAMS": [
+                {
+                    "KEY": "programCode",
+                    "VALUE": "{{programCode}}"
+                }
+            ]
+        },
+        "CHECKOUT_TARGETED": {
+            "ROUTER_LINK": "subscribe/checkout",
+            "URL": "",
+            "QUERY_PARAMS": [
+                {
+                    "KEY": "programCode",
+                    "VALUE": "{{programCode}}"
+                },
+                {
+                    "KEY": "radioId",
+                    "VALUE": "{{radioId}}"
+                },
+                {
+                    "KEY": "act",
+                    "VALUE": "{{last4DigitsOfAccountNumber}}"
+                }
+            ]
+        },
+        "CHANGE": {
+            "ROUTER_LINK": "subscription/change",
+            "URL": "",
+            "QUERY_PARAMS": [
+                {
+                    "KEY": "subscriptionId",
+                    "VALUE": "{{subscriptionId}}"
+                }
+            ]
+        },
+        "SHOP": {
+            "ROUTER_LINK": "",
+            "URL": "https://www.siriusxm.ca/shopfreeradio/fr"
+        },
+        "ADD_PVIP_RADIO": {
+            "ROUTER_LINK": "subscribe/upgrade-vip/add-second-radio",
+            "URL": "",
+            "QUERY_PARAMS": [
+                {
+                    "KEY": "subscriptionId",
+                    "VALUE": "{{subscriptionId}}"
+                }
+            ]
+        },
+        "ACTIVATE": {
+            "ROUTER_LINK": "subscribe/checkout/purchase/satellite/add-radio-router/activate-radio-init",
+            "URL": "",
+            "STATE": [
+                {
+                    "KEY": "radioId",
+                    "VALUE": "{{radioId}}"
+                }
+            ]
+        },
+        "ACTIVATE_TRIAL": {
+            "ROUTER_LINK": "",
+            "URL": "{{oacUrl}}/newradioinformation_initialView.action?searchMode=rid_search&langpref=fr"
+        }
+    },
+    "OFFER_PROFILES": {
+        "TRIAL_FOLLOWON": {
+            "TITLE": "Obtenez une radio gratuite.",
+            "SUBTITLE": "Écoutez à la maison, au bureau ou dans un autre véhicule.",
+            "LEGAL_COPY": "Un minimum d’un abonnement supplémentaire, une carte de crédit et la livraison sont requis. Voir les détails de l’offre.",
+            "LABEL": "RADIO GRATUITE"
+        },
+        "PROMO_ME_LESS_12": {
+            "TITLE": "Obtenez une radio gratuite.",
+            "SUBTITLE": "Écoutez à la maison, au bureau ou dans un autre véhicule.",
+            "LEGAL_COPY": "Un minimum d’un abonnement supplémentaire, une carte de crédit et la livraison sont requis. Voir les détails de l’offre.",
+            "LABEL": "RADIO GRATUITE"
+        },
+        "PROMO_ME_12_MORE": {
+            "TITLE": "Obtenez une radio gratuite.",
+            "SUBTITLE": "Écoutez à la maison, au bureau ou dans un autre véhicule.",
+            "LEGAL_COPY": "Un minimum d’un abonnement supplémentaire, une carte de crédit et la livraison sont requis. Voir les détails de l’offre.",
+            "LABEL": "RADIO GRATUITE"
+        },
+        "SELFPAY_ME": {
+            "TITLE": "Obtenez tous les sports en direct, les stations Pandora, toutes les chaînes, et plus encore",
+            "SUBTITLE": "lorsque vous surclassez {{ device }} au forfait Le Complet.",
+            "LEGAL_COPY": "Voir les détails de l’offre.",
+            "LABEL": "OBTENIR LE COMPLET",
+            "DEVICE_MAP": {
+                "YMM": "votre {{ identifier }}",
+                "NICKNAME": "{{ identifier }}",
+                "DEFAULT": "votre abonnement"
+            }
+        },
+        "PROMO_FP_PLATINUM": {
+            "TITLE": "Obtenez une radio gratuite.",
+            "SUBTITLE": "Écoutez à la maison, au bureau ou dans un autre véhicule.",
+            "LEGAL_COPY": "Un minimum d’un abonnement supplémentaire, une carte de crédit et la livraison sont requis. Voir les détails de l’offre.",
+            "LABEL": "RADIO GRATUITE"
+        },
+        "PVIP_NO_2ND_RADIO": {
+            "TITLE": "Vous voulez ajouter une deuxième radio à votre forfait Le Complet VIP?",
+            "SUBTITLE": "N’oubliez pas que vous bénéficiez du service pour 2 voitures et 2 connexions d’écoute en continu.",
+            "LEGAL_COPY": "Aucun frais supplémentaire.",
+            "LABEL": "AJOUTER UNE DEUXIÈME RADIO"
+        },
+        "SELFPAY_MS": {
+            "TITLE": "Obtenez 200 chaînes supplémentaires, des milliers d’émissions et de vidéos sur demande.",
+            "SUBTITLE": "lorsque vous passez au forfait Le Musical Plus.",
+            "LEGAL_COPY": "Voir les détails de l’offre.",
+            "LABEL": "S’ABONNER"
+        },
+        "PROMO_MS": {
+            "TITLE": "Obtenez 200 chaînes supplémentaires, des milliers d’émissions et de vidéos sur demande.",
+            "SUBTITLE": "lorsque vous passez au forfait Le Musical Plus.",
+            "LEGAL_COPY": "Voir les détails de l’offre.",
+            "LABEL": "S’ABONNER"
+        },
+        "SELFPAY_NST": {
+            "TITLE": "Obtenez 200 chaînes supplémentaires, des milliers d’émissions et de vidéos sur demande.",
+            "SUBTITLE": "lorsque vous passez au forfait Le Musical Plus.",
+            "LEGAL_COPY": "Voir les détails de l’offre.",
+            "LABEL": "S’ABONNER"
+        },
+        "SELFPAY_STREAMING_PLATINUM": {
+            "TITLE": "Obtenez une radio gratuite.",
+            "SUBTITLE": "Écoutez à la maison, au bureau ou dans un autre véhicule.",
+            "LEGAL_COPY": "Un minimum d’un abonnement supplémentaire, une carte de crédit et la livraison sont requis. Voir les détails de l’offre.",
+            "LABEL": "RADIO GRATUITE"
+        },
+        "SELFPAY_STREAMING_ME": {
+            "TITLE": "Obtenez une radio gratuite.",
+            "SUBTITLE": "Écoutez à la maison, au bureau ou dans un autre véhicule.",
+            "LEGAL_COPY": "Un minimum d’un abonnement supplémentaire, une carte de crédit et la livraison sont requis. Voir les détails de l’offre.",
+            "LABEL": "RADIO GRATUITE"
+        },
+        "EMPLOYEE": {
+            "TITLE": "Obtenez une radio gratuite.",
+            "SUBTITLE": "Écoutez à la maison, au bureau ou dans un autre véhicule.",
+            "LEGAL_COPY": "Un minimum d’un abonnement supplémentaire, une carte de crédit et la livraison sont requis. Voir les détails de l’offre.",
+            "LABEL": "RADIO GRATUITE"
+        },
+        "DEMO": {
+            "TITLE": "Commencez votre essai SiriusXM gratuit",
+            "SUBTITLE": "Découvrez toutes les chaînes SiriusXM, à l’intérieur comme à l’extérieur de la voiture.",
+            "LEGAL_COPY": "Voir les détails de l’offre.",
+            "LABEL": "Activer l’essai",
+            "DESTINATION": "ACTIVATE_TRIAL"
+        },
+        "INACTIVE": {
+            "TITLE": "Activez {{ device }}",
+            "SUBTITLE": "SiriusXM vous manque? Nous avons un bon forfait pour vous.",
+            "LEGAL_COPY": "",
+            "LABEL": "ACTIVER LA RADIO",
+            "DEVICE_MAP": {
+                "YMM": "la radio dans votre {{ identifier }}",
+                "NICKNAME": "la radio dans {{ identifier }}",
+                "DEFAULT": "votre radio"
+            }
+        },
+        "DEFAULT_PLATINUM": {
+            "TITLE": "Obtenez tous les sports en direct, les stations Pandora, toutes les chaînes, et plus encore",
+            "SUBTITLE": "lorsque vous surclassez {{ device }} au forfait Le Complet.",
+            "LEGAL_COPY": "Voir les détails de l’offre.",
+            "LABEL": "OBTENIR LE COMPLET",
+            "DEVICE_MAP": {
+                "YMM": "votre {{ identifier }}",
+                "NICKNAME": "{{ identifier }}",
+                "DEFAULT": "votre abonnement"
+            }
+        },
+        "DEFAULT_FREE_RADIO": {
+            "TITLE": "Obtenez une radio gratuite.",
+            "SUBTITLE": "Écoutez à la maison, au bureau ou dans un autre véhicule.",
+            "LEGAL_COPY": "Un minimum d’un abonnement supplémentaire, une carte de crédit et la livraison sont requis. Voir les détails de l’offre.",
+            "LABEL": "RADIO GRATUITE"
+        }
+    }
+}

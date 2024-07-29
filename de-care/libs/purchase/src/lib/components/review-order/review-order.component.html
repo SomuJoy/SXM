@@ -1,0 +1,74 @@
+<div class="content-container review-order">
+    <feature-toggle-provider [features]="enableQuoteSummaryFeatureToggle$ | async">
+        <ng-container *featureToggle="'enableQuoteSummary'">
+            <quote-summary
+                *ngIf="package && package.quote"
+                [isNewAccount]="reviewObject.isNewAccount"
+                [isStreamingFlow]="isStreaming"
+                [isStudentFlow]="isStudentFlow$ | async"
+                [leadOfferHasEtfAmount]="reviewObject.leadOfferHastEtfAmmount"
+                [quote]="package.quote"
+                [giftCardUsed]="giftCardUsed"
+                [isClosedRadio]="reviewObject.isClosedRadio"
+                [isCurrentSubscriptionTrial]="reviewObject.isTrial"
+                [isDataOnlyTrial]="reviewObject.isDataOnlyTrial"
+                [isClosedStreaming]="reviewObject.isClosedStreaming"
+                [expandOrderSummaryDetails]="orderSummaryDetailsShouldBeExpanded$ | async"
+                [leadOfferPackageName]="package.packageName"
+                [extraData]="{ isFlepz: true }"
+                [priceChangeMessagingType]="(priceChangeViewModel$ | async).priceChangeMessagingType"
+                [priceChangeMessagingTypeFeatureFlag]="(priceChangeViewModel$ | async).priceChangeMessagingTypeFeatureFlag"
+            >
+            </quote-summary>
+        </ng-container>
+
+        <ng-container *featureToggle="'!enableQuoteSummary'">
+            <order-summary
+                *ngIf="package && package.quote"
+                [isNewAccount]="reviewObject.isNewAccount"
+                [isStreamingFlow]="isStreaming"
+                [isStudentFlow]="isStudentFlow$ | async"
+                [quote]="package.quote"
+                [giftCardUsed]="giftCardUsed"
+                [isClosedRadio]="reviewObject.isClosedRadio"
+                [isCurrentSubscriptionTrial]="reviewObject.isTrial"
+                [isDataOnlyTrial]="reviewObject.isDataOnlyTrial"
+                [isClosedStreaming]="reviewObject.isClosedStreaming"
+                [expandOrderSummaryDetails]="orderSummaryDetailsShouldBeExpanded$ | async"
+            >
+            </order-summary>
+        </ng-container>
+    </feature-toggle-provider>
+    <div class="agreement">
+        <charge-agreement [(ngModel)]="agreementAccepted" [details]="details" #agreeMentModel="ngModel"></charge-agreement>
+    </div>
+    <div *ngIf="submitted && agreeMentModel.errors" class="invalid-feedback">
+        <p>{{ "purchase.reviewOrderComponent.ACCEPT_AGREEMENT" | translate }}</p>
+    </div>
+    <ng-container *ngIf="displayNuCaptcha">
+        <hr class="nucaptcha-hr" />
+        <strong>{{ "purchase.reviewOrderComponent.ENTER_A_CAPTCHA_TO_FINISH" | translate }}</strong>
+        <sxm-ui-nucaptcha
+            #nuCaptcha
+            [(ngModel)]="captchaAnswer"
+            [submitted]="submitted"
+            [captchaAnswerWrong]="captchaAnswerWrong$ | async"
+            (gotCaptcha)="gotCaptcha()"
+            name="captchaAnswer"
+        ></sxm-ui-nucaptcha>
+    </ng-container>
+    <button
+        (click)="completeOrder()"
+        [class.loading]="loading$ | async"
+        [class.complete-order-button-captcha]="displayNuCaptcha"
+        [disabled]="loading$ | async"
+        class="button primary text-center align-justify full-width"
+        data-test="reviewOrder.completeButton"
+        data-e2e="reviewOrder.completeButton"
+        qatag="CompleteMyOrderButton"
+        loading-button-trigger
+    >
+        <ng-container *ngIf="!(loading$ | async)">{{ "purchase.reviewOrderComponent.COMPLETE_MY_ORDER_BUTTON" | translate }}</ng-container>
+        <span></span><span></span><span></span>
+    </button>
+</div>

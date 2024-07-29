@@ -1,0 +1,75 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": [
+        {
+            "subscriptions": [
+                {
+                    "hasOACCredentials": false,
+                    "status": "Closed",
+                    "eligibilityType": "CREATE_LOGIN",
+                    "radioService": { "last4DigitsOfRadioId": "2B89", "vehicleInfo": { "model": null, "make": null, "year": null }, "maskedRadioId": "****2B89" },
+                    "plans": [],
+                    "email": "MARYKATE@TESTER.COM",
+                    "inEligibleReasonCode": null,
+                    "eligibleService": null
+                }
+            ],
+            "last4DigitsOfAccountNumber": "4763",
+            "maskedAccountNumber": "**********4763"
+        },
+        {
+            "subscriptions": [
+                {
+                    "hasOACCredentials": false,
+                    "status": "Active",
+                    "eligibilityType": "FREE_PREVIEW",
+                    "radioService": { "last4DigitsOfRadioId": "YD48", "vehicleInfo": { "model": "Optima", "make": "Kia", "year": 2013 }, "maskedRadioId": "****YD48" },
+                    "plans": [
+                        {
+                            "code": "OEM Trial - Select - 6mo - 0.00",
+                            "packageName": "SIR_AUD_PKG_NS",
+                            "termLength": "6",
+                            "endDate": "2021-11-19T00:00:00-05:00",
+                            "type": "TRIAL",
+                            "marketType": "trial:new-car",
+                            "capabilities": []
+                        }
+                    ],
+                    "email": "MARYKATE@TESTER.COM",
+                    "inEligibleReasonCode": "insufficientpackage",
+                    "eligibleService": null
+                }
+            ],
+            "last4DigitsOfAccountNumber": "5713",
+            "maskedAccountNumber": "**********5713"
+        },
+        {
+            "subscriptions": [
+                {
+                    "hasOACCredentials": true,
+                    "status": "Active",
+                    "eligibilityType": "LISTEN_NOW",
+                    "radioService": { "last4DigitsOfRadioId": "DJ89", "vehicleInfo": { "model": "Explorer", "make": "Ford", "year": 2015 }, "maskedRadioId": "****DJ89" },
+                    "plans": [
+                        {
+                            "code": "All Access - 12mo - wActv",
+                            "packageName": "SXM_SIR_AUD_ALLACCESS",
+                            "termLength": "12",
+                            "endDate": "2022-05-18T00:00:00-04:00",
+                            "type": "SELF_PAID",
+                            "marketType": "self-pay:standard",
+                            "capabilities": []
+                        }
+                    ],
+                    "email": "NLRMTESSONE@SIRIUSXM.COM",
+                    "inEligibleReasonCode": "ExistingSxir",
+                    "eligibleService": null
+                }
+            ],
+            "last4DigitsOfAccountNumber": "5467",
+            "maskedAccountNumber": "**********5467"
+        }
+    ]
+}

@@ -1,0 +1,161 @@
+<div id="your-info" data-e2e="yourInfo">
+    <h5 class="no-margin your-info-first-line modal-paragraph-headline" *ngIf="isAccount || accountInfo">
+        <ng-container *ngIf="isAccount; else yourInfoHeadLine">
+            {{ "identification.yourInfoComponent.head-line." + (radiosCount === 1 ? "radio-found" : "radios-found") | translate: (commonTranslationParams$ | async) }}
+        </ng-container>
+        <ng-template #yourInfoHeadLine>{{ "identification.yourInfoComponent.HEADLINE" | translate }}</ng-template>
+    </h5>
+
+    <div class="info-item-box flex align-justify" *ngIf="!isAccount && accountInfo">
+        <div class="info-item-box-info">
+            <p>{{ accountInfo.firstName }} {{ accountInfo.lastName }}</p>
+            <p>{{ accountInfo.email }}</p>
+            <p>{{ accountInfo.phoneNumber | PhoneNumber }}</p>
+            <p>{{ accountInfo.zipCode }}</p>
+        </div>
+        <div class="info-item-box-edit-link">
+            <a class="text-link-secondary edit-btn" (click)="fireEditYourInfo()" data-track-click="Edit">{{ "identification.yourInfoComponent.EDIT" | translate }}</a>
+        </div>
+    </div>
+    <div *ngIf="accountNotSupportedError" class="invalid-feedback">
+        <p>{{ "identification.lookupRadioIdComponent.ACCOUNT_TYPE_NOT_SUPPORTED" | translate }}</p>
+    </div>
+    <div>
+        <h5 data-test="DeviceInfoFoundHeadline" class="modal-paragraph-headline no-margin" *ngIf="!isAccount">
+            {{ "identification.yourInfoComponent.found." + (radiosCount === 1 ? "radio" : "radios") | translate: (commonTranslationParams$ | async) }}
+        </h5>
+        <p *ngIf="radiosCount > 1" class="your-info-choose-radio-to-add">
+            {{ "identification.yourInfoComponent.HEADLINE" | translate }}
+        </p>
+    </div>
+
+    <ng-template #activeRadioInfo let-accountInfo="accountInfo" let-plans="subscription.plans" let-radio="subscription.radioService">
+        <div class="info-item-box-info" data-test="ActivePlanInfo">
+            <p>
+                <ng-container [ngTemplateOutlet]="vehicleInfoTemplate" [ngTemplateOutletContext]="{ radio: radio, isSelectable: true }"> </ng-container>
+            </p>
+            <!--Removed temporarily -->
+            <!--<p *ngIf=" !isAccount && accountInfo">{{ accountInfo.firstName }} {{ accountInfo.lastName }}</p>-->
+            <ng-container *ngFor="let plan of plans">
+                <p>
+                    <ng-container *ngIf="plan?.packageName; else noPlan">
+                        <ng-container *ngIf="plan.code.includes('Trial'); else notTrial">
+                            <ng-container *ngTemplateOutlet="planName"></ng-container>
+                            {{ "identification.yourInfoComponent.TITLE" | translate }}
+                            <br />
+                        </ng-container>
+                        <ng-template #notTrial>
+                            <ng-container *ngTemplateOutlet="planName"></ng-container>
+                        </ng-template>
+                    </ng-container>
+                    <ng-template #noPlan> {{ "identification.yourInfoComponent.empty.name" | translate }} </ng-template>
+                </p>
+                <ng-template #planName>
+                    <span data-test="PackageDescription" [innerHTML]="'app.packageDescriptions.' + plan.packageName + '.name' | translate"></span>
+                </ng-template>
+            </ng-container>
+        </div>
+    </ng-template>
+
+    <ng-template #closedRadioInfo let-closedRadio="closedRadio" let-isSelectable="isSelectable">
+        <div class="info-item-box-info">
+            <p>
+                <ng-container [ngTemplateOutlet]="vehicleInfoTemplate" [ngTemplateOutletContext]="{ radio: closedRadio, isSelectable: true }"> </ng-container>
+            </p>
+            <p>{{ "identification.yourInfoComponent.NO_SERVICE" | translate }}</p>
+        </div>
+        <div class="info-item-box-edit-link" *ngIf="isSelectable">
+            <a class="text-link-secondary" (click)="fireSelectedRadio(closedRadio)">{{ "identification.yourInfoComponent.CHOOSE" | translate }}</a>
+        </div>
+    </ng-template>
+
+    <ng-template #vehicleInfoTemplate let-radio="radio">
+        <strong>
+            <span *ngIf="carInfoForRadios[radio.last4DigitsOfRadioId]; else noVehicleInfo">
+                {{ "identification.yourInfoComponent.VEHICLE" | translate: radio.vehicleInfo }}
+                ({{ "identification.yourInfoComponent.RADIO" | translate: { radioId: radio.last4DigitsOfRadioId } }})
+            </span>
+            <ng-template #noVehicleInfo>
+                <span>
+                    {{ "identification.yourInfoComponent.RADIO" | translate: { radioId: radio.last4DigitsOfRadioId } }}
+                </span>
+            </ng-template>
+        </strong>
+    </ng-template>
+    <div [ngSwitch]="radiosCount">
+        <div *ngSwitchCase="1" class="info-item-box flex align-justify">
+            <!--Closed radio-->
+            <ng-container
+                *ngIf="closedRadios && closedRadios.length === 1; else singleSubscription"
+                [ngTemplateOutlet]="closedRadioInfo"
+                [ngTemplateOutletContext]="{ closedRadio: closedRadios[0], isSelectable: true }"
+            >
+            </ng-container>
+            <!--Active radio-->
+            <ng-template #singleSubscription>
+                <ng-container
+                    [ngTemplateOutlet]="subscriptionsFiltered && subscriptionsFiltered[0].status === 'Active' ? activeRadioInfo : closedRadioInfo"
+                    [ngTemplateOutletContext]="{
+                        subscription: subscriptionsFiltered && subscriptionsFiltered[0],
+                        accountInfo: accountInfo,
+                        closedRadio: subscriptionsFiltered[0].radioService,
+                        isSelectable: false
+                    }"
+                >
+                </ng-container>
+            </ng-template>
+        </div>
+        <ng-container *ngSwitchDefault class="info-item-box flex align-justify">
+            <!--Closed radios-->
+            <div *ngFor="let closedRadio of closedRadios" class="info-item-box flex align-justify">
+                <ng-container [ngTemplateOutlet]="closedRadioInfo" [ngTemplateOutletContext]="{ closedRadio: closedRadio, isSelectable: true }"></ng-container>
+            </div>
+            <!--Active radios-->
+            <div *ngFor="let subscription of subscriptionsFiltered" class="info-item-box flex align-justify">
+                <ng-container *ngIf="!subscription.status || subscription.status === 'Active'; else ifClosedRadioTemplate">
+                    <ng-container [ngTemplateOutlet]="activeRadioInfo" [ngTemplateOutletContext]="{ subscription: subscription, accountInfo: accountInfo }"> </ng-container>
+                    <div class="info-item-box-edit-link">
+                        <a class="text-link-secondary" data-test="ChooseRadioBtn" (click)="fireSelectedRadio(subscription.radioService)">
+                            {{ "identification.yourInfoComponent.CHOOSE" | translate }}
+                        </a>
+                    </div>
+                </ng-container>
+                <ng-template #ifClosedRadioTemplate>
+                    <ng-container
+                        [ngTemplateOutlet]="closedRadioInfo"
+                        [ngTemplateOutletContext]="{
+                            closedRadio: { last4DigitsOfRadioId: subscription.radioService.last4DigitsOfRadioId, vehicleInfo: subscription.radioService.vehicleInfo },
+                            isSelectable: true
+                        }"
+                    >
+                    </ng-container>
+                </ng-template>
+            </div>
+        </ng-container>
+    </div>
+
+    <a class="text-link-secondary" href="" (click)="fireDontSeeYourRadio($event)">{{ "identification.yourInfoComponent.DONT_SEE_RADIO" | translate }}</a>
+
+    <div *ngIf="radiosCount < 1; else continueButton" class="your-info-streaming-only-box text-center">
+        <p class="modal-paragraph-headline">{{ "identification.yourInfoComponent.DONT_HAVE_RADIO" | translate }}</p>
+        <p class="no-margin">{{ "identification.yourInfoComponent.NO_PROB" | translate }}</p>
+        <a class="text-link" href="https://www.siriusxm.com/streaming">{{ "identification.yourInfoComponent.STREAM_PACKAGES" | translate }}</a>
+    </div>
+    <ng-template #continueButton>
+        <div class="row align-center no-padding">
+            <div class="column small-12 medium-12 no-padding">
+                <button
+                    data-e2e="yourInfo.continueButton"
+                    data-test="yourInfo.continueButton"
+                    class="button primary full-width"
+                    [class.loading]="loading"
+                    [disabled]="loading"
+                    (click)="fireSelectedRadio(subscriptionsFiltered && subscriptionsFiltered[0] ? subscriptionsFiltered[0].radioService : closedRadios[0])"
+                >
+                    <ng-container *ngIf="!loading">{{ "identification.yourInfoComponent.BUTTON_LABEL" | translate }} </ng-container>
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </ng-template>
+</div>

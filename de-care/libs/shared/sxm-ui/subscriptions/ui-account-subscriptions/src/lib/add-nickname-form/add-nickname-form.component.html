@@ -1,0 +1,39 @@
+<div class="grid-container">
+    <h4>{{ translateKeyPrefix + (data?.nickname ? ".EDIT_TITLE" : ".ADD_TITLE") | translate }}</h4>
+    <div class="instruction">
+        <p class="description" [id]="ariaDescribedbyTextId">{{ translateKeyPrefix + ".DESCRIPTION" | translate }}</p>
+        <p>
+            {{ data?.vehicle ? data.vehicle : (translateKeyPrefix + ".RADIO_ID" | translate: { radioId: data?.radioId }) }}
+        </p>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="handleSubmission($event)">
+        <sxm-ui-text-form-field
+            class="mb-32"
+            controlId="nickname"
+            formControlName="nickname"
+            labelText="{{ translateKeyPrefix + '.NICKNAME' | translate }}"
+            errorMsg="{{ translateKeyPrefix + '.ERROR_MESSAGE_NICKNAME' | translate }}"
+        >
+        </sxm-ui-text-form-field>
+        <button
+            class="button primary"
+            type="submit"
+            sxm-proceed-button
+            [loading]="loading"
+            sxmUiDataClickTrack="ui"
+            data-link-key="AddNicknameForm"
+            data-test="updateOrAddButton"
+        >
+            {{ translateKeyPrefix + (data?.nickname ? ".UPDATE_BUTTON" : ".ADD_BUTTON") | translate }}
+        </button>
+    </form>
+
+    <button class="button-cancel full-width" (click)="onCancel()" sxmUiDataClickTrack="ui" data-link-key="AddNicknameForm" data-test="cancelNicknameButton">
+        {{ translateKeyPrefix + ".CANCEL_BUTTON" | translate }}
+    </button>
+
+    <p class="invalid-feedback mt-12" *ngIf="error">
+        {{ translateKeyPrefix + ".ERROR_MESSAGE" | translate }}
+    </p>
+</div>

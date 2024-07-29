@@ -1,0 +1,33 @@
+<form [formGroup]="paymentForm">
+    <section class="billing-field-set">
+        <sxm-ui-first-name-form-field formControlName="firstName" data-test="BillingInfoFirstName" data-e2e="BillingInfoFirstName"></sxm-ui-first-name-form-field>
+        <sxm-ui-last-name-form-field formControlName="lastName" data-test="BillingInfoLastName" data-e2e="BillingInfoLastName"></sxm-ui-last-name-form-field>
+        <sxm-ui-phone-number-form-field formControlName="phoneNumber" data-test="BillingInfoPhoneNumber" data-e2e="BillingInfoPhoneNumber"></sxm-ui-phone-number-form-field>
+
+        <ng-container *ngIf="!isFullAddressForm; else fullAddressCanada">
+            <sxm-ui-postal-code-form-field
+                formControlName="zip"
+                [errorMsg]="(invalidZipFromLookupError$ | async) ? (translateKeyPrefix + 'INVALID_ZIP_FROM_LOOKUP_ERROR' | translate) : ''"
+            ></sxm-ui-postal-code-form-field>
+        </ng-container>
+        <ng-template #fullAddressCanada>
+            <sxm-ui-address-form-fields addressType="service" formControlName="serviceAddress" [submitted]="paymentFormSubmitted" #serviceAddress></sxm-ui-address-form-fields>
+        </ng-template>
+        <input type="hidden" formControlName="country" />
+    </section>
+    <p class="small-copy text-color-grey-dark">
+        <span [innerHTML]="translateKeyPrefix + '.DISCLAIMER_TEXT' | translate"></span>
+    </p>
+    <button type="submit" data-test="continueButton" sxm-proceed-button [loading]="paymentFormProcessing$ | async" sxmUiDataClickTrack="submit" (click)="submitPaymentInfo()">
+        {{ translateKeyPrefix + ".CONTINUE_BUTTON_TEXT" | translate }}
+    </button>
+</form>
+
+<sxm-ui-modal [closed]="true" (modalClosed)="onEditExistingAddress()" #verifyAddressModal [ariaDescribedbyTextId]="accountInfoZipFormModalAriaDescribedbyTextId">
+    <customer-verify-address
+        [ariaDescribedbyTextId]="accountInfoZipFormModalAriaDescribedbyTextId"
+        [data]="verifyAddressesDataViewModel$ | async"
+        (editAddress)="onUseAddressFromValidation($event)"
+        (editExisting)="onEditExistingAddress()"
+    ></customer-verify-address>
+</sxm-ui-modal>

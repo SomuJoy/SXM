@@ -1,0 +1,34 @@
+{
+    "nodeUrlBase": "http://dvgllvdexoac02.corp.siriusxm.com:8000",
+    "cmsUrlBase": "http://dvgllvdexoac02.corp.siriusxm.com:8000",
+    "vanity": {
+        "isActive": true,
+        "type": "cms",
+        "getFromNode": true,
+        "nodeUrl": "${nodeUrlBase}/api/cms/restful/vanity",
+        "cms": {
+            "baseUrl": "${cmsUrlBase}/sites/REST/resources/v1/sxm/webreferencesearch/${cmSite}?lookuppage=${programId}&lookuphost=http://localhost:7003/sites/${cmSite}",
+            "cmSite": "sxmb",
+            "level": null
+        }
+    },
+    "offers": {
+        "isActive": true,
+        "type": "cms",
+        "getFromNode": true,
+        "nodeUrl": "${nodeUrlBase}/api/cms/restful/offers",
+        "cms": {
+            "baseUrl": "${cmsUrlBase}/sites/REST/resources/v1/aggregates",
+            "cmSite": "SXMB",
+            "level": "?assetDepth=4"
+        }
+    },
+    "microservices": {
+        "isActive": true,
+        "type": "microservices",
+        "getFromNode": true,
+        "contentId": "plans",
+        "nodeUrl": "${nodeUrlBase}/api/ms-plan/plans",
+        "cms": null
+    }
+}

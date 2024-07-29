@@ -1,0 +1,91 @@
+<ng-container *ngIf="data">
+    <p class="main_paragraph">
+        {{
+            (isStreaming$ | async)
+                ? (translateKeyPrefix + "STREAMING_LINKED" | translate)
+                : (translateKeyPrefix + "MAIN_PARAGRAPH"
+                  | translate
+                      : {
+                            deviceInfo:
+                                data?.vehicleInfo
+                                | vehicleInfoTranslate
+                                    : {
+                                          defaultText:
+                                              translateKeyPrefix + "RADIO_ID_MASKED"
+                                              | translate
+                                                  : {
+                                                        lastFour: data?.last4DigitsOfRadioId
+                                                    },
+                                          isFrench: false
+                                      }
+                        })
+        }}
+    </p>
+    <ng-container *ngIf="data.isSelfPaid || ((isStreaming$ | async) && !(isNewStreaming$ | async)); else nonSelfPaid">
+        <ng-container *ngIf="isStreaming$ | async; else selfPaidRadio">
+            <p>
+                {{
+                    translateKeyPrefix + "SELF_PAID_STREAMING_PARAGRAPH"
+                        | translate
+                            : {
+                                  monthlyPrice: data.pricePerMonth | sxmCurrency: lang,
+                                  nextPaymentDate: data.paymentStartDate | sxmDate: lang,
+                                  currentPackageName: ("app.packageDescriptions." + (selectedStreamingAccount$ | async).packageName | translate).name
+                              }
+                }}
+                <span [innerHTML]="translateKeyPrefix + 'STREAMING_PARAGRAPH_HTML' | translate"></span>
+            </p>
+        </ng-container>
+
+        <ng-template #selfPaidRadio>
+            <p>
+                {{
+                    translateKeyPrefix + "SELF_PAID_RADIO_PARAGRAPH"
+                        | translate
+                            : {
+                                  monthlyPrice: data.pricePerMonth | sxmCurrency: lang,
+                                  nextPaymentDate: data.paymentStartDate | sxmDate: lang,
+                                  currentPackageName: ("app.packageDescriptions." + data.packageName | translate).name
+                              }
+                }}
+                <span [innerHTML]="translateKeyPrefix + 'RADIO_PARAGRAPH_HTML' | translate"></span>
+            </p>
+        </ng-template>
+    </ng-container>
+    <ng-template #nonSelfPaid>
+        <ng-container *ngIf="isNewStreaming$ | async; else nonSelfPaidRadio">
+            <p>
+                {{
+                    translateKeyPrefix + "NON_SELF_PAID_STREAMING_PARAGRAPH"
+                        | translate
+                            : {
+                                  monthlyPrice: data.pricePerMonth | sxmCurrency: lang,
+                                  nextPaymentDate: data.paymentStartDate | sxmDate: lang
+                              }
+                }}
+                <span [innerHTML]="translateKeyPrefix + 'STREAMING_PARAGRAPH_HTML' | translate"></span>
+            </p>
+        </ng-container>
+        <ng-template #nonSelfPaidRadio>
+            <p>
+                {{
+                    translateKeyPrefix + "NON_SELF_PAID_RADIO_PARAGRAPH"
+                        | translate
+                            : {
+                                  monthlyPrice: data.pricePerMonth | sxmCurrency: lang,
+                                  nextPaymentDate: data.paymentStartDate | sxmDate: lang
+                              }
+                }}
+                <span [innerHTML]="translateKeyPrefix + 'RADIO_PARAGRAPH_HTML' | translate"></span>
+            </p>
+        </ng-template>
+    </ng-template>
+    <sxm-ui-standalone-line-item
+        *ngIf="data.hasBalance"
+        [lineItem]="{
+            amount: data.balance | sxmCurrency: lang,
+            label: translateKeyPrefix + 'CREDIT_ON_ACCOUNT' | translate,
+            tooltip: translateKeyPrefix + 'TOOLTIP' | translate
+        }"
+    ></sxm-ui-standalone-line-item>
+</ng-container>

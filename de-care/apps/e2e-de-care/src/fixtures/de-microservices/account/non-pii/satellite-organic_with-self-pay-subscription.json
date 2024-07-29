@@ -1,0 +1,68 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "JOHN",
+            "accountProfile": { "accountRegistered": false },
+            "accountState": { "isInPreTrial": false },
+            "serviceAddress": { "state": "NY", "country": "US" },
+            "subscriptions": [
+                {
+                    "id": "10000206211",
+                    "plans": [
+                        {
+                            "code": "Promo - Select - 6mo - 29.94 (4.99FOR6) - WBFB",
+                            "packageName": "SXM_SIR_AUD_EVT",
+                            "termLength": 6,
+                            "startDate": "2021-11-29T00:00:00-05:00",
+                            "endDate": "2022-06-01T00:00:00-04:00",
+                            "nextCycleOn": null,
+                            "marketType": "self-pay:promo",
+                            "type": "PROMO",
+                            "capabilities": ["IPAUD", "AUD"],
+                            "price": 29.94,
+                            "isBasePlan": true,
+                            "dataCapable": false
+                        }
+                    ],
+                    "followonPlans": [
+                        {
+                            "code": "Select - 1mo - wActv",
+                            "packageName": "SXM_SIR_AUD_EVT",
+                            "termLength": 1,
+                            "startDate": "2022-06-01T00:00:00-04:00",
+                            "endDate": null,
+                            "nextCycleOn": null,
+                            "marketType": "self-pay:standard",
+                            "type": "SELF_PAID",
+                            "capabilities": ["IPAUD", "AUD"],
+                            "price": 17.99,
+                            "isBasePlan": true,
+                            "dataCapable": false
+                        }
+                    ],
+                    "radioService": {
+                        "id": "10000205187",
+                        "last4DigitsOfRadioId": "000K",
+                        "devicePromoCode": "1113",
+                        "vehicleInfo": { "year": null, "make": null, "model": null },
+                        "is360LCapable": false
+                    },
+                    "streamingService": { "id": "10000207235", "maskedUserName": "xj5******@siriusxm.com", "status": "Active", "randomCredentials": false },
+                    "status": "Active",
+                    "devicePromoCode": "FALSE",
+                    "isPrimary": true
+                }
+            ],
+            "billingSummary": { "creditCard": { "last4Digits": "1111", "type": "VISA", "status": "ACTIVE" }, "isPaymentTypeInvoice": false },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true,
+            "isAccountIdentifiedUsingFLEPZOrVIN": false
+        },
+        "marketingId": "GC21000K",
+        "marketingAcctId": "3907",
+        "email": null
+    }
+}

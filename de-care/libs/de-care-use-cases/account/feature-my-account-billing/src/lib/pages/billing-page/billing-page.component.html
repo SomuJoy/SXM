@@ -1,0 +1,197 @@
+<ng-container *ngrxLet="billingVM$ as vm">
+    <main>
+        <section class="billing-cards-info-section">
+            <header>
+                <h2>{{ translateKeyPrefix + ".BILLING_SUMMARY_TITLE" | translate }}</h2>
+            </header>
+            <div *ngFor="let card of vm.billingCards">
+                <sxm-ui-my-account-card class="no-icon" data-test="billingTrialerNoPaymentDue">
+                    <ng-container body [ngSwitch]="card.type">
+                        <ng-container *ngSwitchCase="'BILLING_WITH_MAKE_PAYMENT'">
+                            <sxm-ui-billing-with-make-payment
+                                class="button-right"
+                                [showWarning]="card.data?.isPastDue"
+                                [data]="card.data"
+                                (makePayment)="onMakePayment()"
+                                data-test="billingMakePayment"
+                            ></sxm-ui-billing-with-make-payment>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'BILLING_WITH_AUTOMATED_PAYMENT'">
+                            <sxm-ui-billing-with-automated-payment
+                                [showWarning]="card.data?.expireDate"
+                                [allowPaymentUpdate]="card.data?.expireDate"
+                                [data]="card.data"
+                                data-test="billingAutomatedPayment"
+                            ></sxm-ui-billing-with-automated-payment>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'BILLING_WITH_NO_PAYMENT_DUE'">
+                            <sxm-ui-billing-with-no-payment-due [data]="card.data" data-test="billingNoPaymentDue"></sxm-ui-billing-with-no-payment-due>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'BILLING_WITH_NO_PAYMENT_DUE_AUTOMATED'">
+                            <sxm-ui-billing-with-no-payment-due-automated
+                                [data]="card.data"
+                                data-test="billingNoPaymentDueAutomated"
+                            ></sxm-ui-billing-with-no-payment-due-automated>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'BILLING_WITH_TRIALER_NO_PAYMENT_DUE_WITH_FOLLOWON'">
+                            <sxm-ui-billing-with-trialer-no-payment-due-with-followon
+                                data-test="billingTrialerNoPayemntDueWithFollowon"
+                            ></sxm-ui-billing-with-trialer-no-payment-due-with-followon>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'BILLING_WITH_TRIALER_NO_PAYMENT_DUE'">
+                            <sxm-ui-billing-with-trialer-no-payment-due
+                                [data]="card.data"
+                                data-test="billingTrialerNoPayemntDueWithFollowon"
+                            ></sxm-ui-billing-with-trialer-no-payment-due>
+                        </ng-container>
+                    </ng-container>
+
+                    <ng-container footer *ngIf="card.footer as footer">
+                        <my-account-inner-strip>
+                            <sxm-ui-billing-footer [data]="card.data"></sxm-ui-billing-footer>
+                        </my-account-inner-strip>
+                    </ng-container>
+                </sxm-ui-my-account-card>
+            </div>
+            <ng-container>
+                <p>
+                    {{ translateKeyPrefix + ".BILLING_REDEEM_PREPAID_GIFTCARD_TEXT" | translate }}
+	            	<a class="text-link" (click)="onRedeemPrepaidOrGiftCard()">
+	                     {{ translateKeyPrefix + ".BILLING_REDEEM_PREPAID_GIFTCARD_LINK_TITLE" | translate }}
+	                 </a>
+	            </p>
+            </ng-container>
+        </section>
+        <section class="payment-info-section">
+            <header>
+                <h2>{{ translateKeyPrefix + ".PAYMENT_INFO_TITLE" | translate }}</h2>
+            </header>
+            <sxm-ui-my-account-card class="offset-top-padding">
+                <ng-container body>
+                    <div class="card-content">
+                        <sxm-ui-payment-method-action
+                            [paymentMethod]="
+                                vm?.paymentMethod?.type === 'creditCard' ? vm?.paymentMethod : { type: (translateKeyPrefix + '.PAYMENT_METHOD_INVOICE' | translate) }
+                            "
+                            (editPaymentMethod)="onEditPaymentMethod({ accountNo: vm?.accountNumber })"
+                        ></sxm-ui-payment-method-action>
+                        <hr />
+                        <sxm-ui-billing-address-action [address]="vm?.billingAddress" (editBillingAddress)="onEditBillingAddress()"></sxm-ui-billing-address-action>
+                        <ng-container *ngIf="vm?.eBill?.showOption && vm?.eBill?.hasEBill">
+                            <hr />
+                            <sxm-ui-ebill-actions [email]="vm?.accountEmail" [dropdownListData]="eBillDropdownOptions$ | async"></sxm-ui-ebill-actions>
+                        </ng-container>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="vm?.eBill?.showOption && !vm?.eBill?.hasEBill" footer>
+                    <my-account-inner-strip>
+                        <sxm-ui-ebill-signup-single-action (signUpEBill)="onSignUpEBill()"></sxm-ui-ebill-signup-single-action>
+                    </my-account-inner-strip>
+                </ng-container>
+            </sxm-ui-my-account-card>
+        </section>
+
+        <section class="billing-summary-main-section">
+            <header>
+                <h2>{{ translateKeyPrefix + ".BILLING_PAYMENTS_TITLE" | translate }}</h2>
+            </header>
+            <sxm-ui-my-account-card class="offset-top-padding">
+                <ng-container body>
+                    <div class="billing-payment-history-section" [class.filter-hidden]="!filterState.showFilters" (transitionend)="filterTransitionEnd($event)">
+                        <nav role="tablist">
+                            <span
+                                role="tab"
+                                [class.active]="activeTable === 'BILLING'"
+                                [attr.aria-selected]="activeTable === 'BILLING'"
+                                tabindex="0"
+                                sxmUiDataClickTrack="ui"
+                                data-link-key="BillingAndPayment"
+                                data-test="viewBillingHistoryTab"
+                                (click)="activeTable = 'BILLING'"
+                                ><span class="short-title">{{ translateKeyPrefix + ".BILLING_HISTORY_LINK_LABEL_SHORT" | translate }}</span
+                                ><span class="medium-title">{{ translateKeyPrefix + ".BILLING_HISTORY_LINK_LABEL_MEDIUM" | translate }}</span
+                                ><span class="long-title">{{ translateKeyPrefix + ".BILLING_HISTORY_LINK_LABEL_LONG" | translate }}</span></span
+                            >
+                            <span
+                                role="tab"
+                                [class.active]="activeTable === 'PAYMENT'"
+                                [attr.aria-selected]="activeTable === 'PAYMENT'"
+                                [attr.aria-label]="translateKeyPrefix + '.PAYMENT_HISTORY_LINK_LABEL' | translate"
+                                tabindex="0"
+                                sxmUiDataClickTrack="ui"
+                                data-link-key="BillingAndPayment"
+                                data-test="viewPaymentHistoryTab"
+                                (click)="activeTable = 'PAYMENT'"
+                                ><span class="short-title">{{ translateKeyPrefix + ".PAYMENT_HISTORY_LINK_LABEL_SHORT" | translate }}</span
+                                ><span class="medium-title">{{ translateKeyPrefix + ".PAYMENT_HISTORY_LINK_LABEL_MEDIUM" | translate }}</span
+                                ><span class="long-title">{{ translateKeyPrefix + ".PAYMENT_HISTORY_LINK_LABEL_LONG" | translate }}</span></span
+                            >
+                        </nav>
+                        <ng-container *ngrxLet="allOptions$ as allOptions">
+                            <form
+                                id="filterForm"
+                                [formGroup]="form"
+                                *ngIf="allOptions.allYears?.length > 0 && allOptions.allDevices?.length > 0"
+                                [class.overflow-hidden]="filterState.overflowHidden"
+                                [class.visibility-hidden]="filterState.visibilityHidden"
+                            >
+                                <sxm-ui-dropdown
+                                    *ngIf="activeTable === 'BILLING'"
+                                    class="dropdown"
+                                    tabindex="0"
+                                    [passedValue]="allOptions.allDevices"
+                                    key="key"
+                                    text="label"
+                                    [filterSelected]="true"
+                                    [labelText]="translateKeyPrefix + '.RADIO_DEVICE_LABEL' | translate"
+                                    formControlName="device"
+                                ></sxm-ui-dropdown>
+                                <sxm-ui-dropdown
+                                    class="dropdown"
+                                    tabindex="0"
+                                    [passedValue]="allOptions.allYears"
+                                    key="key"
+                                    text="label"
+                                    [filterSelected]="true"
+                                    [labelText]="translateKeyPrefix + '.DATE_LABEL' | translate"
+                                    formControlName="date"
+                                ></sxm-ui-dropdown>
+                            </form>
+                        </ng-container>
+                        <button
+                            class="filter-toggle"
+                            (click)="filterToggle()"
+                            aria-controls="filterForm"
+                            [attr.aria-expanded]="filterState.showFilters"
+                            [attr.aria-label]="translateKeyPrefix + (filterState.showFilters ? '.FILTER_BUTTON_LABEL_HIDE' : '.FILTER_BUTTON_LABEL_SHOW') | translate"
+                        >
+                            {{ translateKeyPrefix + (filterState.showFilters ? ".FILTER_BUTTON_LABEL_HIDE" : ".FILTER_BUTTON_LABEL_SHOW") | translate
+                            }}<mat-icon svgIcon="dropdown-arrow-small"></mat-icon>
+                        </button>
+                        <my-account-billing-history [style.display]="activeTable === 'BILLING' ? 'block' : 'none'"></my-account-billing-history>
+                        <my-account-payment-history [style.display]="activeTable === 'PAYMENT' ? 'block' : 'none'"></my-account-payment-history>
+                    </div>
+                </ng-container>
+            </sxm-ui-my-account-card>
+        </section>
+    </main>
+    <router-outlet name="modal"></router-outlet>
+    <sxm-ui-modal
+        #BillingEbillSignUpModal
+        [ariaDescribedbyTextId]="billingPageModalAriaDescribedbyTextId"
+        [closed]="true"
+        [title]="translateKeyPrefix + '.BILLING_EBILL_MODAL_TITLE' | translate"
+        [titlePresent]="true"
+        (modalClosed)="closeEbillSignupModal()"
+    >
+        <sxm-ui-billing-ebill-sign-up
+            #BillingEbillSignUp
+            [ariaDescribedbyTextId]="billingPageModalAriaDescribedbyTextId"
+            [email]="vm?.accountEmail"
+            [loading]="billingEbillSignUpLoading"
+            [signUpEBillServerError]="signUpEBillServerError"
+            (signUpEmailId)="onSignUpEmailId($event)"
+            (signupCancel)="closeEbillSignupModal()"
+        ></sxm-ui-billing-ebill-sign-up>
+    </sxm-ui-modal>
+</ng-container>

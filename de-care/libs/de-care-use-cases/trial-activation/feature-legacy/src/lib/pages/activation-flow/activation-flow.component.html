@@ -1,0 +1,61 @@
+<ng-container *ngIf="vm$ | async as vm">
+    <sxm-ui-hero [heroData]="vm.salesHeroData" data-e2e="trialActivation.hero" [class]="vm.salesHeroData.classes"></sxm-ui-hero>
+
+    <lead-offer-details
+        *ngIf="offer"
+        [offer]="offer"
+        [excludePriceAndTermDisplay]="true"
+        [offerDescriptionData]="vm.offerDescriptionData"
+        [isLegacyMode]="false"
+    ></lead-offer-details>
+
+    <main class="background-offwhite">
+        <div class="content-container">
+            <div class="row align-center no-padding-small">
+                <div class="column medium-2 no-padding background-white"></div>
+                <div class="column small-12 medium-6 no-padding-small background-white">
+                    <div class="trial-accordion-container background-white">
+                        <sxm-ui-accordion-stepper #stepper *ngIf="prospectData$ | async as prospectData">
+                            <sxm-ui-accordion-step
+                                [label]="'trialActivation.activationFlowComponent.STEP_PAGE_TITLES.VERIFY_DEVICE_STEP' | translate"
+                                [editButtonLabel]="'trialActivation.activationFlowComponent.STEP_EDIT_LABEL' | translate"
+                                (editClicked)="onEditIdentificationStep()"
+                            >
+                                <identification-step
+                                    [isOfferNotAvailable]="isOfferNotAvailable"
+                                    [programCode]="programCode"
+                                    [prospectData]="prospectData"
+                                    (radioSelected)="onRadioSelected($event); stepper.next()"
+                                    (loginError)="redirectToErrorPage()"
+                                ></identification-step>
+                                <ng-template #inactiveContent>
+                                    <your-device-info [data]="yourDeviceInfo"></your-device-info>
+                                </ng-template>
+                            </sxm-ui-accordion-step>
+                            <sxm-ui-accordion-step [label]="'trialActivation.activationFlowComponent.STEP_PAGE_TITLES.ENTER_YOUR_INFO_STEP' | translate">
+                                <new-account-form-step
+                                    *ngIf="isNewAccount; else accountFormStep"
+                                    [prospectData]="prospectData"
+                                    [country]="country"
+                                    [lang]="lang"
+                                    (submitNewAccount)="onNewAccountFormSubmit($event)"
+                                ></new-account-form-step>
+                                <ng-template #accountFormStep>
+                                    <account-form-step
+                                        [country]="country"
+                                        (accountFormSubmit)="onAccountFormSubmit($event)"
+                                        [username]="prospectData.username"
+                                        [isLoading]="isLoading"
+                                    >
+                                    </account-form-step>
+                                </ng-template>
+                            </sxm-ui-accordion-step>
+                        </sxm-ui-accordion-stepper>
+                    </div>
+                </div>
+                <div class="column medium-2 no-padding background-white"></div>
+            </div>
+        </div>
+    </main>
+    <sxm-ui-legal-copy [legalCopy]="vm.legalCopyData" data-e2e="trialActivation.legalCopy"></sxm-ui-legal-copy>
+</ng-container>

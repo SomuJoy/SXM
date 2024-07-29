@@ -1,0 +1,47 @@
+<div *ngFor="let step of accordionSteps; let i = index" class="accordion-item">
+    <div class="accordion-item-title">
+        <p *ngIf="showStepHeader && (stepNumber || 0) === i" class="step-header">
+            {{ translateKey + "STEP_OF" | translate: { stepNumber: i + 1, totalSteps: accordionSteps.length } }}
+        </p>
+        <div class="flex align-justify">
+            <span
+                data-e2e="AccordionStepper.Label"
+                id="{{ step.id }}-trigger"
+                class="component--accordion-title text-left"
+                data-accordion-trigger
+                [attr.data-group]="dataGroup"
+                [class.active]="selected === step"
+                [class.visited]="selectedIndex > i"
+                [attr.data-open]="step.id"
+            >
+                {{ (!showStepHeader && (stepNumber || 0) !== i ? i + 1 + ". " : "") + step.label }}
+            </span>
+            <button
+                *ngIf="step.editButtonLabel && selectedIndex > i"
+                (click)="step.editClicked.emit(step); selectedIndex = i"
+                class="edit-btn text-link no-underline"
+                data-track-click="Edit"
+                data-e2e="AccordionStepper.EditButton"
+                [attr.aria-expanded]="selected === step"
+            >
+                {{ step.editButtonLabel }}
+            </button>
+        </div>
+    </div>
+    <div
+        *ngIf="selected === step"
+        class="component--accordion-content"
+        [class.active]="selected === step"
+        id="{{ step.id }}"
+        data-e2e="AccordionStepper.Content"
+    >
+        <div class="accordion-content-container no-padding">
+            <ng-container [ngTemplateOutlet]="selected.content"></ng-container>
+        </div>
+    </div>
+    <div *ngIf="step.inactiveContent && selected !== step && selectedIndex > i" class="component--accordion-content active" id="{{ step.id }}-inactive">
+        <div class="accordion-content-container no-padding">
+            <ng-container [ngTemplateOutlet]="step.inactiveContent"></ng-container>
+        </div>
+    </div>
+</div>

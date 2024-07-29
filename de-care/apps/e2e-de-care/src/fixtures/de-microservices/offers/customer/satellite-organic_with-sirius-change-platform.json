@@ -1,0 +1,49 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "offers": [
+            {
+                "planCode": "All Access - 1mo - wActv|Promo $4.99/mo All Access for 12mos - (WEB)",
+                "packageName": "SIR_AUD_EVT",
+                "packageUpgrade": "SIR_AUD_ALLACCESS",
+                "promoCode": "WBGA",
+                "termLength": 12,
+                "type": "PROMO_MCP",
+                "marketType": "self-pay:promo",
+                "price": 4.99,
+                "pricePerMonth": 4.99,
+                "retailPrice": 17.99,
+                "packageUpgradePrice": 22.99,
+                "msrpPrice": 17.99,
+                "processingFee": null,
+                "supportedServices": ["ESN", "SIR", "UNIVERSAL_LOGIN"],
+                "deal": null,
+                "priceChangeMessagingType": "",
+                "planEndDate": null,
+                "minimumFollowOnTerm": 0,
+                "order": null,
+                "bundledSavingPrice": null,
+                "bundleSubPackageNames": null,
+                "parentPackageName": "",
+                "fallbackReason": "NONE",
+                "capability": ["AUD", "IPAUD"],
+                "mrdEligible": false,
+                "invoiceEligible": false,
+                "advantage": false,
+                "student": false,
+                "fallback": true,
+                "streaming": false,
+                "upgradeOffer": false,
+                "bestPackage": false,
+                "leadOffer": false,
+                "dataCapable": false,
+                "bundled": null
+            }
+        ],
+        "presentment": null,
+        "digitalSegment": null,
+        "presentmentTestCell": null
+    }
+}

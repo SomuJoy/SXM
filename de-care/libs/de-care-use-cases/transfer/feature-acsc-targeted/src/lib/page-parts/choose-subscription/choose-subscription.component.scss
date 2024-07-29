@@ -1,0 +1,54 @@
+@import "sxm.phoenix.imports";
+
+.mb-32 {
+    margin-bottom: 32px;
+}
+
+.mb-24 {
+    margin-bottom: 24px;
+}
+
+.mb-16 {
+    margin-bottom: 16px;
+}
+
+.mb-12 {
+    margin-bottom: 12px;
+}
+
+.mb-8 {
+    margin-bottom: 8px;
+}
+
+.content-section {
+    margin-top: -16px;
+    .compare-packages {
+        text-decoration: underline;
+        color: $blue-secondary;
+        font-size: 14px;
+    }
+    .new-car-badge span {
+        color: $gray-charcoal;
+    }
+    .offers-list {
+        & > div:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+    .button.primary {
+        @include bp(medium) {
+            margin-top: 48px;
+        }
+    }
+    .back-button {
+        text-align: center;
+        margin-top: 16px;
+        button {
+            @include font-size(12px);
+            font-weight: calculate-font-weight("bold");
+            text-transform: uppercase;
+            color: $blue;
+            letter-spacing: 1.7px;
+        }
+    }
+}

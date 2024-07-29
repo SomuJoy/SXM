@@ -1,0 +1,46 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "locales": [
+            {
+                "locale": "en_US",
+                "offerInfos": [
+                    {
+                        "planCode": "Select - 1mo - wActv|Promo $4.99/mo Select for 12mos",
+                        "salesHero": { "title": "Get SiriusXM for 12 months for $4.99 per month", "subTitle": null, "presentation": null },
+                        "offerDescription": {
+                            "priceAndTermDescTitle": "<span data-duration=\"\">12 months</span> for <span data-price=\"\">$4.99/mo</span>",
+                            "processingFeeDisclaimer": "Then $17.99/mo.<br />\r\nSee <strong>Offer Details</strong> below.",
+                            "packageName": "Sirius Music & Entertainment",
+                            "listeningOptions": ["Satellite", "Streaming"],
+                            "longDescription": null,
+                            "highlightsTitle": "<strong>Sirius Music & Entertainment</strong>&nbsp;<strong>Includes:</strong>",
+                            "highlightsText": [
+                                "<b>400+ channels, </b>including 155+ in your car, plus even more to stream on your devices",
+                                "<b>Ad-free music</b> for every genre & decade plus artist-created channels",
+                                "<b>Original talk,</b> podcasts, exclusive comedy & news from every angle",
+                                "<b>NFL play-by-play,</b> NASCAR®, plus the biggest names in sports talk",
+                                "<b>2 Howard Stern channels,</b> including video",
+                                "<b>SiriusXM video library</b> of in-studio shows & performances"
+                            ],
+                            "footer": "Listen &amp; watch your favorites in all your favorite places&mdash;in your car, on your phone, or at home for $4.99 per month for 12 months. That is 72% off the regular monthly price of $17.99.",
+                            "packageFeatures": [{ "packageName": "Sirius Music & Entertainment", "features": [] }],
+                            "showToggleLabel": "Explore plan details",
+                            "hideToggleLabel": "Hide",
+                            "recapDescription": null,
+                            "recapLongDescription": null
+                        },
+                        "deals": null,
+                        "addonHeaderOverride": null,
+                        "offerDetails": "<p><strong>OFFER DETAILS: </strong>Activate a Music & Entertainment subscription and pay $4.99/month for your first 12 months, plus get free activation (a $15 savings). Fees and taxes apply. A credit card is required on this offer. <strong>Service will automatically renew</strong> thereafter every month and you will be charged at then-current rates (currently, $17.99/month). <strong>Please see our <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\">Customer Agreement</a> at www.siriusxm.com for complete terms and how to cancel, which includes using our online chat feature or calling us at 1-866-635-2349.</strong> All fees, content and features are subject to change. This offer cannot be combined with any other and may be modified or terminated at any time. Offer good only on currently inactive radios. Channel lineup varies by package.</p>\r\n",
+                        "presentation": { "theme": "Theme2", "style": "Presentation1" },
+                        "numberOfBullets": null,
+                        "paymentInterstitialBullets": null
+                    }
+                ]
+            }
+        ]
+    }
+}

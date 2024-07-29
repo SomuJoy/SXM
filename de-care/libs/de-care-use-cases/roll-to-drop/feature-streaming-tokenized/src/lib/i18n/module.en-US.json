@@ -1,0 +1,46 @@
+{
+    "deCareUseCasesRollToDropFeatureStreamingTokenized": {
+        "confirmationPageComponent": {
+            "HERO": {
+                "TITLE": "Thanks for subscribing."
+            },
+            "IMPORTANT_INFO": {
+                "LEGAL_COPY": "Important information about your subscription:"
+            },
+            "STREAMING_PLAYER_LINK": "?creative_id=NA_NA_PL-EM-home-home-home-CONVERSION-COMCONFIRM-OEM-OEM-20211207-DECOM&cp_7=OEM&cp_8=CONVERSION&cp_9=COMCONFIRM"
+        },
+        "subscribePageComponent": {
+            "CREATE_YOUR_ACCOUNT_STEP": {
+                "HEADER": "Create your account",
+                "COPY": "This will be your login to stream and manage your account.",
+                "EMAIL/USERNAME": "Email/Username:",
+                "FORM": {
+                    "PASSWORD": {
+                        "LABEL": "Password",
+                        "ERRORS": {
+                            "REQUIRED": "Enter a password.",
+                            "LENGTH": "Your password must be {{ min }} to {{ max }} characters long.",
+                            "POLICY": "Your password must contain at least one character from at least 3 different groups, as explained in our password policy.",
+                            "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}",
+                            "GENERIC": "We're sorry, your new password does not comply with our policy. Please try again."
+                        }
+                    },
+                    "PLURAL_MAP": {
+                        "WORD": {
+                            "=1": "word",
+                            "other": "words"
+                        }
+                    }
+                },
+                "STREAMING_LINK": "https://www.siriusxm.com/trial-eligibility?programcode=SA3MO",
+                "LINK_TITLE": "Want a plan that includes satellite radio?",
+                "LINK_TEXT": "Get SiriusXM in your car + streaming"
+            },
+            "REVIEW_YOUR_ORDER_STEP": {
+                "HEADER": "Review and complete your order"
+            },
+            "EDIT_BUTTON_LABEL": "Edit",
+            "SUBMIT_ORDER_BUTTON": "Complete My Order"
+        }
+    }
+}

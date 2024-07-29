@@ -1,0 +1,165 @@
+{
+    "offers": {
+        "betterPricingComponent": {
+            "DESCRIPTION": "Good news. You qualify for a special offer on this plan.",
+            "BETTER_OFFER_DESCRIPTION": "Looks like you're not eligible for the Free 6-month Trial, but here's another great offer.",
+            "NEW_PRICE": "Get your first {{newTerm}} {{monthsPluralized}} for {{newPrice}}",
+            "NEW_PRICE_MCP": "Get your first {{newTerm}} {{monthsPluralized}} for {{newPrice}}/mo",
+            "ORIGINAL_PRICE": "Reg. {{originalPrice}}/mo Plus fees",
+            "DETAILS": "See offer details below"
+        },
+        "differentPlatformComponent": {
+            "TITLE": "Here's what we found",
+            "NOTIFICATION_PREFIX": "The",
+            "NOTIFICATION_1": " plan you chose is compatible with your radio, but the channel lineup is a little different.",
+            "NOTIFICATION_2": " Plans across different radio types may vary in content. Your car is equipped with",
+            "NOTIFICATION_3": "  radio. Look over what that means for you.",
+            "BUTTON": "Accept &amp; Continue",
+            "EMPTY_PACKAGE_NAME": "No Active Service",
+            "EXPIRATION": "Expires:",
+            "CLOSED": "Closed",
+            "EXPIRES": "Expires",
+            "VEHICLE": "{{year}} {{make}} {{model}}",
+            "TRIAL": "Trial",
+            "SIRIUS": {
+                "TITLE": "Looks like your Sirius radio has a different channel lineup.",
+                "LOADER_MSG_TOP": "Retrieving your new",
+                "LOADER_MSG_BOTTOM": "plan details",
+                "RADIO_INFO": "Your car radio info:",
+                "SUBSCRIPTION": "Subscription",
+                "NEW_PACKAGE": "YOUR NEW PLAN",
+                "EXCLUDES": "The Music & Entertainment Plan channel lineup compatible with your Sirius radio varies slightly from what's included with other radio models. Here's what's different:",
+                "ACCEPT": "ACCEPT & CONTINUE"
+            }
+        },
+        "offerDescriptionComponent": {
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "month",
+                    "other": "months"
+                }
+            },
+            "TERM_AND_PRICE": "<span class=\"offer-price text-color-raspberry\">{{ termLength }} {{ monthsPluralized }}</span><span class=\"standard-copy bold\"> for </span><span class=\"offer-price text-color-raspberry\">{{ pricePerMonth }}</span><span class=\"standard-copy\">/mo</span>",
+            "TERM_AND_PRICE_MCP": "<span class=\"offer-price text-color-raspberry\">{{ termLength }} {{ monthsPluralized }}</span><span class=\"standard-copy bold\"> for </span><span class=\"offer-price text-color-raspberry\">{{ pricePerMonth }}</span><span class=\"standard-copy\">/mo</span>",
+            "FULL_TERM_PRICE": "<span class=\"offer-price text-color-raspberry\">{{ termLength }} {{ monthsPluralized }}</span><span class=\"standard-copy bold\"> for </span><span class=\"offer-price text-color-raspberry\">{{ price }}</span>",
+            "FULL_PRICE": "{{ pricePerMonth }}<span class=\"standard-copy\">/mo</span>",
+            "TERM_AND_PRICE_FREE": "<span class=\"offer-price text-color-raspberry text-capitalize\">{{ termLength }} {{ monthsPluralized }} free </span>",
+            "SEE_OFFER_BELOW": "See <strong>Offer Details</strong> below.",
+            "SEE_OFFER_BELOW_PROMO": "Then ${{ retailPrice }}/mo. See <strong>Offer Details</strong> below.",
+            "FEES": "{{ price }} processing fee applies",
+            "SAVINGS_OFFER": "Savings Offer",
+            "OFFER_TAGLINE": "Your favorites, with your choice of where to enjoy them."
+        },
+        "leadOfferDetailsComponent": {
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "month",
+                    "other": "months"
+                }
+            },
+            "DETAILS_FOOTER_SUFFIX": "for only {{ price }} {{ perMonth }} for {{ termLength }} {{ monthsPluralized }}. That is {{ savings }}% off the regular monthly price of {{ retailPrice }}.",
+            "DETAILS_FOOTER_SUFFIX_PREMIER_STREAMING_PROMO": "SiriusXM outside the car. Get everything we've got and take it with you: our widest variety of entertainment, now with the power to customize it to you.",
+            "DETAILS_FOOTER_SUFFIX_ESSENTIAL_STREAMING_PROMO": "Listen to SiriusXM at work, at the gym, at home, anywhere you want to bring your favorites.",
+            "PER_MONTH_COPY": "per month"
+        },
+        "moreContentUpsellComponent": {
+            "HEADER_TOP": "Want even more content?",
+            "HEADER_BOTTOM": " Upgrade to Platinum for:",
+            "PRICE_TOP": "Get Platinum for {{ priceDifferencePerMonth }}/mo more",
+            "PRICE_BOTTOM": "{{ pricePerMonth }}/mo. See Offer Details below.",
+            "DETAILS": "See plan details"
+        },
+        "importantInfoComponent": {
+            "BODY": "Your subscription starts immediately unless indicated otherwise. If your radio is not receiving the programming you are entitled to, please follow the activation instructions above. For your convenience, all subscriptions automatically renew until canceled. Your renewal will be billed at the then-current rate using the payment method on file. You can cancel your subscription at any time by calling Listener Care at <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>. Your subscription is governed by the SiriusXM Customer Agreement, which can be <a href=\"https://www.siriusxm.com/customeragreement?desktop=yes\" target=\"_blank\">viewed online</a>. If you would like to receive a copy of the Customer Agreement by mail, you can call <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>."
+        },
+        "platformUpgradeOptionComponent": {
+            "DETAILS_FOOTER_ONLY": "This is everything we’ve got: our widest variety of entertainment, now with the power to customize it to you.",
+            "DETAILS_FOOTER": "This is everything we’ve got: our widest variety of entertainment, now with the power to customize it to you, ",
+            "DETAILS_FOOTER_SUFFIX": "for only {{ price }} for {{ termLength }} {{ monthsPluralized }}. That is {{ savings }}% off the regular monthly price of {{ retailPrice }}.",
+            "GET": "Get",
+            "BUY_NOW": "Buy Now",
+            "ALL_ACCESS": "All Access",
+            "KEEP_SELECT": "Keep Select",
+            "CHANNELS": "Channels + Streaming + Xtra Channels",
+            "AGREEMENT": "Customer Agreement",
+            "ALL_FEES": "for complete terms. All fees and programming subject to change.",
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "month",
+                    "other": "months"
+                }
+            }
+        },
+        "followOnSelectionComponent": {
+            "TITLE": {
+                "HEADLINE": "Find which plan fits your groove.",
+                "YOUR_CHOICE": "Continue with your current Platinum plan or pick a different renewal plan. Your choice wont impact your Platinum promotion.",
+                "OFFER_DETAILS": "See Offer Details below.",
+                "PROACTIVE_HEADLINE": "Next, confirm your plan for when your promotion ends.",
+                "PROACTIVE_COPY": "You'll be able to change or cancel your plan any time.",
+                "CHOICE_NOT_AVAILABLE_COPY": "We're sorry, your radio is not eligible for CHOICE."
+            },
+            "USER_SELECTION": {
+                "YOUR_TRIAL": "In Your Trial"
+            },
+            "PACKAGE_DETAILS": {
+                "PRICE": "{{price}}/mo",
+                "GET": "Get"
+            }
+        },
+        "planComparisonGridComponent": {
+            "WHERE_YOU_CAN_LISTEN": "Where you can listen",
+            "MONTHLY_PRICE_AFTER": "Renewal pricing",
+            "INSIDE_THE_CAR": "Inside the car",
+            "OUTSIDE_THE_CAR": "On the SXM App",
+            "INSIDE_AND_OUTSIDE_THE_CAR": "Inside the car + On the SXM App",
+            "CHANNELS_INCLUDED": "Channels included",
+            "CHANNELS_LINEUP": "Channel Lineup",
+            "CHANNEL_LINEUP_TOOLTIP_COPY": "Inside and outside the car lineups vary slightly. Other fees and taxes may apply.",
+            "CHANNELS": "Channels",
+            "VIEW_LINEUP": "View Lineup",
+            "PRIMARY_CTA_COPY": "Continue",
+            "GET": "GET ",
+            "TFN_COPY": "Questions? Call ",
+            "FAMILY_DISCOUNT": "Pricing reflects a {{price}}/mo family discount that will be applied."
+        },
+        "offerNotAvailableConfirmationComponent": {
+            "HELP": "Continue to see an available offer or call 1-866-336-9967 for help.",
+            "SEE_OFFERS": "SEE AVAILABLE OFFER",
+            "EXPIRED": "Sorry, it looks like this offer has already expired.",
+            "REDEEMED": "Sorry, this offer had already been redeemed.",
+            "TRIAL_RADIO_NOT_ELIGIBLE": "Sorry, this offer is not available to customers with a trial subscription.",
+            "OTHERS": "Sorry, we are having issues fulfilling this request.",
+            "MWB_MCP_UNAVAILABLE": "Get 12 months for $60, plus a free upgrade to our best plan plus a free Echo Dot",
+            "MWB_MCP_UNAVAILABLE_HELP_PREFIX": "Looking for a monthly payment option of $4.99/mo, please call the number on your letter or ",
+            "MWB_MCP_UNAVAILABLE_HELP_SUFFIX": " to activate that plan. Otherwise, please continue online for our annual payment plan.",
+            "NONE": "Sorry, we are having issues fulfilling this request.",
+            "CHAT_LINK_TEXT": "Chat with an agent"
+        },
+        "multiPackageSelectionFormComponent": {
+            "VIEW_MORE_PACKAGES": "View more plans",
+            "HIDE_PACKAGES": "Hide plans",
+            "CONTINUE": "Continue",
+            "PROMOTIONAL_CONTINUE": "Switch subscription",
+            "CONTENT_CARD_FLAG": "Our Best Plan",
+            "CONTENT_CARD_HEADLINE1": "Switch to this plan",
+            "CONTENT_CARD_HEADLINE2": "Keep this plan",
+            "CONTENT_CARD_HEADLINE3": "Take this offer",
+            "ERROR": {
+                "TEXT": "Pick a plan below or ",
+                "LINK": "continue with your current plan"
+            },
+            "ERROR_PROMOTIONAL": {
+                "TEXT": "Select an offer below"
+            },
+            "DETAILS_FOOTER_SUFFIX": "for only {{ price }} {{ perMonth }} for {{ termLength }} {{ monthsPluralized }}. That is {{ savings }}% off the regular monthly price of {{ retailPrice }}.",
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "month",
+                    "other": "months"
+                }
+            },
+            "PER_MONTH_COPY": "per month"
+        }
+    }
+}

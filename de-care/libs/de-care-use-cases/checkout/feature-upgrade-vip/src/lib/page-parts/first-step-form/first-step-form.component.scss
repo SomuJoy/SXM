@@ -1,0 +1,27 @@
+@import "sxm.phoenix.imports";
+
+sxm-ui-radio-option-form-field {
+    margin-bottom: 16px;
+}
+
+.gray-text {
+    font-weight: 700;
+    color: $gray-dark;
+    margin-bottom: 8px;
+}
+
+.your-subscription-text {
+    margin-bottom: 16px;
+}
+
+.second-radio-body {
+    margin-bottom: 16px;
+}
+
+.checkmark-list-with-subdescription {
+    margin-bottom: 24px;
+}
+
+.trial-package-name {
+    display: flex;
+}

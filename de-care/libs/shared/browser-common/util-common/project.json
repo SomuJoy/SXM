@@ -1,0 +1,24 @@
+{
+    "name": "shared-browser-common-util-common",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/shared/browser-common/util-common/src",
+    "projectType": "library",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["libs/shared/browser-common/util-common/**/*.ts"]
+            }
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/shared/browser-common/util-common"],
+            "options": {
+                "jestConfig": "libs/shared/browser-common/util-common/jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": ["type:util", "scope:shared-util"]
+}

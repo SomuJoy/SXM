@@ -1,0 +1,15 @@
+{
+    "YOUR_PAYMENT_IS_PAST_DUE": "Votre paiement est en retard.",
+    "YOUR_PAYMENT_IS_DUE_IN": "Votre paiement est dû dans {{daysDue}} {{daysPlural}}.",
+    "YOUR_PAYMENT_IS_DUE_TODAY": "Votre paiement est dû aujourd’hui.",
+    "YOUR_PAYMENT_IS_DUE_NO_DATE": "Vous devez bientôt effectuer votre paiement.",
+    "PLEASE_VERIFY": "Veuillez vérifier votre méthode de paiement.",
+    "MAKE_PAYMENT_TO_REACTIVATE": "Effectuez un paiement pour réactiver votre/vos abonnement(s).",
+    "MAKE_A_PAYMENT": "PAYER MAINTENANT",
+    "PLURAL_MAP": {
+        "DAYS": {
+            "=1": "jour",
+            "other": "jours"
+        }
+    }
+}

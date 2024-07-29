@@ -1,0 +1,35 @@
+<ng-container *ngrxLet="viewModel$ as viewModel">
+    <sxm-ui-toast-notification>{{ translateKeyPrefix + ".ALERT_PILL" | translate }}</sxm-ui-toast-notification>
+    <section id="mainContent">
+        <ng-container *ngIf="viewModel.vehichleInfo">
+            <sxm-ui-vehicle-ymm-info-with-edit-cta
+                [vehicleInfoVM]="viewModel.vehichleInfo"
+                [useSelectYourRadioUrlForDeviceEdit]="viewModel.useSelectYourRadioUrlForDeviceEdit"
+                (editButton)="redirectToSelectOrLookUpPage($event)"
+            ></sxm-ui-vehicle-ymm-info-with-edit-cta>
+        </ng-container>
+        <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+            <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+            <ng-container body>
+                <p>{{ translateKeyPrefix + ".BODY" | translate }}</p>
+            </ng-container>
+        </sxm-ui-step-header>
+        <sxm-ui-plan-recap-card [data]="viewModel.planRecap"></sxm-ui-plan-recap-card>
+
+        <de-care-payment-info-use-card-new-address-form
+            *ngIf="!viewModel.serviceAddressCollected"
+            [options]="viewModel.paymentMethodOptions"
+            [initialState]="viewModel.paymentMethodInitialState"
+            (formCompleted)="onPaymentInfoCollected($event)"
+        ></de-care-payment-info-use-card-new-address-form>
+        <de-care-payment-info-form
+            *ngIf="viewModel.serviceAddressCollected"
+            [options]="viewModel.paymentMethodOptions"
+            [initialState]="viewModel.paymentMethodInitialState"
+            (formCompleted)="onPaymentInfoCollected($event)"
+        ></de-care-payment-info-form>
+    </section>
+    <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+        <div [innerHTML]="viewModel.legalCopy"></div>
+    </section>
+</ng-container>

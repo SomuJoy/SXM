@@ -1,0 +1,265 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    @include page-content-legacy-markup(auto 1fr auto);
+}
+
+main,
+.content-container {
+    > .row {
+        background-color: $white;
+        @include bp(medium) {
+            background-color: inherit;
+        }
+    }
+}
+
+sxm-ui-stepper {
+    width: 100%;
+    padding: 24px 0 32px;
+
+    @include bp(medium) {
+        width: 6/10 * 100%;
+        padding: 32px 6px 32px;
+    }
+    &.offer-grid-padding {
+        padding: 16px 0 24px;
+        @include bp(medium) {
+            padding: 0;
+        }
+    }
+    &.width-complete {
+        width: 100%;
+        padding: 0px;
+    }
+
+    &::ng-deep {
+        .step-item.review-step {
+            padding: 4px;
+        }
+    }
+
+    &.reduced-padding {
+        @include bp(medium) {
+            padding: 24px 32px 32px;
+            margin-top: -40px;
+        }
+    }
+}
+
+sxm-ui-stepper.new-offers-step {
+    width: 100%;
+}
+
+sxm-ui-stepper.half-width {
+    @include bp(medium) {
+        width: 50%;
+    }
+}
+
+de-care-accept-offer-flow {
+    width: 100%;
+    @include bp(medium) {
+        width: 6/10 * 100%;
+        padding: 0 6px;
+    }
+}
+
+.content-container > .row.new-offers-row {
+    background-color: $off-white;
+}
+.row.new-offers-row {
+    background-color: $off-white;
+}
+.row .column.new-offers-step {
+    width: 100%;
+    @include bp(small) {
+        margin-left: 0;
+        width: auto;
+    }
+}
+.current-plan-container {
+    margin-bottom: 24px;
+    align-self: flex-start;
+}
+
+h6 {
+    font-weight: calculate-font-weight("bold");
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+
+.button.secondary {
+    margin-top: 24px;
+    &.alternative {
+        margin-top: 8px;
+        background-color: $white;
+        &::before {
+            border: 8px;
+        }
+    }
+}
+
+.text-link-container {
+    margin-top: 8px;
+    text-align: center;
+}
+
+.no-offer-selected-error {
+    margin-top: 16px;
+}
+multi-package-selection-form,
+multi-offer-selection-form {
+    display: block;
+    margin-top: 24px;
+}
+
+::ng-deep {
+    .lp-link {
+        width: auto;
+        display: inline-block;
+    }
+    .LPMoverlay {
+        outline: none;
+    }
+}
+
+.cancel-offer-grid {
+    &.full-screen-wrapper {
+        @include bp(medium) {
+            position: relative;
+            width: 100vw;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            background: $white;
+        }
+    }
+    .cancel-offer-grid-content {
+        width: 100%;
+        max-width: $layout-max-width;
+        margin: 0 auto;
+        @include bp(medium) {
+            padding: 40px 16px;
+        }
+        @include bp(large) {
+            padding: 40px 56px;
+        }
+        .grid-header {
+            font-weight: calculate-font-weight("bold");
+            margin-bottom: 16px;
+            @include bp(large) {
+                @include get-header-style(h4);
+            }
+        }
+        .cta-container {
+            margin-left: auto;
+            margin-right: 0;
+            button {
+                margin-top: 8px;
+            }
+        }
+    }
+}
+
+$min-cols: 2;
+$max-cols: 3;
+
+@for $i from $min-cols through $max-cols {
+    .grid-columns-total-width-#{$i} {
+        @include bp(large) {
+            width: calc(#{$i} * (100% - #{$i} * 24px) / (#{$i} + 1) + ((#{$i} - 1) * 24px));
+        }
+    }
+}
+
+// removing row and column styles go full width
+// TODO: replace this when a full-width capable shell is available
+main.full-width-steps {
+    background: $white;
+    .content-container {
+        max-width: none;
+        .row {
+            padding: 0;
+            .column {
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.grid-justify-centered.full-width-transparent {
+    display: grid;
+    @include bp(medium) {
+        padding: 48px 36px 24px;
+        background: $white;
+    }
+    @include bp(large) {
+        padding: 56px 36px 40px;
+    }
+    @include bp(xlarge) {
+        justify-items: center;
+        padding: 64px 56px 56px;
+    }
+    .offer-details-grid-container {
+        display: grid;
+        grid-gap: 24px;
+        max-width: 1224px;
+        @include bp(medium) {
+            align-self: end;
+        }
+        @include bp(large) {
+            grid-template-columns: repeat(12, [col-start] 1fr);
+        }
+        offer-details {
+            max-width: 1016px;
+            @include bp(large) {
+                grid-column: 2 / span 10;
+            }
+        }
+    }
+}
+
+.special-paragraph {
+    margin: 16px 0 16px;
+}
+
+.instructions-container {
+    margin-top: 32px;
+}
+
+.new-offers-header {
+    width: 100%;
+    padding: 0;
+    background-image: linear-gradient(130deg, #0901b1, #075096, #079188);
+    color: $white;
+    height: auto;
+    display: flex;
+    justify-content: center;
+
+    h2 {
+        @include get-header-style(h5);
+        margin: 0;
+        width: 100%;
+        padding: 20px 16px;
+        @include font-size(20px);
+        @include bp(medium) {
+            width: 460px;
+            padding: 24px 0px;
+        }
+        @include bp(large) {
+            width: 440px;
+            padding: 24px 0px;
+        }
+    }
+}
+
+.content-container.hero-container {
+    & > div.row {
+        background-color: inherit;
+    }
+}

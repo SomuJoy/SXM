@@ -1,0 +1,36 @@
+<ng-container *ngrxLet="viewModel$ as viewModel">
+    <ng-container *ngIf="dataLoad$ | async as dataLoad">
+        <section id="heroContent">
+            <h4>{{ translateKeyPrefix + ".HERO_TEXT" | translate }}</h4>
+        </section>
+        <section id="mainContent">
+            <ng-container *ngIf="dataLoad.pending || dataLoad.error">
+                <article id="skeletonLoaderOfferCard">
+                    <div class="shadow-helper">
+                        <sxm-ui-primary-package-card-skeleton-loader></sxm-ui-primary-package-card-skeleton-loader>
+                    </div>
+                </article>
+            </ng-container>
+            <ng-container *ngIf="dataLoad.value">
+                <div class="shadow-helper">
+                    <sxm-ui-primary-package-card
+                        [class.theme-non-retail]="viewModel?.selectedOffer?.offerDescription?.theme === 'Theme2'"
+                        [class.presentation-no-icons-single-detail-visible]="viewModel?.selectedOffer?.offerDescription?.presentation === 'Presentation3'"
+                        [packageData]="viewModel?.selectedOffer?.offerDescription"
+                    ></sxm-ui-primary-package-card>
+                </div>
+                <de-care-sheer-id-student-verification
+                    [sheerIdIdentificationWidgetUrl]="viewModel?.sheerIdVerificationWidgetUrl"
+                    [programCode]="viewModel?.programCode"
+                    [langPref]="viewModel?.langPref"
+                ></de-care-sheer-id-student-verification>
+            </ng-container>
+        </section>
+        <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+            <div *ngIf="dataLoad.value" [innerHTML]="viewModel.selectedOffer.legalCopy"></div>
+            <div *ngIf="dataLoad.pending">
+                <sxm-ui-skeleton-loader-text-copy></sxm-ui-skeleton-loader-text-copy>
+            </div>
+        </section>
+    </ng-container>
+</ng-container>

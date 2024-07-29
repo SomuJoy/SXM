@@ -1,0 +1,54 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "locales": [
+            {
+                "locale": "en_US",
+                "offerInfos": [
+                    {
+                        "planCode": "Promo - Essential Streaming - 3mo - 0.99",
+                        "salesHero": {
+                            "title": "Start streaming today",
+                            "subTitle": null,
+                            "presentation": null
+                        },
+                        "offerDescription": {
+                            "priceAndTermDescTitle": "<span data-duration=\"\">3 months</span> for <span data-price=\"\">$0.99</span>",
+                            "processingFeeDisclaimer": "Then $7.99/mo. New subscribers only. Cancel online anytime. See <strong>Offer Details</strong> below.",
+                            "packageName": "SiriusXM Streaming Music & Entertainment",
+                            "listeningOptions": ["Streaming"],
+                            "longDescription": null,
+                            "highlightsTitle": "SiriusXM Streaming Music & Entertainment Includes:",
+                            "highlightsText": [
+                                "<b>400+ channels</b> to stream on your devices with the SXM App. If you want to listen in your car, you'll need your phone",
+                                "<b>Ad-free music</b> for every genre & decade plus artist-created channels",
+                                "<b>Original talk,</b> podcasts, exclusive comedy & news from every angle",
+                                "<b>Play-by-play of select major sports,</b> NASCAR®, plus the biggest names in sports talk",
+                                "<b>SiriusXM video library</b> of in-studio shows & performances"
+                            ],
+                            "footer": "No car required to listen to your favorites in all your favorite places&mdash;on your phone, at home, and online.&nbsp;<a href=\"http://siriusxm.com/channels?package=SIR_IP_SA_ESNTL\">View Channel Lineup</a>",
+                            "packageFeatures": [
+                                {
+                                    "packageName": "SiriusXM Streaming Music & Entertainment",
+                                    "features": []
+                                }
+                            ],
+                            "showToggleLabel": "Explore plan details",
+                            "hideToggleLabel": "Hide"
+                        },
+                        "deals": null,
+                        "addonHeaderOverride": null,
+                        "offerDetails": "<p><strong>OFFER DETAILS:</strong> Activate a SiriusXM Streaming Music & Entertainment subscription plan and get your first 3 months for $0.99. A credit card is required on this offer.<strong> Service will automatically renew</strong> thereafter every month. At the beginning of month 4, you will be charged at then-current rates (currently $7.99/month). Fees and taxes apply. <strong>You must cancel your subscription during your promotional period to avoid future charges. Please see our <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\">Customer Agreement</a> at www.siriusxm.com for complete terms and how to cancel, which includes online methods or calling us at 1-866-635-2349.</strong> All fees, content and features are subject to change. This offer cannot be combined with any other and may be modified or terminated at any time. Offer available to new subscribers. Channel lineup varies by plan.</p>\r\n",
+                        "presentation": {
+                            "theme": "Theme2",
+                            "style": "Presentation3"
+                        },
+                        "numberOfBullets": null
+                    }
+                ]
+            }
+        ]
+    }
+}

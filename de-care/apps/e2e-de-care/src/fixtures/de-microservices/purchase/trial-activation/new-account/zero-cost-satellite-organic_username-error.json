@@ -1,0 +1,12 @@
+{
+    "status": "FAILURE",
+    "httpStatusCode": 400,
+    "httpStatus": "BAD_REQUEST",
+    "error": {
+        "errorCode": "USERNAME_INVALID",
+        "errorPropKey": "error.purchase.service.username.already.exist",
+        "errorType": "CHECKED",
+        "errorStackTrace": "",
+        "logId": "141f734f-0bce-4ed4-b4a6-38a997e0493d"
+    }
+}

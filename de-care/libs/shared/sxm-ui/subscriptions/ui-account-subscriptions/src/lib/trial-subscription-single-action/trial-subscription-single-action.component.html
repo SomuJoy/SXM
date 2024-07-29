@@ -1,0 +1,5 @@
+<p class="lead-in bold mb-4 title">{{ translateKeyPrefix + ".TRIAL_TITLE" | translate: { duration: data.duration } }}</p>
+<p class="lead-in no-margin">
+    {{ translateKeyPrefix + ".TRIAL_INSTRUCTIONS" | translate }}
+    <button class="text-link" (click)="extendTrial.emit()" data-test="extendTrialInstructionButton">{{ translateKeyPrefix + ".TRIAL_LINK" | translate }}</button>
+</p>

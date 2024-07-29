@@ -1,0 +1,212 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: block;
+    width: auto;
+
+    @include bp(large) {
+        width: 100%;
+    }
+}
+
+#follow-on-selection-grid {
+    padding-top: 0;
+    padding-bottom: 15px;
+    width: 100vw;
+    @include bp(large) {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    p.small-copy {
+        margin: 0;
+    }
+    @media screen and (max-width: 992px) {
+        width: 100vw;
+    }
+    #select-a-follow-on-plan {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-rows: 31px 83px 10px;
+        grid-template-rows: auto minmax(70px, auto) 10px;
+        -ms-grid-columns: 1fr 15px 1fr 15px 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 12px;
+        grid-column-gap: 25px;
+        width: 100%;
+        .user-selection {
+            visibility: hidden;
+            &.is-lead-offer {
+                visibility: visible;
+                text-align: center;
+                letter-spacing: 1.05px;
+            }
+        }
+        .follow-on-option {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            background-color: $blue-ultra-light;
+            .follow-on-option--name {
+                font-weight: 700;
+                font-size: 12px;
+                margin-bottom: 0;
+                color: $black;
+                text-align: center;
+                @include bp(medium) {
+                    font-size: 14px;
+                    color: $blue;
+                }
+            }
+            &.follow-on-option-selected {
+                background-color: $purple;
+                position: relative;
+                .follow-on-option--name {
+                    color: $white;
+                }
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: -10px;
+                    width: 0;
+                    height: 0;
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    border-top: 10px solid $purple;
+                    left: 46%;
+                }
+            }
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        @include bp(medium) {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+    }
+    #select-a-follow-on-plan > *:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+    #select-a-follow-on-plan > *:nth-child(2) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 3;
+    }
+    #select-a-follow-on-plan > *:nth-child(3) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 5;
+    }
+    #select-a-follow-on-plan > *:nth-child(4) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+    }
+    #select-a-follow-on-plan > *:nth-child(5) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 3;
+    }
+    #select-a-follow-on-plan > *:nth-child(6) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 5;
+    }
+    #select-a-follow-on-plan > *:nth-child(7) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+    }
+    #select-a-follow-on-plan > *:nth-child(8) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 3;
+    }
+    #select-a-follow-on-plan > *:nth-child(9) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 5;
+    }
+
+    #headline-and-lead-offer-end-date {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        text-align: center;
+        p {
+            max-width: 70%;
+            &.small-copy {
+                margin-top: 5px;
+            }
+            @include bp(medium) {
+                max-width: none;
+                &.lead-offer-end-txt {
+                    color: $gray-dark;
+                }
+            }
+        }
+    }
+}
+
+@include bp(large) {
+    section#follow-on-selection-grid {
+        padding-bottom: 20px;
+        width: auto;
+        #select-a-follow-on-plan {
+            margin-top: 0;
+        }
+        #select-a-follow-on-plan {
+            display: -ms-grid;
+            display: grid;
+        }
+        #headline-and-lead-offer-end-date {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+            -ms-flex-line-pack: center;
+            align-content: center;
+            text-align: left;
+            -webkit-box-align: start;
+            -ms-flex-align: start;
+            align-items: flex-start;
+            width: 100%;
+            @include bp(large) {
+                width: 32%;
+                margin-right: 25px;
+            }
+            p {
+                margin: 0;
+            }
+        }
+        /* Move the Headline and leadOfferEndDate down a cell */
+        #headline-and-lead-offer-end-date > div {
+            -ms-grid-row: 2;
+            grid-row-start: 2;
+        }
+    }
+}
+
+:host-context(.stick-to-top) {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding-top: 15px;
+    background-color: $white;
+    z-index: 20;
+}
+
+.choice-error {
+    font-weight: calculate-font-weight("bold");
+    margin-top: 16px;
+    margin-bottom: 28px;
+}

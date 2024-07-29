@@ -1,0 +1,5 @@
+<sxm-ui-billing-header [title]="translateKeyPrefix + '.HEADER' | translate">
+    <div *ngIf="data?.date">
+        <p class="lead-in">{{ translateKeyPrefix + ".DESCRIPTION" | translate: { date: data?.date | sxmUiDate: (translateKeyPrefix + ".DATE_FORMAT" | translate) } }}</p>
+    </div>
+</sxm-ui-billing-header>

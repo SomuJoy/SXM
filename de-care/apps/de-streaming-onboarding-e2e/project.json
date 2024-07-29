@@ -1,0 +1,32 @@
+{
+    "name": "de-streaming-onboarding-e2e",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "apps/de-streaming-onboarding-e2e/src",
+    "projectType": "application",
+    "targets": {
+        "e2e": {
+            "executor": "@nrwl/cypress:cypress",
+            "options": {
+                "cypressConfig": "apps/de-streaming-onboarding-e2e/cypress.json",
+                "tsConfig": "apps/de-streaming-onboarding-e2e/tsconfig.e2e.json",
+                "devServerTarget": "de-streaming-onboarding:serve"
+            },
+            "configurations": {
+                "production": {
+                    "devServerTarget": "de-streaming-onboarding:serve:production"
+                },
+                "canada": {
+                    "devServerTarget": "de-streaming-onboarding:serve:canada"
+                }
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["apps/de-streaming-onboarding-e2e/src/**/*.ts", "apps/de-streaming-onboarding-e2e/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:e2e", "scope:de-streaming-onboarding"]
+}

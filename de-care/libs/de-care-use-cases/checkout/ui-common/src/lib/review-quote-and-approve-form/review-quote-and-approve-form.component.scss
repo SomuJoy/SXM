@@ -1,0 +1,13 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    section {
+        padding: 0;
+    }
+    quote-summary::ng-deep {
+        div.order-summary {
+            margin-bottom: 16px;
+        }
+    }
+}

@@ -1,0 +1,216 @@
+{
+    "DeCareUseCasesTransferFeatureACSCTargetedModule": {
+        "AddRadioPageComponent": {},
+        "SelectTransferMethodComponent": {
+            "BUTTON_TEXT_TRANSFER_SUBSCRIPTION": "TRANSFER MY SUBSCRIPTION",
+            "LINK_TEXT_ENTER_RADIO_ID": "<a class='text-link' data-track-click='Not your car' href='https://care.siriusxm.ca/login_view.action?task=sc'>Not your car? Enter your radio ID.</a>"
+        },
+        "ChooseSubscriptionComponent": {
+            "CALL": " or call <a href=\"tel:1-888-539-7474\">1-888-539-7474.</a>"
+        },
+        "ChoosePaymentMethodComponent": {},
+        "ReviewOrderComponent": {},
+        "ConfirmationPageComponent": {
+            "LEGAL_COPY": "Your subscription starts immediately unless indicated otherwise. If your radio is not receiving the programming you are entitled to, please follow the activation instructions above. For your convenience, all subscriptions automatically renew until canceled. Your renewal will be billed at the then-current rate using the payment method on file. You can cancel your subscription at any time by calling Listener Care at <a href=\"tel:+1-833-838-7846\">1-833-838-7846</a>. Your subscription is governed by the SiriusXM Customer Agreement, which can be <a href=\"http://www.siriusxm.ca/terms\" target=\"_blank\" title=\" at siriusxm.ca/terms\">viewed online</a>. If you would like to receive a copy of the Customer Agreement by mail, you can call <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>.",
+            "READY_TO_EXPLORE_LINKS": [
+                "<a data-track-click='View Program Schedule' class='text-link' href='https://www.siriusxm.ca/whats-on/program-schedule/' target='_blank'>View Program Schedules</a>",
+                "<a data-track-click='Live Sports Schedule' class='text-link' href='https://www.siriusxm.ca/whats-on/live-sports-schedule/' target='_blank'>Live Sports Schedules</a>"
+            ],
+            "STREAMING_PLAYER_LINK": ""
+        },
+        "GenericErrorComponent": {
+            "CALL": " or call <a href=\"tel:1-888-539-7474\">1-888-539-7474.</a>"
+        },
+        "AlreadyConsolidatedWithFollowonComponent": {
+            "LISTEN_URL": "https://www.siriusxm.ca/ways-to-listen/",
+            "SUPPORT_CENTER": "Visit Help & Support",
+            "SUPPORT_CENTER_URL": "https://listenercare.siriusxm.ca",
+            "STREAMING_PLAYER_LINK": ""
+        },
+        "AlreadyConsolidatedWithoutFollowonComponent": {
+            "READY_TO_EXPLORE_LINKS": ["<a data-track-click='Manage My Account' class='text-link' href='https://care.siriusxm.ca' target='_blank'>Manage My Account</a>"],
+            "SUPPORT_CENTER": "Visit Help & Support",
+            "SUPPORT_CENTER_URL": "https://www.siriusxm.ca/help/",
+            "CALL": " or call <a href=\"tel:1-888-539-7474\">1-888-539-7474.</a>"
+        },
+        "RadioLookupPageComponent": {
+            "ALERT": {
+                "CLOSED": "It looks like this radio doesn't have a trial subscription. Please see <a href=\"https://care.siriusxm.ca/myaccount_execute.action\" class=\"text-link\"s>My Subscriptions</a> where you can click the \"add radio\" button, or choose \"replace another radio with this one\" from the dropdown.",
+                "OTHER_ERROR": "We're sorry. This transaction can't be completed online.  Don't worry, we can help you. Chat with an agent or call 1-888-539-7474."
+            }
+        },
+        "LoginPageComponent": {
+            "TITLE": "Sign in to transfer your SiriusXM service to a new vehicle or add another radio to your account",
+            "SIGN_IN_TITLE": "Already Registered? Sign in to your existing SiriusXM account.",
+            "REGISTRATION_ITEM_1": "Registration is fast and easy. Have the <strong>Radio ID</strong> or <strong>VIN</strong> of your old car handy.",
+            "REGISTRATION_ITEM_2": "Once you’ve registered, you’ll need the <strong>Radio ID</strong> or <strong>VIN</strong> of your new car to transfer your service or add a new radio."
+        },
+        "SwapRadioLookupPageComponent": {
+            "ERRORS": {
+                "NOT_CAPABLE_PT1": "We’re sorry, but the radio you wish to transfer service to does not support certain features included in your current subscription plan. For assistance, please chat with an agent.",
+                "LIFETIME_PT1": "Your radio is eligible for a prepaid, lifetime subscription. We are unable to process this online. Please call 1-888-539-7474 to activate your radio.",
+                "OTHER_PT1": "We’re sorry, but we are either unable to complete this transaction online or your subscription plan is ineligible to transfer. For assistance, please chat with an agent."
+            }
+        },
+        "SwapRadioPageComponent": {
+            "QUOTE_SUMMARY": {
+                "PREVIOUS_BALANCE": {
+                    "LABEL": "Previous Balance",
+                    "TOOLTIP": "You have a previously unpaid balance on your account and this balance must be satisfied before you can complete your transaction."
+                },
+                "PREVIOUS_CREDIT": "Previous Credit",
+                "CREDIT_REMAINING_ON_ACCOUNT": "Credit on Account",
+                "TAXES_AND_FEES": {
+                    "GOODS_AND_SERVICES_TAX_GST": "Goods and Services Tax (GST)",
+                    "QUEBEC_SALES_TAX_QST": "Quebec Sales Tax (QST)"
+                }
+            },
+            "GST": "SiriusXM Canada GST Number: 857294342",
+            "QST": "SiriusXM Canada QST Number: 1208160032"
+        },
+        "UI_COMMON": {
+            "ROC_REGION": {
+                "THEN_PRICE_PER_MONTH": "Then {{amount}}/mo plus fees.",
+                "PRICE_PER_MONTH": "{{amount}}/mo plus fees"
+            }
+        },
+        "SCPackageOptionCard": {
+            "BODY": {
+                "BASIC_TRIAL_EXTENSION": "Subscribe to the {{planName}} plan and get your first {{termLength}} months for {{totalPrice}}.",
+                "ROC_REGION": {
+                    "PROMO_OFFER_HEADER": "{{termLength}} for {{amount}}/mo plus fees",
+                    "TOTAL_PRICE_OFFER_HEADER": "{{termLength}} for {{amount}}",
+                    "RETAIL_PRICE_PLANS_AND_SELF_PAY_ALL_ACCESS_FF-ALL_ACCESS": "Enjoy all the channels included in your {{planName}} trial. ",
+                    "RETAIL_PRICE_PLANS_AND_SELF_PAY_ALL_ACCESS_FF-SELECT": "Enjoy a wide variety of music, sports talk, comedy, news, and more.",
+                    "RETAIL_PRICE_PLANS_AND_SELF_PAY_SELECT-ALL_ACCESS": "For only {{amount}} more per month plus fees, upgrade the subscription from your old car and enjoy all the channels included in your {{planName}} trial.",
+                    "RETAIL_PRICE_PLANS_AND_SELF_PAY_SELECT-SELECT": "After your trial ends, you'll get all the same channels you loved in your old car.",
+                    "RETAIL_PRICE_PLANS_AND_SELF_PAY_SELECT_FF-ALL_ACCESS": "For only {{amount}} more per month plus fees, upgrade the subscription from your old car and enjoy all the channels included in your {{planName}} trial.",
+                    "RETAIL_PRICE_PLANS_AND_SELF_PAY_SELECT_FF-SELECT": "Enjoy a wide variety of music, sports talk, comedy, news, and more.",
+                    "RETAIL_PRICE_PLANS_AND_SELF_PAY_MOSTLY_MUSIC-SELECT": "For only {{amount}} more per month plus fees, upgrade the subscription from your old car and enjoy even more of the variety you want.",
+                    "RETAIL_PRICE_PLANS_AND_SELF_PAY_MOSTLY_MUSIC-MOSTLY_MUSIC": "After your trial ends, you'll get all the same channels you loved in your old car.",
+                    "ALL_ACCESS_AND_SELECT_PROMOS_AND_SELF_PAY_ALL_ACCESS-ALL_ACCESS": "Enjoy all the channels included in your {{planName}} trial.",
+                    "ALL_ACCESS_AND_SELECT_PROMOS_AND_SELF_PAY_NOT_ALL_ACCESS-ALL_ACCESS": "Upgrade the subscription from your old car and enjoy all the channels included in your {{planName}} trial.",
+                    "ALL_ACCESS_AND_SELECT_PROMOS_AND_SELF_PAY_ALL_ACCESS-SELECT": "Enjoy a wide variety of music, sports talk, comedy, news, and more.",
+                    "PLATFORM_CHANGE_SCENARIO-ALL_ACCESS": "Enjoy all the channels from your {{planName}} trial, including the channels you had in your old car.",
+                    "SELECT_PROMO_AND_MOSTLY_MUSIC_RETAIL_PRICE-SELECT": "Upgrade the subscription from your old car and enjoy even more of the variety you want.",
+                    "SELECT_PROMO_AND_MOSTLY_MUSIC_RETAIL_PRICE-MOSTLY_MUSIC": "After your trial ends, you'll get all the same channels you loved in your old car.",
+                    "FALLBACK_ALL_ACCESS": "Enjoy all the channels included in your {{planName}} trial.",
+                    "FALLBACK_SELECT": "Enjoy a wide variety of music, sports talk, comedy, news, and more.",
+                    "FALLBACK_MOSTLY_MUSIC": "After your trial ends, you'll get all the same channels you loved in your old car.",
+                    "BASIC": "Subscribe to the {{planName}} plan for {{pricePerMonth}}/mo plus fees.",
+                    "BASIC_PROMO": "Subscribe to the {{planName}} plan and get your first {{termLength}} months for {{pricePerMonth}}/mo plus fees.",
+                    "BASIC_TRIAL_EXTENSION": "Subscribe to the {{planName}} plan and get your first {{termLength}} months for {{totalPrice}}."
+                }
+            }
+        },
+        "ACPackageOptionCard": {
+            "BASIC_TRIAL_EXTENSION": "Subscribe to the {{planName}} plan and get your first {{termLength}} months for {{totalAmount}}.",
+            "ROC_REGION": {
+                "ALL_ACCESS_PROMO": "Keep the <strong>{{planName}} plan</strong> you're enjoying with your trial and get your first {{termLength}} months for <strong>{{promoAmount}}/mo plus fees.</strong>",
+                "SELECT_PROMO_WHEN_COMPARED_TO_AA_PROMO": "Subscribe to the <strong>{{planName}} plan</strong> and get your first {{termLength}} months for <strong>{{promoAmount}}/mo plus fees.</strong>",
+                "SELECT_PROMO_WHEN_COMPARED_TO_MOSTLY_MUSIC": "Subscribe to the <strong>{{planName}} plan</strong> and enjoy a wide variety of music, sports, and talk entertainment. Get your first {{termLength}} months for <strong>{{promoAmount}}/mo plus fees.</strong>",
+                "ALL_ACCESS_RETAIL_PRICE": "Keep the <strong>{{planName}} plan</strong> you're enjoying with your trial for <strong>{{amount}}/mo plus fees.</strong>",
+                "SELECT_RETAIL_PRICE_WHEN_COMPARED_TO_ALL_ACCESS": "Subscribe to the <strong>{{planName}} plan</strong> for <strong>{{amount}}/mo plus fees.</strong>",
+                "SELECT_RETAIL_PRICE_WHEN_COMPARED_TO_MOSTLY_MUSIC": "Subscribe to the <strong>{{planName}} plan</strong> for <strong>{{amount}}/mo plus fees.</strong> and enjoy a wide variety of music, sports, and talk entertainment.",
+                "MOSTLY_MUSIC_RETAIL_PRICE": "Subscribe to the <strong>{{planName}} plan</strong> for <strong>{{amount}}/mo plus fees.</strong>",
+                "MOSTLY_MUSIC_PROMO": "Subscribe to the <strong>{{planName}} plan</strong> and get your first {{termLength}} months for <strong>{{promoAmount}}/mo plus fees.</strong>",
+                "TRIAL_EXT_ALL_ACCESS": "Keep the <strong>{{planName}} plan</strong> you're enjoying with your trial and get your first {{termLength}} months for <strong>{{totalAmount}}.</strong>",
+                "FREE_TRIAL_EXT_ALL_ACCESS": "Keep the <strong>{{planName}} plan</strong> you're enjoying with your trial and get your first {{termLength}} months for <strong>{{processingFee}}.</strong>",
+                "TRIAL_EXT_SELECT": "Subscribe to the <strong>{{planName}} plan</strong> and get your first {{termLength}} months for <strong>{{totalAmount}}.</strong>",
+                "FREE_TRIAL_EXT_SELECT": "Subscribe to the <strong>{{planName}} plan</strong> and get your first {{termLength}} months for <strong>{{processingFee}}.</strong>",
+                "BASIC": "Subscribe to the {{planName}} plan for {{pricePerMonth}}/mo plus fees.",
+                "BASIC_PROMO": "Subscribe to the {{planName}} plan and get your first {{termLength}} months for {{pricePerMonth}}/mo plus fees.",
+                "BASIC_TRIAL_EXTENSION": "Subscribe to the {{planName}} plan and get your first {{termLength}} months for {{totalAmount}}."
+            }
+        },
+        "SwapConfirmationPageComponent": {
+            "LEGAL_COPY": "Your subscription starts immediately unless indicated otherwise. If your radio is not receiving the programming you are entitled to, please follow the activation instructions above. For your convenience, all subscriptions automatically renew until canceled. Your renewal will be billed at the then-current rate using the payment method on file. You can cancel your subscription at any time by calling Listener Care at <a href=\"tel:+1-833-838-7846\">1-833-838-7846</a>. Your subscription is governed by the SiriusXM Customer Agreement, which can be <a href=\"http://www.siriusxm.ca/terms\" target=\"_blank\" title=\" at siriusxm.ca/terms\">viewed online</a>. If you would like to receive a copy of the Customer Agreement by mail, you can call <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>.",
+            "QUOTE_SUMMARY": {
+                "PREVIOUS_BALANCE": {
+                    "LABEL": "Previous Balance",
+                    "TOOLTIP": "You have a previously unpaid balance on your account and this balance must be satisfied before you can complete your transaction."
+                },
+                "PREVIOUS_CREDIT": "Previous Credit",
+                "CREDIT_REMAINING_ON_ACCOUNT": "Credit on Account",
+                "TAXES_AND_FEES": {
+                    "GOODS_AND_SERVICES_TAX_GST": "Goods and Services Tax (GST)",
+                    "QUEBEC_SALES_TAX_QST": "Quebec Sales Tax (QST)"
+                }
+            },
+            "GST": "SiriusXM Canada GST Number: 857294342",
+            "QST": "SiriusXM Canada QST Number: 1208160032"
+        },
+        "PortReviewComponent": {
+            "QUOTE_SUMMARY": {
+                "CURRENT_LABEL": "Due Today",
+                "PRORATED_TOOLTIP": "The length and the amount due for this billing period have been adjusted to match your billing date.",
+                "FUTURE_DUE_LABEL": "Payment due ",
+                "FUTURE_DUE_LABEL_PRORATED": "One-time prorated payment due ",
+                "PRORATED": "Prorated",
+                "PROMOTION": "Promotion",
+                "RENEWAL_DUE_LABEL": "Recurring {{term}} payments starting {{date}}",
+                "TERM_MAP": {
+                    "=1": "monthly",
+                    "=3": "quarterly",
+                    "=6": "semiannual",
+                    "=12": "annual",
+                    "=24": "2-Year",
+                    "=36": "3-Year",
+                    "other": "#-month"
+                },
+                "FEES_AND_TAXES_DESCRIPTIONS": {
+                    "CANADIAN_MUSIC_ROYALTY_FEE": "Music Royalty and Administrative Fee",
+                    "MUSIC_ROYALTY_AND_ADMINISTRATIVE_FEE": "Music Royalty and Administrative Fee",
+                    "HARMONIZED_SALES_TAX_HST": "Harmonized Sales Tax (HST)",
+                    "GOODS_AND_SERVICES_TAX_GST": "Goods and Services Tax (GST)",
+                    "QUEBEC_SALES_TAX_QST": "Quebec Sales Tax (QST)",
+                    "PROVINCIAL_SALES_TAX_PST": "Provincial Sales Tax (PST)",
+                    "CANADIAN_PROCESSING_FEE": "Processing Fee",
+                    "OTHER_TAX": "Other Taxes",
+                    "ACTIVATION_FEES": "Activation Fee",
+                    "SWAP_FEE": "Replacement Fee"
+                }
+            },
+            "GST": "SiriusXM Canada GST Number: 857294342",
+            "QST": "SiriusXM Canada QST Number: 1208160032",
+            "PLATFORM_CHANGE_MESSAGE": "For additional plan options, please call <a href=\"tel:1-888-539-7474\">1-888-539-7474</a> or chat with an agent below."
+        },
+        "PortConfirmationPageComponent": {
+            "QUOTE_SUMMARY": {
+                "CURRENT_LABEL": "Due Today",
+                "PRORATED_TOOLTIP": "The length and the amount due for this billing period have been adjusted to match your billing date.",
+                "FUTURE_DUE_LABEL": "Payment due ",
+                "FUTURE_DUE_LABEL_PRORATED": "One-time prorated payment due ",
+                "PRORATED": "Prorated",
+                "PROMOTION": "Promotion",
+                "RENEWAL_DUE_LABEL": "Recurring {{term}} payments starting {{date}}",
+                "TERM_MAP": {
+                    "=1": "monthly",
+                    "=3": "quarterly",
+                    "=6": "semiannual",
+                    "=12": "annual",
+                    "=24": "2-Year",
+                    "=36": "3-Year",
+                    "other": "#-month"
+                },
+                "FEES_AND_TAXES_DESCRIPTIONS": {
+                    "CANADIAN_MUSIC_ROYALTY_FEE": "Music Royalty and Administrative Fee",
+                    "MUSIC_ROYALTY_AND_ADMINISTRATIVE_FEE": "Music Royalty and Administrative Fee",
+                    "HARMONIZED_SALES_TAX_HST": "Harmonized Sales Tax (HST)",
+                    "GOODS_AND_SERVICES_TAX_GST": "Goods and Services Tax (GST)",
+                    "QUEBEC_SALES_TAX_QST": "Quebec Sales Tax (QST)",
+                    "PROVINCIAL_SALES_TAX_PST": "Provincial Sales Tax (PST)",
+                    "CANADIAN_PROCESSING_FEE": "Processing Fee",
+                    "OTHER_TAX": "Other Taxes",
+                    "ACTIVATION_FEES": "Activation Fee",
+                    "SWAP_FEE": "Replacement Fee"
+                }
+            },
+            "LEGAL_COPY": "Your subscription starts immediately unless indicated otherwise. If your radio is not receiving the programming you are entitled to, please follow the activation instructions above. For your convenience, all subscriptions automatically renew until canceled. Your renewal will be billed at the then-current rate using the payment method on file. You can cancel your subscription at any time by calling Listener Care at <a href=\"tel:+1-833-838-7846\">1-833-838-7846</a>. Your subscription is governed by the SiriusXM Customer Agreement, which can be <a href=\"http://www.siriusxm.ca/terms\" target=\"_blank\" title=\" at siriusxm.ca/terms\">viewed online</a>. If you would like to receive a copy of the Customer Agreement by mail, you can call <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>.",
+            "READY_TO_EXPLORE_LINKS": [
+                "<a data-track-click='View Program Schedule' class='text-link' href='https://www.siriusxm.ca/whats-on/program-schedule/' target='_blank'>View Program Schedules</a>",
+                "<a data-track-click='Live Sports Schedule' class='text-link' href='https://www.siriusxm.ca/whats-on/live-sports-schedule/' target='_blank'>Live Sports Schedules</a>"
+            ]
+        }
+    }
+}

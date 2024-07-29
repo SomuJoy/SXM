@@ -1,0 +1,13 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "firstname": "john",
+        "lastname": "smith",
+        "username": "qtestprospect@ttest.com",
+        "promocode": "AA3MOTRIALGGLE",
+        "trialstartdate": "08/04/2020 00:00:00",
+        "trialenddate": "11/04/2020 00:00:00"
+    }
+}

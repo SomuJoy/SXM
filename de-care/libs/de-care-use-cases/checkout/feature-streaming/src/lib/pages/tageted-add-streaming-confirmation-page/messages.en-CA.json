@@ -1,0 +1,7 @@
+{
+    "TITLE": "Your new plan has been added",
+    "LINK_TEXT": "GO TO MY ACCOUNT",
+    "STREAMING_PLAYER_LINK": "",
+    "PRICE_AND_TERM_SUBTEXT": "An early termination fee of ({{etfAmount}}) may apply if you cancel within the first {{etfTerm}} months.",
+    "USERNAME": "Username: {{username}}"
+}

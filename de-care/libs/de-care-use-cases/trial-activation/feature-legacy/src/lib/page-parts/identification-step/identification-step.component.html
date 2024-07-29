@@ -1,0 +1,12 @@
+<p>{{ "trialActivation.identificationStepComponent.MESSAGE" | translate }}</p>
+<br />
+<verify-device-tabs
+    [isOfferNotAvailable]="isOfferNotAvailable"
+    [prefilledAccountData]="prefilledAccountData"
+    [excludeInstructionsText]="true"
+    [isPromoCodeValid]="isPromoCodeValid"
+    (userSelection)="onUserSelection($event)"
+    [programCode]="programCode"
+    [isProspectTrial]="isProspectTrial"
+    (loginError)="loginError.emit()"
+></verify-device-tabs>

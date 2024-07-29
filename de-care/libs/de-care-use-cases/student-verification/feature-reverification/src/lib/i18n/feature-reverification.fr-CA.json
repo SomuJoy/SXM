@@ -1,0 +1,12 @@
+{
+    "deCareUseCasesStudentVerificationFeatureReverification": {
+        "studentReverificationFlowComponent": {
+            "HERO_COPY": "Continue d'économiser avec un forfait pour étudiants à {{offerTotal}}/mois pour {{offerTerm}} mois <br><span class=\"legal-copy\">Frais et taxes en sus</span>"
+        },
+        "invalidTokenPageComponent": {
+            "HEADER": "Oups, quelque chose n'a pas fonctionné.",
+            "SUB_HEADER": "Connectez-vous pour revérifier votre statut d'étudiant.",
+            "BUTTON": "SE CONNECTER AU COMPTE"
+        }
+    }
+}

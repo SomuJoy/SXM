@@ -1,0 +1,16 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "mode": "test",
+        "country": "us",
+        "buildInfo": { "tag": "release/0093-000", "smsDependency": "", "smsUser": "web1", "smsHost": "dvuulvsmsapp06:23201", "pvtTime": "2022-06-23T10:24:19.0" },
+        "sessionInfo": { "id": "0b6b0f68-efc8-45f2-99eb-b87b34b03486", "idleTimeout": "20", "absoluteTimeout": "Thu Jun 23 10:44:17 EDT 2022" },
+        "cmsBuildInfo": {
+            "cmsOfferInfoEndPoint": "http://cms-author.corp.siriusxm.com/phx/dvgllvdexoac02-18070-care/services/v1/rest/sites/sxm/types/SXMOffer",
+            "cmsPackageInfoEndPoint": "http://cms-author.corp.siriusxm.com/phx/dvgllvdexoac02-18070-care/services/v1/rest/sites/sxm/types/SXMPackage",
+            "cmsModeEnabled": true
+        }
+    }
+}

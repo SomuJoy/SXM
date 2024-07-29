@@ -1,0 +1,15 @@
+{
+    "PLURAL_MAP": {
+        "TERM": {
+            "=1": "Mensuel",
+            "=12": "Annuel"
+        },
+        "PERIOD": {
+            "=1": "mois",
+            "=12": "an"
+        }
+    },
+    "DESCRIPTION": "Choisir votre forfait",
+    "PRICE": "{{price}}/{{period}}",
+    "OFFER_DETAILS": "Détails de l'offre ci-dessous"
+}

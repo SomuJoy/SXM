@@ -1,0 +1,21 @@
+#lookup-vin {
+    .input-container {
+        margin-top: 25px;
+    }
+
+    .button.primary {
+        margin: 24px 0 0 0;
+    }
+
+    .privacy-policy {
+        margin: 32px 0 0 0;
+    }
+}
+
+:host-context(.in-tab) {
+    display: block;
+    margin-bottom: 25px;
+    div > h5 {
+        display: none;
+    }
+}

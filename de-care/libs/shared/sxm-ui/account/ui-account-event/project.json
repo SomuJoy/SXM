@@ -1,0 +1,24 @@
+{
+    "name": "shared-sxm-ui-account-ui-account-event",
+    "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/sxm-ui/account/ui-account-event/src",
+    "prefix": "sxm-ui",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/shared/sxm-ui/account/ui-account-event"],
+            "options": {
+                "jestConfig": "libs/shared/sxm-ui/account/ui-account-event/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/sxm-ui/account/ui-account-event/src/**/*.ts", "libs/shared/sxm-ui/account/ui-account-event/src/**/*.html"]
+            }
+        }
+    },
+    "tags": ["type:ui", "scope:shared-ui"]
+}

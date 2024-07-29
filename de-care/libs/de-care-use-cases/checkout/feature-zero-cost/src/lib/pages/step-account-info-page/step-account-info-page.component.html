@@ -1,0 +1,29 @@
+<ng-container *ngrxLet="viewModel$ as viewModel">
+    <section id="mainContent">
+        <sxm-ui-step-header [currentStepNumber]="2" [numberOfSteps]="3">
+            <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+            <ng-container body>
+                <p id="deviceInstructions">
+                    {{
+                        translateKeyPrefix + ".INSTRUCTIONS"
+                            | translate
+                                : {
+                                      deviceDescription:
+                                          (viewModel.deviceInfo
+                                          | vehicleInfoOrRadio: translateKeyPrefix + ".DEVICE_DESCRIPTION_VEHICLE":translateKeyPrefix + ".DEVICE_DESCRIPTION_RADIO"),
+                                      term: viewModel?.offer?.termLength
+                                  }
+                    }}
+                </p>
+                <a routerLink="../device-lookup" [replaceUrl]="true" queryParamsHandling="preserve">{{ translateKeyPrefix + ".NOT_YOUR_CAR_MESSAGE" | translate }}</a>
+            </ng-container>
+        </sxm-ui-step-header>
+        <hr />
+        <h3>{{ translateKeyPrefix + ".FORM_TITLE" | translate }}</h3>
+        <de-care-account-info-form [initialState]="viewModel?.customerInfo" (formCompleted)="formSubmit($event)"></de-care-account-info-form>
+        <p>{{ translateKeyPrefix + ".ONCE_ACTIVATED_INSTRUCTIONS" | translate }}</p>
+    </section>
+    <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+        <div [innerHTML]="viewModel.legalCopy"></div>
+    </section>
+</ng-container>

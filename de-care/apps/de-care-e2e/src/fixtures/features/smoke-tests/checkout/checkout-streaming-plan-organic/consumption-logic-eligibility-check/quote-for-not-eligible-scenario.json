@@ -1,0 +1,86 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "quote": {
+            "currentQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "0.75",
+                "totalTaxesAndFeesAmount": "0.75",
+                "totalAmount": "9.27",
+                "discountAmount": "0.00",
+                "pricePerMonth": "7.99",
+                "currentBalance": "9.27",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "0.00",
+                "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "0.75" }],
+                "taxes": [],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Essential Streaming - Monthly",
+                        "packageName": "SIR_IP_SA_ESNTL",
+                        "termLength": 1,
+                        "priceAmount": "8.52",
+                        "taxAmount": "0.00",
+                        "feeAmount": "0.75",
+                        "totalTaxesAndFeesAmount": "0.75",
+                        "taxes": [],
+                        "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "0.75" }],
+                        "startDate": "2021-06-29",
+                        "endDate": "2021-08-01",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "SELF_PAY",
+                        "dealType": "",
+                        "isStudent": false,
+                        "isAdvantage": false
+                    }
+                ],
+                "isUpgraded": false,
+                "isProrated": true
+            },
+            "futureQuote": null,
+            "proRatedRenewalQuote": null,
+            "promoRenewalQuote": null,
+            "renewalQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "0.70",
+                "totalTaxesAndFeesAmount": "0.70",
+                "totalAmount": "8.69",
+                "discountAmount": "0.00",
+                "pricePerMonth": "7.99",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "0.70" }],
+                "taxes": [],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Essential Streaming - Monthly",
+                        "packageName": "SIR_IP_SA_ESNTL",
+                        "termLength": 1,
+                        "priceAmount": "7.99",
+                        "taxAmount": "0.00",
+                        "feeAmount": "0.70",
+                        "totalTaxesAndFeesAmount": "0.70",
+                        "taxes": [],
+                        "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "0.70" }],
+                        "startDate": "2021-08-01",
+                        "endDate": "2021-09-01",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "SELF_PAY",
+                        "dealType": "",
+                        "isStudent": false,
+                        "isAdvantage": false
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            }
+        }
+    }
+}

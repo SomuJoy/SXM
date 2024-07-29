@@ -1,0 +1,1315 @@
+[
+    {
+        "request": {
+            "method": "GET",
+            "url": "/services/utility/env-info",
+            "postData": ""
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Fri, 29 Jan 2021 14:15:37 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Transfer-Encoding",
+                    "value": "chunked"
+                },
+                {
+                    "name": "Connection",
+                    "value": "keep-alive"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": ": ALLOW-FROM https://www.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Security-Policy",
+                    "value": ": frame-ancestors https://*.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "mode": "test",
+                        "country": "us",
+                        "buildInfo": {
+                            "tag": "project/CARE_RELEASE_0060000",
+                            "smsDependency": "",
+                            "smsUser": "web1",
+                            "smsHost": "10.98.144.117:25401",
+                            "pvtTime": "2021-07-01 22:56:02.0"
+                        },
+                        "sessionInfo": {
+                            "id": "db0350b0-e732-4676-8115-0788e9659e42",
+                            "idleTimeout": "20",
+                            "absoluteTimeout": "Fri Jan 29 09:35:36 EST 2021"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/account/token",
+            "postData": {
+                "token": "83d0c4d9-5597-4086-a0b8-c1ef90aaa889",
+                "tokenType": "SALES_AUDIO",
+                "student": false
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Fri, 29 Jan 2021 14:15:38 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Transfer-Encoding",
+                    "value": "chunked"
+                },
+                {
+                    "name": "Connection",
+                    "value": "keep-alive"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://dex-dev.corp.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": ": ALLOW-FROM https://www.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Security-Policy",
+                    "value": ": frame-ancestors https://*.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "nonPIIAccount": {
+                            "firstName": "JOHN",
+                            "accountProfile": {
+                                "accountRegistered": false
+                            },
+                            "serviceAddress": {
+                                "state": "NY"
+                            },
+                            "subscriptions": [
+                                {
+                                    "id": "10000204328",
+                                    "plans": [
+                                        {
+                                            "dataCapable": false,
+                                            "code": "Select - 12mo - wActv",
+                                            "packageName": "SIR_AUD_EVT",
+                                            "termLength": 12,
+                                            "startDate": "2021-01-28T00:00:00-05:00",
+                                            "endDate": null,
+                                            "nextCycleOn": "2022-01-28T00:00:00-05:00",
+                                            "type": "SELF_PAID",
+                                            "capabilities": ["IPAUD", "AUD"],
+                                            "price": 203.88,
+                                            "isBasePlan": true
+                                        }
+                                    ],
+                                    "followonPlans": [],
+                                    "radioService": {
+                                        "id": "10000206376",
+                                        "last4DigitsOfRadioId": "6821",
+                                        "vehicleInfo": {
+                                            "year": null,
+                                            "make": null,
+                                            "model": null
+                                        },
+                                        "is360LCapable": false
+                                    },
+                                    "streamingService": {
+                                        "id": "10000207400",
+                                        "maskedUserName": "khz******@siriusxm.com",
+                                        "status": "Active"
+                                    },
+                                    "status": "Active",
+                                    "devicePromoCode": null
+                                }
+                            ],
+                            "billingSummary": {
+                                "creditCard": {
+                                    "last4Digits": "1111",
+                                    "type": "VISA",
+                                    "status": "ACTIVE"
+                                }
+                            },
+                            "closedDevices": [],
+                            "hasEmailAddressOnFile": true,
+                            "isAccountIdentifiedUsingFLEPZOrVIN": false
+                        },
+                        "maskedUserNameFromToken": null,
+                        "marketingId": "990003306821",
+                        "marketingAcctId": "7304",
+                        "isUserNameInTokenSameAsAccount": false
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/offers/customer/change",
+            "postData": {
+                "subscriptionId": 10000204328,
+                "task": "upgrade"
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Fri, 29 Jan 2021 14:15:40 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Transfer-Encoding",
+                    "value": "chunked"
+                },
+                {
+                    "name": "Connection",
+                    "value": "keep-alive"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://dex-dev.corp.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": ": ALLOW-FROM https://www.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Security-Policy",
+                    "value": ": frame-ancestors https://*.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "offers": [
+                            {
+                                "planCode": "All Access - 12mo - wActv",
+                                "packageName": "SIR_AUD_ALLACCESS",
+                                "parentPackageName": null,
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 263.88,
+                                "pricePerMonth": 21.99,
+                                "retailPrice": 21.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 21.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 1,
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": true,
+                                "dataCapable": false
+                            },
+                            {
+                                "planCode": "All Access - 1mo - wActv",
+                                "packageName": "SIR_AUD_ALLACCESS",
+                                "parentPackageName": null,
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 21.99,
+                                "pricePerMonth": 21.99,
+                                "retailPrice": 21.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 21.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 1,
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": true,
+                                "dataCapable": false
+                            },
+                            {
+                                "planCode": "All Access Family Friendly - 12mo - wActv",
+                                "packageName": "SIR_AUD_ALLACCESS_FF",
+                                "parentPackageName": null,
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 251.88,
+                                "pricePerMonth": 20.99,
+                                "retailPrice": 20.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 20.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 2,
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "dataCapable": false
+                            },
+                            {
+                                "planCode": "All Access Family Friendly - 1mo - wActv",
+                                "packageName": "SIR_AUD_ALLACCESS_FF",
+                                "parentPackageName": null,
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 20.99,
+                                "pricePerMonth": 20.99,
+                                "retailPrice": 20.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 20.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 2,
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "dataCapable": false
+                            },
+                            {
+                                "planCode": "Select - 12mo - wActv",
+                                "packageName": "SIR_AUD_EVT",
+                                "parentPackageName": null,
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 203.88,
+                                "pricePerMonth": 16.99,
+                                "retailPrice": 16.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 16.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 3,
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "dataCapable": false
+                            },
+                            {
+                                "planCode": "Select - 1mo - wActv",
+                                "packageName": "SIR_AUD_EVT",
+                                "parentPackageName": null,
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 16.99,
+                                "pricePerMonth": 16.99,
+                                "retailPrice": 16.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 16.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 3,
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "dataCapable": false
+                            },
+                            {
+                                "planCode": "Select Family Friendly - 1mo - wActv",
+                                "packageName": "SIR_AUD_FF",
+                                "parentPackageName": null,
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 15.99,
+                                "pricePerMonth": 15.99,
+                                "retailPrice": 15.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 15.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 4,
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "dataCapable": false
+                            },
+                            {
+                                "planCode": "Select Family Friendly - 12mo - wActv",
+                                "packageName": "SIR_AUD_FF",
+                                "parentPackageName": null,
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 191.88,
+                                "pricePerMonth": 15.99,
+                                "retailPrice": 15.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 15.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 4,
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "dataCapable": false
+                            },
+                            {
+                                "planCode": "Mostly Music - 12mo - wActv",
+                                "packageName": "SIR_AUD_PKG_MM",
+                                "parentPackageName": null,
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 155.88,
+                                "pricePerMonth": 12.99,
+                                "retailPrice": 12.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 12.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 5,
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "dataCapable": false
+                            },
+                            {
+                                "planCode": "Mostly Music - 1mo - wActv",
+                                "packageName": "SIR_AUD_PKG_MM",
+                                "parentPackageName": null,
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 12.99,
+                                "pricePerMonth": 12.99,
+                                "retailPrice": 12.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 12.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 5,
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "dataCapable": false
+                            },
+                            {
+                                "planCode": "News-Sports-Talk - 1mo - wActv",
+                                "packageName": "SIR_AUD_PKG_NS",
+                                "parentPackageName": null,
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 10.99,
+                                "pricePerMonth": 10.99,
+                                "retailPrice": 10.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 10.99,
+                                "processingFee": null,
+                                "supportedServices": ["UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 6,
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "dataCapable": false
+                            },
+                            {
+                                "planCode": "News-Sports-Talk - 12mo - wActv",
+                                "packageName": "SIR_AUD_PKG_NS",
+                                "parentPackageName": null,
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 131.88,
+                                "pricePerMonth": 10.99,
+                                "retailPrice": 10.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 10.99,
+                                "processingFee": null,
+                                "supportedServices": ["UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 6,
+                                "fallbackReason": "",
+                                "mrdEligible": false,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "dataCapable": false
+                            }
+                        ],
+                        "presentment": null
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/validate/customer-info",
+            "postData": {
+                "email": {
+                    "email": "john.smmith@siriusxm.com"
+                },
+                "username": {
+                    "userName": "john.smmith@siriusxm.com",
+                    "reuseUserName": true
+                }
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Fri, 29 Jan 2021 14:16:02 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Transfer-Encoding",
+                    "value": "chunked"
+                },
+                {
+                    "name": "Connection",
+                    "value": "keep-alive"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://dex-dev.corp.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": ": ALLOW-FROM https://www.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Security-Policy",
+                    "value": ": frame-ancestors https://*.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "valid": true,
+                        "emailValidation": {
+                            "verificationStatus": "VALID",
+                            "verificationMessage": "",
+                            "suggestedEmail": "",
+                            "valid": true
+                        },
+                        "usernameValidation": {
+                            "valid": true
+                        },
+                        "billingAddressValidation": null,
+                        "serviceAddressValidation": null,
+                        "ccValidation": null
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/quotes/quote",
+            "postData": {
+                "planCodes": ["All Access - 1mo - wActv"],
+                "subscriptionId": "10000204328"
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Fri, 29 Jan 2021 14:16:04 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Transfer-Encoding",
+                    "value": "chunked"
+                },
+                {
+                    "name": "Connection",
+                    "value": "keep-alive"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://dex-dev.corp.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": ": ALLOW-FROM https://www.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Security-Policy",
+                    "value": ": frame-ancestors https://*.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "quote": {
+                            "currentQuote": {
+                                "totalTaxAmount": "0.00",
+                                "totalFeesAmount": "4.71",
+                                "totalTaxesAndFeesAmount": "4.71",
+                                "totalAmount": "-116.38",
+                                "discountAmount": "0.00",
+                                "pricePerMonth": "21.99",
+                                "currentBalance": "-116.38",
+                                "consolidatedCreditAmount": "-143.08",
+                                "previousBalance": "0.00",
+                                "fees": [
+                                    {
+                                        "description": "U.S. Music Royalty Fee",
+                                        "amount": "4.71"
+                                    }
+                                ],
+                                "taxes": [],
+                                "details": [
+                                    {
+                                        "planCode": "All Access - 1mo - wActv",
+                                        "packageName": "SIR_AUD_ALLACCESS",
+                                        "termLength": 1,
+                                        "priceAmount": "21.99",
+                                        "taxAmount": "0.00",
+                                        "feeAmount": "4.71",
+                                        "totalTaxesAndFeesAmount": "4.71",
+                                        "taxes": [],
+                                        "fees": [
+                                            {
+                                                "description": "U.S. Music Royalty Fee",
+                                                "amount": "4.71"
+                                            }
+                                        ],
+                                        "startDate": "2021-07-01",
+                                        "endDate": "2021-08-01",
+                                        "isMrdEligible": false,
+                                        "balanceType": null,
+                                        "type": "SELF_PAY",
+                                        "dealType": "",
+                                        "isAdvantage": false,
+                                        "isStudent": false
+                                    }
+                                ],
+                                "isUpgraded": false,
+                                "isProrated": false
+                            },
+                            "futureQuote": null,
+                            "proRatedRenewalQuote": null,
+                            "promoRenewalQuote": null,
+                            "renewalQuote": {
+                                "totalTaxAmount": "0.00",
+                                "totalFeesAmount": "4.71",
+                                "totalTaxesAndFeesAmount": "4.71",
+                                "totalAmount": "26.70",
+                                "discountAmount": "0.00",
+                                "pricePerMonth": "21.99",
+                                "currentBalance": "",
+                                "consolidatedCreditAmount": "",
+                                "previousBalance": "",
+                                "fees": [
+                                    {
+                                        "description": "U.S. Music Royalty Fee",
+                                        "amount": "4.71"
+                                    }
+                                ],
+                                "taxes": [],
+                                "details": [
+                                    {
+                                        "planCode": "All Access - 1mo - wActv",
+                                        "packageName": "SIR_AUD_ALLACCESS",
+                                        "termLength": 1,
+                                        "priceAmount": "21.99",
+                                        "taxAmount": "0.00",
+                                        "feeAmount": "4.71",
+                                        "totalTaxesAndFeesAmount": "4.71",
+                                        "taxes": [],
+                                        "fees": [
+                                            {
+                                                "description": "U.S. Music Royalty Fee",
+                                                "amount": "4.71"
+                                            }
+                                        ],
+                                        "startDate": "2021-08-01",
+                                        "endDate": "2021-09-01",
+                                        "isMrdEligible": false,
+                                        "balanceType": null,
+                                        "type": "SELF_PAY",
+                                        "dealType": "",
+                                        "isAdvantage": false,
+                                        "isStudent": false
+                                    }
+                                ],
+                                "isUpgraded": null,
+                                "isProrated": false
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/validate/customer-info",
+            "postData": {
+                "email": {
+                    "email": "john.smmith@siriusxm.com"
+                },
+                "username": {
+                    "userName": "john.smmith@siriusxm.com",
+                    "reuseUserName": true
+                }
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Fri, 29 Jan 2021 14:16:03 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Transfer-Encoding",
+                    "value": "chunked"
+                },
+                {
+                    "name": "Connection",
+                    "value": "keep-alive"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://dex-dev.corp.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": ": ALLOW-FROM https://www.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Security-Policy",
+                    "value": ": frame-ancestors https://*.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "valid": true,
+                        "emailValidation": {
+                            "verificationStatus": "VALID",
+                            "verificationMessage": "",
+                            "suggestedEmail": "",
+                            "valid": true
+                        },
+                        "usernameValidation": {
+                            "valid": true
+                        },
+                        "billingAddressValidation": null,
+                        "serviceAddressValidation": null,
+                        "ccValidation": null
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/purchase/change-subscription",
+            "postData": {
+                "subscriptionId": 10000204328,
+                "plans": [
+                    {
+                        "planCode": "All Access - 1mo - wActv"
+                    }
+                ],
+                "paymentInfo": {
+                    "useCardOnfile": true
+                }
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Fri, 29 Jan 2021 14:16:28 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Transfer-Encoding",
+                    "value": "chunked"
+                },
+                {
+                    "name": "Connection",
+                    "value": "keep-alive"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://dex-dev.corp.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": ": ALLOW-FROM https://www.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Security-Policy",
+                    "value": ": frame-ancestors https://*.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "email": "KHZFFE.EJOU@SIRIUSXM.COM",
+                        "status": "SUCCESS",
+                        "radioId": null,
+                        "subscriptionId": "10000204328",
+                        "accountNumber": "10000207304",
+                        "isOfferStreamingEligible": true,
+                        "isEligibleForRegistration": true,
+                        "isUserNameSameAsEmail": true
+                    }
+                }
+            }
+        }
+    }
+]

@@ -1,0 +1,24 @@
+<main de-care-page-main>
+    <div class="row icon-row">
+        <div class="column icon-col">
+            <svg class="icon icon-utility large checkmark-circle-outline">
+                <use class="icon-check-mark-flex-stroke" xlink:href="#icon-check-mark-flex-stroke"></use>
+            </svg>
+        </div>
+    </div>
+    <h4 data-e2e="registrationCompleted.titleText">{{ translateKeyPrefix + ".COMPLETED.TITLE" | translate: { firstName: firstName$ | async } }}</h4>
+    <p data-e2e="registrationCompleted.instructionsText">{{ translateKeyPrefix + ".COMPLETED.INSTRUCTIONS" | translate }}</p>
+    <a class="button primary full-width" sxmUiDataClickTrack="login" [href]="translateKeyPrefix + '.COMPLETED.CTA.VANITY_URL' | translate">
+        {{ translateKeyPrefix + ".COMPLETED.GO_TO_MY_ACCOUNT_BUTTON" | translate }}
+    </a>
+    <div class="row padding-top">
+        <div class="column small-12 align-center">
+            <streaming-player-link
+                [infoForToken]="{ subscriptionId: null }"
+                [customLinkClasses]="['align-center', 'no-underline', 'text-bold']"
+                [customLink]="translateKeyPrefix + '.STREAMING_PLAYER_LINK' | translate"
+                dataE2e="registrationCompleted.listenNowCallToAction"
+            ></streaming-player-link>
+        </div>
+    </div>
+</main>

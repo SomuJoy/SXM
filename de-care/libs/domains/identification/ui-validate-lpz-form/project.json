@@ -1,0 +1,25 @@
+{
+    "name": "domains-identification-ui-validate-lpz-form",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/identification/ui-validate-lpz-form/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/domains/identification/ui-validate-lpz-form"],
+            "options": {
+                "jestConfig": "libs/domains/identification/ui-validate-lpz-form/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/identification/ui-validate-lpz-form/src/**/*.ts", "libs/domains/identification/ui-validate-lpz-form/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:ui", "scope:domain-ui"]
+}

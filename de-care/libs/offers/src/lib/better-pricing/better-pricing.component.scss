@@ -1,0 +1,72 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: grid;
+    grid: 1rem 1rem 1rem / 24px 2fr 1fr;
+    row-gap: 5px;
+    column-gap: 2px;
+
+    .icon {
+        grid-column: 1;
+        top: -3px;
+    }
+
+    use {
+        stroke: $white;
+    }
+
+    .description {
+        font-weight: bold;
+        grid-column: 2;
+    }
+
+    .new-price {
+        font-weight: bold;
+        grid-column: 3;
+        grid-row: 1;
+        text-align: right;
+        white-space: nowrap;
+        padding-left: 26px;
+        font-size: 16px;
+    }
+
+    .original-price {
+        grid-column: 3;
+        grid-row: 2;
+        text-align: right;
+        text-decoration: line-through;
+    }
+
+    .details {
+        grid-column: 3;
+        grid-row: 3;
+        text-align: right;
+    }
+
+    @media only screen and (max-width: 635px) {
+        grid: auto / 30px 1fr;
+        row-gap: 0;
+
+        .new-price {
+            grid-column: 2;
+            grid-row: 2;
+            text-align: left;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .original-price {
+            grid-column: 2;
+            grid-row: 3;
+            text-align: left;
+            margin: 0;
+        }
+
+        .details {
+            grid-column: 2;
+            grid-row: 4;
+            text-align: left;
+            margin: 0;
+        }
+    }
+}

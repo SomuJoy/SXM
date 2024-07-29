@@ -1,0 +1,59 @@
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+    <div class="row no-padding">
+        <div class="column small-5 medium-5 align-left align-top no-padding">
+            <div class="input-container" [class.invalid]="form.get('zipCode') | formControlInvalid: submitted">
+                <label for="zipCode">{{ "identification.zagFormComponent.ZIP_CODE" | translate }}</label>
+                <input type="text" appMaskZipCode [zipMaskIsCanada]="isCanada" id="zipCode" formControlName="zipCode" onFocus />
+            </div>
+            <div *ngIf="form.get('zipCode') | formControlInvalid: submitted" class="invalid-feedback">
+                <p>{{ "identification.zagFormComponent.ERRORS.ZIP_CODE" | translate }}</p>
+            </div>
+        </div>
+        <div class="column small-7 medium-7 align-right align-top no-padding">
+            <sxm-ui-dropdown
+                class="dropdown"
+                tabindex="0"
+                key="key"
+                text="label"
+                [filterSelected]="true"
+                formControlName="birthYear"
+                [passedValue]="years"
+                [class.invalid]="form.get('birthYear') | formControlInvalid: submitted"
+                labelText="{{ 'identification.zagFormComponent.BIRTH_YEAR' | translate }}"
+            ></sxm-ui-dropdown>
+            <div
+                *ngIf="form.get('birthYear') | formControlInvalid: submitted"
+                class="invalid-feedback"
+                [class.dropdown-error-msg]="form.controls.birthYear.invalid && form.controls.birthYear.touched"
+            >
+                <p>{{ "identification.zagFormComponent.ERRORS.BIRTH_YEAR" | translate }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row no-padding">
+        <div class="column small-12 medium-12 align-right align-top no-padding">
+            <sxm-ui-dropdown
+                class="dropdown"
+                tabindex="0"
+                key="key"
+                text="label"
+                [filterSelected]="true"
+                [class.invalid]="form.get('gender') | formControlInvalid: submitted"
+                formControlName="gender"
+                [passedValue]="'identification.zagFormComponent.GENDER_LIST' | translate"
+                labelText="{{ 'identification.zagFormComponent.GENDER' | translate }}"
+            ></sxm-ui-dropdown>
+        </div>
+        <div
+            *ngIf="form.get('gender') | formControlInvalid: submitted"
+            class="invalid-feedback"
+            [class.dropdown-error-msg]="form.controls.gender.invalid && form.controls.gender.touched"
+            [class.filled]="form.controls.gender.value"
+        >
+            <p>{{ "identification.zagFormComponent.ERRORS.GENDER" | translate }}</p>
+        </div>
+    </div>
+    <button class="button primary full-width" type="submit" data-test="zagform.continueButton" qatag="ZagContinueButton" [class.loading]="loading" [disabled]="loading">
+        {{ "identification.zagFormComponent.CONTINUE" | translate }}
+    </button>
+</form>

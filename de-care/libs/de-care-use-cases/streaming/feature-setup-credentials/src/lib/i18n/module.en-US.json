@@ -1,0 +1,239 @@
+{
+    "DeCareUseCasesStreamingFeatureSetupCredentialsModule": {
+        "Shared": {
+            "PLAYER_LINK": "https://sxm.smart.link/t7ej6qja3?contentType=landing",
+            "PAGE_TITLE": "Set Up Your SXM App Login",
+            "APP_TITLE": "Subscribe to SiriusXM"
+        },
+        "FindAccountPageComponent": {
+            "EXPIRED_PROMO_CODE_HEADLINE": "Sorry, but free listening has expired.",
+            "EXPIRED_PROMO_CODE_INSTRUCTIONS": "To listen on the SXM app, enter your info so we can see if you have an existing SiriusXM account or trial subscription."
+        },
+        "AccountNotFoundPageComponent": {
+            "HEADLINE": "Let’s try something else.",
+            "SUBTITLE": "We didn't find your subscription with the info you entered, but we can look again using your Radio ID, VIN, or license plate.",
+            "RADIO_LOOKUP_INSTRUCTIONS": {
+                "PREFIX": "Get in a new car? ",
+                "RADIO_LOOKUP_LINK": "Enter your Radio ID",
+                "SUFFIX": " and you'll be listening in no time."
+            },
+            "INSTRUCTIONS": "If you don't have a SiriusXM car radio, or you're only interested in streaming, you can subscribe now. We have plans for every kind of listener.",
+            "BUTTON_TEXT": "SUBSCRIBE",
+            "SUBSCRIBE_URL": " http://siriusxm.com/substreamonboarding"
+        },
+        "MultipleSubscriptionsPageComponent": {
+            "HEADLINE_SETS": {
+                "WITH_STREAMING": {
+                    "HEADLINE": "We've found at least one subscription that includes streaming on the SXM App.",
+                    "INSTRUCTIONS": "Choose one to start listening."
+                },
+                "INACTIVE": {
+                    "HEADLINE": "The subscriptions we found are inactive.",
+                    "INSTRUCTIONS": "To listen on your car radio as well as on the SXM App, you'll need to purchase a subscription. If you choose not to reactivate your subscription, you can also try out the SXM App for free or subscribe to a streaming-only plan."
+                },
+                "UPGRADE": {
+                    "HEADLINE": "The subscriptions we found are either inactive or do not include streaming.",
+                    "INSTRUCTIONS": "To listen on your car radio as well as on the SXM App, you'll need to reactivate or purchase a subscription."
+                },
+                "WITHOUT_STREAMING": {
+                    "HEADLINE": "The subscriptions we found do not include streaming.",
+                    "INSTRUCTIONS": "If you want to listen on your car radio as well as on the SXM App, you'll need to upgrade your subscription."
+                }
+            },
+            "OTHER_ACCOUNTS_HEADLINE": "Other accounts",
+            "OTHER_ACCOUNTS_INSTRUCTIONS": "You have other accounts that can be upgraded or reactivated to include streaming.",
+            "CTA": {
+                "LISTEN_NOW": "Listen Now",
+                "CREATE_LOGIN": "Create Login",
+                "REACTIVATE": "Reactivate",
+                "UPGRADE": "Upgrade",
+                "MAKE_PAYMENT": "Make payment",
+                "UPGRADE_URL": "https://www.siriusxm.com/upgradeonboarding",
+                "REACTIVATE_URL": "http://www.siriusxm.com/reactivateonboarding",
+                "WEB_FORM_URL": "http://www.siriusxm.com/onlinepayment"
+            },
+            "LOAD_RADIO_BUTTON_TEXT": "LOAD MORE RADIOS",
+            "DONT_SEE_ACCOUNT_TEXT": "Don’t see your account?"
+        },
+        "CredentialSetupConfirmationPageComponent": {
+            "HEADLINE": "You’re all set up to listen.",
+            "INSTRUCTIONS": "<p>Use your username and password to log into the SXM App to start listening.</p>",
+            "BUTTON_TEXT": "START LISTENING",
+            "CONTINUE_BUTTON_TEXT": "Continue",
+            "STREAMING_PLAYER_LINK": "?contentType=landing",
+            "BACK_TO_SIGN_IN_BUTTON_TEXT": "BACK TO SIGN IN"
+        },
+        "InactiveSubscriptionPageComponent": {
+            "HEADLINE": "Your subscription is inactive.",
+            "INSTRUCTIONS": "To listen on your car radio as well as on the SXM App, you'll need to purchase a new subscription. Begin by reactivating your radio below.",
+            "PREVIEW_BUTTON_TEXT": "REACTIVATE",
+            "DONT_SEE_ACCOUNT_TEXT": "Don’t see your account?",
+            "REACTIVATE_URL": "http://www.siriusxm.com/reactivateonboarding"
+        },
+        "IneligibleAudioWithNoStreamingCapabilityComponent": {
+            "HEADLINE": "Your subscription doesn't include streaming.",
+            "INSTRUCTIONS": "<p>To listen on the SXM App, you'll need to upgrade your subscription below.</p>",
+            "PREVIEW_BUTTON_TEXT": "UPGRADE",
+            "UPGRADE_URL": "http://www.siriusxm.com/upgradeonboarding"
+        },
+        "IneligibleExpiredAATrialComponent": {
+            "HEADLINE": "We found your trial subscription, but it has expired.",
+            "MESSAGE_WITH_PHONE_NUMBER": "<p>You can't reactivate your car subscription here (please call 1-844-287-9225 to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "MESSAGE_WITHOUT_PHONE_NUMBER": "<p>You can't reactivate your car subscription here (please contact SiriusXM to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "PREVIEW_BUTTON_TEXT": "SUBSCRIBE TO THE SXM APP"
+        },
+        "IneligibleInsufficientPackageComponent": {
+            "HEADLINE": "Your subscription doesn't include streaming.",
+            "INSTRUCTIONS": "<p>To listen on the SXM App , you'll need to upgrade your subscription below.</p>",
+            "PREVIEW_BUTTON_TEXT": "UPGRADE",
+            "UPGRADE_URL": "http://siriusxm.com/upgradeonboarding"
+        },
+        "IneligibleMaxLifetimeTrialsComponent": {
+            "HEADLINE": "Your subscription doesn't include streaming.",
+            "INSTRUCTIONS": "<p>To listen on the SXM App , you'll need to upgrade your subscription below.</p>",
+            "PREVIEW_BUTTON_TEXT": "TRY OR SUBSCRIBE"
+        },
+        "IneligibleTrialWithinLastTrailDateComponent": {
+            "HEADLINE": "Your subscription doesn't include streaming.",
+            "INSTRUCTIONS": "<p>To listen on the SXM App , you'll need to upgrade your subscription below.</p>",
+            "PREVIEW_BUTTON_TEXT": "TRY OR SUBSCRIBE"
+        },
+        "IneligibleNoAudioComponent": {
+            "HEADLINE": "We found your subscription, but it does not include streaming.",
+            "INSTRUCTIONS": "<p>You will need to upgrade a plan before you can stream.</p>",
+            "PREVIEW_BUTTON_TEXT": "UPGRADE",
+            "UPGRADE_URL": "http://www.siriusxm.com/upgradeonboarding"
+        },
+        "IneligibleNonPayPageComponent": {
+            "HEADLINE": "Your subscription is past due.",
+            "INSTRUCTIONS": "<p>Don't miss everything SiriusXM has to offer. Please make a payment to continue listening.</p>",
+            "PREVIEW_BUTTON_TEXT": "MAKE A PAYMENT",
+            "WEB_FORM_URL": "http://www.siriusxm.com/onlinepayment",
+            "DONT_SEE_ACCOUNT_TEXT": "Don’t see your account?"
+        },
+        "IneligibleNonConsumerComponent": {
+            "HEADLINE": "Your subscription doesn't include streaming.",
+            "INSTRUCTIONS": "<p>To listen on the SXM App , you'll need to upgrade your subscription below.</p>",
+            "PREVIEW_BUTTON_TEXT": "TRY OR SUBSCRIBE"
+        },
+        "FreeListenSetupPageComponent": {
+            "STEP_EMAIL_LOOKUP": {
+                "TITLE": "Listen now free for {{numberOfDays}}",
+                "INSTRUCTIONS": "You're steps away from connecting with SiriusXM free through {{endDateText}}. First, we need your email to setup your subscription.",
+                "ALREADY_HAVE_LOGIN": "Already have a login to stream?",
+                "SIGN_IN_LINK_TEXT": "Sign In",
+                "EMAIL_ERROR_GENERAL": "An email is required.",
+                "CONTINUE_BUTTON_TEXT": "Continue",
+                "MODAL_TITLE": "Your Trial",
+                "INELIGIBLE_TITLE": "You are ineligible for a trial.",
+                "INELIGIBLE_INSTRUCTIONS": "We're sorry but you are not eligible for another SiriusXM trial at this time. However, we have some special offers on subscriptions you can check out.",
+                "EXISTING_ACCOUNT_TITLE": "You already have a SiriusXM account.",
+                "EXISTING_ACCOUNT_INSTRUCTIONS": "You can recover your credentials or sign in to your account.",
+                "GET_SIRIUS_LINK_TEXT": "GET SIRIUSXM",
+                "CLOSE_LINK_TEXT": "CLOSE",
+                "RECOVER_CREDENTIALS_LINK_TEXT": "RECOVER CREDENTIALS",
+                "GET_SIRIUS_REDIRECT_LINK": "siriusxm.com/substreamonboarding",
+                "RECOVER_CREDENTIALS_LINK": "streaming.siriusxm.com/?recoverlogin=true",
+                "ERRORS": {
+                    "INVALID_EMAIL_ERROR": "Invalid email address entered.",
+                    "INVALID_PHONE_ERROR": "Enter a valid phone number.",
+                    "INVALID_USERNAME_ERROR": "Enter a valid email address.",
+                    "INVALID_ZIPCODE_ERROR": "Enter a valid zip code.",
+                    "SYSTEM_ERROR": "We’re sorry… something went wrong. We’re experiencing technical issues and are working on resolving it. Please try again."
+                }
+            },
+            "STEP_ACTIVATION": {
+                "TITLE": "Almost there. Here is your new username.",
+                "USERNAME_TITLE": "USERNAME",
+                "END_ON_TEXT": "Your free streaming subscription will automatically end on {{endDateText}}.",
+                "AGREEMENT_INSTRUCTIONS": "By continuing, you agree that this subscription is governed by our ",
+                "AGREEMENT_LINK_URL": "",
+                "AGREEMENT_LINK_TEXT": "Customer Agreement.",
+                "AGREEMENT_CONSENT_PART_1": "By registering, you agree that SiriusXM may contact you with special offers, please see our ",
+                "AGREEMENT_CONSENT_PART_2": " to learn more about how SiriusXM collects and processes your personal information. You can manage your contact preferences through your online account.",
+                "CONTINUE_BUTTON_TEXT": "Continue"
+            },
+            "PLURAL_DAYS_MAP": {
+                "=1": "1 day",
+                "other": "# days"
+            }
+        },
+        "FreeListenConfirmationPageComponent": {
+            "TITLE": "We've sent you an email.",
+            "INSTRUCTIONS": "<p>Look for our email on how to set up your account. If you don't see it soon, check your Spam folder.</p><p>Once your account setup is complete, you can listen to SiriusXM on connected devices with the SXM App.</p>",
+            "CONTINUE_BUTTON_TEXT": "Close"
+        },
+        "CreatePasswordPageComponent": {
+            "TITLE": "Create Your Password",
+            "INSTRUCTIONS": "Enter your new password for your account.",
+            "CONTINUE_BUTTON_TEXT": "CONTINUE",
+            "PASSWORD": {
+                "LABEL": "Password",
+                "ERRORS": {
+                    "REQUIRED": "Enter a valid password.",
+                    "LENGTH": "Your password must be {{ min }} to {{ max }} characters long.",
+                    "POLICY": "Your password must contain at least one character from at least 3 different groups, as explained in our password policy.",
+                    "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}",
+                    "GENERIC": "Your password does not fulfill all the requirements",
+                    "PII_DATA": "Password cannot contain first name, last name or email address."
+                }
+            },
+            "PLURAL_MAP": {
+                "WORD": {
+                    "=1": "word",
+                    "other": "words"
+                }
+            },
+            "ERRORS": {
+                "SYSTEM_ERROR": "We’re sorry… something went wrong. We’re experiencing technical issues and are working on resolving it. Please try again.",
+                "INVALID_PASSWORD_RESET_TOKEN_ERROR": "Invalid password token. Please try again.",
+                "EXPIRED_PASSWORD_RESET_TOKEN_ERROR": "Password token expired. Please try again."
+            }
+        },
+        "CreatePasswordConfirmationPageComponent": {
+            "TITLE": "We’ve updated your password.",
+            "INSTRUCTIONS": "You can now start listening online or on the app.",
+            "LISTEN_NOW_BUTTON_TEXT": "LISTEN NOW"
+        },
+        "ActivateDevicePageComponent": {
+            "STEPS": {
+                "ACTIVATION_CODE": {
+                    "HEADLINE": "Activate your device",
+                    "INSTRUCTIONS": "Enter the activation code that appears on your device screen.",
+                    "FORM_FIELD_ACTIVATION_CODE_LABEL": "Activation Code",
+                    "FORM_FIELD_ACTIVATION_CODE_ERROR_REQUIRED": "An activation code is required.",
+                    "FORM_ERROR_INVALID_ACTIVATION_CODE": "Your security code is either incorrect or has expired.",
+                    "FORM_ERROR_SYSTEM": "We’re sorry, something went wrong. Please try again.",
+                    "CONTINUE_BUTTON_TEXT": "Continue"
+                },
+                "SIGN_IN": {
+                    "HEADLINE": "Next sign into your SiriusXM account to finish activating your device.",
+                    "INSTRUCTIONS": "Use your SiriusXM account or SXM App login.",
+                    "FORM_ERROR_INVALID_ACTIVATION_CODE_PIECES": {
+                        "PART_1": "Your activation code has expired. Please ",
+                        "LINK_TEXT": "go back",
+                        "PART_2": " and try again."
+                    },
+                    "FORM_ERROR_INVALID_CREDENTIALS": "We don't recognize your username or password. Please try again.",
+                    "FORM_ERROR_SYSTEM": "We’re sorry, something went wrong. Please try again.",
+                    "LINK_FORGOT_PASSWORD_TEXT": "Forgot username or password?",
+                    "LINK_FORGOT_PASSWORD_URL": "https://streaming.siriusxm.com/onboarding/?recoverlogin=true",
+                    "CONTINUE_BUTTON_TEXT": "Sign In",
+                    "SETUP_STREAMING_HEADLINE": "No Account? No Problem!",
+                    "SETUP_STREAMING_LINK_TEXT": "Set up your streaming login",
+                    "FORM_FIELD_USERNAME_LABEL": "Username"
+                }
+            }
+        },
+        "ActivatedDeviceCompletedPageComponent": {
+            "HEADLINE": "You’re all set !",
+            "INSTRUCTIONS": "You can now enjoy SiriusXM on your device.",
+            "HEADLINE_SONOS": "You’re all set.",
+            "INSTRUCTIONS_SONOS": "You can now enjoy SiriusXM on your Sonos. Return to the Sonos app to finish setup and start listening."
+        },
+        "ExistingCredentialsPageComponent": {
+            "BUTTON_TEXT": "START LISTENING",
+            "STREAMING_PLAYER_LINK": "?contentType=landing"
+        }
+    }
+}

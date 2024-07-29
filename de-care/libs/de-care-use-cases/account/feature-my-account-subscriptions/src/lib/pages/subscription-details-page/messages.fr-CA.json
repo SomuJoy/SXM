@@ -1,0 +1,70 @@
+{
+    "AUDIO_TITLE": "Audio",
+    "AUDIO_DESCRIPTION": "Écoutez sur la radio de votre auto et diffusez sur l’Appli SXM.",
+    "INFOTAINMENT_TITLE": "Infodivertissement",
+    "INFOTAINMENT_DESCRIPTION": "Obtenez les dernières nouvelles sur la circulation, la météo, les prix de l’essence, les nouveautés au cinéma et bien plus encore avec Infodivertissement.",
+    "MARINE_TITLE": "Marine",
+    "AVIATION_TITLE": "Aviation",
+    "EDIT_NICKNAME_MODAL_TITLE": "Abonnements",
+    "NICKNAME_ADDED": "Le pseudo a été ajouté avec succès.",
+    "NICKNAME_UPDATED": "Le pseudo a été mis à jour avec succès.",
+    "PRICE_CHANGE_MESSAGE_DATE": "03/14/2023",
+    "PRICE_CHANGE_MESSAGE_URL": "https://www.siriusxm.com/mar2023rates",
+    "MODIFY_SUBSCRIPTION_OPTIONS": {
+        "CHANGE_PLAN": {
+            "label": "Changer mon forfait",
+            "routerLink": "subscription/change",
+            "url": "{{oacUrl}}/changesubscriptiondestination_execute.action?changeAction=modify&esnOrSirLogin={{radioId}}&flowOrigin=changesubscription",
+            "subscriptionId": "{{subscriptionId}}",
+            "langpref": "fr"
+        },
+        "CHANGE_TERM": {
+            "label": "Modifier la duree de mon abonnement",
+            "routerLink": "subscription/change",
+            "url": "{{oacUrl}}/changesubscriptiondestination_execute.action?changeAction=modify&flow=changesubscriptionterm&esnOrSirLogin={{radioId}}",
+            "subscriptionId": "{{subscriptionId}}",
+            "langpref": "fr"
+        },
+        "REFRESH_RADIO": {
+            "label": "Retransmettre le signal de la radio",
+            "url": "{{oacUrl}}/retailrefreshtext_view.action?receiver={{radioId}}&langpref=fr#/refreshradio"
+        },
+        "REPLACE_RADIO": {
+            "label": "Remplacer cette radio",
+            "routerLink": "transfer/radio/swap",
+            "subscriptionId": "{{subscriptionId}}",
+            "langpref": "fr"
+        },
+        "DOWNLOAD_MANUAL": {
+            "label": "Télécharger le manuel de la radio",
+            "url": "https://www.siriusxm.ca/fr/aide/guides/",
+            "target": "_blank"
+        },
+        "TRANSFER_SUBSCRIPTION": {
+            "label": "Transférer l’abonnement",
+            "routerLink": "transfer/radio/swap",
+            "subscriptionId": "{{subscriptionId}}",
+            "langpref": "fr"
+        },
+        "CANCEL_SUBSCRIPTION": {
+            "label": "Annuler l’abonnement",
+            "modalId": "cancel",
+            "paymentAlertModalId": "paymentAlert",
+            "pvipAlertModalId": "cancelPvipAlert",
+            "routerLink": "subscription/cancel",
+            "subscriptionId": "{{subscriptionId}}"
+        },
+        "ADD_RENEWAL_PLAN": {
+            "label": "Ajouter un forfait de renouvellement (ajouter un abonnement a la fin de mon essai)",
+            "routerLink": "subscription/change",
+            "subscriptionId": "{{subscriptionId}}",
+            "oemsetuptype": "renewal",
+            "langpref": "fr"
+        },
+        "REVERIFY_STUDENT_STATUS": {
+            "label": "Revérifier mon statut d’étudiant",
+            "routerLink": "student/re-verify",
+            "langpref": "fr"
+        }
+    }
+}

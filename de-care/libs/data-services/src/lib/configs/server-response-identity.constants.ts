@@ -1,0 +1,2 @@
+export const ServerResponseStudentVerificationErrorInvalidToken = 'INVALID_SHEER_ID_VERIFICATION_ID';
+export const ServerResponseStudentVerificationErrorFailedValidation = 'SHEER_ID_VERIFICATION_FAILED';

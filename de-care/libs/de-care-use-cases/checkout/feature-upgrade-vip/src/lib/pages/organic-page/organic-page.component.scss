@@ -1,0 +1,77 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.no-radio {
+    margin-top: 16px;
+    margin-bottom: 8px; //Plus extra 16px in accordion, 24px total
+
+    p {
+        color: $gray-dark;
+        font-size: 12px;
+        a {
+            color: inherit;
+        }
+    }
+}
+
+//TO DO: make top padding in main content component optional
+:host ::ng-deep main .main-content {
+    padding-top: 0;
+}
+
+.are-you-sure-container {
+    padding: 0 16px;
+    @include bp(medium) {
+        padding: 0;
+    }
+}
+
+.devices-for-vip {
+    p {
+        margin-bottom: 0;
+    }
+}
+
+//Fix double padding on mobile
+sxm-ui-accordion-stepper {
+    display: block;
+    margin: 0 -16px -32px;
+
+    @include bp(medium) {
+        margin: 0 0 -32px;
+    }
+}
+
+//TO DO: move that to hero & lead-offer-details components?
+:host ::ng-deep {
+    hero-component {
+        .hero--content-copy.column {
+            padding-bottom: 95px;
+        }
+    }
+
+    lead-offer-details {
+        .hero-sales--plan-card.legacy-package-card {
+            margin-top: -55px;
+        }
+    }
+}
+
+quote-summary {
+    margin-top: 24px;
+}
+
+.complete-order-button-captcha {
+    margin-top: 16px;
+}
+
+hr {
+    background-color: $gray-medium;
+    height: 1.1px;
+    margin: 32px 0;
+    border: 0;
+}
+
+.creditCopyDescription {
+    margin-top: 20px;
+}

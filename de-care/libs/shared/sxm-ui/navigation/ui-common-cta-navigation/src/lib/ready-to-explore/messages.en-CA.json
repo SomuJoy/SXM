@@ -1,0 +1,20 @@
+{
+    "HEADING_TEXT": "Ready to Explore?",
+    "BEFORE_YOU_GO": {
+        "INTRO_TEXT": "Before you go, ",
+        "LINK": {
+            "LINK_TEXT": "check out great offers.",
+            "LINK_URL": "https://www.siriusxm.ca/plans"
+        }
+    },
+    "LINKS": {
+        "PROGRAM_SCHEDULES": {
+            "LINK_TEXT": "View program schedules",
+            "LINK_URL": "https://siriusxm.ca/program-schedule"
+        },
+        "SPORTS_SCHEDULES": {
+            "LINK_TEXT": "Live sports schedules",
+            "LINK_URL": "https://www.siriusxm.ca/live-sports-schedule"
+        }
+    }
+}

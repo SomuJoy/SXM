@@ -1,0 +1,40 @@
+<div class="row no-padding">
+    <div class="column small-8 align-left no-padding" [attr.data-e2e]="vm.titleE2e">
+        <p class="no-margin large-copy price">
+            <strong
+                data-e2e="contentCard.orderDetails.packageName"
+                [class.package-name-normal-font]="vm.shouldNotBoldPackageName"
+                *ngIf="vm.shouldShowDetailPackageName"
+                [innerHTML]="vm.detailPackageName"
+            ></strong>
+            <ng-container *ngIf="vm.shouldShowDetailDealType">
+                <br *ngIf="!vm.shouldShowDetailDealTypeDetails" />
+                <strong data-e2e="quoteDealTypeText"> + {{ vm.dealType }}</strong>
+                <strong *ngIf="vm.shouldShowDetailDealTypeDetails"
+                    ><br />
+                    {{ vm.dealTypeDetails }}</strong
+                >
+            </ng-container>
+            <ng-content></ng-content>
+        </p>
+
+        <p
+            data-e2e="contentCard.orderDetails.termAndPrice"
+            class="small-copy text-color-grey-dark"
+            *ngIf="vm.shouldShowDetailPackageName && vm.shouldShowDetailTermAndPrice"
+            [innerHTML]="vm.termAndPrice"
+        ></p>
+        <span
+            data-e2e="contentCard.orderDetails.termAndPriceSubText"
+            class="small-copy text-color-grey-dark"
+            *ngIf="vm.shouldShowDetailPackageName && vm.termAndPriceSubText"
+            [innerHTML]="vm.termAndPriceSubText"
+        ></span>
+    </div>
+
+    <div [attr.data-e2e]="vm.amountE2e" class="column small-4 align-right no-padding align-top">
+        <p class="line-item-amount large-copy">
+            <strong [class.package-name-normal-font]="vm.shouldNotBoldPackageName">{{ vm.amount }}</strong>
+        </p>
+    </div>
+</div>

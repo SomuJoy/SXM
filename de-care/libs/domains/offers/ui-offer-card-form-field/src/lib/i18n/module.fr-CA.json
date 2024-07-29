@@ -1,0 +1,10 @@
+{
+    "domainsOffersUIOfferCardFormFieldModule": {
+        "offerCardFormFieldComponent": {
+            "CONTENT_CARD_FLAG": "Notre Meilleur Forfait",
+            "CONTENT_CARD_HEADLINE1": "Passer à ce forfait",
+            "CONTENT_CARD_HEADLINE2": "Garder ce forfait",
+            "CONTENT_CARD_HEADLINE3": "Ajouter ce forfait"
+        }
+    }
+}

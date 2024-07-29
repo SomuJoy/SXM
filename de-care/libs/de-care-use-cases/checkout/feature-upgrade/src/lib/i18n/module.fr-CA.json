@@ -1,0 +1,136 @@
+{
+    "DeCareUseCasesCheckoutFeatureUpgradeModule": {
+        "DefaultErrorPageComponent": {
+            "HEADER": {
+                "TITLE": "NOUS SOMMES DÉSOLÉS",
+                "BODY": "Cette transaction ne peut être complétée en ligne."
+            },
+            "HELP": {
+                "TITLE": "Laissez-nous vous aider.",
+                "OR_CALL": "Pour plus d’aide, composez le",
+                "TFN": "1-866-635-0565"
+            }
+        },
+        "ExpiredErrorPageComponent": {
+            "SUB_HEADER": "NOUS SOMMES DÉSOLÉS",
+            "HEADER": "Malheureusement, cette offre a expiré",
+            "TEXT_HEADER": "Besoin d'aide avec votre plan actuel?",
+            "MESSAGE_LOGIN": "Vous pouvez <a href='https://care.siriusxm.ca/login_view.action?langpref=fr'>vous connecter</a> pour gérer votre abonnement.",
+            "MESSAGE_CALL": "Appelez le <a href=\"tel:+1-866-635-0565\">1-866-635-0565</a> pour parler avec un agent."
+        },
+        "RedeemedErrorPageComponent": {
+            "SUB_HEADER": "NOUS SOMMES DÉSOLÉS",
+            "HEADER": "Il semble que vous ayez déjà utilisé cette offre",
+            "TEXT_HEADER": "Besoin d'aide avec votre plan actuel?",
+            "MESSAGE_LOGIN": "Vous pouvez <a href='https://care.siriusxm.ca/login_view.action?langpref=fr'>vous connecter</a> pour gérer votre abonnement.",
+            "MESSAGE_CALL": "Appelez le <a href=\"tel:+1-866-635-0565\">1-866-635-0565</a> pour parler avec un agent."
+        },
+        "CurrentChargesMessageComponent": {
+            "CURRENT_CHARGES": "Tarifs actuels",
+            "ABOUT_UPGRADE": "Votre surclassement entrera en vigueur immédiatement et n’affectera pas vos frais de facturation actuels pendant la période promotionnelle de 3 mois.",
+            "ABOUT_UPGRADE_ANNUAL": "Votre surclassement entrera en vigueur maintenant sans frais supplémentaires pour le reste de la durée de votre abonnement en cours.",
+            "INSTRUCTION_TEXT": "Vous pouvez annuler votre surclassement à tout moment avant votre renouvellement pour conserver votre forfait actuel."
+        },
+        "TierUpPurchasePageComponent": {
+            "CURRENT_PLAN": {
+                "TITLE": "Votre forfait actuel:",
+                "NAME_AND_PRICE": "{{name}} - {{price}}/mois",
+                "NAME_AND_PRICE_ANNUAL": "{{name}} - {{price}}/yr"
+            },
+            "PLUS_FEES": " plus frais",
+            "STEPS": {
+                "PAYMENT_INFO": {
+                    "TITLE": "Vos données de facturation",
+                    "CONTINUE_BUTTON_TEXT": "Continuer",
+                    "REMEMBER_TEXT": "Vous allez pouvoir vérifier votre commande avant de vous inscrire. Souvenez-vous que vous pouvez procéder à des modifications ou à une annulation en tout temps.",
+                    "SELECTED_PAYMENT_METHOD_SUMMARY": "{{cardType}} se terminant par {{cardNumberLastFour}}"
+                },
+                "REVIEW": {
+                    "TITLE": "Revoyez et terminez votre commande",
+                    "CONTINUE_BUTTON_TEXT": "Terminer Ma Commande"
+                }
+            },
+            "COMPLETE_ORDER_BUTTON": "Terminer ma commande"
+        },
+        "TierUpConfirmationPageComponent": {
+            "TITLE": "Votre abonnement a été mis à jour!",
+            "RADIO_INFO": {
+                "RADIO_ID_MASKED": "Code de radio: ****{{ radioId }}"
+            },
+            "QUOTE": {
+                "PRINT_YOUR_ORDER": "Imprimez le sommaire de votre commande"
+            },
+            "SUBSCRIPTION_IMPORTANT_INFO": {
+                "TITLE": "Informations importantes concernant votre abonnement:",
+                "BODY": "Votre service SiriusXM s’arrêtera automatiquement à la fin de votre essai, à moins que vous ne décidiez de vous abonner. Si vous décidez de garder le service, le forfait d’abonnement payant que vous choisissez sera renouvelé automatiquement ensuite et le tarif en vigueur à ce moment-là vous sera facturé selon le mode de paiement que vous aurez choisi. Frais et taxes en sus. Des redevances sur la musique et des frais administratifs (FRM) de 20,07 % s’appliquent. Pour annuler votre abonnement, vous pouvez nous appeler au 1 888 539-7474. Consultez notre <a href='https://www.siriusxm.ca/fr/conditions-generales/' target='_blank'>Entente du client</a> et notre <a href='https://www.siriusxm.ca/fr/politique-de-confidentialite/' target='_blank'>Politique de la vie privée</a> pour connaître toutes les conditions. Tous les frais et toute la programmation peuvent être modifiés."
+            }
+        },
+        "TierUpOfferComponent": {
+            "TITLE": "Offre D’une Durée Limitée",
+            "UPGRADE_INCLUDES": "\nVotre surclassement comprend:"
+        },
+        "FullPricePurchasePageComponent": {
+            "CURRENT_PLAN": {
+                "TITLE": "Votre abonnement actuel:",
+                "NAME_AND_PRICE": "{{name}} - {{price}}/mois",
+                "NAME_AND_PRICE_ANNUAL": "{{name}} - {{price}}/yr"
+            },
+            "TERM_MAP": {
+                "=1": "Mensuel - {{amount}}/mois",
+                "=3": "Trimestriel - {{amount}}/3 mois",
+                "=6": "Semi-Annuel - {{amount}}/6 mois",
+                "=12": "Annuel - {{amount}}/an",
+                "other": "{{termLength}}-Mois  - {{amount}}/{{termLength}} mois"
+            },
+            "PLUS_FEES": " plus frais",
+            "STEPS": {
+                "UPGRADED_PLAN_INFO": {
+                    "TITLE": "Votre forfait surclassé",
+                    "SELECTED_PLAN_INFO": "{{selectedPlan}}",
+                    "DEAL_INFO_APPLE": "<br>Plus jusqu’à 6 mois d’Apple Music à nos frais",
+                    "CONTINUE_BUTTON_TEXT": "Continuer"
+                },
+                "PICK_YOUR_BILLING_PLAN": {
+                    "TITLE": "Choisissez votre forfait de facturation",
+                    "CONTINUE_BUTTON_TEXT": "Continuer"
+                },
+                "PAYMENT_INFO": {
+                    "TITLE": "Vos données de facturation",
+                    "CONTINUE_BUTTON_TEXT": "Revoir Ma Commande",
+                    "REMEMBER_TEXT": "Vous allez pouvoir vérifier votre commande avant de vous inscrire. Souvenez-vous que vous pouvez procéder à des modifications ou à une annulation en tout temps.",
+                    "SELECTED_PAYMENT_METHOD_SUMMARY": "{{cardType}} se terminant par {{cardNumberLastFour}}"
+                },
+                "REVIEW": {
+                    "TITLE": "Revoyez et terminez votre commande",
+                    "CONTINUE_BUTTON_TEXT": "Terminer ma commande"
+                }
+            },
+            "COMPLETE_ORDER_BUTTON": "Terminer ma commande"
+        },
+        "FullPriceConfirmationPageComponent": {
+            "TITLE": "Votre abonnement a été mis à jour!",
+            "RADIO_INFO": {
+                "RADIO_ID_MASKED": "Code de radio: ****{{ radioId }}"
+            },
+            "QUOTE": {
+                "PRINT_YOUR_ORDER": "Imprimez le sommaire de votre commande"
+            },
+            "SUBSCRIPTION_IMPORTANT_INFO": {
+                "TITLE": "Informations importantes concernant votre abonnement:",
+                "BODY": "Votre abonnement commence immédiatement à moins d'indications contraires. Si votre radio ne reçoit pas la programmation à laquelle vous avez droit, veuillez suivre les instructions d'activation ci-dessus. Pour votre commodité, tous les abonnements sont renouvelés automatiquement jusqu'à ce que vous les annuliez. Votre renouvellement sera facturé au tarif en vigueur à ce moment-là en utilisant le mode de paiement inscrit en dossier. Vous pouvez annuler votre abonnement en tout temps en appelant le Service à la clientèle au 1 833 838-7846. Votre abonnement est régi par l'Entente du client de SiriusXM, que vous pouvez <a href=\"http://www.siriusxm.ca/conditions\" target=\"_blank\">consulter en ligne</a>. Si vous souhaitez recevoir un exemplaire de l'Entente du client par la poste, vous pouvez appeler au 1 866 635-2349."
+            },
+            "BACK_BUTTON": {
+                "TEXT": "RETOUR À MON COMPTE"
+            },
+            "DEAL_REDEMPTION_INSTRUCTIONS": {
+                "APPLE": {
+                    "TITLE": "Votre offre spéciale Apple Music arrive",
+                    "DESCRIPTION": "<p align=\"center\">Un courriel avec votre code unique sera envoyé à l’adresse courriel fournie. Suivez simplement les instructions pour commencer à profiter de jusqu’à 6 mois gratuits.</p>",
+                    "image": {
+                        "src": "assets/img/apple-music-logo.png"
+                    }
+                }
+            }
+        }
+    }
+}

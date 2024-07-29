@@ -1,0 +1,30 @@
+@import "node_modules/sxm/assets/src/scss/_color-palette.scss";
+
+// TODO: figure out if we can re-export these some way so we don't have to map them here
+
+:export {
+    // Primary
+    black: $black;
+    blue: $blue;
+    white: $white;
+
+    // Secondary
+    off-white: $off-white;
+    off-white-2: $off-white-2;
+    off-white-dark: $off-white-dark;
+    gray-light: $gray-light;
+    gray-medium: $gray-medium;
+    blue-ultra-light: $blue-ultra-light;
+    blue-light: $blue-light;
+
+    // //Deep Gray
+    gray-dark: $gray-dark;
+    gray-semi-dark: $gray-semi-dark;
+    gray-charcoal: $gray-charcoal;
+    silver: $silver;
+
+    // Attention
+    red: $red; //error red
+    green: $green; //confirmation green
+    orange: $orange; //warning orange
+}

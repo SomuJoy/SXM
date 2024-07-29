@@ -1,0 +1,34 @@
+{
+    "name": "de-care-use-cases-student-verification-state-reverification",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care-use-cases/student-verification/state-reverification/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/de-care-use-cases/student-verification/state-reverification/src/**/*.ts",
+                    "libs/de-care-use-cases/student-verification/state-reverification/src/**/*.html"
+                ]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/student-verification/state-reverification/jest.config.js",
+                "tsConfig": "libs/de-care-use-cases/student-verification/state-reverification/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/de-care-use-cases/student-verification/state-reverification/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:state", "scope:de-care-use-case-feature-state"]
+}

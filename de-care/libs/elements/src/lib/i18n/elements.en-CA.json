@@ -1,0 +1,11 @@
+{
+    "elements": {
+        "rflzWidgetComponent": {
+            "RADIO_LOOKUP_LABEL": "Radio Lookup"
+        },
+        "promoCodeValidationComponent": {
+            "NEED_HELP": "Need help?",
+            "CALL_US": "Call us at <a href=\"tel:+1-888-539-7474\">1-888-539-7474</a>"
+        }
+    }
+}

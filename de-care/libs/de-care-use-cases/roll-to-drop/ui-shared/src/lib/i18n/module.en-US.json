@@ -1,0 +1,16 @@
+{
+    "deCareUseCasesRollToDropUiSharedModule": {
+        "ineligibleLoader": {
+            "LOADER_TEXT": "Finding another\n\ngreat plan for you.",
+            "LOADER_PILL_TEXT": "That offer is for new subscribers, but here’s another option for you."
+        },
+        "enterYourInformationComponent": {
+            "ADDRESS": {
+                "BILLING_ADDRESS": "Billing Address"
+            },
+            "START_MY_TRIAL_BUTTON": "START MY TRIAL",
+            "CONTINUE_BUTTON": "CONTINUE",
+            "ENTER_A_CAPTCHA_TO_FINISH": "Please enter CAPTCHA to finish"
+        }
+    }
+}

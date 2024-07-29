@@ -1,0 +1,67 @@
+<main de-care-page-main class="background-offwhite">
+    <ng-container *ngIf="confirmationData$ | async as confirmationData">
+        <h3>{{ "deCareUseCasesTrialActivationRtpFeatureConfirmationModule.confirmationComponent.PAGE_TITLE" | translate }}</h3>
+        <de-care-global-personal-info [last4DigitsRadioId]="confirmationData.last4digitsRadioId"></de-care-global-personal-info>
+        <hr />
+
+        <feature-toggle-provider *ngIf="confirmationData?.orderQuoteData" [features]="confirmationData.featureFlagEnableQuoteSummary">
+            <ng-container *featureToggle="'enableQuoteSummary'">
+                <quote-summary
+                    [isNewAccount]="true"
+                    [isClosedRadio]="confirmationData.orderQuoteData?.isClosedRadio"
+                    [isStreamingFlow]="false"
+                    [isStudentFlow]="false"
+                    [expandOrderSummaryDetails]="false"
+                    [showHeadlineSeeOfferDetails]="false"
+                    [quote]="confirmationData.orderQuoteData?.quote"
+                    [showUnusedCreditLine]="true"
+                ></quote-summary>
+            </ng-container>
+
+            <ng-container *featureToggle="'!enableQuoteSummary'">
+                <order-summary
+                    [isNewAccount]="true"
+                    [isClosedRadio]="confirmationData.orderQuoteData?.isClosedRadio"
+                    [isStreamingFlow]="false"
+                    [isStudentFlow]="false"
+                    [expandOrderSummaryDetails]="false"
+                    [showHeadlineSeeOfferDetails]="false"
+                    [quote]="confirmationData.orderQuoteData?.quote"
+                    [showUnusedCreditLine]="true"
+                ></order-summary>
+            </ng-container>
+        </feature-toggle-provider>
+        <hr />
+
+        <refresh-signal [radioId]="confirmationData?.last4digitsRadioId"></refresh-signal>
+        <hr />
+
+        <sxm-ui-ready-to-explore-wrapper
+            [headerText]="'deCareUseCasesTrialActivationRtpFeatureConfirmationModule.confirmationComponent.READY_TO_EXPLORE_HEADER' | translate"
+            [listOfLinks]="'deCareUseCasesTrialActivationRtpFeatureConfirmationModule.confirmationComponent.READY_TO_EXPLORE_LINKS' | translate"
+            [footerText]="'deCareUseCasesTrialActivationRtpFeatureConfirmationModule.confirmationComponent.FOOTER_TEXT' | translate"
+            [footerLink]="'deCareUseCasesTrialActivationRtpFeatureConfirmationModule.confirmationComponent.FOOTER_LINK' | translate"
+            [streamingLinkText]="'deCareUseCasesTrialActivationRtpFeatureConfirmationModule.confirmationComponent.STREAMING_LINK_TEXT' | translate"
+            [displayFooter]="true"
+            [streamingLinkUrl]="'deCareUseCasesTrialActivationRtpFeatureConfirmationModule.confirmationComponent.STREAMING_PLAYER_LINK' | translate"
+            [subscriptionID]="confirmationData?.firstSubscriptionID"
+        >
+        </sxm-ui-ready-to-explore-wrapper>
+        <hr />
+
+        <register-your-account
+            *ngIf="confirmationData?.registerData"
+            [credentialState]="registerCredentialsState"
+            [account]="confirmationData.registerData?.account"
+            [securityQuestions]="confirmationData.registerData?.securityQuestions"
+            [registrationCompleted]="registrationCompleted"
+            [isTrialActivation]="true"
+            (register)="onRegisterAccount($event)"
+        ></register-your-account>
+    </ng-container>
+</main>
+
+<de-care-important-info-wrapper>
+    <div title>{{ "deCareUseCasesTrialActivationRtpFeatureConfirmationModule.confirmationComponent.IMPORTANT_INFO_TITLE" | translate }}</div>
+    <div body [innerHTML]="importantInformationTranslation$ | async | translate"></div>
+</de-care-important-info-wrapper>

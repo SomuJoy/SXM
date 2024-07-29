@@ -1,0 +1,54 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+:host {
+    display: block;
+    padding-bottom: 22px;
+    @include bp(medium) {
+        padding: 0 36px;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto;
+        h4 {
+            margin-bottom: 12px;
+        }
+
+        .button.primary {
+            @include short-button;
+        }
+
+        .description {
+            margin-bottom: 24px;
+        }
+
+        .instruction {
+            margin-bottom: 16px;
+        }
+
+        .button-cancel {
+            color: $blue;
+            font-size: calculate-rem(12px);
+            font-weight: calculate-font-weight("bold");
+            letter-spacing: 1.7px;
+            text-align: center;
+            text-transform: uppercase;
+            line-height: 20px;
+            padding: 12px 0;
+            border: 0;
+
+            &::before {
+                border-color: $white;
+            }
+        }
+        .invalid-feedback {
+            padding: 0;
+            width: 100%;
+            color: $red;
+            @include font-size(12px);
+            font-weight: calculate-font-weight("bold");
+            line-height: 1.5;
+            text-align: left;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+<div class="grid-container">
+    <div class="label-column">
+        <p class="lead-in title" [innerHTML]="translateKeyPrefix + '.TITLE' | translate"></p>
+    </div>
+    <p class="no-margin right-align link-column top-align">
+        <button
+            class="text-link-secondary"
+            (click)="editContactInfo.emit()"
+            [attr.aria-label]="translateKeyPrefix + '.EDIT_ARIA_LABEL' | translate"
+            data-test="editContactInfo"
+        >
+            {{ translateKeyPrefix + ".EDIT_LINK" | translate }}
+        </button>
+    </p>
+    <p class="label-column lead-in mb-4 text-overflow-ellipsis">
+        <span class="single-line text-overflow-ellipsis">{{ data?.name | titlecase }}</span>
+        <span *ngIf="data?.phone" class="single-line">{{ data.phone | sxmUiPhone }}</span>
+        <span *ngIf="data?.email" class="single-line text-overflow-ellipsis">{{ data.email | lowercase }}</span>
+    </p>
+    <p *ngIf="data?.address" class="label-column lead-in address">{{ data.address | sxmUiAddress }}</p>
+</div>

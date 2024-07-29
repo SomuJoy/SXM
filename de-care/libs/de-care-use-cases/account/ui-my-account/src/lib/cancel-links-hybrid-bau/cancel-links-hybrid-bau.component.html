@@ -1,0 +1,70 @@
+<div class="grid-container">
+    <h4>{{ translateKeyPrefix + ".TITLE" | translate }}</h4>
+    <hr />
+    <ul>
+        <li *ngFor="let line of data.types">
+            <ng-container [ngSwitch]="line">
+                <ng-container *ngSwitchCase="'CANCEL'">
+                    <img src="assets/img/bau-offers.png" />
+                    <p>
+                        {{ translateKeyPrefix + ".CANCEL_PRELINK" | translate
+                        }}<a [routerLink]="['/subscription/cancel']" [queryParams]="{ subscriptionId: data.subscriptionId }">{{
+                            translateKeyPrefix + ".CANCEL_LABEL" | translate
+                        }}</a
+                        >{{ translateKeyPrefix + ".CANCEL_POSTLINK" | translate }}
+                    </p>
+                </ng-container>
+                <ng-container *ngSwitchCase="'CANCEL_NO_OFFER'">
+                    <img src="assets/img/bau-cancel.png" />
+                    <p>
+                        {{ translateKeyPrefix + ".CANCEL_NO_OFFER_PRELINK" | translate
+                        }}<a [routerLink]="['/subscription/cancel']" [queryParams]="{ subscriptionId: data.subscriptionId }">{{
+                            translateKeyPrefix + ".CANCEL_NO_OFFER_LABEL" | translate
+                        }}</a
+                        >{{ translateKeyPrefix + ".CANCEL_NO_OFFER_POSTLINK" | translate }}
+                    </p>
+                </ng-container>
+                <ng-container *ngSwitchCase="'CHAT_CANCEL'">
+                    <ng-container *ngIf="!allowOnlyCancelOnline">
+                        <img src="assets/img/bau-offers.png" />
+                        <p>
+                            {{ translateKeyPrefix + ".CHAT_CANCEL_PRELINK" | translate
+                            }}<a [routerLink]="['/subscription/cancel']" [queryParams]="{ subscriptionId: data.subscriptionId }">{{
+                                translateKeyPrefix + ".CHAT_CANCEL_LABEL" | translate
+                            }}</a
+                            >{{ translateKeyPrefix + ".CHAT_CANCEL_POSTLINK" | translate }}
+                        </p>
+                    </ng-container>
+                </ng-container>
+                <ng-container *ngSwitchCase="'TRANSFER'">
+                    <img src="assets/img/bau-transfer.png" />
+                    <p>
+                        {{ translateKeyPrefix + ".TRANSFER_PRELINK" | translate
+                        }}<a [routerLink]="['/transfer/radio/swap']" [queryParams]="{ subscriptionId: data.subscriptionId }">{{
+                            translateKeyPrefix + ".TRANSFER_LABEL" | translate
+                        }}</a
+                        >{{ translateKeyPrefix + ".TRANSFER_POSTLINK" | translate }}
+                    </p>
+                </ng-container>
+                <ng-container *ngSwitchCase="'CHAT'">
+                    <ng-container *ngIf="!allowOnlyCancelOnline">
+                        <img src="assets/img/bau-chat.png" />
+                        <p>
+                            {{ translateKeyPrefix + ".CHAT_PRELINK" | translate
+                            }}<chat-with-agent-link
+                                [chatLinkText]="translateKeyPrefix + '.CHAT_LABEL' | translate"
+                                [inheritColor]="false"
+                                [queue]="'cancelOnline'"
+                            ></chat-with-agent-link
+                            >{{ translateKeyPrefix + ".CHAT_POSTLINK" | translate }}
+                        </p>
+                    </ng-container>
+                </ng-container>
+                <ng-container *ngSwitchCase="'CALL'">
+                    <img src="assets/img/bau-call.png" />
+                    <p>{{ translateKeyPrefix + ".CALL" | translate }}</p>
+                </ng-container>
+            </ng-container>
+        </li>
+    </ul>
+</div>

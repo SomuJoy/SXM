@@ -1,0 +1,31 @@
+{
+    "name": "domains-account-state-login",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/account/state-login/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/account/state-login/src/**/*.ts", "libs/domains/account/state-login/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/account/state-login/jest.config.js",
+                "tsConfig": "libs/domains/account/state-login/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/account/state-login/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

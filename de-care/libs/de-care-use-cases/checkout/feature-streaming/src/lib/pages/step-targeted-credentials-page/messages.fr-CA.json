@@ -1,0 +1,7 @@
+{
+    "TITLE": "Créez votre nom d’utilisateur",
+    "BODY": "Entrez un nom d’utilisateur et un mot de passe uniques.",
+    "CONTINUE_BUTTON_TEXT": "Continuer",
+    "MRD_RECAP_CARD": "<strong>{{platformAndPlanName}} ({{channelCount}}+ Chaînes)</strong><br/>{{mrdPrice}}/mois, plus frais avec rabais Multi-Radio. <s>Rég. {{msrpPrice}}/mois</s>",
+    "MRD_RECAP_CARD_QUEBEC": "<strong>{{platformAndPlanName}} ({{channelCount}}+ Chaînes)</strong><br/>{{mrdPrice}}/mois avec rabais Multi-Radio. <s>Rég. {{msrpPrice}}/mois</s>"
+}

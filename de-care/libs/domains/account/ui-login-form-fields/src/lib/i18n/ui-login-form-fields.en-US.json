@@ -1,0 +1,34 @@
+{
+    "domainsAccountUiLoginFormFieldsModule": {
+        "loginFormFieldsComponent": {
+            "UNEXPECTED_ERROR": "An unexpected error occurred. Please try again.",
+            "EMAIL": {
+                "LABEL": "Email",
+                "ERROR": "Enter a valid email address.",
+                "IN_USE_ERROR": "Username/Email address already in use."
+            },
+            "USERNAME": {
+                "LABEL": "Username",
+                "ERROR": "Username must be 6-20 characters, letters and numbers only.",
+                "IN_USE_ERROR": "This username is used on an active account."
+            },
+            "PASSWORD": {
+                "LABEL": "Password",
+                "ERRORS": {
+                    "REQUIRED": "Enter your password.",
+                    "LENGTH": "Your password must be {{ min }} to {{ max }} characters long.",
+                    "POLICY": "Your password must contain at least one character from at least 3 different groups, as explained in our password policy.",
+                    "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}",
+                    "GENERIC": "We're sorry, your new password does not comply with our policy. Please try again.",
+                    "PII_DATA": "Password cannot contain first name, last name or email address."
+                }
+            },
+            "PLURAL_MAP": {
+                "WORD": {
+                    "=1": "word",
+                    "other": "words"
+                }
+            }
+        }
+    }
+}

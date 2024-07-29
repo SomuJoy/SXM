@@ -1,0 +1,21 @@
+{
+    "deCareUseCasesChangeSubscriptionFeaturePurchaseModule": {
+        "changeSubscriptionPurchasePageComponent": {
+            "SELECTED_TERM_ANNUAL": "Annual - {{amount}}/yr plus fees",
+            "SELECTED_TERM_MONTHLY": "Monthly - {{amount}}/mo plus fees",
+            "SELECTED_TERM_ANNUAL_QC": "Annual - {{amount}}/yr",
+            "SELECTED_TERM_MONTHLY_QC": "Monthly - {{amount}}/mo",
+            "PICK_A_PACKAGE": {
+                "CLOSED_CHAT": "Pick a package to continue. If you need more help with your subscription, please call <a href=\"tel:+1-888-539-7474\">1 888 539-7474</a>."
+            },
+            "LEGAL_COPY": "<p><strong>OFFER DETAILS:</strong> Your selected subscription package will begin immediately upon completion of your order (if you are in your trial period, it will begin following your trial period), service will automatically renew thereafter, and you will be charged according to your chosen payment method at the then-current rates of your selected package for as long as you choose to remain a subscriber (current rates shown above, and subject to change upon proper notice). Fees and taxes apply. <b>A Music Royalty and Administration Fee of {{mrfAmount}}% applies.</b> A credit card is required. See our <a href='https://www.siriusxm.ca/terms' target='_blank'>Customer Agreement</a> for complete terms and how to cancel, which includes calling us at 1-833-838-7846. We collect and use personal information according to our <a href='https://www.siriusxm.ca/privacy' target='_blank'>Privacy Policy</a>. All terms, fees, content and features are subject to change. Channel lineup varies by package.</p>",
+            "LEGAL_COPY_QC": "<p><strong>OFFER DETAILS:</strong> Your selected subscription package will begin immediately upon completion of your order (if you are in your trial period, it will begin following your trial period), service will continue after your initial billing period, and you will be charged according to your chosen payment method at the then-current rates of your selected package until you cancel (current rates shown above, and subject to change upon proper notice). Taxes apply. A credit card is required. See our <a href='https://www.siriusxm.ca/terms' target='_blank'>Customer Agreement</a> for complete terms and how to cancel, which includes calling us at 1-866-635-2349. We collect and use personal information according to our <a href='https://www.siriusxm.ca/privacy' target='_blank'>Privacy Policy</a>. All terms, content and features are subject to change. Channel lineup varies by package.</p>"
+        },
+        "confirmationPageComponent": {
+            "STREAMING_PLAYER_LINK": {
+                "SATELLITE_OFFER": "",
+                "STREAMING_OFFER": ""
+            }
+        }
+    }
+}

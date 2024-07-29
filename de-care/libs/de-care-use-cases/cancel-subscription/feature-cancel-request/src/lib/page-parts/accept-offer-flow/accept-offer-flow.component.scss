@@ -1,0 +1,17 @@
+@import "sxm.phoenix.imports";
+
+.current-plan-container {
+    padding: 24px 16px 8px;
+    @include bp(medium) {
+        padding: 32px 0 8px;
+    }
+}
+
+.step-container {
+    padding-bottom: 16px;
+}
+
+.alert-icon-info {
+    margin: 8px 0 16px;
+    background: $vanilla;
+}

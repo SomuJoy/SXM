@@ -1,0 +1,10 @@
+{
+    "DomainsIdentificationUiValidateLpzFormModule": {
+        "ValidateLpzFormComponent": {
+            "INVALID_ERROR": "",
+            "SYSTEM_ERROR": "",
+            "SUBMIT_BUTTON": "Continuer",
+            "PHONE_INVALID_PREFIX": "Nous sommes dans l'impossibilité de confirmer votre compte. Veuillez vérifier l'information que vous avez entrée et essayer de nouveau. Pour plus d'assistance, composez le <a href=\"tel:+1-833-838-7846\">1 833 838-7846</a> ou clavardez avec un agent."
+        }
+    }
+}

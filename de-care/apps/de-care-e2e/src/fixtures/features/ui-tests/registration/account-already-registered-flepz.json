@@ -1,0 +1,32 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": [
+        {
+            "subscriptions": [
+                {
+                    "closed": false,
+                    "id": null,
+                    "status": "Active",
+                    "plans": [
+                        {
+                            "code": "Sponsored - OEM Trial - All Access - 12mo - 65.00",
+                            "packageName": "SIR_CAN_ALLACCESS",
+                            "termLength": "12",
+                            "endDate": "2022-08-16T00:00:00-04:00",
+                            "type": "TRIAL",
+                            "marketType": "trial:new-car",
+                            "capabilities": []
+                        }
+                    ],
+                    "followonPlans": [],
+                    "radioService": { "last4DigitsOfRadioId": "8022", "vehicleInfo": { "model": null, "make": null, "year": null }, "maskedRadioId": "****8022" },
+                    "streamingService": { "status": "Active", "maskedUserName": "rtr******@siriusxm.com", "randomCredentials": false }
+                }
+            ],
+            "partnerName": null,
+            "last4DigitsOfAccountNumber": "5365"
+        }
+    ]
+}

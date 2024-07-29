@@ -1,0 +1,101 @@
+{
+    "name": "channel-discovery",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+    "sourceRoot": "apps/channel-discovery/src",
+    "prefix": "sxmcd",
+    "targets": {
+        "build": {
+            "executor": "@angular-devkit/build-angular:browser",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/apps/channel-discovery",
+                "index": "apps/channel-discovery/src/index.html",
+                "main": "apps/channel-discovery/src/main.ts",
+                "polyfills": "apps/channel-discovery/src/polyfills.ts",
+                "tsConfig": "apps/channel-discovery/tsconfig.app.json",
+                "inlineStyleLanguage": "scss",
+                "assets": [
+                    "apps/channel-discovery/src/favicon.ico",
+                    "apps/channel-discovery/src/assets",
+                    {
+                        "glob": "**/*",
+                        "input": "./node_modules/sxm/assets/dist/css/minified/fonts",
+                        "output": "./assets/fonts"
+                    }
+                ],
+                "styles": ["apps/channel-discovery/src/styles.scss"],
+                "stylePreprocessorOptions": {
+                    "includePaths": ["./node_modules/sxm/assets/src/scss/"]
+                },
+                "scripts": []
+            },
+            "configurations": {
+                "production": {
+                    "budgets": [
+                        {
+                            "type": "initial",
+                            "maximumWarning": "500kb",
+                            "maximumError": "1mb"
+                        },
+                        {
+                            "type": "anyComponentStyle",
+                            "maximumWarning": "2kb",
+                            "maximumError": "4kb"
+                        }
+                    ],
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/channel-discovery/src/environments/environment.ts",
+                            "with": "apps/channel-discovery/src/environments/environment.prod.ts"
+                        }
+                    ],
+                    "outputHashing": "all"
+                },
+                "development": {
+                    "buildOptimizer": false,
+                    "optimization": false,
+                    "vendorChunk": true,
+                    "extractLicenses": false,
+                    "sourceMap": true,
+                    "namedChunks": true
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "serve": {
+            "executor": "@angular-devkit/build-angular:dev-server",
+            "configurations": {
+                "production": {
+                    "browserTarget": "channel-discovery:build:production"
+                },
+                "development": {
+                    "browserTarget": "channel-discovery:build:development",
+                    "port": 4240
+                }
+            },
+            "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+            "executor": "@angular-devkit/build-angular:extract-i18n",
+            "options": {
+                "browserTarget": "channel-discovery:build"
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["apps/channel-discovery/src/**/*.ts", "apps/channel-discovery/src/**/*.html"]
+            }
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/apps/channel-discovery"],
+            "options": {
+                "jestConfig": "apps/channel-discovery/jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": []
+}

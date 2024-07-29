@@ -1,0 +1,24 @@
+@import "sxm.phoenix.imports";
+
+.gray-text {
+    font-weight: 500;
+    color: $gray-dark;
+}
+
+.head-line {
+    margin-top: 12px;
+}
+
+.info-item-box {
+    padding-bottom: 16px;
+    border-bottom: 1px solid $gray-medium;
+}
+
+identification-validate-lpz-form {
+    margin-top: 32px;
+    display: block;
+}
+
+.verify-your-account {
+    margin-top: 40px;
+}

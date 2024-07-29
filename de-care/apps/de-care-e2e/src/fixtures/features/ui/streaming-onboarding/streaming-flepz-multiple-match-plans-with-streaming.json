@@ -1,0 +1,59 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": [
+        {
+            "subscriptions": [
+                {
+                    "hasOACCredentials": false,
+                    "status": "Active",
+                    "eligibilityType": "CREATE_LOGIN",
+                    "radioService": { "last4DigitsOfRadioId": "DJ89", "vehicleInfo": { "model": "Taurus", "make": "Ford", "year": 2011 }, "maskedRadioId": "****ABCD" },
+                    "plans": [
+                        {
+                            "code": "All Access - 12mo - wActv",
+                            "packageName": "SXM_SIR_AUD_ALLACCESS",
+                            "termLength": "12",
+                            "endDate": "2022-05-18T00:00:00-04:00",
+                            "type": "SELF_PAID",
+                            "marketType": "self-pay:standard",
+                            "capabilities": []
+                        }
+                    ],
+                    "email": "NLRMTESSONE@SIRIUSXM.COM",
+                    "inEligibleReasonCode": "existingsxirnocredentials",
+                    "eligibleService": null
+                }
+            ],
+            "last4DigitsOfAccountNumber": "1234",
+            "maskedAccountNumber": "**********1234"
+        },
+        {
+            "subscriptions": [
+                {
+                    "hasOACCredentials": true,
+                    "status": "Active",
+                    "eligibilityType": "LISTEN_NOW",
+                    "radioService": { "last4DigitsOfRadioId": "DJ89", "vehicleInfo": { "model": "Explorer", "make": "Ford", "year": 2015 }, "maskedRadioId": "****DJ89" },
+                    "plans": [
+                        {
+                            "code": "All Access - 12mo - wActv",
+                            "packageName": "SXM_SIR_AUD_ALLACCESS",
+                            "termLength": "12",
+                            "endDate": "2022-05-18T00:00:00-04:00",
+                            "type": "SELF_PAID",
+                            "marketType": "self-pay:standard",
+                            "capabilities": []
+                        }
+                    ],
+                    "email": "NLRMTESSONE@SIRIUSXM.COM",
+                    "inEligibleReasonCode": "ExistingSxir",
+                    "eligibleService": null
+                }
+            ],
+            "last4DigitsOfAccountNumber": "5467",
+            "maskedAccountNumber": "**********5467"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "TERM_MAP": {
+        "=1": "Monthly - {{amount}}/mo",
+        "=3": "Quarterly - {{amount}}/3 mo",
+        "=6": "Semi-Annual - {{amount}}/6 mo",
+        "=12": "Annual - {{amount}}/yr",
+        "other": "{{termLength}}-Month  - {{amount}}/{{termLength}} mo"
+    },
+    "CURRENT": " (Current)",
+    "BUTTON_TEXT": "Continue",
+    "ERROR_REQUIRED": "Pick a billing plan to continue.",
+    "PLUS_FEES": " plus fees"
+}

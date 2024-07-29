@@ -1,0 +1,159 @@
+@import "sxm.phoenix.imports";
+
+%tool-tip-box {
+    display: inline-block;
+    vertical-align: -7px;
+
+    ::ng-deep {
+        @media screen and (max-width: 539px) {
+            .component--tool-tip-content {
+                left: 40px;
+                top: -40px;
+            }
+        }
+    }
+
+    .component--tool-tip-content {
+        position: absolute;
+        left: 50%;
+        top: 40px;
+
+        @include bp(small) {
+            left: 40px;
+            top: -40px;
+        }
+
+        @include bp(medium) {
+            left: -100px;
+            top: 40px;
+        }
+
+        @include bp(large) {
+            left: 40px;
+            top: -40px;
+        }
+    }
+}
+
+.important-info-container {
+    padding: 12px 0;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+:host {
+    .margin-bottom-8px {
+        margin-bottom: 8px;
+    }
+
+    .margin-bottom-12px {
+        margin-bottom: 12px;
+    }
+
+    display: block;
+    margin-bottom: 16px;
+
+    .order-summary-container {
+        margin: 0;
+        padding: 0;
+
+        & > p {
+            &:first-child {
+                margin-bottom: 16px;
+            }
+        }
+        hr {
+            color: red;
+            background-color: #d4d4d4;
+            height: 1px;
+            border: none;
+        }
+
+        .content-card {
+            .content-card-head {
+                p {
+                    &.large-copy {
+                        @include font-size(16px);
+                    }
+                }
+            }
+        }
+
+        .credit-quote-margin {
+            margin-top: 13px;
+            margin-bottom: 12px;
+        }
+
+        .order-summary-body {
+            p:only-child {
+                margin-bottom: 4px;
+            }
+
+            .content-container + .content-container {
+                margin-top: calculate-rem(12px);
+            }
+        }
+
+        .price {
+            margin-bottom: 4px;
+        }
+
+        .feesAndTaxes,
+        .upgradeFees {
+            margin-top: 12px;
+        }
+
+        .details {
+            margin-bottom: 6px;
+        }
+
+        .total {
+            margin-top: 12px;
+        }
+
+        .see-offer-copy {
+            margin: -4px 0 12px;
+        }
+
+        sxm-ui-accordion-chevron {
+            width: 100%;
+
+            .component--accordion-title {
+                @include font-size(14px);
+            }
+
+            .accordion-content-container {
+                padding: 0;
+            }
+
+            sxm-ui-tool-tip {
+                @extend %tool-tip-box;
+            }
+        }
+
+        sxm-ui-tooltip {
+            @extend %tool-tip-box;
+        }
+
+        .recurring-charge-copy {
+            margin: 24px 0 12px;
+            @include bp(medium) {
+                margin-top: 24px;
+            }
+        }
+
+        .recurring-charge-detail-container {
+            padding-bottom: 14px;
+        }
+    }
+}
+
+:host-context(.renewal-quote-alt-header-1) {
+    .text-header {
+        padding: 16px;
+        font-weight: 700;
+        background-color: $off-white;
+    }
+}

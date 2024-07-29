@@ -1,0 +1,40 @@
+{
+    "refreshDevice": {
+        "RefreshDeviceComponent": {
+            "TITLE": "Avant que vous puissiez commencer à écouter, vous devrez envoyer un signal d'activation à votre radio.",
+            "LINK": "Activer Votre Radio",
+            "HREF": "retailrefresh_view.action?langpref=fr#/refreshradio"
+        },
+        "ActivateRadioComponent": {
+            "HEADLINE": "Avant de pouvoir écouter dans votre voiture, vous devrez activer votre radio.",
+            "ARE_YOU_IN_CAR_QUESTION": "Êtes-vous près de votre auto?",
+            "YES_TAB_LABEL": "Oui",
+            "NO_TAB_LABEL": "Non",
+            "IN_A_CAR_ARIAL_LABEL": "Dans une voiture bascule",
+            "IN_CAR_STEP_1": "Réglez votre radio d’auto sur Satellite et voyez si vous entendez de l’audio.",
+            "IN_CAR_STEP_2": "Assurez-vous que la radio a une vue dégagée du ciel (non obstruée par un garage, de grands arbres ou des bâtiments).",
+            "IN_CAR_BUTTON_TEXT": "Retransmettre le signal satellite",
+            "OUTSIDE_CAR_INSTRUCTIONS": "Nous vous enverrons des instructions par message texte pour vous permettre d’effectuer la réinitialisation du signal une fois que vous serez devant votre radio.",
+            "OUTSIDE_CAR_STEP_LEGAL_TEXT": "J’accepte de recevoir un message texte unique et confirme qu’il s’agit de mon numéro de téléphone cellulaire. Des frais de messagerie et de données peuvent s’appliquer. Les conditions générales des SMS peuvent être consultées au <a href=\"https://www.siriusxm.ca/fr/sms\" target=\"_blank\">https://www.siriusxm.ca/fr/sms</a>. Consultez notre <a href=\"https://www.siriusxm.ca/fr/politique-de-confidentialite\" target=\"_blank\">Politique de confidentialité</a>.",
+            "OUTSIDE_CAR_BUTTON_TEXT": "Envoyez-moi les Instructions",
+            "INPUT_ERROR_INVALID_NUMBER": "Saisissez un numéro de téléphone valide.",
+            "CHECKBOX_ERROR_MUST_ACCEPT_AGREEMENT": "Vous devez accepter l’entente ci-dessous.",
+            "PHONE_NUMBER_LABEL": "Numéro de téléphone cellulaire"
+        },
+        "SuccessMessageComponent": {
+            "REFRESH_SENT_HEADLINE": "Demande de retransmission envoyée!",
+            "REFRESH_SENT_MESSAGE": "Au cours des cinq minutes suivant l’envoi de la demande de retransmission du signal, syntonisez la radio à la station 2. Si vous pouvez entendre la programmation, la retransmission a bien été effectuée.",
+            "REFRESH_SENT_NOT_WORKING_QUESTION": "Ça ne fonctionne pas?",
+            "REFRESH_SENT_NOT_WORKING_LINK_TEXT": "Consultez la page Web Aide et soutien",
+            "REFRESH_SENT_NOT_WORKING_LINK_URL": "https://www.siriusxm.ca/aide/",
+            "TEXT_INSTRUCTIONS_SENT_HEADLINE": "Instruction envoyée!",
+            "TEXT_INSTRUCTIONS_SENT_TEXT": "Une fois devant votre radio, vous pourrez consulter les instructions d’activation sur votre téléphone."
+        },
+        "ErrorMessageComponent": {
+            "REFRESH_FAIL_GENERIC": "Nous ne pouvons pas retransmettre de signal à votre radio en ligne. Veuillez composer le 1 866-635-0565 pour obtenir de l’aide.",
+            "REFRESH_FAIL_MAXIMUM_LIMIT": "Oups. Le nombre de signaux d’activation alloués dans une période de 24 heures a été dépassé.",
+            "REFRESH_FAIL_MULTIPLE_REQUESTS": "Nous avons envoyé un signal récemment. Cette fonctionnalité sera inaccessible au cours des 15 prochaines minutes, car un signal d’activation a été envoyé récemment.",
+            "TEXT_FAIL_SERVICE_NOT_AVAILABLE": "Nous sommes désolés, mais la messagerie texte n’est pas disponible pour le moment."
+        }
+    }
+}

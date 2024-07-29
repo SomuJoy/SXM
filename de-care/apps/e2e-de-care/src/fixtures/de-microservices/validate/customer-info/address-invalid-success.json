@@ -1,0 +1,18 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "emailValidation": null,
+        "usernameValidation": null,
+        "billingAddressValidation": null,
+        "serviceAddressValidation": {
+            "confidenceLevel": "StreetPartial",
+            "correctedAddress": [{ "addressLine1": "Avion Rd", "city": "Atascadero", "state": "CA", "zip": "93422" }],
+            "resultCode": "SUCCESS",
+            "validationStatus": "NOT_VALID"
+        },
+        "ccValidation": null,
+        "valid": true
+    }
+}

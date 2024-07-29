@@ -1,0 +1,66 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "firstName": "JOHN",
+        "userName": null,
+        "accountProfile": { "accountRegistered": false },
+        "accountState": { "isInPreTrial": false },
+        "subscriptions": [
+            {
+                "id": "10000226851",
+                "plans": [
+                    {
+                        "code": "Promo - All Access - 3mo - $2.00 - (PyP)",
+                        "label": "Promo - Platinum - 3mo - $2.00 - (PyP)",
+                        "packageName": "SIR_AUD_ALLACCESS",
+                        "termLength": 3,
+                        "startDate": "2022-07-07T00:00:00-04:00",
+                        "endDate": "2022-10-07T00:00:00-04:00",
+                        "nextCycleOn": null,
+                        "marketType": "self-pay:promo",
+                        "type": "PROMO",
+                        "capabilities": ["AUD", "IPAUD"],
+                        "price": 2.0,
+                        "isBasePlan": true,
+                        "dataCapable": false
+                    }
+                ],
+                "followonPlans": [
+                    {
+                        "code": "All Access - 1mo - wActv",
+                        "label": null,
+                        "packageName": "SIR_AUD_ALLACCESS",
+                        "termLength": 1,
+                        "startDate": "2022-10-07T00:00:00-04:00",
+                        "endDate": null,
+                        "nextCycleOn": null,
+                        "marketType": "self-pay:standard",
+                        "type": "SELF_PAID",
+                        "capabilities": ["AUD", "IPAUD"],
+                        "price": 22.99,
+                        "isBasePlan": true,
+                        "dataCapable": false
+                    }
+                ],
+                "radioService": {
+                    "id": "10000227107",
+                    "last4DigitsOfRadioId": "9030",
+                    "devicePromoCode": "1113",
+                    "vehicleInfo": { "year": null, "make": null, "model": null },
+                    "is360LCapable": false
+                },
+                "streamingService": { "id": "10000226595", "maskedUserName": "cfg******@siriusxm.com", "status": "Active", "randomCredentials": false },
+                "status": "Active",
+                "devicePromoCode": "PICK",
+                "isPrimary": false
+            }
+        ],
+        "last4DigitsOfAccountNumber": "1752",
+        "hasEmailAddressOnFile": true,
+        "hasPhoneNumberOnFile": true,
+        "maskedPhoneNumber": "xxx-xxx-2222",
+        "hasDemoSubscription": false
+    }
+}

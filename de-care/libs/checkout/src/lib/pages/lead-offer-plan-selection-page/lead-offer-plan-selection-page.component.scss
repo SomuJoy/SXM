@@ -1,0 +1,36 @@
+sxm-ui-pick-a-plan-form {
+    ::ng-deep {
+        .row .column.small-12 {
+            padding: 0 16px;
+        }
+
+        .row .column.no-padding,
+        .row .column.no-padding-small {
+            padding: 0 0px !important;
+        }
+
+        @media (min-width: 768px) {
+            p.copy-under-cta {
+                margin-bottom: 40px;
+            }
+        }
+        @media (max-width: 768px) {
+            p.copy-under-cta {
+                margin-bottom: 32px;
+            }
+            #select-a-plan {
+                padding: 0 16px;
+            }
+        }
+    }
+}
+.grid-container {
+    max-width: 1336px;
+    margin: 48px auto 0;
+    sxm-ui-plan-comparison-grid-detailed {
+        transition: all 0.45s ease-out;
+        transition-delay: 0.45s;
+        display: block;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "TITLE": "Mode de paiement",
+    "MODIFY_LINK": "Modifier",
+    "MODIFY_ARIA_LABEL": "modifier votre mode de paiement",
+    "CREDIT_CARD": "****{{lastFourDigits}}",
+    "EXPIRATION_DATE": "Se termine le"
+}

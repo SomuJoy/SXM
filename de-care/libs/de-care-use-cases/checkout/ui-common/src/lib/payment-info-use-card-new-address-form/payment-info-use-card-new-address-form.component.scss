@@ -1,0 +1,51 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    section {
+        padding: 0;
+    }
+    form {
+        > section {
+            > header {
+                > p {
+                    @include deep-gray-subheader;
+                    margin-bottom: 8px;
+                }
+            }
+
+            &.billing-field-set {
+                margin-bottom: 8px;
+            }
+
+            .billing-radio-options {
+                display: grid;
+                #paymentMethodSelectionError {
+                    grid-row: 1;
+                }
+                #newCardOption {
+                    grid-row: 2;
+                }
+                .billing-form-fields {
+                    grid-row: 3;
+                    margin-top: 10px;
+                }
+                #cardOnFileOption {
+                    grid-row: 4;
+                }
+                &.card-on-file-selected {
+                    #cardOnFileOption {
+                        grid-row: 3;
+                    }
+                    .billing-form-fields {
+                        grid-row: 4;
+                    }
+                }
+            }
+        }
+
+        prepaid-redeem-ui {
+            margin-bottom: 32px;
+        }
+    }
+}

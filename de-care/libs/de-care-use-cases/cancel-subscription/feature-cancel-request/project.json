@@ -1,0 +1,34 @@
+{
+    "name": "de-care-use-cases-cancel-subscription-feature-cancel-request",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care-use-cases/cancel-subscription/feature-cancel-request/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/de-care-use-cases/cancel-subscription/feature-cancel-request/src/**/*.ts",
+                    "libs/de-care-use-cases/cancel-subscription/feature-cancel-request/src/**/*.html"
+                ]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/cancel-subscription/feature-cancel-request/jest.config.js",
+                "tsConfig": "libs/de-care-use-cases/cancel-subscription/feature-cancel-request/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/de-care-use-cases/cancel-subscription/feature-cancel-request/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:feature", "scope:de-care"]
+}

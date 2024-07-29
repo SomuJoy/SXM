@@ -1,0 +1,17 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 201,
+    "httpStatus": "CREATED",
+    "data": {
+        "email": "UNCLE.RIZZY@SIRIUSXM.COM",
+        "status": "SUCCESS",
+        "radioId": null,
+        "subscriptionId": "10000257455",
+        "accountNumber": "10000260911",
+        "maskedPhoneNumber": null,
+        "isUserNameSameAsEmail": true,
+        "isTwoFactorAuthNeeded": false,
+        "isOfferStreamingEligible": true,
+        "isEligibleForRegistration": true
+    }
+}

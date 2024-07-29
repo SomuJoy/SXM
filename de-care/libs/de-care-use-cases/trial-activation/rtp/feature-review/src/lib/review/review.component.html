@@ -1,0 +1,64 @@
+<main de-care-page-main>
+    <h6>{{ translateKey + ".STEP_NUMBER" | translate: { totalSteps: numberOfSteps$ | async } }}</h6>
+    <h4>{{ translateKey + ".HEADER" | translate }}</h4>
+    <feature-toggle-provider *ngIf="orderQuoteData$ | async as orderQuoteData" [features]="enableQuoteSummaryFeatureToggle$ | async">
+        <ng-container *featureToggle="'enableQuoteSummary'">
+            <quote-summary
+                [isNewAccount]="true"
+                [isClosedRadio]="orderQuoteData.isClosedRadio"
+                [isStreamingFlow]="false"
+                [isStudentFlow]="false"
+                [expandOrderSummaryDetails]="false"
+                [showHeadlineSeeOfferDetails]="false"
+                [quote]="orderQuoteData.quote"
+                [showUnusedCreditLine]="true"
+            ></quote-summary>
+        </ng-container>
+
+        <ng-container *featureToggle="'!enableQuoteSummary'">
+            <order-summary
+                [isNewAccount]="true"
+                [isClosedRadio]="orderQuoteData.isClosedRadio"
+                [isStreamingFlow]="false"
+                [isStudentFlow]="false"
+                [expandOrderSummaryDetails]="false"
+                [showHeadlineSeeOfferDetails]="false"
+                [quote]="orderQuoteData.quote"
+                [showUnusedCreditLine]="true"
+            ></order-summary>
+        </ng-container>
+    </feature-toggle-provider>
+
+    <form (submit)="onConfirmReviewAndSubmit($event)">
+        <charge-agreement-with-validation
+            date-e2e="CheckButtonAcceptOffer"
+            [submitted]="submitted"
+            (checkChange)="agreementAccepted = $event"
+        ></charge-agreement-with-validation>
+        <ng-container *ngIf="displayNucaptcha$ | async">
+            <hr />
+            <strong>{{ translateKey + ".ENTER_A_CAPTCHA_TO_FINISH" | translate }}</strong>
+            <sxm-ui-nucaptcha
+                #nuCaptcha
+                [(ngModel)]="captchaAnswer"
+                [submitted]="submitted"
+                [captchaAnswerWrong]="captchaAnswerWrong"
+                (gotCaptcha)="gotCaptcha()"
+                name="captchaAnswer"
+            ></sxm-ui-nucaptcha>
+        </ng-container>
+        <button
+            sxm-proceed-button
+            [loading]="isLoading"
+            type="submit"
+            date-e2e="CompleteMyOrderButton"
+            [ngClass]="{ 'complete-order-button-captcha': displayNucaptcha$ | async }"
+        >
+            {{ translateKey + ".COMPLETE_MY_ORDER_BUTTON" | translate }}
+        </button>
+    </form>
+    <p class="footer">
+        {{ translateKey + ".FOOTER" | translate }}
+    </p>
+</main>
+<sxm-ui-legal-copy *ngIf="offerDetails$ | async as offerDetails" [legalCopy]="offerDetails"></sxm-ui-legal-copy>

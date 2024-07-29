@@ -1,0 +1,24 @@
+{
+    "name": "domains-payment-state-update-ebill-enrollment",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/payment/state-update-ebill-enrollment/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/domains/payment/state-update-ebill-enrollment"],
+            "options": {
+                "jestConfig": "libs/domains/payment/state-update-ebill-enrollment/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/payment/state-update-ebill-enrollment/src/**/*.ts", "libs/domains/payment/state-update-ebill-enrollment/src/**/*.html"]
+            }
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

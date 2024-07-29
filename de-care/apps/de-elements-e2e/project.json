@@ -1,0 +1,32 @@
+{
+    "name": "de-elements-e2e",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "apps/de-elements-e2e/src",
+    "projectType": "application",
+    "targets": {
+        "e2e": {
+            "executor": "@nrwl/cypress:cypress",
+            "options": {
+                "cypressConfig": "apps/de-elements-e2e/cypress.json",
+                "tsConfig": "apps/de-elements-e2e/tsconfig.e2e.json",
+                "devServerTarget": "de-elements:serve"
+            },
+            "configurations": {
+                "production": {
+                    "devServerTarget": "de-elements:serve:production"
+                },
+                "canada": {
+                    "devServerTarget": "de-elements:serve:canada"
+                }
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["apps/de-elements-e2e/src/**/*.ts", "apps/de-elements-e2e/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:app", "scope:e2e", "scope:de-elements"]
+}

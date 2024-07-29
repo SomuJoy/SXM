@@ -1,0 +1,19 @@
+<div class="grid-container">
+    <div class="label-column">
+        <p class="lead-in title" [innerHTML]="translateKeyPrefix + '.TITLE' | translate"></p>
+    </div>
+    <p class="no-margin right-align link-column top-align">
+        <button
+            class="text-link-secondary"
+            (click)="editBillingAddress.emit()"
+            [attr.aria-label]="translateKeyPrefix + '.EDIT_ARIA_LABEL' | translate"
+            sxmUiDataClickTrack="routing"
+            data-link-name="EditBillingAddress"
+            data-link-key="Payment info"
+            data-test="editBillingAddress"
+        >
+            {{ translateKeyPrefix + ".EDIT_LINK" | translate }}
+        </button>
+    </p>
+    <p class="label-column lead-in address">{{ address | sxmUiAddress }}</p>
+</div>

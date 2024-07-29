@@ -1,0 +1,18 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "../page.scss";
+
+:host {
+    @include page-host(1fr auto);
+    sub {
+        color: #736e7d;
+        font-size: 12px;
+    }
+    sxm-ui-plan-recap-card {
+        margin-bottom: 15px;
+    }
+
+    sxm-ui-step-header {
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "shared-state-router-store",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/state-router-store/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/state-router-store/src/**/*.ts", "libs/shared/state-router-store/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:state", "scope:shared-state", "scope:shared-router-state"]
+}

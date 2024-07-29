@@ -1,0 +1,94 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+$breakpoint: 473px;
+
+:host {
+    height: 100%;
+    display: grid;
+    grid-auto-rows: auto 1fr;
+    grid-auto-columns: auto;
+    justify-items: center;
+    background-color: $white;
+    > section {
+        width: 100%;
+        padding: 0 32px;
+    }
+    @media (max-width: $breakpoint) {
+        > section {
+            padding: 0 16px;
+        }
+    }
+
+    section#hero {
+        display: grid;
+        justify-items: center;
+        background-color: $blue;
+        color: $white;
+        h1 {
+            max-width: 440px;
+            @include get-header-style(h2);
+            padding-bottom: 88px;
+            margin: 0;
+        }
+    }
+    section#mainContent {
+        display: grid;
+        grid-gap: 24px;
+        margin: 0 16px 48px;
+        grid-auto-columns: minmax(auto, 440px);
+        justify-content: center;
+        align-content: start;
+        listen-now-with-genre-selection {
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
+            height: fit-content;
+            padding: 24px;
+            position: relative;
+            margin-top: -48px;
+            margin-bottom: 8px;
+            background-color: white;
+        }
+
+        hr {
+            width: 100%;
+            height: 1px;
+            border: 0;
+            margin: 0;
+            background-color: $gray-medium;
+        }
+        sxm-ui-listen-on-devices-info {
+            display: none;
+        }
+    }
+
+    // Overrides
+    register-your-account ::ng-deep {
+        [qatag="RegisterSecurityQSubheader"] b {
+            color: $gray-dark;
+        }
+    }
+
+    .hero-integration {
+        box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
+        height: fit-content;
+        padding: 24px;
+        position: relative;
+        margin-top: -48px;
+        margin-bottom: 8px;
+        background-color: white;
+    }
+
+    listen-now-with-icon.streaming-player-secondary {
+        ::ng-deep {
+            streaming-player-link {
+                a.button-link {
+                    width: fit-content;
+                }
+            }
+        }
+    }
+
+    listen-now-with-genre-selection {
+        display: none;
+    }
+}

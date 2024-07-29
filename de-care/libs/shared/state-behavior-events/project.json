@@ -1,0 +1,31 @@
+{
+    "name": "shared-state-behavior-events",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/state-behavior-events/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/state-behavior-events/src/**/*.ts", "libs/shared/state-behavior-events/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/shared/state-behavior-events/jest.config.js",
+                "tsConfig": "libs/shared/state-behavior-events/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/shared/state-behavior-events/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:util", "scope:shared-behaviors", "scope:shared-behaviors-ui"]
+}

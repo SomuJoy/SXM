@@ -1,0 +1,11 @@
+{
+    "DESCRIPTION_LABEL": "DESCRIPTION",
+    "AMOUNT_LABEL": "AMOUNT",
+    "DATE_LABEL": "DATE",
+    "DATE_FORMAT": "M/dd/yy",
+    "SERVICE_DATE": "Service date:",
+    "INVOICE_NUMBER_LABEL": "Invoice ",
+    "LOAD_MORE_BUTTON_LABEL": "LOAD MORE",
+    "NO_DATA_MESSAGE": "There are no results within the selected date range.",
+    "UNEXPECTED_ERROR": "An unexpected error occurred. Please try again."
+}

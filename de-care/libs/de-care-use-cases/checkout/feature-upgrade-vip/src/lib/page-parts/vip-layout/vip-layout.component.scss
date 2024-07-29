@@ -1,0 +1,29 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    min-height: 100%;
+    background-color: $off-white;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
+
+    &.remove-border::ng-deep {
+        .salesflow-footer .row .column {
+            .footer-links {
+                border-top: 0;
+            }
+
+            &.copyright-column {
+                .copyright-content {
+                    border-top: 0;
+                }
+            }
+        }
+    }
+
+    .sxm-limited-nav {
+        z-index: 1;
+        position: initial;
+        background: rgba(0, 0, 0, 0.8);
+    }
+}

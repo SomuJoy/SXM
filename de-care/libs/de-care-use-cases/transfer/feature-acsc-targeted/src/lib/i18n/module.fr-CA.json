@@ -1,0 +1,452 @@
+{
+    "DeCareUseCasesTransferFeatureACSCTargetedModule": {
+        "AddRadioPageComponent": {
+            "BACK_BUTTON": "RETOUR"
+        },
+        "SelectTransferMethodComponent": {
+            "HEADLINE": "{{ customerFirstName }}, nous ajouterons votre nouvelle {{vehicleMake}} à votre compte.",
+            "HEADLINE_NO_CAR_PRESENT": "{{ customerFirstName }}, nous ajouterons votre nouvelle voiture à votre compte.",
+            "LINK_TEXT_ENTER_RADIO_ID": "<a class='text-link' href='https://care.siriusxm.ca/login_view.action?task=sc&langpref=fr'>Ce n’est pas votre voiture? Entrez votre code de radio</a>",
+            "LINK_TEXT_ENTER_RADIO_ID_LOGGED_IN": "Ce n’est pas votre voiture? Entrez votre code de radio",
+            "TRANSFER_QUESTION": "Voulez-vous transférer un abonnement courant à votre nouvelle {{ vehicleMake }}?",
+            "TRANSFER_DETAILS": "Pas de souci, vous décider maintenant ne modifiera pas ou ne mettra pas fin à votre essai {{ planName }}.",
+            "TRANSFER_OPTION_NO": "Non",
+            "TRANSFER_OPTION_NO_SUBTEXT": "Ajoutez simplement ma nouvelle {{vehicleMake}} à mon compte.",
+            "TRANSFER_OPTION_YES": "Oui",
+            "TRANSFER_OPTION_YES_SUBTEXT": "Transférez un abonnement courant à ma nouvelle {{ vehicleMake }}.",
+            "NEW_SUBSCRIPTION_INSTRUCTIONS": "Ok. Sur le prochain écran, vous pouvez configurer un nouvel abonnement pour cette voiture.",
+            "AC_ONLY_SUB_HEADER": "Une fois que vous aurez ajouté votre nouveau véhicule, vous pourrez obtenir un nouvel abonnement qui débutera à la fin de votre essai.",
+            "TRANSFER_SUBSCRIPTION_HEADLINE_ONE_DEVICE": "L'abonnement de votre ancienne voiture sera transféré une fois que votre essai prendra fin.",
+            "TRANSFER_SUBSCRIPTION_HEADLINE_MULTIPLE_DEVICES": "Choisissez l'abonnement ci-dessous que vous voulez transférer quand votre essai prendra fin.",
+            "TRANSFER_SUBSCRIPTION_HEADLINE_ONE_DEVICE_IMMEDIATELY": "L’abonnement de votre ancien véhicule sera transféré immédiatement.",
+            "TRANSFER_SUBSCRIPTION_HEADLINE_MULTIPLE_DEVICES_IMMEDIATELY": "Choisissez l'abonnement ci-dessous que vous voulez transférer.",
+            "TRANSFER_SUBSCRIPTION_DETAILS": "Tout service inutilisé sera reporté à l’abonnement de votre nouvelle voiture.",
+            "LINK_TEXT_DONT_SEE_CAR": "Vous ne voyez pas votre radio dans cette liste?",
+            "BUTTON_TEXT_ADD_VEHICLE": "AJOUTER MA NOUVELLE {{ vehicleMake }}",
+            "BUTTON_TEXT_CONTINUE": "CONTINUER",
+            "NEW_CAR": "Nouvelle voiture",
+            "RADIO_ID": "Code de radio",
+            "RADIO_ID_WITH_ID": "Code de radio : {{radioId}}",
+            "CURRENT_PLAN_ENDS": "{{planName}} Ends : {{data}}",
+            "CAR": "voiture",
+            "SELECTION_ERROR": "Choisissez un abonnement ci-dessous que vous voulez transférer."
+        },
+        "ChooseSubscriptionComponent": {
+            "NEW_CAR": "Nouvelle voiture",
+            "CHANGE_SUBSCRIPTION": "Choisir l'abonnement",
+            "PACKAGE_SELECT_HEADLINE": "Quel forfait voulez-vous sélectionner à la fin de votre essai du forfait {{packageName}}?",
+            "PACKAGE_SELECT_HEADLINE_IMMEDIATELY": "Quel abonnement désirez-vous dans votre nouveau véhicule?",
+            "PACKAGE_SELECT_DETAILS": "Vous pouvez modifier ou annuler votre abonnement en tout temps sans manquer un seul moment de votre essai. Votre nouvel abonnement ne commencera pas avant le {{startDate}}.",
+            "PACKAGE_SELECT_DETAILS_IMMEDIATELY": "Vous pouvez modifier ou annuler votre abonnement en tout temps.",
+            "COMPARE_PACKAGES": "Comparer les forfaits",
+            "DO_NOT_SEE_PLAN": "Vous ne voyez pas le forfait que vous désirez?",
+            "CHAT_WITH_AN_AGENT": "",
+            "CALL": "Téléphonez au <a href=\"tel:1-888-539-7474\">1-888-539-7474.</a>",
+            "EXPANDED_TEXT": "See less",
+            "COLLAPSED_TEXT": "Découvrez les détails du forfait",
+            "CONTINUE": "CONTINUER",
+            "BACK": "RETOUR",
+            "KEEP_SELECT": "GARDEZ {{ packageName }}",
+            "SELECTION_ERROR": "Choisir un forfait ci-dessous."
+        },
+        "ChoosePaymentMethodComponent": {
+            "HEADLINE": "Choisissez votre mode de paiement.",
+            "HEADLINE_ENTER_INFO": "Entrez vos renseignements de paiement.",
+            "SUBSCRIPTION_EYEBROW": "Abonnement",
+            "TRANSFER_EYEBROW": "Transférer le service de",
+            "CAR_REMOVED": "Cette voiture sera retirée de votre compte.",
+            "VIEW_DETAILS_COLLAPSED": "Afficher les details",
+            "VIEW_DETAILS_EXPANDED": "Cacher les détails"
+        },
+        "ReviewOrderComponent": {
+            "HEADLINE": "Vous y êtes presque. Revoyez et complétez votre commande.",
+            "REVIEW_SUBSCRIPTION_BEGINS": "Rappelez-vous que votre nouvel abonnement ne commencera pas tant que votre abonnement d'essai {{planName}} courant ne prend pas fin.",
+            "SUBSCRIPTION_EYEBROW": "Abonnement",
+            "TRANSFER_EYEBROW": "Transférer le service de",
+            "CAR_REMOVED": "Cette voiture sera retirée de votre compte.",
+            "VIEW_DETAILS_COLLAPSED": "Afficher les details",
+            "VIEW_DETAILS_EXPANDED": "Cacher les détails",
+            "COMPLETE_MY_ORDER": "Terminer ma commande",
+            "ACCEPT_AGREEMENT": "S'il vous plaît accepter l'accord ci-dessus."
+        },
+        "ConfirmationPageComponent": {
+            "HEADLINE": "Merci d'avoir complété votre commande.",
+            "CONFIRMATION_EMAIL": "Un courriel de confirmation sera envoyé à {{ email }}.",
+            "PRINT_LINK_LABEL": "Imprimez le sommaire de votre commande",
+            "SUBSCRIPTION_EYEBROW": "Abonnement",
+            "TRANSFER_EYEBROW": "Transférer le service de",
+            "CAR_REMOVED": "Cette voiture sera retirée de votre compte.",
+            "VIEW_DETAILS_COLLAPSED": "Afficher les details",
+            "VIEW_DETAILS_EXPANDED": "Cacher les détails",
+            "READY_TO_EXPLORE": "Prêt à explorer?",
+            "LEGAL_COPY_TITLE": "Renseignements importants au sujet de votre abonnement:",
+            "LEGAL_COPY": "Votre abonnement commence immédiatement à moins d'indications contraires. Si votre radio ne reçoit pas la programmation à laquelle vous avez droit, veuillez suivre les instructions d'activation ci-dessus. Pour votre commodité, tous les abonnements sont renouvelés automatiquement jusqu'à ce que vous les annuliez. Votre renouvellement sera facturé au tarif en vigueur à ce moment-là en utilisant le mode de paiement inscrit en dossier. Vous pouvez annuler votre abonnement en tout temps en appelant le Service à la clientèle au <a href=\"tel:+1-833-838-7846\">1 833 838-7846</a>. Votre abonnement est régi par l'Entente du client de SiriusXM, que vous pouvez <a href=\"http://www.siriusxm.ca/conditions\" target=\"_blank\" title=\" à siriusxm.ca/conditions\">consulter en ligne</a>. Si vous souhaitez recevoir un exemplaire de l'Entente du client par la poste, vous pouvez appeler au <a href=\"tel:+1-866-635-2349\">1 866 635-2349</a>.",
+            "READY_TO_EXPLORE_LINKS": [
+                "<a data-track-click='View Program Schedule' class='text-link' href='https://siriusxm.ca/en-ondes' target='_blank'>Voir les horaires de programmation</a>",
+                "<a data-track-click='Live Sports Schedule' class='text-link' href='https://www.siriusxm.ca/sports-en-direct' target='_blank'>Horaires des sports en direct</a>",
+                "<a data-track-click='Start Listening on the SXM App' class='text-link' href='https://siriusxm.ca/telechargerenligne' target='_blank'>Passez en mode écoute sur l’Appli SXM</a>"
+            ],
+            "GO_TO_MY_ACCOUNT_BUTTON": "ALLER À MON COMPTE",
+            "STREAMING_PLAYER_LINK": ""
+        },
+        "GenericErrorComponent": {
+            "SORRY": "NOUS SOMMES DÉSOLÉS",
+            "TITLE": "Cette transaction ne peut être achevée en ligne",
+            "RECIRC_TITLE": "Ne vous inquiétez pas, nous pouvons vous aider.",
+            "CALL": "Composez le <a href=\"tel:1-888-539-7474\">1-888-539-7474.</a>"
+        },
+        "AlreadyConsolidatedWithFollowonComponent": {
+            "HERO_TITLE": "Vous êtes fin prêt.",
+            "HERO_SUBTITLE": "Nous avons ajouté votre nouveau véhicule à votre compte. Profitez de la musique.",
+            "CONTENT_TITLE": "Écoutez SiriusXM en déplacement",
+            "CONTENT_COPY": "Tous les forfaits SiriusXM incluent l’écoute en ligne grâce à l’appli. Vous pourrez donc avoir accès à toute sorte de contenu musical, sportif et d’actualité, peu importe où vous êtes.",
+            "CONTENT_IMAGE_URL": "assets/img/ACSC_consolidated_content.png",
+            "LISTEN_LINK": "Configurez vos identifiants d'écoute.",
+            "LISTEN_URL": "https://www.siriusxm.ca/fr/facons-decouter/",
+            "RECIRC_TITLE": "Besoin d'aide supplémentaire?",
+            "SUPPORT_CENTER": "Visitez Aide et soutien",
+            "SUPPORT_CENTER_URL": "https://listenercare.siriusxm.ca/prweb/PRServletCustomCA/help/SupportCenterExCA/fr",
+            "CHAT_LINK": "Chat with an agent",
+            "CALL": "Composez le <a href=\"tel:1-888-539-7474\">1-888-539-7474.</a>"
+        },
+        "AlreadyConsolidatedWithoutFollowonComponent": {
+            "HERO_TITLE": "Nous avons déjà ajouté votre nouveau véhicule à votre compte, mais attendez…",
+            "HERO_SUBTITLE": "Si vous vous abonnez maintenant, vous ne manquerez rien quand votre essai se terminera.",
+            "GET_OFFER": "OBTENEZ {{offer}}",
+            "READY_TO_EXPLORE_HEADER": "Prêt à explorer?",
+            "READY_TO_EXPLORE_LINKS": [
+                "<a data-track-click='Manage My Account' class='text-link' href='https://care.siriusxm.ca' target='_blank'>Gérer Mon compte</a>",
+                "<a data-track-click='Start Listening on the SXM App' class='text-link' href='https://siriusxm.ca/telechargerenligne' target='_blank'>Écouter en ligne</a>"
+            ],
+            "RECIRC_TITLE": "Besoin d'aide supplémentaire?",
+            "SUPPORT_CENTER": "Visitez Aide et soutien",
+            "SUPPORT_CENTER_URL": "https://www.siriusxm.ca/aide/",
+            "CALL": "Composez le <a href=\"tel:1-888-539-7474\">1-888-539-7474.</a>",
+            "STREAMING_PLAYER_LINK": ""
+        },
+        "RadioLookupPageComponent": {
+            "SUBTITLE": "COMMENÇONS",
+            "TITLE": "Parlez-nous de votre nouvelle voiture",
+            "INPUT_LABEL": "Code de radio ou NIV",
+            "CTA_BUTTON": "TROUVER MA RADIO",
+            "FIND_RADIO": "Comment puis-je trouver mon code de radio?",
+            "ERROR_INVALID_RADIO": "Entrez un code de radio valide.",
+            "ALERT": {
+                "NOT_FOUND": "Le code de radio que vous avez entré ne correspond pas à nos dossiers. Veuillez essayer de nouveau ou appeler le service à la clientèle au 1 888 539-7474.",
+                "CLOSED": "Il semble qu’aucun abonnement d’essai ne soit associé à cette radio. Veuillez cliquer sur <a href=\"https://care.siriusxm.ca/myaccount_execute.action?langpref=fr\" class=\"text-link\">Mon abonnement</a>, puis sur le bouton « Ajouter une radio », ou choisissez « Remplacer une radio par celle-ci » dans le menu déroulant.",
+                "SAME_ACCOUNT": "Le code de radio que vous avez entré est déjà dans ce compte.",
+                "OTHER_ERROR": "Nous sommes désolés. Cette transaction ne peut être achevée en ligne. Ne vous inquiétez pas, nous pouvons vous aider. Composez le 1 888 539-7474."
+            },
+            "HELP_FINDING_RADIO_MODAL_TITLE": "Aide pour code de radio",
+            "HELP_FINDING_RADIO_P1": "Syntonisez votre radio à la station 0 et le code de radio devrait s’afficher.",
+            "RADIO_LOOKUP_MARINE_AVIATION_MODAL_TITLE": "Aide relative à l'appareil"
+        },
+        "LoginPageComponent": {
+            "TITLE": "Connectez-vous pour transférer votre service SiriusXM dans un autre véhicule ou pour ajouter une autre radio à votre compte.",
+            "SIGN_IN_TITLE": "Déjà abonné(e)? Connectez-vous à votre compte SiriusXM existant.",
+            "REGISTER_TITLE": "Pas enregistré? Pas de problème.",
+            "REGISTRATION_ITEM_1": "L’inscription est simple et rapide. Ayez le <strong>code de radio</strong> ou le <strong>NIV</strong> de votre ancien véhicule à portée de main.",
+            "REGISTRATION_ITEM_2": "Une fois l’inscription terminée, vous aurez besoin du <strong>code de radio</strong> ou du <strong>NIV</strong> de votre nouveau véhicule pour transférer votre service ou pour ajouter une nouvelle radio.",
+            "REGISTER_BUTTON": "DÉBUTER L’INSCRIPTION"
+        },
+        "SwapRadioLookupPageComponent": {
+            "TRANSFER_EYEBROW": "Transférer le service de",
+            "TITLE": "Transférons votre abonnement à une autre radio.",
+            "FORM_TITLE": "Parlez-nous de votre nouvelle radio.",
+            "INPUT_LABEL": "Code de radio ou NIV",
+            "ERROR_INVALID_RADIO": "Entrez un code de radio valide.",
+            "ERROR_INVALID_VIN": "Entrez un NIV valide.",
+            "ERROR_NOT_FOUND_VIN": "Nous sommes désolés, mais selon notre système, le véhicule indiqué n'est pas muni d'une radio satellite. Essayez plutôt de nouveau votre code de radio.",
+            "CTA_BUTTON": "TROUVER MA RADIO",
+            "FIND_RADIO": "Comment puis-je trouver mon code de radio?",
+            "HELP_FINDING_RADIO_MODAL_TITLE": "Aide pour code de radio",
+            "HELP_FINDING_RADIO_P1": "Syntonisez votre radio à la station 0 et le code de radio devrait s’afficher.",
+            "RADIO_LOOKUP_MARINE_AVIATION_MODAL_TITLE": "Aide relative à l'appareil",
+            "ERRORS": {
+                "NOT_CAPABLE_PT1": "Désolés, la radio vers laquelle vous souhaitez transférer votre service ne prend pas en charge certaines fonctionnalités incluses dans votre abonnement actuel. Pour de l’aide, veuillez composer le 866 635-0565.",
+                "LIFETIME_PT1": "Votre radio est éligible à un abonnement à vie. Nous ne pouvons pas traiter cette demande en ligne. Veuillez composer le 1-888-539-7474 pour activer votre radio.",
+                "OTHER_PT1": "Désolés, nous ne pouvons pas compléter cette transaction en ligne ou votre abonnement n’est pas admissible à un transfert. Pour de l’aide, veuillez composer le 866 635-0565.",
+                "SAME_ACCOUNT": "Le code de radio que vous avez entré est déjà dans ce compte."
+            }
+        },
+        "SwapRadioPageComponent": {
+            "TITLE": "Transférons votre abonnement à une autre radio.",
+            "TRANSFER_EYEBROW": "Transférer le service de",
+            "NEW_RADIO_EYEBROW": "Nouvelle radio",
+            "VIEW_DETAILS_COLLAPSED": "Afficher les details",
+            "VIEW_DETAILS_EXPANDED": "Cacher les détails",
+            "COMPLETE_MY_ORDER": "Terminer Ma Commande",
+            "QUOTE_SUMMARY": {
+                "CARD_HEAD": "Récapitulatif de la commande",
+                "PREVIOUS_BALANCE": {
+                    "LABEL": "Solde précédent",
+                    "TOOLTIP": "Un solde précédent impayé présent sur votre compte doit être réglé avant que vous puissiez terminer votre transaction."
+                },
+                "PREVIOUS_CREDIT": "Crédit antérieur",
+                "CREDIT_REMAINING_ON_ACCOUNT": "Crédit dans votre compte",
+                "TAXES_AND_FEES": {
+                    "SWAP_FEE": "Frais de remplacement",
+                    "HARMONIZED_SALES_TAX_HST": "Taxe de vente harmonisée (TVH)",
+                    "GOODS_AND_SERVICES_TAX_GST": "Taxe sur les produits et services (TPS)",
+                    "QUEBEC_SALES_TAX_QST": "Taxe de vente du Québec (TVQ)"
+                }
+            },
+            "GST": "Numéro de TPS de SiriusXM Canada : 857294342",
+            "QST": "Numéro de TVQ de SiriusXM Canada : 1208160032"
+        },
+        "UI_COMMON": {
+            "EXPANDED_TEXT": "Masquer",
+            "COLLAPSED_TEXT": "Découvrez les détails du forfait",
+            "SEE_OFFER_DETAILS": "Voir les <strong>détails de l'offre</strong> ci-dessous.",
+            "THEN_PRICE_PER_MONTH": "Ensuite {{amount}}/mois.",
+            "PRICE_PER_MONTH": "{{amount}}/mois",
+            "ROC_REGION": {
+                "THEN_PRICE_PER_MONTH": "Ensuite {{amount}}/mois plus frais.",
+                "PRICE_PER_MONTH": "{{amount}}/mois plus frais"
+            },
+            "PLURAL_MONTH_MAP": {
+                "=1": "1 mois",
+                "other": "# mois"
+            }
+        },
+        "SCPackageOptionCard": {
+            "TITLE": {
+                "SAME_AS_OLD_CAR_PACKAGE": "Garder le forfait {{planName}} de mon {{make}}",
+                "OFFER_IS_ALL_ACCESS": "Continuer avec {{planName}} dans ma {{make}}",
+                "DEFAULT": "M'abonner à {{planName}} dans ma {{make}}",
+                "SAME_AS_OLD_CAR_PACKAGE_SAME_MAKE": "Garder {{planName}} de ma {{year}} {{model}}",
+                "OFFER_IS_ALL_ACCESS_SAME_MAKE": "Continuer avec {{planName}} dans ma {{year}} {{model}}",
+                "DEFAULT_SAME_MAKE": "M'abonner à {{planName}} dans ma {{year}} {{model}}",
+                "BASIC": "{{fullPlanName}} Forfait"
+            },
+            "BODY": {
+                "PROMO_OFFER_HEADER": "{{termLength}} pour {{amount}}/mois",
+                "PLATFORM_CHANGE_MESSAGE_INTRO": "Ce forfait inclura les mêmes chaînes que vous aviez dans votre ancienne voiture à l’exception de :",
+                "PLATFORM_CHANGE_MESSAGE_TOOLTIP": "Les stations que vous captez dépendent de la technologie de votre radio. Il est possible que certaines stations ne soient pas captées sur d’autres modèles de radio.",
+                "TOTAL_PRICE_OFFER_HEADER": "{{termLength}} pour {{amount}}",
+                "RETAIL_PRICE_PLANS_AND_SELF_PAY_ALL_ACCESS_FF-ALL_ACCESS": "Profitez de toutes les stations comprises dans votre essai {{planName}}.",
+                "RETAIL_PRICE_PLANS_AND_SELF_PAY_ALL_ACCESS_FF-SELECT": "Profitez d'une grande variété de musique, de conversations sportives, d'humour, de nouvelles et plus.",
+                "RETAIL_PRICE_PLANS_AND_SELF_PAY_SELECT-ALL_ACCESS": "Pour seulement {{amount}} de plus par mois, rehaussez l'abonnement de votre ancienne voiture et profitez de toutes les stations comprises dans votre essai {{planName}}.",
+                "RETAIL_PRICE_PLANS_AND_SELF_PAY_SELECT-SELECT": "Après la fin de votre essai, vous aurez accès aux mêmes stations que vous aimiez dans votre ancienne voiture.",
+                "RETAIL_PRICE_PLANS_AND_SELF_PAY_SELECT_FF-ALL_ACCESS": "Pour seulement {{amount}} de plus par mois, rehaussez l'abonnement de votre ancienne voiture et profitez de toutes les stations comprises dans votre essai {{planName}}.",
+                "RETAIL_PRICE_PLANS_AND_SELF_PAY_SELECT_FF-SELECT": "Profitez d'une grande variété de musique, de conversations sportives, d'humour, de nouvelles et plus.",
+                "RETAIL_PRICE_PLANS_AND_SELF_PAY_MOSTLY_MUSIC-SELECT": "Pour seulement {{amount}} de plus par mois, rehaussez l'abonnement de votre ancienne voiture et profitez encore plus de la variété que vous voulez.",
+                "RETAIL_PRICE_PLANS_AND_SELF_PAY_MOSTLY_MUSIC-MOSTLY_MUSIC": "Après la fin de votre essai, vous aurez accès aux mêmes stations que vous aimiez dans votre ancienne voiture.",
+                "ALL_ACCESS_AND_SELECT_PROMOS_AND_SELF_PAY_ALL_ACCESS-ALL_ACCESS": "Profitez de toutes les stations comprises dans votre essai {{planName}}.",
+                "ALL_ACCESS_AND_SELECT_PROMOS_AND_SELF_PAY_NOT_ALL_ACCESS-ALL_ACCESS": "Rehaussez l'abonnement de votre ancienne voiture et profitez de toutes les stations comprises dans votre essai {{planName}}.",
+                "ALL_ACCESS_AND_SELECT_PROMOS_AND_SELF_PAY_ALL_ACCESS-SELECT": "Profitez d'une grande variété de musique, de conversations sportives, d'humour, de nouvelles et plus.",
+                "PLATFORM_CHANGE_SCENARIO-ALL_ACCESS": "Profitez de toutes les stations de votre essai {{planName}}, y compris les stations que vous aviez dans votre ancienne voiture.",
+                "SELECT_PROMO_AND_MOSTLY_MUSIC_RETAIL_PRICE-SELECT": "Rehaussez l'abonnement de votre ancienne voiture et profitez encore plus de la variété que vous voulez.",
+                "SELECT_PROMO_AND_MOSTLY_MUSIC_RETAIL_PRICE-MOSTLY_MUSIC": "Après la fin de votre essai, vous aurez accès aux mêmes stations que vous aimiez dans votre ancienne voiture.",
+                "FALLBACK_ALL_ACCESS": "Profitez de toutes les stations comprises dans votre essai {{planName}}.",
+                "FALLBACK_SELECT": "Profitez d'une grande variété de musique, de conversations sportives, d'humour, de nouvelles et plus.",
+                "FALLBACK_MOSTLY_MUSIC": "Après la fin de votre essai, vous aurez accès aux mêmes stations que vous aimiez dans votre ancienne voiture.",
+                "BASIC": "Abonnez-vous au forfait {{planName}} pour {{pricePerMonth}}/mois.",
+                "BASIC_PROMO": "Abonnez-vous au forfait {{planName}} et obtenez vos {{termLength}} premiers mois pour {{pricePerMonth}}/mois.",
+                "BASIC_TRIAL_EXTENSION": "Abonnez-vous au forfait {{planName}} et obtenez vos {{termLength}} premiers mois pour {{totalPrice}}.",
+                "ROC_REGION": {
+                    "PROMO_OFFER_HEADER": "{{termLength}} pour {{amount}}/mois plus frais",
+                    "TOTAL_PRICE_OFFER_HEADER": "{{termLength}} pour {{amount}}",
+                    "RETAIL_PRICE_PLANS_AND_SELF_PAY_SELECT-ALL_ACCESS": "Pour seulement {{amount}} de plus par mois plus les frais, rehaussez l'abonnement de votre ancienne voiture et profitez de toutes les stations comprises dans votre essai {{planName}}.",
+                    "RETAIL_PRICE_PLANS_AND_SELF_PAY_SELECT_FF-ALL_ACCESS": "Pour seulement {{amount}} de plus par mois plus les frais, rehaussez l'abonnement de votre ancienne voiture et profitez de toutes les stations comprises dans votre essai {{planName}}.",
+                    "RETAIL_PRICE_PLANS_AND_SELF_PAY_MOSTLY_MUSIC-SELECT": "Pour seulement {{amount}} de plus par mois plus les frais, rehaussez l'abonnement de votre ancienne voiture et profitez encore plus de la variété que vous voulez.",
+                    "RETAIL_PRICE_PLANS_AND_SELF_PAY_ALL_ACCESS_FF-ALL_ACCESS": "Profitez de toutes les stations comprises dans votre essai {{planName}}.",
+                    "RETAIL_PRICE_PLANS_AND_SELF_PAY_ALL_ACCESS_FF-SELECT": "Profitez d'une grande variété de musique, de conversations sportives, d'humour, de nouvelles et plus.",
+                    "RETAIL_PRICE_PLANS_AND_SELF_PAY_SELECT-SELECT": "Après la fin de votre essai, vous aurez accès aux mêmes stations que vous aimiez dans votre ancienne voiture.",
+                    "RETAIL_PRICE_PLANS_AND_SELF_PAY_SELECT_FF-SELECT": "Profitez d'une grande variété de musique, de conversations sportives, d'humour, de nouvelles et plus.",
+                    "RETAIL_PRICE_PLANS_AND_SELF_PAY_MOSTLY_MUSIC-MOSTLY_MUSIC": "Après la fin de votre essai, vous aurez accès aux mêmes stations que vous aimiez dans votre ancienne voiture.",
+                    "ALL_ACCESS_AND_SELECT_PROMOS_AND_SELF_PAY_ALL_ACCESS-ALL_ACCESS": "Profitez de toutes les stations comprises dans votre essai {{planName}}.",
+                    "ALL_ACCESS_AND_SELECT_PROMOS_AND_SELF_PAY_NOT_ALL_ACCESS-ALL_ACCESS": "Rehaussez l'abonnement de votre ancienne voiture et profitez de toutes les stations comprises dans votre essai {{planName}}.",
+                    "ALL_ACCESS_AND_SELECT_PROMOS_AND_SELF_PAY_ALL_ACCESS-SELECT": "Profitez d'une grande variété de musique, de conversations sportives, d'humour, de nouvelles et plus.",
+                    "PLATFORM_CHANGE_SCENARIO-ALL_ACCESS": "Profitez de toutes les stations de votre essai {{planName}}, y compris les stations que vous aviez dans votre ancienne voiture.",
+                    "SELECT_PROMO_AND_MOSTLY_MUSIC_RETAIL_PRICE-SELECT": "Rehaussez l'abonnement de votre ancienne voiture et profitez encore plus de la variété que vous voulez.",
+                    "SELECT_PROMO_AND_MOSTLY_MUSIC_RETAIL_PRICE-MOSTLY_MUSIC": "Après la fin de votre essai, vous aurez accès aux mêmes stations que vous aimiez dans votre ancienne voiture.",
+                    "FALLBACK_ALL_ACCESS": "Profitez de toutes les stations comprises dans votre essai {{planName}}.",
+                    "FALLBACK_SELECT": "Profitez d'une grande variété de musique, de conversations sportives, d'humour, de nouvelles et plus.",
+                    "FALLBACK_MOSTLY_MUSIC": "Après la fin de votre essai, vous aurez accès aux mêmes stations que vous aimiez dans votre ancienne voiture.",
+                    "BASIC": "Abonnez-vous au forfait {{planName}} pour {{pricePerMonth}}/mois, plus les frais.",
+                    "BASIC_PROMO": "Abonnez-vous au forfait {{planName}} et obtenez vos {{termLength}} premiers mois pour {{pricePerMonth}}/mois, plus les frais.",
+                    "BASIC_TRIAL_EXTENSION": "Abonnez-vous au forfait {{planName}} et obtenez vos {{termLength}} premiers mois pour {{totalPrice}}."
+                }
+            }
+        },
+        "ACPackageOptionCard": {
+            "HEADER": "Forfait {{planName}}",
+            "ALL_ACCESS_PROMO": "Continuez de profiter du <strong>forfait {{planName}}</strong> grâce à votre essai gratuit et vous obtiendrez les {{termLength}} premiers mois pour <strong>{{promoAmount}}/mois.</strong>",
+            "SELECT_PROMO_WHEN_COMPARED_TO_AA_PROMO": "Abonnez-vous au <strong>forfait {{planName}}</strong> et obtenez vos {{termLength}} premiers mois pour <strong>{{promoAmount}}/mois.</strong>",
+            "SELECT_PROMO_WHEN_COMPARED_TO_MOSTLY_MUSIC": "Abonnez-vous au forfait Sélect et profitez d’une grande variété de musique, sports et conversations divertissantes. Obtenez vos {{termLength}} premiers mois pour <strong>{{promoAmount}}/mois.</strong>",
+            "ALL_ACCESS_RETAIL_PRICE": "Gardez le <strong>forfait {{planName}}</strong> dont vous profitez avec votre essai pour <strong>{{amount}}/mois.</strong>",
+            "SELECT_RETAIL_PRICE_WHEN_COMPARED_TO_ALL_ACCESS": "Abonnez-vous au <strong>forfait {{planName}}</strong> pour <strong>{{amount}}/mois.</strong>",
+            "SELECT_RETAIL_PRICE_WHEN_COMPARED_TO_MOSTLY_MUSIC": "Abonnez-vous au <strong>forfait {{planName}}</strong> pour <strong>{{amount}}/mois.</strong> et profitez d’une grande variété de musique, sports et conversations divertissantes.",
+            "MOSTLY_MUSIC_RETAIL_PRICE": "Abonnez-vous au <strong>forfait {{planName}}</strong> for <strong>{{amount}}/mois.</strong>",
+            "MOSTLY_MUSIC_PROMO": "Abonnez-vous au <strong>forfait {{planName}}</strong> et obtenez vos {{termLength}} premiers mois pour <strong>{{promoAmount}}/mois.</strong>",
+            "TRIAL_EXT_ALL_ACCESS": "Continuez de profiter du <strong>forfait {{planName}}</strong> grâce à votre essai gratuit et vous obtiendrez les {{termLength}} premiers mois pour <strong>{{totalAmount}}/mois.</strong>",
+            "FREE_TRIAL_EXT_ALL_ACCESS": "Continuez de profiter du <strong>forfait {{planName}}</strong> grâce à votre essai gratuit et vous obtiendrez les {{termLength}} premiers mois pour <strong>{{processingFee}}/mois.</strong>",
+            "TRIAL_EXT_SELECT": "Abonnez-vous au <strong>forfait {{planName}}</strong> et obtenez vos {{termLength}} premiers mois pour <strong>{{totalAmount}}.</strong>",
+            "FREE_TRIAL_EXT_SELECT": "Abonnez-vous au <strong>forfait {{planName}}</strong> et obtenez vos {{termLength}} premiers mois pour <strong>{{processingFee}}.</strong>",
+            "BASIC": "Abonnez-vous au forfait {{planName}} pour {{pricePerMonth}}/mois.",
+            "BASIC_PROMO": "Abonnez-vous au forfait {{planName}} et obtenez vos {{termLength}} premiers mois pour {{pricePerMonth}}/mois.",
+            "BASIC_TRIAL_EXTENSION": "Abonnez-vous au forfait {{planName}} et obtenez vos {{termLength}} premiers mois pour {{totalAmount}}.",
+            "ROC_REGION": {
+                "ALL_ACCESS_PROMO": "Continuez de profiter du <strong>forfait {{planName}}</strong> grâce à votre essai gratuit et vous obtiendrez les {{termLength}} premiers mois pour <strong>{{promoAmount}}/mois plus frais.</strong>",
+                "SELECT_PROMO_WHEN_COMPARED_TO_AA_PROMO": "Abonnez-vous au <strong>forfait {{planName}}</strong> et obtenez vos {{termLength}} premiers mois pour <strong>{{promoAmount}}/mois  plus frais.</strong>",
+                "SELECT_PROMO_WHEN_COMPARED_TO_MOSTLY_MUSIC": "Abonnez-vous au forfait Sélect et profitez d’une grande variété de musique, sports et conversations divertissantes. Obtenez vos {{termLength}} premiers mois pour <strong>{{promoAmount}}/mois plus frais.</strong>",
+                "ALL_ACCESS_RETAIL_PRICE": "Gardez le <strong>forfait {{planName}}</strong> dont vous profitez avec votre essai pour <strong>{{amount}}/mois plus frais.</strong>",
+                "SELECT_RETAIL_PRICE_WHEN_COMPARED_TO_ALL_ACCESS": "Abonnez-vous au <strong>forfait {{planName}}</strong> pour <strong>{{amount}}/mois plus frais.</strong>",
+                "SELECT_RETAIL_PRICE_WHEN_COMPARED_TO_MOSTLY_MUSIC": "Abonnez-vous au <strong>forfait {{planName}}</strong> pour <strong>{{amount}}/mois plus frais.</strong> et profitez d’une grande variété de musique, sports et conversations divertissantes.",
+                "MOSTLY_MUSIC_RETAIL_PRICE": "Abonnez-vous au <strong>forfait {{planName}}</strong> for <strong>{{amount}}/mois plus frais.</strong>",
+                "MOSTLY_MUSIC_PROMO": "Abonnez-vous au <strong>forfait {{planName}}</strong> et obtenez vos {{termLength}} premiers mois pour <strong>{{promoAmount}}/mois plus frais.</strong>",
+                "TRIAL_EXT_ALL_ACCESS": "Continuez de profiter du <strong>forfait {{planName}}</strong> grâce à votre essai gratuit et vous obtiendrez les {{termLength}} premiers mois pour <strong>{{totalAmount}}/mois plus frais.</strong>",
+                "FREE_TRIAL_EXT_ALL_ACCESS": "Continuez de profiter du <strong>forfait {{planName}}</strong> grâce à votre essai gratuit et vous obtiendrez les {{termLength}} premiers mois pour <strong>{{processingFee}}/mois plus frais.</strong>",
+                "TRIAL_EXT_SELECT": "Abonnez-vous au <strong>forfait {{planName}}</strong> et obtenez vos {{termLength}} premiers mois pour <strong>{{totalAmount}}.</strong>",
+                "FREE_TRIAL_EXT_SELECT": "Abonnez-vous au <strong>forfait {{planName}}</strong> et obtenez vos {{termLength}} premiers mois pour <strong>{{processingFee}}.</strong>",
+                "BASIC": "Abonnez-vous au forfait {{planName}} pour {{pricePerMonth}}/mois, plus les frais.",
+                "BASIC_PROMO": "Abonnez-vous au forfait {{planName}} et obtenez vos {{termLength}} premiers mois pour {{pricePerMonth}}/mois, plus les frais.",
+                "BASIC_TRIAL_EXTENSION": "Abonnez-vous au forfait {{planName}} et obtenez vos {{termLength}} premiers mois pour {{totalAmount}}."
+            }
+        },
+        "SxmUiPlatformChangeMessageComponent": {
+            "PLATFORM_CHANGE_MESSAGE_INTRO": "Ce forfait inclura les mêmes chaînes que vous aviez dans votre ancienne voiture à l’exception de :",
+            "PLATFORM_CHANGE_MESSAGE_TOOLTIP": "Les stations que vous captez dépendent de la technologie de votre radio. Il est possible que certaines stations ne soient pas captées sur d’autres modèles de radio."
+        },
+        "SwapConfirmationPageComponent": {
+            "HEADLINE": "Merci d'avoir complété votre commande.",
+            "CONFIRMATION_EMAIL": "Un courriel de confirmation sera envoyé à {{ email }}.",
+            "PRINT_LINK_LABEL": "Imprimez le sommaire de votre commande",
+            "TRANSFER_EYEBROW": "Transférer le service de",
+            "NEW_RADIO_EYEBROW": "Nouvelle radio",
+            "VIEW_DETAILS_COLLAPSED": "Afficher les details",
+            "VIEW_DETAILS_EXPANDED": "Cacher les détails",
+            "QUOTE_SUMMARY": {
+                "CARD_HEAD": "Récapitulatif de la commande",
+                "PREVIOUS_BALANCE": {
+                    "LABEL": "Solde précédent",
+                    "TOOLTIP": "Un solde précédent impayé présent sur votre compte doit être réglé avant que vous puissiez terminer votre transaction."
+                },
+                "PREVIOUS_CREDIT": "Crédit antérieur",
+                "CREDIT_REMAINING_ON_ACCOUNT": "Crédit dans votre compte",
+                "TAXES_AND_FEES": {
+                    "SWAP_FEE": "Frais de remplacement",
+                    "HARMONIZED_SALES_TAX_HST": "Taxe de vente harmonisée (TVH)",
+                    "GOODS_AND_SERVICES_TAX_GST": "Taxe sur les produits et services (TPS)",
+                    "QUEBEC_SALES_TAX_QST": "Taxe de vente du Québec (TVQ)"
+                }
+            },
+            "GST": "Numéro de TPS de SiriusXM Canada : 857294342",
+            "QST": "Numéro de TVQ de SiriusXM Canada : 1208160032",
+            "BACK_TO_MY_ACCOUNT_BUTTON": "RETOUR À MON COMPTE",
+            "LEGAL_COPY_TITLE": "Renseignements importants au sujet de votre abonnement:",
+            "LEGAL_COPY": "Votre abonnement commence immédiatement à moins d'indications contraires. Si votre radio ne reçoit pas la programmation à laquelle vous avez droit, veuillez suivre les instructions d'activation ci-dessus. Pour votre commodité, tous les abonnements sont renouvelés automatiquement jusqu'à ce que vous les annuliez. Votre renouvellement sera facturé au tarif en vigueur à ce moment-là en utilisant le mode de paiement inscrit en dossier. Vous pouvez annuler votre abonnement en tout temps en appelant le Service à la clientèle au <a href=\"tel:+1-833-838-7846\">1 833 838-7846</a>. Votre abonnement est régi par l'Entente du client de SiriusXM, que vous pouvez <a href=\"http://www.siriusxm.ca/conditions\" target=\"_blank\" title=\" à siriusxm.ca/conditions\">consulter en ligne</a>. Si vous souhaitez recevoir un exemplaire de l'Entente du client par la poste, vous pouvez appeler au <a href=\"tel:+1-866-635-2349\">1 866 635-2349</a>."
+        },
+        "PortRadioPageComponent": {},
+        "PortPaymentComponent": {
+            "HEADLINE": "Entrez vos renseignements de paiement.",
+            "SUBSCRIPTION_DETAILS": {
+                "EYEBROW": "Abonnement après essai",
+                "RADIO_ID": "Code de radio : ",
+                "DATE": "L’abonnement prend fin : "
+            },
+            "CTA_BUTTON": "Continuer"
+        },
+        "PortReviewComponent": {
+            "HEADLINE": "Vérifiez et terminez votre transfert.",
+            "CAR_DETAILS_TITLE": "Détails de la voiture",
+            "SUBSCRIPTION_DETAILS_TITLE": "Détails de l’abonnement",
+            "PAYMENT_DETAILS_TITLE": "Détails de paiement",
+            "CTA_BUTTON": "COMPLÉTER LE TRANSFERT",
+            "QUOTE_SUMMARY": {
+                "CURRENT_LABEL": "Dû aujourd’hui",
+                "PRORATED_TOOLTIP": "La durée et le montant dû pour cette période de facturation ont été ajustés pour correspondre à votre date de facturation.",
+                "FUTURE_DUE_LABEL": "Paiement dû le ",
+                "FUTURE_DUE_LABEL_PRORATED": "Paiement unique au proprata dû le ",
+                "PRORATED": "au prorata",
+                "PROMOTION": "promotion",
+                "RENEWAL_DUE_LABEL": "Paiements récurrents {{term}} à compter du {{date}}",
+                "TERM_MAP": {
+                    "=1": "mensuel",
+                    "=3": "trimestriel",
+                    "=6": "semestriel",
+                    "=12": "annuel",
+                    "=24": "de 2 ans",
+                    "=36": "de 3 ans",
+                    "other": "de # mois"
+                },
+                "FEES_AND_TAXES_DESCRIPTIONS": {
+                    "CANADIAN_MUSIC_ROYALTY_FEE": "Redevances sur la musique et des frais administratifs",
+                    "MUSIC_ROYALTY_AND_ADMINISTRATIVE_FEE": "Redevances sur la musique et des frais administratifs",
+                    "HARMONIZED_SALES_TAX_HST": "Taxe de vente harmonisée (TVH)",
+                    "GOODS_AND_SERVICES_TAX_GST": "Taxe sur les produits et services (TPS)",
+                    "QUEBEC_SALES_TAX_QST": "Taxe de vente du Québec (TVQ)",
+                    "PROVINCIAL_SALES_TAX_PST": "Taxe de vente provinciale (TVP)",
+                    "CANADIAN_PROCESSING_FEE": "Des frais de traitement",
+                    "OTHER_TAX": "Autres taxes",
+                    "ACTIVATION_FEES": "Frais d'activation",
+                    "SWAP_FEE": "Frais de remplacement"
+                }
+            },
+            "GST": "Numéro de TPS de SiriusXM Canada : 857294342",
+            "QST": "Numéro de TVQ de SiriusXM Canada : 1208160032",
+            "PLATFORM_CHANGE_MESSAGE": "Pour d’autres options de forfaits, veuillez appeler au <a href=\"tel:1-888-539-7474\">1 888 539-7474</a> ou parler à un agent ci-dessous."
+        },
+        "PortConfirmationPageComponent": {
+            "HEADLINE": "Votre abonnement a été transféré.",
+            "CONFIRMATION_EMAIL": "Un courriel de confirmation sera envoyé à {{ email }}.",
+            "PRINT_LINK_LABEL": "Imprimez le sommaire de votre commande",
+            "CAR_DETAILS_TITLE": "Détails de la voiture",
+            "SUBSCRIPTION_DETAILS_TITLE": "Détails de l’abonnement",
+            "PAYMENT_DETAILS_TITLE": "Détails de paiement",
+            "QUOTE_SUMMARY": {
+                "CURRENT_LABEL": "Dû aujourd’hui",
+                "PRORATED_TOOLTIP": "La durée et le montant dû pour cette période de facturation ont été ajustés pour correspondre à votre date de facturation.",
+                "FUTURE_DUE_LABEL": "Paiement dû le ",
+                "FUTURE_DUE_LABEL_PRORATED": "Paiement unique au proprata dû le ",
+                "PRORATED": "au prorata",
+                "PROMOTION": "promotion",
+                "RENEWAL_DUE_LABEL": "Paiements récurrents {{term}} à compter du {{date}}",
+                "TERM_MAP": {
+                    "=1": "mensuel",
+                    "=3": "trimestriel",
+                    "=6": "semestriel",
+                    "=12": "annuel",
+                    "=24": "de 2 ans",
+                    "=36": "de 3 ans",
+                    "other": "de # mois"
+                },
+                "FEES_AND_TAXES_DESCRIPTIONS": {
+                    "CANADIAN_MUSIC_ROYALTY_FEE": "Redevances sur la musique et des frais administratifs",
+                    "MUSIC_ROYALTY_AND_ADMINISTRATIVE_FEE": "Redevances sur la musique et des frais administratifs",
+                    "HARMONIZED_SALES_TAX_HST": "Taxe de vente harmonisée (TVH)",
+                    "GOODS_AND_SERVICES_TAX_GST": "Taxe sur les produits et services (TPS)",
+                    "QUEBEC_SALES_TAX_QST": "Taxe de vente du Québec (TVQ)",
+                    "PROVINCIAL_SALES_TAX_PST": "Taxe de vente provinciale (TVP)",
+                    "CANADIAN_PROCESSING_FEE": "Des frais de traitement",
+                    "OTHER_TAX": "Autres taxes",
+                    "ACTIVATION_FEES": "Frais d'activation",
+                    "SWAP_FEE": "Frais de remplacement"
+                }
+            },
+            "READY_TO_EXPLORE": "Prêt à explorer?",
+            "LEGAL_COPY_TITLE": "Renseignements importants au sujet de votre abonnement:",
+            "LEGAL_COPY": "Votre abonnement commence immédiatement à moins d'indications contraires. Si votre radio ne reçoit pas la programmation à laquelle vous avez droit, veuillez suivre les instructions d'activation ci-dessus. Pour votre commodité, tous les abonnements sont renouvelés automatiquement jusqu'à ce que vous les annuliez. Votre renouvellement sera facturé au tarif en vigueur à ce moment-là en utilisant le mode de paiement inscrit en dossier. Vous pouvez annuler votre abonnement en tout temps en appelant le Service à la clientèle au <a href=\"tel:+1-833-838-7846\">1 833 838-7846</a>. Votre abonnement est régi par l'Entente du client de SiriusXM, que vous pouvez <a href=\"http://www.siriusxm.ca/conditions\" target=\"_blank\" title=\" à siriusxm.ca/conditions\">consulter en ligne</a>. Si vous souhaitez recevoir un exemplaire de l'Entente du client par la poste, vous pouvez appeler au <a href=\"tel:+1-866-635-2349\">1 866 635-2349</a>.",
+            "READY_TO_EXPLORE_LINKS": [
+                "<a data-track-click='View Program Schedule' class='text-link' href='https://siriusxm.ca/en-ondes' target='_blank'>Voir les horaires de programmation</a>",
+                "<a data-track-click='Live Sports Schedule' class='text-link' href='https://www.siriusxm.ca/sports-en-direct' target='_blank'>Horaires des sports en direct</a>",
+                "<a data-track-click='Start Listening on the SXM App' class='text-link' href='https://siriusxm.ca/telechargerenligne' target='_blank'>Passez en mode écoute sur l’Appli SXM</a>"
+            ],
+            "GO_TO_MY_ACCOUNT_BUTTON": "ALLER À MON COMPTE"
+        },
+        "SxmUiDetailBlocks": {
+            "EYEBROW_CAR_0": "Transférer de",
+            "EYEBROW_CAR_1": "Transférer à",
+            "RADIO_ID": "Code de radio : ",
+            "FOOTER_SERVICE_OFF": "Le service sera désactivé aujourd’hui.",
+            "FOOTER_SERVICE_OFF_REMOVE": "Le service sera désactivé aujourd’hui et cette voiture sera supprimée de votre compte.",
+            "FOOTER_SERVICE_REMOVE": "Cette voiture sera supprimée de votre compte.",
+            "FOOTER_REMAINING_DAYS": "Nous reporterons les jours restants que vous avez déjà payés. Votre prochaine date de facturation est indiquée ci-dessous.",
+            "EYEBROW_SUBSCRIPTION_0": "Abonnement d’essai",
+            "EYEBROW_SUBSCRIPTION_1": "Abonnement après essai",
+            "TRIAL_ENDS": "L’essai prend fin : ",
+            "SUBSCRIPTION_RESUMES": "L’abonnement prend fin : "
+        }
+    }
+}

@@ -1,0 +1,61 @@
+<main *ngrxLet="subscriptionCardsVM$ as cardsVM">
+    <my-account-subscription-card-list
+        *ngIf="cardsVM?.activeSubscriptionCards"
+        [title]="translateKeyPrefix + '.ACTIVE' | translate"
+        [description]="translateKeyPrefix + '.ACTIVE_DESCRIPTION' | translate"
+        [subscriptionCards]="cardsVM?.activeSubscriptionCards"
+        [subscriptionsExpanded]="subscriptionsExpanded$ | async"
+        (manage)="onManageSubscription($event)"
+        (editOrCreateUsername)="onEditOrCreateUsername($event)"
+        (findSubscription)="onFindSubscription()"
+        (showAllSubscriptions)="onShowAllSubscriptions($event)"
+    >
+    </my-account-subscription-card-list>
+
+    <my-account-subscription-card-list
+        *ngIf="cardsVM?.inactiveSubscriptionCards"
+        [title]="translateKeyPrefix + '.INACTIVE' | translate"
+        [subscriptionCards]="cardsVM?.inactiveSubscriptionCards"
+        (removeInactiveDevice)="removeInactiveRadioFormModalOpen($event)"
+        (activateInactiveDevice)="onActivateRadio($event)"
+        (cancelInactiveDevice)="cancelInactiveDevice($event)"
+        (openActivateSeasonalSuspendedSubscriptionModal)="openActivateSeasonalSuspendedSubscriptionModal()"
+    >
+    </my-account-subscription-card-list>
+
+    <my-account-subscription-card-list
+        [title]="translateKeyPrefix + '.ADD_ANOTHER_SUBSCRIPTION' | translate"
+        [subscriptionCards]="[{ type: cardsVM?.showNewSubscriptionCard ? 'NEW_SUBSCRIPTION' : 'ADD_SUBSCRIPTION', span: { medium: 2, large: 3 } }]"
+        (carAndStreaming)="onCarAndStreaming()"
+        (streaming)="onStreaming()"
+    >
+    </my-account-subscription-card-list>
+</main>
+
+<sxm-ui-modal
+    #RemoveInactiveRadioFormModal
+    [ariaDescribedbyTextId]="removeInactiveRadioModalAriaDescribedbyTextId"
+    [closed]="true"
+    titlePresent="true"
+    [title]="translateKeyPrefix + '.SUBSCRIPTIONS_TITLE' | translate"
+    (modalClosed)="onRemoveInactiveRadioFormModalClose()"
+    data-test="removeInactiveRadioFormModal"
+>
+    <sxm-ui-remove-inactive-radio-form
+        #RemoveInactiveRadioForm
+        [ariaDescribedbyTextId]="removeInactiveRadioModalAriaDescribedbyTextId"
+        [loading]="removeInactiveRadioLoading"
+        [removeInactiveRadioServerError]="removeInactiveRadioServerError"
+        (userCancel)="onRemoveInactiveRadioFormModalClose()"
+        (userSelectedReason)="onUserSelectedReasonToRemoveInactiveRadio($event)"
+        data-test="removeInactiveRadioForm"
+    ></sxm-ui-remove-inactive-radio-form>
+</sxm-ui-modal>
+
+<sxm-ui-modal #CancelLinksHybridBauModal [closed]="true" titlePresent="true" [title]="translateKeyPrefix + '.SUBSCRIPTIONS_TITLE' | translate">
+    <my-account-cancel-links-hybrid-bau [data]="linkData" [allowOnlyCancelOnline]="allowOnlyCancelOnline$ | async"></my-account-cancel-links-hybrid-bau>
+</sxm-ui-modal>
+
+<sxm-ui-modal #ReactivateSeasonalSuspendedSubscriptions [closed]="true" (modalClosed)="closeActivateSeasonalSuspendedSubscriptionModal()" [ariaDescribedbyTextId]="ReactivateSeasonalSuspendedModalAriaDescribedbyTextId">
+    <sxm-ui-reactivate-seasonal-suspended-subscriptions (userClosed)="closeActivateSeasonalSuspendedSubscriptionModal()" [ariaDescribedbyTextId]="ReactivateSeasonalSuspendedModalAriaDescribedbyTextId"> </sxm-ui-reactivate-seasonal-suspended-subscriptions>
+</sxm-ui-modal>

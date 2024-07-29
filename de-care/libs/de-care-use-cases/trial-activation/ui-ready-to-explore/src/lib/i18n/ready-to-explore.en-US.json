@@ -1,0 +1,31 @@
+{
+    "DeCareUseCasesTrialActivationUiReadyToExploreModule": {
+        "ReadyToExploreComponent": {
+            "HEADING_TEXT": "Ready to Explore?",
+            "beforeYouGo": {
+                "INTRO_TEXT": "Before you go, ",
+                "link": {
+                    "LINK_TEXT": "check out great offers",
+                    "LINK_URL": "https://www.siriusxm.com/phx/ourmostpopularpackages?intcmp=GN_HEADER_NEW_Subscribe_ComparePackages"
+                }
+            },
+            "links": {
+                "learnMoreAboutYourTrial": {
+                    "LINK_TEXT": "Learn More About Your Trial",
+                    "LINK_URL": "https://www.siriusxm.com/trial-benefits"
+                },
+                "programSchedules": {
+                    "LINK_TEXT": "View program schedules",
+                    "LINK_URL": "https://www.siriusxm.com/programschedules?intcmp=GN_HEADER_NEW_WhatsOn_FindaShoworChannel_ProgramSchedules"
+                },
+                "sportsSchedules": {
+                    "LINK_TEXT": "Live sports schedules",
+                    "LINK_URL": "https://www.siriusxm.com/livesports?intcmp=GN_HEADER_NEW_WhatsOn_FindaShoworChannel_SiriusXMLiveSportsSchedule"
+                },
+                "listenNow": {
+                    "LINK_TEXT": "Start Listening on the SXM App"
+                }
+            }
+        }
+    }
+}

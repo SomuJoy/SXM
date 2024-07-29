@@ -1,0 +1,24 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "deviceInformation": {
+            "radioId": "X65100AZ",
+            "deviceStatus": "ESN not in use",
+            "primaryBrandId": "9999",
+            "primaryDealerId": "0",
+            "secondaryBrandId": "9999",
+            "secondaryDealerId": "0",
+            "promoCode": null,
+            "vehicle": {
+                "vin": null,
+                "year": null,
+                "make": null,
+                "model": null
+            },
+            "service": null,
+            "capabilityList": ["AUD", "BOF", "OVR"]
+        }
+    }
+}

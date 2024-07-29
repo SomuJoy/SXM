@@ -1,0 +1,25 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "../page.scss";
+
+:host {
+    section {
+        padding: 0;
+    }
+    @include page-host(1fr auto);
+    hr {
+        @include hr;
+        width: 100%;
+        margin: 0;
+    }
+    #mainContent {
+        grid-row-gap: 22px;
+        #deviceInstructions {
+            margin-bottom: 22px;
+        }
+        h3 {
+            @include get-header-style(h6);
+            margin: 0;
+        }
+    }
+}

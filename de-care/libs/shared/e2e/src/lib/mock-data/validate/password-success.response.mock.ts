@@ -1,0 +1,6 @@
+export const mockResponseValidatePasswordSuccess = {
+    status: 'SUCCESS',
+    httpStatusCode: 200,
+    httpStatus: 'OK',
+    data: { validationErrorKey: '', validationErrorFailedWord: '', valid: true }
+};

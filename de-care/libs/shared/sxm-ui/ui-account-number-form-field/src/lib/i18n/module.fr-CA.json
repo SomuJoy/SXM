@@ -1,0 +1,8 @@
+{
+    "SharedSxmUiUiAccountNumberFormFieldModule": {
+        "SxmUiAccountNumberFormFieldComponent": {
+            "LABEL_TEXT": "Numéro de compte",
+            "ERROR_MESSAGE_REQUIRED": "Entrez un numéro de compte valide."
+        }
+    }
+}

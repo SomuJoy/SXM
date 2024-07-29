@@ -1,0 +1,10 @@
+{
+    "BILLING_DETAILS_TITLE": "Infos de paiement",
+    "CARD_TYPE_ICONS": ["visa", "mc", "amex"],
+    "SAVED_CARD": "Utilisez ma carte {{ type }} inscrite se terminant par {{ last4Digits }}",
+    "NEW_CC_PROMPT": "Entrez une nouvelle carte de crédit",
+    "NEW_CC_NOTE": "(Note : Celle-ci remplacera votre carte de crédit actuelle)",
+    "CONTINUE_BUTTON_TEXT": "Revoir Ma Commande",
+    "PAYMENT_METHOD_NOT_SELECTED_ERROR": "Veuillez choisir une option de paiement",
+    "CREDIT_CARD_PROCESSING_ERROR": "Nous sommes dans l'impossibilité d'autoriser votre carte de crédit. Veuillez mettre à jour vos renseignements de paiement."
+}

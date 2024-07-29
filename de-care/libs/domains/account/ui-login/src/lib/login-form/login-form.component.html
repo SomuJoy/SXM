@@ -1,0 +1,125 @@
+<div id="sign-in-form">
+    <div *ngIf="userNotFound" class="invalid-feedback">
+        <p>
+            {{ translateKeyPrefix + ".USERNAME_NOTFOUND" | translate }}
+        </p>
+    </div>
+    <div *ngIf="isGenericError" class="invalid-feedback">
+        <p>
+            {{ translateKeyPrefix + ".UNEXPECTED_ERROR" | translate }}
+        </p>
+    </div>
+    <div *ngIf="accountNotSupportedError" class="invalid-feedback">
+        <p>
+            {{ translateKeyPrefix + ".ACCOUNT_TYPE_NOT_SUPPORTED" | translate }}
+        </p>
+    </div>
+    <div *ngIf="isSxirAccNotSupported">
+        <sxm-ui-alert-pill class="alert-icon-notification rounded-corners animate-block">
+            <p [innerHTML]="translateKeyPrefix + '.SXIR_ACCOUNT_TYPE_NOT_SUPPORTED' | translate : { playerUrl }"></p>
+        </sxm-ui-alert-pill>
+    </div>
+    <div *ngIf="isProspectAccNotSupported">
+        <sxm-ui-alert-pill class="alert-icon-notification rounded-corners animate-block">
+            <p [innerHTML]="translateKeyPrefix + '.PROSPECT_ACCOUNT_TYPE_NOT_SUPPORTED' | translate"></p>
+        </sxm-ui-alert-pill>
+    </div>
+    <div *ngIf="isMaxInvalidAttemptReached">
+        <sxm-ui-alert-pill class="alert-icon-notification rounded-corners animate-block">
+            <p>{{ translateKeyPrefix + ".MAX_INVALID_ATTEMPT_REACHED" | translate }}</p>
+        </sxm-ui-alert-pill>
+    </div>
+    <form [formGroup]="signInForm" (ngSubmit)="send()" #ngForm="ngForm">
+        <input type="hidden" #ndsPmdEl data-location="internal" name="nds-pmd" />
+        <div class="input-container" [class.invalid]="ngForm.submitted && frmControls.username.errors">
+            <label for="{{ usernameId }}">{{ translateKeyPrefix + ".LABEL" | translate }}</label>
+            <input type="text" onFocus formControlName="username" id="{{ usernameId }}" data-test="loginFormUsernameField" onFocus />
+        </div>
+        <div *ngIf="ngForm.submitted && frmControls.username.errors" class="invalid-feedback">
+            <p>{{ translateKeyPrefix + ".USERNAME_INVALID" | translate }}</p>
+        </div>
+        <div class="input-container" [class.invalid]="ngForm.submitted && frmControls.password.errors" [class.mb-8]="hasKeepSignedInOption">
+            <label for="{{ passwordId }}">{{ translateKeyPrefix + ".PASS_LABEL" | translate }}</label>
+            <input type="password" appEnableShowPassword formControlName="password" id="{{ passwordId }}" data-test="loginFormPasswordField" onFocus />
+        </div>
+        <div *ngIf="ngForm.submitted && frmControls.password.errors" class="invalid-feedback" [class.mt-0]="hasKeepSignedInOption">
+            <p>{{ translateKeyPrefix + ".ENTER_PASS" | translate }}</p>
+        </div>
+        <sxm-ui-nucaptcha
+            *ngIf="needCaptcha"
+            formControlName="nucaptcha"
+            [submitted]="captchaSubmitted"
+            [captchaAnswerWrong]="captchaAnswerWrong"
+            [placement]="'Login'"
+            (gotCaptcha)="gotCaptcha($event)"
+            (captchaRendered)="captchaRendered()"
+            #nuCaptcha
+        ></sxm-ui-nucaptcha>
+        <div *ngIf="hasKeepSignedInOption" class="checkbox-item">
+            <input class="checkbox" formControlName="keep" type="checkbox" id="{{ checkboxId }}" onFocus />
+            <label class="input-label" for="{{ checkboxId }}">
+                <p class="no-margin">
+                    {{ translateKeyPrefix + ".KEEP_SIGNED_IN" | translate }}
+                </p>
+            </label>
+            <sxm-ui-tooltip class="tooltip-display-bottom">
+                <p>{{ translateKeyPrefix + ".KEEP_SIGNED_IN_TOOLTIP" | translate }}</p>
+            </sxm-ui-tooltip>
+        </div>
+        <button
+            class="button primary full-width"
+            [class.mt-8]="hasKeepSignedInOption"
+            [sxm-loading-indicator]="isLoading"
+            data-link-name="Sign In"
+            sxmUiDataClickTrack="submit"
+            data-test="loginFormSubmitButton"
+        >
+            {{ submitButtonTextOverride || translateKeyPrefix + ".BUTTON_LABEL" | translate }}
+        </button>
+    </form>
+    <p class="no-margin">
+        {{ translateKeyPrefix + ".FORGOT_YOUR_USERNAME_OR_PASSWORD_PT1" | translate
+        }}<a
+            sxmUiDataClickTrack="exit"
+            data-link-key="Login Form"
+            data-link-name="username"
+            [href]="translateKeyPrefix + '.FORGOT_YOUR_USERNAME_OR_PASSWORD_URL_USERNAME' | translate"
+            target="_blank"
+            >{{ translateKeyPrefix + ".FORGOT_YOUR_USERNAME_OR_PASSWORD_LABEL_USERNAME" | translate }}</a
+        >{{ translateKeyPrefix + ".FORGOT_YOUR_USERNAME_OR_PASSWORD_PT2" | translate
+        }}<a
+            sxmUiDataClickTrack="exit"
+            data-link-key="Login Form"
+            data-link-name="password"
+            [href]="translateKeyPrefix + '.FORGOT_YOUR_USERNAME_OR_PASSWORD_URL_PASSWORD' | translate"
+            target="_blank"
+            >{{ translateKeyPrefix + ".FORGOT_YOUR_USERNAME_OR_PASSWORD_LABEL_PASSWORD" | translate }}</a
+        >{{ translateKeyPrefix + ".FORGOT_YOUR_USERNAME_OR_PASSWORD_PT3" | translate }}
+    </p>
+</div>
+
+<div class="spritesheet" aria-hidden="true" hidden>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="icon-tool-tip">
+        <g fill-rule="evenodd" transform="translate(4 4)">
+            <circle cx="8" cy="8" r="7.5" fill="currentColor" fill-rule="nonzero" stroke="#736E7D" />
+            <path fill="none" d="M8 10V8.602c0-.366.405-.688.54-.772.793-.492 1.46-.974 1.46-1.872C10 4.877 9.105 4 8 4s-2 .877-2 1.958" />
+            <circle cx="8" cy="11.75" r="1" fill="inherit" stroke="none" />
+        </g>
+    </svg>
+    <svg id="icon-password-show" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <g id="Assets-/-Icons-/-Utility-/-24px-/-Password-/-Show" stroke="none" stroke-width="1" fill-rule="evenodd">
+            <path
+                d="M12,6 C16.2222222,6 19.5555556,8 22,12 C19.5555556,16 16.2222222,18 12,18 C7.77777778,18 4.44444444,16 2,12 C4.44444444,8 7.77777778,6 12,6 Z M15.1272458,8.50546155 L15.1378385,8.51902035 C15.6776779,9.20086139 16,10.0627895 16,11 C16,13.209139 14.209139,15 12,15 C9.790861,15 8,13.209139 8,11 C8,10.056746 8.32649242,9.18974838 8.87263196,8.50585247 C7.15318998,9.11004503 5.67560662,10.2634064 4.40340302,12 C6.38895023,14.7103277 8.87476789,16 12,16 C15.1252321,16 17.6110498,14.7103277 19.596597,12 C18.3243934,10.2634064 16.84681,9.11004503 15.1272458,8.50546155 Z"
+                fill-rule="nonzero"
+            ></path>
+        </g>
+    </svg>
+    <svg id="icon-password-hide" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Assets-/-Icons-/-Utility-/-24px-/-Password-/-Hide" stroke="none" stroke-width="1" fill-rule="evenodd">
+            <path
+                d="M15,3 L16.7320508,4 L7.73205081,19.5884573 L6,18.5884573 L6.99450628,16.8646027 C5.0459244,15.881498 3.38108897,14.2599638 2,12 C4.44444444,8 7.77777778,6 12,6 C12.4199442,6 12.8310952,6.01978477 13.233453,6.05935432 L15,3 Z M16.6091146,6.94598758 C18.7292093,7.90360925 20.5261711,9.58828006 22,12 C19.5555556,16 16.2222222,18 12,18 C11.4139325,18 10.8449911,17.9614661 10.2931759,17.8843982 L11.3913361,15.9832107 C11.591482,15.994416 11.7943567,16 12,16 C15.1252321,16 17.6110498,14.7103277 19.596597,12 C18.443156,10.4255207 17.1208907,9.33046462 15.6025231,8.68915375 L16.6091146,6.94598758 Z M8.87263196,8.50585247 C7.15318998,9.11004503 5.67560662,10.2634064 4.40340302,12 C5.45424246,13.4344253 6.64520737,14.4709258 7.99692463,15.1289186 L8.91177298,13.5423919 C8.34212825,12.8512441 8,11.9655762 8,11 C8,10.056746 8.32649242,9.18974838 8.87263196,8.50585247 Z M15.4441514,8.96460198 C15.7972941,9.56087739 16,10.2567664 16,11 C16,13.209139 14.209139,15 12,15 L11.959,14.999 L15.4441514,8.96460198 Z"
+                fill-rule="nonzero"
+            ></path>
+        </g>
+    </svg>
+</div>

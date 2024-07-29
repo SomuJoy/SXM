@@ -1,0 +1,56 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    @include page-content-markup(1fr);
+}
+
+h1 {
+    font-size: 28px;
+    margin: 0 0 8px 0;
+    @include bp(medium) {
+        font-size: 32px;
+    }
+}
+
+p {
+    // TODO: There is a global style that causes havoc because it sets the final P tag to have no bottom margin.
+    //       We should fix this (maybe at the global Angular app styling level)
+    &:last-of-type {
+        margin-bottom: 12px;
+    }
+}
+
+.padding-top {
+    padding-top: 24px;
+}
+
+.text-bold {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.icon-row {
+    padding-left: 0px;
+    padding-top: 32px;
+    padding-bottom: 16px;
+    text-align: left;
+}
+
+.icon-col {
+    padding-left: 0px;
+    text-align: left;
+}
+
+.checkmark-circle-outline {
+    border: 1px solid $green;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 7px;
+}
+
+use.icon-check-mark-flex-stroke {
+    stroke: $green;
+    stroke-width: 1px;
+}

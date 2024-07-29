@@ -1,0 +1,8 @@
+{
+    "DeCareSharedUiPageShellBasicModule": {
+        "PageShellBasicComponent": {
+            "SXM_URL_LINK": "https://www.siriusxm.ca",
+            "SXM_URL_ARIA_LABEL": "SiriusXM.ca link"
+        }
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "quote": {
+            "currentQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "0.00",
+                "totalTaxesAndFeesAmount": "0.00",
+                "totalAmount": "0.00",
+                "discountAmount": "0.00",
+                "pricePerMonth": "0.00",
+                "currentBalance": "0.00",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "0.00",
+                "fees": [],
+                "taxes": [],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Trial - Premier Streaming - 3mo - $0.00 - (RTD)",
+                        "packageName": "SIR_IP_SA",
+                        "termLength": 3,
+                        "priceAmount": "0.00",
+                        "taxAmount": "0.00",
+                        "feeAmount": "0.00",
+                        "totalTaxesAndFeesAmount": "0.00",
+                        "taxes": [],
+                        "fees": [],
+                        "startDate": "2021-09-08",
+                        "endDate": "2021-12-08",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "RTD_OFFER",
+                        "dealType": "",
+                        "isStudent": false,
+                        "isAdvantage": false
+                    }
+                ],
+                "isUpgraded": false,
+                "isProrated": false
+            },
+            "futureQuote": null,
+            "proRatedRenewalQuote": null,
+            "promoRenewalQuote": null,
+            "renewalQuote": null
+        }
+    }
+}

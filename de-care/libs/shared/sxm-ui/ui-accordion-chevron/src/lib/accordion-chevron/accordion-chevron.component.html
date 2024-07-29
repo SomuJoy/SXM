@@ -1,0 +1,31 @@
+<div
+    [@collapse]="collapseState"
+    (@collapse.done)="doneCallback()"
+    [@.disabled]="animationDisabled"
+    [class.hidden]="hideContent"
+    [ngClass]="{ 'opened-full': openedFull }"
+    class="accordion-content-wrapper"
+    [id]="accordionContentWrapperId"
+>
+    <div class="accordion-content-container">
+        <ng-content></ng-content>
+    </div>
+</div>
+<div class="button-container" [class.explore--button-container]="isInnerAccordion" *ngIf="showInnerAccordion">
+    <button
+        id="accordion-btn"
+        class="component--accordion-title"
+        [ngClass]="{ active: opened }"
+        data-icon="dropdown-sm"
+        data-accordion-trigger
+        tabindex="0"
+        type="button"
+        (click)="handleClick()"
+        [attr.aria-controls]="accordionContentWrapperId"
+        [attr.aria-expanded]="opened"
+        [attr.aria-label]="opened ? aria?.expandedText : aria?.collapsedText"
+    >
+        {{ opened ? expandedText : collapsedText }}
+        <mat-icon svgIcon="dropdown-arrow-small" [class.flipped]="opened"></mat-icon>
+    </button>
+</div>

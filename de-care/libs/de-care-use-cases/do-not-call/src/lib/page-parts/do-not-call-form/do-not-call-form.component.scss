@@ -1,0 +1,33 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    width: 100%;
+}
+
+.invalid-feedback {
+    p {
+        @include font-size(14px);
+    }
+
+    a {
+        color: inherit;
+        font-weight: inherit;
+
+        &[href^="tel:"] {
+            @include bp(medium) {
+                cursor: default;
+            }
+        }
+    }
+}
+
+.input-container {
+    label {
+        color: $gray-dark;
+    }
+    margin-bottom: 16px;
+}
+
+.button {
+    margin-top: 8px;
+}

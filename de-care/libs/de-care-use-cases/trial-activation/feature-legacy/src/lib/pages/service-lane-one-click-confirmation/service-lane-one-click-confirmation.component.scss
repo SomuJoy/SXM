@@ -1,0 +1,19 @@
+@import "sxm.phoenix.imports";
+
+.content-container {
+    &:first-child {
+        padding-top: 28px;
+    }
+
+    &:last-child {
+        padding-bottom: 48px;
+    }
+}
+
+hr {
+    background-color: $gray-medium;
+    border: 0;
+    height: 1px;
+    margin: 28px 0;
+    width: 100%;
+}

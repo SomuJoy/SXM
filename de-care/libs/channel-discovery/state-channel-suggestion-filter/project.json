@@ -1,0 +1,27 @@
+{
+    "name": "channel-discovery-state-channel-suggestion-filter",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/channel-discovery/state-channel-suggestion-filter/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/channel-discovery/state-channel-suggestion-filter"],
+            "options": {
+                "jestConfig": "libs/channel-discovery/state-channel-suggestion-filter/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/channel-discovery/state-channel-suggestion-filter/src/**/*.ts",
+                    "libs/channel-discovery/state-channel-suggestion-filter/src/**/*.html"
+                ]
+            }
+        }
+    },
+    "tags": ["type:state", "scope:channel-discovery-feature-state"]
+}

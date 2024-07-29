@@ -1,0 +1,51 @@
+<div class="error-hero">
+    <div class="content-container">
+        <div class="row align-center">
+            <div class="column small-12 medium-8 align-center" data-e2e="alreadyConsolidatedHero">
+                <h2>{{ translateKeyPrefix + "HERO_TITLE" | translate }}</h2>
+                <p class="large-copy">{{ translateKeyPrefix + "HERO_SUBTITLE" | translate }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content-container">
+    <div class="row align-center">
+        <div class="column small-12 medium-6">
+            <img class="content-image" [src]="translateKeyPrefix + 'CONTENT_IMAGE_URL' | translate" data-e2e="alreadyConsolidatedImage" />
+        </div>
+        <div class="column small-12 medium-4 align-top">
+            <div class="content-copy stack" data-e2e="alreadyConsolidatedContentCopy">
+                <h4>{{ translateKeyPrefix + "CONTENT_TITLE" | translate }}</h4>
+                <p class="text-color-grey-dark">{{ translateKeyPrefix + "CONTENT_COPY" | translate }}</p>
+                <p>
+                    <a class="text-link" data-track-click="Set up listening credentials" [href]="translateKeyPrefix + 'LISTEN_URL' | translate">{{
+                        translateKeyPrefix + "LISTEN_LINK" | translate
+                    }}</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row align-center">
+        <div class="column small-12 medium-10">
+            <div class="recirculation--single">
+                <h5 data-e2e="alreadyConsolidatedHelp">{{ translateKeyPrefix + "RECIRC_TITLE" | translate }}</h5>
+                <p>
+                    <span class="stack"
+                        ><a class="text-link" data-track-click="Support Center" [href]="translateKeyPrefix + 'SUPPORT_CENTER_URL' | translate">{{
+                            translateKeyPrefix + "SUPPORT_CENTER" | translate
+                        }}</a></span
+                    >
+                    <chat-with-agent-link
+                        *ngIf="isChatAvailable; else noChat"
+                        class="stack chat-text-link"
+                        [chatLinkText]="translateKeyPrefix + 'CHAT_LINK' | translate"
+                        [queue]="'generalAgents'"
+                    ></chat-with-agent-link>
+                    <ng-template #noChat>
+                        <span [innerHTML]="translateKeyPrefix + 'CALL' | translate"></span>
+                    </ng-template>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

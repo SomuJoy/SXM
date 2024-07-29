@@ -1,0 +1,28 @@
+{
+    "name": "de-care-use-cases-streaming-feature-setup-credentials",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care-use-cases/streaming/feature-setup-credentials/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/de-care-use-cases/streaming/feature-setup-credentials"],
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/streaming/feature-setup-credentials/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/de-care-use-cases/streaming/feature-setup-credentials/src/**/*.ts",
+                    "libs/de-care-use-cases/streaming/feature-setup-credentials/src/**/*.html"
+                ]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:feature", "scope:de-care"]
+}

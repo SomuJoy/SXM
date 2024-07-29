@@ -1,0 +1,33 @@
+<div class="row no-padding">
+    <div class="column small-12">
+        <order-summary-oem *ngIf="quote" [quote]="quote" [isNewAccount]="false" [giftCardUsed]="false" [isClosedRadio]="isClosedRadio"></order-summary-oem>
+    </div>
+</div>
+<div class="row no-padding">
+    <div class="column small-12">
+        <div class="agreement">
+            <charge-agreement [details]="offer" [checked]="agreementAccepted" (checkChange)="agreementAccepted = $event"></charge-agreement>
+        </div>
+        <div *ngIf="submitted && !agreementAccepted" class="invalid-feedback">
+            <p>{{ "oemCommon.summaryStepComponent.INSTRUCTIONS" | translate }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="row no-padding">
+    <div class="column small-12">
+        <button
+            class="button primary text-center align-justify full-width"
+            data-e2e="oem.summaryStep.completeButton"
+            qatag="CompleteMyOrderButton"
+            [class.loading]="processing"
+            [disabled]="processing"
+            type="button"
+            (click)="completeOrder()"
+            loading-button-trigger
+        >
+            <ng-container *ngIf="!processing">{{ "oemCommon.summaryStepComponent.BUTTON_TEXT" | translate }} </ng-container>
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</div>

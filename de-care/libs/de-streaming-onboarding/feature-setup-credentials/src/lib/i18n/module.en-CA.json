@@ -1,0 +1,56 @@
+{
+    "DeStreamingOnboardingFeatureSetupCredentialsModule": {
+        "PrivacyPolicyComponent": {
+            "LINK_URL": "https://www.siriusxm.ca/privacy"
+        },
+        "FindAccountPageComponent": {
+            "HEADLINE": "Set up your login for listening on the SXM App.",
+            "INSTRUCTIONS": "<p>First, we need some info to find your subscription.</p>",
+            "ALREADY_HAVE_LOGIN": "Already have a login to stream?",
+            "SIGN_IN_LINK_TEXT": "Sign In",
+            "CONTINUE_BUTTON_TEXT": "CONTINUE"
+        },
+        "AccountNotFoundPageComponent": {
+            "HEADLINE": "Looks like you may be new to SiriusXM.",
+            "INSTRUCTIONS": "<p>We can’t find an existing subscription associated with your info. If you have SiriusXM in your vehicle, we can use your radio ID to look for one.</p><p>You can also explore our content and subscription options.</p>",
+            "PREVIEW_BUTTON_TEXT": "Continue"
+        },
+        "IneligibleInsufficientPackageComponent": {
+            "MESSAGE_WITH_PHONE_NUMBER": "<p>You can't upgrade your car subscription here (please call 1-833-838-7846 to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "MESSAGE_WITHOUT_PHONE_NUMBER": "<p>You can't upgrade your car subscription here (please contact SiriusXM to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "PREVIEW_BUTTON_TEXT": "STREAM IN THE APP"
+        },
+        "IneligibleMaxLifetimeTrialsComponent": {
+            "MESSAGE_WITH_PHONE_NUMBER": "<p>You can't upgrade your car subscription here (please call 1-833-838-7846 to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "MESSAGE_WITHOUT_PHONE_NUMBER": "<p>You can't upgrade your car subscription here (please contact SiriusXM to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "PREVIEW_BUTTON_TEXT": "STREAM IN THE APP"
+        },
+        "IneligibleNonConsumerComponent": {
+            "MESSAGE_WITH_PHONE_NUMBER": "<p>You can't upgrade your car subscription here (please call 1-833-838-7846 to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "MESSAGE_WITHOUT_PHONE_NUMBER": "<p>You can't upgrade your car subscription here (please contact SiriusXM to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "PREVIEW_BUTTON_TEXT": "STREAM IN THE APP"
+        },
+        "IneligibleExpiredAATrialComponent": {
+            "MESSAGE_WITH_PHONE_NUMBER": "<p>You can't reactivate your car subscription here (please call 1-833-838-7846 to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "MESSAGE_WITHOUT_PHONE_NUMBER": "<p>You can't reactivate your car subscription here (please contact SiriusXM to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>"
+        },
+        "IneligibleNoAudioComponent": {
+            "MESSAGE_WITH_PHONE_NUMBER": "<p>You can't upgrade your car subscription here (please call 1-833-838-7846 to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "MESSAGE_WITHOUT_PHONE_NUMBER": "<p>You can't upgrade your car subscription here (please contact SiriusXM to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>"
+        },
+        "IneligibleNonPayPageComponent": {
+            "INSTRUCTIONS": "<p>You can resume listening as soon as we receive payment. In the meantime, you can try out our SXM App.</p>"
+        },
+        "ClosedSubscriptionComponent": {
+            "MESSAGE_WITH_PHONE_NUMBER": "<p>You can't reactivate your car subscription here (please call 1-833-838-7846 to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "MESSAGE_WITHOUT_PHONE_NUMBER": "<p>You can't reactivate your car subscription here (please contact SiriusXM to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "PREVIEW_BUTTON_TEXT": "SUBSCRIBE TO THE SXM APP"
+        },
+        "RadioIdPageComponent": {
+            "INSTRUCTIONS_TEXT": "<p>If you don't have a SiriusXM car radio, or you're only interested in streaming, you can try out the SXM App for free or subscribe to a streaming-only plan.</p>"
+        },
+        "SingleMatchSetupLoginConfirmationPageComponent": {
+            "INSTRUCTIONS": "<p>Use your username and password to log into the SXM App and start listening.</p>"
+        }
+    }
+}

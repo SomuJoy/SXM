@@ -1,0 +1,27 @@
+{
+    "name": "customer-info",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/customer-info/src",
+    "projectType": "library",
+    "generators": {},
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/customer-info/src/**/*.ts", "libs/customer-info/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/customer-info/jest.config.js",
+                "tsConfig": "libs/customer-info/tsconfig.spec.json",
+                "setupFile": "libs/customer-info/src/test-setup.ts",
+                "configPath": "./jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": ["scope:legacy"]
+}

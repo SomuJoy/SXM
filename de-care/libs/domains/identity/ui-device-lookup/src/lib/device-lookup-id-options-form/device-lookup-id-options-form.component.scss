@@ -1,0 +1,13 @@
+.hidden {
+    display: none;
+}
+.option-fields {
+    margin: 12px 0 24px 24px;
+}
+form > sxm-ui-radio-option-form-field {
+    margin-bottom: 12px;
+}
+sxm-ui-dropdown:not(.invalid) {
+    display: inline-block;
+    margin-bottom: 16px;
+}

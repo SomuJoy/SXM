@@ -1,0 +1,70 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.grid-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 66px;
+    grid-template-rows: auto;
+    column-gap: 16px;
+    align-items: center;
+    color: $gray-dark;
+    @include bp(mobile-medium) {
+        grid-template-columns: 1fr 96px;
+    }
+    .span-2 {
+        grid-column: span 2;
+    }
+    .label-column {
+        grid-column: 1 / 2;
+    }
+    .right-align {
+        justify-self: end;
+    }
+    .center-horz-align {
+        justify-self: center;
+        max-width: 100%;
+    }
+    .bottom-element {
+        margin-top: 40px;
+        align-self: end;
+        @include bp(medium) {
+            margin-top: 80px;
+        }
+    }
+    mat-icon {
+        width: 40px;
+        height: 40px;
+        color: $gray-dark;
+        grid-column: span 2;
+        justify-self: center;
+        max-width: 100%;
+        align-self: start;
+        margin-bottom: 16px;
+    }
+    .text-overflow-ellipsis {
+        @include text-overflow-ellipsis;
+    }
+    hr {
+        width: 100%;
+        @include hr($gray-light);
+        margin-top: 0;
+        margin-bottom: 20px;
+        @include bp(medium) {
+            margin-bottom: 24px;
+        }
+    }
+    .text-link-secondary {
+        @include text-link-secondary;
+        border: none;
+    }
+    .tool-tip-grid {
+        display: inline-grid;
+        grid-template-columns: min-content 24px;
+        align-items: center;
+        column-gap: 4px;
+        & > p {
+            white-space: nowrap;
+        }
+    }
+}

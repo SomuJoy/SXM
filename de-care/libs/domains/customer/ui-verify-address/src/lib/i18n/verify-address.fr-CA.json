@@ -1,0 +1,13 @@
+{
+    "DomainsCustomerUiVerifyAddressModule": {
+        "VerifyAddressComponent": {
+            "INVALID_FEEDBACK": "Nous n'avons pas pu valider votre adresse auprès de Postes Canada.",
+            "U_SURE": "Êtes-vous sûr que l'adresse indiquée ci-dessous est une adresse exacte?",
+            "THIS_ADDRESS": "Utilisez cette adresse",
+            "NEW_ADDRESS": "Entrez une nouvelle adresse",
+            "CORRECTED_ADDRESS": "L'adresse suivante a été recommandée:",
+            "MULTIPLE_CORRECTED_ADDRESSES": "Veuillez sèlectionner votre adresse dans la liste ci-dessous.",
+            "ERROR_CHOOSE_ADDRESS": "Choisissez une adresse pour continuer"
+        }
+    }
+}

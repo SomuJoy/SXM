@@ -1,0 +1,24 @@
+<div>
+    <h5>{{ "identification.RadioNoMatchComponent.TITLE" | translate }}</h5>
+    <p [id]="ariaDescribedbyTextId">
+        {{ "identification.RadioNoMatchComponent.TEXT_1-A" | translate }}
+        <a class="text-link no-underline" href="" (click)="edit($event)">{{ "identification.RadioNoMatchComponent.LINK_EDIT_INFO" | translate }}</a>
+        {{ "identification.RadioNoMatchComponent.TEXT_1-B" | translate }}
+    </p>
+    <p *ngIf="vehicleInfo">
+        <strong>{{ "identification.activeSubscriptionComponent.VEHICLE" | translate: vehicleInfo }}</strong>
+    </p>
+    <p>{{ "identification.RadioNoMatchComponent.RADIO_LABEL" | translate }} (****{{ last4DigitsOfRadioId }})</p>
+    <div class="user-info flex align-justify">
+        <div *ngIf="userVerifyData">
+            <p>{{ userVerifyData.lastName }}</p>
+            <p>{{ userVerifyData.phoneNumber | PhoneNumber }}</p>
+            <p>{{ userVerifyData.zipCode }}</p>
+        </div>
+        <a class="text-link-secondary" href="" data-track-click="Edit" (click)="edit($event)">{{ "identification.RadioNoMatchComponent.EDIT_LABEL" | translate }}</a>
+    </div>
+    <button type="submit" class="button primary full-width" (click)="createNewAccount.emit()">{{ "identification.RadioNoMatchComponent.BUTTON_LABEL" | translate }}</button>
+    <p class="chat-with-agent">
+        <chat-with-agent-link class="text-link" [chatLinkText]="'identification.RadioNoMatchComponent.CHAT_LABEL' | translate" [queue]="'general'"></chat-with-agent-link>
+    </p>
+</div>

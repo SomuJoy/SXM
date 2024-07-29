@@ -1,0 +1,24 @@
+{
+    "name": "de-care-shared-ui-page-shell-account-presence",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care/shared/ui-page-shell-account-presence/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/de-care/shared/ui-page-shell-account-presence"],
+            "options": {
+                "jestConfig": "libs/de-care/shared/ui-page-shell-account-presence/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/de-care/shared/ui-page-shell-account-presence/src/**/*.ts", "libs/de-care/shared/ui-page-shell-account-presence/src/**/*.html"]
+            }
+        }
+    },
+    "tags": ["type:ui", "scope:de-care-use-case-shared-ui"]
+}

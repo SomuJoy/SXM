@@ -1,0 +1,11 @@
+{
+    "deCareUseCasesChangeSubscriptionUiCommonModule": {
+        "selectTermTypeFormComponent": {
+            "MONTHLY_LABEL": "Monthly - {{amount}}/mo",
+            "ANNUAL_LABEL": "Annual - {{amount}}/yr",
+            "CURRENT": "(Current)",
+            "BUTTON_TEXT": "Continue",
+            "ERROR_REQUIRED": "Pick a billing plan to continue."
+        }
+    }
+}

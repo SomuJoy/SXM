@@ -1,0 +1,36 @@
+import { Injectable } from '@angular/core';
+import { ActivatedRoute, CanActivate, Router } from '@angular/router';
+import { getIsCredentialRecoveryFlow, getUserEnteredEmailOrUsername } from '@de-care/de-streaming-onboarding/state-setup-credentials';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { map, take, withLatestFrom } from 'rxjs/operators';
+
+@Injectable({
+    providedIn: 'root',
+})
+export class ForgotPasswordTransactionStateGuard implements CanActivate {
+    constructor(private readonly _router: Router, private readonly _store: Store, private _activatedRoute: ActivatedRoute) {}
+
+    canActivate(): Observable<boolean> | Promise<any> {
+        return this._store.pipe(
+            select(getUserEnteredEmailOrUsername),
+            take(1),
+            withLatestFrom(this._store.pipe(select(getIsCredentialRecoveryFlow))),
+            map(([transactionStateExists, isCredentialRecoveryFlow]) => {
+                if (!transactionStateExists) {
+                    if (isCredentialRecoveryFlow) {
+                        this._navigateTo('/setup-credentials/credential-recovery');
+                    } else {
+                        this._navigateTo('/setup-credentials/forgot-password');
+                    }
+                    return true;
+                }
+                return transactionStateExists;
+            })
+        );
+    }
+
+    private _navigateTo(destination: string): void {
+        this._router.navigate([destination], { relativeTo: this._activatedRoute, queryParamsHandling: 'preserve' });
+    }
+}

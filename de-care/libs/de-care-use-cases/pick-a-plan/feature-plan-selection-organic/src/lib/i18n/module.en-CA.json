@@ -1,0 +1,19 @@
+{
+    "DeCareUseCasesPickAPlanFeaturePlanSelectionOrganicModule": {
+        "LandingPageComponent": {
+            "HERO": {
+                "TITLE": "Pick a plan & get {{termLength}} months for ${{price}}",
+                "SUBTITLE": "See Offer Details below. Change or cancel anytime."
+            },
+            "CHOICE_QUESTIONS_TFN": "1-833-838-7846",
+            "REACTIVE_QUESTIONS_TFN": "1-833-838-7846",
+            "PROACTIVE_QUESTIONS_TFN": "1-833-838-7846"
+        },
+        "FindYourAccountCardComponent": {
+            "NO_RADIO": "",
+            "INSTRUCTIONS": "Tell us a little about yourself by entering your personal info or vehicle info. You will need your Radio ID or VIN.",
+            "OUTSIDE_THE_CAR_LINK_URL": "https://www.siriusxm.ca/findradio",
+            "OUTSIDE_THE_CAR_LINK_TEXT": "Get help finding your radio"
+        }
+    }
+}

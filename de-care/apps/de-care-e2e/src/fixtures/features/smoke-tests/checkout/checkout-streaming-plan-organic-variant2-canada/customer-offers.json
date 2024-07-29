@@ -1,0 +1,47 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "offers": [
+            {
+                "planCode": "Trial - Streaming Music Showcase - 3mo - 0.00 - 1moFO",
+                "packageName": "SIR_CAN_IP_SHOWCASE",
+                "packageUpgrade": null,
+                "promoCode": "0606",
+                "termLength": 3,
+                "type": "RTP_OFFER",
+                "marketType": "trial:streaming",
+                "price": 0,
+                "pricePerMonth": 0.0,
+                "retailPrice": 5.5,
+                "packageUpgradePrice": null,
+                "msrpPrice": 5.5,
+                "processingFee": null,
+                "supportedServices": ["SIR", "UNIVERSAL_LOGIN"],
+                "deal": null,
+                "priceChangeMessagingType": "",
+                "planEndDate": null,
+                "minimumFollowOnTerm": 1,
+                "order": null,
+                "bundledSavingPrice": null,
+                "bundleSubPackageNames": null,
+                "parentPackageName": "",
+                "fallbackReason": "",
+                "capability": ["IPAUD"],
+                "mrdEligible": false,
+                "invoiceEligible": false,
+                "advantage": false,
+                "student": false,
+                "fallback": false,
+                "streaming": false,
+                "upgradeOffer": false,
+                "bestPackage": false,
+                "leadOffer": false,
+                "dataCapable": false,
+                "bundled": null
+            }
+        ],
+        "presentment": null
+    }
+}

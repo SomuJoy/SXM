@@ -1,0 +1,80 @@
+<form [formGroup]="paymentForm">
+    <section class="billing-field-set">
+        <header>
+            <h3>{{ translateKeyPrefix + ".BILLING_DETAILS_TITLE" | translate }}</h3>
+        </header>
+        <sxm-ui-first-name-form-field formControlName="firstName" data-test="BillingInfoFirstName" data-e2e="BillingInfoFirstName"></sxm-ui-first-name-form-field>
+        <sxm-ui-last-name-form-field formControlName="lastName" data-test="BillingInfoLastName" data-e2e="BillingInfoLastName"></sxm-ui-last-name-form-field>
+        <sxm-ui-phone-number-form-field formControlName="phoneNumber" data-test="BillingInfoPhoneNumber" data-e2e="BillingInfoPhoneNumber"></sxm-ui-phone-number-form-field>
+        <sxm-ui-address-form-fields
+            addressType="service"
+            formControlName="serviceAddress"
+            [submitted]="paymentFormSubmitted"
+            data-e2e="BillingInfoAddress"
+        ></sxm-ui-address-form-fields>
+        <input type="hidden" formControlName="country" />
+    </section>
+    <section class="billing-field-set credit-card-fields" id="creditCardFieldsSection" #creditCardFieldsSection>
+        <header>
+            <h3>{{ translateKeyPrefix + ".PAYMENT_DETAILS_TITLE" | translate }}</h3>
+            <ul class="credit-card-icons-list">
+                <li *ngFor="let cardType of translateKeyPrefix + '.CARD_TYPE_ICONS' | translate">
+                    <svg class="icon icon-content cc-icon icon-{{ cardType }}">
+                        <use class="" [attr.xlink:href]="'#icon-cc-' + cardType"></use>
+                    </svg>
+                </li>
+            </ul>
+        </header>
+        <div *ngIf="creditCardSubmissionError$ | async" class="invalid-feedback" id="creditCardProcessingError">
+            <p>{{ translateKeyPrefix + ".CREDIT_CARD_PROCESSING_ERROR" | translate }}</p>
+        </div>
+        <div *ngIf="unexpectedSubmissionError$ | async" class="invalid-feedback" id="unexpectedProcessingError">
+            <p>{{ translateKeyPrefix + ".UNEXPECTED_ERROR" | translate }}</p>
+        </div>
+        <sxm-ui-credit-card-form-fields [formGroup]="paymentForm.controls.creditCardInfo"></sxm-ui-credit-card-form-fields>
+    </section>
+    <privacy-policy></privacy-policy>
+    <prepaid-redeem-ui (cardSubmitted)="onPrepaidCardSubmitted($event)" (cardCleared)="onPrepaidCardCleared()"></prepaid-redeem-ui>
+    <button type="button" sxm-proceed-button [loading]="paymentFormProcessing$ | async" sxmUiDataClickTrack="submit" (click)="submitPaymentInfo()">
+        {{ translateKeyPrefix + ".CONTINUE_BUTTON_TEXT" | translate }}
+    </button>
+    <ng-container *ngIf="quoteViewModel" [formGroup]="transactionForm">
+        <section>
+            <quote-summary
+                [quote]="quoteViewModel"
+                [class.alternate-header]="useQuotesAlternateHeader"
+                [isStreamingFlow]="legacySettings?.isStreamingFlow"
+                [isNewAccount]="legacySettings?.isNewAccount"
+                [extraData]="extraData"
+                [showUnusedCreditLine]="showUnusedCreditLine"
+                [isQCProvince]="isQuebecProvince"
+            ></quote-summary>
+        </section>
+        <sxm-ui-charge-agreement-checkbox-form-field
+            formControlName="chargeAgreementAccepted"
+            [formButtonTextCopy]="continueButtonTextOverride || translateKeyPrefix + '.CONTINUE_BUTTON_TEXT' | translate"
+            [useRateVersionOfTextCopy]="useRateVersionOfTextCopy"
+        ></sxm-ui-charge-agreement-checkbox-form-field>
+        <section *ngIf="shouldIncludeNuCaptcha" id="nuCaptchaFieldSection">
+            <hr />
+            <strong>{{ translateKeyPrefix + ".ENTER_A_CAPTCHA_TO_FINISH" | translate }}</strong>
+            <sxm-ui-nucaptcha
+                #nuCaptchaComponent
+                formControlName="nuCaptchaAnswer"
+                [submitted]="transactionForm.touched"
+                [captchaAnswerWrong]="captchaAnswerWrong$ | async"
+            ></sxm-ui-nucaptcha>
+        </section>
+        <button type="button" sxm-proceed-button [loading]="transactionFormProcessing$ | async" sxmUiDataClickTrack="submit" (click)="submitTransaction()">
+            {{ continueButtonTextOverride || translateKeyPrefix + ".CONTINUE_BUTTON_TEXT" | translate }}
+        </button>
+    </ng-container>
+</form>
+<sxm-ui-modal [closed]="true" (modalClosed)="onEditExistingAddress()" #verifyAddressModal  [ariaDescribedbyTextId]="accountInfoQuoteModalAriaDescribedbyTextId">
+    <customer-verify-address
+        [ariaDescribedbyTextId]="accountInfoQuoteModalAriaDescribedbyTextId"
+        [data]="verifyAddressesDataViewModel$ | async"
+        (editAddress)="onUseAddressFromValidation($event)"
+        (editExisting)="onEditExistingAddress()"
+    ></customer-verify-address>
+</sxm-ui-modal>

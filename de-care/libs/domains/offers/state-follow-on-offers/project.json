@@ -1,0 +1,31 @@
+{
+    "name": "domains-offers-state-follow-on-offers",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/offers/state-follow-on-offers/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/offers/state-follow-on-offers/src/**/*.ts", "libs/domains/offers/state-follow-on-offers/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/offers/state-follow-on-offers/jest.config.js",
+                "tsConfig": "libs/domains/offers/state-follow-on-offers/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/offers/state-follow-on-offers/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

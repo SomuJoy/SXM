@@ -1,0 +1,293 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    section {
+        padding: 0;
+        @include bp(medium) {
+            p {
+                @include font-size(12px);
+            }
+        }
+    }
+    button,
+    figure {
+        margin: 0;
+    }
+
+    display: grid;
+    grid-gap: 24px;
+    header {
+        z-index: 10;
+        position: relative;
+        top: -50px;
+        background-image: linear-gradient(130deg, #0901b1, #075096, #079188);
+        color: $white;
+        height: 220px;
+        padding: 0 16px;
+        @include bp(small) {
+            height: 248px;
+            padding: 0 20px;
+        }
+        @include bp(medium) {
+            top: 0;
+            // height should actually be 322px, but the current nav bar does not overlap the content the way it appears in the designs
+            height: 250px;
+            padding: 0 36px;
+        }
+        @include bp(large) {
+            height: 347px;
+            padding: 0 56px;
+        }
+        @include bp(xlarge) {
+            display: grid;
+            justify-items: center;
+            height: 405px;
+        }
+        figure {
+            display: grid;
+            grid-gap: 12px;
+            grid-template-columns: repeat(12, [col-start] 1fr);
+            align-items: start;
+            padding: 16px 0 24px;
+            height: 100%;
+            overflow: hidden;
+            max-width: 1224px; // 1336 - 2*56
+            @include bp(medium) {
+                padding: 24px 0 48px;
+            }
+            @include bp(large) {
+                padding-top: 32px;
+            }
+            @include bp(xlarge) {
+                padding-top: 40px;
+            }
+            .hero-image {
+                grid-column: 9 / span 4;
+                grid-row: 1;
+                justify-self: center;
+                height: 180px;
+                width: auto;
+                // TODO: replace with @include bp(mobile-medium) when code is merged into 86000
+                @media (min-width: 375px) {
+                    grid-column: 8 / span 5;
+                    height: 260px;
+                }
+                @include bp(small) {
+                    grid-column: 7 / span 6;
+                    height: 364px;
+                }
+                @include bp(medium) {
+                    grid-column: 8 / span 5;
+                    height: 404px;
+                }
+                @include bp(large) {
+                    grid-column: 8 / span 4;
+                    height: 515px;
+                }
+                @include bp(xlarge) {
+                    grid-column: 7 / span 5;
+                    height: 627px;
+                }
+            }
+            figcaption {
+                grid-column: col-start / span 8;
+                grid-row: 1;
+                display: grid;
+                @media (min-width: 375px) {
+                    grid-column: col-start / span 7;
+                }
+                @include bp(small) {
+                    grid-column: col-start / span 6;
+                }
+                @include bp(xlarge) {
+                    grid-column: 2 / span 6;
+                }
+                .sxm-logo {
+                    grid-column: 1;
+                    width: 100px;
+                    height: auto;
+                    padding: 0;
+                    margin: 8px 0 24px;
+                    @include bp(small) {
+                        margin-bottom: 32px;
+                    }
+                    @include bp(medium) {
+                        display: none;
+                    }
+                }
+                h1 {
+                    @include get-header-style(h5);
+                    @include font-size(20px);
+                    margin-bottom: 8px;
+                    @include bp(small) {
+                        @include get-header-style(h3);
+                    }
+                    @include bp(medium) {
+                        @include font-size(32px);
+                        margin-top: 24px;
+                    }
+                    @include bp(large) {
+                        @include get-header-style(h2);
+                        margin: 56px 0 16px;
+                    }
+                    @include bp(xlarge) {
+                        @include font-size(59px);
+                        line-height: 0.98;
+                        margin: 64px 0 24px;
+                    }
+                }
+                p {
+                    @include bp(medium) {
+                        @include font-size(16px);
+                        line-height: 24px;
+                    }
+                }
+                sub {
+                    font-weight: calculate-font-weight("bold");
+                    line-height: 24px;
+                    @include bp(medium) {
+                        line-height: 18px;
+                    }
+                }
+            }
+        }
+    }
+    main {
+        position: relative;
+        top: -58px;
+        padding: 0 16px;
+        display: grid;
+        @include bp(medium) {
+            top: 0;
+            padding: 0 36px;
+        }
+        @include bp(large) {
+            padding: 0 56px;
+        }
+        @include bp(xlarge) {
+            justify-items: center;
+        }
+        .content {
+            display: grid;
+            grid-gap: 24px;
+            width: 100%;
+            max-width: 1224px; // 1336 - 2*56
+            @include bp(medium) {
+                row-gap: 8px;
+                grid-template-columns: repeat(12, [col-start] 1fr);
+                margin-bottom: 24px;
+            }
+
+            .current-plan {
+                grid-row: 1;
+                display: grid;
+                grid-gap: 16px;
+                hr {
+                    @include hr;
+                    margin: 0;
+                }
+                @include bp(medium) {
+                    grid-column: 8 / span 5;
+                    grid-row: 2;
+                }
+                @include bp(large) {
+                    grid-column: 7 / span 5;
+                }
+                @include bp(xlarge) {
+                    grid-column: 7 / span 4;
+                }
+            }
+            .plan-features {
+                grid-row: 2;
+                @include bp(medium) {
+                    grid-column: col-start / span 6;
+                    grid-row: 2 / span 2;
+                }
+                @include bp(large) {
+                    grid-column: col-start / span 5;
+                }
+                @include bp(xlarge) {
+                    grid-column: 2 / span 4;
+                }
+                ul {
+                    @include list-reset;
+                    display: grid;
+                    grid-gap: 16px;
+                    li {
+                        figure {
+                            display: grid;
+                            grid-gap: 24px;
+                            grid-template-columns: auto 1fr;
+                            align-items: center;
+                            margin: 0;
+                            img {
+                                width: 45px;
+                                height: auto;
+                                grid-column: 1;
+                            }
+                            figcaption {
+                                grid-column: 2;
+                                h4 {
+                                    @include get-body-copy-style();
+                                    font-weight: calculate-font-weight("bold");
+                                    @include bp(small) {
+                                        @include font-size(16px);
+                                        line-height: 24px;
+                                    }
+                                    @include bp(medium) {
+                                        font-weight: calculate-font-weight("bold");
+                                    }
+                                }
+                                p {
+                                    @include font-size(12px);
+                                    font-weight: calculate-font-weight("book");
+                                }
+                            }
+                        }
+                    }
+                }
+                h2 {
+                    @include get-header-style(h5);
+                    margin-bottom: 4px;
+                    @include bp(medium) {
+                        @include font-size(24px);
+                        line-height: 27px;
+                    }
+                }
+                .header-paragraph {
+                    @include font-size(12px);
+                    margin-bottom: 16px;
+                    @include bp(small) {
+                        margin-bottom: 20px;
+                    }
+                    @include bp(medium) {
+                        margin-bottom: 28px;
+                    }
+                }
+            }
+            .plan-ctas {
+                grid-row: 3;
+                display: grid;
+                grid-gap: 24px;
+                margin-top: 8px;
+                @include bp(medium) {
+                    grid-column: 8 / span 5;
+                    margin-top: 16px;
+                }
+                @include bp(large) {
+                    grid-column: 7 / span 5;
+                }
+            }
+            chat-with-agent-link {
+                color: $blue-secondary;
+            }
+            .text-link-container {
+                text-align: center;
+                @include bp(medium) {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

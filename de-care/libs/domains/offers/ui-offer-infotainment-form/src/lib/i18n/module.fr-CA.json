@@ -1,0 +1,10 @@
+{
+    "domainsOffersUIOfferInfotainmentFormModule": {
+        "offerInfotainmentFormComponent": {
+            "SUBMIT_BUTTON": "Continuer",
+            "CONTENT_CARD_FLAG": "Groupez et économisez",
+            "CONTENT_CARD_ADD_PACKAGE": "Ajouter ce forfait",
+            "CONTENT_CARD_KEEP_PACKAGE": "Garder ce forfait"
+        }
+    }
+}

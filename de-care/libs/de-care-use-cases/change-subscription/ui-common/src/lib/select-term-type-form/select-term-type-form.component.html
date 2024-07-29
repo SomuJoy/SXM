@@ -1,0 +1,32 @@
+<form *ngIf="termOptionInfo" (submit)="onSubmit($event)" data-e2e="selectTermTypeForm">
+    <div *ngIf="selectionErrorMessage" class="invalid-feedback">
+        <p>{{ translateKeyPrefix + ".ERROR_REQUIRED" | translate }}</p>
+    </div>
+    <div class="radio-item">
+        <input type="radio" class="radio" id="monthly" name="term" [checked]="termTypeSelected === 'monthly'" />
+        <label class="input-label" for="monthly" (click)="onTermSelected('monthly')" data-e2e="selectTermTypeForm.monthlyRadioButton">
+            {{ translateKeyPrefix + ".MONTHLY_LABEL" | translate: { amount: termOptionInfo.monthlyPrice | currency: "USD":"symbol-narrow":undefined:currentLang } }}
+            <ng-container *ngIf="isCanada && !isQuebec">
+                {{ translateKeyPrefix + ".PLUS_FEES" | translate }}
+            </ng-container>
+            <ng-container *ngIf="termOptionInfo?.currentPlanTermType === 'monthly'">
+                {{ translateKeyPrefix + ".CURRENT" | translate }}
+            </ng-container>
+        </label>
+    </div>
+    <div class="radio-item">
+        <input type="radio" class="radio" id="annual" name="term" [checked]="termTypeSelected === 'annual'" />
+        <label class="input-label" for="annual" (click)="onTermSelected('annual')" data-e2e="selectTermTypeForm.annualRadioButton">
+            {{ translateKeyPrefix + ".ANNUAL_LABEL" | translate: { amount: termOptionInfo.annualPrice | currency: "USD":"symbol-narrow":undefined:currentLang } }}
+            <ng-container *ngIf="isCanada && !isQuebec">
+                {{ translateKeyPrefix + ".PLUS_FEES" | translate }}
+            </ng-container>
+            <ng-container *ngIf="termOptionInfo?.currentPlanTermType === 'annual'">
+                {{ translateKeyPrefix + ".CURRENT" | translate }}
+            </ng-container>
+        </label>
+    </div>
+    <button sxm-proceed-button type="submit">
+        {{ translateKeyPrefix + ".BUTTON_TEXT" | translate }}
+    </button>
+</form>

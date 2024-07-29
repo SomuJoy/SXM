@@ -1,0 +1,78 @@
+{
+    "DeCareUseCasesCheckoutFeatureUpgradeVipModule": {
+        "PurchasePageComponent": {
+            "NO_RADIO": {
+                "LINK_URL": "https://www.siriusxm.ca/NOUVstreaming"
+            },
+            "ERROR": {
+                "ACCOUNT_NUMBER_MISMATCH": {
+                    "MESSAGE": "Please call us at <a href=\"tel:+1-833-838-7846\">1-833-838-7846</a> for help"
+                },
+                "SUBSCRIPTION_HAS_VIP_PLATINUM_PACKAGE": {
+                    "HEADER": "This radio is already active on Platinum VIP plan.",
+                    "MESSAGE": "Please log into Online Account Center <a href=\"{{oacUrl}}\">here</a> to manage your Platinum VIP account."
+                },
+                "INELIGIBLE_FOR_SECOND_RADIO": {
+                    "HEADER": "We're sorry. This transaction can't be completed online",
+                    "MESSAGE": "Please call VIP Customer Care for assistance: <a href=\"tel:+1-866-607-4225\">1-866-607-4225</a>"
+                },
+                "SUBSCRIPTION_HAS_INELIGIBLE_PLAN": {
+                    "MESSAGE": "Please call us at <a href=\"tel:+1-833-838-7846\">1-833-838-7846</a> for help."
+                },
+                "DEFAULT": {
+                    "MESSAGE": "Please call us at <a href=\"tel:+1-833-838-7846\">1-833-838-7846</a> for help"
+                }
+            },
+            "IconLabels": {
+                "SATELLITE": "Listen<br/>in 2 Cars",
+                "STREAMING": "2 Logins<br/>to Stream",
+                "PANDORA": "Custom<br/>Stations",
+                "PERKS": "VIP<br/>Perks"
+            }
+        },
+        "uiLoadingWithAlertMessageComponent": {
+            "109": {
+                "pill": "Looks like you currently have an active trial. You can add a subscription, so you won’t miss a beat when your trial ends.",
+                "paragraph": "Finding another great plan for you."
+            },
+            "UpgradeVIPFallback": {
+                "pill": "Unfortunately, your trial or paid subscription recently ended and your radio is ineligible for a Platinum VIP subscription. However, you can start enjoying SiriusXM with this great subscription offer.",
+                "paragraph": "Finding another great plan for you."
+            },
+            "NO_RADIO": {
+                "LINK_URL": "https://www.siriusxm.ca/NOUVstreaming"
+            }
+        },
+        "ConfirmationPageComponent": {
+            "LISTEN_TO_RADIO": {
+                "STREAMING_PLAYER_LINK": ""
+            }
+        },
+        "FirstStepComponent": {
+            "TRIAL_PACKAGE_DESC": "{{packageName}} Trial",
+            "TRIAL_TOOLTIP": "Your Platinum trial will upgrade to Platinum VIP as soon as your transaction is complete."
+        },
+        "AccountLookupStepComponent": {
+            "HEAD_LINE": "Verify your account using your Radio ID and Last Name:"
+        },
+        "OrganicPageComponent": {
+            "NO_RADIO": {
+                "LINK_URL": "https://www.siriusxm.ca/NOUVstreaming"
+            },
+            "IconLabels": {
+                "SATELLITE": "Listen<br/>in 2 Cars",
+                "STREAMING": "2 Logins<br/>to Stream",
+                "PANDORA": "Custom<br/>Stations",
+                "PERKS": "VIP<br/>Perks"
+            }
+        },
+        "VipLayoutComponent": {
+            "SIRIUSXM_LOGO_LINK": "https://siriusxm.ca/"
+        },
+        "SecondRadioLookupComponent": {
+            "RADIO_STATUS": {
+                "INTRODUCTORY": "{{packageName}}"
+            }
+        }
+    }
+}

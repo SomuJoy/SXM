@@ -1,0 +1,37 @@
+<main class="background-offwhite">
+    <div class="content-container">
+        <div class="row align-center no-padding-small">
+            <div class="column medium-2 no-padding background-white"></div>
+            <div class="column medium-6 no-padding-small background-white align-top">
+                <div class="do-not-call-content">
+                    <ng-container *ngIf="!hasSubmitted; else submitted">
+                        <h4>{{ "doNotCall.doNotCallFlowComponent.TITLE" | translate }}</h4>
+                        <p>{{ "doNotCall.doNotCallFlowComponent.DESCRIPTION" | translate }}</p>
+                        <p>{{ "doNotCall.doNotCallFlowComponent.NOTE" | translate }}</p>
+                        <hr />
+                        <do-not-call-form (doNotCallPhoneSubmit)="phoneSubmitted($event)"></do-not-call-form>
+                    </ng-container>
+                    <ng-template #submitted>
+                        <ng-container *ngIf="wasSuccessful; else error">
+                            <h4 data-test="DoNotCallSuccessTitle">{{ "doNotCall.doNotCallFlowComponent.SUCCESS.TITLE" | translate }}</h4>
+                            <p [innerHTML]="'doNotCall.doNotCallFlowComponent.SUCCESS.DESCRIPTION.0' | translate: { phoneNumber: phoneNumber | PhoneNumber }"></p>
+                            <p>{{ "doNotCall.doNotCallFlowComponent.SUCCESS.DESCRIPTION.1" | translate }}</p>
+                        </ng-container>
+                    </ng-template>
+                    <ng-template #error>
+                        <h4>{{ "doNotCall.doNotCallFlowComponent.ERROR.TITLE" | translate }}</h4>
+                        <p>{{ "doNotCall.doNotCallFlowComponent.ERROR.DESCRIPTION" | translate }}</p>
+                    </ng-template>
+                    <div *ngIf="!hasSubmitted || (hasSubmitted && wasSuccessful)" class="recirculation--single">
+                        <h5>{{ "doNotCall.doNotCallFlowComponent.HELP.TITLE" | translate }}</h5>
+                        <p class="text-color-gray-dark" [innerHTML]="'doNotCall.doNotCallFlowComponent.HELP.DESCRIPTION' | translate"></p>
+                        <a href="{{ 'doNotCall.doNotCallFlowComponent.HELP.HREF' | translate }}" target="_blank">{{
+                            "doNotCall.doNotCallFlowComponent.HELP.LOGIN" | translate
+                        }}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="column medium-2 no-padding background-white"></div>
+        </div>
+    </div>
+</main>

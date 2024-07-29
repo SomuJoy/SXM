@@ -1,0 +1,54 @@
+{
+    "domainsAccountUiNewAccountFormFieldsModule": {
+        "newAccountFormFieldsComponent": {
+            "LOGIN_SUB_HEADER": "Stream SiriusXM online and manage your subscriptions.",
+            "YOUR_INFO": "Account Info",
+            "LOGIN_INFO": "Login Info",
+            "FIRST_NAME": {
+                "LABEL": "First Name",
+                "ERRORS": {
+                    "REQUIRED": "Enter your first name."
+                }
+            },
+            "LAST_NAME": {
+                "LABEL": "Last Name",
+                "ERRORS": {
+                    "REQUIRED": "Enter your last name."
+                }
+            },
+            "PHONE_NUMBER": {
+                "LABEL": "Phone Number",
+                "ERRORS": {
+                    "REQUIRED": "Enter a valid phone number."
+                }
+            },
+            "ADDRESS_LINE": {
+                "LABEL": "Address (include Apt/Suite/Unit)",
+                "ERRORS": {
+                    "REQUIRED": "Enter a valid street address."
+                }
+            },
+            "CITY": {
+                "LABEL": "City",
+                "ERRORS": {
+                    "REQUIRED": "Enter your city"
+                }
+            },
+            "STATE": {
+                "LABEL": "State",
+                "ERRORS": {
+                    "REQUIRED": "Enter your state."
+                }
+            },
+            "ZIP_CODE": {
+                "LABEL": "Zip Code",
+                "ERRORS": {
+                    "REQUIRED": "Enter a valid zip code."
+                }
+            },
+            "BUTTON_TEXT": "Continue",
+            "CONFIRM_YOUR_ADDRESS": "Please confirm your address",
+            "UNEXPECTED_ERROR": "An unexpected error occurred. Please try again."
+        }
+    }
+}

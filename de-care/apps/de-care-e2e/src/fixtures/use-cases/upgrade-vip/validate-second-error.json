@@ -1,0 +1,13 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "last4DigitsOfRadioId": "00AV",
+        "deviceStatus": "USED",
+        "channelId": "102",
+        "primaryBrandId": "10482",
+        "capabilityList": ["AUD", "BOF", "TRF", "TRV", "OVR"],
+        "promoCode": "1132"
+    }
+}

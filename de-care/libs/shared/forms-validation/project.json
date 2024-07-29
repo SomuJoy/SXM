@@ -1,0 +1,31 @@
+{
+    "name": "shared-forms-validation",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/forms-validation/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/forms-validation/src/**/*.ts", "libs/shared/forms-validation/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/shared/forms-validation/jest.config.js",
+                "tsConfig": "libs/shared/forms-validation/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/shared/forms-validation/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:ui", "scope:shared-ui"]
+}

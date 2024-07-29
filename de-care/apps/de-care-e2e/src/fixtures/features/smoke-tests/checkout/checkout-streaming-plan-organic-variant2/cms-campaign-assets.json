@@ -1,0 +1,49 @@
+{
+    "template": "",
+    "associations": {},
+    "updatedby": "bala",
+    "html_id": "campaign-1550832584169",
+    "createddate": 1643390617586,
+    "isactive": true,
+    "ispersonalized": false,
+    "description": "",
+    "type": "SXMCampaign",
+    "path": "",
+    "component_type": "Campaign",
+    "createdby": "bala",
+    "subtype": "Campaign",
+    "id": 1550832584169,
+    "campaign_id": "Music-Rock-DavidBowie-TheDavidBowieChannel",
+    "datalayer": "{ }",
+    "flextemplateid": {
+        "id": 1550773682353,
+        "type": "SXMDefinition",
+        "subtype": "",
+        "url": "http://uatcms-author.corp.siriusxm.com/phx/services/v1/rest/sites/sxm/types/SXMDefinition/assets/1550773682353",
+        "site": "sxm",
+        "lastModified": 1614711798000
+    },
+    "has_started": true,
+    "fw_uid": "fbe414dc-da71-419d-a6a6-570dd0b3e8a9",
+    "url": {},
+    "sales_heros": [
+        {
+            "id": 1550776763984,
+            "type": "SXMHero",
+            "subtype": "Hero",
+            "url": "http://uatcms-author.corp.siriusxm.com/phx/services/v1/rest/sites/sxm/types/SXMHero/assets/1550776763984",
+            "site": "sxm",
+            "lastModified": 1620830702857
+        }
+    ],
+    "site": "sxm",
+    "is_valid": true,
+    "name": "Music-Rock-DavidBowie-TheDavidBowieChannel",
+    "updateddate": 1643390617586,
+    "has_finished": false,
+    "properties": {
+        "package.collapse-title": "Hide"
+    },
+    "status": "PL",
+    "parents": {}
+}

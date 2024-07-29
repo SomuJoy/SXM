@@ -1,0 +1,130 @@
+<ng-container *ngIf="vm$ | async as vm">
+    <section id="heroSection">
+        <sxm-ui-hero [heroData]="{ title: ('deCareUseCasesStudentVerificationFeatureRolloverCompleteModule.rollOverCompleteComponent.HERO_TEXT' | translate) }"></sxm-ui-hero>
+    </section>
+    <main class="background-offwhite">
+        <div id="order-confirmation" class="content-container">
+            <div class="row align-center no-padding-small">
+                <div class="column small-12 medium-2 background-white raised"></div>
+                <div class="column small-12 medium-6 background-white raised">
+                    <div class="order-confirmation--container">
+                        <div *ngIf="vm.radioId" class="row no-padding align-center">
+                            <div class="column small-12 no-padding">
+                                <div class="full-width">
+                                    <de-care-roll-over-complete-personal-info [vehicleInfo]="vm.vehicleInfo" [radioId]="vm.radioId"></de-care-roll-over-complete-personal-info>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="vm['maskedUsername'] && !vm.radioId" class="row no-padding align-center">
+                            <div class="column small-12 no-padding">
+                                <div class="full-width">
+                                    <de-care-roll-over-complete-personal-info
+                                        [maskedUsername]="vm['maskedUsername']"
+                                        [addHorizontalLine]="true"
+                                        [isStreaming]="vm.isStreaming"
+                                    ></de-care-roll-over-complete-personal-info>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row no-padding align-center">
+                            <div class="column small-12 no-padding">
+                                <div *ngIf="vm.quote" class="full-width">
+                                    <feature-toggle-provider [features]="enableQuoteSummaryFeatureToggle$ | async">
+                                        <ng-container *featureToggle="'enableQuoteSummary'">
+                                            <quote-summary
+                                                [isNewAccount]="vm.isNewAccount"
+                                                [isClosedRadio]="vm.isClosedRadio"
+                                                [isStreamingFlow]="vm.isStreaming"
+                                                [isStudentFlow]="true"
+                                                [expandOrderSummaryDetails]="false"
+                                                [showHeadlineSeeOfferDetails]="false"
+                                                [quote]="vm.quote"
+                                                [showUnusedCreditLine]="true"
+                                                [leadOfferPackageName]="vm.package.packageName"
+                                            ></quote-summary>
+                                        </ng-container>
+
+                                        <ng-container *featureToggle="'!enableQuoteSummary'">
+                                            <order-summary
+                                                [isNewAccount]="vm.isNewAccount"
+                                                [isClosedRadio]="vm.isClosedRadio"
+                                                [isStreamingFlow]="vm.isStreaming"
+                                                [isStudentFlow]="true"
+                                                [expandOrderSummaryDetails]="false"
+                                                [showHeadlineSeeOfferDetails]="false"
+                                                [quote]="vm.quote"
+                                                [showUnusedCreditLine]="true"
+                                            ></order-summary>
+                                        </ng-container>
+                                    </feature-toggle-provider>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row no-padding align-center no-print">
+                            <div class="column small-12 no-padding">
+                                <div class="full-width">
+                                    <a
+                                        class="text-link"
+                                        (click)="onPrintClick()"
+                                        translate="deCareUseCasesStudentVerificationFeatureRolloverCompleteModule.rollOverCompleteComponent.PRINT_ORDER_SUMMARY_LINK_TEXT"
+                                        data-track-click="Print This Page"
+                                    ></a>
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row no-padding align-center no-print">
+                            <div class="column small-12 no-padding">
+                                <listen-now
+                                    [customLink]="'deCareUseCasesStudentVerificationFeatureRolloverCompleteModule.rollOverCompleteComponent.STREAMING_PLAYER_LINK' | translate"
+                                ></listen-now>
+                                <hr />
+                            </div>
+                        </div>
+
+                        <div *ngIf="vm.isEligibleForRegistration" class="row no-padding align-center no-print no-hr">
+                            <div class="column small-12 no-padding">
+                                <div class="full-width">
+                                    <register-your-account
+                                        [credentialState]="vm.registerCredentialState"
+                                        [account]="vm.registerCompData"
+                                        [securityQuestions]="securityQuestions$ | async"
+                                        [registrationCompleted]="vm.registrationCompleted || (registrationCompleted$ | async)"
+                                        [passwordError]="vm.passwordError"
+                                        (register)="onRegisterAccount($event)"
+                                        (registerClicked)="onSubmit()"
+                                    ></register-your-account>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column small-12 medium-2 background-white raised"></div>
+            </div>
+        </div>
+    </main>
+    <div class="background-offwhite">
+        <div class="content-container">
+            <div class="row align-center no-padding-small">
+                <div class="column small-12 medium-10 no-padding-medium">
+                    <div class="important-info-container">
+                        <p class="legal-copy">
+                            <strong
+                                translate="deCareUseCasesStudentVerificationFeatureRolloverCompleteModule.rollOverCompleteComponent.SUBSCRIPTION_IMPORTANT_INFO.TITLE"
+                            ></strong>
+                        </p>
+                        <p
+                            class="legal-copy"
+                            [innerHTML]="
+                                'deCareUseCasesStudentVerificationFeatureRolloverCompleteModule.rollOverCompleteComponent.SUBSCRIPTION_IMPORTANT_INFO.BODY' | translate
+                            "
+                        ></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

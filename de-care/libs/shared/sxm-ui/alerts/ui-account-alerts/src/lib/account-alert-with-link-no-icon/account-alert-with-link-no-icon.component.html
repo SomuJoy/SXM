@@ -1,0 +1,18 @@
+<div class="grid-container">
+    <div>
+        <p class="payment-alert-message mb-0 mt-0" [innerHTML]="data.copyContent"></p>
+        <p class="label-column mb-0 mt-0">
+            <a
+                rel=""
+                name=""
+                sxmUiDataClickTrack="exit"
+                [attr.data-link-key]="data.linkKey"
+                [attr.data-link-name]="data.linkName"
+                data-test="alertUrlLinkWithNoIcon"
+                (click)="alertLinkClicked.emit(data.alertType)"
+            >
+                {{ data.urlLinkLabel }}
+            </a>
+        </p>
+    </div>
+</div>

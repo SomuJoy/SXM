@@ -1,0 +1,25 @@
+{
+    "name": "domains-offers-state-upsells-with-cms",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/offers/state-upsells-with-cms/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/domains/offers/state-upsells-with-cms"],
+            "options": {
+                "jestConfig": "libs/domains/offers/state-upsells-with-cms/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/offers/state-upsells-with-cms/src/**/*.ts", "libs/domains/offers/state-upsells-with-cms/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

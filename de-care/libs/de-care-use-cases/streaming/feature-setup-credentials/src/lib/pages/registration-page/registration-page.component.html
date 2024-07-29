@@ -1,0 +1,19 @@
+<main de-care-page-main>
+    <sxm-ui-stepper #stepper>
+        <sxm-ui-step (active)="serviceAddressStepActive()">
+            <registration-address-step (stepCompleted)="collectAddressData($event)" [flepzData]="flepz$ | async"> </registration-address-step>
+        </sxm-ui-step>
+        <sxm-ui-step (active)="credentialsStepActive()">
+            <registration-credentials-step [showExistingError]="existErr" [showSystemError]="sysErr" (stepCompleted)="getCredentialData($event)">
+            </registration-credentials-step>
+        </sxm-ui-step>
+        <sxm-ui-step (active)="securityQuestionsStepActive()">
+            <registration-security-questions-step
+                (stepCompleted)="submitRegistration($event)"
+                [securityQuestions]="securityQuestionsViewModel$ | async"
+                #securityQuestionsStep
+            >
+            </registration-security-questions-step>
+        </sxm-ui-step>
+    </sxm-ui-stepper>
+</main>

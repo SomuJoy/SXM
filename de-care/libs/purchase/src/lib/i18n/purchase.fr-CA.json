@@ -1,0 +1,84 @@
+{
+    "purchase": {
+        "purchaseComponent": {
+            "yourAccountLabel": "Entrez votre courriel",
+            "verifyDeviceStepLabel": "Vérifiez votre appareil",
+            "paymentInfoStepLabel": "Vos données de facturation",
+            "packageUpsellStepLabel": "Choisir les surclassements de forfait",
+            "reviewAndCompleteStepLabel": "Revoyez et terminez votre commande",
+            "EDIT_BUTTON_LABEL": "Modifier",
+            "choiceGenreFormLabel": "Choisissez votre style musical",
+            "STEP": "ÉTAPE",
+            "OF": "DE"
+        },
+        "streamingOrganicPurchaseStepsComponent": {
+            "yourAccountLabel": "Créez votre compte",
+            "paymentInfoStepLabel": "Configurez votre paiement",
+            "paymentInfoStepInstructions": "Vous aurez à revoir votre commande avant que nous portions les frais à votre carte. Annulez en tout temps.",
+            "paymentInfoStepYourPlanTitle": "Votre forfait",
+            "paymentInfoStepYourPlanChannelsCount": "({{count}} chaînes)",
+            "paymentInfoStepYourPlanFullTermPrice": "{{termLength}} {{monthString}} pour {{price}}. Ensuite {{retailPricePerMonth}}/mois. plus frais.",
+            "paymentInfoStepYourPlanPromoPricePerMonth": "{{termLength}} {{monthString}} pour {{price}}/mois. Ensuite {{retailPricePerMonth}}/mois. plus frais.",
+            "paymentInfoStepYourPlanPricePerMonth": "{{pricePerMonth}}/mois. plus frais.",
+            "paymentInfoStepInactiveCopy": "{{cardType}} se terminant en {{last4}}",
+            "packageUpsellStepLabel": "Choisir les surclassements de forfait",
+            "reviewAndCompleteStepLabel": "Revoyez et terminez votre commande",
+            "EDIT_BUTTON_LABEL": "Modifier",
+            "RENEWAL_MODAL_TITLE": "Options d'abonnement",
+            "STEP_TITLE_ACTIVE": "Étape {{stepNumber}} de {{totalSteps}}",
+            "UPSELL_CONTINUE_BUTTON": "REVOIR MA COMMANDE",
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "Mois",
+                    "other": "Mois"
+                }
+            },
+            "uiLoadingWithAlertMessageComponent": {
+                "pill": "Cette offre est réservée aux nouveaux abonnés, mais voici une autre option pour vous.",
+                "paragraph": "Nous recherchons un autre excellent forfait pour vous."
+            },
+            "STREAMING_LINK": "https://www.siriusxm.ca/fr/essai/gratuit/?langPref=fr",
+            "LINK_TITLE": "Vous aimeriez un forfait qui inclut la radio satellite?",
+            "LINK_TEXT": "Obtenez SiriusXM en voiture + en ligne"
+        },
+        "reviewOrderComponent": {
+            "COMPLETE_MY_ORDER_BUTTON": "Terminer Ma Commande",
+            "ACCEPT_AGREEMENT": "S'il vous plaît accepter l'accord ci-dessus.",
+            "ENTER_A_CAPTCHA_TO_FINISH": "Veuillez entrer le CAPTCHA pour terminer"
+        },
+        "accountLookupStepComponent": {
+            "ACCOUNT_FOUND_MODAL_TITLE": "Votre compte",
+            "VERIFY_MODAL_TITLE": "Vérifier",
+            "VERIFY_MODAL_HEADER_TITLE": "Vérifiez votre compte",
+            "VERIFY_MODAL_HEADER_COPY": "Nous voulons nous assurer qu'il s'agit bien de vous avant que vous puissiez créer votre nom d'utilisateur."
+        },
+        "AccountCredentialsAndLookupStepComponent": {
+            "ACCOUNT_FOUND_MODAL_TITLE": "Votre compte",
+            "VERIFY_MODAL_TITLE": "Vérifier",
+            "VERIFY_MODAL_HEADER_TITLE": "Vérifiez votre compte",
+            "VERIFY_MODAL_HEADER_COPY": "Nous voulons nous assurer que nous communiquons bien avec vous avant de faire les changements à votre compte.",
+            "EMAIL_PLACEHOLDER": "Adresse courriel",
+            "EMAIL_DESCRIPTION": "Ce sera votre identifiant pour diffuser et gérer votre compte.",
+            "EMAIL_INVALID_MSG": "Entrez une adresse courriel valide.",
+            "EMAIL_IN_USE_ERROR_MSG": "Le nom d’utilisateur ou le courriel est déjà utilisé.",
+            "BUTTON_LABEL": "Continuer",
+            "PASSWORD": {
+                "LABEL": "Mot de passe",
+                "ERRORS": {
+                    "REQUIRED": "Entrez un mot de passe.",
+                    "LENGTH": "Votre mot de passe doit contenir de {{min}} à {{max}} caractères.",
+                    "POLICY": "Votre mot de passe doit contenir au minimum un caractère appartenant à au moins 3 groupes différents, comme indiqué dans notre politique de mot de passe.",
+                    "RESERVED_WORDS": "Votre mot de passe ne peut pas contenir {{pluralWord}} {{reservedWords}}",
+                    "GENERIC": "Nous sommes désolés, votre nouveau mot de passe n'est pas conforme à notre politique. Veuillez réessayer.",
+                    "PII_DATA": "Le mot de passe ne peut pas inclure prénom, nom de famille ou adresse courriel."
+                }
+            },
+            "PLURAL_MAP": {
+                "WORD": {
+                    "=1": "le mot",
+                    "other": "les mots"
+                }
+            }
+        }
+    }
+}

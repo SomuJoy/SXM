@@ -1,0 +1,24 @@
+{
+    "name": "shared-configuration-tokens-player-app",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/shared/configuration-tokens-player-app/src",
+    "projectType": "library",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/configuration-tokens-player-app/**/*.ts"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/shared/configuration-tokens-player-app"],
+            "options": {
+                "jestConfig": "libs/shared/configuration-tokens-player-app/jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": ["type:util", "scope:shared-util"]
+}

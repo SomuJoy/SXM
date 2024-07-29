@@ -1,0 +1,50 @@
+<p class="your-subscription-text">
+    {{
+        translateKeyPrefix + "YOUR_SUBSCRIPTION"
+            | translate
+                : {
+                      firstName: data.firstName
+                  }
+    }}
+</p>
+<ul class="checkmark-list-with-subdescription" data-e2e="firstStepForm.RadioList">
+    <li>
+        <p>
+            <strong>{{
+                data.currentVehicle
+                    | vehicleInfoTranslate
+                        : {
+                              defaultText: translateKeyPrefix + "RADIO" | translate: { radioId: data.currentRadioId },
+                              isFrench: currentLangIsFrench$ | async
+                          }
+            }}</strong>
+        </p>
+        <ng-container *ngIf="data.currentPackageName">
+            <div *ngIf="data.isFirstRadioTrial; else nonTrialRadio" class="trial-package-name">
+                <p>
+                    {{
+                        translateKeyPrefix + "TRIAL_PACKAGE_DESC"
+                            | translate
+                                : {
+                                      packageName: "app.packageDescriptions." + data.currentPackageName + ".name" | translate
+                                  }
+                    }}
+                </p>
+                <sxm-ui-tooltip class="tooltip-component tooltip-display-top tooltip-display-right-medium-up">
+                    <p>{{ translateKeyPrefix + "TRIAL_TOOLTIP" | translate }}</p>
+                </sxm-ui-tooltip>
+            </div>
+            <ng-template #nonTrialRadio>
+                <p>{{ "app.packageDescriptions." + data.currentPackageName + ".name" | translate }}</p>
+            </ng-template>
+        </ng-container>
+    </li>
+</ul>
+<p class="gray-text">{{ translateKeyPrefix + "SECOND_RADIO_TITLE" | translate }}</p>
+<p class="second-radio-body" *ngIf="data?.secondVehicles?.length === 0">{{ translateKeyPrefix + "WILL_FIND_SECOND_RADIO" | translate }}</p>
+<de-care-second-radio-lookup
+    (continue)="continue.emit($event)"
+    [secondVehicles]="data?.secondVehicles"
+    [streamingAccounts]="data?.streamingAccounts"
+    [enablePVIPStreamingFlag]="enablePVIPStreamingFlag"
+></de-care-second-radio-lookup>

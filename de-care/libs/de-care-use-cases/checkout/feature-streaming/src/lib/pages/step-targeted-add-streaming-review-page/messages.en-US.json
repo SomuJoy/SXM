@@ -1,0 +1,12 @@
+{
+    "TITLE": "Review your order",
+    "BODY": {
+        "CONFIRM_YOUR_PLAN": "Confirm your plan and start listening now.",
+        "REMEMBER_YOU_CAN_CANCEL": "Remember you can cancel anytime.",
+        "POST_TRIAL": "When your trial ends, your one-time charge will be {{futureCharge}} due {{dueDate}}."
+    },
+    "PRICE_AND_TERM_SUBTEXT": "An early termination fee of ({{etfAmount}}) may apply if you cancel within the first {{etfTerm}} months.",
+    "BODY_SUBTEXT": "Family Discount is available as long as you maintain a qualifying full price subscription on the same account.",
+    "CONTINUE_BUTTON_TEXT": "Complete My Order",
+    "MRD_RECAP_CARD": "<strong>{{platformAndPlanName}} ({{channelCount}}+ Channels)</strong><br/>{{mrdPrice}}/mo with Family Discount. <s>Reg. {{msrpPrice}}/mo</s>"
+}

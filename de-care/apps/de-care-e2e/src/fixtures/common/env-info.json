@@ -1,0 +1,11 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "mode": "test",
+        "country": "us",
+        "buildInfo": { "tag": "some/branch", "smsDependency": "", "smsUser": "web1", "smsHost": "1.1.1.1:1", "pvtTime": "2020-08-13 09:22:51.0" },
+        "sessionInfo": { "id": "1", "idleTimeout": "20", "absoluteTimeout": "Fri Jul 24 15:05:00 EDT 2020" }
+    }
+}

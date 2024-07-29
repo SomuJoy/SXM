@@ -1,0 +1,37 @@
+@import "sxm.phoenix.imports";
+@import "helper-classes";
+
+.gray-text {
+    font-weight: 500;
+    color: $gray-dark;
+}
+
+form {
+    .checkbox-item {
+        .input-label {
+            p {
+                color: $gray-dark;
+            }
+        }
+    }
+}
+
+p.outside-car-instructions {
+    padding: 20px 0 15px;
+}
+
+.checkbox-item {
+    margin-top: 20px;
+}
+
+.ordered-list-additional-padding {
+    padding-top: 15px;
+}
+
+.invalid-feedback {
+    margin-top: 10px;
+}
+
+.extra-top-padding {
+    padding-top: 15px;
+}

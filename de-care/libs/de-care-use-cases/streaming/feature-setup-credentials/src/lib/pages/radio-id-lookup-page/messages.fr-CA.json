@@ -1,0 +1,14 @@
+{
+    "HEADLINE": "Vérifiez votre compte.",
+    "SUB_HEADLINE": "Merci! Nous avons besoin d’un peu plus de renseignements pour confirmer que vous êtes le titulaire du compte. Veuillez saisir votre code de radio.",
+    "BUTTON_TEXT": "Continuer",
+    "INVALID_RADIO_ID": "Le numéro saisi ne correspond pas à nos dossiers. Veuillez réessayer ou appeler le service à la clientèle au 1 866 539-7474.",
+    "SYSTEM_ERROR": "Nous sommes désolés, Quelque chose n'a pas fonctionné. Nous rencontrons des problèmes techniques et travaillons à les résoudre. Veuillez réessayer.",
+    "RADIO_ID_INPUT_FORMAT": "Entrez un code de radio valide.",
+    "RADIO_ID_INPUT_REQUIRED": "Un code radio est requis.",
+    "PLACEHOLDER_TEXT": "Code de radio",
+    "RADIOID_ACCOUNT_NUMBER_LOOKUP": "Don't have a Radio ID (RID)?",
+    "LINK_TEXT": "<a href=\"https://www.siriusxm.ca/vieprivee\" class=\"text-link\" target=\"_blank\">Politique de la vie privée</a>",
+    "HELP_FINDING_RADIO_TITLE": "Aide pour code de radio",
+    "RADIO_LOOKUP_MARINE_AVIATION": "Aide relative à l'appareil"
+}

@@ -1,0 +1,26 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": [
+        {
+            "closed": false,
+            "id": "10000239492",
+            "status": "Active",
+            "plans": [
+                {
+                    "code": "Trial - Essential Streaming - 3mo - $0.00 - (RTD)",
+                    "packageName": "SIR_IP_SA_ESNTL",
+                    "termLength": "3",
+                    "endDate": "2022-02-15T00:00:00-05:00",
+                    "type": "TRIAL",
+                    "marketType": "trial:streaming",
+                    "capabilities": ["IPAUD"]
+                }
+            ],
+            "followonPlans": [],
+            "radioService": null,
+            "streamingService": { "status": "Active", "maskedUserName": "con******@siriusxm.com", "randomCredentials": false }
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+<main class="background-offwhite">
+    <div id="invalid-token" class="content-container">
+        <div class="row align-center no-padding-small">
+            <div class="column small-12 medium-2 background-white raised"></div>
+            <div class="column small-12 medium-6 background-white raised copy-container">
+                <div class="row no-padding align-center no-print">
+                    <div class="column small-12 no-padding">
+                        <div class="full-width">
+                            <h4>
+                                {{ translateKeyPrefix + ".HEADER" | translate }}
+                            </h4>
+
+                            <p>
+                                {{ translateKeyPrefix + ".SUB_HEADER" | translate }}
+                            </p>
+
+                            <button sxm-proceed-button (click)="redirectToLogin()" data-track-click="sign in to my account" data-track-click-component="button">
+                                {{ translateKeyPrefix + ".BUTTON" | translate }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column small-12 medium-2 background-white raised"></div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,11 @@
+{
+    "DESCRIPTION_LABEL": "DESCRIPTION",
+    "AMOUNT_LABEL": "MONTANT",
+    "DATE_LABEL": "DATE",
+    "DATE_FORMAT": "d MMM y",
+    "SERVICE_DATE": "Date de service:",
+    "INVOICE_NUMBER_LABEL": "Facture ",
+    "LOAD_MORE_BUTTON_LABEL": "AFFICHER PLUS",
+    "NO_DATA_MESSAGE": "Il n’y a aucun résultat pour la période sélectionnée.",
+    "UNEXPECTED_ERROR": "Une erreur inattendue est apparue. Veuillez réessayer."
+}

@@ -1,0 +1,68 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "locales": [
+            {
+                "locale": "en_US",
+                "upsellOfferInfo": {
+                    "packageUpsellOfferInfo": {
+                        "header": "OUR BEST PLAN",
+                        "title": "Upgrade to SiriusXM All Access",
+                        "description": "Add premium channels plus streaming for an additional $3.34 per month",
+                        "packageDescription": {
+                            "name": "SiriusXM All Access",
+                            "packageName": "SXM_SIR_AUD_ALLACCESS",
+                            "listeningOptions": ["Satellite", "Streaming", "Pandora"],
+                            "highlightsText": [
+                                "350+ channels in your car, on your phone, at home, and online",
+                                "Ability to create Pandora stations",
+                                "Two dedicated Howard Stern channels, including video",
+                                "Every NFL, MLB<span>&reg;</span> and NBA game and NASCAR<span>&reg;</span> race. NHL<span>&reg;</span>, NCAA<span>&reg;</span> and PGA TOUR<span>&reg;</span> coverage",
+                                "Ad-free music and Xtra channels to stream for every mood and activity",
+                                "News, entertainment, comedy, and sports",
+                                "Thousands of shows and videos available on demand"
+                            ],
+                            "footer": "Have it all, with every channel we offer and the freedom to enjoy them anywhere—in your car, on the app, and at home.",
+                            "promoFooter": "Listen & Watch your favorites in all your favorite places-- in your car, on your phone or at home, for only {price} per {term}",
+                            "streamingOnly": false
+                        }
+                    },
+                    "termUpsellOfferInfo": {
+                        "title": "Start with 12 Months and Save",
+                        "description": "<p>Add 6 more months for an additional $3.26 per month</p><strong>Get 12 months of SiriusXM Select for $99. You'll save $32.88</strong><p>Compared to the 6-month deal after 12 months. Based on regular $16.99/mo rate. Fees and taxes apply. See offer details.</p>"
+                    },
+                    "packageAndTermUpsellOfferInfo": {
+                        "packageUpsellOfferInfo": {
+                            "header": "OUR BEST PLAN",
+                            "title": "Upgrade to SiriusXM All Access",
+                            "description": "Add premium channels plus streaming for an additional $1.74 per month",
+                            "packageDescription": {
+                                "name": "SiriusXM All Access",
+                                "packageName": "SXM_SIR_AUD_ALLACCESS",
+                                "listeningOptions": ["Satellite", "Streaming", "Pandora"],
+                                "highlightsText": [
+                                    "350+ channels in your car, on your phone, at home, and online",
+                                    "Ability to create Pandora stations",
+                                    "Two dedicated Howard Stern channels, including video",
+                                    "Every NFL, MLB<span>&reg;</span> and NBA game and NASCAR<span>&reg;</span> race. NHL<span>&reg;</span>, NCAA<span>&reg;</span> and PGA TOUR<span>&reg;</span> coverage",
+                                    "Ad-free music and Xtra channels to stream for every mood and activity",
+                                    "News, entertainment, comedy, and sports",
+                                    "Thousands of shows and videos available on demand"
+                                ],
+                                "footer": "Have it all, with every channel we offer and the freedom to enjoy them anywhere—in your car, on the app, and at home.",
+                                "promoFooter": "Listen & Watch your favorites in all your favorite places-- in your car, on your phone or at home, for only {price} per {term}",
+                                "streamingOnly": false
+                            }
+                        },
+                        "termUpsellOfferInfo": {
+                            "title": "Start with 12 Months and Save",
+                            "description": "<p>Add 6 more months for an additional $1.66 per month</p><strong>Get 12 months of SiriusXM All Access for $119.88. You'll save $62.05</strong><p>Compared to the 6-month deal after 12 months. Based on regular $21.99/mo rate. Fees and taxes apply. See offer details.</p>"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

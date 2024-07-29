@@ -1,0 +1,12 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    height: 100%;
+    display: block;
+    background: $white;
+}
+
+.content-wrapper {
+    padding-top: 40px;
+    padding-bottom: 50px;
+}

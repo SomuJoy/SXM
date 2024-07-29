@@ -1,0 +1,76 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "quote": {
+            "currentQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "8.56",
+                "totalTaxesAndFeesAmount": "8.56",
+                "totalAmount": "-270.93",
+                "discountAmount": "0.00",
+                "pricePerMonth": "8.00",
+                "currentBalance": "-270.93",
+                "consolidatedCreditAmount": "-319.48",
+                "previousBalance": "0.00",
+                "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "8.56" }],
+                "taxes": [],
+                "details": [
+                    {
+                        "planCode": "Promo - Select - 5mo - 39.99 - (5for40) - Quarterly Rollover",
+                        "packageName": "SIR_AUD_EVT",
+                        "termLength": 5,
+                        "priceAmount": "39.99",
+                        "taxAmount": "0.00",
+                        "feeAmount": "8.56",
+                        "totalTaxesAndFeesAmount": "8.56",
+                        "taxes": [],
+                        "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "8.56" }],
+                        "startDate": "2020-08-19",
+                        "endDate": "2021-01-19",
+                        "isMrdEligible": false,
+                        "balanceType": null
+                    }
+                ],
+                "isUpgraded": false,
+                "isProrated": false
+            },
+            "futureQuote": null,
+            "proRatedRenewalQuote": null,
+            "promoRenewalQuote": null,
+            "renewalQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "10.91",
+                "totalTaxesAndFeesAmount": "10.91",
+                "totalAmount": "61.88",
+                "discountAmount": "0.00",
+                "pricePerMonth": "16.99",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "10.91" }],
+                "taxes": [],
+                "details": [
+                    {
+                        "planCode": "Select - 3mo - wActv",
+                        "packageName": "SIR_AUD_EVT",
+                        "termLength": 3,
+                        "priceAmount": "50.97",
+                        "taxAmount": "0.00",
+                        "feeAmount": "10.91",
+                        "totalTaxesAndFeesAmount": "10.91",
+                        "taxes": [],
+                        "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "10.91" }],
+                        "startDate": "2021-01-19",
+                        "endDate": "2021-04-19",
+                        "isMrdEligible": false,
+                        "balanceType": null
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            }
+        }
+    }
+}

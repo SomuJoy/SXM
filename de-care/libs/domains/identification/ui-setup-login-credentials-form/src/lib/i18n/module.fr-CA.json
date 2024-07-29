@@ -1,0 +1,29 @@
+{
+    "DomainsIdentificationUiSetupLoginCredentialsFormModule": {
+        "SetupLoginCredentialsComponent": {
+            "SUBMISSION_ERROR": "We're sorry... something went wrong. We're experiencing technical issues and are working on resolving it. Please try again.",
+            "BUTTON_TEXT": "Terminer la configuration"
+        },
+        "LoginCredentialsEmailAsUsernameFormComponent": {
+            "USERNAME": {
+                "LABEL": "Nom d'utilisateur",
+                "ERRORS": {
+                    "REQUIRED": "Entrez un nom d'utilisateur",
+                    "USERNAME_IN_USE": "Le nom d'utilisateur entré est déjà utilisé, veuillez essayer un nom d'utilisateur différent.",
+                    "INVALID_USERNAME": "Please enter a valid email or username address.",
+                    "PATTERN": "Please enter a valid email or username address."
+                }
+            },
+            "PASSWORD": {
+                "LABEL": "Mot de passe",
+                "ERRORS": {
+                    "REQUIRED": "Entrez un mot de passe.",
+                    "LENGTH": "Votre mot de passe doit contenir de {{min}} à {{max}} caractères.",
+                    "POLICY": "Votre mot de passe doit contenir au minimum un caractère appartenant à au moins 3 groupes différents, comme indiqué dans notre politique de mot de passe.",
+                    "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}",
+                    "GENERIC": "Nous sommes désolés, votre nouveau mot de passe n'est pas conforme à notre politique. Veuillez réessayer."
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+<div class="grid-container">
+    <mat-icon svgIcon="streaming"></mat-icon>
+    <p class="large-copy span-2 lead-in center-horz-align bold text-overflow-ellipsis mb-20">
+        {{ translateKeyPrefix + ".TITLE" | translate }}
+    </p>
+    <hr class="span-2" />
+    <p class="label-column lead-in bold label-title">
+        {{ translateKeyPrefix + ".PLAN_TITLE" | translate: { plansPlural: data?.plans?.length | i18nPlural: (translateKeyPrefix + ".PLURAL_MAP.PLANS" | translate) } }}
+    </p>
+    <p class="right-align no-margin top-align link-column">
+        <button
+            class="text-link-secondary"
+            (click)="manage.emit()"
+            sxmUiDataClickTrack="exit"
+            [attr.data-link-name]="'Manage|' + (data?.index === 0 ? 'Primary' : (data?.index ?? 0) + 1)"
+            [attr.data-link-key]="'StreamingSubscriptionActions'"
+            data-test="manageStreamingSubscriptionActions"
+        >
+            {{ translateKeyPrefix + ".MANAGE_LINK" | translate }}
+        </button>
+    </p>
+    <p
+        *ngFor="let plan of data?.plans"
+        class="lead-in label-column plan-name"
+        [innerHTML]="data?.isTrial ? (translateKeyPrefix + '.PLAN_NAME_TRIAL' | translate: { plan }) : plan"
+    ></p>
+    <div class="label-column tool-tip-grid">
+        <p class="lead-in bold label-title" [innerHTML]="translateKeyPrefix + '.STREAMING_TITLE' | translate"></p>
+        <sxm-ui-tooltip class="tooltip-display-right"
+            ><p>{{ translateKeyPrefix + ".SXM_APP_TOOLTIP" | translate }}</p></sxm-ui-tooltip
+        >
+    </div>
+    <p class="no-margin right-align top-align link-column">
+        <button class="text-link-secondary" (click)="editUsername.emit()" data-test="streamingEditOrCreateUsernameButton">
+            {{ translateKeyPrefix + ".EDIT_LINK" | translate }}
+        </button>
+    </p>
+    <p class="label-column lead-in text-overflow-ellipsis mb-4">{{ data.username }}</p>
+</div>

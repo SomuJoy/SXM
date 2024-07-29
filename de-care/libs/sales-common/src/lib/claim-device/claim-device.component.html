@@ -1,0 +1,71 @@
+<!-- amazon login sdk -->
+<script src="https://api-cdn.amazon.com/sdk/login1.js"></script>
+<div class="row align-center no-padding promo-confirmation">
+    <div class="column small-12 no-padding">
+        <div *ngIf="packageDescription$ | async as packageDesc" class="recirculation--single">
+            <img [src]="'sales-common.claimDeviceComponent.DEFAULT.' + deal.type + '.image.src' | translate" class="promo-image" />
+            <ng-container *ngIf="packageDesc.linkWithSiteSupported; else noLink">
+                <ng-container [ngSwitch]="state">
+                    <ng-container *ngSwitchCase="'claim'">
+                        <h5 class="recirculation--title">
+                            {{ "sales-common.claimDeviceComponent.WITH_LINK." + deal.type + ".CLAIM_TITLE" | translate: { platform: platform, company: packageDesc.company } }}
+                        </h5>
+                        <p>{{ "sales-common.claimDeviceComponent.WITH_LINK." + deal.type + ".CLAIM_SUBTITLE" | translate }}</p>
+                        <amazon-login
+                            *ngIf="packageDesc.company === 'Amazon'; else defaultLink"
+                            [clientId]="amazonClientId"
+                            [sessionId]="sessionId"
+                            (amazonAuthResponse)="onAmazonAuthResponse($event)"
+                        ></amazon-login>
+                        <ng-template #defaultLink>
+                            <!-- TODO: inquire why pandora package description has linkWithSiteSupported:true when there is no link -->
+                            <ng-container *ngIf="packageDesc.company !== 'Pandora'">
+                                <button class="button secondary text-center align-justify full-width" qatag="claimDeviceLink">
+                                    {{ "sales-common.claimDeviceComponent.WITH_LINK.LINK" | translate: { company: packageDesc.company } }}
+                                </button>
+                            </ng-container>
+                        </ng-template>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'success'">
+                        <div class="row no-padding">
+                            <div class="recirculation--title column small-8 align-left no-padding">
+                                <h5 class="text-left">
+                                    {{ "sales-common.claimDeviceComponent.WITH_LINK.SUCCESS_TITLE" | translate: { platform: platform, company: packageDesc.company } }}
+                                </h5>
+                            </div>
+                            <div class="column small-4 align-right no-padding">
+                                <svg class="icon icon-utility large checkmark-circle">
+                                    <use class="icon-checkmark-sm" xlink:href="#icon-checkmark-sm"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="text-left">{{ "sales-common.claimDeviceComponent.WITH_LINK." + deal.type + ".SUCCESS_SUBTITLE" | translate }}</p>
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'error'">
+                        <h5 class="recirculation--title">
+                            {{ "sales-common.claimDeviceComponent.WITH_LINK.ERROR_TITLE" | translate: { platform: platform, company: packageDesc.company } }}
+                        </h5>
+                        <p [innerHTML]="'sales-common.claimDeviceComponent.WITH_LINK.' + deal.type + '.ERROR_SUBTITLE' | translate"></p>
+                    </ng-container>
+                </ng-container>
+                <ng-container *ngIf="packageDesc.company !== 'Pandora'">
+                    <p class="recirculation--description">
+                        {{ "sales-common.claimDeviceComponent.WITH_LINK." + deal.type + ".DISCLAIMER" | translate }}
+                    </p>
+                    <p class="recirculation--description recirculation--description-with-disclaimer">
+                        {{ "sales-common.claimDeviceComponent.WITH_LINK." + deal.type + ".DESCRIPTION" | translate }}
+                    </p>
+                </ng-container>
+            </ng-container>
+            <ng-template #noLink>
+                <h5 class="recirculation--title">
+                    {{ "sales-common.claimDeviceComponent.DEFAULT." + deal.type + ".TITLE" | translate: { dealName: packageDesc.name, termLength: termLength } }}
+                </h5>
+                <div
+                    class="recirculation--description"
+                    [innerHTML]="'sales-common.claimDeviceComponent.DEFAULT.' + deal.type + '.DESCRIPTION' | translate: { company: packageDesc.company }"
+                ></div>
+            </ng-template>
+        </div>
+    </div>
+</div>

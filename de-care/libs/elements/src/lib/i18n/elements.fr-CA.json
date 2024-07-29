@@ -1,0 +1,20 @@
+{
+    "elements": {
+        "rflzWidgetComponent": {
+            "RADIO_LOOKUP_LABEL": "Recherche de radio",
+            "NEED_HELP_TEXT_LABEL": "Besoin d'aide?",
+            "FORM_RADIO_ERROR_MODAL": {
+                "LABEL": "Recherche de radio",
+                "HEADER": "Félicitations, vous êtes admissible à un essai de SiriusXM En continu!",
+                "COPY": "Veuillez continuer l’activation de votre essai pour commencer votre écoute.",
+                "SMALL_COPY": "À noter: Ceci n’inclut pas le service de radio satellite dans la voiture.",
+                "BUTTON": "Obtenez en continu"
+            }
+        },
+        "promoCodeValidationComponent": {
+            "TITLE": "Entrez votre code promotionnel pour recevoir une offre spéciale de diffusion en continu.",
+            "NEED_HELP": "Besoin d'aide?",
+            "CALL_US": "Appelez-nous au <a href=\"tel:+1-888-539-7474\">1 888 539-7474</a>"
+        }
+    }
+}

@@ -1,0 +1,94 @@
+<ng-container [formGroup]="newAccountForm">
+    <p class="gray-text section-title">{{ "domainsAccountUiNewAccountFormFieldsModule.newAccountFormFieldsComponent.YOUR_INFO" | translate }}</p>
+    <div class="row no-padding">
+        <invalid-address-message *ngIf="showInvalidAddressError" addressType="Service"></invalid-address-message>
+        <div *ngIf="unexpectedError === true || hasExternalError === true" class="invalid-feedback">
+            <p>{{ "domainsAccountUiNewAccountFormFieldsModule.newAccountFormFieldsComponent.UNEXPECTED_ERROR" | translate }}</p>
+        </div>
+        <div class="column small-12 no-padding">
+            <div
+                class="input-container"
+                [class.invalid]="newAccountForm.controls.firstName | formControlInvalid: submitted"
+                [class.filled]="newAccountForm.controls.firstName.value"
+            >
+                <label for="{{ firstNameId }}">{{ "domainsAccountUiNewAccountFormFieldsModule.newAccountFormFieldsComponent.FIRST_NAME.LABEL" | translate }}</label>
+                <input
+                    type="text"
+                    appTrimFormField
+                    id="{{ firstNameId }}"
+                    formControlName="firstName"
+                    maxlength="100"
+                    onFocus
+                    required
+                    data-e2e="newAccountFormFields.firstNameInput"
+                />
+            </div>
+            <div *ngIf="newAccountForm.controls.firstName | formControlInvalid: submitted" class="invalid-feedback">
+                <p>{{ "domainsAccountUiNewAccountFormFieldsModule.newAccountFormFieldsComponent.FIRST_NAME.ERRORS.REQUIRED" | translate }}</p>
+            </div>
+        </div>
+        <div class="column small-12 no-padding">
+            <div
+                class="input-container"
+                [class.invalid]="newAccountForm.controls.lastName | formControlInvalid: submitted"
+                [class.filled]="newAccountForm.controls.lastName.value"
+            >
+                <label for="{{ lastNameId }}">{{ "domainsAccountUiNewAccountFormFieldsModule.newAccountFormFieldsComponent.LAST_NAME.LABEL" | translate }}</label>
+                <input
+                    type="text"
+                    appTrimFormField
+                    id="{{ lastNameId }}"
+                    formControlName="lastName"
+                    maxlength="100"
+                    onFocus
+                    required
+                    data-e2e="newAccountFormFields.lastNameInput"
+                />
+            </div>
+            <div *ngIf="newAccountForm.controls.lastName | formControlInvalid: submitted" class="invalid-feedback">
+                <p>{{ "domainsAccountUiNewAccountFormFieldsModule.newAccountFormFieldsComponent.LAST_NAME.ERRORS.REQUIRED" | translate }}</p>
+            </div>
+        </div>
+        <div class="column small-12 no-padding">
+            <div
+                class="input-container"
+                [class.invalid]="newAccountForm.controls.phoneNumber | formControlInvalid: submitted"
+                [class.filled]="newAccountForm.controls.phoneNumber.value"
+            >
+                <label for="{{ phoneNumberId }}">{{ "domainsAccountUiNewAccountFormFieldsModule.newAccountFormFieldsComponent.PHONE_NUMBER.LABEL" | translate }}</label>
+                <input
+                    type="text"
+                    appMaskPhoneNumber
+                    id="{{ phoneNumberId }}"
+                    formControlName="phoneNumber"
+                    maxlength="14"
+                    onFocus
+                    required
+                    data-e2e="newAccountFormFields.phoneNumber"
+                />
+            </div>
+            <div *ngIf="newAccountForm.controls.phoneNumber | formControlInvalid: submitted" class="invalid-feedback">
+                <p>{{ "domainsAccountUiNewAccountFormFieldsModule.newAccountFormFieldsComponent.PHONE_NUMBER.ERRORS.REQUIRED" | translate }}</p>
+            </div>
+        </div>
+    </div>
+    <sxm-ui-postal-code-form-wrapper
+        *ngIf="reducedFields; else nonReducedFieldsForm"
+        [submitted]="submitted"
+        formControlName="serviceAddress"
+        [invalidZipFromLookup]="invalidZipFromLookup"
+    ></sxm-ui-postal-code-form-wrapper>
+    <ng-template #nonReducedFieldsForm>
+        <sxm-ui-address-form-fields formControlName="serviceAddress" [submitted]="submitted" #serviceAddress></sxm-ui-address-form-fields>
+    </ng-template>
+    <div>
+        <p class="gray-text section-title">{{ "domainsAccountUiNewAccountFormFieldsModule.newAccountFormFieldsComponent.LOGIN_INFO" | translate }}</p>
+        <login-form-fields
+            [isStreamingFlow]="isStreamingFlow"
+            [headerText]="'domainsAccountUiNewAccountFormFieldsModule.newAccountFormFieldsComponent.LOGIN_SUB_HEADER' | translate"
+            [formInfo]="loginFormInfo"
+            [submitted]="submitted"
+            [passwordError]="passwordError"
+        ></login-form-fields>
+    </div>
+</ng-container>

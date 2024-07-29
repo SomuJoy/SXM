@@ -1,0 +1,36 @@
+<main de-care-page-main>
+    <svg class="icon large checkmark-circle">
+        <use class="icon-check-mark-flex-stroke" xlink:href="#icon-check-mark-flex-stroke"></use>
+    </svg>
+    <h4>{{ translateKeyPrefix + ".TITLE" | translate }}</h4>
+    <br />
+    <hr />
+
+    <strong>
+        <p class="detail-row text-color-black-dark m-t">{{ translateKeyPrefix + ".SECTION_ONE_HEADING" | translate }}</p>
+    </strong>
+
+    <ol class="ordered-list">
+        <li>
+            <p>{{ translateKeyPrefix + ".SECTION_ONE_POINT_ONE" | translate }}</p>
+        </li>
+        <li>
+            <p>{{ translateKeyPrefix + ".SECTION_ONE_POINT_TWO" | translate }}</p>
+        </li>
+    </ol>
+
+    <hr />
+    <br />
+
+    <strong>
+        <p class="detail-row text-color-black-dark m-t">{{ translateKeyPrefix + ".SECTION_TWO_HEADING" | translate }}</p>
+    </strong>
+
+    <p>{{ translateKeyPrefix + ".SECTION_TWO_POINT" | translate }}</p>
+    <p class="privacy-margin">
+        <privacy-policy></privacy-policy>
+    </p>
+    <button class="button secondary full-width" [loading]="loadingInstructions$ | async" (click)="sendRefreshSignalInstructions()" sxm-proceed-button>
+        {{ translateKeyPrefix + ".BUTTON" | translate }}
+    </button>
+</main>

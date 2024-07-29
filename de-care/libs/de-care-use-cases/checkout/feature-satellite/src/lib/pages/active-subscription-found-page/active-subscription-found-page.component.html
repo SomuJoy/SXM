@@ -1,0 +1,31 @@
+<section id="headline" deCarePageFullWidthContent="mainWideContent">
+    <h1>{{ translateKeyPrefix + "TITLE" | translate }}</h1>
+</section>
+<main deCarePageMainContent>
+    <section id="subscriptionSummary" *ngIf="activeSubscriptionViewModel$ | async as activeSubscriptionViewModel">
+        <p>{{ translateKeyPrefix + "SUB_TITLE" | translate }}</p>
+        <hr />
+        <p>
+            <strong>
+                {{ translateKeyPrefix + "RADIO" | translate: { lastFour: activeSubscriptionViewModel.radioIdLastFour } }}
+            </strong>
+        </p>
+        <de-care-subscription-summary [plans]="activeSubscriptionViewModel.plans"></de-care-subscription-summary>
+        <hr />
+    </section>
+    <section id="loginLinkSection">
+        <a class="button primary full-width" sxmUiDataClickTrack="login" [href]="translateKeyPrefix + 'LOGIN_LINK' | translate">
+            {{ translateKeyPrefix + "LOGIN_LINK_TEXT" | translate }}
+        </a>
+    </section>
+    <section id="streamingPackageOption">
+        <h5>{{ translateKeyPrefix + "STREAMING.NO_RADIO" | translate }}</h5>
+        <p>
+            {{ translateKeyPrefix + "STREAMING.PACKAGE_TEXT" | translate }}
+            <a href="{{ translateKeyPrefix + 'STREAMING.URL' | translate }}" sxmUiDataClickTrack="exit">
+                {{ translateKeyPrefix + "STREAMING.PACKAGE_LINK" | translate }}
+            </a>
+            .
+        </p>
+    </section>
+</main>

@@ -1,0 +1,29 @@
+<ng-container *ngIf="offerViewModel$ | async as offerViewModel">
+    <section id="mainContent">
+        <sxm-ui-vehicle-ymm-info [vehicleInfoVM]="vehicleInfoVM$ | async"></sxm-ui-vehicle-ymm-info>
+        <sxm-ui-alert-pill *ngIf="offerViewModel.isFallbackOffer" class="streaming-eligibility black-alert-icon-notification rounded-corners">
+            <p class="pill-text" [innerHTML]="translateKeyPrefix + '.OFFER_FOR_NEW_SUBSCRIBERS' | translate"></p>
+        </sxm-ui-alert-pill>
+        <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+            <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+            <ng-container body>
+                <p [innerHTML]="translateKeyPrefix + '.INSTRUCTIONS' | translate"></p>
+            </ng-container>
+        </sxm-ui-step-header>
+        <sxm-ui-plan-recap-card *ngIf="planRecapCardViewModel$ | async as planRecapCardViewModel" [data]="planRecapCardViewModel"> </sxm-ui-plan-recap-card>
+        <de-care-review-quote-and-approve-form
+            *ngIf="quoteViewModel$ | async as quoteViewModel"
+            [quoteViewModel]="quoteViewModel"
+            [shouldIncludeNuCaptcha]="displayNuCaptcha$ | async"
+            [continueButtonTextOverride]="translateKeyPrefix + '.CONTINUE_BUTTON_TEXT' | translate"
+            [useQuotesAlternateHeader]="true"
+            (formCompleted)="submitTransaction()"
+            [isQuebecProvince]="isQuebecProvince$ | async"
+            [useRateVersionOfTextCopy]="isQuebecProvince$ | async"
+            class="renewal-quote-alt-header-1"
+        ></de-care-review-quote-and-approve-form>
+    </section>
+    <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+        <div [innerHTML]="offerViewModel.legalCopy"></div>
+    </section>
+</ng-container>

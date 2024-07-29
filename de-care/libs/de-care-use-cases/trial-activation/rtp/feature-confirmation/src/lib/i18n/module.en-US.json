@@ -1,0 +1,18 @@
+{
+    "deCareUseCasesTrialActivationRtpFeatureConfirmationModule": {
+        "confirmationComponent": {
+            "PAGE_TITLE": "Thanks for subscribing. Now let's ride.",
+            "READY_TO_EXPLORE_LINKS": [
+                "<a data-track-click='View Program Schedule' class='text-link' href='https://www.siriusxm.com/programschedules?intcmp=GN_HEADER_NEW_WhatsOn_FindaShoworChannel_ProgramSchedules' target='_blank'>View Program Schedules</a>",
+                "<a data-track-click='Live Sports Schedule' class='text-link' href='https://www.siriusxm.com/livesports?intcmp=GN_HEADER_NEW_WhatsOn_FindaShoworChannel_SiriusXMLiveSportsSchedule' target='_blank'>Live Sports Schedules</a>"
+            ],
+            "STREAMING_LINK_TEXT": "Start Listening on the SXM App",
+            "STREAMING_PLAYER_LINK": "?creative_id=NA_NA_PL-EM-home-home-home-CONVERSION-NOUVCONFIRM-OEM-OEM-20211207-DECOM&cp_7=OEM&cp_8=CONVERSION&cp_9=NOUVCONFIRM",
+            "READY_TO_EXPLORE_HEADER": "Ready to Explore?",
+            "FOOTER_TEXT": "Before you go, ",
+            "FOOTER_LINK": "<a data-track-click='check out great offers.' class='text-link' href='https://www.siriusxm.com/phx/ourmostpopularpackages?intcmp=GN_HEADER_NEW_Subscribe_ComparePackages' target='_blank'>check out great offers.</a>",
+            "IMPORTANT_INFO_TITLE": "Important information about your subscription: ",
+            "IMPORTANT_INFO_BODY": "Your subscription starts immediately unless indicated otherwise. If your radio is not receiving the programming you are entitled to, please follow the activation instructions above. For your convenience, all subscriptions automatically renew until canceled. Your renewal will be billed at the then-current rate using the payment method on file. You can cancel your subscription at any time by calling Listener Care at 1-866-635-2349. Your subscription is governed by the SiriusXM Customer Agreement, which can be <a href='https://www.siriusxm.com/customeragreement?desktop=yes' target='_blank'>viewed online</a>. If you would like to receive a copy of the Customer Agreement by mail, you can call 1-866-635-2349."
+        }
+    }
+}

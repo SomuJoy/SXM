@@ -1,0 +1,24 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "locales": [
+            {
+                "locale": "en_US",
+                "offerInfos": [
+                    {
+                        "planCode": "Select Add-on - 1mo|Promo $0/mo Select Upgrade for 3mos - Monthly - (OLPT)",
+                        "salesHero": { "title": "Upgrade and enjoy even more SiriusXM", "subTitle": null, "presentation": null },
+                        "offerDescription": null,
+                        "deals": null,
+                        "addonHeaderOverride": null,
+                        "offerDetails": "<p><strong>OFFER DETAILS:</strong> Upgrade to a Music & Entertainment Plan and get your first 3 months at the monthly rate you are paying today for the Music Showcase Plan ($0.00/month), for a savings of $5/month for the first 3 months. A credit card is required on this offer. <strong>After the first 3 months, your Music & Entertainment subscription will automatically renew each month thereafter and you will be charged according to your chosen payment method at then-current rates (currently $0.00/month). </strong><u>You can cancel the upgrade and continue with your Music Showcase Plan at any time prior to renewing to the Music & Entertainment Plan rates, or you can cancel your entire subscription plan at any time.</u><strong> Please see our Customer Agreement at<a href=\"http://www.siriusxm.com/\" target=\"_blank\"> </a><a href=\"http://www.siriusxm.com/\" target=\"_blank\">www.siriusxm.com</a> for complete terms and how to cancel, which includes online methods or calling us at 1-866-635-2349. </strong>All fees, content and features are subject to change. This offer cannot be combined with any other and may be modified or terminated at any time. Offer good only on qualifying ESN/Device IDs as determined by SiriusXM with an active monthly Music Showcase Plan. Channel lineup varies by package.</p>\r\n",
+                        "presentation": null,
+                        "numberOfBullets": null
+                    }
+                ]
+            }
+        ]
+    }
+}

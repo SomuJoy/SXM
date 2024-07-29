@@ -1,0 +1,19 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 201,
+    "httpStatus": "CREATED",
+    "data": {
+        "email": "ROBBYFIRE@SIRIUSXM.COM",
+        "status": "SUCCESS",
+        "radioId": "0375",
+        "subscriptionId": "10000207359",
+        "maskedStreamingUserName": "rob******@siriusxm.com",
+        "accountNumber": "10000205055",
+        "maskedPhoneNumber": null,
+        "isUserNameSameAsEmail": true,
+        "isEligibleForRegistration": true,
+        "isTwoFactorAuthNeeded": false,
+        "isOfferStreamingEligible": true,
+        "isEligibleForStreamingCredentialsOnly": false
+    }
+}

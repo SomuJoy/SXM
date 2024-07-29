@@ -1,0 +1,15 @@
+{
+    "TITLE": "We found one or more subscriptions that match your info.",
+    "SUB_TITLE": "Please confirm the plan for which you want to reset your password.",
+    "ACCOUNT_NOT_MATCHED": "Don't see your account?",
+    "RESET": "Reset",
+    "REGISTER": "Register",
+    "ACCOUNT_NUMBER_LABEL": "ACCOUNT",
+    "STREAMING_LOGIN_LABEL": "STREAMING LOGINS",
+    "ACCOUNT_LOGIN_LABEL": "ACCOUNT LOGIN",
+    "USERNAME_LABEL": "Username: ",
+    "NO_ACTIVE_SERVICE": "No Active Service",
+    "APP_LOGIN": "Create SXM App Login",
+    "INFORMATION_LABEL": "Your SXM App Login for this plan is the same as your account login.",
+    "NOT_STREAMING_LABEL": "This subscription doesn’t include streaming"
+}

@@ -1,0 +1,108 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "quote": {
+            "currentQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "0.74",
+                "totalTaxesAndFeesAmount": "0.74",
+                "totalAmount": "9.16",
+                "discountAmount": "0.00",
+                "pricePerMonth": "9.00",
+                "currentBalance": "9.16",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "0.00",
+                "fees": [
+                    {
+                        "description": "U.S. Music Royalty Fee",
+                        "amount": "0.74"
+                    }
+                ],
+                "taxes": [],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Premier Streaming - Monthly",
+                        "packageName": "SIR_IP_SA",
+                        "termLength": 1,
+                        "priceAmount": "8.42",
+                        "taxAmount": "0.00",
+                        "feeAmount": "0.74",
+                        "totalTaxesAndFeesAmount": "0.74",
+                        "taxes": [],
+                        "fees": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "amount": "0.74"
+                            }
+                        ],
+                        "startDate": "2022-10-03",
+                        "endDate": "2022-11-01",
+                        "isMrdEligible": true,
+                        "balanceType": null,
+                        "type": "SELF_PAY",
+                        "dealType": "",
+                        "isAdvantage": false,
+                        "isStudent": false,
+                        "isMilitary": false
+                    }
+                ],
+                "isUpgraded": false,
+                "isProrated": true
+            },
+            "futureQuote": null,
+            "proRatedRenewalQuote": null,
+            "promoRenewalQuote": null,
+            "renewalQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "0.79",
+                "totalTaxesAndFeesAmount": "0.79",
+                "totalAmount": "9.79",
+                "discountAmount": "0.00",
+                "pricePerMonth": "9.00",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [
+                    {
+                        "description": "U.S. Music Royalty Fee",
+                        "amount": "0.79"
+                    }
+                ],
+                "taxes": [],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Premier Streaming - Monthly",
+                        "packageName": "SIR_IP_SA",
+                        "termLength": 1,
+                        "priceAmount": "9.00",
+                        "taxAmount": "0.00",
+                        "feeAmount": "0.79",
+                        "totalTaxesAndFeesAmount": "0.79",
+                        "taxes": [],
+                        "fees": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "amount": "0.79"
+                            }
+                        ],
+                        "startDate": "2022-11-01",
+                        "endDate": "2022-12-01",
+                        "isMrdEligible": true,
+                        "balanceType": null,
+                        "type": "SELF_PAY",
+                        "dealType": null,
+                        "isAdvantage": false,
+                        "isStudent": false,
+                        "isMilitary": false
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            }
+        }
+    }
+}

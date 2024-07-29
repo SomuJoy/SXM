@@ -1,0 +1,41 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "libs/sxm-assets/scss/ui_reset.scss";
+@import "components/buttons";
+
+:host {
+    h4 {
+        margin-bottom: 12px;
+        color: $black;
+        font-size: calculate-rem(28px);
+        font-weight: calculate-font-weight("black");
+        line-height: 27px;
+    }
+
+    .help-instruction {
+        color: $black;
+        font-size: calculate-rem(14px);
+        font-weight: calculate-font-weight("book");
+        line-height: 22px;
+        ::ng-deep {
+            a {
+                text-decoration: underline;
+                text-underline-offset: 3px;
+                text-decoration-thickness: 2px;
+                padding: 12px 0;
+                color: $blue-secondary;
+                @include bp(medium) {
+                    color: inherit;
+                    cursor: default;
+                    text-decoration: none;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+
+    .button.primary {
+        margin-top: 32px;
+        @include short-button;
+    }
+}

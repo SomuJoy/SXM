@@ -1,0 +1,575 @@
+[
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/account/token/acsc",
+            "postData": {
+                "token": "1fff6fb7-9715-4f64-aed0-568b10a6d580"
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "trialAccountResponse": {
+                            "nonPIIAccount": {
+                                "firstName": "JOHN",
+                                "accountProfile": { "accountRegistered": false },
+                                "accountState": { "isInPreTrial": false },
+                                "serviceAddress": { "state": "NY", "country": "USA" },
+                                "subscriptions": [
+                                    {
+                                        "id": "10000246580",
+                                        "plans": [
+                                            {
+                                                "code": "Sponsored - OEM Trial - ALL ACCESS - 12mo - 116.55",
+                                                "packageName": "SIR_AUD_ALLACCESS",
+                                                "termLength": 12,
+                                                "startDate": "2022-02-04T00:00:00-05:00",
+                                                "endDate": "2023-02-04T00:00:00-05:00",
+                                                "nextCycleOn": null,
+                                                "marketType": "trial:new-car",
+                                                "type": "TRIAL",
+                                                "capabilities": ["AUD", "IPAUD"],
+                                                "price": 0,
+                                                "isBasePlan": true,
+                                                "dataCapable": false
+                                            }
+                                        ],
+                                        "followonPlans": [],
+                                        "radioService": {
+                                            "id": "10000244916",
+                                            "last4DigitsOfRadioId": "9810",
+                                            "devicePromoCode": "1012",
+                                            "vehicleInfo": { "year": null, "make": null, "model": null },
+                                            "is360LCapable": false
+                                        },
+                                        "streamingService": {
+                                            "id": "10000248628",
+                                            "maskedUserName": "tpn******@siriusxm.com",
+                                            "status": "Active",
+                                            "randomCredentials": false
+                                        },
+                                        "status": "Active",
+                                        "devicePromoCode": "1012",
+                                        "isPrimary": true
+                                    }
+                                ],
+                                "billingSummary": { "creditCard": { "last4Digits": "1111", "type": "VISA", "status": "ACTIVE" }, "isPaymentTypeInvoice": false },
+                                "closedDevices": [],
+                                "hasEmailAddressOnFile": true,
+                                "isAccountIdentifiedUsingFLEPZOrVIN": false
+                            },
+                            "marketingId": "990004559810",
+                            "marketingAcctId": "7348",
+                            "email": null
+                        },
+                        "selfPayAccountNumberForACOnly": null,
+                        "eligibilityStatus": "AC_AND_SC",
+                        "sCEligibleClosedDevices": [],
+                        "sCEligibleSelfPaySubscriptions": [
+                            {
+                                "id": "10000242069",
+                                "plans": [
+                                    {
+                                        "code": "All Access - 12mo - wActv",
+                                        "packageName": "SIR_AUD_ALLACCESS",
+                                        "termLength": 12,
+                                        "startDate": "2022-02-04T00:00:00-05:00",
+                                        "endDate": null,
+                                        "nextCycleOn": "2023-02-04T00:00:00-05:00",
+                                        "marketType": "self-pay:standard",
+                                        "type": "SELF_PAID",
+                                        "capabilities": ["AUD", "IPAUD"],
+                                        "price": 275.88,
+                                        "isBasePlan": true,
+                                        "dataCapable": false
+                                    }
+                                ],
+                                "followonPlans": [],
+                                "radioService": {
+                                    "id": "10000241557",
+                                    "last4DigitsOfRadioId": "1357",
+                                    "devicePromoCode": null,
+                                    "vehicleInfo": { "year": null, "make": null, "model": null },
+                                    "is360LCapable": false
+                                },
+                                "streamingService": { "id": "10000244117", "maskedUserName": "bxl******@siriusxm.com", "status": "Active", "randomCredentials": false },
+                                "status": "Active",
+                                "devicePromoCode": null,
+                                "isPrimary": true
+                            }
+                        ],
+                        "sPEligibleSelfPaySubscriptionIds": ["10000242069"]
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/account/non-pii",
+            "postData": { "radioId": "3200" }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "nonPIIAccount": {
+                            "firstName": "JOHN",
+                            "accountProfile": { "accountRegistered": false },
+                            "accountState": { "isInPreTrial": false },
+                            "serviceAddress": { "state": "NY", "country": "USA" },
+                            "subscriptions": [
+                                {
+                                    "id": "10000245450",
+                                    "plans": [
+                                        {
+                                            "code": "All Access - 12mo - wActv",
+                                            "packageName": "SIR_AUD_ALLACCESS",
+                                            "termLength": 12,
+                                            "startDate": "2022-02-04T00:00:00-05:00",
+                                            "endDate": null,
+                                            "nextCycleOn": "2023-02-04T00:00:00-05:00",
+                                            "marketType": "self-pay:standard",
+                                            "type": "SELF_PAID",
+                                            "capabilities": ["AUD", "IPAUD"],
+                                            "price": 275.88,
+                                            "isBasePlan": true,
+                                            "dataCapable": false
+                                        }
+                                    ],
+                                    "followonPlans": [],
+                                    "radioService": {
+                                        "id": "10000246474",
+                                        "last4DigitsOfRadioId": "3200",
+                                        "devicePromoCode": null,
+                                        "vehicleInfo": { "year": null, "make": null, "model": null },
+                                        "is360LCapable": false
+                                    },
+                                    "streamingService": { "id": "10000247498", "maskedUserName": "ezc******@siriusxm.com", "status": "Active", "randomCredentials": false },
+                                    "status": "Active",
+                                    "devicePromoCode": null,
+                                    "isPrimary": true
+                                }
+                            ],
+                            "billingSummary": { "creditCard": { "last4Digits": "1111", "type": "VISA", "status": "ACTIVE" }, "isPaymentTypeInvoice": false },
+                            "closedDevices": [],
+                            "hasEmailAddressOnFile": true,
+                            "isAccountIdentifiedUsingFLEPZOrVIN": false
+                        },
+                        "marketingId": "990005273200",
+                        "marketingAcctId": "0091",
+                        "email": null
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/trial-activation/account-consolidate",
+            "postData": { "trialRadioId": "3065" }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": { "status": "SUCCESS", "httpStatusCode": 200, "httpStatus": "OK", "data": { "status": true } }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/offers/customer/acsc",
+            "postData": { "trialRadioId": "3065", "selfPayRadioId": "3200", "accountConsolidation": true, "programCode": null, "marketingPromoCode": null }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "offers": [
+                            {
+                                "planCode": "All Access - 12mo - wActv",
+                                "packageName": "SIR_AUD_ALLACCESS",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 215.88,
+                                "pricePerMonth": 17.99,
+                                "retailPrice": 17.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 22.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 1,
+                                "bundledSavingPrice": null,
+                                "bundleSubPackageNames": null,
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "capability": ["AUD", "IPAUD"],
+                                "mrdEligible": true,
+                                "invoiceEligible": true,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "bestPackage": true,
+                                "leadOffer": false,
+                                "dataCapable": false,
+                                "bundled": null
+                            },
+                            {
+                                "planCode": "Select - 12mo - wActv",
+                                "packageName": "SIR_AUD_EVT",
+                                "packageUpgrade": null,
+                                "promoCode": null,
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 155.88,
+                                "pricePerMonth": 12.99,
+                                "retailPrice": 12.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 17.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 1,
+                                "bundledSavingPrice": null,
+                                "bundleSubPackageNames": null,
+                                "parentPackageName": "",
+                                "fallbackReason": "",
+                                "capability": ["AUD", "IPAUD"],
+                                "mrdEligible": true,
+                                "invoiceEligible": true,
+                                "advantage": false,
+                                "student": false,
+                                "fallback": false,
+                                "streaming": false,
+                                "upgradeOffer": false,
+                                "bestPackage": false,
+                                "leadOffer": false,
+                                "dataCapable": false,
+                                "bundled": null
+                            }
+                        ],
+                        "presentment": null
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/quotes/acsc-quote",
+            "postData": {
+                "transactionType": "SERVICE_PORTABILITY",
+                "followOnPlanCodes": [null],
+                "trialRadioId": "8565",
+                "selfPayRadioId": "9221",
+                "paymentType": "creditCard"
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "quote": {
+                            "currentQuote": {
+                                "totalTaxAmount": "0.00",
+                                "totalFeesAmount": "59.04",
+                                "totalTaxesAndFeesAmount": "59.04",
+                                "totalAmount": "0.00",
+                                "discountAmount": "0.00",
+                                "pricePerMonth": "22.99",
+                                "currentBalance": "0.00",
+                                "consolidatedCreditAmount": "-334.92",
+                                "previousBalance": "0.00",
+                                "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "59.04" }],
+                                "taxes": [],
+                                "packageUpgradeFees": [],
+                                "details": [
+                                    {
+                                        "planCode": "Old Subscription Credit",
+                                        "packageName": null,
+                                        "termLength": 0,
+                                        "priceAmount": "-275.88",
+                                        "taxAmount": "0.00",
+                                        "feeAmount": "-59.04",
+                                        "totalTaxesAndFeesAmount": "-59.04",
+                                        "taxes": [],
+                                        "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "-59.04" }],
+                                        "startDate": null,
+                                        "endDate": null,
+                                        "isMrdEligible": false,
+                                        "balanceType": null,
+                                        "type": "",
+                                        "dealType": "",
+                                        "isStudent": false,
+                                        "isAdvantage": false,
+                                        "isMilitary": false
+                                    },
+                                    {
+                                        "planCode": "All Access - 12mo - wActv",
+                                        "packageName": "SIR_AUD_ALLACCESS",
+                                        "termLength": 12,
+                                        "priceAmount": "275.88",
+                                        "taxAmount": "0.00",
+                                        "feeAmount": "59.04",
+                                        "totalTaxesAndFeesAmount": "59.04",
+                                        "taxes": [],
+                                        "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "59.04" }],
+                                        "startDate": "02/04/2023 00:00:00",
+                                        "endDate": "02/04/2024 00:00:00",
+                                        "isMrdEligible": false,
+                                        "balanceType": null,
+                                        "type": "",
+                                        "dealType": "",
+                                        "isStudent": false,
+                                        "isAdvantage": false,
+                                        "isMilitary": false
+                                    }
+                                ],
+                                "isUpgraded": null,
+                                "isProrated": false
+                            },
+                            "futureQuote": null,
+                            "proRatedRenewalQuote": null,
+                            "promoRenewalQuote": null,
+                            "renewalQuote": {
+                                "totalTaxAmount": "0.00",
+                                "totalFeesAmount": "59.04",
+                                "totalTaxesAndFeesAmount": "59.04",
+                                "totalAmount": "334.92",
+                                "discountAmount": "0.00",
+                                "pricePerMonth": "22.99",
+                                "currentBalance": "0.00",
+                                "consolidatedCreditAmount": "",
+                                "previousBalance": "0.00",
+                                "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "59.04" }],
+                                "taxes": [],
+                                "packageUpgradeFees": [],
+                                "details": [
+                                    {
+                                        "planCode": "All Access - 12mo - wActv",
+                                        "packageName": "SIR_AUD_ALLACCESS",
+                                        "termLength": 12,
+                                        "priceAmount": "275.88",
+                                        "taxAmount": "0.00",
+                                        "feeAmount": "59.04",
+                                        "totalTaxesAndFeesAmount": "59.04",
+                                        "taxes": [],
+                                        "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "59.04" }],
+                                        "startDate": "02/04/2024 00:00:00",
+                                        "endDate": "02/04/2025 00:00:00",
+                                        "isMrdEligible": false,
+                                        "balanceType": null,
+                                        "type": "",
+                                        "dealType": "",
+                                        "isStudent": false,
+                                        "isAdvantage": false,
+                                        "isMilitary": false
+                                    }
+                                ],
+                                "isUpgraded": null,
+                                "isProrated": false
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/purchase/change-subscription",
+            "postData": {
+                "radioId": "3065",
+                "followOnPlans": [{ "planCode": "All Access - 12mo - wActv" }],
+                "paymentInfo": { "useCardOnfile": true, "paymentType": "creditCard", "transactionId": "OAC-104ddda0-32ea-4913-867b-d81c16c3120b" }
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "email": "EZCIGD.PZKK@SIRIUSXM.COM",
+                        "status": "SUCCESS",
+                        "radioId": "3065",
+                        "subscriptionId": "10000243826",
+                        "maskedStreamingUserName": "irq******@siriusxm.com",
+                        "accountNumber": "10000240091",
+                        "maskedPhoneNumber": null,
+                        "isEligibleForRegistration": false,
+                        "isOfferStreamingEligible": true,
+                        "isEligibleForStreamingCredentialsOnly": false,
+                        "isUserNameSameAsEmail": true,
+                        "isTwoFactorAuthNeeded": false
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "GET",
+            "url": "/services/utility/security-questions"
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": [
+                        { "id": 100, "question": "Favorite pet's name" },
+                        { "id": 101, "question": "Favorite place to visit" },
+                        { "id": 102, "question": "First phone number" },
+                        { "id": 103, "question": "Favorite sports team" },
+                        { "id": 104, "question": "Favorite beverage" },
+                        { "id": 105, "question": "Favorite movie" },
+                        { "id": 106, "question": "First car make" },
+                        { "id": 107, "question": "Favorite childhood friend" },
+                        { "id": 108, "question": "First employer" },
+                        { "id": 109, "question": "Favorite school" },
+                        { "id": 110, "question": "First concert" },
+                        { "id": 111, "question": "First music purchase" },
+                        { "id": 112, "question": "Favorite place to live" },
+                        { "id": 113, "question": "Favorite band/artist" },
+                        { "id": 114, "question": "Favorite music genre" }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/utility/sal/token",
+            "postData": { "subscriptionId": "10000243826" }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NDM5OTE1NTksImV4cCI6MTY0Mzk5MTg1OSwic3ViIjoiMC4wLjAuMV8tc2VydmljZS1zdWJzY3JpcHRpb25fMTAwMDAyNDM4MjYiLCJqdGkiOiI5NDgyNmM3NS1hNzdlLTQzODgtOTQyNi1hMTJmZjhkMWY4N2YiLCJyZWdpb24iOiJVUyIsImlzcyI6ImRleC1kZXYuY29ycC5zaXJpdXN4bS5jb20iLCJzdWJfdHlwZSI6InN1YnNjcmlwdGlvbklkIn0.cROk_93PRoKumWhCml32N8q6UxRmRDXJmdLdpgAcKuI"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/purchase/service-continuity",
+            "postData": {
+                "trialRadioId": "8055",
+                "selfPayRadioId": "8756",
+                "followOnPlans": [],
+                "removeCarFromAccount": false,
+                "transactionType": "SERVICE_PORTABILITY",
+                "paymentInfo": { "useCardOnfile": true, "paymentType": "creditCard", "transactionId": "OAC-2b65ef8c-bdac-4586-b4bc-7d5d9f227acc" }
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "email": "DXHLBF.DJIJ@SIRIUSXM.COM",
+                        "status": "SUCCESS",
+                        "radioId": "8055",
+                        "subscriptionId": "10000240938",
+                        "maskedStreamingUserName": "dxh******@siriusxm.com",
+                        "accountNumber": "10000240909",
+                        "maskedPhoneNumber": null,
+                        "isEligibleForRegistration": true,
+                        "isOfferStreamingEligible": true,
+                        "isEligibleForStreamingCredentialsOnly": false,
+                        "isUserNameSameAsEmail": true,
+                        "isTwoFactorAuthNeeded": false
+                    }
+                }
+            }
+        }
+    }
+]

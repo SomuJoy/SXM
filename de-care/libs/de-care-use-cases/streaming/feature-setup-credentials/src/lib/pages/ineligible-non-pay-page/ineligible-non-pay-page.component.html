@@ -1,0 +1,15 @@
+<main de-care-page-main>
+    <h4>{{ translateKeyPrefix + "HEADLINE" | translate }}</h4>
+    <br />
+    <div [innerHTML]="translateKeyPrefix + 'INSTRUCTIONS' | translate"></div>
+    <br />
+    <ng-container *ngIf="subscription$ | async; let subscription">
+        <sxm-ui-subscription-summary-block [subscription]="subscription"></sxm-ui-subscription-summary-block>
+        <button type="submit" sxm-proceed-button sxmUiDataClickTrack="player" (click)="makePayment(subscription, translateKeyPrefix + 'WEB_FORM_URL')">
+            {{ translateKeyPrefix + "PREVIEW_BUTTON_TEXT" | translate }}
+        </button> </ng-container
+    ><br />
+    <a routerLink="../no-match" class="enter-radio-id" sxmUiDataClickTrack="modal">
+        {{ translateKeyPrefix + "DONT_SEE_ACCOUNT_TEXT" | translate }}
+    </a>
+</main>

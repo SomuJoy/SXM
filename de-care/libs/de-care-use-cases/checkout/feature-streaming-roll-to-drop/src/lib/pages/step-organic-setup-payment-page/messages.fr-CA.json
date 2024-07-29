@@ -1,0 +1,14 @@
+{
+    "TITLE": "Configurez votre paiement",
+    "EMAIL/USERNAME": "Adresse courriel/Nom d’utilisateur:",
+    "BODY": {
+        "CANCEL_ANYTIME": "Vous pourrez réviser votre commande avant de vous abonner. N’oubliez pas que vous pouvez modifier ou annuler votre commande en tout temps.",
+        "CONTINUE_BUTTON_TEXT": "Continuer"
+    },
+    "INELIGIBLE_LOADING_ALERT": "Cette offre est réservée aux nouveaux abonnés, mais voici une autre option pour vous.",
+    "OFFER_FOR_NEW_SUBSCRIBERS": "Cette offre est réservée aux nouveaux abonnés, mais voici une autre option pour vous.",
+    "INELIGIBLE_LOADING_BODY": "Trouver un autre bon plan pour vous.",
+    "FEES_AND_TAXES_APPLY": "",
+    "CARD_TYPE_ICONS": ["visa", "mc", "amex"],
+    "PAYMENT_DETAILS_TITLE": "Infos de paiement"
+}

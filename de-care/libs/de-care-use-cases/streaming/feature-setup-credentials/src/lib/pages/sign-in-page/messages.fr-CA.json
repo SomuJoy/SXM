@@ -1,0 +1,14 @@
+{
+    "HEADLINE": "Connectez-vous à SiriusXM",
+    "SUB_HEADLINE": "Pour vous connecter à Sonos, connectez-vous à SiriusXM.",
+    "FORM_ERROR_INVALID_CREDENTIALS": "Nous ne reconnaissons pas votre nom d’utilisateur ou votre mot de passe. Veuillez réessayer.",
+    "FORM_ERROR_SYSTEM": "Nous sommes désolés, un problème est survenu. Veuillez réessayer.",
+    "LINK_FORGOT_PASSWORD_TEXT": "Nom d’utilisateur ou mot de passe oublié?",
+    "CONTINUE_BUTTON_TEXT": "CONNECTEZ-VOUS",
+    "SETUP_STREAMING_HEADLINE": "Pas de compte? Pas de problème!",
+    "SETUP_STREAMING_LINK_TEXT": "Configurez votre connexion d'écoute en continu",
+    "FORM_FIELD_USERNAME_LABEL": "Nom d’utilisateur/Courriel",
+    "FORM_ERROR_INVALID_ACTIVATION_CODE_PIECES": {
+        "PART_1": "Votre code d’activation est expiré. Veuillez retourner à l’appli Sonos et essayer de nouveau."
+    }
+}

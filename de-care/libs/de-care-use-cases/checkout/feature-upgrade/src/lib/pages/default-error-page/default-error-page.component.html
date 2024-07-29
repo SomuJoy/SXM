@@ -1,0 +1,35 @@
+<main class="background-white">
+    <div class="background-blue-light-ultra">
+        <div class="content-container">
+            <div class="row">
+                <div class="column small-12 medium-8 offset-medium-2 align-top">
+                    <div class="error-message-header">
+                        <h6>{{ translateKeyPrefix + "HEADER.TITLE" | translate }}</h6>
+                        <h2>{{ translateKeyPrefix + "HEADER.BODY" | translate }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="row no-padding-small">
+            <div class="column small-12 medium-10 offset-medium-1 align-top no-padding-medium recirculation-wrapper">
+                <div class="recirculation--single">
+                    <h5>{{ translateKeyPrefix + "HELP.TITLE" | translate }}</h5>
+                    <p>
+                        <span *ngIf="(currentLangIsFrench$ | async) !== true" class="text-color-blue-secondary">
+                            <chat-with-agent-link [sxmUiDataClickTrack]="'chat'" [chatLinkText]="translateKeyPrefix + 'HELP.CHAT' | translate" [queue]="'general'">
+                            </chat-with-agent-link>
+                        </span>
+                        <span class="text-nowrap">
+                            {{ translateKeyPrefix + "HELP.OR_CALL" | translate }}
+                            <a class="text-nowrap" data-track-click="TFN link" href="tel:{{ translateKeyPrefix + 'HELP.TFN' | translate }}">{{
+                                translateKeyPrefix + "HELP.TFN" | translate
+                            }}</a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

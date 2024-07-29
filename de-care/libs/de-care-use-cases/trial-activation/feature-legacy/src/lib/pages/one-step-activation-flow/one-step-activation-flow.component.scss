@@ -1,0 +1,43 @@
+@import "sxm.phoenix.imports";
+
+$common-margin: 16px;
+
+:host {
+    display: block;
+
+    .trial-accordion-container {
+        padding-top: 8px;
+        margin-left: 16px;
+        margin-right: 16px;
+        @include bp(medium) {
+            padding-top: 8px;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+    }
+
+    h6.step-header {
+        margin-top: $common-margin;
+    }
+
+    h4 {
+        margin-top: $common-margin;
+        margin-bottom: $common-margin;
+    }
+
+    hr {
+        background-color: $gray-medium;
+        border: 0;
+        height: 1px;
+        margin: $common-margin 0;
+        width: 100%;
+    }
+
+    hr.extra-margin-top {
+        margin-top: 32px;
+    }
+
+    .padding-top {
+        padding-top: 16px;
+    }
+}

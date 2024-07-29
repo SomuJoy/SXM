@@ -1,0 +1,54 @@
+@import "sxm.phoenix.imports";
+
+.order-summary {
+    width: 100%;
+
+    .content-card {
+        background: $white;
+
+        .content-card-body {
+            border: none;
+            padding: 20px 24px 30px;
+
+            &.no-header {
+                border: none;
+            }
+        }
+    }
+
+    & > p:first-child,
+    p.recurring-charge-copy {
+        margin-bottom: 16px;
+    }
+
+    hr {
+        background-color: #d4d4d4;
+        height: 1px;
+        border: none;
+    }
+
+    sxm-ui-tooltip {
+        display: inline-block;
+        vertical-align: -7px;
+
+        .component--tool-tip-content {
+            left: -100px;
+            top: 40px;
+
+            @include bp(small) {
+                left: 40px;
+                top: -40px;
+            }
+
+            @include bp(medium) {
+                left: -100px;
+                top: 40px;
+            }
+
+            @include bp(large) {
+                left: 40px;
+                top: -40px;
+            }
+        }
+    }
+}

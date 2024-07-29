@@ -1,0 +1,17 @@
+<div>
+    <h5>{{ "identification.VinErrorComponent.TITLE" | translate }}</h5>
+    <p>
+        {{ "identification.VinErrorComponent.MSG" | translate }}
+    </p>
+    <p [id]="ariaDescribedbyTextId">
+        {{ "identification.VinErrorComponent.CONTINUE_MSG" | translate }}
+    </p>
+    <ul class="link-list">
+        <li>
+            <a class="text-link" (click)="radioIdSearchClick.emit()">{{ "identification.VinErrorComponent.TEXT-LINK" | translate }}</a>
+        </li>
+        <li>
+            <chat-with-agent-link class="text-link" [chatLinkText]="'identification.VinErrorComponent.CHAT_LINK_TEXT' | translate" [queue]="'general'"></chat-with-agent-link>
+        </li>
+    </ul>
+</div>

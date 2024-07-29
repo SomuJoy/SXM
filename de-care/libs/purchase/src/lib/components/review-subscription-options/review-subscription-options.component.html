@@ -1,0 +1,29 @@
+<div class="content-container">
+    <p>
+        {{
+            "purchase.reviewSubscriptionOptions.ONCE_TRIAL_ENDS"
+                | translate
+                    : {
+                          endDate: renewalEndDate | date: (dateFormat$ | async):timezone:locale
+                      }
+        }}
+    </p>
+    <p>
+        <strong class="text-color-grey-dark">{{ "purchase.reviewSubscriptionOptions.RENEWAL_SUBSCRIPTION.HEADER" | translate }}</strong
+        ><br />
+        <span
+            [innerHTML]="
+                'purchase.reviewSubscriptionOptions.RENEWAL_SUBSCRIPTION.DETAILS'
+                    | translate
+                        : {
+                              renewalPackageName: 'app.packageDescriptions.' + renewalPackageName + '.name' | translate,
+                              renewalMonthlyPrice: renewalMonthlyPrice
+                          }
+            "
+        ></span
+        ><br />
+        <button data-test="reviewSubscriptionOptionsLink" data-e2e="reviewSubscriptionOptionsLink" class="text-link" type="button" (click)="openModal()">
+            {{ "purchase.reviewSubscriptionOptions.OPTIONS_LINK" | translate }}
+        </button>
+    </p>
+</div>

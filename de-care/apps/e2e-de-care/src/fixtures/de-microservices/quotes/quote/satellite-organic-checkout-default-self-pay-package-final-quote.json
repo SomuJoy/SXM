@@ -1,0 +1,129 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "quote": {
+            "currentQuote": null,
+            "futureQuote": null,
+            "proRatedRenewalQuote": null,
+            "promoRenewalQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "1.07",
+                "totalTaxesAndFeesAmount": "1.07",
+                "totalAmount": "6.06",
+                "discountAmount": "-18.00",
+                "pricePerMonth": "4.99",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [
+                    {
+                        "description": "U.S. Music Royalty Fee",
+                        "amount": "1.07"
+                    }
+                ],
+                "taxes": [],
+                "packageUpgradeFees": [
+                    {
+                        "planCode": "PACKAGE_UPGRADE_FEE",
+                        "packageName": "1_SIR_AUD_ALLACCESS",
+                        "termLength": 12,
+                        "priceAmount": "0.00",
+                        "taxAmount": "0.00",
+                        "feeAmount": "0.00",
+                        "totalTaxesAndFeesAmount": "0.00",
+                        "taxes": [],
+                        "fees": [],
+                        "startDate": null,
+                        "endDate": null,
+                        "isMrdEligible": null,
+                        "balanceType": null,
+                        "type": null,
+                        "dealType": null,
+                        "isAdvantage": false,
+                        "isStudent": false,
+                        "isMilitary": false
+                    }
+                ],
+                "details": [
+                    {
+                        "planCode": "All Access - 1mo - wActv|Promo $4.99/mo All Access for 12mos - (WEB)",
+                        "packageName": "1_SIR_AUD_EVT",
+                        "termLength": 12,
+                        "priceAmount": "4.99",
+                        "taxAmount": "0.00",
+                        "feeAmount": "1.07",
+                        "totalTaxesAndFeesAmount": "1.07",
+                        "taxes": [],
+                        "fees": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "amount": "1.07"
+                            }
+                        ],
+                        "startDate": "2023-04-12",
+                        "endDate": "2023-05-12",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "PROMO_MCP",
+                        "dealType": "",
+                        "isAdvantage": false,
+                        "isStudent": false,
+                        "isMilitary": false
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            },
+            "renewalQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "2.78",
+                "totalTaxesAndFeesAmount": "2.78",
+                "totalAmount": "15.77",
+                "discountAmount": "0.00",
+                "pricePerMonth": "12.99",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [
+                    {
+                        "description": "U.S. Music Royalty Fee",
+                        "amount": "2.78"
+                    }
+                ],
+                "taxes": [],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Select - 1mo - wActv",
+                        "packageName": "1_SIR_AUD_EVT",
+                        "termLength": 1,
+                        "priceAmount": "12.99",
+                        "taxAmount": "0.00",
+                        "feeAmount": "2.78",
+                        "totalTaxesAndFeesAmount": "2.78",
+                        "taxes": [],
+                        "fees": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "amount": "2.78"
+                            }
+                        ],
+                        "startDate": "2024-04-12",
+                        "endDate": "2024-05-12",
+                        "isMrdEligible": true,
+                        "balanceType": null,
+                        "type": "",
+                        "dealType": null,
+                        "isAdvantage": false,
+                        "isStudent": false,
+                        "isMilitary": false
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            }
+        }
+    }
+}

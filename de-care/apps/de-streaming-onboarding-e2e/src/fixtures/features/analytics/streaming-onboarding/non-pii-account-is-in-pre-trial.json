@@ -1,0 +1,51 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "NLJUSTINONE",
+            "accountProfile": { "accountRegistered": false },
+            "accountState": { "isInPreTrial": true },
+            "serviceAddress": { "state": "NY", "country": "USA" },
+            "subscriptions": [
+                {
+                    "id": "10006706438",
+                    "plans": [
+                        {
+                            "dataCapable": false,
+                            "code": "All Access - 12mo - wActv",
+                            "packageName": "SXM_SIR_AUD_ALLACCESS",
+                            "termLength": 12,
+                            "startDate": "2021-05-06T00:00:00-04:00",
+                            "endDate": null,
+                            "nextCycleOn": "2022-05-06T00:00:00-04:00",
+                            "type": "SELF_PAID",
+                            "capabilities": ["AUD", "IPAUD"],
+                            "price": 263.88,
+                            "isBasePlan": true
+                        }
+                    ],
+                    "followonPlans": [],
+                    "radioService": {
+                        "id": "10006707462",
+                        "last4DigitsOfRadioId": "YD4Z",
+                        "devicePromoCode": null,
+                        "vehicleInfo": { "year": null, "make": null, "model": null },
+                        "is360LCapable": false
+                    },
+                    "streamingService": { "id": "10006705414", "maskedUserName": "weq******@siriusxm.com", "status": "Active" },
+                    "status": "Active",
+                    "devicePromoCode": null
+                }
+            ],
+            "billingSummary": { "creditCard": { "last4Digits": "1111", "type": "VISA", "status": "ACTIVE" } },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true,
+            "isAccountIdentifiedUsingFLEPZOrVIN": false
+        },
+        "marketingId": "84EPYD4Z",
+        "marketingAcctId": "4134",
+        "email": "NLJUSTINONE@SIRIUSXM.COM"
+    }
+}

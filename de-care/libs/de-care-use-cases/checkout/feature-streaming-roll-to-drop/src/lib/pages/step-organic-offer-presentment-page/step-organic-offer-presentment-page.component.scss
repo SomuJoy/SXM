@@ -1,0 +1,35 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "../page.scss";
+
+$common-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
+
+:host {
+    @include page-host(auto 1fr auto);
+    // TODO: (tech debt) remove this CSS reset once we are no longer using global styling
+    section {
+        padding: 0;
+        margin: 0;
+    }
+    section#mainContent {
+        display: grid;
+        row-gap: 32px;
+        width: 100%;
+        padding: 32px 16px;
+    }
+    .shadow-helper {
+        box-shadow: $common-shadow;
+        sxm-ui-primary-package-card {
+            &::ng-deep {
+                .primary-package-card {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    #skeletonLoaderOfferCard {
+        display: grid;
+        row-gap: 32px;
+    }
+}

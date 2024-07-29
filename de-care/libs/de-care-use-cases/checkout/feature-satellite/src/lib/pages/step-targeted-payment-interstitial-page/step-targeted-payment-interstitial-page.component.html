@@ -1,0 +1,32 @@
+<ng-container *ngrxLet="viewModel$ as viewModel">
+    <ng-container *ngIf="offerLoad$ | async as offerLoad">
+        <section id="mainContent">
+            <sxm-ui-vehicle-ymm-info [vehicleInfoVM]="viewModel.vehicleInfo"></sxm-ui-vehicle-ymm-info>
+            <mat-icon svgIcon="checkmark"></mat-icon>
+            <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+                <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+            </sxm-ui-step-header>
+            <de-care-payment-interstitial-info></de-care-payment-interstitial-info>
+            <ng-container *ngIf="offerLoad.pending || offerLoad.error">
+                <sxm-ui-button-cta-skeleton-loader></sxm-ui-button-cta-skeleton-loader>
+            </ng-container>
+            <ng-container *ngIf="offerLoad.value">
+                <a
+                    class="button primary full-width"
+                    data-test="continueButton"
+                    [routerLink]="pageStepRouteConfiguration.routeUrlNext"
+                    queryParamsHandling="preserve"
+                    sxmUiDataClickTrack="routing"
+                >
+                    {{ translateKeyPrefix + ".CONTINUE_BUTTON_TEXT" | translate }}
+                </a>
+            </ng-container>
+        </section>
+        <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+            <div *ngIf="offerLoad.value" [innerHTML]="viewModel.legalCopy"></div>
+            <div *ngIf="offerLoad.pending">
+                <sxm-ui-skeleton-loader-text-copy></sxm-ui-skeleton-loader-text-copy>
+            </div>
+        </section>
+    </ng-container>
+</ng-container>

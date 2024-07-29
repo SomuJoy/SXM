@@ -1,0 +1,20 @@
+<div class="header" data-test="interstitialStepHeader">
+    <h5>{{ translateKeyPrefix + ".DON'T_MISS_OUT" | translate }}</h5>
+    <h4>{{ translateKeyPrefix + ".SO_MUCH_TO_EXPLORE" | translate }}</h4>
+</div>
+<div class="carousel-container">
+    <sxm-ui-image-carousel [images]="images" (imageClick)="listenOnImageClick()"></sxm-ui-image-carousel>
+</div>
+<div class="buttons-container">
+    <streaming-player-link
+        #player
+        class="streaming-player-secondary"
+        [infoForToken]="{ subscriptionId: subscriptionId$ | async }"
+        [customLinkText]="translateKeyPrefix + '.STAY_AND_STREAM_NOW' | translate"
+        [isButton]="true"
+    >
+    </streaming-player-link>
+    <button class="button primary text-center align-justify cancel-button" (click)="continue()" data-test="ContinueToCancelButton">
+        {{ translateKeyPrefix + ".CONTINUE_TO_CANCEL" | translate }}
+    </button>
+</div>

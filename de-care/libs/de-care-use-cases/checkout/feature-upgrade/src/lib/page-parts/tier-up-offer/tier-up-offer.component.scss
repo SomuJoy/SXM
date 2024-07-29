@@ -1,0 +1,43 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    sxm-ui-content-card::ng-deep {
+        .content-card {
+            margin-bottom: 0;
+        }
+    }
+
+    .offer-card {
+        .offer-card--header {
+            @include font-size(12px);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        ::ng-deep span[data-subtext] {
+            @include font-size(12px);
+            color: $gray-charcoal;
+            //Set prev <p> bottom padding to 4px
+            margin-top: -8px;
+            display: block;
+        }
+
+        .additional-features {
+            &--header {
+                font-weight: bold;
+                margin-top: 24px;
+                margin-bottom: 4px;
+            }
+
+            &--list {
+                @include checkmark-list;
+                margin-bottom: 0;
+            }
+        }
+
+        h5 {
+            margin-bottom: 8px;
+        }
+    }
+}

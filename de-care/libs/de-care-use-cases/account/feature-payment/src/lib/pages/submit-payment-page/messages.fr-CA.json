@@ -1,0 +1,15 @@
+{
+    "CUSTOMER_GREETING": "Bonjour {{customerName}}",
+    "ACCOUNT_NUMBER": "Compte: {{accountNumber}}",
+    "TITLE": "Effectuez votre paiement",
+    "UPDATE_PAYMENT_TITLE": "Mise à jour de mes informations de paiement",
+    "UPDATE_PAYMENT_BUTTON": "METTRE LE PAYMENT À JOUR",
+    "UPDATE_PAYMENT_NO_CURRENT_BALANCE": "Vous n’avez actuellement aucun solde à payer. ",
+    "UPDATE_PAYMENT_SUBHEADER": "En mettant à jour vos informations de paiement, vous passerez à la facturation électronique et votre carte de crédit sera utilisée pour tous les paiements à venir.",
+    "CURRENT_BALANCE_INSTRUCTIONS": "Pour éviter toute interruption de service, effectuez un paiement en ligne maintenant et il sera immédiatement crédité à votre compte.",
+    "NEXT_PAYMENT_INSTRUCTIONS": "Vous n’avez actuellement aucun solde à payer. Gagnez du temps en payant votre prochaine facture à l’avance.",
+    "SUSPENDED_NOTICE": "Votre compte comporte un ou des abonnements qui sont suspendus puisque votre compte est en souffrance.",
+    "SUSPENDED_INSTRUCTIONS": "Le paiement de votre montant total dû réactivera votre ou vos abonnements.",
+    "SUSPENDED_RADIOS_ALERT": "Votre compte comporte un ou des abonnements qui sont suspendus puisque votre compte est en souffrance.",
+    "BACK_BUTTON": "RETOUR"
+}

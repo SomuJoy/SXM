@@ -1,0 +1,91 @@
+@import "sxm.phoenix.imports";
+@import "components/_buttons";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    display: block;
+}
+
+.row {
+    padding: 0;
+
+    .column {
+        padding: 0;
+    }
+}
+
+.button.primary {
+    margin-bottom: 25px;
+}
+
+a.text-link {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.invalid-feedback {
+    a,
+    .text-link {
+        color: inherit;
+    }
+
+    a.alternative-lookup-link {
+        @include underline(default);
+        color: inherit;
+    }
+}
+
+.privacy-policy {
+    margin: 16px 0 -8px;
+}
+
+@include bp(medium) {
+    .column {
+        &.medium-6 {
+            &:first-child {
+                padding-left: 0;
+                padding-right: 12px;
+            }
+        }
+
+        &.medium-6 {
+            &:last-child {
+                padding-left: 12px;
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+:host-context(.basic-mode) {
+    .privacy-policy {
+        display: none;
+    }
+    .button {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+:host-context(.dark-theme) {
+    .button {
+        @include secondary;
+        &:hover {
+            background: $white;
+        }
+
+        &.loading span {
+            background: $blue;
+        }
+    }
+}
+sxm-ui-checkbox-with-label-form-field::ng-deep {
+    span {
+        label {
+            display: initial;
+        }
+    }
+}
+.optIn-checkbox {
+    z-index: 0;
+}

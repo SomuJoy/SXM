@@ -1,0 +1,54 @@
+<ng-container *ngrxLet="confirmationDataForOrganic$ as confirmationData">
+    <section id="hero">
+        <h1>
+            {{ translateKeyPrefix + ".TITLE" + (confirmationData?.satelliteAddCarViewModel ? "_WITH_SXM_STREAMING" : "") | translate }}
+        </h1>
+    </section>
+    <section id="mainContent">
+        <listen-now-with-icon
+            class="hero-integration"
+            [infoForToken]="confirmationData?.listenNowTokenViewModel"
+            [customLink]="'DeCareUseCasesCheckoutFeatureStreamingModule.COMMON.STREAMING_PLAYER_LINK' | translate"
+        ></listen-now-with-icon>
+
+        <listen-now-with-genre-selection
+            class="hero-integration"
+            [infoForToken]="confirmationData?.listenNowTokenViewModel"
+            [customLink]="'DeCareUseCasesCheckoutFeatureStreamingModule.COMMON.STREAMING_PLAYER_LINK' | translate"
+        ></listen-now-with-genre-selection>
+
+        <sxm-ui-deal-redemption-instructions
+            *ngIf="dealRedemptionInstructions$ | async as dealRedemptionInstructions"
+            [copyContent]="dealRedemptionInstructions"
+        ></sxm-ui-deal-redemption-instructions>
+
+        <ng-container *ngIf="confirmationData?.selectedPlanDealType === 'AMZ_DOT'">
+            <redeem-and-link-with-amazon [subscriberInfo]="selectedPlanDealViewModelForAmazon$ | async"></redeem-and-link-with-amazon>
+            <hr />
+        </ng-container>
+
+        <sxm-ui-listen-on-devices-info></sxm-ui-listen-on-devices-info>
+        <ng-container *ngIf="confirmationData.registrationViewModel as registrationViewModel">
+            <register-your-account
+                [securityQuestions]="registrationViewModel.securityQuestions"
+                [account]="registrationViewModel.accountInfo"
+                [credentialState]="registerCredentialsState"
+                (register)="onRegisterAccount($event)"
+                [registrationCompleted]="registrationCompleted$ | async"
+            ></register-your-account>
+            <hr />
+        </ng-container>
+        <ng-container *ngIf="quoteViewModel$ | async as quoteViewModel">
+            <quote-summary
+                *ngIf="quoteViewModel$ | async as quoteViewModel"
+                [quote]="quoteViewModel"
+                [isStreamingFlow]="true"
+                [isNewAccount]="true"
+                [isQCProvince]="confirmationData?.isQuebecProvince"
+                class="alternate-header renewal-quote-alt-header-1"
+                [class.hide-promo-renewal-quote-heading]="confirmationData?.selectedOfferIsStepUpPlan"
+            ></quote-summary>
+        </ng-container>
+        <a sxmUiButtonCta class="theme-light" routerLink="/account/manage/dashboard">{{ translateKeyPrefix + ".LINK_TEXT" | translate }}</a>
+    </section>
+</ng-container>

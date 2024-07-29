@@ -1,0 +1,21 @@
+{
+    "elements": {
+        "rflzWidgetComponent": {
+            "RADIO_LOOKUP_LABEL": "Radio Lookup",
+            "DEVICE_HELP_LABEL": "Device Help",
+            "NEED_HELP_TEXT_LABEL": "Need Help?",
+            "FORM_RADIO_ERROR_MODAL": {
+                "LABEL": "Trial Eligibility",
+                "HEADER": "Congratulations, you are eligible for a SiriusXM Streaming trial!",
+                "COPY": "Please continue to activate your trial and start listening.",
+                "SMALL_COPY": "Note: This does not include in-vehicle satellite radio service.",
+                "BUTTON": "Continue"
+            }
+        },
+        "promoCodeValidationComponent": {
+            "TITLE": "Enter your promo code to receive a special streaming offer.",
+            "NEED_HELP": "Need help?",
+            "CALL_US": "Call us at <a href=\"tel:+1-888-601-6271\">1-888-601-6271</a>"
+        }
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "LINK_TEXT": "GO TO MY ACCOUNT",
+    "TITLE": "Your new plan has been added",
+    "TITLE_WITH_SXM_STREAMING": "Thank you for subscribing to SXM Streaming",
+    "PRICE_AND_TERM_SUBTEXT": "An early termination fee of ({{etfAmount}}) may apply if you cancel within the first {{etfTerm}} months."
+}

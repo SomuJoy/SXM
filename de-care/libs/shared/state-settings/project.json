@@ -1,0 +1,27 @@
+{
+    "name": "shared-state-settings",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/state-settings/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/state-settings/src/**/*.ts", "libs/shared/state-settings/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/shared/state-settings/jest.config.js",
+                "tsConfig": "libs/shared/state-settings/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/shared/state-settings/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {},
+    "tags": ["type:state", "scope:shared-state"]
+}

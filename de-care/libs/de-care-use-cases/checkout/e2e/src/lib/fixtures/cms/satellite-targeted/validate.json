@@ -1,0 +1,13 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "last4DigitsOfRadioId": "00AR",
+        "deviceStatus": "USED",
+        "channelId": "101",
+        "primaryBrandId": "1",
+        "capabilityList": ["AUD", "BOF", "OVR"],
+        "promoCode": "XMAMBSSDR"
+    }
+}

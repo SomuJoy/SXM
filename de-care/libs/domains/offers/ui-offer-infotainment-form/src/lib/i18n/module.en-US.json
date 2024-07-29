@@ -1,0 +1,10 @@
+{
+    "domainsOffersUIOfferInfotainmentFormModule": {
+        "offerInfotainmentFormComponent": {
+            "SUBMIT_BUTTON": "Continue",
+            "CONTENT_CARD_FLAG": "Bundle and Save",
+            "CONTENT_CARD_ADD_PACKAGE": "Add this plan",
+            "CONTENT_CARD_KEEP_PACKAGE": "Keep this plan"
+        }
+    }
+}

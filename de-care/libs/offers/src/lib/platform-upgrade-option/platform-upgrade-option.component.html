@@ -1,0 +1,38 @@
+<div class="header">
+    <h2>
+        {{ "offers.platformUpgradeOptionComponent.GET" | translate }} {{ platform }}
+        {{ "app.packageDescriptions." + packageName + ".name" | translate | withoutPlatformName: packageName }}
+    </h2>
+    <offer-description [offerInfo]="offerInfo"></offer-description>
+</div>
+<plan-grid [packageName]="packageName"></plan-grid>
+<ng-container *ngIf="plan?.type === 'PROMO'; else footer">
+    <p
+        innerHtml="
+                    {{ 'offers.platformUpgradeOptionComponent.DETAILS_FOOTER' | translate }}
+                    {{
+            'offers.platformUpgradeOptionComponent.DETAILS_FOOTER_SUFFIX'
+                | translate
+                    : {
+                          price: plan?.price | currency: 'USD':'symbol-narrow':priceFormat:currentLang,
+                          termLength: plan?.termLength,
+                          monthsPluralized: plan?.termLength | i18nPlural: ('offers.platformUpgradeOptionComponent.PLURAL_MAP.MONTH' | translate),
+                          savings: plan?.savingsPercent,
+                          retailPrice: plan?.retailPrice | currency: 'USD':'symbol-narrow':priceFormat:currentLang
+                      }
+        }}
+                "
+    ></p>
+</ng-container>
+<ng-template #footer>
+    <p [innerHtml]="'offers.platformUpgradeOptionComponent.DETAILS_FOOTER_ONLY' | translate"></p>
+</ng-template>
+<ng-container *ngIf="'app.packageDescriptions.' + packageName | translate as packageDescriptionViewModel">
+    <plan-description-channels [channels]="packageDescriptionViewModel.channels" [excludeTitle]="true"></plan-description-channels>
+    <p [innerHtml]="packageDescriptionViewModel.description || ''"></p>
+</ng-container>
+<button class="button primary full-width" (click)="buyNow.emit()">{{ "offers.platformUpgradeOptionComponent.BUY_NOW" | translate }}</button>
+<div class="column keep">
+    <a class="text-link" (click)="keepSelect.emit()">{{ "offers.platformUpgradeOptionComponent.KEEP_SELECT" | translate }}</a>
+</div>
+<offer-details [details]="offerDetails"></offer-details>

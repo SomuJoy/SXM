@@ -1,0 +1,31 @@
+@import "sxm.phoenix.imports";
+
+.content-container {
+    &:first-child {
+        padding-top: 28px;
+    }
+
+    &:last-child {
+        padding-bottom: 48px;
+    }
+}
+
+:host {
+    display: block;
+
+    h6 {
+        margin-bottom: 16px;
+    }
+
+    h4 {
+        margin-bottom: 24px;
+    }
+
+    hr {
+        background-color: $gray-medium;
+        border: 0;
+        height: 1px;
+        margin: 28px 0;
+        width: 100%;
+    }
+}

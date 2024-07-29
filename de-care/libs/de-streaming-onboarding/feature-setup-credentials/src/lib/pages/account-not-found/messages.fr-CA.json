@@ -1,0 +1,31 @@
+{
+    "HEADLINE": "Nous n’arrivons pas à trouver votre compte.",
+    "SUBTITLE": "Essayons d’utiliser votre code d’identification de la radio ou votre numéro de compte pour trouver votre compte.",
+    "BUTTON_TEXT": "CONTINUER",
+    "PLACEHOLDER_RADIO": "Indiquez votre code d’identification de la radio",
+    "PLACEHOLDER_TEXT": "Le code de radio",
+    "PLACEHOLDER_ACC": "Indiquez votre numéro de compte",
+    "PLACEHOLDER_TEXT_ACC": "Numéro de compte",
+    "RADIO_LINK_INSTRUCTIONS": "How do I find my Radio ID?",
+    "HELP_FINDING_RADIO_TITLE": "Radio ID Help",
+    "RADIO_LOOKUP_MARINE_AVIATION": "Device Help",
+    "RADIOID_ACCOUNT_NUMBER_LOOKUP": "Vous n’avez pas de code d’identification de la radio ou de numéro de compte?",
+    "RADIO_ID_OPTION_LABEL": "Indiquez votre code d’identification de la radio",
+    "RADIO_ID_INPUT_PLACEHOLDER": "Le code de radio",
+    "CONTINUE_BUTTON": "CONTINUER",
+    "ERROR": {
+        "RADIO_ID_INPUT_FORMAT": "Enter a valid Radio ID.",
+        "RADIO_ID_INPUT_REQUIRED": "A Radio ID is required.",
+        "ACCOUNT_INPUT_REQUIRED": "An Account Number is required",
+        "ACCOUNT_INPUT_FORMAT": "Enter a valid Account Number."
+    },
+    "SERVICE_ERROR_MESSAGES": {
+        "INVALID_RADIO_ID": "Le numéro indiqué ne correspond pas à nos dossiers. Veuillez réessayer ou ou discuter avec un agent.",
+        "SYSTEM_ERROR": "Nous sommes désolés. Un problème est survenu. Veuillez réessayer."
+    },
+    "FORGOT_PASSWORD_PAGE_TITLE": "Réinitialiser mon mot de passe | SiriusXM ",
+    "FORGOT_USERNAME_PAGE_TITLE": " Nom d’utilisateur oublié | SiriusXM ",
+    "THIRD_PARTY_ERROR_MESSAGE": "Il semble que cet abonnement soit géré par un fournisseur tiers.",
+    "THIRD_PARTY_SUB_ERROR_MESSAGE": "Les abonnements achetés à travers l’Appli SXM, ou un autre détaillant, doivent être gérés directement auprès de ce fournisseur.",
+    "THIRD_PARTY_LISTEN_NOW": "Connectez-vous pour commencer à écouter."
+}

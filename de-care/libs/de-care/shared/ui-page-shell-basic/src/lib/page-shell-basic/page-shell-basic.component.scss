@@ -1,0 +1,173 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+@import "libs/sxm-assets/scss/legacy-global-paragraph.scss";
+@import "libs/sxm-assets/scss/legacy-global-anchor.scss";
+@import "libs/sxm-assets/scss/legacy-global-heading.scss";
+@import "libs/sxm-assets/scss/legacy-global-input.scss";
+@import "libs/sxm-assets/scss/legacy-global-button.scss";
+@import "libs/sxm-assets/scss/legacy-global-accordion-title.scss";
+@import "libs/sxm-assets/scss/legacy-global-modal.scss";
+::ng-deep {
+    @include legacy-global-paragraph;
+    @include legacy-global-anchor;
+    @include legacy-global-heading;
+    @include legacy-global-input;
+    @include legacy-global-button;
+    @include legacy-global-accordion-title;
+    @include legacy-global-modal;
+    .text-color-gray-dark,
+    .text-color-gray-dark * {
+        color: $gray-dark;
+    }
+    .legal-copy {
+        font-size: calculate-rem(12px);
+        font-weight: calculate-font-weight("book");
+    }
+}
+
+:host {
+    height: 100%;
+    background-color: $white;
+    display: grid;
+    grid-auto-rows: auto 1fr auto;
+    section {
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+        background-color: $white;
+        box-shadow: 0 2px 15px -4px rgba(0, 0, 0, 0.15);
+        position: relative;
+        #provinceHeaderBar {
+            height: 45px;
+            display: grid;
+            align-content: center;
+            de-care-current-province {
+                grid-column: 1/11;
+            }
+            de-care-province-selection {
+                grid-column: 11/11;
+                display: grid;
+                justify-content: right;
+                align-content: center;
+            }
+        }
+        #mainHeaderBar {
+            height: 56px;
+            display: grid;
+            align-content: center;
+            span {
+                grid-column: 1/11;
+                a {
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+            }
+            aside {
+                grid-column: 11/11;
+                display: grid;
+                justify-content: right;
+                align-content: center;
+                button {
+                    text-transform: uppercase;
+                    height: fit-content;
+                }
+            }
+            mat-icon[svgIcon="logo"] {
+                color: $blue; //this color & fill can be deleted when the ui framework is updated
+                fill: $black;
+                width: 104px;
+                height: 56px;
+                @include bp(medium) {
+                    width: 135px;
+                    min-height: 72px;
+                }
+            }
+        }
+        @include bp(medium) {
+            #mainHeaderBar {
+                height: 72px;
+            }
+            de-care-current-province,
+            a {
+                grid-column: 2/11;
+            }
+        }
+    }
+    footer {
+        background-color: $off-white;
+    }
+    &.blue-header-theme {
+        header {
+            background-color: $blue;
+            box-shadow: none;
+            #provinceHeaderBar {
+                de-care-current-province {
+                    color: $white;
+                }
+            }
+            #mainHeaderBar {
+                a > mat-icon[svgIcon="logo"] {
+                    color: $white;
+                    fill: $white;
+                }
+
+                aside {
+                    button {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+    &.black-header-theme {
+        header {
+            background-color: $black;
+            box-shadow: none;
+            #provinceHeaderBar {
+                de-care-current-province {
+                    color: $white;
+                }
+            }
+            #mainHeaderBar {
+                a > mat-icon[svgIcon="logo"] {
+                    color: $white;
+                    fill: $white;
+                }
+
+                aside {
+                    button {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+    &.gray-header-theme {
+        header {
+            background-color: #4c4c4c;
+            box-shadow: none;
+            #provinceHeaderBar {
+                de-care-current-province {
+                    color: $white;
+                }
+            }
+            #mainHeaderBar {
+                a > mat-icon[svgIcon="logo"] {
+                    color: $white;
+                    fill: $white;
+                }
+
+                aside {
+                    button {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}

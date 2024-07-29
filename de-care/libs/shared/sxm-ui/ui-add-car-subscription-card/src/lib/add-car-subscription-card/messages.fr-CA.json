@@ -1,0 +1,13 @@
+{
+    "TITLE_WITH_PRICE": "Profitez aussi de SXM dans votre voiture.<br/> Surclassez votre abonnement et obtenez vos premiers <span>{{termLength}} {{monthsPluralized}} pour {{price}}</span>.",
+    "DISCLAIMER": "Les frais, les taxes et les détails de l’offre s’appliquent.",
+    "DISCLAIMER_NO_FEES": "Les taxes et les détails de l’offre s’appliquent.",
+    "DISCLAIMER_NO_FEES_NO_TAXES": "Les détails de l’offre s’appliquent.",
+    "PLURAL_MAP": {
+        "MONTH": {
+            "=1": "mois",
+            "other": "mois"
+        }
+    },
+    "ADD_SUB_CTA_BUTTON_LABEL": "Surclasser Votre Abonnement"
+}

@@ -1,0 +1,390 @@
+<ng-template #noPackageSelectedError>
+    <div class="invalid-feedback package-selected-error">
+        <p>
+            <!-- must be updated once chat new component implementation is done, should not only rely in lang -->
+            <ng-container *ngIf="isCurrentLangFrench; else chatAvailable">
+                <span [innerHTML]="translateKeyPrefix + '.ERRORS.PICK_A_PACKAGE.CLOSED_CHAT' | translate"></span>
+            </ng-container>
+            <ng-template #chatAvailable>
+                {{ translateKeyPrefix + ".ERRORS.PICK_A_PACKAGE.TEXT" | translate }}
+                <!-- must be updated once chat new component implementation is done -->
+                <chat-with-agent-link [chatLinkText]="translateKeyPrefix + '.ERRORS.PICK_A_PACKAGE.CHAT' | translate" [queue]="'general'"></chat-with-agent-link>
+            </ng-template>
+        </p>
+    </div>
+</ng-template>
+<ng-container *ngIf="changeSubscriptionOffersError$ | async as errorName; else purchase">
+    <div class="blue-background">
+        <div class="content-container change-subscription-error-pill blue-background" *ngIf="errorName === 'NON_ELEGIBLE'">
+            <div class="row no-padding-small align-center blue-background">
+                <div class="column small-12 medium-8 align-left blue-background">
+                    <sxm-ui-alert-pill class="alert-icon-notification rounded-corners">
+                        <p>{{ translateKeyPrefix + ".ERRORS.NON_ELEGIBLE.PILL" | translate }}</p>
+                    </sxm-ui-alert-pill>
+                </div>
+            </div>
+        </div>
+        <hero-component [headerState]="translateKeyPrefix + '.ERRORS.' + errorName + '.TITLE' | translate" [alignLeftMediumUp]="true" class="reduced-hero-padding">
+        </hero-component>
+    </div>
+    <main class="background-offwhite" de-care-page-main>
+        <div class="change-subscription-error-container">
+            <ng-container *ngFor="let plan of yourCurrentPlans$ | async; index as i">
+                <de-care-your-current-plan [planData]="plan" [hasHeader]="i === 0"></de-care-your-current-plan>
+            </ng-container>
+            <hr />
+            <p>{{ translateKeyPrefix + ".ERRORS.BODY" | translate }}</p>
+            <button sxm-proceed-button (click)="onManageMyAccountButton()">
+                {{ translateKeyPrefix + ".ERRORS.MANAGE_ACCOUNT_BUTTON" | translate }}
+            </button>
+        </div>
+    </main>
+</ng-container>
+<ng-template #purchase>
+    <main class="background-offwhite" *ngIf="yourCurrentPlan$ | async as currentPlan">
+        <hero-component
+            *ngIf="heroInfo$ | async as heroInfo"
+            [headerState]="
+                translateKeyPrefix + '.HERO.' + heroInfo.heroTitleKey
+                    | translate
+                        : {
+                              price: heroInfo.cheapestPrice || heroInfo.cheapestDataPrice | currency: 'USD':'symbol-narrow':undefined:currentLang,
+                              termLength: heroInfo.cheapestTermLength,
+                              monthsPlural: heroInfo.cheapestTermLength | i18nPlural: (translateKeyPrefix + '.PLURAL_MAP.MONTH' | translate)
+                          }
+            "
+            [alignLeftMediumUp]="heroInfo.heroTitleKey !== 'MONTHS_FREE'"
+            class="reduced-hero-padding"
+        >
+        </hero-component>
+        <div class="content-container">
+            <div class="row align-center no-padding-small">
+                <div class="column medium-2 no-padding background-white"></div>
+                <div class="column small-12 medium-6 no-padding-small background-white">
+                    <div class="current-plan-container">
+                        <ng-container *ngIf="yourCurrentPlans$ | async as plans">
+                            <ng-container *ngFor="let plan of plans; index as i">
+                                <de-care-your-current-plan [planData]="plan" [hasHeader]="i === 0"></de-care-your-current-plan>
+                            </ng-container>
+                        </ng-container>
+                        <ng-container *ngIf="followOnPlans$ | async as followonPlans">
+                            <div class="follow-on-plans">
+                                <ng-container *ngFor="let followonPlan of followonPlans; index as i">
+                                    <de-care-your-current-plan [planData]="followonPlan" [hasHeader]="i === 0"></de-care-your-current-plan>
+                                </ng-container>
+                            </div>
+                        </ng-container>
+                    </div>
+                    <div class="trial-accordion-container background-white">
+                        <sxm-ui-accordion-stepper #stepper class="pick-your-package" data-e2e="changeSubscriptionPurchase.stepper">
+                            <sxm-ui-accordion-step
+                                *ngIf="getAudioPackageChangeAllowed$ | async"
+                                [label]="translateKeyPrefix + '.STEP_PAGE_TITLES.PICK_PACKAGE' | translate"
+                                [editButtonLabel]="translateKeyPrefix + '.STEP_EDIT_LABEL' | translate"
+                                (editClicked)="onEditPackageStep()"
+                                (active)="onSelectPlanStepActive()"
+                            >
+                                <div class="step-container">
+                                    <p class="trial-first-step-header" *ngIf="currentPlan.isTrial">
+                                        {{
+                                            translateKeyPrefix + ".PACKAGE_SELECTION_STEP.TRIAL_HEADER"
+                                                | translate
+                                                    : {
+                                                          endDate: currentPlan.endDate | date: (dateFormat$ | async):null:locale
+                                                      }
+                                        }}
+                                    </p>
+                                    <marketing-promo-code-form
+                                        #marketingPromoCodeForm
+                                        *ngIf="shouldDisplayMarketingPromoCodeForm$ | async"
+                                        (marketingPromoRedeemed)="onMarketingPromoRedeemed($event)"
+                                        (marketingPromoCodeRemoved)="onMarketingPromoCodeRemoved()"
+                                    >
+                                    </marketing-promo-code-form>
+                                    <ng-container *ngIf="multiOfferSelectionData$ | async as offerOptions">
+                                        <multi-offer-selection-form
+                                            [offerOptions]="offerOptions"
+                                            [allowContinueWithoutSelection]="isDataOnlyAndInfotainmentsAvailable$ | async"
+                                            [preSelectFirstOption]="shouldPreSelectFirstPackage$ | async"
+                                            [resetForm]="resetMultiOfferSelectionForm$ | async"
+                                            (submitted)="onMultiOfferSelectionContinue($event)"
+                                        >
+                                            <ng-container validationErrorCopy>
+                                                <ng-container *ngIf="displayDefaultMultiPackageSelectionError$ | async; else noPackageSelectedError">
+                                                    <p>
+                                                        {{ translateKeyPrefix + ".ERRORS.NO_OFFER_SELECTION.TEXT" | translate
+                                                        }}<button (click)="onSelectCurrentPackage()" class="text-link">
+                                                            {{ translateKeyPrefix + ".ERRORS.NO_OFFER_SELECTION.LINK" | translate }}
+                                                        </button>
+                                                    </p>
+                                                </ng-container>
+                                            </ng-container>
+                                        </multi-offer-selection-form>
+                                    </ng-container>
+                                    <ng-template #inactiveContent>
+                                        <ng-container *ngIf="(selectedOffer$ | async)?.packageName as packageName; else offerNonSelected">
+                                            {{ ("app.packageDescriptions." + packageName | translate).name }}
+                                        </ng-container>
+                                        <ng-template #offerNonSelected>
+                                            {{ translateKeyPrefix + ".PACKAGE_SELECTION_STEP.DATA_ACCOUNT_ONLY_NO_PACKAGE_SELECTED" | translate }}
+                                        </ng-template>
+                                    </ng-template>
+                                    <div class="row align-center skip-link-container" *ngIf="canSkipMultipackageSelectionStep$ | async">
+                                        <a
+                                            class="text-link"
+                                            data-e2e="changeSubscriptionPurchase.stepper.SkipToInfotainment"
+                                            (click)="onSkipToNextStep()"
+                                            *ngIf="getCurrentSubscriptionIsDataOnly$ | async; else skipToTerm"
+                                        >
+                                            {{ translateKeyPrefix + ".SKIPS.INFOTAINMENT" | translate }}
+                                        </a>
+                                        <ng-template #skipToTerm>
+                                            <a class="text-link" (click)="onSelectCurrentPackage()">
+                                                {{ translateKeyPrefix + ".SKIPS.BILLING_PLAN" | translate }}
+                                            </a>
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </sxm-ui-accordion-step>
+                            <sxm-ui-accordion-step
+                                *ngIf="infotainmentOffersAreAvailable$ | async"
+                                [label]="
+                                    translateKeyPrefix + '.STEP_PAGE_TITLES.INFOTAINMENT' + ((shouldInfotainmentSelectionBeOptional$ | async) ? '' : '_NON_OPTIONAL')
+                                        | translate
+                                "
+                                [editButtonLabel]="translateKeyPrefix + '.STEP_EDIT_LABEL' | translate"
+                                (active)="onSelectInfotainmentOfferStepActive()"
+                            >
+                                <p>{{ translateKeyPrefix + ".INFOTAINMENT_STEP.BODY_1" | translate }}</p>
+                                <p *ngIf="currentPlan.isTrial">
+                                    {{
+                                        translateKeyPrefix + ".INFOTAINMENT_STEP.BODY_2"
+                                            | translate
+                                                : {
+                                                      endDate: currentPlan.endDate | date: (dateFormat$ | async):null:locale
+                                                  }
+                                    }}
+                                </p>
+                                <div class="no-infotainment-selected-error-container">
+                                    <ng-container *ngIf="displayInfotainmentSelectionError$ | async" [ngTemplateOutlet]="noPackageSelectedError"></ng-container>
+                                </div>
+                                <offer-infotainment-form
+                                    [planOptions]="infotainmentPlansForForm$ | async"
+                                    (selectedInfotainmentPlans)="onInfotainmentPackageSelected($event)"
+                                    (clickedInfotainmentPlan)="onClickedInfotainmentPlan()"
+                                ></offer-infotainment-form>
+                                <ng-template #inactiveContent>
+                                    <ng-container *ngFor="let packageName of infotainmentPackageNames$ | async">
+                                        <div
+                                            class="selected-infotainment-names"
+                                            [innerHTML]="('app.packageDescriptions.' + packageName | translate).name"
+                                            data-e2e="changeSubscriptionPurchase.selectedInfotainmentPackages"
+                                        ></div>
+                                    </ng-container>
+                                </ng-template>
+                            </sxm-ui-accordion-step>
+                            <sxm-ui-accordion-step
+                                *ngIf="canSelectTerm$ | async"
+                                [label]="translateKeyPrefix + '.STEP_PAGE_TITLES.PICK_TERM' | translate"
+                                [editButtonLabel]="translateKeyPrefix + '.STEP_EDIT_LABEL' | translate"
+                                (active)="onSelectTermStepActive()"
+                            >
+                                <div class="step-container">
+                                    <select-term-type-form
+                                        (termSelected)="onBillingPlanContinue($event)"
+                                        [currentLang]="currentLang"
+                                        [termOptionInfo]="termSelectionInfo$ | async"
+                                        [selectedTermType]="termType$ | async"
+                                    >
+                                    </select-term-type-form>
+                                    <ng-template #inactiveContent>
+                                        <ng-container *ngIf="selectedTermInfo$ | async as selectedTermInfo">
+                                            {{
+                                                translateKeyPrefix +
+                                                    (selectedTermInfo.isAnnual ? ".SELECTED_TERM_ANNUAL" : ".SELECTED_TERM_MONTHLY") +
+                                                    (currentPlan.isQuebec ? "_QC" : "")
+                                                    | translate: { amount: selectedTermInfo.price | currency: "USD":"symbol-narrow":undefined:currentLang }
+                                            }}
+                                        </ng-container>
+                                    </ng-template>
+                                </div>
+                            </sxm-ui-accordion-step>
+                            <sxm-ui-accordion-step
+                                [label]="translateKeyPrefix + '.STEP_PAGE_TITLES.ENTER_PAYMENT_INFO' | translate"
+                                [editButtonLabel]="translateKeyPrefix + '.STEP_EDIT_LABEL' | translate"
+                                (active)="onPaymentInfoActive()"
+                            >
+                                <payment-info
+                                    [accountData]="selectAccount$ | async"
+                                    [serviceError]="serviceError"
+                                    isClosedRadio="false"
+                                    (paymentFormCompleted)="onPaymentFormComplete($event)"
+                                    [loading]="reviewOrderDataLoadIsProcessing$ | async"
+                                ></payment-info>
+                                <ng-template #inactiveContent>
+                                    <ng-container *ngIf="paymentInfoInactiveStep$ | async as paymentInfoInactiveStep">
+                                        {{
+                                            translateKeyPrefix + ".PAYMENT_INFO_INACTIVE"
+                                                | translate: { cardType: paymentInfoInactiveStep.cardType, cardNumber: paymentInfoInactiveStep.cardNumber }
+                                        }}
+                                    </ng-container>
+                                </ng-template>
+                            </sxm-ui-accordion-step>
+                            <sxm-ui-accordion-step
+                                [label]="translateKeyPrefix + '.STEP_PAGE_TITLES.REVIEW' | translate"
+                                [editButtonLabel]="translateKeyPrefix + '.STEP_EDIT_LABEL' | translate"
+                            >
+                                <div class="step-container">
+                                    <feature-toggle-provider [features]="enableQuoteSummaryFeatureToggle$ | async">
+                                        <ng-container *featureToggle="'enableQuoteSummary'">
+                                            <ng-container *ngrxLet="priceChangeViewModel$ as priceChangeViewModel">
+                                                <quote-summary
+                                                    *ngIf="orderSummaryData$ | async as orderSummaryData"
+                                                    [showUnusedCreditLine]="true"
+                                                    [giftCardUsed]="false"
+                                                    [isNewAccount]="false"
+                                                    [isClosedRadio]="false"
+                                                    [isChangeSubscription]="true"
+                                                    [isCurrentSubscriptionTrial]="currentPlan.isTrial"
+                                                    [currentSubscriptionEndDate]="currentPlan.endDate"
+                                                    [quote]="orderSummaryData.quotes"
+                                                    [priceChangeMessagingType]="priceChangeViewModel?.priceChangeMessagingType"
+                                                    [priceChangeMessagingTypeFeatureFlag]="priceChangeViewModel?.priceChangeMessagingTypeFeatureFlag"
+                                                ></quote-summary>
+                                            </ng-container>
+                                        </ng-container>
+
+                                        <ng-container *featureToggle="'!enableQuoteSummary'">
+                                            <order-summary
+                                                *ngIf="orderSummaryData$ | async as orderSummaryData"
+                                                [showUnusedCreditLine]="true"
+                                                [giftCardUsed]="false"
+                                                [isNewAccount]="false"
+                                                [isClosedRadio]="false"
+                                                [isChangeSubscription]="true"
+                                                [isCurrentSubscriptionTrial]="currentPlan.isTrial"
+                                                [quote]="orderSummaryData.quotes"
+                                            ></order-summary>
+                                        </ng-container>
+                                    </feature-toggle-provider>
+
+                                    <form (submit)="onConfirmReviewAndSubmit($event)" [class.charge-form]="showPriceIncrease$ | async">
+                                        <charge-agreement-with-validation
+                                            [submitted]="submitted"
+                                            (checkChange)="agreementAccepted = $event"
+                                        ></charge-agreement-with-validation>
+                                        <button
+                                            sxm-proceed-button
+                                            type="submit"
+                                            [loading]="submitChangeSubscriptionDataIsProcessing$ | async"
+                                            data-e2e="changeSubscriptionPurchase.submitButton"
+                                        >
+                                            {{ translateKeyPrefix + ".SUBMIT_CHANGE_BUTTON" | translate }}
+                                        </button>
+                                    </form>
+                                </div>
+                            </sxm-ui-accordion-step>
+                        </sxm-ui-accordion-stepper>
+                    </div>
+                </div>
+                <div class="column medium-2 no-padding background-white"></div>
+            </div>
+        </div>
+        <sxm-ui-modal
+            [closed]="closePackageChangeConfirmationModal$ | async"
+            (modalClosed)="handlePackageSelectionModalClosed()"
+            [titlePresent]="true"
+            [title]="translateKeyPrefix + '.PACKAGE_CHANGE_CONFIRMATION.TITLE' | translate"
+            class="plan-change-modal"
+        >
+            <!--Avoiding multiple subscriptions to the same thing-->
+            <ng-container
+                [ngTemplateOutletContext]="{
+                    selectedPackageIsDowngrade: selectedPackageIsDowngrade$ | async,
+                    currentFollowOnPlansContainPromo: currentFollowOnPlansContainPromo$ | async,
+                    currentPackageTranslations: 'app.packageDescriptions.' + currentPlan.packageName | translate
+                }"
+                [ngTemplateOutlet]="modalTemplate"
+            >
+            </ng-container>
+
+            <ng-template
+                #modalTemplate
+                let-selectedPackageIsDowngrade="selectedPackageIsDowngrade"
+                let-currentPackageTranslations="currentPackageTranslations"
+                let-currentFollowOnPlansContainPromo="currentFollowOnPlansContainPromo"
+            >
+                <div class="plan-change-modal--header" data-test="packageChangeConfirmationModalHeader">
+                    <h4>
+                        <ng-container *ngIf="selectedPackageIsDowngrade; else promoLoss">
+                            {{
+                                translateKeyPrefix + ".PACKAGE_CHANGE_CONFIRMATION" + (currentFollowOnPlansContainPromo ? ".DEFAULT_HEADER" : ".DOWNGRADE_HEADER") | translate
+                            }}
+                        </ng-container>
+                        <ng-template #promoLoss>
+                            {{ translateKeyPrefix + ".PACKAGE_CHANGE_CONFIRMATION.DEFAULT_HEADER" | translate }}
+                        </ng-template>
+                    </h4>
+                    <hr />
+                    <de-care-your-current-plan [planData]="currentPlan"></de-care-your-current-plan>
+                </div>
+                <div class="plan-change-modal--diff">
+                    <div class="plan-change-modal--diff--container">
+                        <ng-container *ngIf="currentPackageTranslations | getDiffExcludedChannels: (selectedOffer$ | async).packageName as excludedChannels">
+                            <p class="plan-change-modal--diff--container--header">
+                                <b>{{
+                                    translateKeyPrefix + ".PACKAGE_CHANGE_CONFIRMATION.LOSE_OF_FEATURES_HEADER" + (currentFollowOnPlansContainPromo ? "_ANOTHER" : "")
+                                        | translate
+                                }}</b>
+                            </p>
+                            <ul class="checkmark-list" *ngFor="let channel of excludedChannels">
+                                <li *ngFor="let description of channel.descriptions" data-icon="xmark-sm" class="list-item-for-x-mark" data-test="excludedChannelsListModal">
+                                    <svg class="icon icon-utility large">
+                                        <use class="icon-x-mark-flex-stroke" xlink:href="#icon-x-mark-flex-stroke"></use>
+                                    </svg>
+                                    <span [innerHTML]="description" class="text-next-to-x-mark"></span>
+                                </li>
+                            </ul>
+                        </ng-container>
+                        <ng-container *ngIf="!selectedPackageIsDowngrade">
+                            <p class="plan-change-modal--diff--container--header">
+                                <b>{{ translateKeyPrefix + ".PACKAGE_CHANGE_CONFIRMATION.SUBSCRIPTION_UPDATE" | translate }}</b>
+                            </p>
+                        </ng-container>
+                        <button sxm-proceed-button (click)="onPackageSelectionModalAccepted()" data-track-click="Accept & Continue">
+                            {{ translateKeyPrefix + ".PACKAGE_CHANGE_CONFIRMATION.CONTINUE_BUTTON" | translate }}
+                        </button>
+                        <div class="keep-my-selection">
+                            <ng-container *ngIf="selectedPackageIsDowngrade; else promotionLoss">
+                                <a
+                                    class="text-link"
+                                    (click)="onPackageSelectionModalKeepAllAccess()"
+                                    [attr.data-track-click]="
+                                        translateKeyPrefix + '.PACKAGE_CHANGE_CONFIRMATION.KEEP_ALL_ACCESS_LINK' | translate: { packageName: currentPackageTranslations.name }
+                                    "
+                                >
+                                    {{
+                                        translateKeyPrefix + ".PACKAGE_CHANGE_CONFIRMATION.KEEP_ALL_ACCESS_LINK"
+                                            | translate
+                                                : {
+                                                      packageName: currentPackageTranslations.name
+                                                  }
+                                    }}
+                                </a>
+                            </ng-container>
+                            <ng-template #promotionLoss>
+                                <a class="text-link" (click)="onPackageSelectionModalKeepMyPromo()" data-track-click="Keep my promotional pricing">
+                                    {{ translateKeyPrefix + ".PACKAGE_CHANGE_CONFIRMATION.KEEP_MY_PROMO_LINK" | translate }}
+                                </a>
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </sxm-ui-modal>
+    </main>
+    <!-- For now is going to be stuck in full price -->
+    <sxm-ui-legal-copy
+        [legalCopy]="translateKeyPrefix + (isQuebec ? '.LEGAL_COPY_QC' : '.LEGAL_COPY') | translate: { mrfAmount: mrfAmountInCA | currency: 'USD':'':'1.1-2':currentLang }"
+    ></sxm-ui-legal-copy>
+</ng-template>

@@ -1,0 +1,45 @@
+<p>
+    {{ translateKeyPrefix + ".CHOOSE_PROMO_LENGTH_TEXT" | translate }}
+</p>
+<div *ngIf="!billingTermForm.valid && submitted" class="invalid-feedback">
+    <p>{{ translateKeyPrefix + ".NO_BILLING_SELECTED_ERROR" | translate }}</p>
+</div>
+<form [formGroup]="billingTermForm" (submit)="onSubmit()" data-e2e="cancellationBillingTermForm">
+    <ng-container *ngFor="let plan of plans; let i = index">
+        <div class="radio-item" [attr.data-test]="'pickYourBillingPlan' + i">
+            <input type="radio" class="radio" id="offer-{{ i }}" name="billingTerms" [value]="plan.planCode" formControlName="billingTerms" />
+            <label class="input-label" for="offer-{{ i }}" (click)="selectedPlan = plan">
+                <ng-container *ngIf="plan.termLength == 1 || plan.term === 'monthly'; else upfront">
+                    {{
+                        translateKeyPrefix + ".COMPATIBLE_OFFER_PAY_MONTHLY_TEXT"
+                            | translate
+                                : {
+                                      termlength: plan.termLength,
+                                      pluralizedMonth: plan.termLength | i18nPlural: (translateKeyPrefix + ".TERM_LENGTH.PLURAL_MAP.MONTHS" | translate),
+                                      savingsPercentage: plan.savingsPercentage,
+                                      price: plan.price | currency: "USD":"symbol-narrow":undefined:currentLang
+                                  }
+                    }}
+                </ng-container>
+                <ng-template #upfront>
+                    {{
+                        translateKeyPrefix + ".COMPATIBLE_OFFER_PAY_UPFRONT_TEXT"
+                            | translate
+                                : {
+                                      termlength: plan.termLength,
+                                      savingsPercentage: plan.savingsPercentage,
+                                      price: plan.price | currency: "USD":"symbol-narrow":undefined:currentLang
+                                  }
+                    }}
+                </ng-template>
+            </label>
+        </div>
+        <span class="mt-1 text-gray small-copy">
+            {{ translateKeyPrefix + ".RETAIL_PRICE_AFTER" | translate: { retailPrice: plan.retailPrice | currency: "USD":"symbol-narrow":undefined:currentLang } }}
+        </span>
+    </ng-container>
+
+    <button type="submit" sxm-proceed-button qatag="BillingTermContinueButton" data-test="BillingTermContinueButton">
+        {{ translateKeyPrefix + ".CONTINUE_BUTTON" | translate }}
+    </button>
+</form>

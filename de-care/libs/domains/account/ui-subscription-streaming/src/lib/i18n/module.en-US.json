@@ -1,0 +1,61 @@
+{
+    "DomainsAccountUiSubscriptionStreamingModule": {
+        "CredentialsFoundSignInComponent": {
+            "HEADLINE": "Good news. You already have a login to listen on the SXM App.",
+            "INSTRUCTIONS": "Simply log in to the SXM App with the username and password you created when you last registered. If you’ve forgotten your login, we can help you retrieve it.",
+            "BUTTON_TEXT": "Sign In",
+            "FORGOT_TEXT": "Forgot your username or password?"
+        },
+        "SetupSubscriptionCredentialsFormComponent": {
+            "HEADLINE": "Your subscription includes streaming.",
+            "SUBTITLE": "Set up your login to start listening in the SXM App.",
+            "SUB_HEADLINE": "Create username and password",
+            "INSTRUCTIONS": "<p>These are the login credentials you’ll use to manage your account online, as well as to listen in the SXM App.</p>",
+            "CONTINUE_BUTTON_TEXT": "Continue",
+            "LINK_TEXT": "Want to sign in?",
+            "SYSTEM_ERROR": "We’re sorry… something went wrong. We’re experiencing technical issues and are working on resolving it. Please try again.",
+            "USERNAME": {
+                "LABEL": "Username/Email",
+                "ERRORS": {
+                    "REQUIRED": "Enter a username/valid email.",
+                    "ALREADY_EXIST": "That username/email is associated with another account."
+                }
+            },
+            "EMAIL": {
+                "LABEL": "Email",
+                "ERRORS": {
+                    "REQUIRED": "Enter a valid email.",
+                    "ALREADY_EXIST": "That email is associated with another account."
+                }
+            },
+            "PASSWORD": {
+                "LABEL": "Password",
+                "ERRORS": {
+                    "REQUIRED": "Enter a valid password.",
+                    "LENGTH": "Your password must be {{ min }} to {{ max }} characters long.",
+                    "POLICY": "Your password must contain at least one character from at least 3 different groups, as explained in our password policy.",
+                    "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}",
+                    "GENERIC": "Your password does not fulfill all the requirements",
+                    "PII_DATA": "Password cannot contain first name, last name or email address."
+                }
+            },
+            "PLURAL_MAP": {
+                "WORD": {
+                    "=1": "word",
+                    "other": "words"
+                }
+            },
+            "CONFIRM_EMAIL_UPDATE_MODAL_HEADER": "Your Subscription",
+            "CONFIRM_EMAIL_UPDATE_MODAL_TITLE": "Confirm email update",
+            "CONFIRM_EMAIL_UPDATE_MODAL_SUBTITLE": "The email you entered is different than the one currently on your subscription. Would you like to replace your existing email with the suggestion below?",
+            "CONFIRM_EMAIL_UPDATE_MODAL_FROM_EMAIL": "FROM",
+            "CONFIRM_EMAIL_UPDATE_MODAL_TO_EMAIL": "TO",
+            "CONFIRM_EMAIL_UPDATE_MODAL_BUTTON_TEXT": "UPDATE EMAIL",
+            "CONFIRM_EMAIL_UPDATE_MODAL_LINK_TEXT": "CONTINUE WITHOUT UPDATING",
+            "EMAIL_UPDATE_MODAL_SUBTITLE": "Your subscription will be updated with the email address you provided.",
+            "EMAIL_UPDATE_MODAL_BUTTON_TEXT": "UPDATE EMAIL",
+            "EMAIL_UPDATE_MODAL_LINK_TEXT": "CONTINUE WITHOUT UPDATING",
+            "EMAIL_UPDATE_MSG": ""
+        }
+    }
+}

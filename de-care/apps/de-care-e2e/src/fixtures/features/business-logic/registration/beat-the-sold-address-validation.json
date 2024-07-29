@@ -1,0 +1,18 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "valid": true,
+        "emailValidation": { "verificationStatus": "VALID", "verificationMessage": "", "suggestedEmail": "", "valid": true },
+        "usernameValidation": null,
+        "billingAddressValidation": null,
+        "serviceAddressValidation": {
+            "confidenceLevel": "High",
+            "correctedAddress": [{ "addressLine1": " ", "addressLine2": " ", "city": " ", "state": " ", "zip": " " }],
+            "resultCode": "SUCCESS",
+            "validationStatus": "VALID"
+        },
+        "ccValidation": null
+    }
+}

@@ -1,0 +1,56 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "JOHN",
+            "accountProfile": { "accountRegistered": false },
+            "serviceAddress": { "state": "ON" },
+            "subscriptions": [
+                {
+                    "id": "10000126973",
+                    "plans": [
+                        {
+                            "dataCapable": false,
+                            "code": "Introductory - Select - 12mo - wActv",
+                            "packageName": "SIR_CAN_EVT",
+                            "termLength": 12,
+                            "startDate": "2023-08-14T00:00:00-04:00",
+                            "endDate": "2024-08-14T00:00:00-04:00",
+                            "nextCycleOn": null,
+                            "type": "INTRODUCTORY",
+                            "capabilities": ["IPAUD", "AUD"]
+                        }
+                    ],
+                    "followonPlans": [
+                        {
+                            "dataCapable": false,
+                            "code": "Select - 12mo - wActv",
+                            "packageName": "SIR_CAN_EVT",
+                            "termLength": 12,
+                            "startDate": null,
+                            "endDate": null,
+                            "nextCycleOn": null,
+                            "type": "SELF_PAID",
+                            "capabilities": []
+                        }
+                    ],
+                    "radioService": {
+                        "id": "10000129021",
+                        "last4DigitsOfRadioId": "6630",
+                        "vehicleInfo": { "year": null, "make": null, "model": null },
+                        "is360LCapable": false
+                    },
+                    "streamingService": { "id": "10000130045", "maskedUserName": "jeu******@siriusxm.com", "status": "Active" },
+                    "status": "Active"
+                }
+            ],
+            "billingSummary": { "creditCard": { "last4Digits": "1111", "type": "VISA", "status": "ACTIVE" } },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true
+        },
+        "marketingId": "990005196630",
+        "marketingAcctId": "9277"
+    }
+}

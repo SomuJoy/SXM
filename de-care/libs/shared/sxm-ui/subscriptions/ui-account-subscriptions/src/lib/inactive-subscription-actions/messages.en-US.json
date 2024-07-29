@@ -1,0 +1,9 @@
+{
+    "RADIO_ID": "Radio ID: {{radioId}}",
+    "PLAN_TITLE": "Plan",
+    "NO_PLANS": "No active plan",
+    "NONPAY_PLAN": "Suspended",
+    "NONPAY_MESSAGE": "Your account is past due.",
+    "ACTIVATE_LINK": "Activate",
+    "REMOVE_LABEL": "Remove from my account"
+}

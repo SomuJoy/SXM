@@ -1,0 +1,28 @@
+order-summary-oem {
+    width: 100%;
+}
+
+.agreement {
+    margin-top: 20px;
+}
+
+.checkbox-item {
+    .checkbox {
+        &:checked + label::after {
+            top: 10px;
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    label {
+        padding-left: 48px;
+
+        &::before {
+            top: 6px;
+            width: 36px;
+            height: 36px;
+            border: 0;
+        }
+    }
+}

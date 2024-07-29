@@ -1,0 +1,43 @@
+{
+    "DeCareUseCasesCheckoutUiCommonModule": {
+        "SatelliteUpsellsFormComponent": {
+            "HEADER_SINGLE_UPSELL": "(Optionnel)",
+            "HEADER_MULTI_UPSELL": "(Optionnel : Vous pouvez en choisir un ou les deux)",
+            "SUBMIT_BUTTON": "Continuer"
+        },
+        "StreamingUpsellsFormComponent": {
+            "HEADER_SINGLE_UPSELL": "(Optionnel)",
+            "HEADER_MULTI_UPSELL": "(Optionnel : Vous pouvez en choisir un ou les deux)",
+            "SUBMIT_BUTTON": "Continuer"
+        },
+        "AccountInfoAndPaymentInfoFormComponent": {
+            "BILLING_DETAILS_TITLE": "Détails de la facturation",
+            "PAYMENT_DETAILS_TITLE": "Détails de la carte de crédit",
+            "CONFIRM_YOUR_ADDRESS": "Veuillez confirmer votre adresse",
+            "CONTINUE_BUTTON_TEXT": "Revoir Ma Commande",
+            "CREDIT_CARD_PROCESSING_ERROR": "Nous sommes dans l'impossibilité d'autoriser votre carte de crédit. Veuillez mettre à jour vos renseignements de paiement.",
+            "UNEXPECTED_ERROR": "Une erreur inattendue est apparue. Veuillez réessayer.",
+            "CARD_TYPE_ICONS": ["visa", "mc", "amex"]
+        },
+        "AccountInfoBasicAndPaymentInfoFormComponent": {
+            "BILLING_DETAILS_TITLE": "Infos de paiement",
+            "CONTINUE_BUTTON_TEXT": "Revoir Ma Commande",
+            "CREDIT_CARD_PROCESSING_ERROR": "Nous sommes dans l'impossibilité d'autoriser votre carte de crédit. Veuillez mettre à jour vos renseignements de paiement.",
+            "UNEXPECTED_ERROR": "Une erreur inattendue est apparue. Veuillez réessayer."
+        },
+        "SxmUiLastNameFormFieldComponent": {
+            "PLACEHOLDER": "Nom",
+            "ERROR_REQUIRED": "Entrez votre nom."
+        },
+        "PhoneNumberFormFieldComponent": {
+            "PLACEHOLDER": "Numéro de téléphone",
+            "ERROR_REQUIRED": "Entrez un numéro de téléphone valide."
+        },
+        "UsernameAndPasswordFormComponent": {
+            "CONTINUE_BUTTON_TEXT": "Continuer",
+            "EMAIL_IN_USE_ERROR_MSG": "Le nom d’utilisateur ou le courriel est déjà utilisé.",
+            "FORM_FIELD_USERNAME_LABEL": "Nom d’utilisateur",
+            "SYSTEM_ERROR": "Désolé, nous avons des difficultés pour répondre à cette demande. Veuillez réessayer."
+        }
+    }
+}

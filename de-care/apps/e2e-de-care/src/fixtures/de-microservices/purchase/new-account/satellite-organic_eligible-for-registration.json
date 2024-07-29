@@ -1,0 +1,15 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "email": "KHZFFE.EJOU@SIRIUSXM.COM",
+        "status": "SUCCESS",
+        "radioId": null,
+        "subscriptionId": "10000204328",
+        "accountNumber": "10000207304",
+        "isOfferStreamingEligible": false,
+        "isEligibleForRegistration": true,
+        "isUserNameSameAsEmail": true
+    }
+}

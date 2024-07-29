@@ -1,0 +1,15 @@
+{
+    "YOUR_PAYMENT_IS_PAST_DUE": "Your payment is past due.",
+    "YOUR_PAYMENT_IS_DUE_IN": "Your payment is due in {{daysDue}} {{daysPlural}}.",
+    "YOUR_PAYMENT_IS_DUE_TODAY": "Your payment is due today.",
+    "YOUR_PAYMENT_IS_DUE_NO_DATE": "Your payment is due soon.",
+    "PLEASE_VERIFY": "Please verify your payment method.",
+    "MAKE_PAYMENT_TO_REACTIVATE": "Make a payment to reactivate your subscription(s).",
+    "MAKE_A_PAYMENT": "PAY NOW",
+    "PLURAL_MAP": {
+        "DAYS": {
+            "=1": "day",
+            "other": "days"
+        }
+    }
+}

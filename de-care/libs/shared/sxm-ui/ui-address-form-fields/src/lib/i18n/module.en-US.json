@@ -1,0 +1,31 @@
+{
+    "sharedSxmUiUiAddressFormFieldsModule": {
+        "addressFormFieldsComponent": {
+            "NEW_CC": {
+                "CC_ADDRESS": "Address (include Apt/Suite/Unit)",
+                "ERROR_CC_ADDRESS": "Enter a valid street address.",
+                "CC_CITY": "City",
+                "ERROR_CC_CITY": "Enter your city.",
+                "INVALID_CC_CITY": "Enter a valid city.",
+                "CC_STATE": "State",
+                "ERROR_CC_STATE": "Enter your state.",
+                "CC_ZIPCODE": "Zip Code",
+                "ERROR_CC_ZIPCODE": "Enter your zip code."
+            },
+            "ERROR_CVV_FOUND": "The field contains characters that resemble credit card security information. Please review and make appropriate changes to continue."
+        },
+        "addressFormFieldsOemComponent": {
+            "ADDRESS_LINE_1": "Address Line 1",
+            "ADDRESS_LINE_2": "Address Line 2",
+            "ERROR_ADDRESS": "Enter a valid street address.",
+            "CITY": "City",
+            "ERROR_CITY": "Enter your city.",
+            "STATE": "State",
+            "ERROR_STATE": "Enter your state.",
+            "ERROR_STATE_INACCURATE": "Enter a valid state.",
+            "ZIPCODE": "Zip Code",
+            "ERROR_ZIPCODE": "Enter your zip code.",
+            "ERROR_CVV_FOUND": "The field contains characters that resemble credit card security information. Please review and make appropriate changes to continue."
+        }
+    }
+}

@@ -1,0 +1,12 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+svg.icon {
+    @include icon-size(40px);
+    use {
+        stroke: $black;
+    }
+}
+.description {
+    margin-bottom: 8px;
+}

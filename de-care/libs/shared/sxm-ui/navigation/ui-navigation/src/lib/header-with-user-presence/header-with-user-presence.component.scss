@@ -1,0 +1,55 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: grid;
+    header {
+        padding: 0 16px;
+        height: 56px;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        align-content: center;
+        background-color: $black;
+        @include bp(small) {
+            height: 72px;
+            grid-template-columns: repeat(12, 1fr);
+        }
+        nav {
+            a {
+                svg {
+                    height: 20px;
+                    max-width: 104px;
+                    @include bp(small) {
+                        height: 32px;
+                        max-width: 148px;
+                    }
+                    use {
+                        color: $white;
+                        fill: $white;
+                    }
+                }
+            }
+        }
+        aside {
+            grid-column: 11 / span 2;
+            display: flex;
+            justify-content: flex-end;
+            grid-gap: 12px;
+            --panel-margin: 14px;
+            align-items: center;
+            button {
+                color: $white;
+                font-weight: calculate-font-weight("bold");
+                background: transparent;
+                border-color: transparent;
+                cursor: pointer;
+            }
+            @include bp(small) {
+                --panel-margin: 26px;
+                position: relative;
+            }
+            sxm-ui-nav-dropdown {
+                z-index: 1;
+            }
+        }
+    }
+}

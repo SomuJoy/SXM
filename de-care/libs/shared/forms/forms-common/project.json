@@ -1,0 +1,24 @@
+{
+    "name": "shared-forms-forms-common",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/shared/forms/forms-common/src",
+    "projectType": "library",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/forms/forms-common/**/*.ts"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/shared/forms/forms-common"],
+            "options": {
+                "jestConfig": "libs/shared/forms/forms-common/jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": ["type:ui-util", "scope:shared-ui-util"]
+}

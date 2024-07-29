@@ -1,0 +1,36 @@
+{
+    "checkout": {
+        "satelliteStreamingPurchasePageComponent": {
+            "ALERT_INVALID": "Sorry, this offer is not currently available.",
+            "DEFAULT_OFFER_HERO": "Let's find another great offer for you!",
+            "SUB_HEADER": "For further assistance please call us at 1-888-539-7474 or <a id=\"chat-247-Link-body1\" class=\"text-link\">chat with an agent</a>.",
+            "SUB_HEADER_OFFER_NOT_AVAILABLE": "For assistance with this offer, you can call us at 1-888-539-7474.",
+            "LOGIN_LINK": "https://care.siriusxm.ca/login_view.action",
+            "FURTHER_ASSISTANCE": "For further assistance please call us at 1-888-539-7474 or ",
+            "OR_CALL": " or call {{assistancePhone}}",
+            "ASSISTANCE_PHONE_MAP": {
+                "109": "1-833-838-7846",
+                "112": "1-833-838-7846",
+                "113": "1-833-838-7846",
+                "other": "1-866-635-0565"
+            },
+            "NO_RADIO": {
+                "NO_RADIO_TEXT": "No radio?",
+                "LINK_URL": "https://www.siriusxm.ca/NOUVstreaming",
+                "LINK_TEXT": "Get the SXM App"
+            }
+        },
+        "leadOfferPlanSelectionPageComponent": {
+            "HERO": {
+                "TITLE": "Pick a plan & get {{termLength}} months for ${{price}}",
+                "SUBTITLE": "See Offer Details below. Change or cancel anytime."
+            }
+        },
+        "thanksComponent": {
+            "STREAMING_PLAYER_LINK": {
+                "STREAMING_RTP_OFFER": "",
+                "SATELLITE_OFFER": ""
+            }
+        }
+    }
+}

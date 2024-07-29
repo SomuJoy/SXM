@@ -1,0 +1,37 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": [
+        {
+            "subActionType": "ADD_SUB",
+            "status": "Active",
+            "id": "1",
+            "plans": [
+                {
+                    "code": "Trial - Premier Streaming - 3mo - $0.00 - (RTD)",
+                    "packageName": "SIR_IP_SA",
+                    "termLength": 3,
+                    "endDate": "2022-12-31",
+                    "type": "RTD_OFFER",
+                    "expired": false,
+                    "capabilities": []
+                }
+            ],
+            "followonPlans": [],
+            "radioService": {
+                "last4DigitsOfRadioId": "1234",
+                "vehicleInfo": {
+                    "model": "F-150",
+                    "make": "Ford",
+                    "year": 2021
+                }
+            },
+            "streamingService": {
+                "status": "Active",
+                "randomCredentials": false,
+                "maskedUserName": "em****@il.com"
+            }
+        }
+    ]
+}

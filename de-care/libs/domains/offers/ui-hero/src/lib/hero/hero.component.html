@@ -1,0 +1,26 @@
+<header class="background-offwhite">
+    <!-- hero : begin -->
+    <div class="hero hero-package background-gray-light" [ngClass]="{ 'image-state': showImage }" [class.military]="isMilitary">
+        <div class="content-container">
+            <div class="row hero--content no-padding-small" [ngClass]="isRenewal ? 'align-start' : 'align-center'">
+                <!-- TODO: update the ngClass to make left-aligned be the default while centered should be the variant -->
+                <div
+                    class="column small-12 hero--content-copy"
+                    [ngClass]="{
+                        'medium-5 align-center': showImage,
+                        'medium-8 align-left': !showImage,
+                        'inner-content-align-start': alignLeftMediumUp,
+                        'align-center-medium-up text-center-medium-up': !showImage && !alignLeftMediumUp
+                    }"
+                >
+                    <h2 class="hero--content-copy--title" [class.autoWidthTitle]="autoWidthTitle" data-e2e="heroComponent.heading" [innerHTML]="title"></h2>
+                    <p *ngIf="subtitle" data-e2e="heroComponent.subtitle" class="hero--content-copy--subtitle legal-copy text-color-white" [innerHTML]="subtitle"></p>
+                </div>
+                <div *ngIf="showImage" class="column small-12 medium-5 align-middle no-padding">
+                    <img class="hero--content--image" [src]="imageTranslateResource | translate" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- hero : end -->
+</header>

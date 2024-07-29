@@ -1,0 +1,31 @@
+{
+    "name": "domains-offers-ui-promo-code-validation-form",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/offers/ui-promo-code-validation-form/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/offers/ui-promo-code-validation-form/src/**/*.ts", "libs/domains/offers/ui-promo-code-validation-form/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/offers/ui-promo-code-validation-form/jest.config.js",
+                "tsConfig": "libs/domains/offers/ui-promo-code-validation-form/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/offers/ui-promo-code-validation-form/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:ui", "scope:domain-ui"]
+}

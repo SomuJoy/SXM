@@ -1,0 +1,120 @@
+{
+    "DeCareUseCasesCheckoutFeatureSatelliteModule": {
+        "PurchaseOrganicPageComponent": {
+            "RADIO_INFO": {
+                "RADIO_ID_MASKED": "Radio ID: (****{{lastFour}})",
+                "VEHICLE": "Vehicle: {{vehicleInfo}}"
+            },
+            "PLAN_GRID": {
+                "IN_TRIAL": "In Your Trial",
+                "MONTHLY_PRICE": "<p data-duration-and-price>{{termLength}} mo. for ${{price}}</p><p data-retail-price>then ${{retailPrice}}/mo.</p>",
+                "HEADER_INSTRUCTIONS": {
+                    "MAIN_COPY": "Select one of our popular plans below and get 3 more months.",
+                    "SEE_OFFER_DETAILS": "See Offer Details below."
+                }
+            },
+            "STEPS": {
+                "DEVICE_LOOKUP": {
+                    "TITLE": "Let's verify car radio",
+                    "TITLE_INACTIVE": "{{stepNumber}}. Let's verify car radio"
+                },
+                "PAYMENT_INFO": {
+                    "TITLE": "Your subscription and billing information",
+                    "TITLE_INACTIVE": "Your subscription and billing information",
+                    "YOUR_PLAN": "Your Plan",
+                    "TERM_AND_PRICE": "{{termLength}} {{monthString}} for {{fullPrice}}, then {{retailPrice}}/mo",
+                    "TERM_AND_PRICE_FREE": "{{termLength}} {{monthString}} for Free. Then {{retailPricePerMonth}}/mo.",
+                    "INSTRUCTIONS_POST_TRIAL": "You'll get to review and confirm your order before subscribing and can change or cancel at anytime.",
+                    "INSTRUCTIONS_IN_TRIAL": "Your {{termLength}}-month trial ends on {{trialEndDate}}, and your promotion will then automatically begin. You'll get to review and confirm your order before subscribing and can change or cancel at anytime",
+                    "CHANGE_SELECTED_OFFER_LINK_COPY": "Choose another promotion",
+                    "SELECTED_PAYMENT_METHOD_SUMMARY": "{{cardType}} ending in {{cardNumberLastFour}}",
+                    "OFFER_SELECTION_MODAL": {
+                        "TITLE_BAR": "Subscription Plan Options"
+                    },
+                    "PLURAL_MAP": {
+                        "MONTH": {
+                            "=1": "month",
+                            "other": "months"
+                        }
+                    }
+                },
+                "REVIEW": {
+                    "TITLE": "Review and complete your order",
+                    "CONTINUE_BUTTON_TEXT": "Complete My Order"
+                }
+            }
+        },
+        "PurchaseTargetedPageComponent": {
+            "RADIO_INFO": {
+                "RADIO_ID_MASKED": "Radio ID: (****{{lastFour}})",
+                "VEHICLE": "Vehicle: {{vehicleInfo}}"
+            },
+            "PLAN_GRID": {
+                "IN_TRIAL": "In Your Trial",
+                "MONTHLY_PRICE": "<p data-duration-and-price>{{termLength}} mo. for ${{price}}</p><p data-retail-price>then ${{retailPrice}}/mo.</p>",
+                "HEADER_INSTRUCTIONS": {
+                    "MAIN_COPY": "Select one of our popular plans below and get 3 more months.",
+                    "SEE_OFFER_DETAILS": "See Offer Details below."
+                }
+            },
+            "STEPS": {
+                "PAYMENT_INFO": {
+                    "TITLE": "Your subscription and billing information",
+                    "TITLE_INACTIVE": "Your subscription and billing information",
+                    "YOUR_PLAN": "Your Plan",
+                    "TERM_AND_PRICE": "{{termLength}} {{monthString}} for {{fullPrice}}, then {{retailPrice}}/mo",
+                    "TERM_AND_PRICE_FREE": "{{termLength}} {{monthString}} for Free. Then {{retailPricePerMonth}}/mo.",
+                    "INSTRUCTIONS_POST_TRIAL": "You'll get to review and confirm your order before subscribing and can change or cancel at anytime.",
+                    "INSTRUCTIONS_IN_TRIAL": "Your {{termLength}}-month trial ends on {{trialEndDate}}, and your promotion will then automatically begin. You'll get to review and confirm your order before subscribing and can change or cancel at anytime",
+                    "CHANGE_SELECTED_OFFER_LINK_COPY": "Choose another promotion",
+                    "SELECTED_PAYMENT_METHOD_SUMMARY": "{{cardType}} ending in {{cardNumberLastFour}}",
+                    "OFFER_SELECTION_MODAL": {
+                        "TITLE_BAR": "Subscription Plan Options"
+                    },
+                    "PLURAL_MAP": {
+                        "MONTH": {
+                            "=1": "month",
+                            "other": "months"
+                        }
+                    }
+                },
+                "UPSELL": {
+                    "TITLE": "Choose plan upgrades",
+                    "TITLE_INACTIVE": "Choose plan upgrades",
+                    "INSTRUCTIONS": "(Optional, you may choose one or both)",
+                    "CONTINUE_BUTTON_TEXT": "Continue"
+                },
+                "REVIEW": {
+                    "TITLE": "Review and complete your order",
+                    "CONTINUE_BUTTON_TEXT": "Complete My Order"
+                }
+            }
+        },
+        "ConfirmationPageComponent": {
+            "TITLE": "Thanks for subscribing. Now let's ride!",
+            "RADIO_INFO": {
+                "RADIO_ID_MASKED": "Radio ID: (****{{lastFour}})"
+            },
+            "SUBSCRIPTION_IMPORTANT_INFO": {
+                "TITLE": "Important information about your subscription:",
+                "BODY": "Your subscription starts immediately unless indicated otherwise. If your radio is not receiving the programming you are entitled to, please follow the activation instructions above. For your convenience, all subscriptions automatically renew until canceled. Your renewal will be billed at the then-current rate using the payment method on file. You can cancel your subscription at any time by calling Listener Care at <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>. Your subscription is governed by the SiriusXM Customer Agreement, which can be <a href=\"https://www.siriusxm.com/customeragreement?desktop=yes\" target=\"_blank\">viewed online</a>. If you would like to receive a copy of the Customer Agreement by mail, you can call <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>."
+            },
+            "QUOTE": {
+                "PRINT_YOUR_ORDER": "Print your order summary"
+            }
+        },
+        "ActiveSubscriptionFoundPageComponent": {
+            "TITLE": "Looks like you already have a subscription.",
+            "SUB_TITLE": "Sign in to modify your subscription.",
+            "RADIO": "Radio ID: ****{{ lastFour }}",
+            "LOGIN_LINK_TEXT": "Log in to account",
+            "LOGIN_LINK": "https://care.siriusxm.com/login_view.action",
+            "STREAMING": {
+                "NO_RADIO": "Don't have a radio?",
+                "PACKAGE_TEXT": "No problem. Check out our",
+                "PACKAGE_LINK": "streaming only packages",
+                "URL": "https://www.siriusxm.com/streaming"
+            }
+        }
+    }
+}

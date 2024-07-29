@@ -1,0 +1,88 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    height: 100%;
+    display: grid;
+    grid-auto-rows: auto 1fr auto;
+    justify-items: center;
+    background-color: $white;
+    grid-gap: 24px;
+
+    #mainContent {
+        grid-auto-rows: auto 1fr;
+    }
+
+    section {
+        padding: 0;
+    }
+
+    de-care-payment-info-form::ng-deep {
+        span.small-copy.description {
+            color: $gray-dark;
+        }
+    }
+
+    #heroSection {
+        width: 100%;
+    }
+
+    #legalCopySection {
+        background-color: $off-white;
+        div {
+            padding: 24px 0;
+            border-bottom: 1px solid $gray-medium;
+            font-size: 0.75rem;
+            font-weight: 400;
+            ::ng-deep > p {
+                font-size: inherit;
+                font-weight: inherit;
+                a {
+                    @include underline(default);
+                }
+            }
+        }
+    }
+
+    .billing-info-text {
+        margin-bottom: 24px;
+    }
+
+    //Fix double padding on mobile
+    sxm-ui-accordion-stepper::ng-deep {
+        display: block;
+        margin: 0 -16px -32px;
+
+        @include bp(medium) {
+            margin: 0 0 -32px;
+        }
+
+        .accordion-item:first-of-type {
+            padding-top: 0;
+        }
+    }
+
+    sxm-ui-deal-addon-card::ng-deep {
+        .content-card {
+            margin-top: 16px;
+        }
+    }
+
+    quote-summary {
+        margin: 16px 0;
+    }
+
+    .complete-order-button-captcha {
+        margin-top: 16px;
+    }
+
+    #your-plan-and-offer {
+        .your-plan {
+            padding-bottom: 24px;
+            &--header {
+                font-weight: bold;
+                margin-bottom: 4px;
+            }
+        }
+    }
+}

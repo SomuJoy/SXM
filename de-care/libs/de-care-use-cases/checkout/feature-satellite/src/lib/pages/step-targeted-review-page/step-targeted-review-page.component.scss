@@ -1,0 +1,27 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "../page.scss";
+
+:host {
+    @include page-host(1fr auto);
+    #mainContent {
+        row-gap: 24px;
+    }
+
+    sxm-ui-alert-pill.streaming-eligibility {
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        margin-bottom: 15px;
+        background: $vanilla;
+        @include bp(medium) {
+            margin-bottom: 20px;
+        }
+    }
+
+    // OVERRIDES - START
+    quote-summary ::ng-deep > .order-summary {
+        margin: 0;
+    }
+    // OVERRIDES - END
+}

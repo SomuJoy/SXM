@@ -1,0 +1,10 @@
+{
+    "DomainsChatUiChatWithAgentLinkModule": {
+        "ChatLinkLivepersonComponent": {
+            "CONTACT_US_URL": "https://www.siriusxm.ca/contactus"
+        },
+        "ChatLinkTwentyFourSevenComponent": {
+            "CONTACT_US_URL": "https://www.siriusxm.ca/contactus"
+        }
+    }
+}

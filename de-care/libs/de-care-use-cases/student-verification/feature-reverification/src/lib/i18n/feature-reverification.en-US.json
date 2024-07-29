@@ -1,0 +1,12 @@
+{
+    "deCareUseCasesStudentVerificationFeatureReverification": {
+        "studentReverificationFlowComponent": {
+            "HERO_COPY": "Continue saving with a student plan for {{offerTerm}} months for {{offerTotal}}/mo <br><span class=\"legal-copy\">Plus fees and taxes</span>"
+        },
+        "invalidTokenPageComponent": {
+            "HEADER": "Oops, something went wrong",
+            "SUB_HEADER": "Sign in to reverify your student status.",
+            "BUTTON": "SIGN IN TO ACCOUNT"
+        }
+    }
+}

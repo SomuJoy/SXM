@@ -1,0 +1,100 @@
+<main class="background-offwhite" *ngIf="confirmationData$ | async as confirmationData">
+    <div class="content-container">
+        <div class="row align-center no-padding-small">
+            <div class="column medium-2 no-padding background-white raised"></div>
+            <div class="column small-12 medium-6 background-white no-padding-small raised">
+                <div class="confirmation-content background-white">
+                    <svg class="icon large checkmark-circle">
+                        <use class="icon-check-mark-flex-stroke" xlink:href="#icon-check-mark-flex-stroke"></use>
+                    </svg>
+                    <h1 data-e2e="confirmationHeadline">{{ translateKeyPrefix + "HEADLINE" | translate }}</h1>
+                    <p class="mb-24" data-e2e="confirmationEmail">
+                        {{ translateKeyPrefix + "CONFIRMATION_EMAIL" | translate : { email: confirmationData.email } }}<br />
+                        <a class="text-link no-print" (click)="onPrintClick()" data-track-click="Print summary" data-e2e="confirmationPrintSummary">{{
+                            translateKeyPrefix + "PRINT_LINK_LABEL" | translate
+                        }}</a>
+                    </p>
+                    <div class="vehicle-subscription-information mb-24">
+                        <div class="mb-24">
+                            <sxm-ui-vehicle-with-subscription-info
+                                [data]="transferFromData$ | async"
+                                [eyebrow]="translateKeyPrefix + 'TRANSFER_EYEBROW' | translate"
+                                data-e2e="transferSubscriptionInfo"
+                            ></sxm-ui-vehicle-with-subscription-info>
+                        </div>
+
+                        <sxm-ui-accordion-chevron
+                            [collapsedText]="translateKeyPrefix + 'VIEW_DETAILS_COLLAPSED' | translate"
+                            [expandedText]="translateKeyPrefix + 'VIEW_DETAILS_EXPANDED' | translate"
+                            class="mb-24 highlight-label"
+                            data-track-click="Swap flow show or hide details"
+                        >
+                            <div class="mb-24">
+                                <sxm-ui-vehicle-with-subscription-info
+                                    [data]="newRadioInfo$ | async"
+                                    [eyebrow]="translateKeyPrefix + 'NEW_RADIO_EYEBROW' | translate"
+                                    data-e2e="newRadioSubscriptionInfo"
+                                ></sxm-ui-vehicle-with-subscription-info>
+                            </div>
+                            <div *ngIf="showPlatformChange$ | async">
+                                <sxm-ui-platform-change-message [data]="platformChangeData$ | async" class="mb-24"></sxm-ui-platform-change-message>
+                            </div>
+                        </sxm-ui-accordion-chevron>
+                    </div>
+                    <hr class="mb-24" />
+                    <div *ngIf="showQuoteAndPayment$ | async" class="mb-24">
+                        <ng-container *ngIf="quoteData$ | async as quoteData">
+                            <sxm-ui-content-card [headlinePresent]="true" data-e2e="quoteSummary">
+                                <div htmlContentForHead>
+                                    <p class="large-copy bold">{{ translateKeyPrefix + "QUOTE_SUMMARY.CARD_HEAD" | translate }}</p>
+                                </div>
+                                <div htmlContentForBody>
+                                    <sxm-ui-quote-summary [quoteData]="quoteData"></sxm-ui-quote-summary>
+                                </div>
+                            </sxm-ui-content-card>
+                            <sxm-ui-content-card
+                                *ngIf="quoteData.currentCharges.creditRemainingOnAccount as creditOnAccount"
+                                [headlinePresent]="false"
+                                data-e2e="quoteSummaryCreditRemainingOnAccount"
+                            >
+                                <div htmlContentForBody>
+                                    <sxm-ui-standalone-line-item [lineItem]="creditOnAccount"></sxm-ui-standalone-line-item>
+                                </div>
+                            </sxm-ui-content-card>
+                            <ul *ngIf="showGST$ | async" class="undecorated-list">
+                                <li data-e2e="quoteGST">{{ translateKeyPrefix + "GST" | translate }}</li>
+                                <li data-e2e="quoteQST" *ngIf="showQST$ | async">{{ translateKeyPrefix + "QST" | translate }}</li>
+                            </ul>
+                        </ng-container>
+                    </div>
+                    <div *ngIf="canSwapConfirmationShowStreaming$ | async" class="mb-24 no-print">
+                        <sxm-ui-listen-now [customLink]="translateKeyPrefix + 'STREAMING_PLAYER_LINK' | translate" data-e2e="listenNow"></sxm-ui-listen-now>
+                    </div>
+                    <hr class="mb-24" />
+                    <!-- TODO: figure out if refresh signal needs to work with VIN -->
+                    <div class="mb-24 no-print">
+                        <refresh-signal *ngIf="confirmationData.isRefreshAllowed" [radioId]="confirmationData.newRadioId"></refresh-signal>
+                    </div>
+                    <div class="no-print">
+                        <button type="button" class="secondary" data-e2e="acscConfirmation.goToMyAccountCallToAction" sxm-proceed-button (click)="onGoToMyAccount()">
+                            {{ translateKeyPrefix + "BACK_TO_MY_ACCOUNT_BUTTON" | translate }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="column medium-2 no-padding background-white"></div>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="row align-center">
+            <div class="column small-12 medium-10 no-padding-medium">
+                <div class="important-info-container">
+                    <p class="legal-copy" data-e2e="confirmation-important-info">
+                        <strong>{{ translateKeyPrefix + "LEGAL_COPY_TITLE" | translate }}</strong>
+                    </p>
+                    <p class="legal-copy" [innerHTML]="translateKeyPrefix + 'LEGAL_COPY' | translate"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

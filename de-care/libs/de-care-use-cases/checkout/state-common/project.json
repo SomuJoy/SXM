@@ -1,0 +1,31 @@
+{
+    "name": "de-care-use-cases-checkout-state-common",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care-use-cases/checkout/state-common/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/de-care-use-cases/checkout/state-common/src/**/*.ts", "libs/de-care-use-cases/checkout/state-common/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/checkout/state-common/jest.config.js",
+                "tsConfig": "libs/de-care-use-cases/checkout/state-common/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/de-care-use-cases/checkout/state-common/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:state", "scope:de-care-use-case-shared-state"]
+}

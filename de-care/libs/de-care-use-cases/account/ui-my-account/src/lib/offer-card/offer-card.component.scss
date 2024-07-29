@@ -1,0 +1,9 @@
+@import "sxm.phoenix.imports";
+
+sxm-ui-details-color-with-cta {
+    height: 100%;
+    min-height: 220px;
+    @include bp(medium) {
+        min-height: 280px;
+    }
+}

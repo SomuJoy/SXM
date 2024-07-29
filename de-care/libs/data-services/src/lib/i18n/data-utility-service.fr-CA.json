@@ -1,0 +1,23 @@
+{
+    "dataServices": {
+        "dataUtilityService": {
+            "securityQuestions": {
+                "100": "Quel est le nom de votre animal préféré?",
+                "101": "Quel endroit préfériez-vous visiter quand vous étiez enfant?",
+                "102": "Quel a été votre premier numéro de téléphone?",
+                "103": "Quelle est votre équipe sportive préférée?",
+                "104": "Quelle est votre boisson préférée?",
+                "105": "Quel est votre film préféré?",
+                "106": "Quelle était la marque de votre première voiture?",
+                "107": "Quel était le nom de votre meilleur ami quand vous étiez petit?",
+                "108": "Dans quelle entreprise avez-vous eu votre premier emploi?",
+                "109": "Quel est le nom de votre école préférée parmi toutes celles que vous avez fréquentées?",
+                "110": "Quel était le premier concert auquel vous avez assisté?",
+                "111": "Quel est le premier achat de musique que vous avez effectué?",
+                "112": "Où aimeriez-vous vivre si c’était possible?",
+                "113": "Quel est votre groupe ou artiste préféré?",
+                "114": "Quel est votre genre musical préféré?"
+            }
+        }
+    }
+}

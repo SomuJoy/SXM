@@ -1,0 +1,103 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    @include page-content-markup(1fr);
+    #mainContent {
+        background-color: $off-white;
+        margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        text-align: center;
+        min-height: calc(90vh - 80px);
+        .header {
+            padding-top: 20px;
+            height: 200px;
+            background-color: $blue;
+            color: $white;
+            text-align: center;
+            div {
+                margin: auto;
+                width: auto;
+                margin-left: 12px;
+                h1 {
+                    text-align: left;
+                    @include get-header-style(h3);
+                }
+            }
+            @include bp(medium) {
+                padding-top: 40px;
+                height: 240px;
+                div {
+                    width: 680px;
+                    margin-left: auto;
+                    h1 {
+                        @include get-header-style(h2);
+                    }
+                }
+            }
+        }
+
+        .container {
+            text-align: center;
+            padding: 0 0 80px;
+            margin-top: -80px;
+
+            .form-container {
+                .details {
+                    margin-bottom: 24px;
+                    font-weight: calculate-font-weight("bold");
+                    text-align: left;
+                    @include font-size(12px);
+                    &--msg {
+                        line-height: 18px;
+                    }
+                    &--error {
+                        line-height: 16px;
+                        color: $red;
+                        .icon {
+                            @include font-size(6px);
+
+                            border: 1px solid $red;
+                            border-radius: 50%;
+                            background-color: $red;
+
+                            &.icon-utility.small {
+                                height: 15px;
+                                width: 15px;
+                                padding: 2px;
+                            }
+                            .icon-x-mark-flex-stroke {
+                                stroke-width: 2;
+                                stroke: $white;
+                            }
+                        }
+                    }
+                }
+                padding: 24px 14px;
+                background-color: $white;
+                width: auto;
+                margin: 12px;
+
+                .link-container {
+                    margin-top: 24px;
+                    text-align: left;
+                    a {
+                        font-weight: calculate-font-weight("bold");
+                    }
+                }
+
+                @include bp(medium) {
+                    padding: 36px 96px;
+                    width: 640px;
+                    margin: auto;
+                    .details {
+                        p {
+                            @include font-size(14px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

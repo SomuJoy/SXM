@@ -1,0 +1,84 @@
+<main de-care-page-main class="reset-paragraph-last-of-type-margin">
+    <sxm-ui-stepper #stepper>
+        <sxm-ui-step (active)="activationCodeStepActive()">
+            <h4>{{ translateKeyPrefix + "STEPS.ACTIVATION_CODE.HEADLINE" | translate }}</h4>
+            <br />
+            <p class="instructions">{{ translateKeyPrefix + "STEPS.ACTIVATION_CODE.INSTRUCTIONS" | translate }}</p>
+            <form [formGroup]="activationCodeForm" data-e2e="deviceActivation.activationCodeForm">
+                <div *ngIf="activationCodeFormError$ | async" class="invalid-feedback">
+                    <p>{{ activationCodeFormErrorMessage$ | async }}</p>
+                </div>
+                <sxm-ui-text-form-field
+                    formControlName="activationCode"
+                    [labelText]="translateKeyPrefix + 'STEPS.ACTIVATION_CODE.FORM_FIELD_ACTIVATION_CODE_LABEL' | translate"
+                    data-e2e="ActivationCode"
+                    [errorMsg]="translateKeyPrefix + 'STEPS.ACTIVATION_CODE.FORM_FIELD_ACTIVATION_CODE_ERROR_REQUIRED' | translate"
+                    minLength="6"
+                    maxLength="6"
+                ></sxm-ui-text-form-field>
+                <button
+                    type="button"
+                    (click)="onActivationCodeSubmit()"
+                    sxm-proceed-button
+                    [loading]="activationCodeFormProcessing$ | async"
+                    sxmUiDataClickTrack="submit"
+                    data-e2e="ActivationCodeSubmitButton"
+                >
+                    {{ translateKeyPrefix + "STEPS.ACTIVATION_CODE.CONTINUE_BUTTON_TEXT" | translate }}
+                </button>
+            </form>
+        </sxm-ui-step>
+        <sxm-ui-step (active)="signInStepActive()">
+            <h4>{{ translateKeyPrefix + "STEPS.SIGN_IN.HEADLINE" | translate }}</h4>
+            <br />
+            <p class="instructions">{{ translateKeyPrefix + "STEPS.SIGN_IN.INSTRUCTIONS" | translate }}</p>
+            <form [formGroup]="signInForm" data-e2e="deviceActivation.signInForm">
+                <div *ngIf="signInFormError$ | async" class="invalid-feedback">
+                    <ng-container *ngIf="(signInFormErrorType$ | async) === 'INVALID_ACTIVATION_CODE'; else basicError">
+                        <p>
+                            {{ invalidActivationCodeTranslateKeyPrefix + "PART_1" | translate }}
+                            <a (click)="resetToActivationCodeStep()" sxmUiDataClickTrack="routing" type="text-link">
+                                {{ invalidActivationCodeTranslateKeyPrefix + "LINK_TEXT" | translate }}
+                            </a>
+                            {{ invalidActivationCodeTranslateKeyPrefix + "PART_2" | translate }}
+                        </p>
+                    </ng-container>
+                    <ng-template #basicError>
+                        <p>{{ signInFormErrorMessage$ | async }}</p>
+                    </ng-template>
+                </div>
+                <sxm-ui-username-form-field
+                    [labelText]="translateKeyPrefix + 'STEPS.SIGN_IN.FORM_FIELD_USERNAME_LABEL' | translate"
+                    formControlName="username"
+                    data-e2e="Username"
+                ></sxm-ui-username-form-field>
+                <sxm-ui-password-form-field formControlName="password" data-e2e="Password"></sxm-ui-password-form-field>
+                <p>
+                    <a target="_blank" (click)="navigateToCredentials()" class="text-link" sxmUiDataClickTrack="exit">
+                        {{ translateKeyPrefix + "STEPS.SIGN_IN.LINK_FORGOT_PASSWORD_TEXT" | translate }}
+                    </a>
+                </p>
+                <button
+                    type="button"
+                    (click)="onSignInSubmit()"
+                    sxm-proceed-button
+                    [loading]="signInFormProcessing$ | async"
+                    sxmUiDataClickTrack="submit"
+                    data-e2e="SignInSubmitButton"
+                >
+                    {{ translateKeyPrefix + "STEPS.SIGN_IN.CONTINUE_BUTTON_TEXT" | translate }}
+                </button>
+            </form>
+            <div *ngIf="(activationIsForTrial$ | async) || (isSonosFlow$ | async)" class="row align-center no-padding setup-streaming">
+                <div class="column small-12 no-padding">
+                    <div class="recirculation--single">
+                        <h5>{{ translateKeyPrefix + "STEPS.SIGN_IN.SETUP_STREAMING_HEADLINE" | translate }}</h5>
+                        <a class="text-link" sxmUiDataClickTrack="download" routerLink="../setup-credentials">
+                            {{ translateKeyPrefix + "STEPS.SIGN_IN.SETUP_STREAMING_LINK_TEXT" | translate }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </sxm-ui-step>
+    </sxm-ui-stepper>
+</main>

@@ -1,0 +1,45 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "offers": [
+            {
+                "planCode": "Promo - Mostly Music - 3mo - 2.00 - 1moFO - Plus SXIR",
+                "packageName": "SXM_SIR_CAN_MM",
+                "packageUpgrade": null,
+                "promoCode": "EXTENSIONS",
+                "termLength": 3,
+                "type": "TRIAL_EXT",
+                "marketType": "self-pay:promo",
+                "price": 2.0,
+                "pricePerMonth": 0.67,
+                "retailPrice": 15.32,
+                "packageUpgradePrice": null,
+                "msrpPrice": 15.32,
+                "processingFee": null,
+                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                "deal": null,
+                "priceChangeMessagingType": "",
+                "planEndDate": null,
+                "minimumFollowOnTerm": 1,
+                "order": null,
+                "bundledSavingPrice": null,
+                "bundleSubPackageNames": null,
+                "parentPackageName": "",
+                "fallbackReason": "",
+                "mrdEligible": false,
+                "invoiceEligible": false,
+                "advantage": false,
+                "student": false,
+                "fallback": false,
+                "streaming": false,
+                "upgradeOffer": false,
+                "bestPackage": false,
+                "dataCapable": false,
+                "bundled": null
+            }
+        ],
+        "presentment": null
+    }
+}

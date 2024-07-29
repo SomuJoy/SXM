@@ -1,0 +1,70 @@
+<main de-care-page-main>
+    <h4>{{ translateKeyPrefix + ".HEADLINE" | translate }}</h4>
+    <br />
+    <p>{{ translateKeyPrefix + ".SUB_HEADLINE" | translate }}</p>
+    <br />
+    <form [formGroup]="form">
+        <div *ngIf="isSystemError" class="invalid-feedback">
+            <p>{{ translateKeyPrefix + ".SYSTEM_ERROR" | translate }}</p>
+        </div>
+        <sxm-ui-text-form-field
+            formControlName="radioId"
+            labelText="{{ translateKeyPrefix + '.PLACEHOLDER_TEXT' | translate }}"
+            [errorMsg]="
+                form.get('radioId').hasError('required')
+                    ? (translateKeyPrefix + '.RADIO_ID_INPUT_REQUIRED' | translate)
+                    : form.get('radioId').errors
+                    ? (translateKeyPrefix + '.RADIO_ID_INPUT_FORMAT' | translate)
+                    : ''
+            "
+        >
+        </sxm-ui-text-form-field>
+        <div *ngIf="isRadioIdExist" class="invalid-feedback" data-test="ErrorMessageInvalidRadioId">
+            <p>
+                {{ translateKeyPrefix + ".INVALID_RADIO_ID" | translate }}
+                <chat-with-agent-link *ngIf="!(hideChatWithAnAgentLink$ | async)" [chatLinkText]="translateKeyPrefix + '.CHAT_WITH_AGENT' | translate"></chat-with-agent-link>
+            </p>
+        </div>
+        <p [innerHTML]="translateKeyPrefix + '.LINK_TEXT' | translate"></p>
+
+        <button
+            type="button"
+            class="btn"
+            sxm-proceed-button
+            sxmUiDataClickTrack="submit"
+            data-e2e="SearchRadioIdVinFormSubmitButton"
+            (click)="onSubmit()"
+            [loading]="processingSubmission$ | async"
+        >
+            {{ translateKeyPrefix + ".BUTTON_TEXT" | translate }}</button
+        ><br />
+    </form>
+    <p>
+        <a data-link-name="Don't have a Radio ID (RID) or a Account Number" (click)="openFindradioIdModal()" sxmUiDataClickTrack="modal" class="text-link">
+            {{ translateKeyPrefix + ".RADIOID_ACCOUNT_NUMBER_LOOKUP" | translate }}</a
+        >
+    </p>
+</main>
+<sxm-ui-modal
+    #helpFindingRadioModal
+    title="{{ translateKeyPrefix + '.HELP_FINDING_RADIO_TITLE' | translate }}"
+    [titlePresent]="true"
+    [showBackButton]="true"
+    (backButton)="helpFindingRadioModal.close()"
+    (modalClosed)="helpFindingRadioModal.close()"
+    data-e2e="helpFindingRadioIdModal"
+>
+    <sxm-ui-help-finding-radio (deviceHelp)="helpFindingRadioModal.close(); marineAviationModal.open()"></sxm-ui-help-finding-radio>
+</sxm-ui-modal>
+<sxm-ui-modal
+    #marineAviationModal
+    [titlePresent]="true"
+    [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"
+    title="{{ translateKeyPrefix + '.RADIO_LOOKUP_MARINE_AVIATION' | translate }}"
+    [showBackButton]="true"
+    (backButton)="marineAviationModal.close(); openFindradioIdModal()"
+    (modalClosed)="openFindradioIdModal()"
+    data-e2e="helpFindingMarineAviationRadioIdModal"
+>
+    <sxm-ui-device-help [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"></sxm-ui-device-help>
+</sxm-ui-modal>

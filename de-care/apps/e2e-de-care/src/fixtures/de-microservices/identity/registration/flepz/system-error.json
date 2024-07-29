@@ -1,0 +1,13 @@
+{
+    "status": "FAILURE",
+    "httpStatusCode": 500,
+    "httpStatus": "INTERNAL_SERVER_ERROR",
+    "error": {
+        "errorCode": "11-03-SXM-1003",
+        "errorPropKey": "error.common.unhandled.generic.error",
+        "errorType": "SYSTEM",
+        "errorStackTrace": "AccountNumber:  | RadioId:  | x-forwarded-for: [10.130.98.230] | URL: /services/identity/registration/flepz | Exception: IdentityAccountServiceException#null | StackTrace: GenericRESTServiceClient.java:167 | ErrorType: SYSTEM | ErrorMessage: ERROR : [errorCode : 11-03-SXM-1003, errorPropKey : error.common.unhandled.generic.error, errorType : UNCHECKED, errorLevel : ACTION, statusCode : 500 INTERNAL_SERVER_ERROR, errorMessage : Connection Timeout | , sourceErrorCode : 11-03-SXM-1003] | FullStackTrace: ",
+        "logId": "370f3e41-ce5f-499f-96f4-c0616e27d3e2",
+        "failedTransactionId": "OAC370F3E41CE5F499F96F4C0616E27D3E2B849087FA37FD241B849087FA37FD24129831333048090342241679065968"
+    }
+}

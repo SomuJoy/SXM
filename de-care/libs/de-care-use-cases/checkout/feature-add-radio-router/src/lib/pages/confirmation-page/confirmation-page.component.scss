@@ -1,0 +1,63 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "../page.scss";
+
+$breakpoint: 473px;
+
+:host {
+    @include page-host(1fr auto);
+
+    grid-auto-columns: auto;
+    > section {
+        width: 100%;
+        padding: 0 32px;
+    }
+
+    section {
+        padding: 0;
+    }
+
+    section#mainContent {
+        display: block;
+        width: 100%;
+        padding: 32px 16px;
+    }
+
+    section#hero {
+        display: grid;
+        justify-items: center;
+        background-color: $blue;
+        color: $white;
+        padding: 0 16px;
+        h1 {
+            max-width: 440px;
+            @include get-header-style(h2);
+            padding-bottom: 88px;
+            margin: 0;
+        }
+    }
+
+    section#quote {
+        padding-top: 32px;
+    }
+
+    section#refresh {
+        @include hr;
+        padding: 32px 0;
+    }
+
+    section#register {
+        @include hr;
+        padding-top: 32px;
+    }
+
+    .hero-integration {
+        box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
+        height: fit-content;
+        padding: 24px;
+        position: relative;
+        margin-top: -84px;
+        margin-bottom: 8px;
+        background-color: white;
+    }
+}

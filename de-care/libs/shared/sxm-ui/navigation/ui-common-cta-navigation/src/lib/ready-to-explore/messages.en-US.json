@@ -1,0 +1,20 @@
+{
+    "HEADING_TEXT": "Ready to Explore?",
+    "BEFORE_YOU_GO": {
+        "INTRO_TEXT": "Before you go, ",
+        "LINK": {
+            "LINK_TEXT": "check out great offers.",
+            "LINK_URL": "https://www.siriusxm.com/phx/ourmostpopularpackages?intcmp=GN_HEADER_NEW_Subscribe_ComparePackages"
+        }
+    },
+    "LINKS": {
+        "PROGRAM_SCHEDULES": {
+            "LINK_TEXT": "View program schedules",
+            "LINK_URL": "https://www.siriusxm.com/programschedules?intcmp=GN_HEADER_NEW_WhatsOn_FindaShoworChannel_ProgramSchedules"
+        },
+        "SPORTS_SCHEDULES": {
+            "LINK_TEXT": "Live sports schedules",
+            "LINK_URL": "https://www.siriusxm.com/livesports?intcmp=GN_HEADER_NEW_WhatsOn_FindaShoworChannel_SiriusXMLiveSportsSchedule"
+        }
+    }
+}

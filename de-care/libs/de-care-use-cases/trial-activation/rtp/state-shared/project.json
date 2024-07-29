@@ -1,0 +1,34 @@
+{
+    "name": "de-care-use-cases-trial-activation-rtp-state-shared",
+    "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care-use-cases/trial-activation/rtp/state-shared/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/de-care-use-cases/trial-activation/rtp/state-shared/src/**/*.ts",
+                    "libs/de-care-use-cases/trial-activation/rtp/state-shared/src/**/*.html"
+                ]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/trial-activation/rtp/state-shared/jest.config.js",
+                "tsConfig": "libs/de-care-use-cases/trial-activation/rtp/state-shared/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/de-care-use-cases/trial-activation/rtp/state-shared/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:state", "scope:de-care"]
+}

@@ -1,0 +1,22 @@
+@import "sxm.phoenix.imports";
+.order-confirmation--container {
+    @include bp(medium) {
+        padding-top: 16px;
+    }
+}
+
+hr {
+    background-color: $gray-medium;
+    border: 0;
+    height: 1px;
+    margin: 32px 0;
+    width: 100%;
+}
+
+.no-hr {
+    margin-bottom: 32px;
+}
+
+.important-info-container {
+    padding: 24px 0;
+}

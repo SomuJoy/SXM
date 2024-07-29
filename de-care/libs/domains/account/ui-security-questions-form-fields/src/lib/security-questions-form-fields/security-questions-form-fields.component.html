@@ -1,0 +1,35 @@
+<ng-container *ngFor="let questionNumber of [1, 2, 3]" [formGroup]="formGroup">
+    <div class="row no-padding">
+        <div class="column small-12 no-padding">
+            <sxm-ui-dropdown
+                [showErrorMsg]="false"
+                [filterSelected]="true"
+                [passedValue]="this.questionsAsArray$ | async | questionsAvailableFilter: control?.get('question' + questionNumber)?.value:(questionIdsSelected$ | async)"
+                text="question"
+                key="id"
+                class="dropdown"
+                labelText="{{ (translateKeyPrefix + '.QUESTION_PLACEHOLDER_TEXT' | translate) + ' ' + questionNumber }}"
+                tabindex="0"
+                formControlName="{{ 'question' + questionNumber }}"
+                [class.invalid]="control?.get('question' + questionNumber)?.invalid && control?.get('question' + questionNumber)?.touched"
+            >
+            </sxm-ui-dropdown>
+            <div class="invalid-feedback" *ngIf="control?.get('question' + questionNumber)?.invalid && control?.get('question' + questionNumber)?.touched">
+                <p>{{ translateKeyPrefix + ".ERRORS.QUESTION_REQUIRED" | translate }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row no-padding">
+        <div class="column small-12 no-padding">
+            <sxm-ui-text-form-field
+                [attr.data-test]="'securityQuestionAnswer' + questionNumber"
+                [controlId]="'answer' + questionNumber"
+                formControlName="{{ 'answer' + questionNumber }}"
+                [labelText]="(translateKeyPrefix + '.ANSWER_PLACEHOLDER_TEXT' | translate) + ' ' + questionNumber"
+                [errorMsg]="
+                    translateKeyPrefix + '.ERRORS' + (control?.get('answer' + questionNumber)?.errors?.minlength ? '.ANSWER_MIN_LENGTH' : '.ANSWER_REQUIRED') | translate
+                "
+            ></sxm-ui-text-form-field>
+        </div>
+    </div>
+</ng-container>

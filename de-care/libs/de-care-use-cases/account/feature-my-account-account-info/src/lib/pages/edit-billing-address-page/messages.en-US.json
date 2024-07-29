@@ -1,0 +1,10 @@
+{
+    "ACCOUNT_INFO_TITLE": "Account Info",
+    "BACK_BUTTON_LABEL": "BACK",
+    "HEADER": "Edit billing address",
+    "BILLING_ADDRESS_UPDATE_SUCCESS_MESAGE": "Address successfully updated.",
+    "ADDRESS_TITLE": "Address",
+    "INVALID_BILLING_ADDRESS_ERROR": "According to the Postal Service records your billing address is invalid or is missing important information. Please update the billing address to continue.",
+    "SAVE_BUTTON": "SAVE",
+    "CANCEL_BUTTON": "CANCEL"
+}

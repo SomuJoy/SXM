@@ -1,0 +1,72 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "mrdCapable": true,
+        "accountNumber": "100010003710147",
+        "firstName": "michael",
+        "lastName": "kantor",
+        "phone": "6026973978",
+        "userName": "kantor4@siriusxm.com",
+        "email": "KANTOR4@SIRIUSXM.COM",
+        "accountProfile": { "profileNumber": "100010003710403", "billingStatus": "Active", "accountRegistered": true, "createdOnDate": "2020-07-27T14:49:10-04:00" },
+        "accountState": { "isInPreTrial": false },
+        "serviceAddress": { "streetAddress": "216 Fern St", "city": "Bangor", "state": "ME", "postalCode": "04401-4090", "country": "USA", "isAVSValidated": true },
+        "billingAddress": { "streetAddress": "216 Fern St", "city": "Bangor", "state": "ME", "postalCode": "04401-4090", "country": "USA", "isAVSValidated": true },
+        "subscriptions": [
+            {
+                "id": "10003710601",
+                "status": "Active",
+                "plans": [
+                    {
+                        "dataCapable": false,
+                        "code": "Premier Streaming - Monthly",
+                        "packageName": "SIR_IP_SA",
+                        "termLength": 1,
+                        "minimumFollowOnTerm": 0,
+                        "startDate": "2020-07-27T00:00:00-04:00",
+                        "endDate": null,
+                        "nextCycleOn": "2022-02-27T00:00:00-05:00",
+                        "marketType": "self-pay:standard",
+                        "type": "SELF_PAID",
+                        "status": "active",
+                        "capabilities": ["IPAUD"],
+                        "price": 10.99,
+                        "product": null,
+                        "parentPackageName": "",
+                        "isFamiliyDiscountApplied": false,
+                        "isChangePlanAllowed": false,
+                        "isBasePlan": true,
+                        "isPreTiering": false
+                    }
+                ],
+                "followonPlans": [],
+                "radioService": null,
+                "streamingService": {
+                    "id": "100010003710345",
+                    "userName": "kantor4too",
+                    "status": "Active",
+                    "maskedUserName": "******4too",
+                    "systemGeneratedLogin": false,
+                    "randomCredentials": false,
+                    "validUserName": true
+                },
+                "devicePromoCode": null,
+                "isClosed": false,
+                "isPrimary": false,
+                "isMrdDriving": true,
+                "isDataOnly": false
+            }
+        ],
+        "billingSummary": {
+            "paymentType": "creditCard",
+            "creditCard": { "last4Digits": "8192", "type": "VISA", "expiryMonth": 2, "expiryYear": 2022, "status": "ABOUT_TO_EXPIRE" },
+            "amountDue": 417.17,
+            "isPaymentTypeInvoice": false
+        },
+        "consolidatedAccountNumbers": [],
+        "closedDevicesMap": {},
+        "closedDevices": []
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "domainsOffersUiOfferDescriptionModule": {
+        "offerDescriptionComponent": {
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "month",
+                    "other": "months"
+                }
+            },
+            "TERM_AND_PRICE": "<span class=\"large-copy\">Your first</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">for</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span> <span class=\"large-copy\">plus fees</span>",
+            "TERM_AND_PRICE_MCP": "<span class=\"large-copy\">Your first</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">for</span> <span class=\"offer-price text-color-watermelon\">{{ pricePerMonth }}</span><span class=\"large-copy\">/mo plus fees</span>",
+            "TERM_AND_PRICE_FREE": "<span class=\"offer-price text-color-watermelon text-capitalize\">{{ termLength }} {{ monthsPluralized }} free</span>",
+            "TERM_AND_PRICE_MONTHLY": "<span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">for</span> <span class=\"offer-price text-color-watermelon\">{{ pricePerMonth }}</span><span class=\"large-copy\"> /mo plus fees</span>",
+            "TERM_AND_PRICE_QUEBEC": "<span class=\"large-copy\">Your first</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">for</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span>",
+            "TERM_AND_PRICE_MCP_QUEBEC": "<span class=\"large-copy\">Your first</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">for</span> <span class=\"offer-price text-color-watermelon\">{{ pricePerMonth }}</span><span class=\"large-copy\">/mo</span>",
+            "TERM_AND_PRICE_MONTHLY_QUEBEC": "<span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">for</span> <span class=\"offer-price text-color-watermelon\">{{ pricePerMonth }}</span><span class=\"large-copy\">/mo</span>",
+            "FEES": "{{ price }} processing fee applies",
+            "FULL_TERM_PRICE": "<span class=\"large-copy\">Your first</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">for</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span> <span class=\"large-copy\">plus fees</span>",
+            "FULL_TERM_PRICE_QUEBEC": "<span class=\"large-copy\">Your first</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">for</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span>",
+            "FULL_TERM_PRICE_APPLE": "<span class=\"large-copy\">Your first</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">for</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span>",
+            "FULL_PRICE": "{{ pricePerMonth }}<span class=\"standard-copy\">/mo plus fees</span>",
+            "FULL_PRICE_QUEBEC": "{{ pricePerMonth }}<span class=\"standard-copy\">/mo</span>",
+            "FULL_PRICE_ADVANTAGE": "<span class=\"offer-price text-color-raspberry\">{{ pricePerMonth }}</span><span class=\"standard-copy\">/mo plus fees</span>",
+            "FULL_PRICE_ADVANTAGE_QUEBEC": "<span class=\"offer-price text-color-raspberry\">{{ pricePerMonth }}</span><span class=\"standard-copy\">/mo</span>",
+            "FULL_PRICE_ADVANTAGE_ANNUAL": "<span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">for</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span><span class=\"large-copy\"> plus fees</span>",
+            "FULL_PRICE_ADVANTAGE_ANNUAL_QUEBEC": "<span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">for</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span><span class=\"large-copy\"></span>",
+            "SEE_OFFER_BELOW_ADVANTAGE": "Reg <strike>{{ price }}/mo</strike> plus fees. Save {{ savingsAmount }}/mo for as long as you choose to maintain your subscription. See <strong>Offer Details</strong> below.",
+            "SEE_OFFER_BELOW_ADVANTAGE_QUEBEC": "Reg <strike>{{ price }}/mo</strike>. Save {{ savingsAmount }}/mo for as long as you choose to maintain your subscription. See <strong>Offer Details</strong> below.",
+            "SEE_OFFER_BELOW_ADVANTAGE_ANNUAL": "Reg <strike>{{ price }}/yr</strike> plus fees. Save {{ savingsAmount }}/yr for as long as you choose to maintain your subscription. See <strong>Offer Details</strong> below.",
+            "SEE_OFFER_BELOW_ADVANTAGE_ANNUAL_QUEBEC": "Reg <strike>{{ price }}/yr</strike>. Save {{ savingsAmount }}/yr for as long as you choose to maintain your subscription. See <strong>Offer Details</strong> below."
+        }
+    }
+}

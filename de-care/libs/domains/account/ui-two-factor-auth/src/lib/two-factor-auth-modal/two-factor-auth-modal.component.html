@@ -1,0 +1,63 @@
+<sxm-ui-modal #verifyOptionsModal title="{{ translateKeyPrefix + '.MODAL_TITLE' | translate }}" [titlePresent]="true" (modalClosed)="onVerifyOptionsModalClosed()">
+    <h4>{{ translateKeyPrefix + ".VERIFY_OPTIONS_HEADING" | translate }}</h4>
+    <p>{{ translateKeyPrefix + ".VERIFY_OPTIONS_INSTRUCTIONS" | translate }}</p>
+    <hr />
+    <verify-options-form
+        data-e2e="2faModal.verifyOptionsForm"
+        #verifyOptionsForm
+        *ngIf="data"
+        [accountIsInvalid]="accountIsInvalid$ | async"
+        [phoneMatchesAccount]="!(codeRequestPhoneNotMatching$ | async)"
+        [radioIDInvalid]="radioIDInvalid"
+        [options]="data.verifyOptionsInfo"
+        [showChatWithAgentLink]="includeChatWithAnAgentLink$ | async"
+        [firstOptionPreselected]="true"
+        (verifyTypeSelected)="onVerifyTypeSelected($event)"
+        (helpFindRadioClicked)="openHelpFindRadioModal()"
+    ></verify-options-form>
+</sxm-ui-modal>
+<sxm-ui-modal
+    #securityCodeModal
+    title="{{ translateKeyPrefix + '.MODAL_TITLE' | translate }}"
+    [titlePresent]="true"
+    [showBackButton]="true"
+    (modalClosed)="returnToVerifyOptions()"
+    (backButton)="returnToVerifyOptions()"
+>
+    <h5>{{ translateKeyPrefix + ".SECURITY_CODE_VERIFICATION_HEADING" | translate }}</h5>
+    <p>{{ translateKeyPrefix + ".SECURITY_CODE_VERIFICATION_INSTRUCTIONS" | translate: { deliverySource: deliverySource$ | async } }}</p>
+    <sxm-ui-alert-pill *ngIf="codeRequestHasBeenResent$ | async">
+        {{ translateKeyPrefix + ".SECURITY_CODE_RESENT_TO_PHONE" | translate }}
+    </sxm-ui-alert-pill>
+    <security-code-verification-form
+        data-e2e="2faModal.securityCodeForm"
+        #securityCodeForm
+        [resendCodeLinkText]="resendCodeLinkTextTranslateKey$ | async | translate"
+        [processing]="processingCodeVerification$ | async"
+        [errorMsg]="securityCodeErrorMsg | translate"
+        [showChatWithAgentLink]="includeChatWithAnAgentLink$ | async"
+        [showResendLink]="!(codeRequestLimitExceeded$ | async)"
+        (resendCodeRequest)="onResendCodeRequest()"
+        (securityCodeSubmitted)="onSecurityCodeSubmitted($event)"
+    ></security-code-verification-form>
+</sxm-ui-modal>
+<sxm-ui-modal
+    #helpFindingRadioModal
+    title="{{ translateKeyPrefix + '.HELP_FINDING_RADIO_TITLE' | translate }}"
+    [titlePresent]="true"
+    [showBackButton]="true"
+    (backButton)="onHelpFindingRadioBackButtonClick()"
+>
+    <sxm-ui-help-finding-radio (deviceHelp)="onOpenDeviceHelpModalClicked()">
+        <p #contentParagraphOne class="paragraph-1">{{ translateKeyPrefix + ".HELP_FINDING_RADIO_PARAGRAPH_1" | translate }}</p>
+    </sxm-ui-help-finding-radio>
+</sxm-ui-modal>
+<sxm-ui-modal
+    #deviceHelpModal
+    [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"
+    [titlePresent]="true"
+    title="{{ translateKeyPrefix + '.RADIO_LOOKUP_MARINE_AVIATION' | translate }}"
+    (modalClosed)="helpFindingRadioModal.open()"
+>
+    <sxm-ui-device-help [isCanadaMode]="isCanadaMode$ | async" [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"></sxm-ui-device-help>
+</sxm-ui-modal>

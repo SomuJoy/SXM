@@ -1,0 +1,21 @@
+<section id="heroSection" *ngIf="heroViewModel$ | async as heroData">
+    <sxm-ui-hero [heroData]="heroData"></sxm-ui-hero>
+</section>
+<div deCarePageMainContent id="mainContent" *ngrxLet="currentLang$ as currentLang">
+    <section id="your-plan-and-offer" *ngIf="selectedDeviceSubscriptionViewModel$ | async as selectedDeviceSubscriptionViewModel">
+        <article class="your-plan">
+            <p class="your-plan--header">{{ translateKeyPrefix + ".CURRENT_PLAN.TITLE" | translate }}</p>
+            <p *ngFor="let plan of selectedDeviceSubscriptionViewModel">
+                {{
+                    translateKeyPrefix + ".CURRENT_PLAN.NAME_AND_PRICE" + (plan.isAnnual ? "_ANNUAL" : "")
+                        | translate: { name: plan.name, price: plan.price | currency: "USD":"symbol-narrow":undefined:currentLang }
+                }}
+            </p>
+            <hr />
+            <p>{{ translateKeyPrefix + ".MESSAGE_TEXT" | translate }}</p>
+            <button type="button" sxm-proceed-button sxmUiDataClickTrack="exit" (click)="manageAccount()">
+                {{ translateKeyPrefix + ".MANAGE_ACCOUNT_BUTTON_TEXT" | translate }}
+            </button>
+        </article>
+    </section>
+</div>

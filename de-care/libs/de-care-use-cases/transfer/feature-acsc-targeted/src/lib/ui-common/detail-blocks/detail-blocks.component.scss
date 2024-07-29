@@ -1,0 +1,16 @@
+@import "sxm.phoenix.imports";
+.block {
+    border: 1px solid $gray-medium;
+    padding: 16px;
+    width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid $gray-medium;
+    td {
+        border-top: 1px solid $gray-medium;
+        padding: 16px;
+    }
+}

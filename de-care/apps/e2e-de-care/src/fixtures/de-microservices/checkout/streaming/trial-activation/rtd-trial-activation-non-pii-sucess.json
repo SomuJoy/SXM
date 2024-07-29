@@ -1,0 +1,69 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "VARIANT",
+            "accountProfile": {
+                "accountRegistered": false
+            },
+            "accountState": {
+                "isInPreTrial": false
+            },
+            "serviceAddress": {
+                "state": "",
+                "country": "US"
+            },
+            "subscriptions": [
+                {
+                    "id": "10000220840",
+                    "plans": [
+                        {
+                            "code": "Trial - Premier Streaming - 2mo - $0.00 - (RTD)",
+                            "label": "Trial - Streaming Platinum - 2mo - $0.00",
+                            "packageName": "SIR_IP_SA",
+                            "termLength": 2,
+                            "startDate": "2023-04-02T00:00:00-04:00",
+                            "endDate": "2023-06-02T00:00:00-04:00",
+                            "nextCycleOn": null,
+                            "marketType": "trial:streaming",
+                            "type": "TRIAL",
+                            "capabilities": ["IPAUD"],
+                            "price": 0,
+                            "isBasePlan": true,
+                            "priceChangeMessagingType": "",
+                            "priceIncreaseDiff": 0,
+                            "dataCapable": false
+                        }
+                    ],
+                    "followonPlans": [],
+                    "radioService": null,
+                    "streamingService": {
+                        "id": "10000222888",
+                        "maskedUserName": "dew******@siriusxm.com",
+                        "status": "Active",
+                        "randomCredentials": false
+                    },
+                    "status": "Active",
+                    "devicePromoCode": null,
+                    "isPrimary": true,
+                    "nickname": null,
+                    "hasDuplicateVehicleInfo": null
+                }
+            ],
+            "billingSummary": {
+                "creditCard": null,
+                "isAccountInCollection": false,
+                "isPaymentTypeInvoice": false
+            },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true,
+            "maskedEmail": null,
+            "isEmailinTokenSameAsEmailOnFile": false,
+            "isAccountIdentifiedUsingFLEPZOrVIN": false
+        },
+        "marketingId": null,
+        "marketingAcctId": "3528"
+    }
+}

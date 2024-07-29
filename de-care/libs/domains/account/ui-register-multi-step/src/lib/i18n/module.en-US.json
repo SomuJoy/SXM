@@ -1,0 +1,49 @@
+{
+    "DomainsAccountUiRegisterMultiStepModule": {
+        "RegistrationCredentialsStepComponent": {
+            "FORM_HEADLINE_CREDENTIALS": "Create your username and password",
+            "FORM_INSTRUCTIONS_CREDENTIALS": "These are the login credentials you'll use to manage your account online, as well as to listen on the SXM App.",
+            "USERNAME": {
+                "LABEL": "Username/Email",
+                "ERRORS": {
+                    "REQUIRED": "Enter a username/valid email.",
+                    "ALREADY_EXIST": "That username/email is associated with another account."
+                }
+            },
+            "PASSWORD": {
+                "LABEL": "Password",
+                "ERRORS": {
+                    "REQUIRED": "Enter a valid password.",
+                    "LENGTH": "Your password must be {{ min }} to {{ max }} characters long.",
+                    "POLICY": "Your password must contain at least one character from at least 3 different groups, as explained in our password policy.",
+                    "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}",
+                    "GENERIC": "Your password does not fulfill all the requirements",
+                    "PII_DATA": "Password cannot contain first name, last name or email address."
+                }
+            },
+            "PLURAL_MAP": {
+                "WORD": {
+                    "=1": "word",
+                    "other": "words"
+                }
+            },
+            "CONTINUE_BUTTON_TEXT": "Continue",
+            "LINK_TEXT": "Want to sign in?",
+            "SYSTEM_ERROR": "We’re sorry… something went wrong. We’re experiencing technical issues and are working on resolving it. Please try again."
+        },
+        "RegistrationSecurityQuestionsStepComponent": {
+            "FORM_HEADLINE_SECURITY_QUESTIONS": "Create Your Security questions",
+            "FORM_INSTRUCTIONS_SECURITY_QUESTIONS": "Please select and answer three questions below that will help us verify your identity if you forget your password.",
+            "COMPLETE_SETUP_BUTTON_TEXT": "Complete Setup"
+        },
+        "RegistrationAddressStepComponent": {
+            "REGISTRATION_TRANSACTION_HEADLINE": "We found your car.",
+            "REGISTRATION_TRANSACTION_DETAILS": "Now we just need the following info to set up your subscription so you can start listening.",
+            "FORM_HEADLINE_SERVICE_ADDRESS": "Enter service address",
+            "CONFIRM_YOUR_ADDRESS": "Please confirm your address",
+            "CONTINUE_BUTTON_TEXT": "Continue",
+            "FIRST_NAME": "First Name",
+            "LAST_NAME": "Last Name"
+        }
+    }
+}

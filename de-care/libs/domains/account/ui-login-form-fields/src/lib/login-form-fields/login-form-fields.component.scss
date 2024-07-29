@@ -1,0 +1,21 @@
+@import "sxm.phoenix.imports";
+
+$common-margin: 24px;
+
+.gray-text {
+    color: $gray-dark;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+sxm-ui-tooltip {
+    float: right;
+    margin: -2.5rem 0.5rem 0;
+    color: #000;
+}
+
+.input-container input {
+    padding: 20px 0 16px 14px !important;
+}

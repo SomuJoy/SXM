@@ -1,0 +1,90 @@
+@import "../../../libs/sxm-assets/scss/global";
+
+//TODO: move this to the ui framework
+// This theme is for the 360L OEM in-car purchase experience.  It will be used in the de-care Angular app.
+
+.oem-theme {
+    padding: 12px 0;
+
+    h2 {
+        @include font-size(40px);
+    }
+
+    h3 {
+        @include font-size(30px);
+    }
+
+    h4 {
+        @include font-size(28px);
+        margin-bottom: 12px;
+    }
+
+    p {
+        @include font-size(26px);
+
+        &.tiny-copy {
+            @include font-size(20px);
+        }
+
+        &.small-copy {
+            @include font-size(24px);
+        }
+
+        &.large-copy {
+            @include font-size(30px);
+        }
+    }
+
+    .legal-copy {
+        @include font-size(26px);
+    }
+
+    .button {
+        @include font-size(22px);
+    }
+
+    .input-container {
+        height: 80px;
+
+        &.filled,
+        &.active {
+            label {
+                transform: translateY(4px) scale(0.6);
+            }
+        }
+
+        label {
+            @include font-size(26px);
+            line-height: 40px;
+        }
+
+        input {
+            @include font-size(26px);
+        }
+    }
+
+    .invalid-feedback {
+        p {
+            @include font-size(24px);
+        }
+    }
+    .checkmark-list {
+        padding-top: 0;
+        li {
+            @include font-size(24px);
+            padding-left: 32px;
+            line-height: 36px;
+        }
+    }
+
+    //disabling all active links
+    a {
+        pointer-events: none;
+        color: inherit;
+        text-decoration: none;
+
+        &[title]:after {
+            content: attr(title);
+        }
+    }
+}

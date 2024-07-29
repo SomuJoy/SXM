@@ -1,0 +1,6 @@
+{
+    "BACK_BUTTON_LABEL": "RETOUR",
+    "HEADER": "Modifier les identifiants du compte",
+    "HEADER_DESCRIPTION": "La modification des identifiants de votre compte entraînera également la modification des identifiants d’écoute en continu pour votre abonnement à streaming.",
+    "USERNAME_UPDATE_SUCCESS_MESAGE": "Vos identifiants ont été mis à jour avec succès"
+}

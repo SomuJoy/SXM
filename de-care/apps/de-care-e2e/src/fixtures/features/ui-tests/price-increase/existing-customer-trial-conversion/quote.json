@@ -1,0 +1,86 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "quote": {
+            "currentQuote": null,
+            "futureQuote": {
+                "totalTaxAmount": "0.26",
+                "totalFeesAmount": "0.00",
+                "totalTaxesAndFeesAmount": "0.26",
+                "totalAmount": "2.26",
+                "discountAmount": "0.00",
+                "pricePerMonth": "0.67",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [],
+                "taxes": [{ "description": "Harmonized_Sales_Tax_HST", "amount": "0.26" }],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Promo - All Access - 3mo - 2.00 - 1moFO",
+                        "packageName": "SIR_CAN_ALLACCESS",
+                        "termLength": 3,
+                        "priceAmount": "2.00",
+                        "taxAmount": "0.26",
+                        "feeAmount": "0.00",
+                        "totalTaxesAndFeesAmount": "0.26",
+                        "taxes": [{ "description": "Harmonized_Sales_Tax_HST", "amount": "0.26" }],
+                        "fees": [],
+                        "startDate": "2022-08-24",
+                        "endDate": "2022-11-24",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "TRIAL_EXT",
+                        "dealType": "",
+                        "isStudent": false,
+                        "isAdvantage": false
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            },
+            "proRatedRenewalQuote": null,
+            "promoRenewalQuote": null,
+            "renewalQuote": {
+                "totalTaxAmount": "3.37",
+                "totalFeesAmount": "3.94",
+                "totalTaxesAndFeesAmount": "7.31",
+                "totalAmount": "29.30",
+                "discountAmount": "0.00",
+                "pricePerMonth": "21.99",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [{ "description": "Music_Royalty_and_Administrative_Fee", "amount": "3.94" }],
+                "taxes": [{ "description": "Harmonized_Sales_Tax_HST", "amount": "3.37" }],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "All Access - 1mo - OnMRF",
+                        "packageName": "SIR_CAN_ALLACCESS",
+                        "termLength": 1,
+                        "priceAmount": "21.99",
+                        "taxAmount": "3.37",
+                        "feeAmount": "3.94",
+                        "totalTaxesAndFeesAmount": "7.31",
+                        "taxes": [{ "description": "Harmonized_Sales_Tax_HST", "amount": "3.37" }],
+                        "fees": [{ "description": "Music_Royalty_and_Administrative_Fee", "amount": "3.94" }],
+                        "startDate": "2022-11-24",
+                        "endDate": "2022-12-24",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "",
+                        "dealType": "",
+                        "isStudent": false,
+                        "isAdvantage": false
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            }
+        }
+    }
+}

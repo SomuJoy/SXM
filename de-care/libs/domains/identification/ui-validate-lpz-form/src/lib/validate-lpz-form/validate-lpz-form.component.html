@@ -1,0 +1,13 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div *ngIf="isInvalidError$ | async" class="invalid-feedback">
+        <p>{{ translateKeyPrefix + "INVALID_ERROR" | translate }}</p>
+    </div>
+    <div *ngIf="isSystemError$ | async" class="invalid-feedback">
+        <p [innerHTML]="translateKeyPrefix + 'PHONE_INVALID_PREFIX' | translate"></p>
+    </div>
+    <sxm-ui-last-name-form-field formControlName="lastName"></sxm-ui-last-name-form-field>
+    <sxm-ui-phone-number-form-field formControlName="phoneNumber"></sxm-ui-phone-number-form-field>
+    <sxm-ui-postal-code-form-field formControlName="zipCode" [isCanada]="isCanada"></sxm-ui-postal-code-form-field>
+    <privacy-policy *ngIf="displayPrivacyPolicy"></privacy-policy>
+    <button type="submit" data-test="submit-lpz-info" [loading]="processing$ | async" sxm-proceed-button>{{ translateKeyPrefix + "SUBMIT_BUTTON" | translate }}</button>
+</form>

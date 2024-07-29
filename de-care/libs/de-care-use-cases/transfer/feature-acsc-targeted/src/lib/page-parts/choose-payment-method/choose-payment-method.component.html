@@ -1,0 +1,61 @@
+<ng-container *ngIf="(hasNoInvoiceOrActiveCardOnFile$ | async) || (!allowInvoice && hasNoActiveCardOnFile$ | async); else showChoiceHeadline">
+    <h4 class="vertical-spacing" data-e2e="enterPaymentHeadline">{{ translateKeyPrefix + "HEADLINE_ENTER_INFO" | translate }}</h4>
+</ng-container>
+<ng-template #showChoiceHeadline>
+    <h4 class="vertical-spacing" data-e2e="choosePaymentHeadline">{{ translateKeyPrefix + "HEADLINE" | translate }}</h4>
+</ng-template>
+<div class="vehicle-subscription-information vertical-spacing">
+    <div class="vertical-spacing">
+        <sxm-ui-vehicle-with-subscription-info
+            [data]="subscriptionData$ | async"
+            [eyebrow]="translateKeyPrefix + 'SUBSCRIPTION_EYEBROW' | translate"
+            [displayPackageNameAsTitle]="true"
+            data-e2e="newSubscriptionInfo"
+        ></sxm-ui-vehicle-with-subscription-info>
+    </div>
+    <ng-container *ngIf="getIsModeServiceContinuity$ | async">
+        <sxm-ui-accordion-chevron
+            [collapsedText]="translateKeyPrefix + 'VIEW_DETAILS_COLLAPSED' | translate"
+            [expandedText]="translateKeyPrefix + 'VIEW_DETAILS_EXPANDED' | translate"
+            class="vertical-spacing highlight-label"
+            data-track-click="SC Payment Show details"
+        >
+            <div class="vertical-spacing">
+                <sxm-ui-vehicle-with-subscription-info
+                    [data]="transferFromData$ | async"
+                    [eyebrow]="translateKeyPrefix + 'TRANSFER_EYEBROW' | translate"
+                    [footer]="(getRemoveOldRadioId$ | async) ? (translateKeyPrefix + 'CAR_REMOVED' | translate) : null"
+                    data-e2e="transferSubscriptionInfo"
+                ></sxm-ui-vehicle-with-subscription-info>
+            </div>
+        </sxm-ui-accordion-chevron>
+    </ng-container>
+</div>
+<hr class="vertical-spacing" />
+<!-- isRTC is true so the copy at the top of the payment-info component does not show -->
+<ng-container *ngIf="allowInvoice; else noInvoiceAllowed">
+    <payment-info-with-invoice
+        *ngIf="selectAccount$ | async as selectAccount"
+        [accountData]="selectAccount"
+        (paymentFormCompleted)="onPaymentFormComplete($event)"
+        [isClosedRadio]="false"
+        [isRTC]="true"
+        [ccError]="ccError"
+        [isGiftCardAllowed]="!(getIsModeServiceContinuity$ | async)"
+        [loading]="getLoadQuoteDataAsProcessing$ | async"
+        data-e2e="paymentInfo"
+    ></payment-info-with-invoice>
+</ng-container>
+<ng-template #noInvoiceAllowed>
+    <payment-info
+        *ngIf="selectAccount$ | async as selectAccount"
+        [accountData]="selectAccount"
+        (paymentFormCompleted)="onPaymentFormComplete($event)"
+        [isClosedRadio]="false"
+        [isRTC]="true"
+        [ccError]="ccError"
+        [isGiftCardAllowed]="!(getIsModeServiceContinuity$ | async)"
+        [loading]="getLoadQuoteDataAsProcessing$ | async"
+        data-e2e="paymentInfo"
+    ></payment-info>
+</ng-template>

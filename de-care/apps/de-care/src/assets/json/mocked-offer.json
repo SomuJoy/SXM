@@ -1,0 +1,15 @@
+{
+    "offer_details_desc": "Best package is offered to you!",
+    "plans": [
+        {
+            "id": 1,
+            "planId": "0.0.0.1 /plan 10000107221 0",
+            "descriptor": "SIR_IP_SA",
+            "marketType": "self-pay:standard",
+            "termLength": 1,
+            "eligibleForMrd": false,
+            "planDetail": "<ul><li>Listen up to 75+ Channels</li><li>Access On Demand content</li><li>On the app and connected devices</li></ul>",
+            "plan_descr": "SIR_IP_SA"
+        }
+    ]
+}

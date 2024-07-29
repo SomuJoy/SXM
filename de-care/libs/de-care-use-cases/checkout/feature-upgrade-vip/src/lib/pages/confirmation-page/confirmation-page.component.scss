@@ -1,0 +1,44 @@
+@import "sxm.phoenix.imports";
+
+hr {
+    background-color: $gray-medium;
+    border: 0;
+    height: 1px;
+    margin: 24px 0;
+    width: 100%;
+}
+
+h5 {
+    margin-bottom: 8px;
+}
+
+:host {
+    .pill-container {
+        margin-top: 24px;
+        sxm-ui-alert-pill {
+            background-color: $vanilla;
+            box-shadow: none;
+            padding: 12px;
+        }
+    }
+    quote-summary::ng-deep {
+        div.order-summary {
+            margin-bottom: 16px;
+        }
+    }
+}
+
+.radio-info {
+    margin-bottom: 0px;
+}
+
+quote-summary {
+    padding-top: 24px;
+}
+
+.important-info-section {
+    padding: 24px 4px;
+    @include bp(medium) {
+        padding: 24px 0px;
+    }
+}

@@ -1,0 +1,353 @@
+{
+    "identification": {
+        "accountLookupComponent": {
+            "EMAIL_PLACEHOLDER": "Adresse courriel",
+            "EMAIL_DESCRIPTION": "",
+            "EMAIL_INVALID_MSG": "Entrez une adresse courriel valide.",
+            "BUTTON_LABEL": "Continuer"
+        },
+        "accountIdInfoComponent": {
+            "RADIO_INPUT_LABEL": "Le code de radio",
+            "INVALID_RADIO_FEEDBACK": "Entrez un code de radio valide.",
+            "LASTNAME_INPUT_LABEL": "Nom",
+            "INVALID_LASTNAME_FEEDBACK": "Entrez votre nom.",
+            "BUTTON": "Continuer",
+            "RADIO_ID_HELP_LABEL": "Comment puis-je trouver mon code de radio?",
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Politique de la vie privée",
+                "LINK_URL": "https://www.siriusxm.ca/vieprivee"
+            },
+            "ACCOUNT_TYPE_NOT_SUPPORTED": "Votre compte ne peut pas être géré en ligne. Si vous avez besoin d'aide au sujet de votre compte, veuillez appeler au 1 866 635-0565."
+        },
+        "PlatformUpgradeOptionComponent": {
+            "MODAL_TITLE": "Détails du forfait {{ packageName }}"
+        },
+        "flepzFormComponent": {
+            "BUTTON": "Continuer",
+            "ERROR_PREFIX": "Nous sommes dans l'impossibilité de confirmer votre compte. Veuillez vérifier l'information que vous avez entrée et essayer de nouveau. Pour plus d'assistance, composez le 1 833 838-7846.",
+            "ERROR_SUFFIX": "",
+            "NO_RADIO_SUFFIX": "ppelez-nous au 1 888 539-7474 pour obtenir plus d'aide.",
+            "NO_RADIO_PREFIX": "Nous n'avons pas pu trouver votre compte. Veuillez essayer d'entrer de nouveau vos renseignements ou a",
+            "NO_RADIO_TAB_LINK_PREFIX": "Nous n'avons pas pu trouver votre compte. Veuillez essayer d'entrer de nouveau vos renseignements ou ",
+            "NO_RADIO_TAB_LINK_CHAT_LINK_TEXT": "",
+            "PHONE_INVALID_PREFIX": "Nous sommes dans l'impossibilité de confirmer votre compte. Veuillez vérifier l'information que vous avez entrée et essayer de nouveau. Pour plus d'assistance, composez le 1 833 838-7846.",
+            "PHONE_INVALID_SUFFIX": "",
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Politique de la vie privée",
+                "LINK_URL": "https://www.siriusxm.ca/vieprivee"
+            },
+            "CHAT_LINK_TEXT": ""
+        },
+        "activeSubscriptionComponent": {
+            "NAME": " Nom:",
+            "EMAIL": "Courriel:",
+            "PHONE": "Téléphone:",
+            "ZIPCODE": "Code postal:",
+            "VEHICLE": "{{make}} {{model}} {{year}}",
+            "RADIO": "Code de radio: ****{{ radioId }}",
+            "RENEWS": "Renouvellement",
+            "EDIT": "Modifiez",
+            "OPTIONS": {
+                "LOGIN": "CONNEXION AU COMPTE",
+                "MANAGE": "Gérer mon compte",
+                "LOOKUP_RADIO": "Recherchez une nouvelle radio"
+            },
+            "SUBSCRIPTION_INFO": {
+                "TITLE": "On dirait que vous avez déjà un abonnement.",
+                "SUB_TITLE": "Connectez-vous pour modifier votre abonnement."
+            },
+            "STREAMING": {
+                "NO_RADIO": "Vous n'avez pas de radio?",
+                "PACKAGE_TEXT": "Pas de problème. Renseignez-vous sur nos",
+                "PACKAGE_LINK": "forfaits de diffusion en continu seulement",
+                "URL": "https://www.siriusxm.ca/fr/offre/diffusez-siriusxm-partout/",
+                "URL_QUEBEC": "https://care.siriusxm.ca/sirpromoplanselection_view.action?programCode=CATESSRTD1MOFREE&langpref=fr"
+            }
+        },
+        "helpFindingRadioComponent": {
+            "TITLE": "Comment puis-je trouver mon code de radio?",
+            "NEED_HELP_TEXT-1": "Syntonisez la station 0 sur votre radio et le code de votre radio y sera affiché. Si cela ne fonctionne pas, essayez d'accéder au menu de fonctions de votre radio (consultez le guide de l'utilisateur pour des instructions précises).",
+            "NEED_HELP_TEXT-2": "Pour certaines radios, vous devrez maintenir appuyé le bouton SAT ou ESN, ou accéder au menu de fonctions de votre radio.",
+            "TEXT_LINK-0": "",
+            "TEXT_LINK-1": "Obtenez de l'aide pour trouver votre radio",
+            "TEXT_LINK-1_URL": "https://www.siriusxm.ca/trouverradio",
+            "TEXT_LINK-2": "Obtenez de l'aide pour trouver des appareils de marine ou d'aviation",
+            "DONT_HAVE_RADIO": {
+                "HEADLINE": "Vous n'avez pas de radio?",
+                "SUB_HEADLINE": "Pas de problème. Renseignez-vous sur notre essai de",
+                "LINK_TEXT": "SiriusXM En continu",
+                "LINK_URL": "https://www.siriusxm.ca/fr/ecoutez-en-tout-temps/"
+            }
+        },
+        "lookupVinComponent": {
+            "TITLE": "Recherchez votre NIV.",
+            "GETTING_STARTED": "Votre radio est liée au numéro d'identification de votre véhicule (NIV).",
+            "LOOKUP_ERROR_LABEL": "NIV",
+            "INVALID_FEEDBACK": "Entrez un NIV valide",
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Politique de la vie privée",
+                "LINK_URL": "https://www.siriusxm.ca/vieprivee"
+            },
+            "CONTINUE": "CONTINUER",
+            "VIN_BUTTON_LABEL": "Le NIV",
+            "VIN_BUTTON_ARIA_LABEL": "NIV (numéro d’identification du véhicule)",
+            "ACCOUNT_TYPE_NOT_SUPPORTED": "Votre compte ne peut pas être géré en ligne. Si vous avez besoin d'aide au sujet de votre compte, veuillez appeler au 1 866 635-0565."
+        },
+        "VinErrorComponent": {
+            "TITLE": "Oups, quelque chose n'a pas fonctionné.",
+            "MSG": "Nous n'arrivons pas à faire de recherche de NIV pour le moment.",
+            "CONTINUE_MSG": "Aller à Recherche de code de radio.",
+            "TEXT-LINK": "Aller à Recherche de code de radio",
+            "CHAT_LINK_TEXT": ""
+        },
+        "lookupRadioIdComponent": {
+            "TITLE": "Recherchez votre code de radio",
+            "GETTING_STARTED": "Votre code de radio comprendra 8 ou 12 caractères.",
+            "LOOKUP_ERROR_LABEL": "Le code de radio",
+            "INVALID_FEEDBACK": "Entrez un code de radio valide.",
+            "PRIVACY": "Politique de la vie privée",
+            "PRIVACY_POLICY_URL": "https://www.siriusxm.ca/vieprivee",
+            "HELP_FINDING_RADIO_LINK_TEXT": "Comment puis-je trouver mon code de radio?",
+            "CONTINUE": "Continuer",
+            "NEED_HELP_TEXT_LABEL": "Besoin d'aide?",
+            "RADIO_BUTTON_LABEL": "Code de radio",
+            "RADIO_LOOKUP_LABEL": "Recherche de radio",
+            "DEVICE_HELP": "Aide relative à l'appareil",
+            "INFO_LOOKUP_LABEL": "Votre Compte",
+            "ACCOUNT_TYPE_NOT_SUPPORTED": "Votre compte ne peut pas être géré en ligne. Si vous avez besoin d'aide au sujet de votre compte, veuillez appeler au 1 866 635-0565."
+        },
+        "yourInfoComponent": {
+            "head-line": {
+                "radio-found": "Bonjour {{firstName}}! Vous avez {{radioCount}} radio dans votre compte.",
+                "radios-found": "Bonjour {{firstName}}! Vous avez {{radioCount}} radios dans votre compte."
+            },
+            "found": {
+                "radio": "Nous avons trouvé {{ radioCount }} radio qui correspondent à votre info",
+                "radios": "Nous avons trouvé {{ radioCount }} radios qui correspondent à votre info"
+            },
+            "VEHICLE": "{{year}} {{make}} {{model}}",
+            "RADIO": "Code de radio: ****{{ radioId }}",
+            "HEADLINE": "Votre info",
+            "TITLE": "Essai gratuit",
+            "NOT_ACTIVE": "Aucun service actif",
+            "EDIT": "Modifiez",
+            "CHOOSE": "Choisissez ",
+            "RADIO_ID": "Code de radio",
+            "CHOOSE_RADIO": "Choisissez la radio que vous voulez activer.",
+            "DONT_SEE_RADIO": "Outil de recherche de radio",
+            "DONT_HAVE_RADIO": "Vous n'avez pas de radio? ",
+            "NO_PROB": "Pas de problème. Renseignez-vous sur nos forfaits de diffusion en continu seulement",
+            "NO_SERVICE": "Aucun service actif",
+            "STREAM_PACKAGES": "",
+            "BUTTON_LABEL": "Continuer",
+            "packages": {
+                "empty": {
+                    "name": "Aucun service actif"
+                }
+            },
+            "ACCOUNT_TYPE_NOT_SUPPORTED": "Votre compte ne peut pas être géré en ligne. Si vous avez besoin d'aide au sujet de votre compte, veuillez appeler au 1 866 635-0565."
+        },
+        "marketingPromoCodeComponent": {
+            "ADD_PROMO_LABEL": "Ajouter un code promo",
+            "REMOVE_PROMO_LABEL": "Enlever un code promo",
+            "PROMO_CODE_PLACEHOLDER": "Code promo",
+            "APPLY_PROMO": "Appliquer",
+            "INVALID_PROMO": "Code promo invalide",
+            "PROMO_CODE_APPLIED": "Le code {{promoCode}} a été appliqué."
+        },
+        "CarInfoTab": {
+            "BUTTON": "Continuer"
+        },
+        "verifyDeviceTabsComponent": {
+            "ENTER_INFO_OR_SIGNIN": "Veuillez entrer l’info de votre véhicule ou, si vous avez déjà un compte, vous pouvez",
+            "TITLE": "Se connecter",
+            "TABS_HEADING_TEXT": {
+                "DEFAULT": "Vérifiez votre compte à l'aide de vos informations ou de celles de votre voiture:",
+                "ACCOUNT_INFO_SCENARIO": "Vérifiez votre compte en utilisant l’une des options ci-dessous:",
+                "RADIO_ID_SCENARIO": "Vérifiez votre compte à l'aide de vos informations ou de votre identifiant radio:",
+                "VIN_SCENARIO": "Vérifiez votre compte en utilisant vos informations ou votre VIN:"
+            },
+            "CAR_INFO": "L'info de votre véhicule",
+            "FIRST": "Tout d'abord, parlez nous un peu de vous afin que nous puissions trouver votre radio.",
+            "OR": "Ou, si vous avez un compte SiriusXM,",
+            "partial_info_A": "vous connecter.",
+            "partial_info_B": "pour vérifier votre compte.",
+            "YOUR_INFO": "Votre info",
+            "RADIO_ID_INFO": "Le code de radio",
+            "RADIO_INFO": "Info de la radio",
+            "VIN_INFO": "NIV",
+            "SHARED_MODAL_TITLE": "Utilisez une des options de recherche de radio ci-dessous",
+            "LOGIN_LINK": "https://care.siriusxm.ca/login_view.action?langpref=fr",
+            "MANAGE_LINK": "https://care.siriusxm.ca/login_view.action?langpref=fr",
+            "ACCOUNT_INFO": "Infos du compte",
+            "NO_RADIO_CAR_INFO_TAB_LINK_TEXT": "faites une recherche au moyen des renseignements du véhicule",
+            "NO_RADIO_CAR_INFO_TAB_LINK_DESC": " (code de radio ou NIV). A",
+            "NO_RADIO_ACCOUNT_INFO_TAB_LINK_TEXT": "faites une recherche au moyen des renseignements du compte",
+            "NO_RADIO_ACCOUNT_INFO_TAB_LINK_DESC": " (code de radio ou nom de famille). A",
+            "SIGN_IN_TITLE": "Connectez-vous pour continuer."
+        },
+        "DeviceHelpComponent": {
+            "TITLE": "Recherchez le code de votre appareil de marine ou d'aviation",
+            "MESSAGE": "<strong>Vous pouvez rechercher le code de votre appareil en différents endroits.</strong>",
+            "NOTE": "Note : les codes d'appareils comprennent 8 caractères.",
+            "UNORDERED_LIST": {
+                "item-1": "Pour la plupart des appareils, accédez à votre menu <strong>Diagnostics</strong> ou <strong>Settings</strong> (Paramètres), puis regardez si votre code d'appareil est indiqué.",
+                "item-2": "Vous pouvez aussi voir le code d'appareil au bas de votre appareil ou sur l'emballage. Dans la plupart des cas, vous le trouverez <strong>à côté du numéro de série.</strong>",
+                "item-3": "Si votre appareil dispose aussi de capacités sonores, vous pourriez <strong>syntoniser la station 0</strong> qui affichera le code de votre appareil."
+            }
+        },
+        "ValidateUserRadioComponent": {
+            "TITLE": "L'info de votre véhicule",
+            "RADIO_LABEL": "Le code de radio",
+            "EDIT": "Modifiez",
+            "ACCOUNT_VERIFY": "Vérifiez votre compte",
+            "MESSAGE": "Pour protéger votre compte de tout accès non autorisé, nous avons besoin de faire correspondre les informations dans notre système.",
+            "TEXT-LINK": "Pour plus de renseignements sur la manière dont nous utilisons vos informations, consultez notre",
+            "PRIVACY": "Politique de la vie privée",
+            "PRIVACY_POLICY_URL": "https://www.siriusxm.ca/vieprivee",
+            "PLEASE_CALL_PART1": "Nous sommes dans l'impossibilité de confirmer votre compte. Veuillez vérifier l'information que vous avez entrée et essayer de nouveau. Pour plus d'assistance, composez le ",
+            "PLEASE_CALL_LINK_TEXT": "1 833 838-7846",
+            "PLEASE_CALL_URL": "tel:+1 833 838-7846",
+            "PLEASE_CALL_PART2": "",
+            "LAST_NAME": "Nom",
+            "ENTER_LAST": "Entrez votre nom.",
+            "PHONE_LABEL": "Numéro de téléphone",
+            "ENTER_NUMBER": "Entrez votre numéro de téléphone.",
+            "POSTAL": "Code postal",
+            "ENTER_POSTAL": "Entrez un code postal valide.",
+            "BUTTON_LABEL": "Continuer"
+        },
+        "RadioNoMatchComponent": {
+            "TITLE": "Les informations que vous avez fournies ne correspondent pas à nos dossiers.",
+            "TEXT_1-A": "Vous pouvez continuer à créer un nouveau compte ou essayer",
+            "LINK_EDIT_INFO": "de modifier vos informations",
+            "TEXT_1-B": "pour trouver votre compte existant.",
+            "RADIO_LABEL": "Code de radio:",
+            "EDIT_LABEL": "Modifiez",
+            "BUTTON_LABEL": "Créer un nouveau compte",
+            "CHAT_LABEL": ""
+        },
+        "yourSubscriptionsComponent": {
+            "HEADER_TITLE": "Nous avons trouvé un abonnement (des abonnements) correspondant aux renseignements que vous nous avez donnés.",
+            "HEADER_INCLUDED": "COMPRIS DANS VOTRE ABONNEMENT",
+            "SUB_HEADER_INCLUDED": "Bonne nouvelle! L’écoute en continu pour vos appareils mobiles et à la maison grâce à l’Appli SXM est déjà inclus sans frais supplémentaires.",
+            "HEADER_TRIAL": "ABONNEMENTS D’ESSAI",
+            "SUB_HEADER_TRIAL": "Ajoutez un abonnement lorsque votre essai prendra fin."
+        },
+        "subscriptionItemComponent": {
+            "CREATE_LOGIN": "<a href=\"\" target=\"_blank\" class=\"no-underline\">Créer des identifiants</a>",
+            "ADD_SUB": "<a class=\"no-underline\">Abonnez-vous</a>",
+            "EXPIRED": "Terminé",
+            "VEHICLE": "{{make}} {{model}} {{year}}",
+            "RADIO": "Code de radio: ****{{ radioId }}",
+            "EXPIRES": "Se termine le ",
+            "SING_IN_LINK_TEXT": "Ecoutez",
+            "STREAMING_PLAYER_LINK": {
+                "STREAMING_RTP_OFFER": "",
+                "STREAMING_RTD_OFFER": "",
+                "SATELLITE_OFFER": ""
+            }
+        },
+        "validateLpzFormComponent": {
+            "PRIVACY": "Politique de la vie privée",
+            "PRIVACY_POLICY_URL": "https://www.siriusxm.ca/vieprivee",
+            "PLEASE_CALL_PART1": "Nous sommes dans l'impossibilité de confirmer votre compte. Veuillez vérifier l'information que vous avez entrée et essayer de nouveau. Pour plus d'assistance, composez le ",
+            "PLEASE_CALL_LINK_TEXT": "1 833 838-7846",
+            "PLEASE_CALL_URL": "tel:+1 833 838-7846",
+            "PLEASE_CALL_PART2": " ou clavardez avec un agent.",
+            "LAST_NAME": "Nom",
+            "ENTER_LAST": "Entrez votre nom.",
+            "PHONE_LABEL": "Numéro de téléphone",
+            "ENTER_NUMBER": "Entrez votre numéro de téléphone.",
+            "POSTAL": "Code postal",
+            "ENTER_POSTAL": "Entrez un code postal valide.",
+            "BUTTON_LABEL": "Continuer"
+        },
+        "rflzFormComponent": {
+            "STEP": "ÉTAPE 1 DE  {{totalSteps}}",
+            "HEADER": "Vérifiez l'admissibilité de votre appareil",
+            "RADIO_ID_VIN": "Code de radio/NIV",
+            "RADIO_ID_VIN_NFL": "Code de radio/NIV",
+            "NO_RADIO": "Pas de radio?",
+            "GET_STREAMING": {
+                "LINK_URL": "https://www.siriusxm.ca/siriusxm-en-continu",
+                "LINK_TEXT": "Obtenez l’Appli SXM"
+            },
+            "LOOKUP_BY_LICENSE_PLATE_TEXT": "Lookup by license plate",
+            "FIRST_NAME": "Prénom",
+            "LAST_NAME": "Nom",
+            "ZIP_CODE": "Code postal",
+            "PRIVACY_POLICY": {
+                "LINK_URL": "https://www.siriusxm.ca/vieprivee",
+                "LINK_URL_NFL": "https://www.siriusxm.ca/vieprivee?intcmp=MarketingLandingPage-Hero_NA_www:steelers-black-gold_PrivacyPolicy",
+                "LINK_TEXT": "Vie Privée"
+            },
+            "BUTTON": "VÉRIFIER MON ADMISSIBILITÉ",
+            "ERRORS": {
+                "RADIO_ID": "Entrez un code de radio ou un NIV valide.",
+                "FIRST_NAME": "Entrez votre prénom.",
+                "LAST_NAME": "Entrez votre nom.",
+                "ZIP_CODE": "Entrez un code postal valide."
+            },
+            "NFL_BUTTON": "CONTINUER"
+        },
+        "rflzErrorComponent": {
+            "ERRORS": {
+                "106_PREFIX": "Malheureusement, nos systèmes sont en panne. Veuillez essayer de nouveau plus tard. Pour obtenir de l'aide, ",
+                "106_SUFFIX": " ou composez le 1 866 635-0565.",
+                "107": "Il semble qu'un abonnement payant est déjà associé à cette radio.",
+                "110": "Il semble que vous avez déjà un essai actif et que votre abonnement payant commencera une fois que votre essai sera terminé.",
+                "114_PREFIX": "Nous sommes désolés pour les inconvénients, mais cette radio ne peut pas être activée en ligne. ",
+                "114_SUFFIX": ", ou composez le 1 866 635-0565 et laissez-nous vous aider.",
+                "REFRESH_RADIO_TEXT": "retransmettre le signal à votre radio",
+                "REFRESH_RADIO_LINK": "https://care.siriusxm.ca/retailrefresh_view.action?langpref=fr",
+                "LOGIN_TEXT": "connectez-vous ",
+                "LOGIN_LINK": "https://care.siriusxm.ca/login_view.action?langpref=fr",
+                "TRY": "Essayez de ",
+                "OR": ". Ou, ",
+                "MANAGE_ACCOUNT": "pour mettre à jour ou gérer votre compte."
+            },
+            "CHAT_LINK_TEXT": "Clavardez avec un préposé"
+        },
+        "accountLookupFormComponent": {
+            "ACCOUNT_FOUND_MODAL_TITLE": "Votre compte",
+            "VERIFY_MODAL_TITLE": "Vérifier",
+            "VERIFY_MODAL_HEADER_TITLE": "Vérifiez votre compte",
+            "VERIFY_MODAL_HEADER_COPY": "Nous voulons nous assurer qu'il s'agit bien de vous avant que vous puissiez créer votre nom d'utilisateur."
+        },
+        "deviceLookupWizardComponent": {
+            "RADIO_LOOKUP_HEADER": "Utilisez une des options de recherche de radio ci-dessous",
+            "RADIO_LOOKUP_LABEL": "Recherche de radio",
+            "DEVICE_HELP": "Aide relative à l'appareil"
+        },
+        "zagFormComponent": {
+            "ZIP_CODE": "Code postal",
+            "BIRTH_YEAR": "Année de naissance",
+            "GENDER": "Sexe",
+            "CONTINUE": "CONTINUER",
+            "GENDER_LIST": [
+                {
+                    "label": "Femme",
+                    "key": "Femme"
+                },
+                {
+                    "label": "Homme",
+                    "key": "Homme"
+                },
+                {
+                    "label": "Non-binaire",
+                    "key": "Non-binaire"
+                },
+                {
+                    "label": "Préfère ne pas le dire",
+                    "key": "Préfère ne pas le dire"
+                }
+            ],
+            "ERRORS": {
+                "ZIP_CODE": "Entrez un code postal valide.",
+                "BIRTH_YEAR": "Choisissez votre année de naissance.",
+                "GENDER": "Choisissez votre sexe."
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "name": "shared-adobe-target-provider",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/adobe-target-provider/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/shared/adobe-target-provider"],
+            "options": {
+                "jestConfig": "libs/shared/adobe-target-provider/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/adobe-target-provider/src/**/*.ts", "libs/shared/adobe-target-provider/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:ui-util", "scope:shared-ui-util"]
+}

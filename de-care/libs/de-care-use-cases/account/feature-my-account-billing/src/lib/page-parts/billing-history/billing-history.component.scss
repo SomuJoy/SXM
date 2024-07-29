@@ -1,0 +1,267 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        tr {
+            &.record-row {
+                cursor: pointer;
+                &.no-details {
+                    cursor: default;
+                    > td {
+                        border-bottom: 1px solid $gray-light;
+                    }
+                }
+                td {
+                    padding-top: 24px;
+                    padding-bottom: 24px;
+                }
+            }
+            &:first-child {
+                td {
+                    border-top: 1px solid $gray-light;
+                }
+            }
+            &.no-data-row {
+                td {
+                    @include font-size(16px);
+                    font-weight: calculate-font-weight(bold);
+                    color: $gray-dark;
+                    padding: 24px 0 20px;
+                }
+            }
+        }
+
+        th {
+            text-align: left;
+            vertical-align: top;
+            color: $gray-dark;
+            font-size: calculate-rem(12px);
+            font-weight: calculate-font-weight(bold);
+            padding: 12px 0px;
+            letter-spacing: 1px;
+            display: none;
+            @include bp(medium) {
+                display: table-cell;
+            }
+            &.amount {
+                text-align: right;
+                padding-right: 36px;
+            }
+            &.invoice-number {
+                display: none;
+                @include bp(medium) {
+                    display: table-cell;
+                }
+            }
+        }
+        td {
+            text-align: left;
+            vertical-align: top;
+            font-size: calculate-rem(16px);
+            &.invoice-number {
+                display: none;
+                font-size: calculate-rem(14px);
+                font-weight: calculate-font-weight(book);
+                @include bp(medium) {
+                    display: table-cell;
+                    vertical-align: bottom;
+                }
+            }
+            &.date {
+                font-weight: calculate-font-weight(bold);
+                @include bp(medium) {
+                    min-width: 20%;
+                }
+                .invoice-subtitle {
+                    display: block;
+                    padding-top: 4px;
+                    color: $black;
+                    font-size: calculate-rem(12px);
+                    font-weight: calculate-font-weight(book);
+                    @include bp(medium) {
+                        display: none;
+                    }
+                }
+            }
+            &.amount {
+                font-weight: calculate-font-weight(bold);
+                text-align: right;
+                > span {
+                    padding-left: 8px;
+                    @include bp(medium) {
+                        padding-left: 20px;
+                    }
+                }
+            }
+            &.empty-column {
+                display: none;
+                border-bottom: 1px solid $gray-light;
+                @include bp(medium) {
+                    display: table-cell;
+                }
+            }
+            &.details-column {
+                border-bottom: 1px solid $gray-light;
+            }
+            > .details {
+                overflow: hidden;
+                display: grid;
+                row-gap: 24px;
+                > section {
+                    display: grid;
+                    row-gap: 24px;
+                    > article {
+                        display: grid;
+                        row-gap: 24px;
+                        grid-template-columns: repeat(12, [col-start] 1fr);
+                        &:first-child {
+                            > aside {
+                                > section {
+                                    &:first-child {
+                                        padding-top: 0;
+                                        border-top: 0;
+                                        @include bp(medium) {
+                                            border-top: 1px solid $gray-light;
+                                            padding-top: 24px;
+                                        }
+                                    }
+                                    &.lead-in {
+                                        margin-bottom: 0;
+                                    }
+                                }
+                            }
+                        }
+                        > aside {
+                            grid-column: 1/13;
+                            display: grid;
+                            row-gap: 4px;
+                            padding-right: 24px;
+                            @include bp(medium) {
+                                padding-right: 36px;
+                            }
+                            > section {
+                                display: grid;
+                                grid-template-columns: 1fr auto;
+                                column-gap: 16px;
+                                font-weight: calculate-font-weight(book);
+                                font-size: calculate-rem(12px);
+                                @include bp(medium) {
+                                    font-size: calculate-rem(14px);
+                                }
+                                &.service-date {
+                                    font-size: calculate-rem(12px);
+                                    color: $gray-dark;
+                                    .date-break {
+                                        @include bp(mobile-medium) {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                                &.header {
+                                    grid-template-columns: 1fr 40px;
+                                    @include bp(small) {
+                                        grid-template-columns: 1fr auto;
+                                    }
+                                    > header {
+                                        @include text-overflow-ellipsis;
+                                        font-weight: calculate-font-weight(bold);
+                                    }
+                                }
+
+                                .amount {
+                                    text-align: right;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .server-error {
+        color: red;
+        @include font-size(12px);
+        font-weight: calculate-font-weight("bold");
+    }
+
+    .button-container {
+        display: grid;
+        grid-template-columns: repeat(6, [col-start] 1fr);
+        @include bp(medium) {
+            grid-template-columns: repeat(12, [col-start] 1fr);
+        }
+    }
+
+    .button.secondary {
+        grid-column: 1/13;
+        @include short-button;
+        @include bp(medium) {
+            grid-column: 3/11;
+        }
+        @include bp(large) {
+            grid-column: 4/10;
+        }
+    }
+
+    mat-icon[svgIcon="dropdown-arrow-small"] {
+        color: $blue-secondary;
+        width: 14px;
+        height: 14px;
+        &.flipped {
+            transform: rotate(180deg);
+        }
+    }
+
+    .non-arrow-space {
+        display: inline;
+        width: 14px;
+        padding: 0;
+        margin-left: 20px;
+    }
+
+    #skeletonLoadingTable {
+        tr {
+            &.loading-row {
+                td {
+                    padding: 24px 0;
+                    border-bottom: 1px solid $gray-light;
+                    sxm-ui-skeleton-loader-panel {
+                        height: 21px;
+                    }
+                    &:first-child {
+                        sxm-ui-skeleton-loader-panel {
+                            width: 79px;
+                        }
+                    }
+                    &:nth-child(2) {
+                        display: none;
+                        @include bp(medium) {
+                            display: table-cell;
+                        }
+                        sxm-ui-skeleton-loader-panel {
+                            width: 133px;
+                        }
+                    }
+                    &:last-child {
+                        display: flex;
+                        justify-content: flex-end;
+                        sxm-ui-skeleton-loader-panel {
+                            width: 92px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media print {
+    td > .details {
+        height: auto !important;
+        padding-bottom: 32px !important;
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "BILLING_TITLE": "Billing",
+    "PAYMENT_INFO_TITLE": "Payment info",
+    "BILLING_SUMMARY_TITLE": "Billing summary",
+    "BILLING_PAYMENTS_TITLE": "Billing and payments",
+    "BILLING_HISTORY_LINK_LABEL_SHORT": "Billing activity",
+    "BILLING_HISTORY_LINK_LABEL_MEDIUM": "Billing activity",
+    "BILLING_HISTORY_LINK_LABEL_LONG": "Billing activity",
+    "PAYMENT_HISTORY_LINK_LABEL_SHORT": "Payments",
+    "PAYMENT_HISTORY_LINK_LABEL_MEDIUM": "Payment history",
+    "PAYMENT_HISTORY_LINK_LABEL_LONG": "Payment history",
+    "PAYMENT_METHOD_INVOICE": "Invoice",
+    "BILLING_EBILL_MODAL_TITLE": "Billing",
+    "RADIO_DEVICE_LABEL": "Radio/Device",
+    "DATE_LABEL": "Date",
+    "FILTER_DROPDOWN_OPTIONS": {
+        "ALL_LABEL": "All",
+        "LAST_6MONTHS": "Last 6 months"
+    },
+    "FILTER_BUTTON_LABEL_HIDE": "Hide filter",
+    "FILTER_BUTTON_LABEL_SHOW": "Show filter",
+    "EBILL_SIGN_UP_SUCCESS_MESAGE": "Successfully enrolled in eBill",
+    "EBILL_DROPDOWN_OPTIONS": {
+        "CHANGE_EMAIL_LABEL": {
+            "label": "Change email",
+            "modalId": "updateEmail"
+        },
+        "OPT_OUT_LABEL": {
+            "label": "Switch to paper invoice",
+            "modalId": "optOut"
+        }
+    },
+    "BILLING_REDEEM_PREPAID_GIFTCARD_TEXT": "Have a prepaid or gift card?",
+    "BILLING_REDEEM_PREPAID_GIFTCARD_LINK_TITLE": "Redeem",
+    "BILLING_REDEEM_PREPAID_GIFTCARD_LINK": "/redeemgiftcard_view.action?tab=mybillingstatements&langpref=en"
+}

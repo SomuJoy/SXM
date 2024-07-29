@@ -1,0 +1,12 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    section {
+        padding: 0;
+        display: grid;
+        grid-row-gap: 18px;
+        .before-you-go {
+            margin-top: 12px;
+        }
+    }
+}

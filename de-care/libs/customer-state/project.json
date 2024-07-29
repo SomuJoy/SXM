@@ -1,0 +1,27 @@
+{
+    "name": "customer-state",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/customer-state/src",
+    "projectType": "library",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/customer-state/src/**/*.ts", "libs/customer-state/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/customer-state/jest.config.js",
+                "tsConfig": "libs/customer-state/tsconfig.spec.json",
+                "setupFile": "libs/customer-state/src/test-setup.ts",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "generators": {},
+    "tags": ["scope:legacy"]
+}

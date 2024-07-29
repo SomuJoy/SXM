@@ -1,0 +1,7 @@
+{
+    "domainsPurchaseUiServiceAddressSameAsBillingCheckboxModule": {
+        "serviceAddressSameAsBillingCheckboxComponent": {
+            "LABEL": "Billing address is the same"
+        }
+    }
+}

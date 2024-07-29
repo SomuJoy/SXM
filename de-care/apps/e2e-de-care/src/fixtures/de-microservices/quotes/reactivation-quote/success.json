@@ -1,0 +1,74 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "quote": {
+            "currentQuote": {
+                "totalTaxAmount": "2.99",
+                "totalFeesAmount": "26.83",
+                "totalTaxesAndFeesAmount": "29.82",
+                "totalAmount": "66.97",
+                "discountAmount": "0.00",
+                "pricePerMonth": "22.98",
+                "currentBalance": "25.98",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "40.99",
+                "fees": [
+                    { "description": "Remaining_Service_Balance", "amount": "19.15" },
+                    { "description": "Music_Royalty_and_Administrative_Fee", "amount": "3.84" }
+                ],
+                "taxes": [{ "description": "Provincial Taxes", "amount": "2.99" }],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Reactivation Charges",
+                        "packageName": null,
+                        "termLength": 0,
+                        "priceAmount": "25.98",
+                        "taxAmount": "0.00",
+                        "feeAmount": "0.00",
+                        "totalTaxesAndFeesAmount": "0.00",
+                        "taxes": [],
+                        "fees": [],
+                        "startDate": null,
+                        "endDate": null,
+                        "isMrdEligible": null,
+                        "balanceType": "REACTIVATION_CHARGES",
+                        "type": null,
+                        "dealType": null,
+                        "isStudent": false,
+                        "isAdvantage": false,
+                        "isMilitary": false
+                    },
+                    {
+                        "planCode": "Previous Balance",
+                        "packageName": null,
+                        "termLength": 0,
+                        "priceAmount": "40.99",
+                        "taxAmount": "0.00",
+                        "feeAmount": "0.00",
+                        "totalTaxesAndFeesAmount": "0.00",
+                        "taxes": [],
+                        "fees": [],
+                        "startDate": null,
+                        "endDate": null,
+                        "isMrdEligible": null,
+                        "balanceType": "PREVIOUS_BALANCE",
+                        "type": null,
+                        "dealType": null,
+                        "isStudent": false,
+                        "isAdvantage": false,
+                        "isMilitary": false
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            },
+            "futureQuote": null,
+            "proRatedRenewalQuote": null,
+            "promoRenewalQuote": null,
+            "renewalQuote": null
+        }
+    }
+}

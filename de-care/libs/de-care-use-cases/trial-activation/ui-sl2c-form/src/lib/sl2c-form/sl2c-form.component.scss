@@ -1,0 +1,21 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.padding-vertical {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.checkbox-item {
+    margin: 16px 0;
+
+    .invalid-feedback {
+        margin: 10px 0 0 30px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1.5;
+        text-align: left;
+    }
+}

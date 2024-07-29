@@ -1,0 +1,16 @@
+{
+    "deCareUseCasesRollToDropUiSharedModule": {
+        "ineligibleLoader": {
+            "LOADER_TEXT": "Nous recherchons un\n\nautre excellent forfait pour vous.",
+            "LOADER_PILL_TEXT": "Cette offre est réservée aux nouveaux abonnés, mais voici une autre option pour vous."
+        },
+        "enterYourInformationComponent": {
+            "ADDRESS": {
+                "BILLING_ADDRESS": "L'adresse de facturation"
+            },
+            "START_MY_TRIAL_BUTTON": "COMMENCER MON ESSAI",
+            "CONTINUE_BUTTON": "CONTINUER",
+            "ENTER_A_CAPTCHA_TO_FINISH": "Veuillez entrer le CAPTCHA pour terminer"
+        }
+    }
+}

@@ -1,0 +1,37 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    > button {
+        color: $blue-secondary;
+        cursor: pointer;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-decoration-thickness: 2px;
+        font-size: calculate-rem(14px);
+    }
+    h5 {
+        border-bottom: 1px solid $gray-medium;
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+        @include get-header-style(h5);
+    }
+    sxm-ui-dropdown {
+        display: block;
+        margin-top: 16px;
+    }
+}
+:host-context(.blue-container-theme) {
+    > button {
+        color: $white;
+    }
+}
+:host-context(.black-container-theme) {
+    > button {
+        color: $white;
+    }
+}
+:host-context(.gray-container-theme) {
+    > button {
+        color: $white;
+    }
+}

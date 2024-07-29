@@ -1,0 +1,34 @@
+{
+    "name": "de-streaming-onboarding-feature-setup-credentials",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-streaming-onboarding/feature-setup-credentials/src",
+    "prefix": "de-streaming-onboarding",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/de-streaming-onboarding/feature-setup-credentials/src/**/*.ts",
+                    "libs/de-streaming-onboarding/feature-setup-credentials/src/**/*.html"
+                ]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/de-streaming-onboarding/feature-setup-credentials/jest.config.js",
+                "tsConfig": "libs/de-streaming-onboarding/feature-setup-credentials/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/de-streaming-onboarding/feature-setup-credentials/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:feature", "scope:de-streaming-onboarding"]
+}

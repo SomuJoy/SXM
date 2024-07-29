@@ -1,0 +1,31 @@
+{
+    "name": "domains-cancellation-state-cancellation",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/cancellation/state-cancellation/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/cancellation/state-cancellation/src/**/*.ts", "libs/domains/cancellation/state-cancellation/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/cancellation/state-cancellation/jest.config.js",
+                "tsConfig": "libs/domains/cancellation/state-cancellation/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/cancellation/state-cancellation/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

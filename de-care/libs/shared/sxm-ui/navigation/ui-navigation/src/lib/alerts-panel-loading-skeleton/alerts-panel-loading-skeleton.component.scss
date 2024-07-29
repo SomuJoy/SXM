@@ -1,0 +1,81 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "libs/sxm-assets/scss/ui_reset.scss";
+
+:host {
+    font-family: $font-standard;
+}
+
+.relative-container {
+    position: relative;
+    .gradient-animation {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(315deg, rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.75) 49%, rgba(255, 255, 255, 0.75) 51%, rgba(255, 255, 255, 0) 55%);
+        background-size: 250% 250%;
+        animation: Animate 2s linear infinite;
+    }
+}
+
+header {
+    background-color: $solitude-blue;
+    padding: 20px 16px 8px 16px;
+    @include bp(mobile-medium) {
+        padding: 20px 24px 8px 24px;
+    }
+}
+.alerts-container {
+    padding: 24px;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 66px;
+    grid-template-rows: auto;
+    column-gap: 32px;
+    align-items: center;
+    background: $white;
+    .span-2 {
+        grid-column: span 2;
+    }
+    hr {
+        width: 100%;
+        @include hr;
+    }
+}
+
+.mask {
+    background: $gray-light;
+    border-radius: 1px;
+    width: 100px;
+    height: 22px;
+    &.dark {
+        background: $gray-medium;
+    }
+    &.sm {
+        height: 16px;
+    }
+    &.lg {
+        height: 40px;
+    }
+    &.short {
+        width: 72px;
+    }
+    &.long {
+        width: 210px;
+    }
+    &.square {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@keyframes Animate {
+    0% {
+        background-position: 120% 50%;
+    }
+    75% {
+        background-position: 0% 50%;
+    }
+}

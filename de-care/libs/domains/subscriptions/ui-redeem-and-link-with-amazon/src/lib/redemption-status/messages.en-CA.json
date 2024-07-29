@@ -1,0 +1,8 @@
+{
+    "image": {
+        "src": "assets/img/device-echodot-gen4.png"
+    },
+    "SUCCESS_TITLE": "<h5><b>Your accounts were linked.</b></h5><p>You have successfully enabled the SiriusXM skill on your new Amazon Alexa device.</p>",
+    "ERROR_TITLE": "<h5><b>Oops. Something went wrong.</b></h5><p>There was an issue linking your SiriusXM account to your Amazon account. Once you receive your device, refer to the Helpful links section in your Thank You email or <a class='no-underline' href='https://www.amazon.ca/dp/B06X9NK3KD/' target='_blank'>visit our support page</a>.</p>",
+    "DESCRIPTION": "You’ll receive email instructions within 48 hours to redeem your free Amazon device. Your Echo Dot is fulfilled directly by Amazon and delivery is subject to Amazon inventory availability. Periods of high demand may cause delays, so redeem today."
+}

@@ -1,0 +1,13 @@
+{
+    "domainsPaymentUiPrepaidRedeemModule": {
+        "prepaidRedeemComponent": {
+            "REDEEM_LABEL": "Échanger une carte-cadeau de service prépayé",
+            "ADD_CARD": "Ajoutez une carte-cadeau de service SiriusXM prépayé (optionalle)",
+            "PIN_NUMBER": "Numéro NIP",
+            "APPLY": "Appliquer",
+            "REMOVE_LABEL": "Enlever la carte-cadeau de service prépayé",
+            "CARD_APPLIED": "Votre carte-cadeau de service prépayé a été appliquée",
+            "ERROR_VALID_PIN": "Entrez un NIP valide."
+        }
+    }
+}

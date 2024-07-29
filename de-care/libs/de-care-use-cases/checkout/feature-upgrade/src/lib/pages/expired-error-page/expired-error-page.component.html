@@ -1,0 +1,25 @@
+<main class="background-white">
+    <div class="background-blue-light-ultra">
+        <div class="content-container">
+            <div class="row">
+                <div class="column small-12 medium-8 offset-medium-2 align-top">
+                    <div class="error-message-header">
+                        <h6>{{ translateKeyPrefix + "SUB_HEADER" | translate }}</h6>
+                        <h2>{{ translateKeyPrefix + "HEADER" | translate }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="row no-padding-small">
+            <div class="column small-12 medium-10 offset-medium-1 align-top no-padding-medium recirculation-wrapper">
+                <div class="recirculation--single">
+                    <h5>{{ translateKeyPrefix + "TEXT_HEADER" | translate }}</h5>
+                    <p [innerHTML]="translateKeyPrefix + 'MESSAGE_LOGIN' | translate"></p>
+                    <p [innerHTML]="translateKeyPrefix + 'MESSAGE_CALL' | translate"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

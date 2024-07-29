@@ -1,0 +1,26 @@
+{
+    "assets": [
+        {
+            "id": 1550832584169,
+            "type": "SXMCampaign",
+            "subtype": "Campaign",
+            "url": "http://uatcms-author.corp.siriusxm.com/phx/services/v1/rest/sites/sxm/types/SXMCampaign/assets/1550832584169",
+            "site": "sxm",
+            "lastModified": 1643390617586
+        },
+        {
+            "id": 1550832770818,
+            "type": "SXMCampaign",
+            "subtype": "Campaign",
+            "url": "http://uatcms-author.corp.siriusxm.com/phx/services/v1/rest/sites/sxm/types/SXMCampaign/assets/1550832770818",
+            "site": "sxm",
+            "lastModified": 1645035735882
+        }
+    ],
+    "offset": 0,
+    "count": -1,
+    "next": "",
+    "previous": "",
+    "total": 2,
+    "lastModified": 1645035735882
+}

@@ -1,0 +1,27 @@
+{
+    "name": "shared-browser-common-util-redirect",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/browser-common/util-redirect/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/browser-common/util-redirect/src/**/*.ts", "libs/shared/browser-common/util-redirect/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/shared/browser-common/util-redirect/jest.config.js",
+                "tsConfig": "libs/shared/browser-common/util-redirect/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/shared/browser-common/util-redirect/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {},
+    "tags": ["type:ui-util", "scope:shared-ui-util"]
+}

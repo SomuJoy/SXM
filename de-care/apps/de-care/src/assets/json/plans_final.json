@@ -1,0 +1,224 @@
+{
+    "status": "SUCCESS",
+    "data": {
+        "plans": [
+            {
+                "id": "0.0.0.1 /plan 10000107221 0",
+                "name": "Internet Radio - 1mo",
+                "descriptor": "SIR_IP_SA",
+                "marketType": "self-pay:standard",
+                "packageName": "SIRIUSXM INTRODUCTORY STREAMING",
+                "termLength": 1,
+                "placeholder": false,
+                "planDetail": "<ul><li>Listen up to 50+ Channels</li><li>Access On Demand content</li><li>On the app and connected devices</li></ul>",
+                "quotes": [
+                    {
+                        "accountNumber": null,
+                        "type": "QuickQuote",
+                        "msrpPrice": [19.95, 19.95],
+                        "serviceQuoteLineItem": {
+                            "description": "Amount",
+                            "price": 15.99
+                        },
+                        "taxQuoteLineItem": {
+                            "description": "Tax Amount",
+                            "price": 0
+                        },
+                        "feeQuoteLineItems": [
+                            {
+                                "description": "Misc Fees Amount",
+                                "price": 1.41
+                            }
+                        ],
+                        "total": {
+                            "description": "Total Amount",
+                            "price": 17.4
+                        }
+                    }
+                ],
+                "eligibleForMrd": false
+            },
+            {
+                "id": "0.0.0.1 /plan 10000105703 0",
+                "name": "Internet Radio - 3mo",
+                "descriptor": "SIR_IP_SA",
+                "marketType": "self-pay:standard",
+                "packageName": "SIRIUSXM BASIC STREAMING",
+                "termLength": 3,
+                "placeholder": false,
+                "planDetail": "<ul><li>Listen up to 75+ Channels</li><li>Access On Demand content</li><li>On the app and connected devices</li></ul>",
+                "quotes": [
+                    {
+                        "accountNumber": null,
+                        "type": "QuickQuote",
+                        "msrpPrice": [19.95, 59.85],
+                        "serviceQuoteLineItem": {
+                            "description": "Amount",
+                            "price": 15.99
+                        },
+                        "taxQuoteLineItem": {
+                            "description": "Tax Amount",
+                            "price": 0
+                        },
+                        "feeQuoteLineItems": [
+                            {
+                                "description": "Misc Fees Amount",
+                                "price": 4.22
+                            }
+                        ],
+                        "total": {
+                            "description": "Total Amount",
+                            "price": 52.19
+                        }
+                    }
+                ],
+                "eligibleForMrd": false
+            },
+            {
+                "id": "0.0.0.1 /plan 10000107521 0",
+                "name": "Internet Radio - 6mo",
+                "descriptor": "SIR_IP_SA",
+                "marketType": "self-pay:standard",
+                "packageName": "SIRIUSXM SILVER STREAMING",
+                "termLength": 6,
+                "placeholder": false,
+                "planDetail": "<ul><li>Listen up to 100+ Channels</li><li>Access On Demand content</li><li>Watch SiriusXM video</li><li>On the app and connected devices</li></ul>",
+                "quotes": [
+                    {
+                        "accountNumber": null,
+                        "type": "QuickQuote",
+                        "msrpPrice": [19.95, 119.7],
+                        "serviceQuoteLineItem": {
+                            "description": "Amount",
+                            "price": 15.99
+                        },
+                        "taxQuoteLineItem": {
+                            "description": "Tax Amount",
+                            "price": 0
+                        },
+                        "feeQuoteLineItems": [
+                            {
+                                "description": "Misc Fees Amount",
+                                "price": 8.44
+                            }
+                        ],
+                        "total": {
+                            "description": "Total Amount",
+                            "price": 104.38
+                        }
+                    }
+                ],
+                "eligibleForMrd": false
+            },
+            {
+                "id": "0.0.0.1 /plan 10000105537 0",
+                "name": "Introductory - Internet Radio - 12mo w/1mo Savings",
+                "descriptor": "SIR_IP_SA",
+                "marketType": "self-pay:introductory",
+                "packageName": "SIRIUSXM GOLD STREAMING",
+                "termLength": 12,
+                "placeholder": false,
+                "planDetail": "<ul><li>Listen up to 150+ Channels</li><li>Access On Demand content</li><li>Watch SiriusXM video</li><li>On the app and connected devices</li></ul>",
+                "quotes": [
+                    {
+                        "accountNumber": null,
+                        "type": "QuickQuote",
+                        "msrpPrice": [19.95, 229.4],
+                        "serviceQuoteLineItem": {
+                            "description": "Amount",
+                            "price": 14.66
+                        },
+                        "taxQuoteLineItem": {
+                            "description": "Tax Amount",
+                            "price": 0
+                        },
+                        "feeQuoteLineItems": [
+                            {
+                                "description": "Misc Fees Amount",
+                                "price": 15.48
+                            }
+                        ],
+                        "total": {
+                            "description": "Total Amount",
+                            "price": 191.37
+                        }
+                    }
+                ],
+                "eligibleForMrd": false
+            },
+            {
+                "id": "0.0.0.1 /plan 10000106565 0",
+                "name": "Introductory - Internet Radio - 24mo w/2mo Savings",
+                "descriptor": "SIR_IP_SA",
+                "marketType": "self-pay:introductory",
+                "packageName": "SIRIUSXM PREMIER STREAMING",
+                "termLength": 24,
+                "placeholder": false,
+                "planDetail": "<ul><li>Listen up to 200+ Channels</li><li>Access On Demand content</li><li>Watch SiriusXM video</li><li>On the app and connected devices</li></ul>",
+                "quotes": [
+                    {
+                        "accountNumber": null,
+                        "type": "QuickQuote",
+                        "msrpPrice": [19.95, 478.8],
+                        "serviceQuoteLineItem": {
+                            "description": "Amount",
+                            "price": 14.66
+                        },
+                        "taxQuoteLineItem": {
+                            "description": "Tax Amount",
+                            "price": 0
+                        },
+                        "feeQuoteLineItems": [
+                            {
+                                "description": "Misc Fees Amount",
+                                "price": 30.96
+                            }
+                        ],
+                        "total": {
+                            "description": "Total Amount",
+                            "price": 382.74
+                        }
+                    }
+                ],
+                "eligibleForMrd": false
+            },
+            {
+                "id": "0.0.0.1 /plan 10000112528 0",
+                "name": "Introductory - Internet Radio - 36mo w/3mo Savings",
+                "descriptor": "SIR_IP_SA",
+                "marketType": "self-pay:introductory",
+                "packageName": "SIRIUSXM PLATINUM STREAMING",
+                "termLength": 36,
+                "placeholder": false,
+                "planDetail": "<ul><li>Listen up to 250+ Channels</li><li>Access On Demand content</li><li>Watch SiriusXM video</li><li>On the app and connected devices</li></ul>",
+                "quotes": [
+                    {
+                        "accountNumber": null,
+                        "type": "QuickQuote",
+                        "msrpPrice": [19.95, 718.2],
+                        "serviceQuoteLineItem": {
+                            "description": "Amount",
+                            "price": 14.66
+                        },
+                        "taxQuoteLineItem": {
+                            "description": "Tax Amount",
+                            "price": 0
+                        },
+                        "feeQuoteLineItems": [
+                            {
+                                "description": "Misc Fees Amount",
+                                "price": 46.43
+                            }
+                        ],
+                        "total": {
+                            "description": "Total Amount",
+                            "price": 574.1
+                        }
+                    }
+                ],
+                "eligibleForMrd": false
+            }
+        ]
+    },
+    "httpStatusCode": 200
+}

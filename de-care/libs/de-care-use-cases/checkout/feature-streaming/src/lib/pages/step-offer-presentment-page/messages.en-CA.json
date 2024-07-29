@@ -1,0 +1,9 @@
+{
+    "CONTINUE_BUTTON_TEXT": "Continue",
+    "POST_TRIAL_PLAN_STARTS_AFTER_PROMO": "Plan starts after your current promo ends on {{trialEndDate}}.",
+    "VIEW_DETAILS_COLLAPSED": "Explore plan details",
+    "VIEW_DETAILS_EXPANDED": "Hide",
+    "ARIA_VIEW_DETAILS_COLLAPSED": "Explore plan details  - {{packageName}}",
+    "ARIA_VIEW_DETAILS_EXPANDED": "Hide plan details  - {{packageName}}",
+    "USERNAME": "Username: {{username}}"
+}

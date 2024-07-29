@@ -1,0 +1,40 @@
+<main>
+    <section>
+        <header>
+            <h1>{{ translateKeyPrefix + ".TITLE" | translate }}</h1>
+            <p>{{ translateKeyPrefix + ".SUB_TITLE" | translate }}</p>
+        </header>
+        <article>
+            <login-form
+                #loginForm
+                (fetchedAccountNumber)="onLoginFetchedAccountNumber()"
+                (partnerLoginRequired)="onPartnerLoginRequired($event); loginForm.isLoading = false"
+                [submitButtonTextOverride]="translateKeyPrefix + '.SIGN_IN_BUTTON_TEXT' | translate"
+                [prefillUsernameValue]="usernameToPrefill$ | async"
+                (loginError)="onLoginError()"
+            ></login-form>
+            <p>
+                {{ translateKeyPrefix + ".SIGN_IN_FORM_TITLE" | translate }}
+                <a data-link-name="Register" sxmUiDataClickTrack="exit" routerLink="/account/registration">{{ translateKeyPrefix + ".REGISTRATION_LINK_TEXT" | translate }}</a>
+            </p>
+        </article>
+    </section>
+</main>
+<footer>
+    <aside>
+        <h2>{{ translateKeyPrefix + ".NEED_HELP" | translate }}</h2>
+        <ul>
+            <li *ngFor="let link of translateKeyPrefix + '.HELP_LINKS' | translate">
+                <a [attr.data-link-name]="link.linkName" sxmUiDataClickTrack="{{ link.linkType }}" [href]="link.URL">{{ link.TEXT }}</a>
+            </li>
+        </ul>
+    </aside>
+</footer>
+<sxm-ui-modal #partnerNotificationModal [closed]="true" titlePresent="false">
+    <h3 data-test="loginFormPartnerNotificationTitle">{{ translateKeyPrefix + ".PARTNER_LOGIN_REQUIRED_TITLE" | translate: { partnerName: partnerName } }}</h3>
+    <p>{{ translateKeyPrefix + ".PARTNER_LOGIN_REQUIRED_DESCRIPTION" | translate: { partnerName: partnerName } }}</p>
+</sxm-ui-modal>
+<sxm-ui-modal #iaporfreetierPartnerNotificationModal [closed]="true" titlePresent="false">
+    <h3 data-test="loginFormPartnerNotificationTitle">{{ translateKeyPrefix + ".IAP_FREE_TIER_PARTNER_LOGIN_REQUIRED_TITLE" | translate: { partnerName: partnerName } }}</h3>
+    <p [innerHtml]="translateKeyPrefix + '.IAP_FREE_TIER_PARTNER_LOGIN_REQUIRED_DESCRIPTION' | translate: { partnerName: partnerName } | safeHtml"></p>
+</sxm-ui-modal>

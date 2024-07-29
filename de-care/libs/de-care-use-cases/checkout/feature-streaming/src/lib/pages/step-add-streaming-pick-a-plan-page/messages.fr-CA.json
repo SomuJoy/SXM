@@ -1,0 +1,11 @@
+{
+    "TITLE": "Choisissez votre forfait",
+    "BODY": {
+        "FAMILY_DISCOUNT_ELIGIBLE": "Avec le rabais Multi-Radio, vous obtenez une autre connexion à l’Appli SXM pour partager SiriusXM avec toute la famille.",
+        "FAMILY_DISCOUNT_ELIGIBLE_SUB_TEXT": "Pour profiter du rabais Multi-Radio, vous devez avoir au moins un forfait d’abonnement plein tarif admissible sur le même compte."
+    },
+    "INELIGIBLE_LOADING_ALERT": "Malheureusement, vous n’êtes pas admissible à un rabais Multi-Radio.",
+    "INELIGIBLE_LOADING_BODY": "Trouver un autre bon plan pour vous.",
+    "CONTENT_CARD_HEADLINE": "Obtenez ce forfait de diffusion en continu",
+    "PACKAGE_SELECTION_STEP": "NOTRE MEILLEUR FORFAIT"
+}

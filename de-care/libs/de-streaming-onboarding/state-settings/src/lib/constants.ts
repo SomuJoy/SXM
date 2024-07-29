@@ -1,0 +1,4 @@
+export const STREAMING_ONBOARDING_SETTINGS_KEY = 'streamingOnboardingSettings';
+
+export const STREAMING_ONBOARDING_SETTINGS_LOCAL_STORAGE_OVERRIDE_DATA_NAME = 'streamingOnboardingSettings';
+export const STREAMING_ONBOARDING_SETTINGS_LOCAL_STORAGE_SETTINGS_OVERRIDE_FLAG_NAME = 'useStreamingOnboardingOverrideSettings';

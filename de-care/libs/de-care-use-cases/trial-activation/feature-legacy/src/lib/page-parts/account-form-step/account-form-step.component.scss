@@ -1,0 +1,38 @@
+@import "sxm.phoenix.imports";
+
+$common-margin: 25px;
+
+.gray-text {
+    font-weight: 500;
+    color: $gray-dark;
+}
+
+.section-title {
+    margin: 10px 0 $common-margin 0;
+}
+
+form {
+    margin-bottom: $common-margin;
+}
+
+.privacy-policy-link {
+    margin-top: $common-margin;
+    display: inline-block;
+}
+
+post-activation-instructions {
+    margin-top: $common-margin;
+    display: inline-block;
+}
+
+.checkbox-item {
+    margin: 16px 0 10px 0;
+
+    .invalid-feedback {
+        margin: 10px 0 0 30px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1.5;
+        text-align: left;
+    }
+}

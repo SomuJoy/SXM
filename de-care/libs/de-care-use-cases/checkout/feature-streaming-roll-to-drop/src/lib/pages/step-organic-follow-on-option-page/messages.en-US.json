@@ -1,0 +1,18 @@
+{
+    "STEP_TEXT": "YOUR TRIAL HAS STARTED",
+    "TITLE": "Want to keep {{planName}} when your trial ends?",
+    "CONTINUE_BUTTON_TEXT": "Continue",
+    "CONTINUE_BUTTON_TEXT_SETUP": "SET UP PAYMENT",
+    "USERNAME": "Username: {{maskedUserName}}",
+    "ERROR": "Please pick an option below to continue",
+    "OPTIONS": {
+        "PLANCODE": {
+            "TITLE": "Yes, I want to keep {{planName}} for {{price}}/mo.",
+            "DESCRIPTION": "You won't be billed until your trial ends.<br/>Fees & taxes apply. Cancel anytime."
+        },
+        "SKIP": {
+            "TITLE": "No, I just want my trial.",
+            "DESCRIPTION": "Take me to download the app so I can start listening."
+        }
+    }
+}

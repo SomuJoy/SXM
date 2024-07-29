@@ -1,0 +1,7 @@
+{
+    "DomainsCustomerUiVerifyAddressModule": {
+        "VerifyAddressComponent": {
+            "INVALID_FEEDBACK": "We were unable to validate your address with Canada Post."
+        }
+    }
+}

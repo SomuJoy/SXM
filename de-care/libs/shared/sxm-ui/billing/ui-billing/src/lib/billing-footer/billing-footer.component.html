@@ -1,0 +1,6 @@
+<p *ngIf="data?.daysSinceLastPayment > 0; else paymentToday" class="billing-footer lead-in small-copy">
+    {{ translateKeyPrefix + ".DETAIL" | translate: { amount: data?.lastAmount, date: data?.lastDate | sxmUiDate: (translateKeyPrefix + ".DATE_FORMAT" | translate) } }}
+</p>
+<ng-template #paymentToday>
+    <p class="billing-footer lead-in small-copy">{{ translateKeyPrefix + ".DETAIL_TODAY" | translate: { amount: data?.lastAmount } }}</p>
+</ng-template>

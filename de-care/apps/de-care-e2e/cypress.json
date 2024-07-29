@@ -1,0 +1,20 @@
+{
+    "fileServerFolder": ".",
+    "fixturesFolder": "./src/fixtures",
+    "integrationFolder": "./src/integration",
+    "modifyObstructiveCode": false,
+    "pluginsFile": "./src/plugins/index.ts",
+    "supportFile": "./src/support/index.ts",
+    "video": false,
+    "videosFolder": "../../dist/cypress/apps/de-care-e2e/videos",
+    "screenshotOnRunFailure": false,
+    "screenshotsFolder": "../../dist/cypress/apps/de-care-e2e/screenshots",
+    "chromeWebSecurity": false,
+    "ignoreTestFiles": ["**.steps.ts", "helpers.ts"],
+    "viewportWidth": 1920,
+    "viewportHeight": 1080,
+    "blockHosts": ["www.facebook.com", "assets.adobedtm.com"],
+    "env": {
+        "tsConfig": "tsconfig.e2e.json"
+    }
+}

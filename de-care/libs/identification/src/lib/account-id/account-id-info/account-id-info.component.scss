@@ -1,0 +1,35 @@
+@import "sxm.phoenix.imports";
+@import "components/_buttons";
+.privacy-policy {
+    margin: 32px 0 0;
+}
+
+button.primary {
+    margin-top: 24px;
+}
+
+:host-context(.basic-mode) {
+    .privacy-policy {
+        display: none;
+    }
+    .find-my-radio-help {
+        display: none;
+    }
+    .button {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+:host-context(.dark-theme) {
+    .button {
+        @include secondary;
+        &:hover {
+            background: $white;
+        }
+
+        &.loading span {
+            background: $blue;
+        }
+    }
+}

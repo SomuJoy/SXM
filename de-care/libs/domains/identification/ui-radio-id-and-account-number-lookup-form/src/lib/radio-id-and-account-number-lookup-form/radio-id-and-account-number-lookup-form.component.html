@@ -1,0 +1,20 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div *ngIf="isLookupError$ | async" class="invalid-feedback">
+        <p>{{ lookupErrorTextCopy || translateKeyPrefix + "LOOKUP_ERROR" | translate }}</p>
+    </div>
+    <div *ngIf="isSystemError$ | async" class="invalid-feedback">
+        <p>{{ translateKeyPrefix + "SYSTEM_ERROR" | translate }}</p>
+    </div>
+    <sxm-ui-radio-id-form-field formControlName="radioId"></sxm-ui-radio-id-form-field>
+    <sxm-ui-account-number-form-field formControlName="accountNumber"></sxm-ui-account-number-form-field>
+    <privacy-policy></privacy-policy>
+    <button
+        type="submit"
+        [loading]="processing$ | async"
+        sxm-proceed-button
+        data-test="RadioAndAccountLookupForm.submitButton"
+        data-e2e="RadioAndAccountLookupForm.submitButton"
+    >
+        {{ translateKeyPrefix + "SUBMIT_BUTTON" | translate }}
+    </button>
+</form>

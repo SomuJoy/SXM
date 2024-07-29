@@ -1,0 +1,9 @@
+{
+    "TOKEN_EXPIRY_OR_INVALID_ERROR_MESSAGE": "Your password reset request has expired. Please submit another request.",
+    "FORGOT_TEXT": "Forgot your username?",
+    "FORGOT_PASSWORD_PAGE_TITLE": "Reset Password | SiriusXM ",
+    "THIRD_PARTY_ERROR_MESSAGE": "Looks like this subscription is managed by a third-party provider.",
+    "THIRD_PARTY_SUB_ERROR_MESSAGE": "Subscriptions purchased through the SXM App or another retailer, must be managed directly with that provider.",
+    "THIRD_PARTY_LISTEN_NOW": "Log in to start listening.",
+    "LISTEN_NOW_LINK": "https://www.siriusxm.com/downloadstreaming"
+}

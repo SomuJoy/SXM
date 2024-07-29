@@ -1,0 +1,46 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+// TODO: we need to put pages.scss in a common shared place for de-care features
+@import "../page.scss";
+
+// TODO: this needs to get elevated up into our assets mixins
+$common-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
+
+:host {
+    @include page-host(auto 1fr auto);
+    #heroContent {
+        padding: 0;
+        background-color: $gray-medium;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        img {
+            width: 100%;
+            max-width: 440px;
+            height: auto;
+        }
+    }
+    section#mainContent {
+        display: block;
+        width: 100%;
+        padding: 32px 16px;
+    }
+    .shadow-helper {
+        box-shadow: $common-shadow;
+        sxm-ui-primary-package-card {
+            &::ng-deep {
+                .primary-package-card {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+    hr {
+        @include hr;
+    }
+
+    #skeletonLoaderOfferCard {
+        display: grid;
+        row-gap: 32px;
+    }
+}

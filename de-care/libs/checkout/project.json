@@ -1,0 +1,27 @@
+{
+    "name": "checkout",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/checkout/src",
+    "projectType": "library",
+    "generators": {},
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/checkout/src/**/*.ts", "libs/checkout/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/checkout/jest.config.js",
+                "tsConfig": "libs/checkout/tsconfig.spec.json",
+                "setupFile": "libs/checkout/src/test-setup.ts",
+                "configPath": "./jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": ["scope:legacy"]
+}

@@ -1,0 +1,38 @@
+{
+    "reviewOrder": {
+        "chargeAgreementComponent": {
+            "copy": {
+                "en": {
+                    "part1a": "Please charge my card for the amount currently due and the card on file for all future payments.",
+                    "part1a_QUEBEC": "Please charge my card for the amount currently due and the card on file for all future payments.",
+                    "part1b": "By clicking “Complete My Order” I agree: (i) to the SiriusXM Canada ",
+                    "linktext1": "Customer Agreement",
+                    "linkurl1": "https://www.siriusxm.ca/terms",
+                    "linkalt1": " at siriusxm.ca/terms",
+                    "part2": " and",
+                    "linktext2": " Privacy Policy",
+                    "linkurl2": "https://www.siriusxm.ca/privacy",
+                    "linkalt2": " at siriusxm.ca/privacy",
+                    "part3": "; (ii) to receive account notifications at the email address provided; AND (iii) that my service will <strong><u>automatically continue</u></strong> and that my credit card will be charged the then-applicable regular price until I cancel. Regular price subject to change upon proper notice. Fees and taxes extra. I acknowledge that I can cancel anytime and may call SiriusXM Canada at ",
+                    "part3_QUEBEC": "; (ii) to receive account notifications at the email address provided; AND (iii) that my service will <strong><u>automatically continue</u></strong> and that my credit card will be charged the then-applicable regular price until I cancel. Regular price subject to change upon proper notice. Taxes extra. I acknowledge that I can cancel anytime and may call SiriusXM Canada at ",
+                    "linktext3": "1-888-539-7474",
+                    "linkurl3": "tel:+1-866-635-2349",
+                    "part4": " to cancel my subscription(s). I agree that all programming is subject to change.",
+                    "part4_QUEBEC": " to cancel my subscription(s). I agree that all programming is subject to change. Services are provided to me for an indeterminate term and billed to me for the agreed-upon billing period."
+                }
+            },
+            "copy_etf": {
+                "en": {
+                    "text": "Please charge my card for the amount currently owed and to be the card on file for all future payments. I agree to the SiriusXM Canada <a href='https://www.siriusxm.ca/terms' target='_blank'>Customer Agreement</a> and <a href='https://www.siriusxm.ca/privacy' target='_blank'>Privacy Policy</a>. I agree that my service will continue and that my credit card will be charged the then-applicable regular price until I cancel. (Regular price subject to change upon proper notice.) Fees and taxes extra. I acknowledge that I can cancel anytime and may call SiriusXM Canada at 1-888-539-7474 to cancel my subscription(s). <strong>I understand that if I cancel or terminate my subscription during the first {{ etfTerm }} months, I will be charged a ${{ etf }} EARLY TERMINATION FEE</strong>.  I agree that all programming is subject to change.",
+                    "text_QUEBEC": "Please charge my card for the amount currently owed and to be the card on file for all future payments. I agree to the SiriusXM Canada <a href='https://www.siriusxm.ca/terms' target='_blank'>Customer Agreement</a> and <a href='https://www.siriusxm.ca/privacy' target='_blank'>Privacy Policy</a>. I agree that my service will continue and that my credit card will be charged the then-applicable regular rate until I cancel. (Regular rate subject to change upon proper notice.) Taxes extra. Services are provided to me for an indeterminate term and billed to me for the agreed-upon billing period. I acknowledge that I can cancel anytime and may call SiriusXM Canada at 1-888-539-7474 to cancel my subscription(s). I agree that all programming is subject to change."
+                }
+            },
+            "COPY_PLATINUM_VIP": {
+                "en": {
+                    "text": "<span style='display:inline-block;padding-bottom:5px'>Please charge my card for the amount currently due and the card on file for all future payments.</span> By clicking “Complete My Order” I agree: (i) to the SiriusXM Canada <a href='https://www.siriusxm.ca/terms' target='_blank'>Customer Agreement</a> and <a href='https://www.siriusxm.ca/privacy' target='_blank'>Privacy Policy</a>; (ii) to receive account notifications at the email address provided; AND (iii) that my service will <strong><u>automatically continue</u></strong> and that my credit card will be charged the then-applicable regular price until I cancel. Regular price subject to change upon proper notice. Fees and taxes extra. I acknowledge that I can cancel anytime and may call SiriusXM Canada at 1-888-539-7474 to cancel my subscription(s). I agree that all programming is subject to change. I understand that my Platinum VIP subscription will continue as long as there is at least one active radio on this plan.",
+                    "text_QUEBEC": "<span style='display:inline-block;padding-bottom:5px'>Please charge my card for the amount currently due and the card on file for all future payments.</span> By clicking “Complete My Order” I agree: (i) to the SiriusXM Canada <a href='https://www.siriusxm.ca/terms' target='_blank'>Customer Agreement</a> and <a href='https://www.siriusxm.ca/privacy' target='_blank'>Privacy Policy</a>; (ii) to receive account notifications at the email address provided; AND (iii) that my service will <strong><u>automatically continue</u></strong> and that my credit card will be charged the then-applicable regular price until I cancel. Regular price subject to change upon proper notice. Taxes extra. I acknowledge that I can cancel anytime and may call SiriusXM Canada at 1-888-539-7474 to cancel my subscription(s). I agree that all programming is subject to change. Services are provided to me for an indeterminate term and billed to me for the agreed-upon billing period. I understand that my Platinum VIP subscription will continue as long as there is at least one active radio on this plan."
+                }
+            }
+        }
+    }
+}

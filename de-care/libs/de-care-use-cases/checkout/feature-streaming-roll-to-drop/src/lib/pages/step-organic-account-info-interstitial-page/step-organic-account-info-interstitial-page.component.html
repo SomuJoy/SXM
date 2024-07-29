@@ -1,0 +1,21 @@
+<section id="mainContent" *ngrxLet="accountInfoInterstitialViewModel$ as model">
+    <mat-icon class="coin-with-checkmark" svgIcon="checkmark"></mat-icon>
+    <sxm-ui-step-header>
+        <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+    </sxm-ui-step-header>
+    <ul id="benefitsList">
+        <li *ngFor="let bullet of model?.bullets">
+            <mat-icon class="bullet" svgIcon="checkmark"></mat-icon>
+            <span [innerHtml]="bullet"></span>
+        </li>
+    </ul>
+    <a
+        class="button primary full-width"
+        data-test="continueButton"
+        [routerLink]="pageStepRouteConfiguration.routeUrlNext"
+        queryParamsHandling="preserve"
+        sxmUiDataClickTrack="routing"
+    >
+        {{ translateKeyPrefix + ".CONTINUE_BUTTON_TEXT" | translate }}
+    </a>
+</section>

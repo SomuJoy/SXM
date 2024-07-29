@@ -1,0 +1,22 @@
+{
+    "DeCareSharedUiPageFooterBasicModule": {
+        "PageFooterBasicComponent": {
+            "LINKS_SET_1": [
+                {
+                    "LINK_TEXT": "Conditions générales",
+                    "LINK_URL": "https://siriusxm.ca/conditions"
+                },
+                {
+                    "LINK_TEXT": "Politique de la vie privée",
+                    "LINK_URL": "https://www.siriusxm.ca/vieprivee"
+                },
+                {
+                    "LINK_TEXT": "Conditions d’utilisation du site",
+                    "LINK_URL": "https://siriusxm.ca/conditions"
+                }
+            ],
+            "LINKS_SET_2": [],
+            "COPYRIGHT_TEXT": "SiriusXM Canada Inc."
+        }
+    }
+}

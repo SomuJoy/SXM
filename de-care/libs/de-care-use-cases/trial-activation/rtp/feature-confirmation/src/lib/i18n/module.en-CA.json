@@ -1,0 +1,16 @@
+{
+    "deCareUseCasesTrialActivationRtpFeatureConfirmationModule": {
+        "confirmationComponent": {
+            "IMPORTANT_INFO_BODY": "Your SiriusXM service will automatically stop at the end of your trial unless you decide to subscribe. If you decide to continue service, the paid subscription plan you choose will automatically renew thereafter and you will be charged the rate in effect at that time and according to your chosen payment method. Fees and taxes extra. A Music Royalty and Administrative Fee (MRF) of 20.07% applies. To cancel you may call us at 1-888-539-7474. See our <a href='https://www.siriusxm.ca/terms' target='_blank'>Customer Agreement</a> and <a href='https://www.siriusxm.ca/privacy' target='_blank'>Privacy Policy</a> for complete terms. All fees and programming subject to change.",
+            "IMPORTANT_INFO_BODY_QUEBEC": "Your SiriusXM service will automatically stop at the end of your trial unless you decide to subscribe. If you decide to continue service, the paid subscription plan you choose will automatically continue thereafter for an indeterminate term and you will be charged the rate in effect at that time and according to your chosen payment method. Taxes extra. To cancel you may call us at 1-888-539-7474. See our <a href='https://www.siriusxm.ca/terms' target='_blank'>Customer Agreement</a> and <a href='https://www.siriusxm.ca/privacy' target='_blank'>Privacy Policy</a> for complete terms. All fees and programming subject to change.",
+            "RTP_IMPORTANT_INFO_BODY": "Your subscription starts immediately unless indicated otherwise. If your radio is not receiving the programming you are entitled to, please follow the activation instructions above. For your convenience, all subscriptions automatically renew until canceled. Your renewal will be billed at the then-current rate using the payment method on file. You can cancel your subscription at any time by calling Listener Care at <a href=\"tel:+1-833-838-7846\">1-833-838-7846</a>. Your subscription is governed by the SiriusXM Customer Agreement, which can be <a href=\"http://www.siriusxm.ca/terms\" target=\"_blank\" title=\" at siriusxm.ca/terms\">viewed online</a>. If you would like to receive a copy of the Customer Agreement by mail, you can call <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>.",
+            "READY_TO_EXPLORE_LINKS": [
+                "<a data-track-click='View Program Schedule' class='text-link' href='https://www.siriusxm.ca/whats-on/program-schedule/' target='_blank'>View Program Schedules</a>",
+                "<a data-track-click='Live Sports Schedule' class='text-link' href='https://www.siriusxm.ca/whats-on/live-sports-schedule/' target='_blank'>Live Sports Schedules</a>",
+                "<a data-track-click='Start Listening on the SXM App' class='text-link' href='https://player.siriusxm.ca/' target='_blank'>Start Listening on the SXM App</a>"
+            ],
+            "FOOTER_LINK": "<a data-track-click='check out great offers.' class='text-link' href='https://www.siriusxm.ca/plans/' target='_blank'>check out great offers.</a>",
+            "STREAMING_PLAYER_LINK": ""
+        }
+    }
+}

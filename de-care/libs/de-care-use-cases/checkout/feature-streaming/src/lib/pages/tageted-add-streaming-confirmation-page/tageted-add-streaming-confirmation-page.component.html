@@ -1,0 +1,32 @@
+<section id="hero">
+    <h1>{{ translateKeyPrefix + ".TITLE" | translate }}</h1>
+    <p class="user-info" *ngIf="getCurrentUserViewModel$ | async as userInfo">
+        {{
+            translateKeyPrefix + ".USERNAME"
+                | translate
+                    : {
+                          username: userInfo.maskedUserNameFromToken
+                      }
+        }}
+    </p>
+</section>
+<section id="mainContent">
+    <listen-now-with-icon [infoForToken]="listenNowTokenViewModel$ | async" [customLink]="translateKeyPrefix + '.STREAMING_PLAYER_LINK' | translate"></listen-now-with-icon>
+    <ng-container *ngIf="(getSelectedPlanDealType$ | async) === 'AMZ_DOT'">
+        <redeem-and-link-with-amazon [subscriberInfo]="selectedPlanDealViewModelForAmazon$ | async"></redeem-and-link-with-amazon>
+        <hr />
+    </ng-container>
+    <ng-container *ngIf="quoteViewModel$ | async as quoteViewModel">
+        <quote-summary
+            [class.hide-future-quote-heading]="isRtpOrStepUpPlan$ | async"
+            class="renewal-quote-alt-header-1"
+            *ngIf="quoteViewModel$ | async as quoteViewModel"
+            [quote]="quoteViewModel"
+            [isQCProvince]="isQuebecProvince$ | async"
+            [isStreamingFlow]="true"
+            [isNewAccount]="true"
+            [showUnusedCreditLine]="true"
+        ></quote-summary>
+    </ng-container>
+    <a sxmUiButtonCta class="theme-light" routerLink="/account/manage/dashboard">{{ translateKeyPrefix + ".LINK_TEXT" | translate }}</a>
+</section>

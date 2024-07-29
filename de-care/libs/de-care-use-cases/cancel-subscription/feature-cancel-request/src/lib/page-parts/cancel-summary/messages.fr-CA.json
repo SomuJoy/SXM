@@ -1,0 +1,29 @@
+{
+    "TRIAL_ENDS_ON": "Votre essai se termine le {{date}}.",
+    "RENEWAL_PLAN_CANCELLED": "Le forfait de renouvellement ci-dessous sera annulé et vous ne serez pas facturé.",
+    "START_AFTER_TRIAL_ENDS": "Commencerait le {{date}} à la fin de votre essai.",
+    "YOU_WILL_LOSE": "Vous allez perdre :",
+    "BULLET_1_SATELLITE": "L’écoute en voiture et sur les appareils mobiles et à la maison avec ",
+    "BULLET_1_STREAMING": "L’écoute sur les appareils mobiles et à la maison avec ",
+    "BULLET_2": "Un accès facile à vos chaînes et émissions préférées",
+    "BULLET_3": "De la musique, des discussions originales et bien d’autres choses choisies juste pour vous. Consultez la <a href='https://www.siriusxm.ca/fr/guide-des-chaines/'>liste des chaînes</a> pour plus de détails.",
+    "SXM_APP": "l’Appli SXM",
+    "INSTRUCTIONS_1": "Votre abonnement ci-dessous sera annulé immédiatement ainsi que tous les avantages de SiriusXM.",
+    "INSTRUCTIONS_2": "Vous recevrez un crédit au prorata selon votre mode de paiement initial.",
+    "INSTRUCTIONS_IMMEDIATE": "Votre abonnement ci-dessous sera annulé immédiatement ainsi que tous les avantages de SiriusXM.",
+    "INSTRUCTIONS_END_OF_CYCLE": "Votre abonnement ci-dessous sera annulé à la fin de votre forfait actuel, le {{enddate}}.",
+    "INSTRUCTIONS_IN_TRIAL": "L’abonnement que vous avez acheté sera annulé à la fin de votre essai actuel, le {{enddate}}.",
+    "INSTRUCTIONS_PRO_RATED": "Vous recevrez un crédit au prorata selon votre mode de paiement initial.",
+    "INSTRUCTIONS_REACTIVATE": "Si vous changez d’avis, vous pouvez réactiver votre forfait de renouvellement en tout temps.",
+    "CC_REFUNDS": "Les remboursements par carte de crédit sont généralement traités en 3 à 5 jours ouvrables. Les remboursements par chèque sont généralement traités en 7 à 10 jours ouvrables.",
+    "PLAN": " - {{pluralizedMonth}} Forfait",
+    "TERM_LENGTH": {
+        "PLURAL_MAP": {
+            "LENGTH": {
+                "=1": "Mois",
+                "=12": "Annuel",
+                "other": "Mois"
+            }
+        }
+    }
+}

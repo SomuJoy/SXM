@@ -1,0 +1,31 @@
+{
+    "name": "domains-payment-state-gift-card",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/payment/state-gift-card/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/payment/state-gift-card/src/**/*.ts", "libs/domains/payment/state-gift-card/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/payment/state-gift-card/jest.config.js",
+                "tsConfig": "libs/domains/payment/state-gift-card/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/payment/state-gift-card/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

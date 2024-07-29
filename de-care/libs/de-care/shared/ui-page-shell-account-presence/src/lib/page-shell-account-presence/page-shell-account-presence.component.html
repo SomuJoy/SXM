@@ -1,0 +1,85 @@
+<ng-container *ngrxLet="accountPresenceViewModel$ as accountPresenceViewModel">
+    <header deCarePageFullWidthContent>
+        <section id="mainHeaderBar">
+            <span>
+                <a
+                    [attr.aria-label]="translateKeyPrefix + '.SXM_URL_ARIA_LABEL' | translate"
+                    [href]="translateKeyPrefix + '.SXM_URL_LINK' | translate"
+                    sxmUiDataClickTrack="ui"
+                >
+                    <svg class="icon">
+                        <use class="icon-logo" xlink:href="#icon-logo"></use>
+                    </svg>
+                </a>
+            </span>
+            <aside>
+                <ng-container *ngIf="translationsForComponentService.canToggleLang">
+                    <button
+                        data-language-toggle
+                        *ngFor="let lang of translationsForComponentService.langsToSwitchTo$ | async"
+                        (click)="translationsForComponentService.setCurrentLang(lang.key)"
+                        type="button"
+                        data-e2e="toggleLanguage"
+                        sxmUiDataClickTrack="ui"
+                        data-link-key="Shell"
+                    >
+                        {{ lang.text | uppercase }}
+                    </button>
+                </ng-container>
+                <sxm-ui-nav-dropdown
+                    *ngIf="showIcons"
+                    #alerts
+                    id="alertPresenceIcon"
+                    [open]="false"
+                    [align]="'right'"
+                    [arrowColor]="'#e8eef8'"
+                    [buttonAriaLabel]="translateKeyPrefix + '.ALERTS_BUTTON_ARIA' | translate"
+                    [buttonLinkKey]="'Global Nav'"
+                    [buttonLinkName]="'Snapshot Alert Icon'"
+                    (isOpened)="onAlertsOpened()"
+                >
+                    <ng-container toggler>
+                        <sxm-ui-alerts-icon [alertCount]="alertCount$ | async" [class.critical]="isAlertCritical$ | async"></sxm-ui-alerts-icon>
+                    </ng-container>
+                    <ng-container content>
+                        <sxm-ui-alerts-panel-logged-in
+                            (alertLinkClicked)="onAlertLinkClicked($event)"
+                            [data]="{
+                                firstName: accountPresenceViewModel?.customerName,
+                                alerts: alertsToDisplay$ | async,
+                                convertTrialEndDate: convertTrialEndDate$ | async,
+                                nextBillingPaymentDate: nextBillingPaymentDate$ | async,
+                                identificationState: identificationState$ | async
+                            }"
+                            (closed)="closePanels()"
+                        >
+                        </sxm-ui-alerts-panel-logged-in>
+                    </ng-container>
+                </sxm-ui-nav-dropdown>
+                <sxm-ui-nav-dropdown
+                    #user
+                    id="accountPresenceIcon"
+                    [open]="false"
+                    *ngIf="showIcons"
+                    [align]="'right'"
+                    [arrowColor]="'#e8eef8'"
+                    [buttonAriaLabel]="translateKeyPrefix + '.USER_BUTTON_ARIA' | translate"
+                    [buttonLinkKey]="'Global Nav'"
+                    [buttonLinkName]="'Snapshot User Icon'"
+                >
+                    <ng-container toggler> <sxm-ui-account-presence-icon [loggedIn]="true"></sxm-ui-account-presence-icon></ng-container>
+                    <ng-container content>
+                        <sxm-ui-my-account-panel-logged-in (closed)="closePanels()" (logout)="logout()" [data]="{ firstName: accountPresenceViewModel?.customerName || '' }">
+                        </sxm-ui-my-account-panel-logged-in>
+                    </ng-container>
+                </sxm-ui-nav-dropdown>
+            </aside>
+        </section>
+    </header>
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+    <footer deCarePageFullWidthContent>
+        <de-care-page-footer-basic></de-care-page-footer-basic>
+    </footer>
+</ng-container>

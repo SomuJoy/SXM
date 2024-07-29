@@ -1,0 +1,12 @@
+{
+    "status": "FAILURE",
+    "httpStatusCode": 400,
+    "httpStatus": "BAD_REQUEST",
+    "error": {
+        "errorCode": "USERNAME_ALREADY_EXIST",
+        "errorPropKey": "error.purchase.service.username.already.exist",
+        "errorType": "BUSINESS",
+        "errorStackTrace": "AccountNumber:  | RadioId: 990005151830 | x-forwarded-for: [10.130.1.224] | URL: /services/trial-activation/new-account | Exception: CreateAccountException#null | StackTrace: CreateAccountServiceClient.java:85 | ErrorType: BUSINESS | ErrorMessage: ERROR : [errorCode : USERNAME_ALREADY_EXIST, errorPropKey : error.purchase.service.username.already.exist, errorType : CHECKED, errorLevel : ACTION, statusCode : 400 BAD_REQUEST, errorMessage : Username already exists  | , sourceErrorCode : 11-09-ESB-1172] | FullStackTrace: ",
+        "logId": "141f734f-0bce-4ed4-b4a6-38a997e0493d"
+    }
+}

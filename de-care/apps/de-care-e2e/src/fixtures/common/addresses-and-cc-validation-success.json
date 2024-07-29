@@ -1,0 +1,23 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "valid": true,
+        "emailValidation": null,
+        "usernameValidation": null,
+        "billingAddressValidation": {
+            "confidenceLevel": "Verified",
+            "correctedAddress": [{ "addressLine1": "1234 Block", "addressLine2": " ", "city": "Beverly Hills", "state": "CA", "zip": "90210-6155" }],
+            "resultCode": "SUCCESS",
+            "validationStatus": "VALID"
+        },
+        "serviceAddressValidation": {
+            "confidenceLevel": "Verified",
+            "correctedAddress": [{ "addressLine1": "1234 Block", "addressLine2": " ", "city": "Beverly Hills", "state": "CA", "zip": "90210-6155" }],
+            "resultCode": "SUCCESS",
+            "validationStatus": "VALID"
+        },
+        "ccValidation": { "valid": true }
+    }
+}

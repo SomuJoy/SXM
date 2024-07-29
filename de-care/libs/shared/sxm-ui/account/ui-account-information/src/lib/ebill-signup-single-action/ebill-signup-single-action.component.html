@@ -1,0 +1,13 @@
+<p class="lead-in no-margin">
+    <button
+        class="text-link"
+        (click)="signUpEBill.emit()"
+        sxmUiDataClickTrack="routing"
+        data-link-name="PaperlessBillingSignUp"
+        data-link-key="Payment info"
+        data-test="signUpForEBill"
+    >
+        {{ translateKeyPrefix + ".LINK_LABEL" | translate }}
+    </button>
+    {{ translateKeyPrefix + ".INSTRUCTIONS" | translate }}
+</p>

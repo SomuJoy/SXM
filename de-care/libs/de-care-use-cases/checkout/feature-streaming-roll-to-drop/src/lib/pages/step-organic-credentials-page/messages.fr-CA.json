@@ -1,0 +1,25 @@
+{
+    "TITLE": "Créez votre compte",
+    "EMAIL_INVALID_MSG": "Entrez une adresse courriel valide.",
+    "EMAIL_IN_USE_ERROR_MSG": "Le nom d’utilisateur ou le courriel est déjà utilisé.",
+    "SYSTEM_ERROR": "Désolé, nous avons des difficultés pour répondre à cette demande. Veuillez réessayer.",
+    "CONTINUE_BUTTON_TEXT": "Continuer",
+    "SUBSCRIPTIONS_FOUND_MODAL_TITLE": "Votre compte",
+    "SUBSCRIPTIONS_FOUND_MODAL_HEADLINE": "Nous avons trouvé un abonnement (des abonnements) correspondant aux renseignements que vous nous avez donnés.",
+    "CUSTOMER_HAS_STREAMING": {
+        "SUB_TITLE": "Compris dans votre abonnement",
+        "INSTRUCTIONS": "Bonne nouvelle! L’écoute en continu pour vos appareils mobiles et à la maison grâce à l’Appli SXM est déjà inclus sans frais supplémentaires.",
+        "CTA_LINK_TEXT": "Ecoutez"
+    },
+    "CUSTOMER_HAS_TRIAL": {
+        "SUB_TITLE": "Abonnements d’essai",
+        "INSTRUCTIONS": "Ajoutez un abonnement lorsque votre essai prendra fin.",
+        "CTA_LINK_TEXT": "Abonnez-vous"
+    },
+    "VERIFY": "Vérifiez",
+    "ACCOUNT_VERIFY": "Vérifiez votre compte",
+    "VERIFY_PARAGRAPH": "Nous voulons nous assurer que nous communiquons bien avec vous avant de faire les changements à votre compte.",
+    "STREAMING_PLAYER_LINK": "",
+    "INELIGIBLE_LOADING_ALERT": "Cette offre est réservée aux nouveaux abonnés, mais voici une autre option pour vous.",
+    "INELIGIBLE_LOADING_BODY": "Trouver un autre bon plan pour vous."
+}

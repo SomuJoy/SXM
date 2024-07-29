@@ -1,0 +1,46 @@
+<div class="container">
+    <h5 class="header">
+        {{ "offers.moreContentUpsellComponent.HEADER_TOP" | translate }}<br />
+        {{ "offers.moreContentUpsellComponent.HEADER_BOTTOM" | translate }}
+    </h5>
+    <ul class="checkmark-list" *ngFor="let channels of packageChannelInfo?.includedChannels">
+        <li class="small-copy" *ngFor="let description of channels.descriptions" data-icon="checkmark-sm">
+            <span [innerHTML]="description"></span>
+            <div class="icon-checkmark-sm-wrapper">
+                <svg class="icon icon-utility large">
+                    <use class="icon-checkmark-sm" xlink:href="#icon-checkmark-sm"></use>
+                </svg>
+            </div>
+        </li>
+    </ul>
+    <div class="footer">
+        <div class="checkbox-item">
+            <input
+                [checked]="checked"
+                (change)="handleUpgrade($event.target.checked)"
+                class="checkbox"
+                type="checkbox"
+                id="moreContentUpsellFooter"
+                attr.qatag="moreContentUpsellFooter"
+            />
+            <label *ngIf="packageChannelInfo" class="input-label" for="moreContentUpsellFooter" attr.qatag="moreContentUpsellFooter">
+                <h6>
+                    {{
+                        "offers.moreContentUpsellComponent.PRICE_TOP"
+                            | translate
+                                : {
+                                      priceDifferencePerMonth: priceDiff | currency: "USD":"symbol-narrow":priceFormat:locale
+                                  }
+                    }}
+                </h6>
+            </label>
+            <p>
+                {{
+                    "offers.moreContentUpsellComponent.PRICE_BOTTOM"
+                        | translate: { pricePerMonth: packageChannelInfo.upsellPricePerMonth | currency: "USD":"symbol-narrow":priceFormat:locale }
+                }}<br />
+            </p>
+            <a (click)="requestUpgradeDetails.emit()">{{ "offers.moreContentUpsellComponent.DETAILS" | translate }}</a>
+        </div>
+    </div>
+</div>

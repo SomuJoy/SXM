@@ -1,0 +1,16 @@
+{
+    "DomainsIdentityUiStreamingFlepzLookupFormModule": {
+        "StreamingFlepzLookupFormComponent": {
+            "ALREADY_HAVE_LOGIN": "Already have a login to stream?",
+            "SIGN_IN_LINK_TEXT": "Sign In",
+            "CONTINUE_BUTTON_TEXT": "Continue",
+            "SYSTEM_ERROR": "We’re sorry… something went wrong. We’re experiencing technical issues and are working on resolving it. Please try again.",
+            "INVALID_FIRST_NAME": "Please enter a valid first name.",
+            "INVALID_EMAIL": "Please enter a valid email address."
+        },
+        "StreamingFlepzLookupComponent": {
+            "HEADLINE": "Set up your login for listening on the SXM App.",
+            "INSTRUCTIONS": "First, we need some info to find your subscription."
+        }
+    }
+}

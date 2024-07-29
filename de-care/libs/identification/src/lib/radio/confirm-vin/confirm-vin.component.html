@@ -1,0 +1,25 @@
+<div>
+    <h5>{{ "identification.confirmVinComponent.TITLE" | translate }}</h5>
+    <p [innerHTML]="'identification.confirmVinComponent.VIN_NUMBER' | translate: { vinNumber: data.vinNumber }"></p>
+    <p [id]="ariaDescribedbyTextId" [innerHTML]="'identification.confirmVinComponent.LICENSE_PLATE' | translate: { state: data.state, licensePlate: data.licensePlate }"></p>
+    <p *ngIf="data.vehicleInfo">
+        {{
+            data?.vehicleInfo
+                | vehicleInfoTranslate
+                    : {
+                          defaultText: !!last4DigitsOfRadioId
+                              ? ("identification.confirmVinComponent.RADIO_ID" | translate: { radioId: "****" + last4DigitsOfRadioId.slice(-4) })
+                              : ""
+                      }
+        }}
+    </p>
+
+    <div class="align-center">
+        <div class="column small-12 medium-12">
+            <button (click)="vinConfirmed.emit()" class="button primary full-width" data-test="confirmVINContinue">Continue</button>
+        </div>
+        <div class="column small-12 medium-12">
+            <button class="button full-width" (click)="tryAgainEvent.emit()">TRY AGAIN</button>
+        </div>
+    </div>
+</div>

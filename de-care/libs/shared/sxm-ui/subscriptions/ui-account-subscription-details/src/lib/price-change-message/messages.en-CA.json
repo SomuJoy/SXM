@@ -1,0 +1,3 @@
+{
+    "MESSAGE": "<strong>Important notice:</strong> Effective {{ date }}, the <a href='{{ url }}' target='_blank'>monthly rate</a> for your plan will increase by {{ price }}."
+}

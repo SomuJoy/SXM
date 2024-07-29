@@ -1,0 +1,65 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "PAULA",
+            "accountProfile": {
+                "accountRegistered": false
+            },
+            "serviceAddress": {
+                "state": "NY"
+            },
+            "subscriptions": [],
+            "billingSummary": {
+                "creditCard": {
+                    "last4Digits": "1111",
+                    "type": "VISA",
+                    "status": "ACTIVE"
+                }
+            },
+            "closedDevices": [
+                {
+                    "last4DigitsOfRadioId": "00BD",
+                    "closedDate": "2020-05-20T16:04:34-04:00",
+                    "vehicleInfo": {
+                        "year": null,
+                        "make": null,
+                        "model": null
+                    },
+                    "subscription": {
+                        "id": "10000198400",
+                        "plans": [
+                            {
+                                "code": "All Access - 6mo - wActv",
+                                "packageName": "SIR_AUD_ALLACCESS",
+                                "termLength": 6,
+                                "startDate": null,
+                                "endDate": null,
+                                "nextCycleOn": null,
+                                "type": "SELF_PAY"
+                            },
+                            {
+                                "code": "Video - 6mo",
+                                "packageName": "SIR_IP_VID",
+                                "termLength": 6,
+                                "startDate": null,
+                                "endDate": null,
+                                "nextCycleOn": null,
+                                "type": "SELF_PAY"
+                            }
+                        ],
+                        "followonPlans": null,
+                        "radioService": null,
+                        "streamingService": null,
+                        "status": "Closed"
+                    }
+                }
+            ],
+            "hasEmailAddressOnFile": true
+        },
+        "marketingId": "X65100BD",
+        "marketingAcctId": "6096"
+    }
+}

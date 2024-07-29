@@ -1,0 +1,24 @@
+<table *ngIf="data" [class.collapsed]="isCollapsed" class="small-copy">
+    <tr *ngFor="let line of data.innerLines" [class.no-print]="isCollapsed" [attr.aria-expanded]="!isCollapsed">
+        <td>
+            <div>
+                <span>{{ line.label }}</span>
+                <sxm-ui-tooltip *ngIf="line.tooltip" class="tooltip-component tooltip-display-top-medium-up tooltip-display-right-large-up no-print">
+                    <span>{{ line.tooltip }}</span>
+                </sxm-ui-tooltip>
+            </div>
+        </td>
+        <td>
+            <div>{{ line.amount }}</div>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <span>{{ data.outerLine?.label }}</span>
+            <sxm-ui-tooltip *ngIf="data.outerLine?.tooltip" class="tooltip-component tooltip-display-top-medium-up tooltip-display-right-large-up no-print">
+                <span>{{ data.outerLine?.tooltip }}</span>
+            </sxm-ui-tooltip>
+        </th>
+        <th>{{ data.outerLine?.amount }}</th>
+    </tr>
+</table>

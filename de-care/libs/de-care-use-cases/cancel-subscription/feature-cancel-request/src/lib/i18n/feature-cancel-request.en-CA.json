@@ -1,0 +1,16 @@
+{
+    "deCareUseCasesCancelSubscriptionFeatureCancelRequest": {
+        "cancelSubscriptionPageComponent": {
+            "CLAIM_SELF_PAY": "You can change your subscription to one of these great packages.",
+            "CALL_US": "For more help and support, you can call us at <a href=\"tel:+1-888-539-7474\">1-888-539-7474</a> to discuss your options.",
+            "INSTRUCTIONS_PRO_RATED": "Upon confirming your cancellation, your subscription will be canceled immediately. You will receive a prorated credit back to your original payment method.",
+            "CC_REFUNDS": "Credit card refunds are typically processed in 3&#8211;5 business days and check refunds are typically processed in 7&#8211;10 business days."
+        },
+        "acceptOfferConfirmationPageComponent": {
+            "STREAMING_PLAYER_LINK": {
+                "SATELLITE_OFFER": "",
+                "STREAMING_OFFER": ""
+            }
+        }
+    }
+}

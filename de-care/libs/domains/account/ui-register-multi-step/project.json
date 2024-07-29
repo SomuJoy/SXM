@@ -1,0 +1,25 @@
+{
+    "name": "domains-account-ui-register-multi-step",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/account/ui-register-multi-step/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/domains/account/ui-register-multi-step"],
+            "options": {
+                "jestConfig": "libs/domains/account/ui-register-multi-step/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/account/ui-register-multi-step/src/**/*.ts", "libs/domains/account/ui-register-multi-step/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:ui", "scope:domain-ui"]
+}

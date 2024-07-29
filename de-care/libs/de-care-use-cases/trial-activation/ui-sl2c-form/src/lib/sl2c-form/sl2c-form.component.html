@@ -1,0 +1,109 @@
+<ng-container>
+    <form [formGroup]="newAccountForm" #ngForm="ngForm">
+        <sxm-ui-text-form-field
+            [labelText]="translateKeyPrefix + '.Label.RADIO_ID_OR_VIN' | translate"
+            [controlId]="radioIdVinId"
+            [qatagName]="radioIdVinId"
+            data-e2e="radioIdVinId"
+            formControlName="radioIdOrVin"
+            [class.invalid]="newAccountForm.controls.radioIdOrVin | formControlInvalid"
+            [errorMsg]="translateKeyPrefix + '.ValidationError.RADIO_ID_OR_VIN_MSG' | translate"
+            toolTipIcon
+            (tooltipIconClicked)="tooltipIconClicked()"
+        ></sxm-ui-text-form-field>
+
+        <sxm-ui-text-form-field
+            [labelText]="translateKeyPrefix + '.Label.FIRST_NAME' | translate"
+            [controlId]="firstNameId"
+            [qatagName]="firstNameId"
+            data-e2e="firstNameId"
+            formControlName="firstName"
+            [class.invalid]="newAccountForm.controls.firstName | formControlInvalid"
+            [errorMsg]="translateKeyPrefix + '.ValidationError.FIRST_NAME_MSG' | translate"
+        ></sxm-ui-text-form-field>
+
+        <sxm-ui-text-form-field
+            [labelText]="translateKeyPrefix + '.Label.LAST_NAME' | translate"
+            [controlId]="lastNameId"
+            [qatagName]="lastNameId"
+            data-e2e="lastNameId"
+            formControlName="lastName"
+            [class.invalid]="newAccountForm.controls.lastName | formControlInvalid"
+            [errorMsg]="translateKeyPrefix + '.ValidationError.LAST_NAME_MSG' | translate"
+        ></sxm-ui-text-form-field>
+
+        <sxm-ui-address-form-fields [submitted]="submitted" formControlName="accountAddress"></sxm-ui-address-form-fields>
+
+        <div class="input-container" [class.invalid]="newAccountForm.controls.phoneNumber | formControlInvalid" [class.filled]="newAccountForm.controls.phoneNumber.value">
+            <label for="'phone-number'"> {{ translateKeyPrefix + ".Label.PHONE_NUMBER" | translate }} </label>
+            <input type="tel" appMaskPhoneNumber [optional]="true" maxlength="14" formControlName="phoneNumber" id="'phone-number'" onFocus />
+        </div>
+        <div *ngIf="newAccountForm.controls.phoneNumber | formControlInvalid" class="invalid-feedback">
+            <p>{{ translateKeyPrefix + ".ValidationError.PHONE_NUMBER_MSG" | translate }}</p>
+        </div>
+
+        <sxm-ui-text-form-field
+            [labelText]="translateKeyPrefix + '.Label.EMAIL' | translate"
+            [controlId]="emailId"
+            [qatagName]="emailId"
+            data-e2e="emailId"
+            formControlName="email"
+            [class.invalid]="newAccountForm.controls.email | formControlInvalid"
+            [errorMsg]="translateKeyPrefix + '.ValidationError.EMAIL_MSG' | translate"
+        ></sxm-ui-text-form-field>
+    </form>
+    <div *ngIf="isCanada" class="checkbox-item display-flex">
+        <input class="checkbox" [formControl]="agreement" type="checkbox" id="{{ contestMessageId }}" onFocus />
+        <label class="input-label" for="{{ contestMessageId }}">
+            <p class="small-copy text-color-grey-dark">
+                {{ translateKeyPrefix + ".AGREEMENT_TEXT" | translate }}
+            </p>
+        </label>
+        <div *ngIf="isCanada && submitted && !agreementAccepted" class="invalid-feedback">
+            <p>{{ translateKeyPrefix + ".ACCEPT_AGREEMENT" | translate }}</p>
+        </div>
+    </div>
+    <a class="text-link" href="{{ translateKeyPrefix + '.PrivacyPolicy.LINK_URL' | translate }}" target="_blank" data-track-click="Privacy Policy">{{
+        translateKeyPrefix + ".PrivacyPolicy.LINK_TEXT" | translate
+    }}</a>
+
+    <div class="row no-padding">
+        <div class="column align-left no-padding full-width">
+            <button
+                class="button primary full-width text-center align-justify"
+                qatag="ActivateTrialButton"
+                data-e2e="ActivateTrialButton"
+                [class.loading]="loading"
+                [disabled]="loading"
+                type="button"
+                (click)="submitClicked()"
+                data-track-click="Activate Trial"
+                loading-button-trigger
+            >
+                <ng-container *ngIf="!loading">
+                    {{ translateKeyPrefix + ".ACTIVATE_TRIAL_BUTTON" | translate }}
+                </ng-container>
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</ng-container>
+<sxm-ui-modal
+    #helpFindingRadioModal="sxmUiModal"
+    [titlePresent]="true"
+    title="{{ 'deCareUseCasesTrialActivationUiSl2cForm.sl2cFormComponent.RADIO_LOOKUP_LABEL' | translate }}"
+>
+    <p class="need-help-text">
+        <strong>{{ "deCareUseCasesTrialActivationUiSl2cForm.sl2cFormComponent.NEED_HELP_TEXT_LABEL" | translate }}</strong>
+    </p>
+    <sxm-ui-help-finding-radio [showDontHaveRadio]="true" (deviceHelp)="deviceHelpModal.open(); helpFindingRadioModal.close()"> </sxm-ui-help-finding-radio>
+</sxm-ui-modal>
+<sxm-ui-modal
+    #deviceHelpModal="sxmUiModal"
+    [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"
+    [titlePresent]="true"
+    title="{{ 'deCareUseCasesTrialActivationUiSl2cForm.sl2cFormComponent.RADIO_LOOKUP_LABEL' | translate }}"
+    (modalClosed)="helpFindingRadioModal.open()"
+>
+    <sxm-ui-device-help [isCanadaMode]="isCanadaMode$ | async" [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"></sxm-ui-device-help>
+</sxm-ui-modal>

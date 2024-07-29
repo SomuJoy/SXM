@@ -1,0 +1,11 @@
+{
+    "ACTIVE": "Active",
+    "ACTIVE_DESCRIPTION": "Most subscriptions include ability to stream on the SXM App and online.",
+    "INACTIVE": "Inactive",
+    "ADD_ANOTHER_SUBSCRIPTION": "Add another subscription",
+    "SUBSCRIPTIONS_TITLE": "Subscriptions",
+    "RADIO_REMOVED": "Radio successfully removed.",
+    "EDIT_CREATE_USERNAME_USER_CREDENTIALS_URL": "{{oacUrl}}/updateusercredentials_view.action?subscriptionNumber={{subscriptionId}}",
+    "EDIT_CREATE_USERNAME_INTERNET_CREDENTIALS_URL": "{{oacUrl}}/updateinternetcredentials_view.action?subscriptionNumber={{subscriptionId}}",
+    "CAR_STREAMING_FIND_SUBSCRIPTION_URL": "{{oacUrl}}/accountconsolidation_view.action?allowPHXRedirectAfterRadioEntry=true#/verifyradio"
+}

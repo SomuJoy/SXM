@@ -1,0 +1,15 @@
+<ng-container *ngIf="quoteSummaryInfo as quoteSummaryInfo; else quotesSkeleton">
+    <quote-summary
+        *ngIf="quoteSummaryInfo.quoteViewModel; else quotesSkeleton"
+        [quote]="quoteSummaryInfo.quoteViewModel"
+        [isStreamingFlow]="quoteSummaryInfo.legacySettings?.isStreamingFlow"
+        [isNewAccount]="quoteSummaryInfo.legacySettings?.isNewAccount"
+        [extraData]="quoteSummaryInfo.extraData"
+        [showUnusedCreditLine]="quoteSummaryInfo.showUnusedCreditLine"
+        [isQCProvince]="quoteSummaryInfo.isQuebecProvince"
+    ></quote-summary>
+</ng-container>
+
+<ng-template #quotesSkeleton>
+    <sxm-ui-quote-skeleton [title]="quotesSkeletonTitle"></sxm-ui-quote-skeleton>
+</ng-template>

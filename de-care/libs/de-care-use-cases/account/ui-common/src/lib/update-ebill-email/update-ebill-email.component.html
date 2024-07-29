@@ -1,0 +1,18 @@
+<sxm-ui-modal
+    [closed]="false"
+    titlePresent="true"
+    [ariaDescribedbyTextId]="updateEbillModalAriaDescribedbyTextId"
+    [title]="translateKeyPrefix + '.TITLE' | translate"
+    (modalClosed)="closeEbillUpdateEmailModal()"
+    data-test="updateEBillEmailModal"
+>
+    <sxm-ui-billing-ebill-update-email
+        [email]="email$ | async"
+        [ariaDescribedbyTextId]="updateEbillModalAriaDescribedbyTextId"
+        [loading]="billingEbillUpdateEmailLoading"
+        [updateEmailServerError]="updateEmailServerError"
+        (updateEmailId)="onUpdateEmailId($event)"
+        (updateEmailCancel)="closeEbillUpdateEmailModal()"
+    >
+    </sxm-ui-billing-ebill-update-email>
+</sxm-ui-modal>

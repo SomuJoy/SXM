@@ -1,0 +1,11 @@
+export const e2ePaymentInfoWithInvoicePaymentForm = `[data-e2e="paymentForm"]`;
+export const e2ePaymentInfoWithInvoiceCCNameOnCardTextfield = `[data-e2e="CCNameOnCardTextfield"]`;
+export const e2ePaymentInfoWithInvoiceCCCardNumberTextfield = `[data-e2e="CCCardNumberTextfield"]`;
+export const e2ePaymentInfoWithInvoiceCCCardNumberTextfieldMasked = `[data-e2e="CCCardNumberTextfieldMasked"]`;
+export const e2ePaymentInfoWithInvoiceCCExpDateOnCardTextfield = `[data-e2e="ccExpDateOnCardTextfield"]`;
+export const e2ePaymentInfoWithInvoiceCCCVV = `[data-e2e="ccCVV"]`;
+export const e2ePaymentInfoWithInvoiceCreateLoginEmailTextfield = `[data-e2e="CreateLoginEmailTextfield"]`;
+export const e2ePaymentInfoWithInvoicePaymentConfirmationButton = `[data-e2e="PaymentConfirmationButton"]`;
+export const e2ePaymentInfoWithInvoicePaymentInfoUseExistingCard = `[data-e2e="paymentInfo.useExistingCard"]`;
+export const e2ePaymentInfoWithInvoiceBillingAddressModal = '[data-e2e="paymentInfo.billingAddressModal"]';
+export const e2ePaymentInfoWithInvoicePaymentFormEmailTextfield = '[data-e2e="paymentForm.emailTextfield"]';

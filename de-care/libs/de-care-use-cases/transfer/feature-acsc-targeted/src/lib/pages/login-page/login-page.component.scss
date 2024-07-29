@@ -1,0 +1,99 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.hero-login {
+    position: relative;
+    padding: 40px 0;
+    text-align: center;
+    color: $white;
+    .hero-background {
+        position: absolute;
+        top: 0;
+        bottom: -48px;
+        width: 100%;
+        background-color: $purple;
+    }
+    @include bp(large) {
+        padding: 48px 0;
+    }
+    h6 {
+        margin-bottom: 8px;
+        text-transform: uppercase;
+    }
+    h1 {
+        @include get-header-style(h2);
+        margin-bottom: 0;
+        text-align: left;
+    }
+}
+
+.show-large-up {
+    display: none;
+    @include bp(large) {
+        display: block;
+    }
+}
+
+.mb-16 {
+    margin-bottom: 16;
+}
+
+.form-container {
+    padding: 24px;
+    width: 100%;
+    background: $white;
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
+    display: grid;
+    @include bp(large) {
+        padding: 32px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 1fr;
+        column-gap: 64px;
+        button {
+            margin: 0;
+        }
+    }
+    .login-block {
+        margin-bottom: 24px;
+        @include bp(large) {
+            position: relative;
+            margin-bottom: 0;
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                right: -32px;
+                height: 100%;
+                width: 1px;
+                background-color: $gray-medium;
+            }
+        }
+    }
+    .register-block {
+        button {
+            margin-top: 24px;
+        }
+        @include bp(large) {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            .align-bottom-large-up {
+                margin: auto 0 38px;
+            }
+        }
+    }
+}
+
+.chat-block {
+    padding: 40px 0 48px;
+    text-align: center;
+    @include bp(large) {
+        padding: 48px 0 64px;
+        p,
+        chat-with-agent-link {
+            display: inline-block;
+            margin-right: 4px;
+        }
+    }
+}

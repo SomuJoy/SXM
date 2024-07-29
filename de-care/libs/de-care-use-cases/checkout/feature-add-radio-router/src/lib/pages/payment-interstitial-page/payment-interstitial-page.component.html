@@ -1,0 +1,13 @@
+<ng-container *ngrxLet="viewModel$ as viewModel">
+    <section id="mainContent">
+        <sxm-ui-vehicle-ymm-info [vehicleInfoVM]="viewModel.vehicleInfo"></sxm-ui-vehicle-ymm-info>
+        <mat-icon svgIcon="checkmark"></mat-icon>
+        <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+            <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+        </sxm-ui-step-header>
+        <de-care-payment-interstitial-info></de-care-payment-interstitial-info>
+        <button data-test="PaymentIntContinueButton" type="button" sxm-proceed-button (click)="goToNextStep()" sxmUiDataClickTrack="routing">
+            {{ translateKeyPrefix + ".CONTINUE_BUTTON_TEXT" | translate }}
+        </button>
+    </section>
+</ng-container>

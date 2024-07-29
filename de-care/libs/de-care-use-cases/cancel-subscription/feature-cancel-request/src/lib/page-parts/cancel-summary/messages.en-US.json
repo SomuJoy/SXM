@@ -1,0 +1,29 @@
+{
+    "TRIAL_ENDS_ON": "Your trial ends on {{date}}.",
+    "RENEWAL_PLAN_CANCELLED": "The renewal plan below will be cancelled and you won't be charged for it.",
+    "START_AFTER_TRIAL_ENDS": "Would start on {{date}} when your trial ends.",
+    "YOU_WILL_LOSE": "You will lose:",
+    "BULLET_1_SATELLITE": "Listening in the car and on home and mobile devices with the ",
+    "BULLET_1_STREAMING": "Listening on home and mobile devices with the ",
+    "BULLET_2": "Easy access to favorite channels and shows",
+    "BULLET_3": "Curated music, original talk, and more. View the <a href='https://www.siriusxm.com/channels'>channel lineup</a> for complete details",
+    "SXM_APP": "SXM App",
+    "INSTRUCTIONS_1": "Your subscription below will be cancelled immediately along with all the benefits of SiriusXM.",
+    "INSTRUCTIONS_2": "You will receive a pro-rated credit back to your original payment method.",
+    "INSTRUCTIONS_IMMEDIATE": "Your subscription below will be cancelled immediately along with all the benefits of SiriusXM.",
+    "INSTRUCTIONS_END_OF_CYCLE": "Your subscription below will be cancelled at the end of your current plan, on {{enddate}}.",
+    "INSTRUCTIONS_IN_TRIAL": "Your purchased subscription will be cancelled at the end of your current trial, on {{enddate}}.",
+    "INSTRUCTIONS_PRO_RATED": "You will receive a pro-rated credit back to your original payment method.",
+    "INSTRUCTIONS_REACTIVATE": "If you change your mind, you can reactivate your renewal plan at any time.",
+    "CC_REFUNDS": "Credit card refunds are typically processed in 3-5 business days and check refunds are typically processed in 7-10 business days.",
+    "PLAN": " - {{pluralizedMonth}} Plan",
+    "TERM_LENGTH": {
+        "PLURAL_MAP": {
+            "LENGTH": {
+                "=1": "Monthly",
+                "=12": "Annual",
+                "other": "#-month"
+            }
+        }
+    }
+}

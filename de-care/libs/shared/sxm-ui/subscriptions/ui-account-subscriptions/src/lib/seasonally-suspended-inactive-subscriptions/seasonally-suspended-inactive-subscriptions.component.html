@@ -1,0 +1,34 @@
+<div class="grid-container">
+    <mat-icon svgIcon="car" *ngIf="data.vehicleType === 'CAR'"></mat-icon>
+    <mat-icon svgIcon="aviation" *ngIf="data.vehicleType === 'AVIATION'"></mat-icon>
+    <mat-icon svgIcon="marine" *ngIf="data.vehicleType === 'MARINE'"></mat-icon>
+    <p class="large-copy span-2 lead-in center-horz-align bold text-overflow-ellipsis mb-20">
+        {{ data?.nickname ?? data?.vehicle ?? (translateKeyPrefix + ".RADIO_ID" | translate: { radioId: data?.radioId }) }}
+    </p>
+    <hr class="span-2" />
+    <p class="label-column lead-in bold label-title">{{ translateKeyPrefix + ".PLANS" | translate }}</p>
+    <p class="right-align no-margin top-align link-column">
+        <button
+            class="text-link-secondary"
+            (click)="activateSuspendedDevice.emit()"
+            data-test="activateSeasonallySuspendedButton"
+            sxmUiDataClickTrack="exit"
+            [attr.data-link-name]="'Activate|' + (data?.index === 0 ? 'Primary' : (data?.index ?? 0) + 1)"
+            [attr.data-link-key]="'SeasonalSuspendedInactiveSubscriptions'"
+        >
+            {{ translateKeyPrefix + ".ACTIVATE_LINK" | translate }}
+        </button>
+    </p>
+    <p class="bottom-element span-2 center-horz-align">
+        <button
+            class="text-link"
+            (click)="cancelSuspendedDevice.emit()"
+            data-test="cancelSeasonallySuspendedButton"
+            sxmUiDataClickTrack="exit"
+            [attr.data-link-name]="'Cancel|' + (data?.index === 0 ? 'Primary' : (data?.index ?? 0) + 1)"
+            [attr.data-link-key]="'SeasonalSuspendedInactiveSubscriptions'"
+        >
+            {{ translateKeyPrefix + ".CANCEL_LABEL" | translate }}
+        </button>
+    </p>
+</div>

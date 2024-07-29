@@ -1,0 +1,12 @@
+<div class="grid-container">
+    <div class="label-column">
+        <p class="lead-in title" [innerHTML]="translateKeyPrefix + '.TITLE' | translate"></p>
+    </div>
+    <div class="no-margin right-align link-column top-align">
+        <sxm-ui-dropdown-navigation-list
+            [buttonLabel]="{ label: translateKeyPrefix + '.MODIFY_LABEL' | translate, ariaLabel: translateKeyPrefix + '.MODIFY_ARIA_LABEL' | translate }"
+            [listData]="dropdownListData"
+        ></sxm-ui-dropdown-navigation-list>
+    </div>
+    <p class="label-column lead-in" [class.text-overflow-ellipsis]="email">{{ email | lowercase }}</p>
+</div>

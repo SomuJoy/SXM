@@ -1,0 +1,67 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": [
+        {
+            "subscriptions": [
+                {
+                    "closed": false,
+                    "id": null,
+                    "status": "Active",
+                    "plans": [
+                        {
+                            "code": "Promo - All Access - 3mo - $2.00 - (PyP)",
+                            "packageName": "SIR_AUD_ALLACCESS",
+                            "termLength": "3",
+                            "endDate": "2022-10-07T00:00:00-04:00",
+                            "type": "PROMO",
+                            "marketType": "self-pay:promo",
+                            "capabilities": []
+                        }
+                    ],
+                    "followonPlans": [
+                        {
+                            "code": "All Access - 1mo - wActv",
+                            "packageName": "SIR_AUD_ALLACCESS",
+                            "termLength": "1",
+                            "endDate": "2022-10-07T00:00:00-04:00",
+                            "type": "SELF_PAID",
+                            "marketType": "self-pay:standard",
+                            "capabilities": []
+                        }
+                    ],
+                    "radioService": { "last4DigitsOfRadioId": "9030", "vehicleInfo": { "model": null, "make": null, "year": null }, "maskedRadioId": "****9030" },
+                    "streamingService": { "status": "Active", "maskedUserName": "cfg******@siriusxm.com", "randomCredentials": false }
+                }
+            ],
+            "partnerName": null,
+            "last4DigitsOfAccountNumber": "1752"
+        },
+        {
+            "subscriptions": [
+                {
+                    "closed": false,
+                    "id": null,
+                    "status": "Active",
+                    "plans": [
+                        {
+                            "code": "OEM Trial - All Access - 3mo - 0.00 - (Used Car - SLSA)",
+                            "packageName": "1_SIR_AUD_ALLACCESS",
+                            "termLength": "3",
+                            "endDate": "2022-10-01T00:00:00-04:00",
+                            "type": "TRIAL",
+                            "marketType": "trial:used-car",
+                            "capabilities": []
+                        }
+                    ],
+                    "followonPlans": [],
+                    "radioService": { "last4DigitsOfRadioId": "00CX", "vehicleInfo": { "model": null, "make": null, "year": null }, "maskedRadioId": "****00CX" },
+                    "streamingService": { "status": "Active", "maskedUserName": "duk******@siriusxm.com", "randomCredentials": false }
+                }
+            ],
+            "partnerName": null,
+            "last4DigitsOfAccountNumber": "1837"
+        }
+    ]
+}

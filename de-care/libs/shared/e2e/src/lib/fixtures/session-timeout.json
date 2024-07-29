@@ -1,0 +1,9 @@
+{
+    "status": "FAILURE",
+    "httpStatusCode": 401,
+    "httpStatus": "UNAUTHORIZED",
+    "error": {
+        "errorCode": "SESSION_TIMED_OUT",
+        "errorPropKey": "error.common.session.timed.out.error"
+    }
+}

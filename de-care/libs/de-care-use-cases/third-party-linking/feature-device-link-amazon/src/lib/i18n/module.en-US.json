@@ -1,0 +1,22 @@
+{
+    "deCareUseCasesThirdPartyLinkingFeatureDeviceLinkAmazonModule": {
+        "landingPageComponent": {
+            "TITLE": "You are being redirected to Amazon.com",
+            "PENDING_ACTION_TITLE": "Link your account on Amazon.com",
+            "PENDING_ACTION_INSTRUCTIONS": "If you haven’t been automatically redirected to Amazon, please ",
+            "PENDING_ACTION_INSTRUCTIONS_LINK": "click here",
+            "INSTRUCTIONS": "If you’re still having trouble, please check your pop-up blocker browser or app settings."
+        },
+        "successPageComponent": {
+            "TITLE": "Your accounts were successfully linked.",
+            "MESSAGE": "You have successfully enabled the SiriusXM skill on your Amazon Alexa device(s).",
+            "INSTRUCTIONS": "You can now ask Alexa to play your favorite SiriusXM channels."
+        },
+        "errorPageComponent": {
+            "TITLE": "Oops, something went wrong.",
+            "INSTRUCTIONS": "There is an issue linking your SiriusXM account to your Amazon Account. Please ",
+            "INSTRUCTIONS_LINK": "visit our support page.",
+            "HELP_URL": "https://www.siriusxm.com/lwahelp"
+        }
+    }
+}

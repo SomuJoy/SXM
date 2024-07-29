@@ -1,0 +1,60 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "ELLIS",
+            "accountProfile": { "accountRegistered": false },
+            "accountState": { "isInPreTrial": false },
+            "serviceAddress": { "state": "OH", "country": "US" },
+            "subscriptions": [
+                {
+                    "id": "10000239541",
+                    "plans": [
+                        {
+                            "dataCapable": false,
+                            "code": "Promo - Essential Streaming - 3mo - 0.99",
+                            "packageName": "SIR_IP_SA_ESNTL",
+                            "termLength": 3,
+                            "startDate": "2021-08-12T00:00:00-04:00",
+                            "endDate": "2021-11-12T00:00:00-05:00",
+                            "nextCycleOn": null,
+                            "type": "PROMO",
+                            "capabilities": ["IPAUD"],
+                            "price": 0.99,
+                            "isBasePlan": true
+                        }
+                    ],
+                    "followonPlans": [
+                        {
+                            "dataCapable": false,
+                            "code": "Essential Streaming - Monthly",
+                            "packageName": "SIR_IP_SA_ESNTL",
+                            "termLength": 1,
+                            "startDate": "2021-11-12T00:00:00-05:00",
+                            "endDate": null,
+                            "nextCycleOn": null,
+                            "type": "SELF_PAID",
+                            "capabilities": ["IPAUD"],
+                            "price": 7.99,
+                            "isBasePlan": true
+                        }
+                    ],
+                    "radioService": null,
+                    "streamingService": { "id": "10000238517", "maskedUserName": "ell******@siriusxm.com", "status": "Active" },
+                    "status": "Active",
+                    "devicePromoCode": null,
+                    "isPrimary": true
+                }
+            ],
+            "billingSummary": { "creditCard": { "last4Digits": "1111", "type": "VISA", "status": "ACTIVE" }, "isPaymentTypeInvoice": false },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true,
+            "isAccountIdentifiedUsingFLEPZOrVIN": false
+        },
+        "marketingId": null,
+        "marketingAcctId": "7237",
+        "email": null
+    }
+}

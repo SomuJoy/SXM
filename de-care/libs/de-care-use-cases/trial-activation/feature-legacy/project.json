@@ -1,0 +1,30 @@
+{
+    "name": "de-care-use-cases-trial-activation-feature-legacy",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/de-care-use-cases/trial-activation/feature-legacy/src",
+    "projectType": "library",
+    "generators": {},
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/de-care-use-cases/trial-activation/feature-legacy/src/**/*.ts",
+                    "libs/de-care-use-cases/trial-activation/feature-legacy/src/**/*.html"
+                ]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/trial-activation/feature-legacy/jest.config.js",
+                "tsConfig": "libs/de-care-use-cases/trial-activation/feature-legacy/tsconfig.spec.json",
+                "setupFile": "libs/de-care-use-cases/trial-activation/feature-legacy/src/test-setup.ts",
+                "configPath": "./jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": ["type:feature", "scope:de-care"]
+}

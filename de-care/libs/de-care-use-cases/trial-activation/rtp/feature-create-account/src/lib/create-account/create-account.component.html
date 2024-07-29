@@ -1,0 +1,428 @@
+<ng-container *ngIf="viewModel$ | async as viewModel">
+    <main de-care-page-main *ngIf="displayAccountStep$ | async">
+        <h6>
+            {{ translateKey + "STEP_NUMBER" | translate: { totalSteps: numberOfSteps$ | async } }}
+        </h6>
+        <h4>
+            {{ translateKey + "HEADER" | translate }}
+        </h4>
+
+        <p *ngIf="{ isExtRtc: offerTypeIsTrialExtRtc$ | async } as headerText">
+            <sxm-ui-translation-splitter
+                data-e2e="vehicleEligibilityText"
+                [text]="translateKey + (headerText.isExtRtc ? 'YMM_EXT_RTC' : 'YMM') | translate: { term: viewModel.offerDetails.offerTerm }"
+            >
+                <span data-content-slot="1">{{ viewModel?.vehicleInfo | vehicleInfoTranslate: { defaultText: translateKey + "DEFAULT_CAR" | translate } }}</span>
+            </sxm-ui-translation-splitter>
+        </p>
+
+        <a data-e2e="notYourCarLink" (click)="notYourCarClick()" class="text-link">
+            {{ translateKey + "NOT_YOUR_CAR_LINK_TEXT" | translate }}
+        </a>
+
+        <hr />
+
+        <p class="large-text">
+            {{ translateKey + "FORM_HEADER" | translate }}
+        </p>
+        <p class="sub-header" *ngIf="!(hasMultipleOffers$ | async)">
+            {{ translateKey + "FORM_SUB_HEADER" | translate }}
+        </p>
+        <p class="sub-header" *ngIf="hasMultipleOffers$ | async">
+            {{ translateKey + "PICK_A_PLAN_FORM_SUB_HEADER" | translate }}
+        </p>
+
+        <form *ngIf="form" [formGroup]="form" (ngSubmit)="submitForm()">
+            <div formGroupName="userInfo">
+                <p class="your-info-header">
+                    {{ translateKey + "YOUR_INFO" | translate }}
+                </p>
+
+                <sxm-ui-email-form-field data-e2e="emailField" [labelText]="translateKey + 'EMAIL_LABEL' | translate" formControlName="email"></sxm-ui-email-form-field>
+                <sxm-ui-phone-number-form-field data-e2e="phoneNumberField" formControlName="phoneNumber"></sxm-ui-phone-number-form-field>
+            </div>
+
+            <div formGroupName="paymentInfo" data-e2e="paymentInfoFormGroup">
+                <p class="payment-info-header">
+                    {{ translateKey + "PAYMENT_INFO" | translate }}
+                </p>
+
+                <sxm-ui-text-form-field
+                    formControlName="address"
+                    [labelText]="translateKey + 'BILLING_ADDRESS_LABEL' | translate"
+                    [errorMsg]="translateKey + 'ERROR.ADDRESS' | translate"
+                    data-e2e="address"
+                    autocomplete="street-address"
+                ></sxm-ui-text-form-field>
+                <sxm-ui-text-form-field
+                    formControlName="city"
+                    data-e2e="city"
+                    [labelText]="translateKey + 'CITY_LABEL' | translate"
+                    [errorMsg]="translateKey + 'ERROR.CITY' | translate"
+                ></sxm-ui-text-form-field>
+
+                <div class="row no-padding">
+                    <sxm-ui-dropdown
+                        formControlName="state"
+                        [errorMsg]="translateKey + 'ERROR.STATE' | translate"
+                        [passedValue]="'app.areas' | translate"
+                        [labelText]="translateKey + 'STATE_LABEL' | translate"
+                        class="dropdown column small-6 thin-padding"
+                        [class.invalid]="form.get(['paymentInfo', 'state']).invalid && form.get(['paymentInfo', 'state']).touched"
+                        data-e2e="state"
+                        key="key"
+                        text="key"
+                        name="region"
+                        tabindex="0"
+                        autocomplete="region"
+                    ></sxm-ui-dropdown>
+                    <div class="column small-6 thin-padding align-top">
+                        <div
+                            class="input-container"
+                            [class.invalid]="form.controls['paymentInfo']['controls']['zip'] | formControlInvalid: submitted"
+                            [class.filled]="form.controls['paymentInfo']['controls']['zip'].value"
+                        >
+                            <label data-e2e="sxmUITextFormFieldLabel" [for]="zipId">{{ translateKey + "ZIP_LABEL" | translate }}</label>
+                            <input
+                                appMaskZipCode
+                                type="text"
+                                [id]="zipId"
+                                [zipMaskIsCanada]="canadaMode$ | async"
+                                formControlName="zip"
+                                [minlength]="(canadaMode$ | async) ? 6 : 5"
+                                [maxlength]="(canadaMode$ | async) ? 7 : 10"
+                                data-e2e="zip"
+                                qatag="CCZipCode"
+                                onFocus
+                                required
+                                autocomplete="postal-code"
+                            />
+                        </div>
+                        <div *ngIf="form.controls['paymentInfo']['controls']['zip'] | formControlInvalid: submitted" class="invalid-feedback">
+                            <p>{{ translateKey + "ERROR.ZIP_CODE" | translate }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="creditCardError$ | async" class="invalid-feedback cc-auth-error">
+                    <p>{{ translateKey + "ERROR.CC_AUTH" | translate }}</p>
+                </div>
+
+                <sxm-ui-text-form-field
+                    formControlName="ccName"
+                    data-e2e="ccName"
+                    [labelText]="translateKey + 'CC_NAME_LABEL' | translate"
+                    [errorMsg]="translateKey + 'ERROR.CC_NAME' | translate"
+                ></sxm-ui-text-form-field>
+
+                <credit-card-number-input
+                    [labelText]="translateKey + 'CC_NUM_LABEL' | translate"
+                    [errorMsg]="translateKey + 'ERROR.CC_NUM' | translate"
+                    [isMasked]="maskCCNum"
+                    [maskedNum]="maskedCCNum"
+                    (unmask)="handleUnmaskCC()"
+                    (cardEntryEvent)="checkGiftCardEntry($event)"
+                    formControlName="ccNum"
+                    data-e2e="ccNum"
+                >
+                </credit-card-number-input>
+
+                <div class="row no-padding">
+                    <div [ngClass]="(canadaMode$ | async) ? 'column small-6 thin-padding' : 'row no-padding'" class="align-top">
+                        <div
+                            class="input-container"
+                            [class.invalid]="
+                                (form.controls['paymentInfo']['controls']['ccExp'] | formControlInvalid: submitted) || form.controls['paymentInfo']?.hasError('invalidDate')
+                            "
+                        >
+                            <label for="cc-exp">{{ translateKey + "CC_EXP_LABEL" | translate }}</label>
+                            <input appMaskExpirationDate formControlName="ccExp" data-e2e="ccExp" minLength="5" maxLength="5" autocomplete="cc-exp" id="cc-exp" onFocus />
+                        </div>
+                        <div
+                            *ngIf="(form.controls['paymentInfo']['controls']['ccExp'] | formControlInvalid: submitted) || form.controls['paymentInfo'].hasError('invalidDate')"
+                            class="invalid-feedback"
+                        >
+                            <p>{{ translateKey + "ERROR.CC_EXP" | translate }}</p>
+                        </div>
+                    </div>
+                    <div
+                        *ngIf="canadaMode$ | async"
+                        class="column small-6 thin-padding align-top"
+                        [class.empty-invalid-feedback]="
+                            (form.controls['paymentInfo']['controls']['ccCVV'] | formControlInvalid: submitted) &&
+                            (form.controls['paymentInfo']['controls']['ccCVV'] | formControlInvalid: submitted)
+                        "
+                    >
+                        <div class="input-container">
+                            <label for="cc-csc">{{ translateKey + "CC_CVV_LABEL" | translate }}</label>
+                            <input
+                                type="password"
+                                [formControl]="ccCVV"
+                                id="cc-csc"
+                                name="cc-csc"
+                                minlength="3"
+                                maxlength="4"
+                                data-e2e="ccCVV"
+                                qatag="ccCVV"
+                                onFocus
+                                required
+                                autocomplete="cc-csc"
+                            />
+                            <sxm-ui-tooltip>
+                                <p>{{ translateKey + "TOOLTIP_MESSAGE_1" | translate }}</p>
+                                <p>{{ translateKey + "TOOLTIP_MESSAGE_2" | translate }}</p>
+                            </sxm-ui-tooltip>
+                        </div>
+                        <div *ngIf="form.controls['paymentInfo']['controls']['ccCVV'] | formControlInvalid: submitted" class="invalid-feedback">
+                            <p>{{ translateKey + "ERROR.CVV" | translate }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <sxm-ui-checkbox-with-label-form-field formControlName="serviceAddressSame" data-e2e="serviceAddressSame">
+                    <span>{{ translateKey + "SERVICE_ADDRESS_CHECKBOX_LABEL" | translate }}</span>
+                </sxm-ui-checkbox-with-label-form-field>
+            </div>
+
+            <div
+                *ngIf="form?.controls?.serviceAddress && !(form.get(['paymentInfo', 'serviceAddressSame']).valueChanges | async)"
+                formGroupName="serviceAddress"
+                data-e2e="serviceAddressFormGroup"
+                class="service-address-wrapper"
+            >
+                <sxm-ui-text-form-field
+                    formControlName="address"
+                    data-e2e="address"
+                    [labelText]="translateKey + 'SERVICE_ADDRESS_LABEL' | translate"
+                    [errorMsg]="translateKey + 'ERROR.ADDRESS' | translate"
+                    autocomplete="street-address"
+                ></sxm-ui-text-form-field>
+                <sxm-ui-text-form-field
+                    formControlName="city"
+                    data-e2e="city"
+                    [labelText]="translateKey + 'CITY_LABEL' | translate"
+                    [errorMsg]="translateKey + 'ERROR.CITY' | translate"
+                ></sxm-ui-text-form-field>
+
+                <div class="row no-padding no-padding">
+                    <sxm-ui-dropdown
+                        formControlName="state"
+                        [passedValue]="'app.areas' | translate"
+                        [labelText]="translateKey + 'STATE_LABEL' | translate"
+                        [errorMsg]="translateKey + 'ERROR.STATE' | translate"
+                        class="dropdown column small-6 thin-padding align-top"
+                        [class.invalid]="form.get(['serviceAddress', 'state']).invalid && form.get(['serviceAddress', 'state']).touched"
+                        data-e2e="state"
+                        key="key"
+                        text="key"
+                        name="region"
+                        tabindex="0"
+                        autocomplete="region"
+                    ></sxm-ui-dropdown>
+                    <div class="column small-6 thin-padding align-top">
+                        <div
+                            class="input-container"
+                            [class.invalid]="form.controls['serviceAddress']['controls']['zip'] | formControlInvalid: submitted"
+                            [class.filled]="form.controls['serviceAddress']['controls']['zip'].value"
+                        >
+                            <label [for]="zipId">{{ translateKey + "ZIP_LABEL" | translate }}</label>
+                            <input
+                                appMaskZipCode
+                                type="text"
+                                [id]="zipId"
+                                [zipMaskIsCanada]="canadaMode$ | async"
+                                formControlName="zip"
+                                [minlength]="(canadaMode$ | async) ? 6 : 5"
+                                [maxlength]="(canadaMode$ | async) ? 7 : 10"
+                                data-e2e="zip"
+                                qatag="CCZipCode"
+                                onFocus
+                                required
+                                autocomplete="postal-code"
+                            />
+                        </div>
+                        <div *ngIf="form.controls['serviceAddress']['controls']['zip'] | formControlInvalid: submitted" class="invalid-feedback">
+                            <p>{{ translateKey + "ERROR.ZIP_CODE" | translate }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <prepaid-redeem-ui
+                [initialState]="prepaidRedeemAddedInfo$ | async"
+                (cardSubmitted)="addPrepaidRedeem($event)"
+                (cardCleared)="removePrepaidRedeem()"
+            ></prepaid-redeem-ui>
+            <div *ngIf="isCanada" class="checkbox-item display-flex">
+                <input class="checkbox" [formControl]="agreement" type="checkbox" id="{{ contestMessageId }}" onFocus />
+                <label class="input-label" for="{{ contestMessageId }}">
+                    <p class="small-copy text-color-grey-dark">
+                        {{ translateKey + "AGREEMENT_TEXT" | translate }}
+                    </p>
+                </label>
+                <div *ngIf="isCanada && submitted && !agreementAccepted" class="invalid-feedback">
+                    <p>{{ translateKey + "ACCEPT_AGREEMENT" | translate }}</p>
+                </div>
+            </div>
+            <a class="text-link privacy-policy" href="{{ translateKey + 'PRIVACY_POLICY.LINK_URL' | translate }}" target="_blank">
+                {{ translateKey + "PRIVACY_POLICY.LINK_TEXT" | translate }}
+            </a>
+
+            <button data-e2e="createAccountSubmitButton" class="button primary text-center full-width" type="submit">
+                {{ translateKey + "BUTTON" | translate }}
+            </button>
+        </form>
+    </main>
+
+    <ng-container *ngIf="displayRtcStep$ | async">
+        <main class="background-offwhite">
+            <div class="content-container" *ngIf="vmPlanGridSelectors$ | async as vmPlanGrid">
+                <div class="row align-center">
+                    <div class="column small-12 medium-10 background-white raised ui-content">
+                        <sxm-ui-follow-on-selection
+                            [isProactive]="false"
+                            [planSelectionData]="vmPlanGrid.followOnPlanSelectionData"
+                            [showChoiceNotAvailableError]="vmPlanGrid.showChoiceNotAvailableError"
+                            [selectedPackageIndex]="selectedPageIndex"
+                            (selected)="onSelectedPackage($event)"
+                            (packageIndexSelected)="selectedPageIndex = $event"
+                        >
+                            <div reactive-text-paragraph #contentReactiveText>
+                                {{
+                                    translateKey + "HEADER_TEXT_RENEWAL_PLAN_SELECTION"
+                                        | translate
+                                            : {
+                                                  leadOfferTerm: vmPlanGrid.planComparisonGridParams.leadOfferTerm,
+                                                  leadOfferPackageName:
+                                                      "app.packageDescriptions." + vmPlanGrid.planComparisonGridParams.leadOfferPackageName + ".name"
+                                                      | translate
+                                                      | withoutPlatformName: vmPlanGrid.planComparisonGridParams.leadOfferPackageName
+                                              }
+                                }}
+                            </div>
+
+                            <div page-title class="content-container">
+                                <div class="row align-left no-padding">
+                                    <div class="column background-white align-left no-padding">
+                                        <h6>
+                                            {{ translateKey + "STEP_NUMBER_RENEWAL" | translate }}
+                                        </h6>
+                                        <h4>
+                                            {{ translateKey + "HEADER_RENEWAL" | translate }}
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </sxm-ui-follow-on-selection>
+
+                        <sxm-ui-plan-comparison-grid
+                            [isProactive]="false"
+                            [packageNames]="vmPlanGrid.renewalOffersPackageNamesForGrid"
+                            [planComparisonGridParams]="vmPlanGrid.planComparisonGridParams"
+                            [retailPrices]="vmPlanGrid.renewalPricesForGrid"
+                            [selectedPackageIndex]="selectedPageIndex"
+                            [questionsPhoneNumber]="translateKey + 'QUESTIONS_TFN' | translate"
+                            [continueButtonText]="(isNouvRtcAndNotChoice$ | async) ? (translateKey + 'BUTTON_RTC_NOT_CHOICE' | translate) : null"
+                            [activateExpandable]="true"
+                            (continue)="onPlanComparisonContinue()"
+                        ></sxm-ui-plan-comparison-grid>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </ng-container>
+
+    <main class="background-offwhite" *ngIf="displayLeadOfferSelectionStep$ | async">
+        <div class="content-container" *ngIf="leadOfferSelectionViewModel$ | async as leadOfferSelectionViewModel">
+            <div class="row align-center">
+                <div class="column small-12 medium-10 background-white raised ui-content">
+                    <sxm-ui-plan-selection
+                        [planSelectionData]="leadOfferSelectionViewModel.planSelectionData"
+                        (packageNameSelected)="onSelectedLeadOfferPackage($event)"
+                        [selectedPackageIndex]="selectedPackageIndex"
+                        (packageIndexSelected)="selectedPackageIndex = $event"
+                    >
+                        <div page-title class="content-container page-title">
+                            <div class="row align-left no-padding">
+                                <div class="column background-white align-left no-padding">
+                                    <h6 data-e2e="stepNumber">
+                                        {{ translateKey + "STEP_NUMBER_LEAD_OFFER" | translate }}
+                                    </h6>
+                                    <h4 data-e2e="leadOffer">
+                                        {{ translateKey + "HEADER_LEAD_OFFER" | translate }}
+                                    </h4>
+                                    <p data-e2e="offerCopy">
+                                        {{ translateKey + "SUB_HEADER_LEAD_OFFER" | translate }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </sxm-ui-plan-selection>
+                    <sxm-ui-plan-comparison-grid
+                        [packageNames]="leadOfferSelectionViewModel.planComparisonGridData.packageNames"
+                        [retailPrices]="leadOfferSelectionViewModel.planComparisonGridData.retailPrices"
+                        [planComparisonGridParams]="leadOfferSelectionViewModel.planComparisonGridData.planComparisonGridParams"
+                        [questionsPhoneNumber]="translateKey + 'QUESTIONS_TFN' | translate"
+                        [activateExpandable]="true"
+                        [selectedPackageIndex]="selectedPackageIndex"
+                        (continue)="onLeadOfferPlanComparisonGridContinue()"
+                        [continueButtonText]="(isSelectedLeadOfferNotChoice$ | async) ? (translateKey + 'BUTTON_RTC_NOT_CHOICE' | translate) : null"
+                    ></sxm-ui-plan-comparison-grid>
+                </div>
+            </div>
+        </div>
+    </main>
+    <sxm-ui-legal-copy *ngIf="offerDetails$ | async as offerDetails" [legalCopy]="offerDetails"></sxm-ui-legal-copy>
+</ng-container>
+
+<sxm-ui-modal [closed]="false" (modalClosed)="modalClosed()" *ngIf="addressNeedsModification" [ariaDescribedbyTextId]="createAccountModalAriaDescribedbyTextId">
+    <customer-verify-address
+        [ariaDescribedbyTextId]="createAccountModalAriaDescribedbyTextId"
+        [data]="{
+            headingText: translateKey + 'CONFIRM_YOUR_ADDRESS' | translate,
+            correctedAddresses: avsInfo.correctedAddresses,
+            currentAddress: avsInfo.currentAddress,
+            addressCorrectionAction: avsInfo.addressCorrectionAction
+        }"
+        (editAddress)="proceedWithCorrectedAddress($event)"
+        (editExisting)="onEditExistingAddress()"
+    ></customer-verify-address>
+</sxm-ui-modal>
+
+<sxm-ui-modal
+    [closed]="false"
+    (modalClosed)="genreModalClosed()"
+    (backButton)="genreModalClosed()"
+    *ngIf="showGenreModal"
+    [showBackButton]="true"
+    [showCloseButton]="false"
+    [titlePresent]="true"
+    [ariaDescribedbyTextId]="chooseGenreFormModalAriaDescribedbyTextId"
+    [title]="translateKey + 'CHOICE_MODAL_HEADER' | translate"
+>
+    <sxm-ui-choose-genre-form
+        [formOptions]="genres$ | async"
+        [ariaDescribedbyTextId]="chooseGenreFormModalAriaDescribedbyTextId"
+        (stepComplete)="setSelectedGenre($event)"
+        [useReviewButtonText]="(viewModel$ | async)?.showReviewOrderTextInChooseGenre"
+    ></sxm-ui-choose-genre-form>
+</sxm-ui-modal>
+
+<sxm-ui-modal
+    [closed]="false"
+    [ariaDescribedbyTextId]="chooseLeadOfferGenreModalAriaDescribedbyTextId"
+    (modalClosed)="leadOfferGenreModalClosed()"
+    (backButton)="leadOfferGenreModalClosed()"
+    *ngIf="showLeadOfferGenreModal"
+    [showBackButton]="true"
+    [showCloseButton]="false"
+    [titlePresent]="true"
+    [title]="translateKey + 'CHOICE_MODAL_HEADER' | translate"
+>
+    <sxm-ui-choose-genre-form
+        [ariaDescribedbyTextId]="chooseLeadOfferGenreModalAriaDescribedbyTextId"
+        [formOptions]="genresForLeadOffer$ | async"
+        (stepComplete)="setSelectedLeadOfferGenre($event)"
+        [useReviewButtonText]="(viewModel$ | async)?.showReviewOrderTextInChooseGenre"
+    ></sxm-ui-choose-genre-form>
+</sxm-ui-modal>

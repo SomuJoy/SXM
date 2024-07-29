@@ -1,0 +1,32 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-areas: "header" "amount" "button";
+    row-gap: 20px;
+}
+
+sxm-ui-billing-header {
+    grid-area: header;
+}
+
+sxm-ui-billing-amount-and-date {
+    grid-area: amount;
+}
+
+.btn {
+    @include short-button;
+    margin-top: 4px;
+    grid-area: button;
+}
+
+:host-context(.button-right) {
+    @include bp(medium) {
+        grid-template-columns: calc(5 / 8 * 100%) calc(3 / 8 * 100%);
+        grid-template-areas:
+            "header header"
+            "amount button";
+    }
+}

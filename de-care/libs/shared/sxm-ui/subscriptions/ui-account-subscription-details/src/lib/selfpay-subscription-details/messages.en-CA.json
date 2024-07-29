@@ -1,0 +1,28 @@
+{
+    "PLAN_DESCRIPTION": "{{termWord}}{{additionalPlanName}} plan",
+    "PLAN_LINK_LABEL": "See what’s included",
+    "DROPDOWN_LABEL": "Modify",
+    "FOLLOWON_DESCRIPTION_PROMO": "<strong>{{planName}}</strong> {{term}}-month special offer {{startDate}} to {{endDate}}.",
+    "FOLLOWON_DESCRIPTION_SELFPAY_WITH_PROMO": "<strong>{{planName}}</strong> {{termWord}} {{additionalPlanName}} plan starts on {{startDate}} when your special offer ends.",
+    "FOLLOWON_DESCRIPTION_SELFPAY": "<strong>{{planName}}</strong> {{termWord}} {{additionalPlanName}} plan starts on {{startDate}}.",
+    "TERM_MAP": {
+        "=0": "",
+        "=1": "monthly",
+        "=3": "quarterly",
+        "=6": "semiannual",
+        "=12": "annual",
+        "=24": "2-Year",
+        "=36": "3-Year",
+        "other": "#-month"
+    },
+    "NAME_MAP": {
+        "family": " multi radio discount",
+        "lifetime": "Lifetime",
+        "special": " special pricing",
+        "demo": " Demo",
+        "military": " Military discount",
+        "employee": " Employee",
+        "other": ""
+    },
+    "ARIA_MODIFY_SUBSCRIPTION": "modify subscription"
+}

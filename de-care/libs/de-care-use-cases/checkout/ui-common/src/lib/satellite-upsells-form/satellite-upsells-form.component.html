@@ -1,0 +1,18 @@
+<p>
+    {{ translateKeyPrefix + ((packageAndTermUpsellsAvailable$ | async) ? ".HEADER_MULTI_UPSELL" : ".HEADER_SINGLE_UPSELL") | translate }}
+</p>
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+    <sxm-ui-package-satellite-upgrade-card-form-field
+        *ngIf="form.get('packageUpgrade') && packageUpgradeCopyContent$ | async as copyContent"
+        formControlName="packageUpgrade"
+        [copyContent]="copyContent"
+    ></sxm-ui-package-satellite-upgrade-card-form-field>
+    <sxm-ui-package-term-upgrade-card-form-field
+        *ngIf="form.get('termUpgrade') && termUpgradeCopyContent$ | async as copyContent"
+        formControlName="termUpgrade"
+        [copyContent]="copyContent"
+    ></sxm-ui-package-term-upgrade-card-form-field>
+    <button type="submit" data-test="offerUpsell.continueButton" data-e2e="offerUpsell.continueButton" qatag="UpgradeContinueButton" sxm-proceed-button [loading]="processing">
+        {{ translateKeyPrefix + ".SUBMIT_BUTTON" | translate }}
+    </button>
+</form>

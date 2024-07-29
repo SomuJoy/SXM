@@ -1,0 +1,11 @@
+<header>
+    <header-bar
+        class="sxm-limited-nav"
+        [selectedProvince]="selectedProvince$ | async"
+        (languageSelected)="switchLanguage($event)"
+        (userChangedProvince)="onUserChangedProvince()"
+        [logoData]="{ url: logoLinkUrl, imageSrcUrl: 'assets/img/sxm-logo-white.png' }"
+    ></header-bar>
+</header>
+<router-outlet></router-outlet>
+<sxm-ui-app-footer></sxm-ui-app-footer>

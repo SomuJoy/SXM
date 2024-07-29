@@ -1,0 +1,98 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "locales": [
+            {
+                "locale": "en_US",
+                "offerInfos": [
+                    {
+                        "planCode": "Platinum VIP - 1mo",
+                        "salesHero": { "title": "Our best plan + VIP perks. Listen in up to 2 cars & stream.", "subTitle": null, "presentation": null },
+                        "offerDescription": {
+                            "priceAndTermDescTitle": "<span data-price>$34.99</span><strong>/mo</strong>",
+                            "processingFeeDisclaimer": "See <strong>Offer Details</strong> below",
+                            "packageName": "SiriusXM Platinum VIP",
+                            "listeningOptions": ["Satellite", "Streaming", "Perks"],
+                            "longDescription": null,
+                            "highlightsTitle": null,
+                            "highlightsText": [],
+                            "footer": null,
+                            "packageFeatures": [
+                                {
+                                    "packageName": "SiriusXM Platinum VIP",
+                                    "features": [
+                                        {
+                                            "shortDescription": "<strong>425+ channels,</strong> including 165+ in up to 2 cars, plus even more to stream on your devices",
+                                            "tooltipText": null,
+                                            "name": "425+ channels",
+                                            "learnMoreLinkText": "Learn more about",
+                                            "learnMoreInformation": null
+                                        },
+                                        {
+                                            "shortDescription": "<strong>VIP Perks:</strong>\r\n<ul>\r\n\t<li>12 months of Apple Music</li>\r\n\t<li>Stitcher Premium</li>\r\n\t<li>nugs.net recorded concerts</li>\r\n\t<li>VIP-only event opportunities</li>\r\n\t<li>Dedicated customer service</li>\r\n</ul>\r\n",
+                                            "tooltipText": null,
+                                            "name": "VIP Perks",
+                                            "learnMoreLinkText": "Learn more about",
+                                            "learnMoreInformation": "<strong>Apple Music:&nbsp;</strong>Stream over 90 million songs and 30,000 playlists ad-free, online or off, and immerse yourself in spatial audio to hear sound all around. First 12 months free, then $9.99 per month billed by Apple.<br />\r\n<br />\r\n<strong>Stitcher:&nbsp;</strong>Enjoy exclusive access to Stitcher Premium&#39;s podcasts featuring your favorite hosts. Included with your Platinum VIP subscription for no additional charge.<br />\r\n<br />\r\n<strong>nugs.net:&nbsp;</strong>&nbsp;Enjoy special Platinum VIP subscriber access to stream 5000+ live concert audio and video recordings on demand through the nugs.net app.&nbsp;<br />\r\n<small>See <strong>Offer Details&nbsp;</strong>by closing this window.</small>"
+                                        },
+                                        {
+                                            "shortDescription": "<strong>Ad-free music</strong>&nbsp;for every genre &amp; decade plus artist-created channels",
+                                            "tooltipText": null,
+                                            "name": "Ad-free music",
+                                            "learnMoreLinkText": "Learn more about",
+                                            "learnMoreInformation": null
+                                        },
+                                        {
+                                            "shortDescription": "<strong>Original talk</strong>, podcasts, exclusive comedy &amp; news from every angle",
+                                            "tooltipText": null,
+                                            "name": "Original talk",
+                                            "learnMoreLinkText": "Learn more about",
+                                            "learnMoreInformation": null
+                                        },
+                                        {
+                                            "shortDescription": "<strong>NFL, MLB&reg;, NBA, NHL&reg;, and NCAA&reg; play-by-play,&nbsp;</strong>NASCAR&nbsp;&reg;, plus the biggest names in sports talk",
+                                            "tooltipText": null,
+                                            "name": "Sports",
+                                            "learnMoreLinkText": "Learn more about",
+                                            "learnMoreInformation": null
+                                        },
+                                        {
+                                            "shortDescription": "<strong>2 Howard Stern channels,&nbsp;</strong>including video",
+                                            "tooltipText": null,
+                                            "name": "2 Howard Stern channels",
+                                            "learnMoreLinkText": "Learn more about",
+                                            "learnMoreInformation": null
+                                        },
+                                        {
+                                            "shortDescription": "<strong>Create Pandora stations&nbsp;</strong>based on artists",
+                                            "tooltipText": null,
+                                            "name": "Create Pandora stations",
+                                            "learnMoreLinkText": "Learn more about",
+                                            "learnMoreInformation": null
+                                        },
+                                        {
+                                            "shortDescription": "<strong>SiriusXM video library</strong> of in-studio shows &amp; performances",
+                                            "tooltipText": null,
+                                            "name": "SiriusXM video library",
+                                            "learnMoreLinkText": "Learn more about",
+                                            "learnMoreInformation": null
+                                        }
+                                    ]
+                                }
+                            ],
+                            "showToggleLabel": "Explore plan details",
+                            "hideToggleLabel": "Hide"
+                        },
+                        "deals": null,
+                        "addonHeaderOverride": null,
+                        "offerDetails": "<p><strong>OFFER DETAILS:</strong> Activate a Platinum VIP subscription plan (&ldquo;Plan&rdquo;) on up to two radios and pay $34.99/month. <strong>Service will automatically renew</strong> thereafter every month according to your chosen payment method and you will be charged at the then-current rates (currently $34.99/month). Fees and taxes apply. The Plan will continue as long as there is at least one active radio on the Plan. <strong>Please see our <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\">Customer Agreement</a> at www.siriusxm.com for complete terms and how to cancel, which includes online methods or calling us at 1-866-635-2349. </strong>All fees, content and features are subject to change. This offer cannot be combined with any other and may be modified or terminated at any time.<br />\r\n<br />\r\nThe Plan includes access to SiriusXM content on up to two radios with separate SXM App logins for each activated radio, Platinum VIP-only exclusives, plus VIP customer service. The Plan may from time to time include access to additional benefits (each a &ldquo;Featured Benefit&rdquo;). Featured Benefit(s) will be provided solely to the one (1) primary account holder of the Plan. Featured Benefit(s) may be accessible concurrently with your subscription or for other specified period and may be cancelled, terminated or substituted by SiriusXM at any time without advance notice. Access to a Featured Benefit may only be available on the third party&rsquo;s platform. The availability and use of each Featured Benefit may be subject to each third-party provider&rsquo;s eligibility requirements, terms of use and privacy policy, and may require separate account activation/registration with such provider. SiriusXM and the third-party provider may exchange personal information to enable your use of the Featured Benefit(s) and about your use thereof in accordance with their respective privacy policies. You agree that SiriusXM may provide such personal information for this purpose. Any personal information collected by a Featured Benefit(s) provider will be subject to such provider&rsquo;s privacy policy. Actual or suspected abuse or fraudulent manipulation of the offer or any Featured Benefit(s) may result in service termination and forfeiture of the Featured Benefit(s). Featured Benefits are not transferrable or redeemable for cash, credit or other value and may not be resold. SiriusXM may add or remove Featured Benefits at its sole discretion with or without notice. Neither SiriusXM or any Featured Benefit provider will be liable to you or any other person in the event of any modification, suspension or discontinuance of the access to any Featured Benefit.<br />\r\n<br />\r\nFor details on current Featured Benefits go to <a href=\"http://siriusxm.com/offers/platinum-vip\" target=\"_blank\">siriusxm.com/offers/platinum-vip.</a></p>\r\n",
+                        "presentation": { "theme": "Theme1", "style": "Presentation4" },
+                        "numberOfBullets": "2"
+                    }
+                ]
+            }
+        ]
+    }
+}

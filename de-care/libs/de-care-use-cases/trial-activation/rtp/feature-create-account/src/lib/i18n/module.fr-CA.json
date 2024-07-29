@@ -1,0 +1,61 @@
+{
+    "deCareUseCasesTrialActivationRtpFeatureCreateAccountModule": {
+        "createAccountComponent": {
+            "STEP_NUMBER": "ÉTAPE 2 DE {{totalSteps}}",
+            "STEP_NUMBER_RENEWAL": "ÉTAPE 3 DE 4",
+            "HEADER": "Vous êtes admissible",
+            "HEADER_RENEWAL": "Confirmez votre forfait de renouvellement",
+            "STEP_NUMBER_LEAD_OFFER": "ÉTAPE 3 DE 4",
+            "HEADER_LEAD_OFFER": "Confirmez votre colis",
+            "YMM": "Votre <inject-content> est éligible à une offre exceptionnelle.",
+            "DEFAULT_CAR": "véhicule",
+            "NOT_YOUR_CAR_LINK_TEXT": "Ce n'est pas votre véhicule?",
+            "FORM_HEADER": "Créez votre compte",
+            "FORM_SUB_HEADER": "Vous pourrez revoir votre commande avant de vous abonner.",
+            "YOUR_INFO": "Votre info",
+            "PAYMENT_INFO": "Infos de paiement",
+            "BILLING_ADDRESS_LABEL": "Adresse de facturation (incluant app./bureau/unité)",
+            "SERVICE_ADDRESS_LABEL": "L'adresse de service (incluant app./bureau/unité)",
+            "EMAIL_LABEL": "Adresse courriel",
+            "CITY_LABEL": "Ville",
+            "STATE_LABEL": "Province",
+            "ZIP_LABEL": "Code postal",
+            "CC_NAME_LABEL": "Nom sur la carte",
+            "CC_NUM_LABEL": "Numéro de carte",
+            "CC_EXP_LABEL": "(MM/AA)",
+            "CC_CVV_LABEL": "CVV",
+            "SERVICE_ADDRESS_CHECKBOX_LABEL": "L'adresse de service est la même",
+            "AGREEMENT_TEXT": "Je consense à recevoir des communications marketing par téléphone, courriel et courier après l’activation.",
+            "ACCEPT_AGREEMENT": "S'il vous plaît accepter l'accord ci-dessus.",
+            "BUTTON": "ACTIVER MON ESSAI",
+            "FOOTER": "Après l'activation, nous communiquerons avec vous au sujet de votre essai par courriel et courier.",
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Politique de la vie privée",
+                "LINK_URL": "https://www.siriusxm.ca/vieprivee"
+            },
+            "CONFIRM_YOUR_ADDRESS": "Veuillez confirmer votre adresse de service",
+            "UNEXPECTED_ERROR": "An unexpected error occurred. Please try again.",
+            "INVALID_SERVICE_ADDRESS_ERROR": "Selon les dossiers de Postes Canada, votre adresse de service est invalide ou des renseignements importants sont manquants. Veuillez mettre à jour l'adresse de service pour continuer.",
+            "ERROR": {
+                "ZIP_CODE": "Entrez un code postal valide.",
+                "CITY": "Entrez votre ville.",
+                "STATE": "Sélectionnez votre province.",
+                "ADDRESS": "Entrez une adresse valide.",
+                "CC_NAME": "SameEntrez votre nom comme il apparaît sur votre carte.",
+                "CC_EXP": "Entrez une date d’expiration valide.",
+                "CC_NUM": "Entrez un numéro de carte de crédit valide.",
+                "CVV": "Entrez un Code de sécurité valide.",
+                "CC_AUTH": "Nous sommes dans l'impossibilité d'autoriser votre carte de crédit. Veuillez mettre à jour vos renseignements de paiement."
+            },
+            "TOOLTIP_MESSAGE_1": "Pour Visa et Mastercard, utilisez les 3 chiffres figurant au verso de votre carte.",
+            "TOOLTIP_MESSAGE_2": "Pour American Express, utilisez les 4 chiffres figurant au recto de votre carte.",
+            "HEADER_TEXT_RENEWAL_PLAN_SELECTION": "Sélectionnez le forfait que vous souhaitez après la fin de votre offre {{ leadOfferPackageName }} de {{ leadOfferTerm }} mois. Vous pouvez annuler à tout moment.",
+            "PICK_A_PLAN_FORM_SUB_HEADER": "Vous pourrez choisir votre forfait et revoir votre commande avant de vous abonner. Rappelez-vous que vous pouvez modifier ou annuler en tout temps.",
+            "HEADER_LEAD_OFFER": "Confirmez votre fotre forfait",
+            "SUB_HEADER_LEAD_OFFER": "Vous pouvez modifier ou annuler en tout temps.",
+            "BUTTON_RTC_NOT_CHOICE": "REVOIR MA COMMANDE",
+            "QUESTIONS_TFN": "1 833 838-7846",
+            "CHOICE_MODAL_HEADER": "Le meilleur de SiriusXM"
+        }
+    }
+}

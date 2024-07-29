@@ -1,0 +1,21 @@
+{
+    "deCareUseCasesRollToDropFeatureStreaming": {
+        "confirmationPageComponent": {
+            "HERO": {
+                "TITLE": "Thanks for subscribing."
+            },
+            "IMPORTANT_INFO": {
+                "LEGAL_COPY": "Important information about your subscription:"
+            },
+            "STREAMING_PLAYER_LINK": "?creative_id=NA_NA_PL-EM-home-home-home-CONVERSION-COMCONFIRM-OEM-OEM-20211207-DECOM&cp_7=OEM&cp_8=CONVERSION&cp_9=COMCONFIRM"
+        },
+        "rollToDropPageComponent": {
+            "ENTER_YOUR_EMAIL_STEP": "Enter your email",
+            "ENTER_YOUR_INFO_STEP": "Enter your information",
+            "REVIEW_YOUR_ORDER_STEP": "Review and complete your order",
+            "EDIT_BUTTON_LABEL": "Edit",
+            "SUBMIT_ORDER_BUTTON": "Complete My Order",
+            "ENTER_A_CAPTCHA_TO_FINISH": "Please enter CAPTCHA to finish"
+        }
+    }
+}

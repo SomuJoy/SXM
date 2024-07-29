@@ -1,0 +1,75 @@
+{
+    "checkout": {
+        "thanksComponent": {
+            "PRINT_ORDER_SUMMARY_LINK_TEXT": "Imprimez le sommaire de votre commande",
+            "SUBSCRIPTION_IMPORTANT_INFO": {
+                "TITLE": "Renseignements importants au sujet de votre abonnement:"
+            },
+            "HEADER_STATE": "Merci de vous être abonné. Maintenant, en route!",
+            "STREAMING_PLAYER_LINK": {
+                "STREAMING_RTP_OFFER": "",
+                "SATELLITE_OFFER": ""
+            }
+        },
+        "activeSubscriptionComponent": {
+            "LOGIN_LINK": "https://care.siriusxm.ca/login_view.action?langpref=fr"
+        },
+        "studentVerificationFlow": {
+            "HERO_COPY": "Débloquez votre offre réservée aux étudiants"
+        },
+        "satelliteStreamingPurchasePageComponent": {
+            "ALERT_EXPIRED": "Désolé, apparemment cette offre a déjà pris fin.",
+            "ALERT_INVALID": "Désolé, cette offre n'est pas disponible actuellement.",
+            "SUB_HEADER": "Pour plus d’aide, appelez-nous au 1 888 539-7474 ou <a id=\"chat-247-Link-body1\" class=\"text-link\">clavardez avec un préposé.</a>",
+            "SUB_HEADER_OFFER_NOT_AVAILABLE": "Pour obtenir de l'aide au sujet de cette offre, vous pouvez nous appeler au 1 888 539-7474.",
+            "DEFAULT_OFFER_HERO": "Trouvons une autre offre intéressante pour vous!",
+            "RADIO_LOOKUP_LABEL": "Recherche de radio",
+            "ACCOUNT_FOUND_MODAL_TITLE": "Votre compte",
+            "LOGIN_LINK": "https://care.siriusxm.ca/login_view.action?langpref=fr",
+            "OFFER_FOR_NEW_SUBSCRIBERS": "Cette offre est réservée aux nouveaux abonnés, mais voici une autre option pour vous.",
+            "FURTHER_ASSISTANCE": "Pour plus d’aide, appelez-nous au 1-888-539-7474.",
+            "CHAT_LINK": "",
+            "FOR_HELP": "Pour obtenir de l'aide, ",
+            "HELP_CHAT_LINK": "",
+            "OR_CALL": "appelez le {{assistancePhone}}",
+            "ASSISTANCE_PHONE_MAP": {
+                "109": "1 833 838-7846",
+                "112": "1 833 838-7846",
+                "113": "1 833 838-7846",
+                "other": "1 866 635-0565"
+            },
+            "NO_RADIO": {
+                "NO_RADIO_TEXT": "Pas de radio?",
+                "LINK_URL": "https://www.siriusxm.ca/NOUVencontinu",
+                "LINK_TEXT": "Obtenez l’Appli SXM"
+            }
+        },
+        "leadOfferPlanSelectionPageComponent": {
+            "HERO": {
+                "TITLE": "Choisissez un forfait et obtenez {{termLength}} mois gratuits pour {{price}} $",
+                "SUBTITLE": "Voir les détails de l'offre ci-dessous. Modifiez ou annulez en tout temps."
+            }
+        },
+        "ineligibleErrorPageComponent": {
+            "LOADER_SUBTEXT": "Trouver un autre bon plan pour vous.",
+            "3494": "Malheureusement, nous ne trouvons pas votre radio. Toutefois, vous pouvez diffuser en continu au moyen de l'appli SXM avec un abonnement Le Complet.",
+            "103": "Malheureusement, votre radio n'est pas équipée pour le service satellite. Toutefois, vous pouvez diffuser en continu au moyen de l'appli SXM avec un abonnement Le Complet.",
+            "5035": "Malheureusement, cette radio n'est pas admissible à un abonnement d'essai. Toutefois, vous pouvez commencer à profiter de SiriusXM grâce à cette excellente offre d'abonnement.",
+            "101": "Malheureusement, cette radio n'est pas admissible à un abonnement d'essai. Toutefois, vous pouvez commencer à profiter de SiriusXM grâce à cette excellente offre d'abonnement.",
+            "109": "Il semble que vous avez actuellement un essai actif. Vous pouvez ajouter un abonnement, ainsi vous ne manquerez aucune note une fois que votre essai prendra fin.",
+            "111": "Il semble que vous avez déjà un essai actif de 3 mois. Vous pouvez ajouter un abonnement, ainsi vous ne manquerez aucune note une fois que votre essai prendra fin.",
+            "112": "Malheureusement, votre essai a pris fin récemment et votre radio n'est pas admissible à un abonnement d'essai. Toutefois, vous pouvez commencer à profiter de SiriusXM grâce à cette excellente offre d'abonnement.",
+            "113": "Malheureusement, votre essai a pris fin récemment et votre radio n'est pas admissible à un abonnement d'essai. Toutefois, vous pouvez commencer à profiter de SiriusXM grâce à cette excellente offre d'abonnement."
+        },
+        "alertPillErrorCodes": {
+            "3494": "Malheureusement, nous ne trouvons pas votre radio. Toutefois, vous pouvez diffuser en continu au moyen de l'appli SXM avec un abonnement Le Complet.",
+            "103": "Malheureusement, votre radio n'est pas équipée pour le service satellite. Toutefois, vous pouvez diffuser en continu au moyen de l'appli SXM avec un abonnement Le Complet.",
+            "5035": "Malheureusement, cette radio n'est pas admissible à un abonnement d'essai. Toutefois, vous pouvez commencer à profiter de SiriusXM grâce à cette excellente offre d'abonnement.",
+            "101": "Malheureusement, cette radio n'est pas admissible à un abonnement d'essai. Toutefois, vous pouvez commencer à profiter de SiriusXM grâce à cette excellente offre d'abonnement.",
+            "109": "Il semble que vous avez actuellement un essai actif. Vous pouvez ajouter un abonnement, ainsi vous ne manquerez aucune note une fois que votre essai prendra fin.",
+            "111": "Il semble que vous avez déjà un essai actif de 3 mois. Vous pouvez ajouter un abonnement, ainsi vous ne manquerez aucune note une fois que votre essai prendra fin.",
+            "112": "Malheureusement, votre essai a pris fin récemment et votre radio n'est pas admissible à un abonnement d'essai. Toutefois, vous pouvez commencer à profiter de SiriusXM grâce à cette excellente offre d'abonnement.",
+            "113": "Malheureusement, votre essai a pris fin récemment et votre radio n'est pas admissible à un abonnement d'essai. Toutefois, vous pouvez commencer à profiter de SiriusXM grâce à cette excellente offre d'abonnement."
+        }
+    }
+}

@@ -1,0 +1,39 @@
+<div *ngIf="offer$ | async as offer">
+    <ng-container *ngIf="vm$ | async as vm">
+        <sxm-ui-hero [heroData]="vm.salesHeroData" data-e2e="studentVerificationPage.hero" [class]="vm.salesHeroData.classes"></sxm-ui-hero>
+        <lead-offer-details
+            [offer]="offer"
+            [followOnOfferPrice]="offerDetails.followOnPrice"
+            [isStreaming]="offerDetails.isStreaming"
+            [offerDescriptionData]="vm.offerDescriptionData"
+            [isLegacyMode]="false"
+        ></lead-offer-details>
+        <main class="background-offwhite">
+            <div *ngIf="vm.dealAddonData" class="content-container background-offwhite">
+                <div class="row no-padding-small">
+                    <div class="column small-12 medium-10 offset-medium-1 background-white no-padding-medium">
+                        <div class="deal-addon-container">
+                            <sxm-ui-deal-addon-card data-e2e="studentVerification.dealAddonCard" [copyContent]="vm.dealAddonData"> </sxm-ui-deal-addon-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <main class="background-offwhite">
+            <div class="content-container">
+                <div class="row align-center">
+                    <div class="column medium-2 no-padding background-white"></div>
+                    <div class="column small-12 medium-6 background-white">
+                        <de-care-sheer-id-student-verification
+                            [sheerIdIdentificationWidgetUrl]="sheerIdIdentificationWidgetUrl$ | async"
+                            [programCode]="programCode"
+                            [langPref]="langPref"
+                        ></de-care-sheer-id-student-verification>
+                    </div>
+                    <div class="column medium-2 no-padding background-white"></div>
+                </div>
+            </div>
+        </main>
+        <sxm-ui-legal-copy [legalCopy]="vm.legalCopyData" data-e2e="studentVerification.legalCopy"></sxm-ui-legal-copy>
+    </ng-container>
+</div>

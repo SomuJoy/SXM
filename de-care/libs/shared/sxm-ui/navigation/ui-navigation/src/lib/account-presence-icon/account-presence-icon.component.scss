@@ -1,0 +1,143 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+// logging in animation
+#usericon-final-login-ring {
+    animation-name: usericon-final-login-ring_c_o, usericon-final-login-ring_s_p;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+}
+@keyframes usericon-final-login-ring_c_o {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+        animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes usericon-final-login-ring_s_p {
+    0% {
+        stroke: url(#usericon-final-login-ring-stroke);
+    }
+    40% {
+        stroke: url(#usericon-final-login-ring-stroke);
+        animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    }
+    100% {
+        stroke: url(#usericon-final-login-ring-stroke-g1);
+    }
+}
+#usericon-final-login-oval2_to {
+    animation: usericon-final-login-oval2_to__to 1000ms linear 1 normal forwards;
+}
+@keyframes usericon-final-login-oval2_to__to {
+    0% {
+        transform: translate(8.043636px, 3.75687px);
+    }
+    100% {
+        transform: translate(7.956613px, 5.166588px);
+    }
+}
+#usericon-final-login-oval2_ts {
+    animation: usericon-final-login-oval2_ts__ts 1000ms linear 1 normal forwards;
+}
+@keyframes usericon-final-login-oval2_ts__ts {
+    0% {
+        transform: scale(1.205059, 1.205059);
+    }
+    100% {
+        transform: scale(0.950248, 0.950248);
+    }
+}
+#usericon-final-login-use1_ts {
+    animation: usericon-final-login-use1_ts__ts 1000ms linear 1 normal forwards;
+}
+@keyframes usericon-final-login-use1_ts__ts {
+    0% {
+        transform: translate(8px, 8px) scale(1.755093, 1.755093);
+        animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    }
+    100% {
+        transform: translate(8px, 8px) scale(1, 1);
+    }
+}
+
+// logging out animation
+#usericon-final-logout-ring {
+    animation-name: usericon-final-logout-ring_c_o, usericon-final-logout-ring_s_p;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-direction: reverse;
+    animation-iteration-count: 1;
+}
+@keyframes usericon-final-logout-ring_c_o {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+        animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes usericon-final-logout-ring_s_p {
+    0% {
+        stroke: url(#usericon-final-logout-ring-stroke-g1);
+    }
+    40% {
+        stroke: url(#usericon-final-logout-ring-stroke-g1);
+        animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    }
+    100% {
+        stroke: url(#usericon-final-logout-ring-stroke);
+    }
+}
+#usericon-final-logout-oval2_to {
+    animation: usericon-final-logout-oval2_to__to 1000ms linear 1 reverse forwards;
+}
+@keyframes usericon-final-logout-oval2_to__to {
+    0% {
+        transform: translate(8.043636px, 3.75687px);
+    }
+    100% {
+        transform: translate(7.956613px, 5.166588px);
+    }
+}
+#usericon-final-logout-oval2_ts {
+    animation: usericon-final-logout-oval2_ts__ts 1000ms linear 1 reverse forwards;
+}
+@keyframes usericon-final-logout-oval2_ts__ts {
+    0% {
+        transform: scale(1.205059, 1.205059);
+    }
+    100% {
+        transform: scale(0.950248, 0.950248);
+    }
+}
+#usericon-final-logout-use1_ts {
+    animation: usericon-final-logout-use1_ts__ts 1000ms linear 1 reverse forwards;
+}
+@keyframes usericon-final-logout-use1_ts__ts {
+    0% {
+        transform: translate(8px, 8px) scale(1.755093, 1.755093);
+        animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    }
+    100% {
+        transform: translate(8px, 8px) scale(1, 1);
+    }
+}

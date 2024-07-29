@@ -1,0 +1,78 @@
+{
+    "customerInfo": {
+        "verifyAddressComponent": {
+            "INVALID_FEEDBACK": "We were unable to validate your address with Canada Post."
+        },
+        "paymentInfoComponent": {
+            "ACCOUNT_INFO": "Your Info",
+            "NEW_CC": {
+                "CC_CVV": "CVV",
+                "CC_STATE": "Province",
+                "ERROR_CC_STATE": "Select your province.",
+                "CC_ZIPCODE": "Postal Code",
+                "ERROR_CC_ZIPCODE": "Enter a valid postal code."
+            },
+            "PREPAID": {
+                "ADD_CARD": "Add a SiriusXM Prepaid Service Card (optional)",
+                "REDEEM_LABEL": "Redeem a prepaid service gift card",
+                "REMOVE_LABEL": "Remove the prepaid service gift card",
+                "CARD_APPLIED": "Your prepaid service gift card was applied."
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.ca/privacy"
+            }
+        },
+        "PaymentInfoStreamingOrganicComponent": {
+            "ACCOUNT_INFO": "Billing Details",
+            "PAYMENT_INFO_SUBHEADER": "Credit Card Details",
+            "NEW_CC": {
+                "CC_CVV": "CVV",
+                "CC_STATE": "Province",
+                "ERROR_CC_STATE": "Select your province.",
+                "CC_ZIPCODE": "Postal Code",
+                "ERROR_CC_ZIPCODE": "Enter a valid postal code."
+            },
+            "PREPAID": {
+                "ADD_CARD": "Add a SiriusXM Prepaid Service Card (optional)",
+                "REDEEM_LABEL": "Redeem a prepaid service gift card",
+                "REMOVE_LABEL": "Remove the prepaid service gift card",
+                "CARD_APPLIED": "Your prepaid service gift card was applied."
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.ca/privacy"
+            }
+        },
+        "PaymentInfoWithInvoiceComponent": {
+            "NEW_CC": {
+                "CC_CVV": "CVV",
+                "CC_STATE": "Province",
+                "ERROR_CC_STATE": "Select your province.",
+                "CC_ZIPCODE": "Postal Code",
+                "ERROR_CC_ZIPCODE": "Enter a valid postal code."
+            },
+            "PREPAID": {
+                "ADD_CARD": "Add a SiriusXM Prepaid Service Card (optional)",
+                "REDEEM_LABEL": "Redeem a prepaid service gift card",
+                "REMOVE_LABEL": "Remove the prepaid service gift card",
+                "CARD_APPLIED": "Your prepaid service gift card was applied."
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.ca/privacy"
+            }
+        },
+        "addressFormFieldsOemComponent": {
+            "STATE": "Province",
+            "ERROR_STATE": "Enter your province.",
+            "ERROR_STATE_INACCURATE": "Enter a valid province.",
+            "ZIPCODE": "Postal Code",
+            "ERROR_ZIPCODE": "Enter your postal code."
+        },
+        "invalidAddressMessageComponent": {
+            "INVALID_BILLING_ADDRESS_ERROR": "According to Canada Post records your billing address is invalid or is missing important information. Please update the billing address to continue.",
+            "INVALID_SERVICE_ADDRESS_ERROR": "According to Canada Post records your service address is invalid or is missing important information. Please update the service address to continue."
+        }
+    }
+}

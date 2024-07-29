@@ -1,0 +1,9 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "vin": "GB7C513QMKSIFZ6KF",
+        "last4DigitsOfRadioId": "2412"
+    }
+}

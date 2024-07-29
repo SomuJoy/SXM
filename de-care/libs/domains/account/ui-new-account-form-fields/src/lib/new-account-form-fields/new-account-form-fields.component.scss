@@ -1,0 +1,41 @@
+@import "sxm.phoenix.imports";
+
+$common-margin: 24px;
+
+.gray-text {
+    font-weight: 500;
+    color: $gray-dark;
+}
+
+.section-title {
+    margin: $common-margin 0 16px 0;
+}
+
+sxm-ui-dropdown {
+    margin-bottom: 8px;
+}
+
+post-activation-instructions {
+    margin-top: $common-margin;
+    display: inline-block;
+}
+
+form {
+    margin-bottom: $common-margin;
+}
+
+.column {
+    &.small-6 {
+        &:first-child {
+            padding-left: 0;
+            padding-right: 12px;
+        }
+    }
+
+    &.small-6 {
+        &:last-child {
+            padding-left: 12px;
+            padding-right: 0;
+        }
+    }
+}

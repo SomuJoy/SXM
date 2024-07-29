@@ -1,0 +1,14 @@
+{
+    "TITLE": "Check your eligibility",
+    "DEVICE_ID_FIELD_PLACEHOLDER": "RadioID / VIN",
+    "DEVICE_ID_ERROR": "Enter a valid Radio ID or VIN.",
+    "DEVICE_NOT_ELIGIBLE": "Device is not eligible.",
+    "UNEXPECTED_ERROR": "An unexpected error occurred. Please try again.",
+    "BUTTON_LABEL": "Check My Eligibility",
+    "RADIO_HELP_TOOLTIP_TITLE_LABEL": "Click for help with Radio ID / VIN",
+    "NO_RADIO": "No radio?",
+    "GET_STREAMING": {
+        "LINK_URL": "https://www.siriusxm.com/nouvstreamform?intcmp=MarketingLandingPage-Hero_NA_www:trial-eligibility_GetSiriusXMOutsidetheCar",
+        "LINK_TEXT": "Get SiriusXM Outside the Car"
+    }
+}

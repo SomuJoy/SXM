@@ -1,0 +1,20 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host-context(.streaming-player-secondary) a {
+    background: #e9eef8;
+    color: #0000eb;
+    padding: 19px;
+    margin-top: 4px;
+}
+
+:host-context(.streaming-player-secondary) a:before {
+    border-color: #e9eef8 !important;
+}
+:host-context(.streaming-player-secondary) a:hover {
+    color: #0000eb;
+    background: transparent;
+}
+a.button.loading [data-id="link-label"] {
+    display: none;
+}

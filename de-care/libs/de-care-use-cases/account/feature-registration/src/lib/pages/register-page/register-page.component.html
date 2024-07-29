@@ -1,0 +1,168 @@
+<main *ngIf="registrationDataNeeded$ | async as registrationDataNeeded" de-care-page-main>
+    <form *ngIf="formReady" [formGroup]="form" (ngSubmit)="onSubmit()" data-test="registrationForm" data-e2e="registrationForm">
+        <input type="hidden" #ndsPmdEl name="nds-pmd" />
+        <ng-container *ngIf="{ value: (isInStepUpFlow$ | async) } as isStepUp">
+            <sxm-ui-dot-progress-bar-stepper #dotStepper [staticStepData]="isStepUp.value ? staticStepDataInStepUp : staticStepData">
+                <sxm-ui-dot-progress-bar-step *ngIf="!(form?.controls?.emailData || form?.controls?.phoneNumberData)">
+                    <!--  TODO: Dummy step to handle step sequence consitently. This is a temp solution. Registration refactoring required ß-->
+                </sxm-ui-dot-progress-bar-step>
+
+                <sxm-ui-dot-progress-bar-step *ngIf="form?.controls?.emailData || form?.controls?.phoneNumberData">
+                    <sxm-ui-stepper #subStepper>
+                        <sxm-ui-step></sxm-ui-step>
+                        <sxm-ui-step *ngIf="form?.controls?.emailData" [formGroup]="emailFormGroup" (active)="trackComponent('enteremail')">
+                            <h4>{{ translateKeyPrefix + ".STEP_EMAIL.TITLE" | translate }}</h4>
+                            <p>{{ translateKeyPrefix + ".STEP_EMAIL.INSTRUCTIONS" | translate: { firstName: firstName$ | async } }}</p>
+                            <sxm-ui-text-form-field
+                                controlId="email"
+                                formControlName="email"
+                                [labelText]="translateKeyPrefix + '.STEP_EMAIL.INPUT_LABEL_EMAIL' | translate"
+                                [errorMsg]="translateKeyPrefix + '.STEP_EMAIL.ERROR_MESSAGE' | translate"
+                                data-test="registrationForm.emailTextfield"
+                                data-e2e="registrationForm.emailTextfield"
+                            ></sxm-ui-text-form-field>
+                            <ng-container
+                                [ngTemplateOutlet]="subStepper.selectedIndex === subStepper.steps?.length - 1 ? continueButton : subStepButton"
+                                [ngTemplateOutletContext]="{ formGroup: emailFormGroup }"
+                            ></ng-container>
+                        </sxm-ui-step>
+                        <sxm-ui-step *ngIf="form?.controls?.phoneNumberData" [formGroup]="phoneNumberFormGroup" (active)="trackComponent('enterphone')">
+                            <h4>{{ translateKeyPrefix + ".STEP_PHONE_NUMBER.TITLE" | translate }}</h4>
+                            <p>{{ translateKeyPrefix + ".STEP_PHONE_NUMBER.INSTRUCTIONS" | translate }}</p>
+                            <div
+                                class="input-container"
+                                [class.invalid]="
+                                    (form.controls?.phoneNumberData)['controls']['phoneNumber'].invalid && (form.controls?.phoneNumberData)['controls']['phoneNumber'].touched
+                                "
+                            >
+                                <label data-test="sxmUIPhoneNumber.label" data-e2e="sxmUIPhoneNumber.label" for="phoneNumberData">{{
+                                    translateKeyPrefix + ".STEP_PHONE_NUMBER.INPUT_LABEL_PHONE_NUMBER" | translate
+                                }}</label>
+                                <input
+                                    id="phoneNumberData"
+                                    type="tel"
+                                    data-test="registrationForm.phoneNumberTextfield"
+                                    data-e2e="registrationForm.phoneNumberTextfield"
+                                    formControlName="phoneNumber"
+                                    appMaskPhoneNumber
+                                    [optional]="true"
+                                    onFocus
+                                    appMaskPhoneNumber
+                                />
+                            </div>
+                            <div
+                                *ngIf="
+                                    (form.controls?.phoneNumberData)['controls']['phoneNumber'].invalid && (form.controls?.phoneNumberData)['controls']['phoneNumber'].touched
+                                "
+                                class="invalid-feedback"
+                            >
+                                <p>{{ translateKeyPrefix + ".STEP_PHONE_NUMBER.ERROR_MESSAGE" | translate }}</p>
+                            </div>
+                            <ng-container
+                                [ngTemplateOutlet]="dotStepper.selectedIndex === dotStepper.steps?.length - 1 ? submitButton : continueButton"
+                                [ngTemplateOutletContext]="{ formGroup: phoneNumberFormGroup }"
+                            ></ng-container>
+                        </sxm-ui-step>
+                    </sxm-ui-stepper>
+                </sxm-ui-dot-progress-bar-step>
+
+                <sxm-ui-dot-progress-bar-step
+                    *ngIf="form.controls.securityQuestionsData"
+                    [formGroup]="securityQuestionsFormGroup"
+                    (active)="trackComponent('entersecurityquestions')"
+                >
+                    <h4>{{ translateKeyPrefix + ".STEP_SECURITY_QUESTIONS.TITLE" | translate }}</h4>
+                    <p>
+                        {{
+                            !form?.controls?.phoneNumberData && !form?.controls?.emailData
+                                ? (translateKeyPrefix + ".STEP_SECURITY_QUESTIONS.PRE_INSTRUCTIONS" | translate: { firstName: firstName$ | async })
+                                : ""
+                        }}
+                        {{ translateKeyPrefix + ".STEP_SECURITY_QUESTIONS.INSTRUCTIONS" | translate }}
+                    </p>
+                    <security-questions-form-fields
+                        [formGroup]="securityQuestionsFormGroup"
+                        [questions]="securityQuestions$ | async"
+                        data-test="registrationForm.securityQuestions"
+                        data-e2e="registrationForm.securityQuestions"
+                    ></security-questions-form-fields>
+                    <ng-container
+                        [ngTemplateOutlet]="dotStepper.selectedIndex === dotStepper.steps?.length - 1 ? submitButton : continueButton"
+                        [ngTemplateOutletContext]="{ formGroup: securityQuestionsFormGroup }"
+                    ></ng-container>
+                </sxm-ui-dot-progress-bar-step>
+
+                <sxm-ui-dot-progress-bar-step
+                    *ngIf="
+                        (form.controls.loginCredentials && registrationDataNeeded.loginCredentials === 'usernameAndPassword') ||
+                        (form.controls.loginCredentials && registrationDataNeeded.loginCredentials === 'password')
+                    "
+                    (active)="trackComponent(registrationDataNeeded.loginCredentials === 'password' ? 'enterpassword' : 'enterusernamepassword')"
+                >
+                    <ng-container
+                        *ngIf="form.controls.loginCredentials && registrationDataNeeded.loginCredentials === 'usernameAndPassword'"
+                        (active)="trackComponent('enterusernamepassword')"
+                    >
+                        <h4>{{ translateKeyPrefix + ".STEP_USERNAME_AND_PASSWORD.TITLE" | translate: { email: emailOnAccountOrFlepzForUserName$ | async } }}</h4>
+                        <p>{{ translateKeyPrefix + ".STEP_USERNAME_AND_PASSWORD.INSTRUCTIONS" | translate }}</p>
+                        <login-form-fields
+                            [useUsername]="true"
+                            [formInfo]="{
+                                email: emailOnAccountOrFlepzForUserName$ | async,
+                                parentForm: this.loginCredentialsFormGroup,
+                                canEditEmail: true
+                            }"
+                            [systemError]="systemError$ | async"
+                        ></login-form-fields>
+                        <ng-container *ngTemplateOutlet="submitButton"></ng-container>
+                    </ng-container>
+
+                    <ng-container *ngIf="form.controls.loginCredentials && registrationDataNeeded.loginCredentials === 'password'">
+                        <h4>{{ translateKeyPrefix + ".STEP_PASSWORD.TITLE" | translate }}</h4>
+                        <p [innerHTML]="translateKeyPrefix + '.STEP_PASSWORD.INSTRUCTIONS' | translate: { email: emailOnAccountOrFlepzForUserName$ | async }"></p>
+                        <login-form-fields
+                            [useUsername]="true"
+                            [formInfo]="{
+                                email: null,
+                                parentForm: this.loginCredentialsFormGroup,
+                                canEditEmail: false
+                            }"
+                            [systemError]="systemError$ | async"
+                        ></login-form-fields>
+                        <ng-container *ngTemplateOutlet="submitButton"></ng-container>
+                    </ng-container>
+                </sxm-ui-dot-progress-bar-step>
+            </sxm-ui-dot-progress-bar-stepper>
+        </ng-container>
+    </form>
+</main>
+<ng-template #continueButton let-formGroup="formGroup">
+    <privacy-policy></privacy-policy>
+    <button
+        type="button"
+        data-test="registrationForm.continueToNextStepButton"
+        data-e2e="registrationForm.continueToNextStepButton"
+        sxm-proceed-button
+        (click)="onContinueRequested(formGroup)"
+    >
+        {{ translateKeyPrefix + ".CONTINUE_BUTTON" | translate }}
+    </button>
+</ng-template>
+<ng-template #submitButton>
+    <privacy-policy></privacy-policy>
+    <button type="submit" data-test="registrationForm.completeRegistrationButton" data-e2e="registrationForm.completeRegistrationButton" sxm-proceed-button>
+        {{ translateKeyPrefix + ".COMPLETE_REGISTRATION_BUTTON" | translate }}
+    </button>
+</ng-template>
+<ng-template #subStepButton let-formGroup="formGroup">
+    <privacy-policy></privacy-policy>
+    <button
+        type="button"
+        data-test="registrationForm.continueToNextSubStepButton"
+        data-e2e="registrationForm.continueToNextSubStepButton"
+        sxm-proceed-button
+        (click)="onContinueSubstep()"
+    >
+        {{ translateKeyPrefix + ".CONTINUE_BUTTON" | translate }}
+    </button>
+</ng-template>

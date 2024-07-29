@@ -1,0 +1,53 @@
+<rflz-form
+    [ngClass]="!dtok || tokenServiceComplete ? 'visible-rflz-block' : 'hidden-rflz-block'"
+    [sweepstakesEligible]="sweepstakesEligible"
+    [programCode]="programCode"
+    (foundRadio)="onFoundRadio($event)"
+    (helpFindRadio)="helpFindingRadioModal.open()"
+    [licensePlateLookupEnabled]="!disableLicensePlateLookup"
+    [nflOptInEnabled]="enableNFLOptIn"
+    [openLicensePlateModal]="openLicensePlateSearch"
+    [presentation]="rflzFormPresentation"
+    [hideErrorMessagePill]="hideErrorMessagePill"
+    [maskedRadioId]="radioIdFromToken"
+    [radioIdOrVin]="radioIdOrVin"
+    (foundRadioError)="onFoundRadioError($event)"
+    (redirectError)="onRedirectError($event)"
+></rflz-form>
+
+<sxm-ui-modal
+    #helpFindingRadioModal="sxmUiModal"
+    [showBackButton]="true"
+    (backButton)="helpFindingRadioModal.close()"
+    [titlePresent]="true"
+    title="{{ 'elements.rflzWidgetComponent.RADIO_LOOKUP_LABEL' | translate }}"
+>
+    <p class="need-help-text">
+        <strong>{{ "elements.rflzWidgetComponent.NEED_HELP_TEXT_LABEL" | translate }}</strong>
+    </p>
+    <sxm-ui-help-finding-radio
+        [showDontHaveRadio]="true"
+        [showSearchByLicensePlateLink]="true"
+        (deviceHelp)="deviceHelpModal.open(); helpFindingRadioModal.close()"
+        (licensePlateHelp)="openLicensePlateSearch = true; helpFindingRadioModal.close()"
+    ></sxm-ui-help-finding-radio>
+</sxm-ui-modal>
+<sxm-ui-modal
+    #deviceHelpModal="sxmUiModal"
+    [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"
+    [titlePresent]="true"
+    title="{{ 'elements.rflzWidgetComponent.DEVICE_HELP_LABEL' | translate }}"
+    (modalClosed)="helpFindingRadioModal.open()"
+>
+    <sxm-ui-device-help [isCanadaMode]="isCanada" [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"></sxm-ui-device-help>
+</sxm-ui-modal>
+<sxm-ui-modal #foundRadioErrorModal [titlePresent]="true" [title]="'elements.rflzWidgetComponent.FORM_RADIO_ERROR_MODAL.LABEL' | translate">
+    <h5>{{ "elements.rflzWidgetComponent.FORM_RADIO_ERROR_MODAL.HEADER" | translate }}</h5>
+    <p>{{ "elements.rflzWidgetComponent.FORM_RADIO_ERROR_MODAL.COPY" | translate }}</p>
+    <p class="small-copy text-color-gray-dark">{{ "elements.rflzWidgetComponent.FORM_RADIO_ERROR_MODAL.SMALL_COPY" | translate }}</p>
+    <button data-track-click="Get Streaming" type="submit" (click)="redirectToStreaming()" class="button primary text-center full-width">
+        {{ "elements.rflzWidgetComponent.FORM_RADIO_ERROR_MODAL.BUTTON" | translate }}
+    </button>
+</sxm-ui-modal>
+
+<sxm-rflz-widget-loader [ngClass]="!dtok || tokenServiceComplete ? 'hidden-rflz-block' : 'visible-rflz-block'"> </sxm-rflz-widget-loader>

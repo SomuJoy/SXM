@@ -1,0 +1,13 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "emailValidation": { "verificationStatus": "VALID", "verificationMessage": null, "suggestedEmail": "", "valid": true },
+        "usernameValidation": { "valid": false },
+        "billingAddressValidation": null,
+        "serviceAddressValidation": null,
+        "ccValidation": null,
+        "valid": false
+    }
+}

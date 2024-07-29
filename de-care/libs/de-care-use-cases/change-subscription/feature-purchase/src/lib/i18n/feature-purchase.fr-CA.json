@@ -1,0 +1,102 @@
+{
+    "deCareUseCasesChangeSubscriptionFeaturePurchaseModule": {
+        "changeSubscriptionPurchasePageComponent": {
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "mois",
+                    "other": "mois"
+                }
+            },
+            "HERO": {
+                "DEFAULT": "Modifiez votre abonnement",
+                "GET_AS_LITTLE": "Obtenez SiriusXM pour aussi peu que {{price}} par mois.",
+                "MORE_OF": "Profitez de SiriusXM pendant {{termLength}} {{monthsPlural}}"
+            },
+            "STEP_PAGE_TITLES": {
+                "PICK_PACKAGE": "Choisir votre forfait",
+                "PICK_TERM": "Choisir votre forfait de facturation",
+                "INFOTAINMENT": "Choisir un forfait d'infodivertissement (facultatif)",
+                "INFOTAINMENT_NON_OPTIONAL": "Choisir un forfait d'infodivertissement",
+                "ENTER_PAYMENT_INFO": "Entrez vos renseignements de paiement",
+                "REVIEW": "Revoyez et terminez votre commande"
+            },
+            "SKIPS": {
+                "BILLING_PLAN": "Garder le forfait existant et continuer",
+                "INFOTAINMENT": "Non merci, continuez vers l'infodivertissement"
+            },
+            "SELECTED_TERM_ANNUAL": "Annuel  - {{amount}}/an plus frais",
+            "SELECTED_TERM_MONTHLY": "Mensuel - {{amount}}/mois plus frais",
+            "SELECTED_TERM_ANNUAL_QC": "Annuel  - {{amount}}/an",
+            "SELECTED_TERM_MONTHLY_QC": "Mensuel - {{amount}}/mois",
+            "STEP_EDIT_LABEL": "Modifier",
+            "SUBMIT_CHANGE_BUTTON": "Terminer Ma Commande",
+            "PACKAGE_CHANGE_CONFIRMATION": {
+                "TITLE": "Confirmez le forfait",
+                "DEFAULT_HEADER": "Vous perdrez votre prix promotionnel si vous continuez.",
+                "DOWNGRADE_HEADER": "Voulez-vous vraiment effectuer ce changement?",
+                "LOSE_OF_FEATURES_HEADER": "En effectuant ce changement à un autre forfait, vous perdrez les caractéristiques suivantes:",
+                "LOSE_OF_FEATURES_HEADER_ANOTHER": "En effectuant ce changement à un autre forfait, vous perdrez les caractéristiques suivantes :",
+                "CONTINUE_BUTTON": "Accepter et continuer",
+                "KEEP_MY_PROMO_LINK": "Garder mon prix promotionnel",
+                "KEEP_ALL_ACCESS_LINK": "Garder {{packageName}} et continuer",
+                "SUBSCRIPTION_UPDATE": "La mise à jour de votre abonnement entrera en vigueur immédiatement une fois que vous aurez terminé votre commande."
+            },
+            "PAYMENT_INFO_INACTIVE": "{{cardType}} se terminant par {{cardNumber}}",
+            "INFOTAINMENT_STEP": {
+                "BODY_1": "Votre véhicule a à votre disposition des services de navigation, de météo et de nouvelles que vous pouvez activer.",
+                "BODY_2": "Votre abonnement commencera lorsque votre essai prendra fin le {{endDate}}."
+            },
+            "PACKAGE_SELECTION_STEP": {
+                "DATA_ACCOUNT_ONLY_NO_PACKAGE_SELECTED": "Aucun forfait choisi",
+                "CONTENT_CARD_FLAG": "Notre Meilleur Forfait",
+                "CONTENT_CARD_HEADLINE1": "Passer à ce forfait",
+                "CONTENT_CARD_HEADLINE2": "Garder ce forfait",
+                "CONTENT_CARD_HEADLINE3": "Ajouter ce forfait",
+                "CONTENT_CARD_HEADLINE1_ARIA": "Passer à ce forfait - {{packageName}}",
+                "CONTENT_CARD_HEADLINE2_ARIA": "Garder ce forfait - {{packageName}}",
+                "CONTENT_CARD_HEADLINE3_ARIA": "Ajouter ce forfait - {{packageName}}",
+                "TRIAL_HEADER": "Votre abonnement commencera lorsque votre essai prendra fin le {{endDate}}."
+            },
+            "ERRORS": {
+                "BODY": "Pour modifier votre abonnement et gérer votre compte, veuillez continuer de vous identifier.",
+                "MANAGE_ACCOUNT_BUTTON": "GÉRER LE COMPTE",
+                "ALREADY_UPGRADED": {
+                    "TITLE": "Vous avez déjà rehaussé votre abonnement."
+                },
+                "NON_ELEGIBLE": {
+                    "PILL": "Désolé, votre radio n’est plus admissible à cette offre.",
+                    "TITLE": "Gérez votre abonnement"
+                },
+                "NO_OFFER_SELECTION": {
+                    "TEXT": "Choisissez un forfait ci-dessous ou ",
+                    "LINK": "continuez avec votre forfait actuel."
+                },
+                "PICK_A_PACKAGE": {
+                    "TEXT": "Choisissez un forfait pour continuer. Si vous avez besoin de plus d’aide avec votre abonnement, vous pouvez ",
+                    "CHAT": "clavarder avec un préposé.",
+                    "CLOSED_CHAT": "Choisissez un forfait pour continuer. Si vous avez besoin de plus d’aide avec votre abonnement, veuillez composer le <a href=\"tel:+1-888-539-7474\">1 888 539-7474</a>."
+                }
+            },
+            "LEGAL_COPY": "<p><strong>DÉTAILS DE L'OFFRE :</strong> Le forfait d'abonnement que vous avez choisi commencera dès que votre commande sera terminée (si vous bénéficiez d'une période d'essai, il commencera à la suite de votre période d'essai). Le service sera automatiquement renouvelé ensuite, et les tarifs courants alors en vigueur du forfait sélectionné seront facturés conformément au mode de paiement que vous avez choisi tant que vous choisirez de demeurer abonné (les tarifs courants sont indiqués ci-dessus et peuvent faire l'objet de modifications sur préavis suffisant). Des frais et des taxes s'appliquent. <b>Des redevances sur la musique et des frais administratifs de {{mrfAmount}} % s'appliquent.<b> Une carte de crédit est requise. Consultez notre <a href='https://www.siriusxm.ca/conditions' target='_blank' title=' à siriusxm.ca/conditions'>Entente du client</a> pour connaître toutes les conditions et savoir comment annuler, ce qui comprend nous appeler au 1 833 838-7846. Nous recueillons et utilisons les renseignements personnels conformément à notre <a href='http://siriusxm.ca/vieprivee' target='_blank'>Politique de la vie privée</a>. Toutes les conditions, tous les frais, tout le contenu et toutes les fonctionnalités peuvent être modifiés. La liste des stations varie selon le forfait.</p>",
+            "LEGAL_COPY_QC": "<p><strong>DÉTAILS DE L'OFFRE :</strong> Le forfait d'abonnement que vous avez choisi commencera dès que votre commande sera terminée (si vous bénéficiez d'une période d'essai, il commencera à la suite de votre période d'essai). Le service continuera après votre période de facturation initiale, et les tarifs courants alors en vigueur du forfait sélectionné seront facturés conformément au mode de paiement que vous avez choisi jusqu’à ce que vous annuliez votre abonnement (les tarifs courants sont indiqués ci-dessus et peuvent faire l'objet de modifications sur préavis suffisant). Des taxes s'appliquent. Une carte de crédit est requise. Consultez notre <a href='https://www.siriusxm.ca/conditions' target='_blank' title=' à siriusxm.ca/conditions'>Entente du client</a> pour connaître toutes les conditions et savoir comment annuler, ce qui comprend nous appeler au 1 866 635-2349. Nous recueillons et utilisons les renseignements personnels conformément à notre <a href='http://siriusxm.ca/vieprivee' target='_blank'>Politique de la vie privée</a>. Toutes les conditions, tout le contenu et toutes les fonctionnalités peuvent être modifiés. La liste des stations varie selon le forfait.</p>"
+        },
+        "confirmationPageComponent": {
+            "HERO": {
+                "TITLE": "Votre abonnement a été mis à jour!"
+            },
+            "PRINT_LINK": {
+                "TEXT": "Imprimez le sommaire de votre commande"
+            },
+            "BACK_BUTTON": {
+                "TEXT": "RETOUR À MON COMPTE"
+            },
+            "IMPORTANT_INFO": {
+                "LEGAL_COPY": "Renseignements importants au sujet de votre abonnement:"
+            },
+            "STREAMING_PLAYER_LINK": {
+                "SATELLITE_OFFER": "",
+                "STREAMING_OFFER": ""
+            }
+        }
+    }
+}

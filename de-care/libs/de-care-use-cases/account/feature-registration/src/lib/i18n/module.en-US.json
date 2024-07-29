@@ -1,0 +1,144 @@
+{
+    "deCareUseCasesAccountFeatureRegistration": {
+        "Shared": {
+            "PAGE_TITLE": "Register Your Account"
+        },
+        "identificationPageComponent": {
+            "TITLE": "Register your account",
+            "INSTRUCTIONS": "<strong>Manage your subscriptions, payment methods and set up your streaming login — just a few things you can do when you register your SiriusXM Account.</strong>",
+            "HAVE_ACCOUNT": "Already have an account?",
+            "UNEXPECTED_ERROR": "We're sorry, something went wrong. Please try again.",
+            "SIGN_IN": "Sign In",
+            "CONTINUE_BUTTON": "Continue",
+            "CTA": {
+                "VANITY_URL": "https://www.siriusxm.com/accountlogin"
+            }
+        },
+        "selectAccountAndVerifyComponent": {
+            "TITLE_MULTIPLE_ACCOUNTS": "We found some accounts that match your info.",
+            "TITLE": "We found an account that matched your info.",
+            "NOTE_MULTIPLE_ACCOUNTS": "Choose the account you would like to verify",
+            "NOTE": "",
+            "LINK_ACCOUNT_TEXT": "Don't see your account?",
+            "CONTINUE_BUTTON": "Continue",
+            "ACCOUNT_LOOKUP_MODAL": {
+                "MODAL_TITLE": "Account lookup",
+                "TITLE": "Let's find your account.",
+                "DESCRIPTION": "Use one of the account lookup options below."
+            }
+        },
+        "registerPageComponent": {
+            "STEP_EMAIL": {
+                "TITLE": "Confirm email",
+                "INSTRUCTIONS": "Thanks for verifying your account, {{firstName}}. Confirm or enter a new email address that you want to link to your account.",
+                "INPUT_LABEL_EMAIL": "Email",
+                "ERROR_MESSAGE": "A valid email address is required."
+            },
+            "STEP_PHONE_NUMBER": {
+                "TITLE": "Confirm phone number",
+                "INSTRUCTIONS": "Confirm or enter a new phone number that you want to link to your account.",
+                "INPUT_LABEL_PHONE_NUMBER": "Phone Number",
+                "ERROR_MESSAGE": "A valid phone number is required."
+            },
+            "STEP_SECURITY_QUESTIONS": {
+                "TITLE": "Create security questions",
+                "PRE_INSTRUCTIONS": "Thank you for verifying your account, {{firstName}}.",
+                "INSTRUCTIONS": "Select three questions you want to use to access your account if you forget your password."
+            },
+            "STEP_USERNAME_AND_PASSWORD": {
+                "TITLE": "Create username and password",
+                "INSTRUCTIONS": "You can use these credentials to manage and recover your account."
+            },
+            "STEP_PASSWORD": {
+                "TITLE": "Create password",
+                "INSTRUCTIONS": "Simply create a password to finish your account registration for <strong>{{email}}</strong>."
+            },
+            "CONTINUE_BUTTON": "Continue",
+            "COMPLETE_REGISTRATION_BUTTON": "Complete Registration"
+        },
+        "registrationCompletedPageComponent": {
+            "COMPLETED": {
+                "TITLE": "Thanks for registering, {{firstName}}.",
+                "INSTRUCTIONS": "You can manage your account online, as well as listen on your phone, computer, smart TV, speakers, and more with the SXM App.",
+                "GO_TO_MY_ACCOUNT_BUTTON": "GO TO MY ACCOUNT",
+                "CTA": {
+                    "VANITY_URL": "https://care.siriusxm.com/account/manage/dashboard"
+                }
+            },
+            "STREAMING_PLAYER_LINK": "?contentType=landing&channelName=accessnow&site_id=accessnow&creative_id=NA_NA_DL-COM-landing-landingpage-landingpage-STARTLISTENING-REGISTRATIONCONFIRM-NA-All-20211012-NA&cp_5=landingpage&cp_6=landingpage&cp_7=ALL&cp_8=STARTLISTENING&cp_9=REGISTRATIONCONFIRM&cp_10=COM"
+        },
+        "accountLookupPageComponent": {
+            "TITLE": "No account found",
+            "SUBTITLE": "Let's try something else. Enter your Radio ID or Account Number to find your account."
+        },
+        "UiLookupByRadioIdOrAccountNumberComponent": {
+            "RADIO_ID_LABEL": "Enter Radio ID",
+            "RADIO_ID_PLACEHOLDER": "Radio ID",
+            "RADIO_LABEL": "How do I find my Radio ID?",
+            "RADIO_LINK_TITLE": "Radio ID Help",
+            "DEVICE_HELP": "Device Help",
+            "ACCOUNT_NUMBER_LABEL": "Enter Account Number",
+            "ACCOUNT_NUMBER_PLACEHOLDER": "Account Number",
+            "TOOLTIP": "Your Radio ID will be either 8 or 12 digits.",
+            "ERROR_MESSAGE_RADIO_ID": "Enter a valid Radio ID.",
+            "ERROR_MESSAGE_ACCOUNT_NUMBER": "Enter a valid Account Number.",
+            "ERROR_ACCOUNT_CANNOT_BE_VERIFIED": "There's a problem preventing registration of your account. Please chat with an agent for help.",
+            "RADIO_UNBRANDED_ERROR": "This radio cannot currently be managed online. If you purchased your vehicle within the last seven days, this could be because we haven't yet received information about the sale. For immediate help, please chat with an agent or call Listener Care at 1-888-601-6271.",
+            "RADIO_ID_INVALID": "The Radio ID you entered does not match our records. Please try again or chat with an agent.",
+            "ACCOUNT_NUMBER_ERROR": "The number entered does not match our records. Please try again or chat with an agent.",
+            "CONTINUE_BUTTON": "Continue"
+        },
+        "HelpFindRadioIdModalComponent": {
+            "RADIO_LINK_TITLE": "Radio ID Help",
+            "RADIO_LINK_SUBTITLE": "How do I find my Radio ID?",
+            "RADIO_LINK_INSTRUCTIONS": "<p>Tune your radio dial to channel 0 and the radio ID should display.<br /><br />For some Sirius radios, you will need to press and hold down the SAT or ESN button, or access your radio's menu functions.",
+            "RADIO_SIRIUS_LINK": "https://www.siriusxm.com/help/findsirius",
+            "RADIO_LINK_SIRIUS_LINK_TEXT": "Get more help for Sirius radios",
+            "RADIO_LINK_MARINE_AVIATIONS_LINK": "Get help for Marine and Aviation devices"
+        },
+        "LookupYourMarineOrAviationDeviceModalComponent": {
+            "DEVICE_HELP": "Device Help",
+            "TITLE": "Lookup your Marine or Aviation Device ID",
+            "MESSAGE": "<strong>There are a few places you can look to find your Radio ID or ESN.</strong>",
+            "NOTE": "Note: Radio IDs are 8 digits and letters, and ESN's are 12 digits.",
+            "UNORDERED_LIST": {
+                "item-1": "For most devices, access your <strong>Diagnostics</strong> or <strong>Settings</strong> menu, and then look for your ESN/Radio ID/Device ID to be listed.",
+                "item-2": "Additionally, on many devices you may also look on the bottom of the device, or the packaging that it came with for the Radio ID. In many cases, you may find <strong>it next to the serial number</strong> of the device.",
+                "item-3": "If your device also has audio capability, you may be able to <strong>tune to channel 0</strong> and it will display your Radio ID.",
+                "item-4": "If you are still having trouble, you <strong>can call your manufacturer and ask them</strong> to provide you with your Radio ID."
+            }
+        },
+        "CNAComponent": {
+            "TITLE": "We found your car.",
+            "DESCRIPTION": "You just need to finish registering your account before you can start listening",
+            "CONTINUE_BUTTON": "CONTINUE",
+            "CNA_FORM": {
+                "TITLE": "Enter Service Address",
+                "FIRST_NAME": "First Name",
+                "LAST_NAME": "Last Name",
+                "EMAIL": "Email",
+                "ADDRESS": "Address (with Apt/Suite)",
+                "CITY": "City",
+                "STATE": "State",
+                "ZIP": "Zip Code",
+                "PHONE": "Phone Number",
+                "CONFIRM_YOUR_ADDRESS": "Please confirm your address",
+                "ERROR": {
+                    "FIRST_NAME": "Enter your first name.",
+                    "LAST_NAME": "Enter your last name.",
+                    "EMAIL": "Enter a valid email address.",
+                    "ADDRESS": "Enter a valid street address.",
+                    "CITY": "Enter your city.",
+                    "STATE": "Select your state",
+                    "ZIP": "Enter your zip code.",
+                    "PHONE": "Enter a valid phone number."
+                }
+            }
+        },
+        "accountAlreadyRegisteredComponent": {
+            "TITLE": "This account is already registered.",
+            "DESCRIPTION": "You can go to the sign in page to log in to your account, find your username or reset your password.",
+            "SIGN_IN_BUTTON": "GO TO SIGN IN"
+        }
+    }
+}

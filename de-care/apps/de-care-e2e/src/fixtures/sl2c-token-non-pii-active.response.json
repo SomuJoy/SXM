@@ -1,0 +1,44 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "PAULA",
+            "accountProfile": { "accountRegistered": false },
+            "serviceAddress": { "state": "NY" },
+            "subscriptions": [
+                {
+                    "id": "10000228042",
+                    "plans": [
+                        {
+                            "dataCapable": false,
+                            "code": "OEM Trial - All Access - 3mo - 0.00 - (Used Car - SLSA)",
+                            "packageName": "1_SIR_AUD_ALLACCESS",
+                            "termLength": 3,
+                            "startDate": "2020-08-25T00:00:00-04:00",
+                            "endDate": "2020-11-25T00:00:00-05:00",
+                            "nextCycleOn": null,
+                            "type": "TRIAL",
+                            "capabilities": ["AUD", "IPAUD"]
+                        }
+                    ],
+                    "followonPlans": [],
+                    "radioService": {
+                        "id": "10000224714",
+                        "last4DigitsOfRadioId": "00CP",
+                        "vehicleInfo": { "year": null, "make": null, "model": null },
+                        "is360LCapable": false
+                    },
+                    "streamingService": { "id": "10000225738", "maskedUserName": "********Gn3s", "status": "Active" },
+                    "status": "Active"
+                }
+            ],
+            "billingSummary": { "creditCard": null },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true
+        },
+        "marketingId": "UVT000CP",
+        "marketingAcctId": "6122"
+    }
+}

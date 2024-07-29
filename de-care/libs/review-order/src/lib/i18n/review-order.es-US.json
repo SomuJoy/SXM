@@ -1,0 +1,18 @@
+{
+    "reviewOrder": {
+        "chargeAgreementComponent": {
+            "part1": "Por favor cargar a esta tarjeta de crédito cualquier cantidad corriente, y cualquier cargo futuro y recurrente facturado a mi cuenta. Estoy de acuerdo con que mi suscripción se renueve automáticamente a las tarifas actuales en ese momento más cargos e impuestos. Yo puedo cancelar en cualquier momento usando los métodos descritos en el Acuerdo del Cliente de SiriusXM incluyendo llamando a Listener Care al ",
+            "linktext1": "1-866-659-3966",
+            "linkurl1": "tel:+1-866-659-3966",
+            "part2": ". Estoy de acuerdo con el ",
+            "linktext2": "Acuerdo del cliente",
+            "linkurl2": "https://www.siriusxm.com/customeragreement#enespanol",
+            "part3": ", incluyendo la política de reembolso, y la ",
+            "linktext3": "Política de Privacidad",
+            "linkurl3": "https://www.siriusxm.com/privacy-policy#enespanol",
+            "part4": ". Yo entiendo que los cargos y la programación están sujetos a cambios. Estoy de acuerdo que mi suscripción se renovará automáticamente.",
+            "languagelinktext": "In English",
+            "languagelink": "en"
+        }
+    }
+}

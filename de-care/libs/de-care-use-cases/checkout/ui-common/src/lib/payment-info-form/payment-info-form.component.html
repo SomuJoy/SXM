@@ -1,0 +1,62 @@
+<form id="paymentForm" [formGroup]="paymentForm">
+    <section class="billing-field-set">
+        <header>
+            <p>{{ translateKeyPrefix + ".BILLING_DETAILS_TITLE" | translate }}</p>
+        </header>
+        <div *ngIf="unexpectedSubmissionError$ | async" class="invalid-feedback" id="unexpectedProcessingError">
+            <p>{{ translateKeyPrefix + ".UNEXPECTED_ERROR" | translate }}</p>
+        </div>
+        <section *ngIf="useCardOnFileAllowed" class="billing-radio-options">
+            <div *ngIf="paymentMethodSelectionError$ | async" class="invalid-feedback" id="paymentMethodSelectionError">
+                <p>{{ translateKeyPrefix + ".PAYMENT_METHOD_NOT_SELECTED_ERROR" | translate }}</p>
+            </div>
+            <sxm-ui-radio-option-form-field
+                formControlName="paymentMethod"
+                value="CARD_ON_FILE"
+                [label]="translateKeyPrefix + '.SAVED_CARD' | translate: { type: cardType, last4Digits: cardNumberLastFour }"
+                data-test="PaymentInfoExistingCard"
+            ></sxm-ui-radio-option-form-field>
+            <sxm-ui-radio-option-form-field
+                formControlName="paymentMethod"
+                value="NEW_CARD"
+                [label]="translateKeyPrefix + '.NEW_CC_PROMPT' | translate"
+                [description]="translateKeyPrefix + '.NEW_CC_NOTE' | translate"
+                data-test="PaymentInfoNewCard"
+            ></sxm-ui-radio-option-form-field>
+        </section>
+        <input *ngIf="!useCardOnFileAllowed" type="radio" name="paymentMethod" formControlName="paymentMethod" value="NEW_CARD" />
+        <section class="billing-form-fields" [formGroup]="newCard" [style.display]="paymentForm.value.paymentMethod === 'NEW_CARD' ? 'block' : 'none'">
+            <sxm-ui-address-form-fields
+                addressType="service"
+                formControlName="serviceAddress"
+                [submitted]="paymentFormSubmitted"
+                data-e2e="BillingInfoAddress"
+            ></sxm-ui-address-form-fields>
+            <input type="hidden" formControlName="country" />
+            <div *ngIf="creditCardSubmissionError$ | async" class="invalid-feedback" id="creditCardProcessingError">
+                <p>{{ translateKeyPrefix + ".CREDIT_CARD_PROCESSING_ERROR" | translate }}</p>
+            </div>
+            <sxm-ui-credit-card-form-fields [formGroup]="newCard.controls.creditCardInfo"></sxm-ui-credit-card-form-fields>
+        </section>
+    </section>
+    <prepaid-redeem-ui (cardSubmitted)="onPrepaidCardSubmitted($event)" (cardCleared)="onPrepaidCardCleared()"></prepaid-redeem-ui>
+    <privacy-policy></privacy-policy>
+    <button
+        type="button"
+        sxm-proceed-button
+        [loading]="paymentFormProcessing$ | async"
+        sxmUiDataClickTrack="submit"
+        (click)="submitPaymentInfo()"
+        data-test="PaymentConfirmationButton"
+    >
+        {{ continueButtonTextOverride || translateKeyPrefix + ".CONTINUE_BUTTON_TEXT" | translate }}
+    </button>
+</form>
+<sxm-ui-modal [closed]="true" (modalClosed)="onEditExistingAddress()" #verifyAddressModal [ariaDescribedbyTextId]="paymentInfoFormModalAriaDescribedbyTextId">
+    <customer-verify-address
+        [ariaDescribedbyTextId]="paymentInfoFormModalAriaDescribedbyTextId"
+        [data]="verifyAddressesDataViewModel$ | async"
+        (editAddress)="onUseAddressFromValidation($event)"
+        (editExisting)="onEditExistingAddress()"
+    ></customer-verify-address>
+</sxm-ui-modal>

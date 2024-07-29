@@ -1,0 +1,88 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "quote": {
+            "currentQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "8.71",
+                "totalTaxesAndFeesAmount": "8.71",
+                "totalAmount": "107.71",
+                "discountAmount": "0.00",
+                "pricePerMonth": "8.25",
+                "currentBalance": "107.71",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "0.00",
+                "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "8.71" }],
+                "taxes": [],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Promo - Streaming - 12mo - 99.00 - wETF (6mo25) - AMZ DOT - G4",
+                        "packageName": "SIR_IP_SA",
+                        "termLength": 12,
+                        "priceAmount": "99.00",
+                        "taxAmount": "0.00",
+                        "feeAmount": "8.71",
+                        "totalTaxesAndFeesAmount": "8.71",
+                        "taxes": [],
+                        "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "8.71" }],
+                        "startDate": "2022-07-12",
+                        "endDate": "2023-07-12",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "RTP_OFFER",
+                        "dealType": "AMZ_DOT",
+                        "isStudent": false,
+                        "isAdvantage": false,
+                        "isMilitary": false
+                    }
+                ],
+                "isUpgraded": false,
+                "isProrated": false
+            },
+            "futureQuote": null,
+            "proRatedRenewalQuote": null,
+            "promoRenewalQuote": null,
+            "renewalQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "0.97",
+                "totalTaxesAndFeesAmount": "0.97",
+                "totalAmount": "11.96",
+                "discountAmount": "0.00",
+                "pricePerMonth": "10.99",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "0.97" }],
+                "taxes": [],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Premier Streaming - Monthly",
+                        "packageName": "SIR_IP_SA",
+                        "termLength": 1,
+                        "priceAmount": "10.99",
+                        "taxAmount": "0.00",
+                        "feeAmount": "0.97",
+                        "totalTaxesAndFeesAmount": "0.97",
+                        "taxes": [],
+                        "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "0.97" }],
+                        "startDate": "2023-07-12",
+                        "endDate": "2023-08-12",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "",
+                        "dealType": null,
+                        "isStudent": false,
+                        "isAdvantage": false,
+                        "isMilitary": false
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            }
+        }
+    }
+}

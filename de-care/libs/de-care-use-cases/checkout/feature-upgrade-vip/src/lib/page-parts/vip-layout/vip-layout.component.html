@@ -1,0 +1,16 @@
+<header>
+    <de-care-header-bar
+        class="sxm-limited-nav"
+        [selectedProvince]="selectedProvince$ | async"
+        (languageSelected)="switchLanguage($event)"
+        (userChangedProvince)="onUserChangedProvince($event)"
+        [provinces]="provinces$ | async"
+        [logoData]="{
+            imageSrc: translationKeyPrefix + 'SIRIUSXM_LOGO_SRC' | translate,
+            link: translationKeyPrefix + 'SIRIUSXM_LOGO_LINK' | translate,
+            altText: translationKeyPrefix + 'SIRIUSXM_LOGO_ALT' | translate
+        }"
+    ></de-care-header-bar>
+</header>
+<ng-content></ng-content>
+<sxm-ui-app-footer></sxm-ui-app-footer>

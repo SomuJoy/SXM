@@ -1,0 +1,31 @@
+{
+    "deCareUseCasesTrialActivationUiSl2cForm": {
+        "sl2cFormComponent": {
+            "Label": {
+                "RADIO_ID_OR_VIN": "Code de radio/Le NIV",
+                "FIRST_NAME": "Prénom",
+                "LAST_NAME": "Nom",
+                "PHONE_NUMBER": "Numéro de téléphone (Optionnel)",
+                "EMAIL": "Courriel (Optionnel)"
+            },
+            "ValidationError": {
+                "RADIO_ID_OR_VIN_MSG": "Entrez un code de radio ou un NIV valide.",
+                "FIRST_NAME_MSG": "Entrez votre prénom.",
+                "LAST_NAME_MSG": "Entrez votre nom.",
+                "PHONE_NUMBER_MSG": "Entrez un numéro de téléphone.",
+                "EMAIL_MSG": "Entrez une adresse courriel valide."
+            },
+            "PrivacyPolicy": {
+                "LINK_URL": "https://www.siriusxm.ca/vieprivee",
+                "LINK_TEXT": "Politique de la vie privée"
+            },
+            "AGREEMENT_TEXT": "Je consense à recevoir des communications marketing par téléphone, courriel et courier après l’activation.",
+            "ACCEPT_AGREEMENT": "S'il vous plaît accepter l'accord ci-dessus.",
+            "ACTIVATE_TRIAL_BUTTON": "ACTIVER MON ESSAI",
+            "UNEXPECTED_ERROR": "Une erreur inattendue est apparue. Veuillez réessayer.",
+            "RADIO_LOOKUP_LABEL": "Recherche de radio",
+            "NEED_HELP_TEXT_LABEL": "Besoin d'aide?",
+            "CONFIRM_YOUR_ADDRESS": "Veuillez confirmer votre adresse"
+        }
+    }
+}

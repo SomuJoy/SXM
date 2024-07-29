@@ -1,0 +1,31 @@
+{
+    "name": "domains-account-state-customer-accounts",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/account/state-customer-accounts/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/account/state-customer-accounts/src/**/*.ts", "libs/domains/account/state-customer-accounts/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/account/state-customer-accounts/jest.config.js",
+                "tsConfig": "libs/domains/account/state-customer-accounts/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/account/state-customer-accounts/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

@@ -1,0 +1,23 @@
+{
+    "PAYMENT_AMOUNT": {
+        "TITLE": "Payment amount",
+        "OPTION_PAY_ALL": " - Current balance due + next payment amount",
+        "OPTION_PAY_CURRENT_BALANCE": " - Current balance due",
+        "ERROR": "Select an amount to pay."
+    },
+    "PAYMENT_FREQUENCY": {
+        "TITLE": "Payment frequency",
+        "OPTION_RECURRING": "Opt in to recurring payments",
+        "OPTION_ONE_TIME": "Make a one-time payment",
+        "ERROR": "Select payment frequency."
+    },
+    "SUBMIT_PAYMENT_BUTTON_TEXT": "Submit Payment",
+    "BACK_TO_ACCOUNT_LINK_TEXT": "Back to Account",
+    "CARD_TYPE_ICONS": ["visa", "mc", "amex"],
+    "UPDATE_PAYMENT_BUTTON": "UPDATE PAYMENT",
+    "BILLING_DETAILS_TITLE": "Billing address",
+    "PAYMENT_DETAILS_TITLE": "Payment info",
+    "CONFIRM_YOUR_ADDRESS": "Please confirm your address",
+    "UNEXPECTED_ERROR": "An unexpected error occurred. Please try again.",
+    "CREDIT_CARD_PROCESSING_ERROR": "We were unable to authorize your credit card. Please update your payment information."
+}

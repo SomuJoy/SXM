@@ -1,0 +1,43 @@
+<device-lookup-id-options-form
+    #deviceLookupIdOptionsForm
+    [allowLicensePlate]="allowLicensePlate"
+    (deviceIdSelected)="onDeviceIdSelected($event); deviceLookupIdOptionsForm.completedProcessing()"
+></device-lookup-id-options-form>
+<sxm-ui-modal #confirmVinModal [title]="translateKeyPrefix + '.RADIO_LOOKUP' | translate" [titlePresent]="true" [ariaDescribedbyTextId]="closeDeviceLookupModalAriaDescribedbyTextId">
+    <h5>{{ translateKeyPrefix + ".CONFIRM_VIN_TITLE" | translate }}</h5>
+
+    <p data-test="ConfirmVinModalVinNumber" [innerHTML]="translateKeyPrefix + '.VIN_NUMBER' | translate: { vinNumber: licensePlateSummaryInfo?.vinNumber }"></p>
+    <p [id]="closeDeviceLookupModalAriaDescribedbyTextId">{{ translateKeyPrefix + ".VIN_LICENSE_MATCH" | translate }}</p>
+    <p>
+        <span
+            data-test="ConfirmVinModalLicensePlate"
+            [innerHTML]="translateKeyPrefix + '.LICENSE_PLATE' | translate: { state: licensePlateSummaryInfo?.state, licensePlate: licensePlateSummaryInfo?.licensePlate }"
+        >
+        </span>
+        <span
+            data-test="ConfirmVinModalVehicleInfo"
+            [innerHTML]="
+                licensePlateSummaryInfo?.nickname
+                    ? licensePlateSummaryInfo?.nickname
+                    : licensePlateSummaryInfo?.vehicleInfo?.year === null &&
+                      licensePlateSummaryInfo?.vehicleInfo?.make === null &&
+                      licensePlateSummaryInfo?.vehicleInfo?.model === null
+                    ? (translateKeyPrefix + '.RADIO_ID' | translate: licensePlateSummaryInfo)
+                    : (translateKeyPrefix + '.VEHICLE' | translate: licensePlateSummaryInfo?.vehicleInfo)
+            "
+        >
+        </span>
+    </p>
+    <div class="align-center">
+        <div class="column small-12 medium-12">
+            <button class="button primary full-width" (click)="deviceIdSelected.emit(licensePlateSummaryInfo?.last4DigitsOfRadioId)" data-test="ConfirmVinModalContinue">
+                {{ translateKeyPrefix + ".CONTINUE" | translate }}
+            </button>
+        </div>
+        <div class="column small-12 medium-12">
+            <button class="button full-width button-minor" (click)="confirmVinModal.close()" data-test="ConfirmVinModalTryAgain">
+                {{ translateKeyPrefix + ".TRY_AGAIN" | translate }}
+            </button>
+        </div>
+    </div>
+</sxm-ui-modal>

@@ -1,0 +1,52 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "JOHN",
+            "accountProfile": { "accountRegistered": false },
+            "accountState": { "isInPreTrial": false },
+            "serviceAddress": { "state": "ON", "country": "CA" },
+            "subscriptions": [
+                {
+                    "id": "10000261264",
+                    "plans": [
+                        {
+                            "dataCapable": false,
+                            "code": "Sponsored - OEM Trial - All Access - 12mo - 65.00",
+                            "packageName": "SIR_CAN_ALLACCESS",
+                            "termLength": 12,
+                            "startDate": "2021-08-24T00:00:00-04:00",
+                            "endDate": "2022-08-24T00:00:00-04:00",
+                            "nextCycleOn": null,
+                            "type": "TRIAL",
+                            "capabilities": ["AUD", "IPAUD"],
+                            "price": 0,
+                            "isBasePlan": true
+                        }
+                    ],
+                    "followonPlans": [],
+                    "radioService": {
+                        "id": "10000262288",
+                        "last4DigitsOfRadioId": "3365",
+                        "devicePromoCode": "0185",
+                        "vehicleInfo": { "year": null, "make": null, "model": null },
+                        "is360LCapable": false
+                    },
+                    "streamingService": { "id": "10000263312", "maskedUserName": "aai******@siriusxm.com", "status": "Active" },
+                    "status": "Active",
+                    "devicePromoCode": "0185",
+                    "isPrimary": true
+                }
+            ],
+            "billingSummary": { "creditCard": { "last4Digits": "1111", "type": "VISA", "status": "ACTIVE" }, "isPaymentTypeInvoice": false },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true,
+            "isAccountIdentifiedUsingFLEPZOrVIN": false
+        },
+        "marketingId": "990005193365",
+        "marketingAcctId": "4720",
+        "email": null
+    }
+}

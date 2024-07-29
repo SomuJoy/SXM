@@ -1,0 +1,137 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "quote": {
+            "currentQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "2.78",
+                "totalTaxesAndFeesAmount": "2.78",
+                "totalAmount": "-304.58",
+                "discountAmount": "-9.00",
+                "pricePerMonth": "12.99",
+                "currentBalance": "-304.58",
+                "consolidatedCreditAmount": "-320.35",
+                "previousBalance": "0.00",
+                "fees": [
+                    {
+                        "description": "U.S. Music Royalty Fee",
+                        "amount": "2.78"
+                    }
+                ],
+                "taxes": [],
+                "details": [
+                    {
+                        "planCode": "All Access - 1mo - wActv|Promo $12.99/mo AA for 6mos",
+                        "packageName": "SIR_AUD_ALLACCESS",
+                        "termLength": 6,
+                        "priceAmount": "12.99",
+                        "taxAmount": "0.00",
+                        "feeAmount": "2.78",
+                        "totalTaxesAndFeesAmount": "2.78",
+                        "taxes": [],
+                        "fees": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "amount": "2.78"
+                            }
+                        ],
+                        "startDate": "2020-08-18",
+                        "endDate": "2020-09-18",
+                        "isMrdEligible": false,
+                        "balanceType": null
+                    }
+                ],
+                "isUpgraded": false,
+                "isProrated": false
+            },
+            "futureQuote": null,
+            "proRatedRenewalQuote": null,
+            "promoRenewalQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "2.78",
+                "totalTaxesAndFeesAmount": "2.78",
+                "totalAmount": "15.77",
+                "discountAmount": "-9.00",
+                "pricePerMonth": "12.99",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [
+                    {
+                        "description": "U.S. Music Royalty Fee",
+                        "amount": "2.78"
+                    }
+                ],
+                "taxes": [],
+                "details": [
+                    {
+                        "planCode": "All Access - 1mo - wActv|Promo $12.99/mo AA for 6mos",
+                        "packageName": "SIR_AUD_ALLACCESS",
+                        "termLength": 6,
+                        "priceAmount": "12.99",
+                        "taxAmount": "0.00",
+                        "feeAmount": "2.78",
+                        "totalTaxesAndFeesAmount": "2.78",
+                        "taxes": [],
+                        "fees": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "amount": "2.78"
+                            }
+                        ],
+                        "startDate": "2020-09-18",
+                        "endDate": "2020-10-18",
+                        "isMrdEligible": false,
+                        "balanceType": null
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            },
+            "renewalQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "4.71",
+                "totalTaxesAndFeesAmount": "4.71",
+                "totalAmount": "26.70",
+                "discountAmount": "0.00",
+                "pricePerMonth": "21.99",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [
+                    {
+                        "description": "U.S. Music Royalty Fee",
+                        "amount": "4.71"
+                    }
+                ],
+                "taxes": [],
+                "details": [
+                    {
+                        "planCode": "All Access - 1mo - wActv",
+                        "packageName": "SIR_AUD_ALLACCESS",
+                        "termLength": 1,
+                        "priceAmount": "21.99",
+                        "taxAmount": "0.00",
+                        "feeAmount": "4.71",
+                        "totalTaxesAndFeesAmount": "4.71",
+                        "taxes": [],
+                        "fees": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "amount": "4.71"
+                            }
+                        ],
+                        "startDate": "2021-02-18",
+                        "endDate": "2021-03-18",
+                        "isMrdEligible": false,
+                        "balanceType": null
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            }
+        }
+    }
+}

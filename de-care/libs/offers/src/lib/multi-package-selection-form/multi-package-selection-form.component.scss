@@ -1,0 +1,22 @@
+::ng-deep {
+    div.content-card {
+        margin: 0 0 15px 0;
+        div.content-card-head {
+            padding-top: 17px;
+            padding-bottom: 17px;
+        }
+    }
+
+    .remove-padding > .accordion-content-wrapper > div.accordion-content-container {
+        padding: 0;
+    }
+}
+
+sxm-ui-accordion-chevron.extra-top-margin {
+    display: block;
+    margin-top: 5px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

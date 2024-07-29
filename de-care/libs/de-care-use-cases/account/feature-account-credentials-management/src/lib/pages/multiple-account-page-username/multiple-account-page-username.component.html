@@ -1,0 +1,16 @@
+<main de-care-page-main>
+    <sxm-ui-account-summary-block-username
+        [accountData]="allAccounts$ | async"
+        [srcData]="srcValue$ | async"
+        (verifyClicked)="onVerifyClicked($event)"
+        (ctaClicked)="onCTAClicked($event)"
+    ></sxm-ui-account-summary-block-username>
+    <br />
+    <div class="link-container">
+        <a data-link-name="Dont see your account" sxmUiDataClickTrack="exit" class="text-link" (click)="onNoAccount()">{{
+            translateKeyPrefix + ".LINK_ACCOUNT_TEXT" | translate
+        }}</a>
+    </div>
+    <br />
+    <br />
+</main>

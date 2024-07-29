@@ -1,0 +1,36 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.title {
+    font-weight: calculate-font-weight("bold");
+    margin: 0;
+}
+
+ul {
+    @include list-reset;
+    li {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr 70px;
+        grid-template-rows: auto;
+        column-gap: 16px;
+        align-items: center;
+        border-bottom: 1px solid $gray-light;
+        &:last-child {
+            border: none;
+        }
+        p {
+            padding: 16px 0;
+        }
+        img {
+            justify-self: center;
+            width: auto;
+            max-height: 32px;
+        }
+        ::ng-deep {
+            a {
+                @include underline(none);
+            }
+        }
+    }
+}

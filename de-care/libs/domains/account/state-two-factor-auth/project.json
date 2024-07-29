@@ -1,0 +1,31 @@
+{
+    "name": "domains-account-state-two-factor-auth",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/account/state-two-factor-auth/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/account/state-two-factor-auth/src/**/*.ts", "libs/domains/account/state-two-factor-auth/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/account/state-two-factor-auth/jest.config.js",
+                "tsConfig": "libs/domains/account/state-two-factor-auth/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/account/state-two-factor-auth/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

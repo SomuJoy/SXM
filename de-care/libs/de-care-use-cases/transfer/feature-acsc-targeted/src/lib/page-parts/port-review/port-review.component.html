@@ -1,0 +1,55 @@
+<h1 class="mb-24" data-e2e="servicePortabilityReviewHeadline">{{ translateKeyPrefix + "HEADLINE" | translate }}</h1>
+<div class="mb-24">
+    <p class="large-copy bold mb-16">{{ translateKeyPrefix + "CAR_DETAILS_TITLE" | translate }}</p>
+    <sxm-ui-detail-blocks [detailData]="carDetailsPortData$ | async"></sxm-ui-detail-blocks>
+</div>
+<div class="mb-24">
+    <p class="large-copy bold mb-16">{{ translateKeyPrefix + "SUBSCRIPTION_DETAILS_TITLE" | translate }}</p>
+    <sxm-ui-detail-blocks [detailData]="subscriptionDetailsPortData$ | async">
+        <sxm-ui-platform-change-message *ngIf="showPlatformChange$ | async" [data]="platformChangeData$ | async">
+            <p class="mt-16" [innerHTML]="translateKeyPrefix + 'PLATFORM_CHANGE_MESSAGE' | translate"></p>
+        </sxm-ui-platform-change-message>
+    </sxm-ui-detail-blocks>
+</div>
+<div class="mb-24">
+    <p class="large-copy bold mb-16">{{ translateKeyPrefix + "PAYMENT_DETAILS_TITLE" | translate }}</p>
+    <de-care-compact-quote-summary
+        [priceChangeMessagingTypeFeatureFlag]="priceChangeMessagingTypeFeatureFlag"
+        [priceChangeMessagingType]="priceChangeMessagingType"
+        [compactQuoteData]="quoteSummaryData$ | async"
+        [detailsCollapsed]="hideSPQuoteInitially$ | async"
+    ></de-care-compact-quote-summary>
+</div>
+<div class="mb-24">
+    <ul *ngIf="showGST$ | async" class="undecorated-list">
+        <li data-e2e="quoteGST">{{ translateKeyPrefix + "GST" | translate }}</li>
+        <li data-e2e="quoteQST" *ngIf="showQST$ | async">{{ translateKeyPrefix + "QST" | translate }}</li>
+    </ul>
+</div>
+<form id="transactionForm" [formGroup]="transactionForm" (submit)="onConfirmReviewAndSubmit()">
+    <div class="agreement">
+        <ng-container *ngIf="(paymentType$ | async) === 'invoice'; else defaultChargeAgreement">
+            <sxm-ui-invoice-agreement-checkbox-form-field
+                formControlName="chargeAgreementAccepted"
+                [formButtonTextCopy]="translateKeyPrefix + 'CTA_BUTTON' | translate"
+            ></sxm-ui-invoice-agreement-checkbox-form-field>
+        </ng-container>
+        <ng-template #defaultChargeAgreement>
+            <sxm-ui-charge-agreement-checkbox-form-field
+                formControlName="chargeAgreementAccepted"
+                [formButtonTextCopy]="translateKeyPrefix + 'CTA_BUTTON' | translate"
+                [useRateVersionOfTextCopy]="showRateVersionOfChargeAgreement$ | async"
+            ></sxm-ui-charge-agreement-checkbox-form-field>
+        </ng-template>
+    </div>
+    <button
+        sxm-proceed-button
+        type="submit"
+        [loading]="getSubmitTransactionAsProcessing$ | async"
+        class="mb-16"
+        data-e2e="reviewCompleteOrderButton"
+        data-test="reviewCompleteOrderButton"
+    >
+        {{ translateKeyPrefix + "CTA_BUTTON" | translate }}
+    </button>
+</form>

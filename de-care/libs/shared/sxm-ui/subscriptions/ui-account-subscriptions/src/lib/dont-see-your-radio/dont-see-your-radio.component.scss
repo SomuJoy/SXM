@@ -1,0 +1,17 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+mat-icon {
+    width: 40px;
+    height: 40px;
+    color: $black;
+    margin-bottom: 16px;
+}
+.description {
+    margin-bottom: 8px;
+}
+
+.text-link {
+    @include text-link;
+    white-space: nowrap;
+}

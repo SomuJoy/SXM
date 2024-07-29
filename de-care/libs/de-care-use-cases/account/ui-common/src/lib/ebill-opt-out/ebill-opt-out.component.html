@@ -1,0 +1,17 @@
+<sxm-ui-modal
+    [closed]="false"
+    titlePresent="true"
+    [ariaDescribedbyTextId]="ebillOptOutModalAriaDescribedbyTextId"
+    [title]="translateKeyPrefix + '.TITLE' | translate"
+    (modalClosed)="closeEbillOptOutModal()"
+    data-test="optOutEBillEmailModal"
+>
+    <sxm-ui-billing-ebill-opt-out
+        [loading]="ebillOptOutLoading"
+        [ariaDescribedbyTextId]="ebillOptOutModalAriaDescribedbyTextId"
+        [switchToPaperServerError]="optOutServerError"
+        (switchToPaper)="onOptOut()"
+        (keepEBill)="closeEbillOptOutModal()"
+    >
+    </sxm-ui-billing-ebill-opt-out>
+</sxm-ui-modal>

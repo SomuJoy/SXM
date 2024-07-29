@@ -1,0 +1,53 @@
+<sxm-ui-content-card [hasGrayBackground]="true" [flagPresent]="flagPresent" [headlinePresent]="headlinePresent">
+    <div htmlContentForFlag>
+        <p class="small-copy text-uppercase" qatag="OurBestPackage">
+            {{ copyKey + "CONTENT_CARD_FLAG" | translate }}
+        </p>
+    </div>
+    <div htmlContentForHead>
+        <div>
+            <p>
+                {{ isCurrentPackage ? (copyKey + "CONTENT_CARD_HEADLINE2" | translate) : (copyKey + "CONTENT_CARD_HEADLINE1" | translate) }}
+            </p>
+        </div>
+    </div>
+    <ng-container htmlContentForBody>
+        <div class="offer-card--container" [formGroup]="control?.parent">
+            <offer-description
+                [selectedRenewalOfferPrice]="selectedRenewalOfferPrice"
+                [isRTC]="isRTC"
+                [offerInfo]="parentOffer"
+                [excludePriceAndTermDisplay]="excludePriceAndTermDisplay"
+            >
+            </offer-description>
+            <plan-grid [packageName]="parentOffer.packageName"></plan-grid>
+            <p class="sub-header">{{ packageDescription.header }}</p>
+            <sxm-ui-radio-option-with-tooltip-form-field-set
+                [options]="options$ | async"
+                [formControlName]="formControlName"
+                class="small-bottom-margin"
+                data-e2e="groupedOfferCardFormField.planOptions"
+            ></sxm-ui-radio-option-with-tooltip-form-field-set>
+        </div>
+
+        <sxm-ui-accordion-chevron
+            *ngIf="packageDescription"
+            [isInnerAccordion]="true"
+            [collapsedText]="copyKey + 'VIEW_DETAILS_COLLAPSED' | translate"
+            [expandedText]="copyKey + 'VIEW_DETAILS_EXPANDED' | translate"
+            [aria]="{
+                expandedText: copyKey + 'ARIA_VIEW_DETAILS_EXPANDED' | translate: { packageName: parentOffer?.packageName },
+                collapsedText: copyKey + 'ARIA_VIEW_DETAILS_COLLAPSED' | translate: { packageName: parentOffer?.packageName }
+            }"
+            [opened]="opened"
+            qatag="ViewMoreLink"
+            data-track-click="Explore More"
+        >
+            <div class="accordion">
+                <plan-description-channels [channels]="packageDescription.channels"></plan-description-channels>
+                <p [innerHtml]="packageDescription.description || ''"></p>
+                <p *ngIf="!parentOffer.isUpgradePromo" data-e2e="offerCard.packageDescriptionFooter" [innerHtml]="packageDescription.footer"></p>
+            </div>
+        </sxm-ui-accordion-chevron>
+    </ng-container>
+</sxm-ui-content-card>

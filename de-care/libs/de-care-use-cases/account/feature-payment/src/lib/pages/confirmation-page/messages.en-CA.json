@@ -1,0 +1,19 @@
+{
+    "CUSTOMER_GREETING": "Hi, {{customerName}}",
+    "ACCOUNT_NUMBER": "Account: {{accountNumber}}",
+    "THANK_YOU_FOR_PAYMENT": "Thank you for your payment",
+    "COPY_OF_RECEIPT_EMAILED": "",
+    "PRINT_RECEIPT": "Print receipt",
+    "AMOUNT_PAID": "Amount Paid",
+    "BILLING_ADDRESS": "Billing address",
+    "GO_TO_MY_ACCOUNT_BUTTON": "BACK TO MY ACCOUNT",
+    "EXPIRES": "Expires",
+    "PAYMENT_INFO_UPDATED": "Your payment info has been updated",
+    "INCLUDES_SERVICE_CHARGES": "Includes current charges for past service and fees.",
+    "INCLUDES_SERVICE_CHARGES_NO_FEES": "Includes current charges for past service.",
+    "INCLUDES_SERVICE_CHARGES_SUSPENDED_RADIOS": "The amount includes your past due balance, any applicable late fee and taxes, plus charges until your next renewal. You are not charged for the time your service is suspended.",
+    "INCLUDES_SERVICE_CHARGES_SUSPENDED_RADIOS_NO_FEES": "The amount includes your past due balance, any applicable taxes, plus charges until your next renewal. You are not charged for the time your service is suspended.",
+    "INCLUDES_SERVICE_CHARGES_UPCOMING_PAYMENT": "Includes charges for upcoming service and fees.",
+    "INCLUDES_SERVICE_CHARGES_UPCOMING_PAYMENT_NO_FEES": "Includes charges for upcoming service.",
+    "PAYMENT_INFO": "Payment info"
+}

@@ -1,0 +1,3 @@
+<sxm-ui-modal [closed]="false" titlePresent="true" [title]="translateKeyPrefix + '.TITLE' | translate" (modalClosed)="onClosed()" data-test="cancelBauHybridLinksModal">
+    <my-account-cancel-links-hybrid-bau [data]="cancelOptions$ | async" [allowOnlyCancelOnline]="allowOnlyCancelOnline"></my-account-cancel-links-hybrid-bau>
+</sxm-ui-modal>

@@ -1,0 +1,43 @@
+<main class="background-offwhite" data-e2e="activeSubscriptionPage.pageComponent">
+    <div id="order-confirmation" class="content-container">
+        <div class="row align-center no-padding-small">
+            <div class="column small-12 medium-2 background-white raised"></div>
+            <div class="column small-12 medium-6 background-white raised copy-container">
+                <div class="row no-padding align-center no-print">
+                    <div class="column small-12 padding-up-to-footer">
+                        <div class="full-width">
+                            <h4 data-e2e="activeSubscriptionPage.heading">
+                                {{ translateKeyPrefix + ".HEADER" | translate }}
+                            </h4>
+
+                            <p>
+                                {{ translateKeyPrefix + ".SUB_HEADER" | translate }}
+                            </p>
+
+                            <hr />
+
+                            <p *ngIf="activeSubscriptionViewModel$ | async as viewModelData" class="account-info">
+                                <span class="bold-text" data-e2e="activeSubscriptionPage.maskedUserName"> {{ viewModelData?.maskedUserName }} </span>
+
+                                <br />
+
+                                <span data-e2e="activeSubscriptionPage.packageName">
+                                    {{ "app.packageDescriptions." + viewModelData.packageName + ".name" | translate }}
+                                </span>
+                            </p>
+
+                            <hr />
+
+                            <form [action]="translateKeyPrefix + '.BUTTON_LINK' | translate">
+                                <button sxm-proceed-button type="submit" data-track-click="sign in to my account" data-track-click-component="button">
+                                    {{ translateKeyPrefix + ".BUTTON" | translate }}
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column small-12 medium-2 background-white raised"></div>
+        </div>
+    </div>
+</main>

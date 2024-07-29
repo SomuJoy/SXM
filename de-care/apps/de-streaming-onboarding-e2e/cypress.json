@@ -1,0 +1,16 @@
+{
+    "fileServerFolder": ".",
+    "fixturesFolder": "./src/fixtures",
+    "integrationFolder": "./src/integration",
+    "modifyObstructiveCode": false,
+    "pluginsFile": "./src/plugins/index",
+    "supportFile": "./src/support/index.ts",
+    "video": false,
+    "videosFolder": "../../dist/cypress/apps/de-streaming-onboarding-e2e/videos",
+    "screenshotsFolder": "../../dist/cypress/apps/de-streaming-onboarding-e2e/screenshots",
+    "chromeWebSecurity": false,
+    "screenshotOnRunFailure": false,
+    "testFiles": "**/*.{feature,spec.ts}",
+    "ignoreTestFiles": "**.steps.ts",
+    "blockHosts": ["www.facebook.com", "assets.adobedtm.com"]
+}

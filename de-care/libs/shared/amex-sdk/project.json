@@ -1,0 +1,24 @@
+{
+    "name": "shared-amex-sdk",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/shared/amex-sdk/src",
+    "projectType": "library",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/amex-sdk/**/*.ts"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/shared/amex-sdk"],
+            "options": {
+                "jestConfig": "libs/shared/amex-sdk/jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": ["type:util", "scope:shared-util"]
+}

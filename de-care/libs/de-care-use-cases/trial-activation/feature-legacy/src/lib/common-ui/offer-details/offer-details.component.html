@@ -1,0 +1,7 @@
+<p class="legal-copy">
+    <strong>{{ "trialActivation.offerDetailsComponent.LABEL" | translate }}</strong>
+    <span *ngIf="!isCanada || !(isQuebec$ | async); else offerDetailsQuebec" [innerHTML]="'trialActivation.offerDetailsComponent.BODY' | translate"></span>
+    <ng-template #offerDetailsQuebec>
+        <span [innerHTML]="'trialActivation.offerDetailsComponent.BODY_QUEBEC' | translate"></span>
+    </ng-template>
+</p>

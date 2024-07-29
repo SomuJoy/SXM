@@ -1,0 +1,41 @@
+{
+    "domainsOffersUiOfferDescriptionModule": {
+        "offerDescriptionComponent": {
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "mois",
+                    "other": "mois"
+                }
+            },
+            "TERM_AND_PRICE": "<span class=\"large-copy\">Votre durée initiale de</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">pour</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span> <span class=\"large-copy\">plus frais</span>",
+            "TERM_AND_PRICE_MCP": "<span class=\"large-copy\">Votre durée initiale de</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">pour</span> <span class=\"offer-price text-color-watermelon\">{{ pricePerMonth }}</span><span class=\"large-copy\">/mois plus frais</span>",
+            "TERM_AND_PRICE_FREE": "<span class=\"offer-price text-color-watermelon text-capitalize\"> {{ termLength }} {{ monthsPluralized }} gratuits</span>",
+            "TERM_AND_PRICE_MONTHLY": "<span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">pour</span> <span class=\"offer-price text-color-watermelon\">{{ pricePerMonth }}</span><span class=\"large-copy\">/mois plus frais</span>",
+            "TERM_AND_PRICE_QUEBEC": "<span class=\"large-copy\">Votre durée initiale de</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">pour</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span>",
+            "TERM_AND_PRICE_MCP_QUEBEC": "<span class=\"large-copy\">Votre durée initiale de</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">pour</span> <span class=\"offer-price text-color-watermelon\">{{ pricePerMonth }}</span><span class=\"large-copy\">/mois</span>",
+            "TERM_AND_PRICE_MONTHLY_QUEBEC": "<span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">pour</span> <span class=\"offer-price text-color-watermelon\">{{ pricePerMonth }}</span><span class=\"large-copy\">/mois</span>",
+            "FULL_TERM_PRICE": "<span class=\"large-copy\">Votre durée initiale de</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">pour</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span> <span class=\"large-copy\">plus frais</span>",
+            "FULL_TERM_PRICE_APPLE": "<span class=\"large-copy\">Votre durée initiale de</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">pour</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span>",
+            "FULL_PRICE": "{{ pricePerMonth }}<span class=\"large-copy\">/mois, plus frais.</span>",
+            "MRD_PRICE": "<span class=\"offer-price text-color-raspberry\">{{ pricePerMonth }}</span><span class=\"text-color-raspberry standard-copy\">/mois</span>",
+            "FULL_PRICE_QUEBEC": "{{ pricePerMonth }}<span class=\"large-copy\">/mois.</span>",
+            "FULL_TERM_PRICE_QUEBEC": "<span class=\"large-copy\">Votre durée initiale de</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">pour</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span>",
+            "MRD_OFFER_COPY": "Prix réduit pour famille. <strike>Prix courant {{msrpPrice}}/mois.</strike>",
+            "SEE_OFFER_BELOW": "Voir <strong>les détails de l'offre</strong> ci-dessous.",
+            "SEE_OFFER_BELOW_PROMO": "Ensuite {{ retailPrice }}/mois. Voir <strong>les détails de l'offre</strong> ci-dessous.",
+            "SEE_OFFER_BELOW_NEW": "Nouveaux abonnés seulement.<br>Voir <strong>les détails de l'offre</strong> ci-dessous.",
+            "SEE_OFFER_BELOW_PROMO_NEW": "Ensuite {{ retailPrice }}/mois. Nouveaux abonnés seulement.<br>Voir <strong>les détails de l'offre</strong> ci-dessous.",
+            "FEES": "Des frais de traitement de {{ price }} s'appliquent.",
+            "SAVINGS_OFFER": "Offre d'économie",
+            "OFFER_TAGLINE": "Vos favoris, avec votre choix d’endroits où les apprécier.",
+            "FULL_PRICE_ADVANTAGE": "<span class=\"offer-price text-color-raspberry\">{{ pricePerMonth }}</span><span class=\"standard-copy\">/mo plus frais</span>",
+            "FULL_PRICE_ADVANTAGE_QUEBEC": "<span class=\"offer-price text-color-raspberry\">{{ pricePerMonth }}</span><span class=\"standard-copy\">/mo</span>",
+            "FULL_PRICE_ADVANTAGE_ANNUAL": "<span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">pour</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span><span class=\"large-copy\"> plus frais</span>",
+            "FULL_PRICE_ADVANTAGE_ANNUAL_QUEBEC": "<span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">pour</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span><span class=\"large-copy\"></span>",
+            "SEE_OFFER_BELOW_ADVANTAGE": "Ordinairement <strike>{{ price }}/mois</strike>, frais en sus. Économisez {{ savingsAmount }}/mois tant que vous choisissez de garder votre abonnement. Voir <strong>les détails de l’offre</strong> ci-dessous.",
+            "SEE_OFFER_BELOW_ADVANTAGE_QUEBEC": "Ordinairement <strike>{{ price }}/mois</strike>. Économisez {{ savingsAmount }}/mois tant que vous choisissez de garder votre abonnement. Voir <strong>les détails de l’offre</strong> ci-dessous.",
+            "SEE_OFFER_BELOW_ADVANTAGE_ANNUAL": "Ordinairement <strike>{{ price }}/annuel</strike>, frais en sus. Économisez {{ savingsAmount }}/annuel tant que vous choisissez de garder votre abonnement. Voir <strong>les détails de l’offre</strong> ci-dessous.",
+            "SEE_OFFER_BELOW_ADVANTAGE_ANNUAL_QUEBEC": "Ordinairement <strike>{{ price }}/annuel</strike>. Économisez {{ savingsAmount }}/annuel tant que vous choisissez de garder votre abonnement. Voir <strong>les détails de l’offre</strong> ci-dessous."
+        }
+    }
+}

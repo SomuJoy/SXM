@@ -1,0 +1,126 @@
+{
+    "name": "de-streaming-onboarding",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "sourceRoot": "apps/de-streaming-onboarding/src",
+    "prefix": "de-streaming-onboarding",
+    "targets": {
+        "build": {
+            "executor": "@angular-devkit/build-angular:browser",
+            "options": {
+                "outputPath": "dist/apps/de-streaming-onboarding",
+                "index": "apps/de-streaming-onboarding/src/index.html",
+                "main": "apps/de-streaming-onboarding/src/main.ts",
+                "polyfills": "apps/de-streaming-onboarding/src/polyfills.ts",
+                "tsConfig": "apps/de-streaming-onboarding/tsconfig.app.json",
+                "assets": ["apps/de-streaming-onboarding/src/favicon.ico", "apps/de-streaming-onboarding/src/assets"],
+                "styles": ["apps/de-streaming-onboarding/src/styles.scss", "libs/sxm-assets/scss/global.scss", "./node_modules/sxm/assets/dist/css/minified/sxm.min.css"],
+                "stylePreprocessorOptions": {
+                    "includePaths": ["./node_modules/sxm/assets/src/scss/"]
+                },
+                "scripts": ["./node_modules/sxm/assets/dist/js/minified/sxm.min.js"],
+                "vendorChunk": true,
+                "extractLicenses": false,
+                "buildOptimizer": false,
+                "sourceMap": true,
+                "optimization": false,
+                "namedChunks": true
+            },
+            "configurations": {
+                "production": {
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/de-streaming-onboarding/src/environments/environment.ts",
+                            "with": "apps/de-streaming-onboarding/src/environments/environment.prod.ts"
+                        }
+                    ],
+                    "optimization": true,
+                    "outputHashing": "all",
+                    "sourceMap": false,
+                    "namedChunks": false,
+                    "extractLicenses": true,
+                    "vendorChunk": false,
+                    "buildOptimizer": true,
+                    "budgets": [
+                        {
+                            "type": "initial",
+                            "maximumWarning": "2mb",
+                            "maximumError": "5mb"
+                        },
+                        {
+                            "type": "anyComponentStyle",
+                            "maximumWarning": "6kb",
+                            "maximumError": "10kb"
+                        }
+                    ]
+                },
+                "canada": {
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/de-streaming-onboarding/src/environments/environment.ts",
+                            "with": "apps/de-streaming-onboarding/src/environments/environment.canada.ts"
+                        }
+                    ]
+                },
+                "local": {
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/de-streaming-onboarding/src/environments/environment.ts",
+                            "with": "apps/de-streaming-onboarding/src/environments/environment.local.ts"
+                        }
+                    ]
+                }
+            },
+            "defaultConfiguration": ""
+        },
+        "serve": {
+            "executor": "@angular-devkit/build-angular:dev-server",
+            "options": {
+                "browserTarget": "de-streaming-onboarding:build",
+                "host": "0.0.0.0",
+                "disableHostCheck": true,
+                "port": 4220
+            },
+            "configurations": {
+                "production": {
+                    "browserTarget": "de-streaming-onboarding:build:production"
+                },
+                "canada": {
+                    "browserTarget": "de-streaming-onboarding:build:canada",
+                    "port": 4221
+                },
+                "local": {
+                    "browserTarget": "de-streaming-onboarding:build:local"
+                }
+            }
+        },
+        "extract-i18n": {
+            "executor": "@angular-devkit/build-angular:extract-i18n",
+            "options": {
+                "browserTarget": "de-streaming-onboarding:build"
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["apps/de-streaming-onboarding/src/**/*.ts", "apps/de-streaming-onboarding/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "apps/de-streaming-onboarding/jest.config.js",
+                "tsConfig": "apps/de-streaming-onboarding/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "apps/de-streaming-onboarding/src/test-setup.ts"
+            }
+        }
+    },
+    "tags": ["type:app"]
+}

@@ -1,0 +1,130 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/animations.scss";
+
+$animationDuration: 0.6s;
+$initialDelay: 1s;
+$taskProcessingDelay: 6.2s;
+$continueAnimationDelay: $taskProcessingDelay + $animationDuration;
+
+@include slideUp(50px);
+@include slideDown(10px);
+@include changeOpacity(0.5);
+
+@keyframes removeMarginTop {
+    to {
+        margin-top: -32px;
+    }
+}
+
+:host {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 100%;
+    background-color: $blue-ultra-light;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+
+p.large-copy {
+    &:first-of-type {
+        margin-top: 8px;
+    }
+}
+
+.animate-block {
+    animation-duration: $animationDuration;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+
+    &:nth-child(1) {
+        opacity: 0;
+        visibility: hidden;
+
+        animation-name: showElement, slideUp, slideDown, hideElement, collapseElement;
+        animation-delay: $initialDelay + $animationDuration, $initialDelay + $animationDuration, $continueAnimationDelay, $continueAnimationDelay, $continueAnimationDelay;
+
+        height: 48px;
+
+        @media (min-width: 366px) {
+            height: 24px;
+        }
+    }
+
+    &:nth-child(2) {
+        opacity: 0;
+        visibility: hidden;
+
+        animation-name: showElement, slideUp, changeOpacity, removeMarginTop;
+        animation-delay: $initialDelay + $animationDuration * 2, $initialDelay + $animationDuration * 2, $continueAnimationDelay, $continueAnimationDelay;
+    }
+
+    &:nth-child(3) {
+        opacity: 0;
+        visibility: hidden;
+
+        animation-name: showElement;
+        animation-delay: $continueAnimationDelay;
+    }
+}
+
+//Shell
+.shell {
+    min-height: 100%;
+    background-color: $off-white;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 100%;
+
+    header {
+        padding: 12px 44px;
+        background-color: $white;
+        border-bottom: solid #d4d4d4 0.8px;
+        text-indent: 8.33333%;
+        @media (max-width: 767px) {
+            text-indent: 0;
+        }
+        > a {
+            text-decoration: none;
+            cursor: pointer;
+            > .icon {
+                .icon-logo {
+                    color: $blue; //this color & fill can be deleted when the ui framework is updated
+                    fill: $black;
+                }
+                height: 26px;
+                max-width: 135px;
+                @media (max-width: 767px) {
+                    height: 20px;
+                    max-width: 104px;
+                }
+            }
+        }
+        @media (max-width: 1023px) {
+            padding: 12px 24px;
+        }
+        @media (max-width: 767px) {
+            padding: 12px 12px;
+        }
+    }
+
+    &.dark-theme {
+        header {
+            background-color: rgba($black, 0.8);
+            border-bottom: none;
+            > a {
+                > .icon {
+                    .icon-logo {
+                        color: $white; //this color & fill can be deleted when the ui framework is updated
+                        fill: $white;
+                    }
+                }
+            }
+        }
+    }
+}

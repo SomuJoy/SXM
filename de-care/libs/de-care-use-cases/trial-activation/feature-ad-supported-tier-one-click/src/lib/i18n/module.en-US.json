@@ -1,0 +1,66 @@
+{
+    "DeCareUseCasesTrialActivationFeatureAdSupportedTierOneClickModule": {
+        "ConfirmationPageComponent": {
+            "HEADER": {
+                "TITLE": "Welcome to your SiriusXM Free Preview"
+            },
+            "NOW_ACTIVE": "Your free subscription is now active.",
+            "READY_TO_EXPLORE": {
+                "TITLE": "Ready To Explore?",
+                "CHANNEL_LINEUP": {
+                    "LINK_TEXT": "View Channel Lineup",
+                    "LINK_URL": "https://www.siriusxm.com/previewchannels"
+                },
+                "BEFORE_YOU_GO": {
+                    "LINK_TEXT": "Check out great offers",
+                    "LINK_URL": "https://www.siriusxm.com/phx/ourmostpopularpackages?intcmp=GN_HEADER_NEW_Subscribe_ComparePackages"
+                }
+            },
+            "IMPORTANT_INFORMATION": {
+                "TITLE": "Important information about your subscription:",
+                "BODY": "Your use of the SiriusXM Preview service is subject to the terms of our <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\">Customer Agreement</a> and <a href=\"https://www.siriusxm.com/phx/privacy-policy\" target=\"_blank\">Privacy Policy</a> available at siriusxm.com. Preview subscriptions are not transferrable between radios. You may cancel your service at any time, including, by calling us at 1-866-236-5635."
+            }
+        },
+        "DefaultErrorPageComponent": {
+            "HEADER": {
+                "TITLE": "We’re Sorry",
+                "BODY": "This transaction can't be completed online."
+            },
+            "HELP": {
+                "TITLE": "Don't worry, we can help you.",
+                "CHAT": "Chat with an agent",
+                "OR_CALL": "or call",
+                "TFN": "1-855-516-0571"
+            }
+        },
+        "AlreadyHasSubscriptionErrorPageComponent": {
+            "HEADER": {
+                "TITLE": "We’re Sorry",
+                "BODY": "Your radio already has an active subscription."
+            },
+            "HELP": {
+                "TITLE": "Don't worry, we can help you.",
+                "YOU_CAN": "You can",
+                "LOGIN": "login",
+                "LOGIN_URL": "https://care.siriusxm.com/login_view.action",
+                "TO_MANAGE_SUB": "to manage your subscription.",
+                "FOR_MORE_HELP": "For more help,",
+                "CHAT": "chat with an agent",
+                "OR_CALL": "or call",
+                "TFN": "1-855-516-0571"
+            }
+        },
+        "IsNotEligibleErrorPageComponent": {
+            "HEADER": {
+                "TITLE": "We’re Sorry",
+                "BODY": "Your radio isn't eligible for a trial."
+            },
+            "HELP": {
+                "TITLE": "Don't worry, we can help you.",
+                "CHAT": "Chat with an agent",
+                "OR_CALL": "or call",
+                "TFN": "1-855-516-0571"
+            }
+        }
+    }
+}

@@ -1,0 +1,69 @@
+<ng-container *ngIf="offer$ | async as offer">
+    <hero-component
+        [headerState]="
+            translateKey + (offer.type === 'PROMO_MCP' ? '.HERO.TITLE_PROMO_MCP' : '.HERO.TITLE')
+                | translate
+                    : {
+                          price: offer.price,
+                          termLength: offer.termLength,
+                          pluralizedMonth: offer.termLength | i18nPlural: (translateKey + '.PLURAL_MAP.MONTH' | translate)
+                      }
+        "
+        [headerStateSubtitle]="translateKey + (offer.type === 'PROMO_MCP' ? '.HERO.SUBTITLE_PROMO_MCP' : '.HERO.SUBTITLE') | translate: offer"
+        [alignLeftMediumUp]="true"
+        [heroTitleType]="heroTitleType"
+    ></hero-component>
+    <ng-container *ngrxLet="planComparisonGridParams$ as planComparisonGridParams">
+        <sxm-ui-pick-a-plan-form
+            *ngIf="!planComparisonGridParams.usePlanComparisonGridDetailed"
+            (continueToCheckout)="continueToCheckout()"
+            (packageIndexSelected)="packageIndexSelected = $event"
+            (packageNameSelected)="onPackageNameSelected($event)"
+            [availableOffers$]="availableOffers$"
+            [packageNames$]="packageNames$"
+            [containsChoicePackages$]="containsChoicePackages$"
+            [retailPrices$]="retailPrices$"
+            [data]="planComparisonGridParams.pickAPlanFormData"
+            [authenticatedCustomer]="authenticatedCustomer"
+            [selectedPackageIndex]="selectedPackageIndex"
+            [currentOrExpiredTrialPackage]="currentOrExpiredTrialPackage"
+            [activateExpandable]="false"
+        ></sxm-ui-pick-a-plan-form>
+        <div class="grid-container">
+            <sxm-ui-plan-comparison-grid-detailed
+                *ngIf="planComparisonGridParams.usePlanComparisonGridDetailed"
+                [data]="planComparisonGridParams.planComparisonGridDetailedData"
+                (planCodeSelected)="planCodeSelected($event)"
+            >
+            </sxm-ui-plan-comparison-grid-detailed>
+        </div>
+    </ng-container>
+
+    <find-your-account-card
+        *ngIf="!authenticatedCustomer"
+        data-e2e="rtcProactiveOrganicfindYourAccount"
+        intersectionObserver
+        [intersectionRootMargin]="'150px'"
+        (accountRadioSelected)="onAccountRadioSelected($event)"
+        (visibilityChange)="onFindYourAccountVisibilityChanged()"
+        [@showFindYourAccount]="isFindYourAccountVisible ? 'visible' : 'hidden'"
+        [class.animate-component]="isFindYourAccountVisible"
+        [questionsPhoneNumber]="translateKey + ((containsChoicePackages$ | async) ? '.CHOICE_QUESTIONS_TFN' : '.PROACTIVE_QUESTIONS_TFN') | translate"
+    ></find-your-account-card>
+    <offer-details
+        *ngIf="offer.promoCode === 'PICK3FOR1' && (pickAPlanOfferDetails$ | async); else pickAPlan"
+        [pickAPlan3FOR1PYPDetails]="pickAPlanOfferDetails$ | async"
+        [details]="offerDetails$ | async"
+        [copyOptions]="offerDetailsCopyOptions"
+    >
+    </offer-details>
+    <ng-template #pickAPlan>
+        <offer-details
+            [pickAPlanDetails]="pickAPlanOfferDetails$ | async"
+            [details]="offerDetails$ | async"
+            [copyOptions]="offerDetailsCopyOptions"
+            [setPackageName]="packageNameSelected"
+            [shouldDisplaySelectedOfferDetails]="authenticatedCustomer"
+        >
+        </offer-details> </ng-template
+></ng-container>

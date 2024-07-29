@@ -1,0 +1,37 @@
+<div *ngIf="offer$ | async as offer">
+    <ng-container *ngIf="vm$ | async as vm">
+        <hero-component
+            [headerState]="
+                translateKeyPrefix + '.HERO_COPY'
+                    | translate
+                        : {
+                              offerTerm: offerDetails.offerTerm,
+                              offerTotal: offerDetails.offerTotal | currency: 'USD':'symbol-narrow':priceFormat:lang
+                          }
+            "
+            class="reduced-hero-padding"
+        ></hero-component>
+        <main class="background-offwhite">
+            <div class="content-container">
+                <div class="row align-center row-top-padding">
+                    <div class="column medium-2 no-padding background-white"></div>
+                    <div class="column small-12 medium-6 background-white">
+                        <de-care-student-re-verification
+                            *ngIf="studentReVerificationData"
+                            [studentReVerificationData]="studentReVerificationData"
+                        ></de-care-student-re-verification>
+                    </div>
+
+                    <div class="column medium-2 no-padding background-white"></div>
+                </div>
+            </div>
+        </main>
+        <!--In order to emulate CMS in Canada, requires a whole story (We need to check MCP and RTP and RTP with charges and the multiple plancodes options)
+            for now is ok to use this ngif in order to solve the issue
+         -->
+        <sxm-ui-legal-copy *ngIf="vm.cmsContentEnabled; else legacyLegalCopy" [legalCopy]="vm.legalCopyData" data-e2e="studentReVerification.legalCopy"></sxm-ui-legal-copy>
+        <ng-template #legacyLegalCopy>
+            <offer-details [details]="offerDetails"></offer-details>
+        </ng-template>
+    </ng-container>
+</div>

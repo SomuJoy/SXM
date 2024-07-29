@@ -1,0 +1,31 @@
+{
+    "sharedSxmUiUiAddressFormFieldsModule": {
+        "addressFormFieldsComponent": {
+            "NEW_CC": {
+                "CC_ADDRESS": "Adresse (incluant app./bureau/unité)",
+                "ERROR_CC_ADDRESS": "Entrez une adresse valide.",
+                "CC_CITY": "Ville",
+                "ERROR_CC_CITY": "Entrez votre ville.",
+                "INVALID_CC_CITY": "Entrez une ville valide.",
+                "CC_STATE": "Province",
+                "ERROR_CC_STATE": "Entrez votre province.",
+                "CC_ZIPCODE": "Code postal",
+                "ERROR_CC_ZIPCODE": "Entrez un code postal valide."
+            },
+            "ERROR_CVV_FOUND": "Le champ contient des caractères qui ressemblent aux informations de sécurité de la carte de crédit. Pour continuer, veuillez les revoir et apporter les changements appropriés."
+        },
+        "addressFormFieldsOemComponent": {
+            "ADDRESS_LINE_1": "Ligne d’adresse 1",
+            "ADDRESS_LINE_2": "Ligne d’adresse 2",
+            "ERROR_ADDRESS": "Entrez une adresse valide.",
+            "CITY": "Ville",
+            "ERROR_CITY": "Entrez votre ville.",
+            "STATE": "Province",
+            "ERROR_STATE": "Sélectionnez votre province.",
+            "ERROR_STATE_INACCURATE": "Entrez une adresse courriel valide.",
+            "ZIPCODE": "Code postal",
+            "ERROR_ZIPCODE": "Entrez un code postal valide.",
+            "ERROR_CVV_FOUND": "Le champ contient des caractères qui ressemblent aux informations de sécurité de la carte de crédit. Pour continuer, veuillez les revoir et apporter les changements appropriés."
+        }
+    }
+}

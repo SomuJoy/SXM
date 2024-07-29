@@ -1,0 +1,94 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "quote": {
+            "currentQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "0.00",
+                "totalTaxesAndFeesAmount": "0.00",
+                "totalAmount": "0.00",
+                "discountAmount": "0.00",
+                "pricePerMonth": "0.00",
+                "currentBalance": "0.00",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "0.00",
+                "fees": [],
+                "taxes": [],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Trial - Streaming Music Showcase - 3mo - 0.00 - 1moFO",
+                        "packageName": "SIR_CAN_IP_SHOWCASE",
+                        "termLength": 3,
+                        "priceAmount": "0.00",
+                        "taxAmount": "0.00",
+                        "feeAmount": "0.00",
+                        "totalTaxesAndFeesAmount": "0.00",
+                        "taxes": [],
+                        "fees": [],
+                        "startDate": "2022-02-18",
+                        "endDate": "2022-05-18",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "RTP_OFFER",
+                        "dealType": "",
+                        "isAdvantage": false,
+                        "isMilitary": false,
+                        "isStudent": false
+                    }
+                ],
+                "isUpgraded": false,
+                "isProrated": false
+            },
+            "futureQuote": null,
+            "proRatedRenewalQuote": null,
+            "promoRenewalQuote": null,
+            "renewalQuote": {
+                "totalTaxAmount": "0.83",
+                "totalFeesAmount": "0.00",
+                "totalTaxesAndFeesAmount": "0.83",
+                "totalAmount": "6.33",
+                "discountAmount": "0.00",
+                "pricePerMonth": "5.50",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [],
+                "taxes": [
+                    { "description": "Goods_and_Services_Tax_GST", "amount": "0.28" },
+                    { "description": "Quebec_Sales_Tax_QST", "amount": "0.55" }
+                ],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Streaming Music Showcase - 1mo",
+                        "packageName": "SIR_CAN_IP_SHOWCASE",
+                        "termLength": 1,
+                        "priceAmount": "5.50",
+                        "taxAmount": "0.83",
+                        "feeAmount": "0.00",
+                        "totalTaxesAndFeesAmount": "0.83",
+                        "taxes": [
+                            { "description": "Goods_and_Services_Tax_GST", "amount": "0.28" },
+                            { "description": "Quebec_Sales_Tax_QST", "amount": "0.55" }
+                        ],
+                        "fees": [],
+                        "startDate": "2022-05-18",
+                        "endDate": "2022-06-18",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "",
+                        "dealType": "",
+                        "isAdvantage": false,
+                        "isMilitary": false,
+                        "isStudent": false
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "name": "shared-async-validators-phone-number-verification",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/async-validators/phone-number-verification/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/shared/async-validators/phone-number-verification/src/**/*.ts",
+                    "libs/shared/async-validators/phone-number-verification/src/**/*.html"
+                ]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/shared/async-validators/phone-number-verification/jest.config.js",
+                "tsConfig": "libs/shared/async-validators/phone-number-verification/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/shared/async-validators/phone-number-verification/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["scope:legacy"]
+}

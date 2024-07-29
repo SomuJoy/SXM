@@ -1,0 +1,8 @@
+{
+    "domainsOffersUiTrialFollowOnFormFieldModule": {
+        "trialFollowOnFormFieldComponent": {
+            "LABEL": "Garder {{followOnPackageName}} à la fin de mon essai pour seulement {{followOnPricePerMonth}} par mois.",
+            "COPY": "Nous ne vous facturerons pas tant que votre essai n'est pas terminé et vous pouvez annuler en tout temps."
+        }
+    }
+}

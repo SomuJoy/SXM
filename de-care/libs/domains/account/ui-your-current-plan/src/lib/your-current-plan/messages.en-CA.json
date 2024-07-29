@@ -1,0 +1,27 @@
+{
+    "HEADING": "Your current subscription:",
+    "HEADING_FOLLOW_ON": "Your subscription after your trial ends:",
+    "TERM": {
+        "PER_MONTH": "Your first {{termLength}} months for"
+    },
+    "PRICE": {
+        "FREE": "Complimentary Trial",
+        "TRIAL_EXT": "{{termLength}} {{pluralizedMonth}} free",
+        "PER_MONTH": "{{price}}/mo plus fees",
+        "PER_MONTH_WO_PLUS_FEES": "{{price}}/mo",
+        "TOTAL": "{{price}} plus fees",
+        "TOTAL_WO_PLUS_FEES": "{{price}}"
+    },
+    "PROMO_INFO": {
+        "PROMO": "Then {{ renewalPrice }}/mo on {{ startDate }}",
+        "PROMO_MCP": "Then {{ renewalPrice }}/mo on {{ startDate }}",
+        "TRIAL": "Trial ends {{ startDate }}",
+        "TRIAL_EXT": "Then {{ renewalPrice }}/mo on {{ startDate }}"
+    },
+    "PLURAL_MAP": {
+        "MONTH": {
+            "=1": "month",
+            "other": "months"
+        }
+    }
+}

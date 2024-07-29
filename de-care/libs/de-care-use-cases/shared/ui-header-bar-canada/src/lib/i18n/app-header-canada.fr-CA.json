@@ -1,0 +1,12 @@
+{
+    "DeCareUseCasesSharedUiHeaderBarModule": {
+        "HeaderBarCanadaComponent": {
+            "EDIT_PROVINCE": "Modifier",
+            "SWITCH_LANGUAGE": {
+                "LABEL": "EN",
+                "VALUE": "en-CA"
+            },
+            "PROVINCE_SELECTOR_MODAL_TITLE": "Paramètres du site"
+        }
+    }
+}

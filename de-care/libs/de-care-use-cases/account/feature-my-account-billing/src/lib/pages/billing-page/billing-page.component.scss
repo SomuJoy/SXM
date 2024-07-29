@@ -1,0 +1,237 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+@mixin main-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-row-gap: 20px;
+    grid-column-gap: 16px;
+    @include bp(medium) {
+        grid-template-columns: repeat(12, 1fr);
+    }
+}
+
+:host {
+    // TODO: need to get this higher up so we don't have to reset all the time
+    ::ng-deep {
+        section {
+            padding: 0;
+        }
+    }
+    main {
+        @include main-grid;
+        max-width: 1024px;
+        grid-row-gap: 48px;
+        padding: 40px 16px;
+        margin: 0 auto;
+        @include bp(medium) {
+            padding: 48px 16px;
+        }
+        @include bp(large) {
+            grid-row-gap: 56px;
+            padding: 56px;
+        }
+    }
+    section.billing-cards-info-section {
+        grid-column: span 12;
+        display: grid;
+        gap: 20px;
+        padding: 0;
+        width: 100%;
+        @include bp(medium) {
+            grid-column: span 8;
+        }
+        a.text-link {
+            font-size: inherit;
+            border: none;
+            text-decoration: underline;
+        }
+    }
+    section.billing-summary-main-section {
+        display: grid;
+        grid-column: span 12;
+        display: grid;
+        gap: 24px;
+        padding: 0;
+        width: 100%;
+    }
+
+    section.payment-info-section {
+        grid-column: span 12;
+        display: grid;
+        gap: 20px;
+        padding: 0;
+        width: 100%;
+        @include bp(medium) {
+            grid-column: span 8;
+        }
+        .card-content {
+            display: grid;
+            gap: 8px;
+        }
+    }
+
+    .billing-payment-history-section {
+        display: grid;
+        row-gap: 20px;
+        padding: 20px 0 20px 0;
+        grid-template-rows: auto 1fr;
+        transition: grid-template-rows ease-in-out 0.25s;
+        &.filter-hidden {
+            grid-template-rows: auto 0fr;
+            @include bp(medium) {
+                grid-template-rows: auto 1fr;
+            }
+            #filterForm {
+                overflow: hidden;
+                @include bp(medium) {
+                    overflow: visible;
+                }
+            }
+            .filter-toggle {
+                margin-top: -20px; //negative margin is used to offset hidden filter row's gap
+                transition: margin ease-in 0.25s;
+                mat-icon[svgIcon="dropdown-arrow-small"] {
+                    transform: none;
+                    vertical-align: inherit;
+                }
+            }
+        }
+    }
+    nav {
+        display: flex;
+        grid-column-gap: 36px;
+        justify-content: flex-start;
+        > span {
+            cursor: pointer;
+            width: fit-content;
+            font-size: calculate-rem(16px);
+            font-weight: calculate-font-weight(bold);
+            line-height: 1.5;
+            padding-bottom: 10px;
+            position: relative;
+            text-decoration: none;
+            text-decoration-color: black;
+            color: black;
+            white-space: nowrap;
+            &:active,
+            &:hover {
+                color: black;
+            }
+            &::before {
+                background: $blue-secondary;
+                content: "";
+                width: 100%;
+                height: 4px;
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                opacity: 0;
+            }
+            &.active {
+                pointer-events: none;
+                &::before {
+                    opacity: 1;
+                }
+            }
+            &:hover {
+                &::before {
+                    opacity: 1;
+                }
+            }
+            .short-title {
+                @include bp(mobile-medium) {
+                    display: none;
+                }
+            }
+            .medium-title {
+                display: none;
+                @include bp(mobile-medium) {
+                    display: inline;
+                }
+                @include bp(small) {
+                    display: none;
+                }
+            }
+            .long-title {
+                display: none;
+                @include bp(small) {
+                    display: inline;
+                }
+            }
+        }
+    }
+    #filterForm {
+        display: flex;
+        flex-direction: column-reverse;
+        min-height: 0;
+        visibility: visible;
+        @include bp(medium) {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+        &.overflow-hidden {
+            overflow: hidden;
+            @include bp(medium) {
+                overflow: visible;
+            }
+        }
+        &.visibility-hidden {
+            visibility: hidden;
+            @include bp(medium) {
+                visibility: visible;
+            }
+        }
+        sxm-ui-dropdown {
+            display: block;
+            position: relative;
+            margin: 0 10px 0 0;
+            width: 100%;
+            @include bp(medium) {
+                width: 33%;
+            }
+            &.active {
+                z-index: unset;
+            }
+            &:last-child {
+                margin-bottom: 16px;
+                @include bp(mobile-medium) {
+                    margin-top: 4px;
+                }
+                @include bp(medium) {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    .filter-toggle {
+        justify-self: start;
+        @include font-size(14px);
+        font-weight: calculate-font-weight("bold");
+        line-height: 22px;
+        color: $blue-secondary;
+        transition: margin ease-out 0.25s;
+        mat-icon[svgIcon="dropdown-arrow-small"] {
+            width: 14px;
+            height: 14px;
+            margin-left: 4px;
+            vertical-align: middle;
+            transform: rotate(180deg);
+        }
+        @include bp(medium) {
+            display: none;
+        }
+    }
+}
+
+h2 {
+    @include get-header-style(h5);
+    margin-bottom: 8px;
+}
+
+hr {
+    @include hr($gray-light);
+    width: 100%;
+    margin: 8px 0 0;
+}

@@ -1,0 +1,24 @@
+<ng-container *ngIf="provinces$ | async as canadianProvincesAndTerritories">
+    <h5>{{ "appHeader.provinceSelectorComponent.HEADER_TITLE" | translate }}</h5>
+    <p [id]="ariaDescribedbyTextId">{{ "appHeader.provinceSelectorComponent.PRICING_VARY" | translate }}</p>
+    <form id="province-selector" #form="ngForm" [formGroup]="provinceSelectorForm" (ngSubmit)="submit()">
+        <sxm-ui-dropdown
+            #provinceDropdown
+            [qatag]="'proviceSelectorDropDown'"
+            class="dropdown"
+            tabindex="0"
+            [passedValue]="canadianProvincesAndTerritories"
+            key="key"
+            text="label"
+            [filterSelected]="true"
+            labelText="{{ 'appHeader.provinceSelectorComponent.SELECT_PROVINCE_DROPDOWN' | translate }}"
+            formControlName="province"
+            [class.invalid]="submitted && controlIsInvalid(provinceSelectorForm.controls.province)"
+            (listChanged)="onListChanged()"
+            data-e2e="proviceSelectorDropDown"
+        ></sxm-ui-dropdown>
+        <button data-e2e="provinceChangeSaveButton" class="button primary full-width" type="submit">
+            {{ "appHeader.provinceSelectorComponent.SUBMIT_BUTTON" | translate }}
+        </button>
+    </form>
+</ng-container>

@@ -1,0 +1,5 @@
+<credentials-found-sign-in *ngIf="subscriptions$ | async; let subscription" [subscription]="subscription" (credentialsRecoveryRequested)="recover()">
+    <button class="font" type="submit" sxm-proceed-button (click)="onSignInClick()" sxmUiDataClickTrack="player">
+        {{ translateKeyPrefix + "BUTTON_TEXT" | translate }}
+    </button>
+</credentials-found-sign-in>

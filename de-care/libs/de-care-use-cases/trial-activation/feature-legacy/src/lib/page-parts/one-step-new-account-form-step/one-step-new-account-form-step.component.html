@@ -1,0 +1,184 @@
+<form [formGroup]="newAccountForm" (ngSubmit)="sendForm()" novalidate>
+    <p class="gray-text section-title">{{ "trialActivation.oneStepNewAccountFormStepComponent.YOUR_INFO" | translate }}</p>
+    <div class="row no-padding">
+        <invalid-address-message *ngIf="showInvalidAddressError" addressType="Service"></invalid-address-message>
+        <div *ngIf="unexpectedError === true || hasExternalError === true" class="invalid-feedback">
+            <p>{{ "trialActivation.oneStepNewAccountFormStepComponent.UNEXPECTED_ERROR" | translate }}</p>
+        </div>
+        <div class="column small-12 no-padding">
+            <p *ngIf="!canEditUsername; else emailField">
+                <ng-container *ngIf="!!email">
+                    <strong>{{ "trialActivation.oneStepNewAccountFormStepComponent.EMAIL.LABEL" | translate }}:</strong> <br />
+                    {{ email }}
+                    <input type="hidden" data-e2e="oneStepNewAccountForm.hiddenEmail" [formControlName]="emailControlName" />
+                </ng-container>
+            </p>
+            <ng-template #emailField>
+                <div class="input-container" [class.invalid]="newAccountForm.controls.email | formControlInvalid: submitted">
+                    <label data-e2e="oneStepNewAccountForm.interactiveEmailLabel" for="{{ emailId }}">{{
+                        "trialActivation.oneStepNewAccountFormStepComponent.EMAIL.LABEL" | translate
+                    }}</label>
+                    <input type="text" id="{{ emailId }}" data-e2e="oneStepNewAccountForm.interactiveEmailField" [formControlName]="emailControlName" onFocus required />
+                </div>
+                <div class="invalid-feedback" *ngIf="newAccountForm.controls.email | formControlInvalid: submitted">
+                    <p *ngIf="newAccountForm.controls.email.errors && newAccountForm.controls.email.errors.usernameInUse; else genericEmailError">
+                        {{ "trialActivation.oneStepNewAccountFormStepComponent.EMAIL.IN_USE_ERROR" | translate }}
+                    </p>
+                    <ng-template #genericEmailError>
+                        <p *ngIf="newAccountForm.controls.email.errors">{{ "trialActivation.oneStepNewAccountFormStepComponent.EMAIL.ERROR" | translate }}</p>
+                    </ng-template>
+                </div>
+            </ng-template>
+        </div>
+        <div class="column small-12 no-padding">
+            <div
+                class="input-container"
+                [class.invalid]="newAccountForm.controls.phoneNumber | formControlInvalid: submitted"
+                [class.filled]="newAccountForm.controls.phoneNumber.value"
+            >
+                <label data-e2e="oneStepNewAccountForm.phoneNumberLabel" for="{{ phoneNumberId }}">{{
+                    "trialActivation.oneStepNewAccountFormStepComponent.PHONE_NUMBER.LABEL" | translate
+                }}</label>
+                <input
+                    data-e2e="oneStepNewAccountForm.phoneNumberField"
+                    type="text"
+                    appMaskPhoneNumber
+                    id="{{ phoneNumberId }}"
+                    formControlName="phoneNumber"
+                    maxlength="14"
+                    onFocus
+                    required
+                />
+            </div>
+            <div *ngIf="newAccountForm.controls.phoneNumber | formControlInvalid: submitted" class="invalid-feedback">
+                <p>{{ "trialActivation.oneStepNewAccountFormStepComponent.PHONE_NUMBER.ERRORS.REQUIRED" | translate }}</p>
+            </div>
+        </div>
+        <div class="column small-12 no-padding">
+            <div
+                class="input-container"
+                [class.invalid]="newAccountForm.controls.addressLine1 | formControlInvalid: submitted"
+                [class.filled]="newAccountForm.controls.addressLine1.value"
+            >
+                <label data-e2e="oneStepNewAccountForm.addressLine1Label" for="{{ addressLine1Id }}">{{
+                    "trialActivation.oneStepNewAccountFormStepComponent.ADDRESS_LINE.LABEL" | translate
+                }}</label>
+                <input
+                    data-e2e="oneStepNewAccountForm.addressLine1Field"
+                    type="text"
+                    appTrimFormField
+                    id="{{ addressLine1Id }}"
+                    formControlName="addressLine1"
+                    maxlength="100"
+                    onFocus
+                    required
+                    #addressLine1Element
+                />
+            </div>
+            <div *ngIf="newAccountForm.controls.addressLine1 | formControlInvalid: submitted" class="invalid-feedback">
+                <p>{{ "trialActivation.oneStepNewAccountFormStepComponent.ADDRESS_LINE.ERRORS.REQUIRED" | translate }}</p>
+            </div>
+        </div>
+        <div class="column small-12 no-padding">
+            <div class="input-container" [class.invalid]="newAccountForm.controls.city | formControlInvalid: submitted" [class.filled]="newAccountForm.controls.city.value">
+                <label data-e2e="oneStepNewAccountForm.cityLabel" for="{{ cityId }}">{{ "trialActivation.oneStepNewAccountFormStepComponent.CITY.LABEL" | translate }}</label>
+                <input data-e2e="oneStepNewAccountForm.cityField" type="text" appTrimFormField id="{{ cityId }}" formControlName="city" maxlength="50" onFocus />
+            </div>
+            <div *ngIf="newAccountForm.controls.city | formControlInvalid: submitted" class="invalid-feedback">
+                <p>{{ "trialActivation.oneStepNewAccountFormStepComponent.CITY.ERRORS.REQUIRED" | translate }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row align-top no-padding">
+        <div class="column small-6 align-left no-padding">
+            <sxm-ui-dropdown
+                data-e2e="oneStepNewAccountForm.province"
+                class="dropdown"
+                [class.invalid]="newAccountForm.controls.state | formControlInvalid: submitted"
+                tabindex="0"
+                [passedValue]="'app.areas' | translate"
+                key="key"
+                text="key"
+                labelText="{{ 'trialActivation.oneStepNewAccountFormStepComponent.STATE.LABEL' | translate }}"
+                formControlName="state"
+            ></sxm-ui-dropdown>
+            <div *ngIf="newAccountForm.controls.state | formControlInvalid: submitted" class="invalid-feedback">
+                <p>{{ "trialActivation.oneStepNewAccountFormStepComponent.STATE.ERRORS.REQUIRED" | translate }}</p>
+            </div>
+        </div>
+        <div class="column small-6 align-right no-padding">
+            <div
+                class="input-container"
+                [class.invalid]="newAccountForm.controls.postalCode | formControlInvalid: submitted"
+                [class.filled]="newAccountForm.controls.postalCode.value"
+            >
+                <label data-e2e="oneStepNewAccountForm.postalCodeLabel" for="{{ postalCodeId }}">{{
+                    "trialActivation.oneStepNewAccountFormStepComponent.ZIP_CODE.LABEL" | translate
+                }}</label>
+                <input
+                    data-e2e="oneStepNewAccountForm.postalCodeField"
+                    type="text"
+                    id="{{ postalCodeId }}"
+                    appMaskZipCode
+                    [zipMaskIsCanada]="isCanada"
+                    [minlength]="isCanada ? 6 : 5"
+                    [maxlength]="isCanada ? 7 : 10"
+                    formControlName="postalCode"
+                    required
+                    onFocus
+                />
+            </div>
+            <div *ngIf="newAccountForm.controls.postalCode | formControlInvalid: submitted" class="invalid-feedback">
+                <p>{{ "trialActivation.oneStepNewAccountFormStepComponent.ZIP_CODE.ERRORS.REQUIRED" | translate }}</p>
+            </div>
+        </div>
+    </div>
+    <ng-container *ngIf="newAccountForm?.controls.captchaAnswer">
+        <hr />
+        <strong>{{ "trialActivation.oneStepNewAccountFormStepComponent.ENTER_A_CAPTCHA_TO_FINISH" | translate }}</strong>
+        <sxm-ui-nucaptcha
+            #nuCaptcha
+            formControlName="captchaAnswer"
+            [submitted]="submitted"
+            [captchaAnswerWrong]="captchaAnswerWrong"
+            (gotCaptcha)="gotCaptcha()"
+            name="captchaAnswer"
+        ></sxm-ui-nucaptcha>
+    </ng-container>
+    <div *ngIf="isCanada" class="checkbox-item display-flex">
+        <input class="checkbox" [formControl]="agreement" type="checkbox" id="{{ contestMessageId }}" onFocus />
+        <label class="input-label" for="{{ contestMessageId }}">
+            <p class="small-copy text-color-grey-dark">
+                {{ "trialActivation.oneStepNewAccountFormStepComponent.AGREEMENT_TEXT" | translate }}
+            </p>
+        </label>
+        <div *ngIf="isCanada && submitted && !agreementAccepted" class="invalid-feedback">
+            <p>{{ "trialActivation.oneStepNewAccountFormStepComponent.ACCEPT_AGREEMENT" | translate }}</p>
+        </div>
+    </div>
+    <div>
+        <a class="text-link privacy-policy-link" href="{{ 'trialActivation.oneStepNewAccountFormStepComponent.PRIVACY_POLICY.LINK_URL' | translate }}" target="_blank">
+            {{ "trialActivation.oneStepNewAccountFormStepComponent.PRIVACY_POLICY.LINK_TEXT" | translate }}
+        </a>
+    </div>
+    <button data-e2e="oneStepNewAccountForm.submitButton" type="submit" [sxm-loading-indicator]="isLoading || isLoadingExternally">
+        {{ "trialActivation.oneStepNewAccountFormStepComponent.BUTTON_TEXT" | translate }}
+    </button>
+    <post-activation-instructions *ngIf="includeActivationInstructions$ | async"></post-activation-instructions>
+</form>
+
+<ng-container *ngIf="avsWorkflowState$ | async as avsWorkflowState">
+    <sxm-ui-modal [closed]="false" *ngIf="avsWorkflowState.currentWorkflow === 'SERVICE_ADDRESS_MODAL'" [ariaDescribedbyTextId]="oneStepNewAccModalAriaDescribedbyTextId">
+        <verify-address
+            [ariaDescribedbyTextId]="oneStepNewAccModalAriaDescribedbyTextId"
+            [data]="{
+                headingText: 'trialActivation.oneStepNewAccountFormStepComponent.CONFIRM_YOUR_ADDRESS' | translate,
+                correctedAddresses: avsWorkflowState.correctedAddresses,
+                currentAddress: avsWorkflowState.currentAddress,
+                addressCorrectionAction: avsWorkflowState.addressCorrectionAction
+            }"
+            (editAddress)="onAcceptCorrectedAddress($event, avsWorkflowState.validated, avsWorkflowState.currentWorkflow)"
+            (editExisting)="onEditExistingAddress(avsWorkflowState.currentWorkflow)"
+        ></verify-address>
+    </sxm-ui-modal>
+</ng-container>

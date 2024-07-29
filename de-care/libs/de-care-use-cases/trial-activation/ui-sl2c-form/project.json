@@ -1,0 +1,31 @@
+{
+    "name": "de-care-use-cases-trial-activation-ui-sl2c-form",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care-use-cases/trial-activation/ui-sl2c-form/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/de-care-use-cases/trial-activation/ui-sl2c-form/src/**/*.ts", "libs/de-care-use-cases/trial-activation/ui-sl2c-form/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/trial-activation/ui-sl2c-form/jest.config.js",
+                "tsConfig": "libs/de-care-use-cases/trial-activation/ui-sl2c-form/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/de-care-use-cases/trial-activation/ui-sl2c-form/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:ui", "scope:de-care"]
+}

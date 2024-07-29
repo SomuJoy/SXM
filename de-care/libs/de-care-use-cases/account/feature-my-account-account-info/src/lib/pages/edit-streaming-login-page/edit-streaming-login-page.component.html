@@ -1,0 +1,32 @@
+<main>
+    <section class="grid-container header-section">
+        <header class="header-container">
+            <div class="button-container">
+                <button class="back-button" type="button" [attr.aria-label]="translateKeyPrefix + '.BACK_BUTTON_LABEL' | translate" (click)="onBack()">
+                    <span>
+                        <svg class="icon">
+                            <use xlink:href="#icon-back"></use>
+                        </svg>
+                        <span class="back-label">
+                            {{ translateKeyPrefix + ".BACK_BUTTON_LABEL" | translate }}
+                        </span>
+                    </span>
+                </button>
+            </div>
+            <h2 class="edit-header">
+                {{ translateKeyPrefix + ".HEADER" | translate }}
+            </h2>
+        </header>
+        <hr />
+    </section>
+    <section class="grid-container">
+        <div class="edit-login-form-container" *ngrxLet="username$ as username">
+            <sxm-ui-add-login-username-password
+                [username]="username"
+                [addLoginServerError]="editStreamingLoginServerError"
+                (formCompleted)="onEditStreamingLoginFormSubmit($event)"
+                (cancel)="onBack()"
+            ></sxm-ui-add-login-username-password>
+        </div>
+    </section>
+</main>

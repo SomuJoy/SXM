@@ -1,0 +1,164 @@
+<ng-template #commonActiveHeader let-stepName="stepName">
+    <sxm-ui-stepper-progress-breadcrumb [currentStepNumber]="stepper.selectedIndex + 1" [numberOfSteps]="stepper.steps?.length"></sxm-ui-stepper-progress-breadcrumb>
+    <p class="step-title">
+        {{ translateKeyPrefix + "STEPS." + stepName + ".TITLE" | translate }}
+    </p>
+</ng-template>
+<section id="hero" *ngrxLet="heroViewModel$ as heroViewModel" deCarePageFullWidthContent="mainWideContent">
+    <h1 [innerHTML]="heroViewModel?.title"></h1>
+</section>
+<div deCarePageMainContent id="mainContent">
+    <section id="offerCard">
+        <article id="radioInfo" *ngIf="radioInfoViewModel$ | async as radioInfo">
+            <div>
+                <p>
+                    <ng-container
+                        *ngIf="
+                            radioInfo.vehicleInfo
+                                | vehicleInfoTranslate
+                                    : {
+                                          defaultText: '',
+                                          isFrench: false
+                                      } as vehicleInfo
+                        "
+                    >
+                        {{
+                            translateKeyPrefix + "RADIO_INFO.VEHICLE"
+                                | translate
+                                    : {
+                                          vehicleInfo: vehicleInfo
+                                      }
+                        }}
+                        <br />
+                    </ng-container>
+                    {{ translateKeyPrefix + "RADIO_INFO.RADIO_ID_MASKED" | translate: { lastFour: radioInfo.radioIdLastFour } }}
+                </p>
+            </div>
+            <hr />
+        </article>
+        <sxm-ui-primary-package-card
+            *ngrxLet="primaryPackageCardViewModel$ as primaryPackageCardViewModel"
+            [class.theme-non-retail]="primaryPackageCardViewModel?.theme === 'Theme2'"
+            [class.presentation-no-icons-single-detail-visible]="primaryPackageCardViewModel?.presentation === 'Presentation3'"
+            [packageData]="primaryPackageCardViewModel"
+        ></sxm-ui-primary-package-card>
+    </section>
+
+    <section id="mainContent">
+        <sxm-ui-stepper-accordion #stepper>
+            <sxm-ui-step-accordion [label]="translateKeyPrefix + 'STEPS.DEVICE_LOOKUP.TITLE' | translate">
+                <ng-template #activeHeader>
+                    <ng-container *ngTemplateOutlet="commonActiveHeader; context: { stepName: 'DEVICE_LOOKUP' }"></ng-container>
+                </ng-template>
+                <ng-template #inactiveHeader let-stepNumber="stepNumber">
+                    <span class="step-inactive-header">
+                        {{ translateKeyPrefix + "STEPS.DEVICE_LOOKUP.TITLE_INACTIVE" | translate: { stepNumber: stepNumber } }}
+                    </span>
+                </ng-template>
+                <ng-template #inactiveContent>
+                    <de-care-subscription-summary [plans]="selectedDeviceSubscriptionViewModel$ | async"></de-care-subscription-summary>
+                </ng-template>
+                <verify-device-tabs
+                    *ngrxLet="deviceLookupViewModel$ as deviceLookupViewModel"
+                    (userSelection)="onDeviceSelection($event)"
+                    (radioSelectionStarted)="onDeviceSelectionStarted()"
+                    [showHeadingText]="deviceLookupViewModel.showHeadingText"
+                    [checkPlatFormChange]="false"
+                    [programCode]="deviceLookupViewModel.programCode"
+                ></verify-device-tabs>
+            </sxm-ui-step-accordion>
+            <sxm-ui-step-accordion
+                (active)="onBillingInformationStepActive()"
+                [label]="translateKeyPrefix + 'STEPS.PAYMENT_INFO.TITLE' | translate"
+                (editClicked)="onEditBillingInformationClick()"
+            >
+                <ng-template #activeHeader>
+                    <ng-container *ngTemplateOutlet="commonActiveHeader; context: { stepName: 'PAYMENT_INFO' }"></ng-container>
+                </ng-template>
+                <section *ngrxLet="accountSummary$ as accountSummary">
+                    <ng-container *ngIf="accountSummary.accountIsTrial; else nonTrial">
+                        <p id="inTrialInfoText">
+                            {{
+                                translateKeyPrefix + "STEPS.PAYMENT_INFO.INSTRUCTIONS_IN_TRIAL"
+                                    | translate
+                                        : {
+                                              termLength: accountSummary.termLength,
+                                              trialEndDate: accountSummary.currentPlanEndDate | sxmDate: (currentLang$ | async)
+                                          }
+                            }}
+                        </p></ng-container
+                    >
+                    <ng-template #nonTrial
+                        ><p id="postTrialInfoText">{{ translateKeyPrefix + "STEPS.PAYMENT_INFO.INSTRUCTIONS_POST_TRIAL" | translate }}</p></ng-template
+                    >
+                </section>
+                <section id="yourPlanSection" *ngrxLet="selectedPlanSummary$ as selectedPlanSummary">
+                    <p class="your-plan--header">{{ translateKeyPrefix + "STEPS.PAYMENT_INFO.YOUR_PLAN" | translate }}</p>
+                    <p>
+                        {{ selectedPlanSummary.offerDescription?.platformPlan }}<br />
+                        {{
+                            translateKeyPrefix + "STEPS.PAYMENT_INFO.TERM_AND_PRICE" + (selectedPlanSummary.totalPrice === 0 ? "_FREE" : "")
+                                | translate
+                                    : {
+                                          termLength: selectedPlanSummary.termLength,
+                                          monthString: selectedPlanSummary.termLength | i18nPlural: (translateKeyPrefix + "STEPS.PAYMENT_INFO.PLURAL_MAP.MONTH" | translate),
+                                          fullPrice: selectedPlanSummary.totalPrice | sxmCurrency: (currentLang$ | async),
+                                          retailPrice: selectedPlanSummary.retailPrice | sxmCurrency: (currentLang$ | async)
+                                      }
+                        }}<br />
+                        <button
+                            class="your-plan--change text-link"
+                            id="changeLeadOfferButton"
+                            *ngIf="changeSelectedOfferLinkAvailable$ | async"
+                            (click)="openOfferGrid()"
+                            sxmUiDataClickTrack="modal"
+                        >
+                            {{ translateKeyPrefix + "STEPS.PAYMENT_INFO.CHANGE_SELECTED_OFFER_LINK_COPY" | translate }}
+                        </button>
+                    </p>
+                </section>
+                <de-care-payment-info-form [options]="paymentMethodOptionsViewModel$ | async" (formCompleted)="onPaymentInfoCollected($event)"></de-care-payment-info-form>
+
+                <sxm-ui-modal
+                    #offerSelectionModal
+                    [title]="translateKeyPrefix + 'STEPS.PAYMENT_INFO.OFFER_SELECTION_MODAL.TITLE_BAR' | translate"
+                    [titlePresent]="true"
+                    (modalClosed)="onOfferGridClosed()"
+                >
+                    <sxm-ui-offer-grid-form
+                        #offerGridForm
+                        *ngrxLet="changeSelectedOfferViewModel$ as changeSelectedOfferViewModel"
+                        [offers]="changeSelectedOfferViewModel"
+                        (submitted)="setSelectedPlanCode($event)"
+                    >
+                        <div headerInstructions>
+                            <p>{{ translateKeyPrefix + "PLAN_GRID.HEADER_INSTRUCTIONS.MAIN_COPY" | translate }}</p>
+                            <p>{{ translateKeyPrefix + "PLAN_GRID.HEADER_INSTRUCTIONS.SEE_OFFER_DETAILS" | translate }}</p>
+                        </div>
+                    </sxm-ui-offer-grid-form>
+                </sxm-ui-modal>
+                <ng-template #inactiveContent>{{
+                    translateKeyPrefix + "STEPS.PAYMENT_INFO.SELECTED_PAYMENT_METHOD_SUMMARY" | translate: (selectedPaymentMethodSummaryViewModel$ | async)
+                }}</ng-template>
+            </sxm-ui-step-accordion>
+            <sxm-ui-step-accordion [label]="translateKeyPrefix + 'STEPS.REVIEW.TITLE' | translate" (active)="onReviewStepActive()">
+                <ng-template #activeHeader>
+                    <ng-container *ngTemplateOutlet="commonActiveHeader; context: { stepName: 'REVIEW' }"></ng-container>
+                </ng-template>
+                <de-care-review-quote-and-approve-form
+                    *ngIf="quoteViewModel$ | async as quoteViewModel"
+                    [quoteViewModel]="quoteViewModel"
+                    [shouldIncludeNuCaptcha]="displayNuCaptcha$ | async"
+                    [continueButtonTextOverride]="translateKeyPrefix + 'STEPS.REVIEW.CONTINUE_BUTTON_TEXT' | translate"
+                    (formCompleted)="submitTransaction()"
+                ></de-care-review-quote-and-approve-form>
+            </sxm-ui-step-accordion>
+        </sxm-ui-stepper-accordion>
+    </section>
+</div>
+
+<section id="legalCopySection" deCarePageFullWidthContent>
+    <div *ngrxLet="legalCopy$ as legalCopy" [innerHTML]="legalCopy"></div>
+</section>
+
+<sxm-ui-loading-overlay-sxm-logo *ngIf="showFullViewLoader$ | async"></sxm-ui-loading-overlay-sxm-logo>

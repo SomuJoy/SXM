@@ -1,0 +1,7 @@
+{
+    "DomainsAccountUiRegisterMultiStepModule": {
+        "RegistrationAddressStepComponent": {
+            "REGISTRATION_TRANSACTION_HEADLINE": "We found your vehicle."
+        }
+    }
+}

@@ -1,0 +1,254 @@
+{
+    "trialActivation": {
+        "activationFlowComponent": {
+            "HEADER_TEXT": "Rehaussez votre essai pour inclure l'écoute dans la voiture.",
+            "STEP_PAGE_TITLES": {
+                "VERIFY_DEVICE_STEP": "Vérifiez votre appareil",
+                "ENTER_YOUR_INFO_STEP": "Entrez vos renseignements"
+            },
+            "STEP_EDIT_LABEL": "Modifier"
+        },
+        "oneStepActivationFlowComponent": {
+            "HEADER_TEXT": "Vous êtes admissible à un abonnement d'essai gratuit!",
+            "STEP_PAGE_TITLES": {
+                "NOT_YOUR_CAR_MESSAGE": "Ce n'est pas votre véhicule?",
+                "HEADING": "Vous êtes admissible",
+                "MESSAGE": "Votre <inject-content> est admissible à un essai gratuit de {{trialTerm}} mois de tout ce que SiriusXM a à offrir.",
+                "DEFAULT_VEHICLE": "véhicule",
+                "CREATE_YOUR_ACCOUNT": "Créez votre compte",
+                "STEP_PROGRESS": "ÉTAPE 2 DE 3"
+            },
+            "OFFER_DETAILS": "Votre service SiriusXM cessera automatiquement à la fin de la durée indiquée de votre abonnement d'essai à moins que vous ne décidiez de vous abonner. Consultez <a href=\"//www.siriusxm.ca/conditions\" target=\"_blank\">l'Entente du client</a> de SiriusXM et la <a href=\"https://www.siriusxm.ca/vieprivee\" target=\"_blank\">Politique de la vie privée</a> à www.siriusxm.ca pour connaître toutes les conditions du service et comment annuler votre abonnement, ce qui comprend nous appeler au 1 888 539-7474. Lorsque vous vous inscrivez pour un abonnement d'essai, SiriusXM peut vous contacter concernant des offres spéciales de temps à autre en utilisant les renseignements d'inscription fournis. Vous pouvez toujours modifier vos préférences de contact avec nous. Tous les frais, tout le contenu et toutes les fonctionnalités peuvent être modifiés. Cette offre ne peut être combinée à aucune autre offre et peut être modifiée ou résiliée en tout temps. Cette offre est valide uniquement pour des radios par satellite admissibles installées en usine et inactives. Les listes de stations par satellite et d'écoute en continu peuvent différer."
+        },
+        "accountFormStepComponent": {
+            "LOGIN_INFO": "Info de connexion",
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Politique de la vie privée",
+                "LINK_URL": "http://www.siriusxm.ca/vieprivee"
+            },
+            "AGREEMENT_TEXT": "Je consense à recevoir des communications marketing par téléphone, courriel et courier après l’activation.",
+            "ACCEPT_AGREEMENT": "S'il vous plaît accepter l'accord ci-dessus.",
+            "BUTTON_TEXT": "ACTIVER MON ESSAI"
+        },
+        "newAccountFormStepComponent": {
+            "YOUR_INFO": "Votre info",
+            "LOGIN_INFO": "Info de connexion",
+            "FIRST_NAME": {
+                "LABEL": "Prénom",
+                "ERRORS": {
+                    "REQUIRED": "Entrez votre prénom."
+                }
+            },
+            "LAST_NAME": {
+                "LABEL": "Nom",
+                "ERRORS": {
+                    "REQUIRED": "Entrez votre nom."
+                }
+            },
+            "PHONE_NUMBER": {
+                "LABEL": "Numéro de téléphone",
+                "ERRORS": {
+                    "REQUIRED": "Entrez un numéro de téléphone valide."
+                }
+            },
+            "ADDRESS_LINE": {
+                "LABEL": "Adresse (incluant app./bureau/unité)",
+                "ERRORS": {
+                    "REQUIRED": "Entrez une adresse valide."
+                }
+            },
+            "CITY": {
+                "LABEL": "Ville",
+                "ERRORS": {
+                    "REQUIRED": "Entrez votre ville."
+                }
+            },
+            "STATE": {
+                "LABEL": "Province",
+                "ERRORS": {
+                    "REQUIRED": "Sélectionnez votre province"
+                }
+            },
+            "ZIP_CODE": {
+                "LABEL": "Code postal",
+                "ERRORS": {
+                    "REQUIRED": "Entrez un code postal valide."
+                }
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Politique de la vie privée",
+                "LINK_URL": "http://www.siriusxm.ca/vieprivee"
+            },
+            "AGREEMENT_TEXT": "Je consense à recevoir des communications marketing par téléphone, courriel et courier après l’activation.",
+            "ACCEPT_AGREEMENT": "S'il vous plaît accepter l'accord ci-dessus.",
+            "BUTTON_TEXT": "ACTIVER MON ESSAI",
+            "CONFIRM_YOUR_ADDRESS": "Veuillez confirmer votre adresse",
+            "UNEXPECTED_ERROR": "Une erreur inattendue est apparue. Veuillez réessayer."
+        },
+        "oneStepNewAccountFormStepComponent": {
+            "YOUR_INFO": "Votre info",
+            "LOGIN_INFO": "Info de connexion",
+            "EMAIL": {
+                "LABEL": "Adresse courriel",
+                "ERROR": "Entrez une adresse courriel valide.",
+                "IN_USE_ERROR": "Le nom d’utilisateur ou le courriel est déjà utilisé."
+            },
+            "FIRST_NAME": {
+                "LABEL": "Prénom",
+                "ERRORS": {
+                    "REQUIRED": "Entrez votre prénom."
+                }
+            },
+            "LAST_NAME": {
+                "LABEL": "Nom",
+                "ERRORS": {
+                    "REQUIRED": "Entrez votre nom."
+                }
+            },
+            "PHONE_NUMBER": {
+                "LABEL": "Numéro de téléphone",
+                "ERRORS": {
+                    "REQUIRED": "Entrez un numéro de téléphone valide."
+                }
+            },
+            "ADDRESS_LINE": {
+                "LABEL": "Adresse (incluant app./bureau/unité)",
+                "ERRORS": {
+                    "REQUIRED": "Entrez une adresse valide."
+                }
+            },
+            "CITY": {
+                "LABEL": "Ville",
+                "ERRORS": {
+                    "REQUIRED": "Entrez votre ville."
+                }
+            },
+            "STATE": {
+                "LABEL": "Province",
+                "ERRORS": {
+                    "REQUIRED": "Sélectionnez votre province"
+                }
+            },
+            "ZIP_CODE": {
+                "LABEL": "Code postal",
+                "ERRORS": {
+                    "REQUIRED": "Entrez un code postal valide."
+                }
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Politique de la vie privée",
+                "LINK_URL": "http://www.siriusxm.ca/vieprivee"
+            },
+            "AGREEMENT_TEXT": "Je consense à recevoir des communications marketing par téléphone, courriel et courier après l’activation.",
+            "ACCEPT_AGREEMENT": "S'il vous plaît accepter l'accord ci-dessus.",
+            "BUTTON_TEXT": "ACTIVER MON ESSAI",
+            "CONFIRM_YOUR_ADDRESS": "Veuillez confirmer votre adresse",
+            "UNEXPECTED_ERROR": "Une erreur inattendue est apparue. Veuillez réessayer.",
+            "ENTER_A_CAPTCHA_TO_FINISH": "Veuillez entrer le CAPTCHA pour terminer"
+        },
+        "loginInfoComponent": {
+            "LOGIN_SUB_HEADER": "Diffusez SiriusXM en continu en ligne et gérez vos abonnements.",
+            "EMAIL": {
+                "LABEL": "Adresse courriel",
+                "ERROR": "Entrez une adresse courriel valide.",
+                "IN_USE_ERROR": "Le nom d’utilisateur ou le courriel est déjà utilisé."
+            },
+            "PASSWORD": {
+                "LABEL": "Mot de passe",
+                "ERRORS": {
+                    "REQUIRED": "Entrer un mot de passe.",
+                    "LENGTH": "Votre mot de passe doit contenir de {{min}} à {{max}} caractères.",
+                    "POLICY": "Votre mot de passe doit contenir au minimum un caractère appartenant à au moins 3 groupes différents, comme indiqué dans notre politique de mot de passe.",
+                    "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}",
+                    "GENERIC": "Nous sommes désolés, votre nouveau mot de passe n'est pas conforme à notre politique. Veuillez réessayer."
+                }
+            },
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "mois",
+                    "other": "mois"
+                }
+            }
+        },
+        "trialExpiredOverlayComponent": {
+            "HEADER": "L’offre originale est valide uniquement pour les clients qui ont un abonnement d’essai actif.",
+            "BODY_PREFIX": "Vous pouvez être admissible à un autre essai.",
+            "BODY_SUFFIX": "",
+            "CHAT_LINK_TEXT": "",
+            "BUTTON": "Continuer"
+        },
+        "offerDetailsComponent": {
+            "LABEL": "DÉTAILS DE L'OFFRE: ",
+            "BODY": "Offert uniquement pour les radios satellites inactives admissibles, installées en usine. Votre service {{offerName}} arrêtera automatiquement à la fin de votre abonnement actuel de {{length}} mois à moins que vous ne décidiez d’acheter un nouvel abonnement. Consultez <a href=\"https://www.siriusxm.ca/fr/conditions-generales/\" target=\"_blank\">l’Entente du client</a> et <a href=\"https://www.siriusxm.ca/fr/politique-de-confidentialite/\" target=\"_blank\">la Politique de la vie privée</a> pour connaître toutes les conditions. Tous les frais et toute la programmation peuvent être modifiés.",
+            "BODY_QUEBEC": "Offert uniquement pour les radios satellites inactives admissibles, installées en usine. Votre service {{offerName}} arrêtera automatiquement à la fin de votre abonnement actuel de {{length}} mois à moins que vous ne décidiez d’acheter un nouvel abonnement. Consultez <a href=\"https://www.siriusxm.ca/fr/conditions-generales/\" target=\"_blank\">l’Entente du client</a> et <a href=\"https://www.siriusxm.ca/fr/politique-de-confidentialite/\" target=\"_blank\">la Politique de la vie privée</a> pour connaître toutes les conditions. La programmation peut être modifiée.",
+            "TERM_LENGTH": {
+                "PLURAL_MAP": {
+                    "MONTHS": {
+                        "=1": "mois",
+                        "other": "mois"
+                    },
+                    "LENGTH": {
+                        "=1": "mois",
+                        "=12": "annuel",
+                        "other": "{{length}} mois"
+                    }
+                }
+            }
+        },
+        "oneStepActivationFlowThankYouComponent": {
+            "HEADER_TEXT": "Bienvenue! Voici votre abonnement d'essai SiriusXM.",
+            "TRIAL_END_TEXT": "Votre abonnement d'essai prendra fin le "
+        },
+        "postActivationInstructionsComponent": {
+            "TEXT": ""
+        },
+        "serviceLaneOneClickConfirmationComponent": {
+            "HEADER_TEXT": "Bienvenue! Voici votre abonnement d'essai SiriusXM.",
+            "TRIAL_END_TEXT": "Votre abonnement d'essai prendra fin le ",
+            "REFRESH_URL": "https://www.siriusxm.ca/refresh",
+            "STREAMING_PLAYER_LINK": ""
+        },
+        "oneStepActivationConfirmationComponent": {
+            "STEP_PROGRESS": "ÉTAPE 3 DE 3",
+            "STREAMING_PLAYER_LINK": ""
+        },
+        "DefaultErrorPageComponent": {
+            "HEADER": {
+                "TITLE": "DÉSOLÉS",
+                "BODY": "Cette transaction ne peut être complétée en ligne."
+            },
+            "HELP": {
+                "TITLE": "Laissez-nous vous aider.",
+                "OR_CALL": "Pour plus d’aide, composez le",
+                "TFN": "1-866-635-0565"
+            }
+        },
+        "AlreadyHasSubscriptionErrorPageComponent": {
+            "HEADER": {
+                "TITLE": "DÉSOLÉS",
+                "BODY": "Votre radio a déjà un abonnement actif."
+            },
+            "HELP": {
+                "TITLE": "Laissez-nous vous aider.",
+                "YOU_CAN": "Vous pouvez vous",
+                "LOGIN": "connecter",
+                "LOGIN_URL": "https://care.siriusxm.ca/login_view.action?langpref=fr",
+                "TO_MANAGE_SUB": "pour gérer votre abonnement.",
+                "FOR_MORE_HELP": "Pour plus d’aide,",
+                "OR_CALL": "composez le",
+                "TFN": "1-866-635-0565"
+            }
+        },
+        "IsNotEligibleErrorPageComponent": {
+            "HEADER": {
+                "TITLE": "DÉSOLÉS",
+                "BODY": "Votre radio n’est pas admissible à un essai."
+            },
+            "HELP": {
+                "TITLE": "Laissez-nous vous aider.",
+                "OR_CALL": "Pour plus d’aide, composez le",
+                "TFN": "1-866-635-0565"
+            }
+        }
+    }
+}

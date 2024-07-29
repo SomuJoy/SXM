@@ -1,0 +1,30 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: block;
+}
+
+.review-order {
+    .invalid-feedback {
+        margin: 10px 0 0 30px;
+    }
+    .agreement {
+        margin: 32px 0 0 0;
+    }
+    .button {
+        &.primary {
+            margin-bottom: 16px;
+        }
+    }
+}
+
+.complete-order-button-captcha {
+    margin-top: 16px;
+}
+
+.nucaptcha-hr {
+    background-color: $gray-medium;
+    height: 1.1px;
+    margin: 32px 0;
+    border: 0;
+}

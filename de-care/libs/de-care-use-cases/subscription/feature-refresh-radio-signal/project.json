@@ -1,0 +1,27 @@
+{
+    "name": "de-care-use-cases-subscription-feature-refresh-radio-signal",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care-use-cases/subscription/feature-refresh-radio-signal/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/de-care-use-cases/subscription/feature-refresh-radio-signal"],
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/subscription/feature-refresh-radio-signal/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/de-care-use-cases/subscription/feature-refresh-radio-signal/src/**/*.ts",
+                    "libs/de-care-use-cases/subscription/feature-refresh-radio-signal/src/**/*.html"
+                ]
+            }
+        }
+    },
+    "tags": ["type:feature", "scope:de-care-use-case-feature"]
+}

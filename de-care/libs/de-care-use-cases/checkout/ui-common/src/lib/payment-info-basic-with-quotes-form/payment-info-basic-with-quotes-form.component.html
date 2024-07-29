@@ -1,0 +1,78 @@
+<form id="paymentForm">
+    <section [formGroup]="paymentForm" class="billing-field-set credit-card-fields">
+        <header>
+            <h3>{{ translateKeyPrefix + ".BILLING_DETAILS_TITLE" | translate }}</h3>
+            <ul class="credit-card-icons-list">
+                <li *ngFor="let cardType of translateKeyPrefix + '.CARD_TYPE_ICONS' | translate">
+                    <svg class="icon icon-content cc-icon icon-{{ cardType }}">
+                        <use class="" [attr.xlink:href]="'#icon-cc-' + cardType"></use>
+                    </svg>
+                </li>
+            </ul>
+        </header>
+        <section *ngIf="useCardOnFileAllowed" class="billing-radio-options">
+            <div *ngIf="paymentMethodSelectionError$ | async" class="invalid-feedback" id="paymentMethodSelectionError">
+                <p>{{ translateKeyPrefix + ".PAYMENT_METHOD_NOT_SELECTED_ERROR" | translate }}</p>
+            </div>
+            <sxm-ui-radio-option-form-field
+                formControlName="paymentMethod"
+                value="CARD_ON_FILE"
+                [label]="translateKeyPrefix + '.SAVED_CARD' | translate: { type: cardType, last4Digits: cardNumberLastFour }"
+            ></sxm-ui-radio-option-form-field>
+            <sxm-ui-radio-option-form-field
+                formControlName="paymentMethod"
+                value="NEW_CARD"
+                [label]="translateKeyPrefix + '.NEW_CC_PROMPT' | translate"
+                [description]="translateKeyPrefix + '.NEW_CC_NOTE' | translate"
+            ></sxm-ui-radio-option-form-field>
+        </section>
+        <input *ngIf="!useCardOnFileAllowed" type="radio" name="paymentMethod" formControlName="paymentMethod" value="NEW_CARD" />
+        <section class="billing-form-fields" [formGroup]="newCard" [style.display]="paymentForm.value.paymentMethod === 'NEW_CARD' ? 'block' : 'none'">
+            <input type="hidden" formControlName="country" />
+            <div *ngIf="creditCardSubmissionError$ | async" class="invalid-feedback" id="creditCardProcessingError">
+                <p>{{ translateKeyPrefix + ".CREDIT_CARD_PROCESSING_ERROR" | translate }}</p>
+            </div>
+            <sxm-ui-credit-card-form-fields [formGroup]="newCard.controls.creditCardInfo" [initialState]="initialStatePaymentInfo"></sxm-ui-credit-card-form-fields>
+        </section>
+    </section>
+    <privacy-policy></privacy-policy>
+    <prepaid-redeem-ui
+        (cardSubmitted)="onPrepaidCardSubmitted($event)"
+        (cardCleared)="onPrepaidCardCleared()"
+        [initialState]="initialStatePaymentInfo?.giftCard"
+    ></prepaid-redeem-ui>
+    <button type="button" sxm-proceed-button [loading]="formProcessing$ | async" sxmUiDataClickTrack="submit" (click)="submitPaymentInfo()">
+        {{ continueButtonTextOverride || translateKeyPrefix + ".CONTINUE_BUTTON_TEXT" | translate }}
+    </button>
+    <ng-container *ngIf="quoteViewModel" [formGroup]="transactionForm">
+        <section>
+            <quote-summary
+                [quote]="quoteViewModel"
+                [class.alternate-header]="useQuotesAlternateHeader"
+                [isStreamingFlow]="legacySettings?.isStreamingFlow"
+                [isNewAccount]="legacySettings?.isNewAccount"
+                [extraData]="extraData"
+                [showUnusedCreditLine]="showUnusedCreditLine"
+                [isQCProvince]="isQuebecProvince"
+            ></quote-summary>
+        </section>
+        <sxm-ui-charge-agreement-checkbox-form-field
+            formControlName="chargeAgreementAccepted"
+            [formButtonTextCopy]="continueButtonTextOverride || translateKeyPrefix + 'CONTINUE_BUTTON_TEXT' | translate"
+            [useRateVersionOfTextCopy]="useRateVersionOfTextCopy"
+        ></sxm-ui-charge-agreement-checkbox-form-field>
+        <section *ngIf="shouldIncludeNuCaptcha" id="nuCaptchaFieldSection">
+            <hr />
+            <strong>{{ translateKeyPrefix + "ENTER_A_CAPTCHA_TO_FINISH" | translate }}</strong>
+            <sxm-ui-nucaptcha
+                #nuCaptchaComponent
+                formControlName="nuCaptchaAnswer"
+                [submitted]="transactionForm.touched"
+                [captchaAnswerWrong]="captchaAnswerWrong$ | async"
+            ></sxm-ui-nucaptcha>
+        </section>
+        <button type="button" sxm-proceed-button [loading]="formProcessing$ | async" sxmUiDataClickTrack="submit" (click)="submitTransaction()">
+            {{ continueButtonTextOverride || translateKeyPrefix + ".CONTINUE_BUTTON_TEXT" | translate }}
+        </button>
+    </ng-container>
+</form>

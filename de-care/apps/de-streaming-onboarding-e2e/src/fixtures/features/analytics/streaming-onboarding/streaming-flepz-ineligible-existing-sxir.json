@@ -1,0 +1,33 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": [
+        {
+            "subscriptions": [
+                {
+                    "hasOACCredentials": false,
+                    "status": "Active",
+                    "eligibilityType": "CREATE_LOGIN",
+                    "radioService": { "last4DigitsOfRadioId": "YDR4", "vehicleInfo": { "model": null, "make": null, "year": null }, "maskedRadioId": "****YDR4" },
+                    "plans": [
+                        {
+                            "code": "All Access - 12mo - wActv",
+                            "packageName": "SXM_SIR_AUD_ALLACCESS",
+                            "termLength": "12",
+                            "endDate": "2022-05-18T00:00:00-04:00",
+                            "type": "SELF_PAID",
+                            "marketType": "self-pay:standard",
+                            "capabilities": []
+                        }
+                    ],
+                    "email": "NLRMTESSONE@SIRIUSXM.COM",
+                    "inEligibleReasonCode": "ExistingSxir",
+                    "eligibleService": null
+                }
+            ],
+            "last4DigitsOfAccountNumber": "2882",
+            "maskedAccountNumber": "**********2882"
+        }
+    ]
+}

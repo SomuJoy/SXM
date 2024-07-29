@@ -1,0 +1,22 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    display: grid;
+    row-gap: 32px;
+    h1 {
+        font-size: calculate-rem(18px);
+        font-weight: calculate-font-weight("bold");
+    }
+    form {
+        display: grid;
+        row-gap: 28px;
+        sxm-ui-skeleton-loader-panel {
+            height: 100px;
+        }
+        section {
+            display: grid;
+            row-gap: 4px;
+        }
+    }
+}

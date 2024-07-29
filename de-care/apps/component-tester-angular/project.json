@@ -1,0 +1,33 @@
+{
+    "name": "component-tester-angular",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+    "sourceRoot": "apps/component-tester-angular/src",
+    "prefix": "component-tester-angular",
+    "targets": {
+        "build": {
+            "executor": "@angular-devkit/build-angular:browser",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/apps/component-tester-angular",
+                "index": "apps/component-tester-angular/src/index.html",
+                "main": "apps/component-tester-angular/src/main.ts",
+                "polyfills": "apps/component-tester-angular/src/polyfills.ts",
+                "tsConfig": "apps/component-tester-angular/tsconfig.app.json",
+                "inlineStyleLanguage": "scss"
+            },
+            "configurations": {
+                "development": {
+                    "buildOptimizer": false,
+                    "optimization": false,
+                    "vendorChunk": true,
+                    "extractLicenses": false,
+                    "sourceMap": true,
+                    "namedChunks": true
+                }
+            },
+            "defaultConfiguration": "development"
+        }
+    },
+    "tags": []
+}

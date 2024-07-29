@@ -1,0 +1,91 @@
+<main class="background-offwhite">
+    <div *ngIf="refreshComplete" class="content-container background-white">
+        <div class="row align-center">
+            <div class="column medium-2 no-padding background-white"></div>
+            <div class="column small-12 medium-6 align-left background-white">
+                <h4>{{ "trialActivation.oneStepActivationFlowThankYouComponent.HEADER_TEXT" | translate }}</h4>
+                {{ "trialActivation.oneStepActivationFlowThankYouComponent.TRIAL_END_TEXT" | translate }}
+                {{ trialEndDate | date: (dateFormat$ | async):null:(locale$ | async) }}.
+                <hr />
+            </div>
+            <div class="column medium-2 no-padding background-white"></div>
+        </div>
+    </div>
+    <div id="one-step-activation-flow-thank-you" class="content-container background-white">
+        <div class="row align-center">
+            <div class="column medium-2 no-padding background-white"></div>
+            <div class="column small-12 medium-6 align-left background-white">
+                <h6 *ngIf="!refreshComplete" class="text-color-gray-dark step-header">
+                    {{ "trialActivation.oneStepActivationConfirmationComponent.STEP_PROGRESS" | translate }}
+                </h6>
+                <refresh-signal [radioId]="radioId" (signalCompleted)="signalCompleted()"></refresh-signal>
+            </div>
+            <div class="column medium-2 no-padding background-white"></div>
+        </div>
+    </div>
+
+    <div *ngIf="(sweepstakesInfo ? !!sweepstakesInfo.id : false) && refreshComplete" class="content-container background-white">
+        <div class="row align-center">
+            <div class="column medium-2 no-padding background-white"></div>
+            <div class="column small-12 medium-6 align-left background-white">
+                <hr />
+                <sweepstakes-registration-form [sweepstakesInfo]="sweepstakesInfo"></sweepstakes-registration-form>
+            </div>
+            <div class="column medium-2 no-padding background-white"></div>
+        </div>
+    </div>
+
+    <div *ngIf="refreshComplete && deal" class="content-container background-white">
+        <div class="row align-center">
+            <div class="column medium-2 no-padding background-white"></div>
+            <div class="column small-12 medium-6 align-left background-white">
+                <hr />
+                <claim-device [deal]="deal"></claim-device>
+            </div>
+            <div class="column medium-2 no-padding background-white"></div>
+        </div>
+    </div>
+
+    <div *ngIf="refreshComplete" class="content-container background-white">
+        <div class="row align-center">
+            <div class="column medium-2 no-padding background-white"></div>
+            <div class="column small-12 medium-6 align-left background-white">
+                <hr />
+                <ready-to-explore
+                    [infoForToken]="subscriptionID$ | async"
+                    [listenNowCustomLink]="'trialActivation.oneStepActivationConfirmationComponent.STREAMING_PLAYER_LINK' | translate"
+                    [isCanadaMode]="isCanadaMode"
+                ></ready-to-explore>
+            </div>
+            <div class="column medium-2 no-padding background-white"></div>
+        </div>
+    </div>
+    <div *ngIf="refreshComplete && isEligibleForRegistration" class="content-container background-white">
+        <div class="row align-center">
+            <div class="column medium-2 no-padding background-white"></div>
+            <div class="column small-12 medium-6 align-left background-white raised">
+                <hr />
+                <register-your-account
+                    [credentialState]="registerCredentialState"
+                    [account]="registerCompData"
+                    [securityQuestions]="securityQuestions"
+                    [registrationCompleted]="registrationCompleted$ | async"
+                    [passwordError]="passwordError"
+                    [isTrialActivation]="true"
+                    (register)="onRegisterAccount($event)"
+                    (registerClicked)="onSubmit()"
+                ></register-your-account>
+            </div>
+            <div class="column medium-2 no-padding background-white"></div>
+        </div>
+    </div>
+</main>
+<div *ngIf="refreshComplete" class="background-offwhite">
+    <div class="content-container">
+        <div class="row align-center no-padding-small">
+            <div class="column small-12 medium-10">
+                <trial-activation-important-info [isQuebec]="isQuebec$ | async"></trial-activation-important-info>
+            </div>
+        </div>
+    </div>
+</div>

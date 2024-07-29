@@ -1,0 +1,27 @@
+{
+    "name": "settings",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/settings/src",
+    "projectType": "library",
+    "generators": {},
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/settings/src/**/*.ts", "libs/settings/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/settings/jest.config.js",
+                "tsConfig": "libs/settings/tsconfig.spec.json",
+                "setupFile": "libs/settings/src/test-setup.ts",
+                "configPath": "./jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": ["scope:legacy"]
+}

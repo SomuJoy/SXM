@@ -1,0 +1,64 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.header {
+    padding: 16px 0 0 16px;
+    @include bp(medium) {
+        padding: 32px 0 0 16px;
+    }
+    h5 {
+        color: #736e7d;
+        margin-bottom: 4px;
+        @include font-size(14px);
+        @include bp(large) {
+            text-align: center;
+        }
+    }
+    @include bp(medium) {
+        text-align: center;
+        margin-bottom: 32px;
+    }
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 16px;
+    .cancel-button {
+        margin: 20px 0 48px 0;
+        @include bp(medium) {
+            margin: 32px 0;
+        }
+    }
+    @include bp(medium) {
+        flex-direction: row;
+        gap: 2em;
+        padding: 0;
+    }
+}
+
+:host {
+    display: grid;
+    justify-content: center;
+    padding: 0;
+}
+
+streaming-player-link {
+    display: flex;
+    ::ng-deep {
+        a {
+            min-width: 296px;
+            @include bp(medium) {
+                margin: 32px 0;
+            }
+        }
+    }
+}
+
+.carousel-container {
+    padding: 16px;
+    @include bp(medium) {
+        padding: 0;
+    }
+}

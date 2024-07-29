@@ -1,0 +1,10 @@
+{
+    "domainsOffersUiPlanGridModule": {
+        "planGridComponent": {
+            "INSIDE_THE_CAR": "Dans<br/>la voiture",
+            "OUTSIDE_THE_CAR": "Sur l’Appli<br/>SXM",
+            "PANDORA_STATIONS": "Stations<br/>Pandora",
+            "CUSTOM_STATIONS": "Stations<br/>personnalisées"
+        }
+    }
+}

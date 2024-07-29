@@ -1,0 +1,17 @@
+{
+    "status": 200,
+    "statusText": "",
+    "headers": [],
+    "cookies": [],
+    "content": {
+        "mimeType": "application/json",
+        "text": {
+            "status": "SUCCESS",
+            "httpStatusCode": 200,
+            "httpStatus": "OK",
+            "data": {
+                "status": true
+            }
+        }
+    }
+}

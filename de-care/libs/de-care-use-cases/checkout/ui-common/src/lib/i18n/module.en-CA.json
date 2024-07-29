@@ -1,0 +1,7 @@
+{
+    "DeCareUseCasesCheckoutUiCommonModule": {
+        "AccountInfoAndPaymentInfoFormComponent": {
+            "CARD_TYPE_ICONS": ["visa", "mc", "amex"]
+        }
+    }
+}

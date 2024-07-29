@@ -1,0 +1,204 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "locales": [
+            {
+                "locale": "en_US",
+                "offerInfos": [
+                    {
+                        "planCode": "All Access - 1mo - wActv",
+                        "salesHero": { "title": "Get SiriusXM for as little as $22.99 for 1 month", "subTitle": null, "presentation": null },
+                        "offerDescription": {
+                            "priceAndTermDescTitle": "<span data-price>$22.99</span><strong>/mo</strong>",
+                            "processingFeeDisclaimer": "See <strong>Offer Details</strong> below",
+                            "packageName": "Sirius Platinum",
+                            "listeningOptions": ["Satellite", "Streaming", "Pandora"],
+                            "longDescription": null,
+                            "highlightsTitle": "Sirius Platinum&nbsp;Includes:",
+                            "highlightsText": [
+                                "<b>425+ channels, </b>including 165+ in your car, plus even more to stream on your devices",
+                                "<b>Ad-free music </b>for every genre & decade plus artist-created channels",
+                                "<b>Original talk, </b>exclusive comedy, news from every angle",
+                                "<b>Popular podcast series,</b> including SXM originals and Marvel, plus access to Stitcher Premium’s collection",
+                                "<b>NFL, MLB®, NBA, NHL®, and NCAA® play-by-play,</b> NASCAR®, plus the biggest names in sports talk",
+                                "<b>2 Howard Stern channels,</b> including video",
+                                "<b>Create Pandora stations</b> based on artists",
+                                "<b>SiriusXM video library</b> of in-studio shows & performances"
+                            ],
+                            "footer": "<strong id=\"docs-internal-guid-d6ba7fe8-7fff-a77f-c18d-bac8a91bc939\">The ultimate in entertainment. </strong>Expertly curated ad-free music, Pandora stations, sports play-by-play, celebrity-hosted talk, Howard Stern &amp; more.",
+                            "packageFeatures": [{ "packageName": "Sirius Platinum", "features": [] }],
+                            "showToggleLabel": "Explore plan details",
+                            "hideToggleLabel": "Hide",
+                            "recapDescription": "<strong>Sirius Platinum (425+ Channels)</strong><br />\r\n$22.99/mo.",
+                            "recapLongDescription": "<strong>Sirius Platinum (425+ Channels)</strong><br />\r\n$22.99/mo. Fees &amp; taxes apply."
+                        },
+                        "deals": null,
+                        "addonHeaderOverride": null,
+                        "offerDetails": "<p><strong>OFFER DETAILS:</strong> Activate a Sirius Platinum subscription plan and pay the current rate of $22.99/month. Fees and taxes apply. A credit card is required on this offer. <strong>Service will automatically renew</strong> thereafter every month according to your chosen payment method and you will be charged at the then-current rates. <strong>Please see our <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\">Customer Agreement</a> at www.siriusxm.com for complete terms and how to cancel, which includes online methods or calling us at 1-866-635-2349.</strong> All fees, content and features are subject to change. This offer cannot be combined with any other and may be modified or terminated at any time.</p>\r\n",
+                        "presentation": { "theme": "Theme1", "style": "Presentation1" },
+                        "numberOfBullets": null,
+                        "paymentInterstitialBullets": null
+                    },
+                    {
+                        "planCode": "All Access Family Friendly - 1mo - wActv",
+                        "salesHero": { "title": "Get SiriusXM for as little as $21.99 for 1 month", "subTitle": null, "presentation": null },
+                        "offerDescription": {
+                            "priceAndTermDescTitle": "<span data-price>$21.99</span><strong>/mo</strong>",
+                            "processingFeeDisclaimer": "See <strong>Offer Details</strong> below",
+                            "packageName": "Sirius Platinum Family Friendly",
+                            "listeningOptions": ["Satellite", "Streaming", "Pandora"],
+                            "longDescription": null,
+                            "highlightsTitle": "Sirius Platinum Family Friendly Includes:",
+                            "highlightsText": [
+                                "<b>300+ channels, </b>including 165+ in your car, plus even more to stream on your devices",
+                                "<b>Ad-free music </b>for every genre & decade plus artist-created channels",
+                                "<b>Original talk,</b> exclusive comedy, news from every angle",
+                                "<b>NFL, MLB®, NBA, NHL®, and NCAA® play-by-play, </b>NASCAR®, plus the biggest names in sports talk",
+                                "<b>Create Pandora stations</b> based on artists",
+                                "<b>SiriusXM video library</b> of in-studio shows & performances",
+                                "<b>Popular podcast series,</b> including SXM originals and Marvel, plus access to Stitcher Premium’s collection"
+                            ],
+                            "footer": "<strong>The ultimate in entertainment.</strong>&nbsp;Expertly curated ad-free music, Pandora stations, sports play-by-play, celebrity-hosted talk, &amp; more.",
+                            "packageFeatures": [{ "packageName": "Sirius Platinum Family Friendly", "features": [] }],
+                            "showToggleLabel": "Explore plan details",
+                            "hideToggleLabel": "Hide",
+                            "recapDescription": "<strong>Sirius Platinum Family Friendly (300+ Channels)</strong><br />\r\n$21.99/mo.",
+                            "recapLongDescription": "<strong>Sirius Platinum Family Friendly (300+ Channels)</strong><br />\r\n$21.99/mo. Fees &amp; taxes apply."
+                        },
+                        "deals": null,
+                        "addonHeaderOverride": null,
+                        "offerDetails": "<p><strong>OFFER DETAILS:</strong> Activate a Sirius Platinum Family Friendly subscription plan and pay the current rate of $21.99/month. Fees and taxes apply. A credit card is required on this offer. <strong>Service will automatically renew</strong> thereafter every month according to your chosen payment method and you will be charged at the then-current rates. <strong>Please see our <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\">Customer Agreement</a> at www.siriusxm.com for complete terms and how to cancel, which includes online methods or calling us at 1-866-635-2349.</strong> All fees, content and features are subject to change. This offer cannot be combined with any other and may be modified or terminated at any time.</p>\r\n",
+                        "presentation": { "theme": "Theme1", "style": "Presentation1" },
+                        "numberOfBullets": null,
+                        "paymentInterstitialBullets": null
+                    },
+                    {
+                        "planCode": "Select - 1mo - wActv",
+                        "salesHero": { "title": "Get SiriusXM for as little as $17.99 for 1 month", "subTitle": null, "presentation": null },
+                        "offerDescription": {
+                            "priceAndTermDescTitle": "<span data-price>$17.99</span><strong>/mo</strong>",
+                            "processingFeeDisclaimer": "See <strong>Offer Details</strong> below",
+                            "packageName": "Sirius Music & Entertainment",
+                            "listeningOptions": ["Satellite", "Streaming"],
+                            "longDescription": null,
+                            "highlightsTitle": "<strong>Sirius Music & Entertainment</strong>&nbsp;<strong>Includes:</strong>",
+                            "highlightsText": [
+                                "<b>400+ channels, </b>including 155+ in your car, plus even more to stream on your devices",
+                                "<b>Ad-free music</b> for every genre & decade plus artist-created channels",
+                                "<b>Original talk,</b> podcasts, exclusive comedy & news from every angle",
+                                "<b>NFL play-by-play,</b> NASCAR®, plus the biggest names in sports talk",
+                                "<b>2 Howard Stern channels,</b> including video",
+                                "<b>SiriusXM video library</b> of in-studio shows & performances"
+                            ],
+                            "footer": "<strong id=\"docs-internal-guid-50d3d038-7fff-fc79-e808-7ae12aa6aa4c\">The variety you want, </strong>with expertly curated ad-free music, celebrity-hosted talk, sports analysis &amp; more.",
+                            "packageFeatures": [{ "packageName": "Sirius Music & Entertainment", "features": [] }],
+                            "showToggleLabel": "Explore plan details",
+                            "hideToggleLabel": "Hide",
+                            "recapDescription": "<strong>Sirius Music & Entertainment (400+ Channels)</strong><br />\r\n$17.99/mo.",
+                            "recapLongDescription": "<strong>Sirius Music & Entertainment (400+ Channels)</strong><br />\r\n$17.99/mo. Fees &amp; taxes apply."
+                        },
+                        "deals": null,
+                        "addonHeaderOverride": null,
+                        "offerDetails": "<p><strong>OFFER DETAILS:</strong> Activate a Sirius Music & Entertainment subscription plan and pay the current rate of $17.99/month. Fees and taxes apply. A credit card is required on this offer. <strong>Service will automatically renew</strong> thereafter every month according to your chosen payment method and you will be charged at the then-current rates. <strong>Please see our <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\">Customer Agreement</a> at www.siriusxm.com for complete terms and how to cancel, which includes online methods or calling us at 1-866-635-2349.</strong> All fees, content and features are subject to change. This offer cannot be combined with any other and may be modified or terminated at any time.</p>\r\n",
+                        "presentation": { "theme": "Theme1", "style": "Presentation1" },
+                        "numberOfBullets": null,
+                        "paymentInterstitialBullets": null
+                    },
+                    {
+                        "planCode": "Select Family Friendly - 1mo - wActv",
+                        "salesHero": { "title": "Get SiriusXM for as little as $16.99 for 1 month", "subTitle": null, "presentation": null },
+                        "offerDescription": {
+                            "priceAndTermDescTitle": "<span data-price>$16.99</span><strong>/mo</strong>",
+                            "processingFeeDisclaimer": "See <strong>Offer Details</strong> below",
+                            "packageName": "Sirius Music & Entertainment Family Friendly",
+                            "listeningOptions": ["Satellite", "Streaming"],
+                            "longDescription": null,
+                            "highlightsTitle": "Sirius Music & Entertainment Family Friendly Includes:",
+                            "highlightsText": [
+                                "<b>275+ channels,</b> including 155+ in your car, plus even more to stream on your devices",
+                                "<b>Ad-free music</b> for every genre & decade plus artist-created channels",
+                                "<b>Original talk,</b> podcasts, exclusive comedy & news from every angle",
+                                "<b>NFL play-by-play,</b> NASCAR*®*, plus the biggest names in sports talk",
+                                "<b>SiriusXM video library</b> of in-studio shows & performances"
+                            ],
+                            "footer": "<strong id=\"docs-internal-guid-00fb190c-7fff-aa10-362e-a780099ef5da\">The variety you want,&nbsp;</strong>with expertly curated ad-free music, celebrity-hosted talk, sports analysis &amp; more.&nbsp;Channel lineup varies by radio device.&nbsp;<a href=\"http://siriusxm.com/channels?package=SIR_AUD_FF\">View Channel Lineup</a>",
+                            "packageFeatures": [{ "packageName": "Sirius Music & Entertainment Family Friendly", "features": [] }],
+                            "showToggleLabel": "Explore plan details",
+                            "hideToggleLabel": "Hide",
+                            "recapDescription": "<strong>Sirius Music & Entertainment Family Friendly (275+ Channels)</strong><br />\r\n$16.99/mo.",
+                            "recapLongDescription": "<strong>Sirius Music & Entertainment Family Friendly (275+ Channels)</strong><br />\r\n$16.99/mo. Fees &amp; taxes apply."
+                        },
+                        "deals": null,
+                        "addonHeaderOverride": null,
+                        "offerDetails": "<p><strong>OFFER DETAILS:</strong> Activate a Sirius Music & Entertainment Family Friendly subscription plan and pay the current rate of $16.99/month. Fees and taxes apply. A credit card is required on this offer. <strong>Service will automatically renew</strong> thereafter every month according to your chosen payment method and you will be charged at the then-current rates. <strong>Please see our <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\">Customer Agreement</a> at www.siriusxm.com for complete terms and how to cancel, which includes online methods or calling us at 1-866-635-2349.</strong> All fees, content and features are subject to change. This offer cannot be combined with any other and may be modified or terminated at any time.</p>\r\n",
+                        "presentation": { "theme": "Theme1", "style": "Presentation1" },
+                        "numberOfBullets": null,
+                        "paymentInterstitialBullets": null
+                    },
+                    {
+                        "planCode": "Mostly Music - 1mo - wActv",
+                        "salesHero": { "title": "Get SiriusXM for as little as $12.99 for 1 month", "subTitle": null, "presentation": null },
+                        "offerDescription": {
+                            "priceAndTermDescTitle": "<span data-price>$12.99</span><strong>/mo</strong>",
+                            "processingFeeDisclaimer": "See <strong>Offer Details</strong> below",
+                            "packageName": "Sirius Music Showcase",
+                            "listeningOptions": ["Satellite", "Streaming"],
+                            "longDescription": null,
+                            "highlightsTitle": "Sirius Music Showcase Includes:",
+                            "highlightsText": [
+                                "<b>100+ channels,</b> including 80+ in your car, plus more to stream on your devices",
+                                "<b>Ad-free music</b> for every genre & decade plus artist-created channels",
+                                "<b>10+ talk and news channels</b>",
+                                "<b>SiriusXM video library</b> of in-studio shows & performances"
+                            ],
+                            "footer": "<strong id=\"docs-internal-guid-4a7c85d2-7fff-76f1-f04b-bc37eea1e034\">All music, all the time. </strong>A wide range of our expertly curated ad-free music channels for a listening experience you won&#39;t hear anywhere else.",
+                            "packageFeatures": [{ "packageName": "Sirius Music Showcase", "features": [] }],
+                            "showToggleLabel": "Explore plan details",
+                            "hideToggleLabel": "Hide",
+                            "recapDescription": "<strong>Sirius Music Showcase (100+ Channels)</strong><br />\r\n$12.99/mo.",
+                            "recapLongDescription": "<strong>Sirius Music Showcase (100+ Channels)</strong><br />\r\n$12.99/mo. Fees &amp; taxes apply."
+                        },
+                        "deals": null,
+                        "addonHeaderOverride": null,
+                        "offerDetails": "<p><strong>OFFER DETAILS:</strong> Activate a Sirius Music Showcase subscription plan and pay the current rate of $12.99/month. Fees and taxes apply. A credit card is required on this offer. <strong>Service will automatically renew</strong> thereafter every month according to your chosen payment method and you will be charged at the then-current rates. <strong>Please see our <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\">Customer Agreement</a> at www.siriusxm.com for complete terms and how to cancel, which includes online methods or calling us at 1-866-635-2349.</strong> All fees, content and features are subject to change. This offer cannot be combined with any other and may be modified or terminated at any time.</p>\r\n",
+                        "presentation": { "theme": "Theme1", "style": "Presentation1" },
+                        "numberOfBullets": null,
+                        "paymentInterstitialBullets": null
+                    },
+                    {
+                        "planCode": "News-Sports-Talk - 1mo - wActv",
+                        "salesHero": { "title": "Get SiriusXM for as little as $12.99 for 1 month", "subTitle": null, "presentation": null },
+                        "offerDescription": {
+                            "priceAndTermDescTitle": "<span data-price>$12.99</span><strong>/mo</strong>",
+                            "processingFeeDisclaimer": "See <strong>Offer Details</strong> below",
+                            "packageName": "Sirius News, Sports & Talk",
+                            "listeningOptions": ["Satellite", "Streaming"],
+                            "longDescription": null,
+                            "highlightsTitle": "<strong>Sirius News, Sports & Talk Includes:</strong>",
+                            "highlightsText": [
+                                "<b>30+ channels</b> in your car and to stream on the SXM app",
+                                "<b>A selection of news,</b> talk, and entertainment",
+                                "<b>Sports talk</b> & expert analysis",
+                                "<b>SiriusXM video</b>"
+                            ],
+                            "footer": "<strong>A sampling of channels to keep you informed and entertained,</strong>&nbsp;including first-rate news, sports analysis, politics and other talk, plus traffic and weather.",
+                            "packageFeatures": [{ "packageName": "Sirius News, Sports & Talk", "features": [] }],
+                            "showToggleLabel": "Explore plan details",
+                            "hideToggleLabel": "Hide",
+                            "recapDescription": "<strong>Sirius News, Sports & Talk (30+ Channels)</strong><br />\r\n$12.99/mo.",
+                            "recapLongDescription": "<strong>Sirius News, Sports & Talk (30+ Channels)</strong><br />\r\n$12.99/mo. Fees &amp; taxes apply."
+                        },
+                        "deals": null,
+                        "addonHeaderOverride": null,
+                        "offerDetails": "<p><strong>OFFER DETAILS:</strong> Activate a Sirius News, Sports & Talk subscription plan and pay the current rate of $12.99/month. Fees and taxes apply. A credit card is required on this offer. <strong>Service will automatically renew</strong> thereafter every month according to your chosen payment method and you will be charged at the then-current rates. <strong>Please see our <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\">Customer Agreement</a> at www.siriusxm.com for complete terms and how to cancel, which includes online methods or calling us at 1-866-635-2349.</strong> All fees, content and features are subject to change. This offer cannot be combined with any other and may be modified or terminated at any time.</p>\r\n",
+                        "presentation": { "theme": "Theme1", "style": "Presentation1" },
+                        "numberOfBullets": null,
+                        "paymentInterstitialBullets": null
+                    }
+                ]
+            }
+        ]
+    }
+}

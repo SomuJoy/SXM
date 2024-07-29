@@ -1,0 +1,7 @@
+{
+    "sharedSxmUiUiAccordionStepperModule": {
+        "sxmUiAccordionStepperComponent": {
+            "STEP_OF": "STEP {{stepNumber}} OF {{totalSteps}}"
+        }
+    }
+}

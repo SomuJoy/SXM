@@ -1,0 +1,50 @@
+<ng-container *ngIf="offerViewModel$ | async as offerViewModel">
+    <section id="mainContent">
+        <sxm-ui-alert-pill *ngIf="offerViewModel.showAlternateOfferAlert" class="streaming-eligibility black-alert-icon-notification rounded-corners">
+            <p class="pill-text" [innerHTML]="translateKeyPrefix + '.OFFER_FOR_NEW_SUBSCRIBERS' | translate"></p>
+        </sxm-ui-alert-pill>
+        <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+            <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+            <ng-container body>
+                <p data-test="bodyTitle" *ngIf="offerViewModel?.reviewPostTrialViewModel as postTrialViewModel; else default">
+                    {{
+                        translateKeyPrefix + ".BODY.POST_TRIAL_" + postTrialViewModel.type
+                            | translate
+                                : {
+                                      futureCharge: postTrialViewModel.futureCharge | sxmCurrency: (translationsForComponentService.currentLang$ | async),
+                                      dueDate: postTrialViewModel.startDate | sxmDate: (translationsForComponentService.currentLang$ | async)
+                                  }
+                    }}
+                </p>
+                <ng-template #default>
+                    <p
+                        *ngIf="offerViewModel.showCancelAnytimeTextCopy || isCountryUS; else templateWithoutCancelAnyTimeCopy"
+                        data-test="bodyTitle"
+                        [innerHTML]="translateKeyPrefix + '.BODY.CONFIRM_YOUR_PLAN' | translate"
+                    ></p>
+                    <ng-template #templateWithoutCancelAnyTimeCopy>
+                        <p [innerHTML]="(translateKeyPrefix + '.BODY.CONFIRM_YOUR_PLAN' | translate).split('<br />')[0]"></p>
+                    </ng-template>
+                </ng-template>
+            </ng-container>
+        </sxm-ui-step-header>
+        <sxm-ui-plan-recap-card *ngIf="planRecapCardViewModel$ | async as planRecapCardViewModel" [data]="planRecapCardViewModel"> </sxm-ui-plan-recap-card>
+        <de-care-review-quote-and-approve-form
+            *ngIf="quoteViewModel$ | async as quoteViewModel"
+            [quoteViewModel]="quoteViewModel"
+            [shouldIncludeNuCaptcha]="displayNuCaptcha$ | async"
+            [continueButtonTextOverride]="translateKeyPrefix + '.CONTINUE_BUTTON_TEXT' | translate"
+            [useQuotesAlternateHeader]="true"
+            [legacySettings]="{ isStreamingFlow: true, isNewAccount: true }"
+            (formCompleted)="submitTransaction()"
+            [isQuebecProvince]="isQuebecProvince$ | async"
+            [useRateVersionOfTextCopy]="isQuebecProvince$ | async"
+            class="renewal-quote-alt-header-1"
+            [class.hide-promo-renewal-quote-heading]="isStepUpPlan$ | async"
+            [class.hide-future-quote-heading]="offerViewModel?.reviewPostTrialViewModel"
+        ></de-care-review-quote-and-approve-form>
+    </section>
+    <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+        <div [innerHTML]="offerViewModel.legalCopy"></div>
+    </section>
+</ng-container>

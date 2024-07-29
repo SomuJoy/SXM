@@ -1,0 +1,63 @@
+<h4>{{ translateKeyPrefix + "HEADLINE" | translate }}</h4>
+<br />
+<div [innerHTML]="translateKeyPrefix + 'INSTRUCTIONS' | translate"></div>
+<br />
+<form [formGroup]="RadioIDform">
+    <div *ngIf="showSystemError" class="invalid-feedback">
+        <p>{{ translateKeyPrefix + "SERVICE_ERROR_MESSAGES.SYSTEM_ERROR" | translate }}</p>
+    </div>
+
+    <sxm-ui-text-input-with-tooltip-form-field
+        formControlName="radioID"
+        labelText="{{ translateKeyPrefix + 'PLACEHOLDER_TEXT' | translate }}"
+        errorText="{{ translateKeyPrefix + 'ERROR_MSG' | translate }}"
+        (keyup)="onkeyup()"
+        data-e2e="RadioIdVinTextfield"
+        dataFieldType="radioId"
+    >
+        <div htmlContentForTooltip>
+            {{ translateKeyPrefix + "TOOLTIP_TEXT" | translate }}
+        </div>
+    </sxm-ui-text-input-with-tooltip-form-field>
+    <div *ngIf="showRadioIdError" class="invalid-feedback">
+        <p>{{ translateKeyPrefix + "SERVICE_ERROR_MESSAGES.INVALID_RADIO_ID" | translate }}</p>
+    </div>
+    <div>
+        <a (click)="openFindRadioIdModal()" class="text-link" sxmUiDataClickTrack="modal">
+            {{ translateKeyPrefix + "FIND_RADIO_ID_TEXT" | translate }}
+        </a>
+    </div>
+    <br />
+    <de-streaming-onboarding-privacy-policy></de-streaming-onboarding-privacy-policy><br />
+    <button
+        type="button"
+        (click)="onSubmit()"
+        class="btn"
+        sxm-proceed-button
+        [loading]="loading$ | async"
+        sxmUiDataClickTrack="submit"
+        data-e2e="SearchRadioIdVinFormSubmitButton"
+    >
+        {{ translateKeyPrefix + "BUTTON_TEXT" | translate }}</button
+    ><br />
+    <hr />
+    <br />
+</form>
+
+<div [innerHTML]="translateKeyPrefix + 'INSTRUCTIONS_TEXT' | translate"></div>
+<br />
+
+<button type="submit" class="button-bg" sxmUiDataClickTrack="player" (click)="onPreviewClick()">
+    <span class="button-cta">{{ translateKeyPrefix + "PREVIEW_BUTTON_TEXT" | translate }}</span></button
+><br />
+
+<!------------FindingRadioIDModal----------->
+<sxm-ui-modal #FindingRadioIDModal [title]="translateKeyPrefix + 'FIND_RADIO_ID_MODAL_HEADER_TEXT' | translate" [titlePresent]="true" (modalClosed)="handleModalClosed()">
+    <h5>{{ translateKeyPrefix + "FIND_RADIO_ID_MODAL_TITLE" | translate }}</h5>
+    <div [innerHTML]="translateKeyPrefix + 'FIND_RADIO_ID_MODAL_SUBTITLE' | translate"></div>
+    <br />
+    <div>{{ translateKeyPrefix + ((contactUsTelephoneEnabled$ | async) ? "MESSAGE_WITH_PHONE_NUMBER" : "MESSAGE_WITHOUT_PHONE_NUMBER") | translate }}</div>
+    <button type="submit" sxm-proceed-button sxmUiDataClickTrack="routing" (click)="FindingRadioIDModal.close(); handleModalClosed()">
+        {{ translateKeyPrefix + "FIND_RADIO_ID_MODAL_BUTTON_TEXT" | translate }}
+    </button>
+</sxm-ui-modal>

@@ -1,0 +1,142 @@
+{
+    "name": "sxm-ui-navigation",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+    "sourceRoot": "apps/sxm-ui-navigation/src",
+    "prefix": "de-care",
+    "targets": {
+        "build": {
+            "executor": "@angular-devkit/build-angular:browser",
+            "options": {
+                "outputPath": "dist/apps/sxm-ui-navigation",
+                "index": "apps/sxm-ui-navigation/src/index.html",
+                "main": "apps/sxm-ui-navigation/src/main.ts",
+                "polyfills": "apps/sxm-ui-navigation/src/polyfills.ts",
+                "tsConfig": "apps/sxm-ui-navigation/tsconfig.app.json",
+                "inlineStyleLanguage": "scss",
+                "assets": ["apps/sxm-ui-navigation/src/favicon.ico", "apps/sxm-ui-navigation/src/assets"],
+                "styles": ["apps/sxm-ui-navigation/src/styles.scss"],
+                "stylePreprocessorOptions": {
+                    "includePaths": ["./node_modules/sxm/assets/src/scss/"]
+                },
+                "scripts": [
+                    {
+                        "input": "node_modules/document-register-element/build/document-register-element.js"
+                    }
+                ]
+            },
+            "configurations": {
+                "production": {
+                    "buildOptimizer": true,
+                    "optimization": true,
+                    "vendorChunk": false,
+                    "extractLicenses": true,
+                    "sourceMap": false,
+                    "namedChunks": false,
+                    "outputHashing": "none",
+                    "budgets": [
+                        {
+                            "type": "initial",
+                            "maximumWarning": "500kb",
+                            "maximumError": "1mb"
+                        },
+                        {
+                            "type": "anyComponentStyle",
+                            "maximumWarning": "10kb",
+                            "maximumError": "16kb"
+                        }
+                    ],
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/sxm-ui-navigation/src/environments/environment.ts",
+                            "with": "apps/sxm-ui-navigation/src/environments/environment.prod.ts"
+                        }
+                    ]
+                },
+                "development": {
+                    "buildOptimizer": false,
+                    "optimization": false,
+                    "vendorChunk": true,
+                    "extractLicenses": false,
+                    "sourceMap": true,
+                    "namedChunks": true
+                },
+                "canada": {
+                    "buildOptimizer": false,
+                    "optimization": false,
+                    "vendorChunk": true,
+                    "extractLicenses": false,
+                    "sourceMap": true,
+                    "namedChunks": true,
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/sxm-ui-navigation/src/environments/environment.ts",
+                            "with": "apps/sxm-ui-navigation/src/environments/environment.canada.ts"
+                        }
+                    ]
+                },
+                "canada-french": {
+                    "buildOptimizer": false,
+                    "optimization": false,
+                    "vendorChunk": true,
+                    "extractLicenses": false,
+                    "sourceMap": true,
+                    "namedChunks": true,
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/sxm-ui-navigation/src/environments/environment.ts",
+                            "with": "apps/sxm-ui-navigation/src/environments/environment.canada-french.ts"
+                        }
+                    ]
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "serve": {
+            "executor": "@angular-devkit/build-angular:dev-server",
+            "options": {
+                "browserTarget": "sxm-ui-navigation:build",
+                "disableHostCheck": true,
+                "port": 4207
+            },
+            "configurations": {
+                "production": {
+                    "browserTarget": "sxm-ui-navigation:build:production"
+                },
+                "canada": {
+                    "browserTarget": "sxm-ui-navigation:build:canada",
+                    "port": 4208
+                },
+                "canada-french": {
+                    "browserTarget": "sxm-ui-navigation:build:canada-french",
+                    "port": 4209
+                },
+                "development": {
+                    "browserTarget": "sxm-ui-navigation:build:development"
+                }
+            },
+            "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+            "executor": "@angular-devkit/build-angular:extract-i18n",
+            "options": {
+                "browserTarget": "sxm-ui-navigation:build"
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["apps/sxm-ui-navigation/src/**/*.ts", "apps/sxm-ui-navigation/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "apps/sxm-ui-navigation/jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": ["type:app", "scope:sxm-ui-navigation"]
+}

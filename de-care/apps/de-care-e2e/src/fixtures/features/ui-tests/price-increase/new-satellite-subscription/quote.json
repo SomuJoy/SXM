@@ -1,0 +1,89 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "quote": {
+            "currentQuote": {
+                "totalTaxAmount": "6.50",
+                "totalFeesAmount": "33.03",
+                "totalTaxesAndFeesAmount": "39.53",
+                "totalAmount": "56.52",
+                "discountAmount": "0.00",
+                "pricePerMonth": "16.99",
+                "currentBalance": "56.52",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "0.00",
+                "fees": [
+                    { "description": "Music_Royalty_and_Administrative_Fee", "amount": "3.04" },
+                    { "description": "Activation_Fees", "amount": "29.99" }
+                ],
+                "taxes": [{ "description": "Harmonized_Sales_Tax_HST", "amount": "6.50" }],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Select - 1mo - wActv",
+                        "packageName": "SIR_CAN_EVT",
+                        "termLength": 1,
+                        "priceAmount": "16.99",
+                        "taxAmount": "2.60",
+                        "feeAmount": "3.04",
+                        "totalTaxesAndFeesAmount": "5.64",
+                        "taxes": [{ "description": "Harmonized_Sales_Tax_HST", "amount": "2.60" }],
+                        "fees": [{ "description": "Music_Royalty_and_Administrative_Fee", "amount": "3.04" }],
+                        "startDate": "2021-08-24",
+                        "endDate": "2021-09-24",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "SELF_PAY",
+                        "dealType": "",
+                        "isStudent": false,
+                        "isAdvantage": false
+                    }
+                ],
+                "isUpgraded": false,
+                "isProrated": false
+            },
+            "futureQuote": null,
+            "proRatedRenewalQuote": null,
+            "promoRenewalQuote": null,
+            "renewalQuote": {
+                "totalTaxAmount": "2.60",
+                "totalFeesAmount": "3.04",
+                "totalTaxesAndFeesAmount": "5.64",
+                "totalAmount": "22.63",
+                "discountAmount": "0.00",
+                "pricePerMonth": "16.99",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [{ "description": "Music_Royalty_and_Administrative_Fee", "amount": "3.04" }],
+                "taxes": [{ "description": "Harmonized_Sales_Tax_HST", "amount": "2.60" }],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Select - 1mo - wActv",
+                        "packageName": "SIR_CAN_EVT",
+                        "termLength": 1,
+                        "priceAmount": "16.99",
+                        "taxAmount": "2.60",
+                        "feeAmount": "3.04",
+                        "totalTaxesAndFeesAmount": "5.64",
+                        "taxes": [{ "description": "Harmonized_Sales_Tax_HST", "amount": "2.60" }],
+                        "fees": [{ "description": "Music_Royalty_and_Administrative_Fee", "amount": "3.04" }],
+                        "startDate": "2021-09-24",
+                        "endDate": "2021-10-24",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "SELF_PAY",
+                        "dealType": "",
+                        "isStudent": false,
+                        "isAdvantage": false
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            }
+        }
+    }
+}

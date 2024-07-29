@@ -1,0 +1,16 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    mat-icon {
+        height: 48px;
+        width: 48px;
+        color: $off-white-dark;
+    }
+    streaming-player-link {
+        width: 100%;
+    }
+}

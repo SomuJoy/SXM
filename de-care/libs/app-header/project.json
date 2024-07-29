@@ -1,0 +1,27 @@
+{
+    "name": "app-header",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/app-header/src",
+    "projectType": "library",
+    "generators": {},
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/app-header/src/**/*.ts", "libs/app-header/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/app-header/jest.config.js",
+                "tsConfig": "libs/app-header/tsconfig.spec.json",
+                "setupFile": "libs/app-header/src/test-setup.ts",
+                "configPath": "./jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": ["scope:legacy"]
+}

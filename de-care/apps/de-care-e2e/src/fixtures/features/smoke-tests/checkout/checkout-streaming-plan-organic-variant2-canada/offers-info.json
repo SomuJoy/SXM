@@ -1,0 +1,44 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "locales": [
+            {
+                "locale": "en_US",
+                "offerInfos": [
+                    {
+                        "planCode": "Trial - Premier Streaming - 3mo - $0.00",
+                        "salesHero": { "title": "Start streaming today", "subTitle": null, "presentation": null },
+                        "offerDescription": {
+                            "priceAndTermDescTitle": "<span data-duration=\"\">3 months Free</span>",
+                            "processingFeeDisclaimer": "Then $10.99/mo. New subscribers only.<br />\r\nSee <strong>Offer Details</strong> below.",
+                            "packageName": "SiriusXM Streaming Platinum",
+                            "listeningOptions": ["Streaming", "Pandora"],
+                            "longDescription": null,
+                            "highlightsTitle": null,
+                            "highlightsText": [
+                                "<b>350+ channels</b> to stream on your devices with the SXM App<br><sub>If you want to listen in your car, you'll need your phone</sub>",
+                                "<b>Ad-free music</b> for every genre & decade plus artist-created channels",
+                                "<b>Original talk,</b> podcasts, exclusive comedy & news from every angle",
+                                "<b>NFL, MLB®, NBA, NHL®, and NCAA® play-by-play,</b> NASCAR®, plus the biggest names in sports talk",
+                                "<b>2 Howard Stern channels,</b> including video",
+                                "<b>Create Pandora stations</b> based on artists",
+                                "<b>SiriusXM video library</b> of in-studio shows & performances"
+                            ],
+                            "footer": "<strong id=\"docs-internal-guid-84d0c726-7fff-f9ef-892d-454117196eca\">The ultimate in entertainment. </strong>Expertly curated ad-free music, Pandora stations, sports play-by-play, celebrity-hosted talk, Howard Stern &amp; more.&nbsp;<a href=\"http://siriusxm.com/channels?package=SIR_IP_SA\">View Channel Lineup</a>",
+                            "packageFeatures": [{ "packageName": "SiriusXM Streaming Platinum", "features": [] }],
+                            "showToggleLabel": "Explore plan details",
+                            "hideToggleLabel": "Hide"
+                        },
+                        "deals": null,
+                        "addonHeaderOverride": null,
+                        "offerDetails": "<p><strong>OFFER DETAILS:</strong> Activate a SiriusXM Streaming Platinum subscription plan and get your first 3 months for $0.00. A credit card is required on this offer.<strong> Service will automatically renew</strong> thereafter every month. At the beginning of month 4, you will be charged at then-current rates (currently $10.99/month). Fees and taxes apply. <strong>You must cancel your subscription during your promotional period to avoid future charges. Please see our <a href=\"http://www.siriusxm.com/pdf/siriusxm_customeragreement_eng.pdf\" target=\"_blank\">Customer Agreement</a> at www.siriusxm.com for complete terms and how to cancel, which includes online methods or calling us at 1-866-635-2349.</strong> All fees, content and features are subject to change. This offer cannot be combined with any other and may be modified or terminated at any time. Offer available to new subscribers. Channel lineup varies by plan.</p>\r\n",
+                        "presentation": { "theme": "Theme2", "style": "Presentation3" },
+                        "numberOfBullets": null
+                    }
+                ]
+            }
+        ]
+    }
+}

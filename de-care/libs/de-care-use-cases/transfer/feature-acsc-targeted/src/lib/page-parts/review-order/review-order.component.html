@@ -1,0 +1,87 @@
+<h4 data-e2e="reviewHeadline">{{ translateKeyPrefix + "HEADLINE" | translate }}</h4>
+<ng-container *ngIf="subscriptionData$ | async as subscriptionData">
+    <div class="vertical-spacing">
+        <ng-container *ngIf="(isTrialEndingImmediately$ | async) === false">
+            <p *ngIf="trialPackageName$ | async as trialPackageName" data-e2e="reviewDetails">
+                {{
+                    translateKeyPrefix + "REVIEW_SUBSCRIPTION_BEGINS"
+                        | translate: { planName: "app.packageDescriptions." + trialPackageName + ".name" | translate | withoutPlatformName: trialPackageName }
+                }}
+            </p>
+        </ng-container>
+    </div>
+    <div class="vehicle-subscription-information vertical-spacing">
+        <div class="vertical-spacing">
+            <sxm-ui-vehicle-with-subscription-info
+                [data]="subscriptionData"
+                [eyebrow]="translateKeyPrefix + 'SUBSCRIPTION_EYEBROW' | translate"
+                [displayPackageNameAsTitle]="true"
+                data-e2e="newSubscriptionInfo"
+            ></sxm-ui-vehicle-with-subscription-info>
+        </div>
+        <ng-container *ngIf="getIsModeServiceContinuity$ | async">
+            <sxm-ui-accordion-chevron
+                *ngIf="transferFromData$ | async as transferFromData"
+                [collapsedText]="translateKeyPrefix + 'VIEW_DETAILS_COLLAPSED' | translate"
+                [expandedText]="translateKeyPrefix + 'VIEW_DETAILS_EXPANDED' | translate"
+                class="vertical-spacing highlight-label"
+                data-track-click="SC Review Show details"
+            >
+                <div class="vertical-spacing">
+                    <sxm-ui-vehicle-with-subscription-info
+                        [data]="transferFromData"
+                        [eyebrow]="translateKeyPrefix + 'TRANSFER_EYEBROW' | translate"
+                        [footer]="(getRemoveOldRadioId$ | async) ? (translateKeyPrefix + 'CAR_REMOVED' | translate) : null"
+                        data-e2e="transferSubscriptionInfo"
+                    ></sxm-ui-vehicle-with-subscription-info>
+                </div>
+            </sxm-ui-accordion-chevron>
+        </ng-container>
+    </div>
+</ng-container>
+<hr class="vertical-spacing" />
+
+<quote-summary
+    *ngIf="orderSummaryData$ | async as orderSummaryData"
+    [showUnusedCreditLine]="true"
+    [isNewAccount]="false"
+    [isStreamingFlow]="false"
+    [quote]="orderSummaryData.quotes"
+    [giftCardUsed]="false"
+    [isClosedRadio]="orderSummaryData.isClosedRadio"
+    [isCurrentSubscriptionTrial]="true"
+    [isClosedStreaming]="false"
+    [expandOrderSummaryDetails]="false"
+    [extraData]="{
+        isAcsc: true
+    }"
+    [priceChangeMessagingTypeFeatureFlag]="priceChangeMessagingTypeFeatureFlag"
+    [priceChangeMessagingType]="priceChangeMessagingType"
+    data-e2e="quoteSummary"
+>
+</quote-summary>
+
+<form (submit)="onConfirmReviewAndSubmit()">
+    <div class="agreement">
+        <ng-container *ngIf="(paymentType$ | async) === 'invoice'; else defaultChargeAgreement">
+            <sxm-ui-retain-invoice-billing-charge-agreement
+                name="chargeAgreement"
+                [(ngModel)]="agreementAccepted"
+                #agreementModel="ngModel"
+                data-e2e="review-charge-agreement"
+            ></sxm-ui-retain-invoice-billing-charge-agreement>
+            <div *ngIf="submitted && agreementModel.errors" class="invalid-feedback" data-e2e="chargeAgreementSelectionError">
+                <p>{{ translateKeyPrefix + "ACCEPT_AGREEMENT" | translate }}</p>
+            </div>
+        </ng-container>
+        <ng-template #defaultChargeAgreement>
+            <charge-agreement name="chargeAgreement" [(ngModel)]="agreementAccepted" #defaultAgreementModel="ngModel" data-e2e="review-charge-agreement"></charge-agreement>
+            <div *ngIf="submitted && defaultAgreementModel.errors" class="invalid-feedback" data-e2e="chargeAgreementSelectionError">
+                <p>{{ translateKeyPrefix + "ACCEPT_AGREEMENT" | translate }}</p>
+            </div>
+        </ng-template>
+    </div>
+    <button sxm-proceed-button type="submit" [loading]="getSubmitTransactionAsProcessing$ | async" data-e2e="reviewCompleteOrderButton">
+        {{ translateKeyPrefix + "COMPLETE_MY_ORDER" | translate }}
+    </button>
+</form>

@@ -1,0 +1,139 @@
+<form [formGroup]="yourInfoForm" sxmUiForceUpdateFormFieldOnEnterKey data-e2e="yourInfoForm" novalidate (ngSubmit)="onContinue()">
+    <div *ngIf="followOnData && accountData?.isNewAccount">
+        <p qatag="WontBeChargedText" *ngIf="!(isClosedRadio || accountData.isNewAccount || accountData?.account?.subscriptions?.length < 1); else nonTrial">
+            {{ "customerInfo.paymentInfoComponent.ENJOYING_YOUR_TRIAL" | translate }}
+        </p>
+        <ng-template #nonTrial>
+            <p class="message">
+                {{ "customerInfo.paymentInfoComponent.REVIEW_BEFORE" | translate }}
+            </p>
+        </ng-template>
+    </div>
+
+    <ng-container *ngIf="accountData?.isNewAccount">
+        <!-- The 'accountInfo' formControlName would be added to the parentFormGroup -->
+        <new-account-form-fields
+            [isStreamingFlow]="isStreamingFlow"
+            [reducedFields]="reducedFields"
+            [parentFormGroup]="yourInfoForm"
+            [prospectData]="prospectData"
+            [submitted]="submitted"
+            [canEditUsername]="true"
+            [invalidZipFromLookup]="invalidZipFromLookup$ | async"
+            [passwordError]="passwordError"
+            #accountInfo
+        >
+        </new-account-form-fields>
+    </ng-container>
+
+    <div *ngIf="followOnData">
+        <div class="trial-follow-on-section" data-e2e="followOnSection">
+            <trial-follow-on-form-field formControlName="followOnChecked" [followOnData]="followOnData" (change)="onFollowOnCheckedClick($event.target.checked)">
+            </trial-follow-on-form-field>
+        </div>
+
+        <div [class.not-visible]="!isFollowOnChecked">
+            <credit-card-form-fields
+                formControlName="paymentInfo"
+                [maskCreditCardNumber]="maskedVisible"
+                [submitted]="submitted"
+                [ccError]="ccError"
+                [serviceError]="serviceError"
+                [maskedCCNum]="maskedNum"
+                (unmask)="handleUnmaskCC()"
+                id="cc-form-fields"
+                #paymentInfo
+            >
+            </credit-card-form-fields>
+
+            <service-address-same-as-billing-checkbox
+                *ngIf="!reducedFields"
+                formControlName="serviceAddressSameAsBilling"
+                (change)="onServiceAddressSameAsBillingCheckboxClick($event.target.checked)"
+            >
+            </service-address-same-as-billing-checkbox>
+            <div [class.not-visible]="!showBillingAddressForm">
+                <p class="text-color-grey-dark billing-address-title" qatag="ServiceAddressSubheader">
+                    <strong>{{ translateKeyPrefix + ".ADDRESS.BILLING_ADDRESS" | translate }}</strong>
+                </p>
+                <invalid-address-message *ngIf="showInvalidBillingAddressError"></invalid-address-message>
+                <sxm-ui-postal-code-form-wrapper
+                    *ngIf="reducedFields; else nonReducedFieldsForm"
+                    [submitted]="submitted"
+                    formControlName="billingAddress"
+                ></sxm-ui-postal-code-form-wrapper>
+                <ng-template #nonReducedFieldsForm>
+                    <sxm-ui-address-form-fields formControlName="billingAddress" [submitted]="submitted" #billingAddress></sxm-ui-address-form-fields>
+                </ng-template>
+            </div>
+
+            <prepaid-redeem-ui></prepaid-redeem-ui>
+        </div>
+    </div>
+
+    <a class="text-link" href="{{ 'customerInfo.paymentInfoComponent.PRIVACY_POLICY.LINK_URL' | translate }}" target="_blank">{{
+        "customerInfo.paymentInfoComponent.PRIVACY_POLICY.LINK_TEXT" | translate
+    }}</a>
+
+    <ng-container *ngIf="displayNucaptcha && !isFollowOnChecked">
+        <hr />
+        <strong>{{ translateKeyPrefix + ".ENTER_A_CAPTCHA_TO_FINISH" | translate }}</strong>
+        <sxm-ui-nucaptcha
+            #nuCaptcha
+            [(ngModel)]="captchaAnswer"
+            [ngModelOptions]="{ standalone: true }"
+            [submitted]="infoFormSubmitted"
+            [captchaAnswerWrong]="captchaAnswerWrong$ | async"
+            (gotCaptcha)="gotCaptcha()"
+            name="captchaAnswer"
+        ></sxm-ui-nucaptcha>
+    </ng-container>
+
+    <div class="row align-center">
+        <button
+            [ngClass]="{ 'complete-order-button-captcha': displayNucaptcha && !isFollowOnChecked }"
+            class="button primary full-width text-center align-justify"
+            data-e2e="ConfirmationButton"
+            qatag="Confirmation"
+            [loading]="loading"
+            type="submit"
+            sxm-proceed-button
+            #formContinueRef
+        >
+            <ng-container *ngIf="!loading">
+                {{ translateKeyPrefix + (isFollowOnChecked ? ".CONTINUE_BUTTON" : ".START_MY_TRIAL_BUTTON") | translate }}
+            </ng-container>
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</form>
+
+<ng-container *ngIf="avsWorkflowState$ | async as avsWorkflowState">
+    <sxm-ui-modal [closed]="false" (modalClosed)="onVerifyAddresModalCLosed('BILLING_ADDRESS_MODAL')" *ngIf="avsWorkflowState.currentWorkflow === 'BILLING_ADDRESS_MODAL'" [ariaDescribedbyTextId]="enterYourInfoBillingAddressModalAriaDescribedbyTextId">
+        <verify-address
+            [ariaDescribedbyTextId]="enterYourInfoBillingAddressModalAriaDescribedbyTextId"
+            [data]="{
+                headingText: 'customerInfo.paymentInfoComponent.ADDRESS.CONFIRM_YOUR_BILLING_ADDRESS' | translate,
+                correctedAddresses: avsWorkflowState.correctedAddresses,
+                currentAddress: avsWorkflowState.currentAddress,
+                addressCorrectionAction: avsWorkflowState.addressCorrectionAction
+            }"
+            (editAddress)="onAcceptCorrectedAddress($event, avsWorkflowState.validated, avsWorkflowState.currentWorkflow)"
+            (editExisting)="onEditExistingAddress(avsWorkflowState.currentWorkflow)"
+        ></verify-address>
+    </sxm-ui-modal>
+
+    <sxm-ui-modal [closed]="false" (modalClosed)="onVerifyAddresModalCLosed('SERVICE_ADDRESS_MODAL')" *ngIf="avsWorkflowState.currentWorkflow === 'SERVICE_ADDRESS_MODAL'"  [ariaDescribedbyTextId]="enterYourInfoServiceAddressModalAriaDescribedbyTextId">
+        <verify-address
+            [ariaDescribedbyTextId]="enterYourInfoServiceAddressModalAriaDescribedbyTextId"
+            [data]="{
+                headingText: 'customerInfo.paymentInfoComponent.ADDRESS.CONFIRM_YOUR_SERVICE_ADDRESS' | translate,
+                correctedAddresses: avsWorkflowState.correctedAddresses,
+                currentAddress: avsWorkflowState.currentAddress,
+                addressCorrectionAction: avsWorkflowState.addressCorrectionAction
+            }"
+            (editAddress)="onAcceptCorrectedAddress($event, avsWorkflowState.validated, avsWorkflowState.currentWorkflow)"
+            (editExisting)="onEditExistingAddress(avsWorkflowState.currentWorkflow)"
+        ></verify-address>
+    </sxm-ui-modal>
+</ng-container>

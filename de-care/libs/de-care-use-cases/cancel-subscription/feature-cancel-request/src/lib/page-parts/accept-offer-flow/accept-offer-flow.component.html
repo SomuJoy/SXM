@@ -1,0 +1,126 @@
+<div class="current-plan-container">
+    <sxm-ui-your-current-plan *ngIf="currentPlan" [planData]="currentPlan"></sxm-ui-your-current-plan>
+</div>
+<sxm-ui-accordion-stepper data-test="acceptOfferStepper" #stepper>
+    <sxm-ui-accordion-step
+        [label]="translateKeyPrefix + '.STEP_PAGE_TITLES.PICK_PACKAGE' | translate"
+        [editButtonLabel]="translateKeyPrefix + '.STEP_EDIT_LABEL' | translate"
+        (editClicked)="onEditPackageStep()"
+    >
+        <ng-template #inactiveContent>
+            <ng-container *ngIf="selectedOffer$ | async as selectedOffer">{{ selectedOffer | translateOfferName }}</ng-container>
+        </ng-template>
+    </sxm-ui-accordion-step>
+    <sxm-ui-accordion-step
+        *ngIf="displayBillingTerms"
+        [label]="translateKeyPrefix + '.STEP_PAGE_TITLES.PICK_TERM' | translate"
+        [editButtonLabel]="translateKeyPrefix + '.STEP_EDIT_LABEL' | translate"
+        (editClicked)="onEditBillingTermStep()"
+    >
+        <div class="step-container">
+            <sxm-ui-select-plan-by-term-form
+                *ngIf="(selectedOfferIsSelfPaid$ | async) === true; else nonSelfPaidTermForm"
+                [plans]="billingTermPlans$ | async"
+                [includePlusFees]="plusFeesNoteRequired$ | async"
+                [currentPlanTermLength]="currentPlanTermLength$ | async"
+                (selectedPlanCode)="onBillingTermSelected($event)"
+            >
+            </sxm-ui-select-plan-by-term-form>
+            <ng-template #nonSelfPaidTermForm>
+                <de-care-billing-term-form
+                    [plans]="billingTermPlans$ | async"
+                    [currentLang]="translationsForComponentService.currentLang$ | async"
+                    [selectedPlanCode]="planCode$ | async"
+                    (planSelected)="onBillingTermSelected($event)"
+                >
+                </de-care-billing-term-form>
+            </ng-template>
+            <ng-template #inactiveContent>
+                <span data-e2e="cancellationBillingTermsStepContent" *ngIf="selectedTermInfo$ | async as selectedTermInfo">
+                    {{
+                        selectedTermInfo.translateKey
+                            | translate
+                                : {
+                                      amount: selectedTermInfo.price | currency : "USD" : "symbol-narrow" : undefined : (translationsForComponentService.currentLang$ | async),
+                                      termLength: selectedTermInfo.termLength
+                                  }
+                    }}
+                </span>
+            </ng-template>
+        </div>
+    </sxm-ui-accordion-step>
+
+    <sxm-ui-accordion-step
+        [label]="translateKeyPrefix + '.STEP_PAGE_TITLES.ENTER_PAYMENT_INFO' | translate"
+        [editButtonLabel]="translateKeyPrefix + '.STEP_EDIT_LABEL' | translate"
+        (editClicked)="onEditPaymentInfoStep()"
+    >
+        <payment-info
+            [accountData]="selectAccount$ | async"
+            isClosedRadio="false"
+            (paymentFormCompleted)="onPaymentFormComplete($event)"
+            [loading]="reviewOrderDataLoadIsProcessing$ | async"
+            [ccError]="ccError$ | async"
+            [serviceError]="serviceError$ | async"
+        ></payment-info>
+        <ng-template #inactiveContent>
+            <ng-container *ngIf="paymentInfoInactiveStep$ | async as paymentInfoInactiveStep">
+                {{
+                    translateKeyPrefix + ".PAYMENT_INFO_INACTIVE" | translate : { cardType: paymentInfoInactiveStep.cardType, cardNumber: paymentInfoInactiveStep.cardNumber }
+                }}
+            </ng-container>
+        </ng-template>
+    </sxm-ui-accordion-step>
+    <sxm-ui-accordion-step [label]="translateKeyPrefix + '.STEP_PAGE_TITLES.REVIEW' | translate" (active)="onReviewStepActive()">
+        <div class="step-container">
+            <sxm-ui-alert-pill *ngIf="warningMessage" class="alert-icon-info straight-corners no-shadow" warningMessage>
+                <p>{{ warningMessage }}</p>
+            </sxm-ui-alert-pill>
+            <feature-toggle-provider [features]="enableQuoteSummaryFeatureToggle$ | async">
+                <ng-container *featureToggle="'enableQuoteSummary'">
+                    <ng-container *ngrxLet="priceChangeViewModel$ as priceChangeViewModel">
+                        <quote-summary
+                            *ngIf="orderSummaryData$ | async as orderSummaryData"
+                            [showUnusedCreditLine]="true"
+                            [giftCardUsed]="false"
+                            [isNewAccount]="false"
+                            [isClosedRadio]="false"
+                            [isChangeSubscription]="true"
+                            [isCurrentSubscriptionTrial]="currentPlan.isTrial"
+                            [quote]="orderSummaryData.quotes"
+                            [priceChangeMessagingType]="priceChangeViewModel?.priceChangeMessagingType"
+                            [priceChangeMessagingTypeFeatureFlag]="priceChangeViewModel?.priceChangeMessagingTypeFeatureFlag"
+                        >
+                        </quote-summary>
+                    </ng-container>
+                </ng-container>
+
+                <ng-container *featureToggle="'!enableQuoteSummary'">
+                    <order-summary
+                        *ngIf="orderSummaryData$ | async as orderSummaryData"
+                        [showUnusedCreditLine]="true"
+                        [giftCardUsed]="false"
+                        [isNewAccount]="false"
+                        [isClosedRadio]="false"
+                        [isChangeSubscription]="true"
+                        [isCurrentSubscriptionTrial]="currentPlan.isTrial"
+                        [quote]="orderSummaryData.quotes"
+                    ></order-summary>
+                </ng-container>
+            </feature-toggle-provider>
+
+            <form (submit)="onConfirmReviewAndSubmit($event)">
+                <charge-agreement-with-validation [submitted]="submitted" (checkChange)="agreementAccepted = $event"></charge-agreement-with-validation>
+                <button
+                    sxm-proceed-button
+                    type="submit"
+                    [loading]="submitChangeSubscriptionDataIsProcessing$ | async"
+                    data-e2e="acceptOffer.completeMyOrderButton"
+                    data-test="CompleteMyOrderButton"
+                >
+                    {{ translateKeyPrefix + ".SUBMIT_CHANGE_BUTTON" | translate }}
+                </button>
+            </form>
+        </div>
+    </sxm-ui-accordion-step>
+</sxm-ui-accordion-stepper>

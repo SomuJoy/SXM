@@ -1,0 +1,26 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    section {
+        margin: 0;
+        padding: 0;
+    }
+    .lpz-form-container {
+        padding-top: 12px;
+        display: grid;
+        row-gap: 36px;
+        .lpz-title {
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid $gray-medium;
+        }
+        .radio-info {
+            display: flex;
+            justify-content: space-between;
+            a {
+                @include text-link-secondary;
+            }
+        }
+    }
+}

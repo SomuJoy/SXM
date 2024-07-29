@@ -1,0 +1,26 @@
+{
+    "CONTACT_AND_PAYMENT_INFO_TITLE": "Information du compte et de paiement",
+    "CONTACT_DESCRIPTION_PRELINK": "Visitez la page ",
+    "CONTACT_DESCRIPTION_LABEL": "Facturation",
+    "CONTACT_DESCRIPTION_POSTLINK": " pour consulter l’historique de vos factures.",
+    "CONTACT_DESCRIPTION_ARIA": "afficher votre historique de facturation",
+    "ACCOUNT_LOGIN_TITLE": "Identifiants du compte",
+    "ACCOUNT_LOGIN_DESCRIPTION_PRELINK": "Si vous avez d’autres identifiants pour l’écoute en continu, vous pouvez les gérer sur la page ",
+    "ACCOUNT_LOGIN_DESCRIPTION_LABEL": "Abonnements.",
+    "ACCOUNT_LOGIN_DESCRIPTION_POSTLINK": "",
+    "ACCOUNT_LOGIN_DESCRIPTION_ARIA": "gérer vos abonnements",
+    "ACCOUNT_LOGIN_NOTE": "Votre identifiant de compte est le même que votre identifiant pour l’écoute en continu de votre forfait {{planName}}.",
+    "PAYMENT_METHOD_INVOICE": "Facture",
+    "BILLING_EBILL_MODAL_TITLE": "Billing",
+    "EBILL_SIGN_UP_SUCCESS_MESAGE": "Successfully enrolled in eBill",
+    "EBILL_DROPDOWN_OPTIONS": {
+        "CHANGE_EMAIL_LABEL": {
+            "label": "Change email",
+            "modalId": "updateEmail"
+        },
+        "OPT_OUT_LABEL": {
+            "label": "Switch to paper invoice",
+            "modalId": "optOut"
+        }
+    }
+}

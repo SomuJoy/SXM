@@ -1,0 +1,23 @@
+{
+    "USERNAME_NOTFOUND": "Le nom d'utilisateur ou le mot de passe que vous avez entré ne correspond pas à nos dossiers.",
+    "LABEL": "Courriel ou nom d'utilisateur",
+    "USERNAME": "nom d'utilisateur",
+    "USERNAME_INVALID": "Entrez votre nom d’utilisateur/adresse courriel",
+    "PASS_LABEL": "Mot de passe",
+    "ENTER_PASS": "Entrez votre mot de passe.",
+    "FORGOT_YOUR_USERNAME_OR_PASSWORD_PT1": "Vous avez oublié votre ",
+    "FORGOT_YOUR_USERNAME_OR_PASSWORD_LABEL_USERNAME": "nom d'utilisateur",
+    "FORGOT_YOUR_USERNAME_OR_PASSWORD_URL_USERNAME": "https://siriusxm.ca/oublienomdutilisateur/?langpref=fr",
+    "FORGOT_YOUR_USERNAME_OR_PASSWORD_PT2": " ou votre ",
+    "FORGOT_YOUR_USERNAME_OR_PASSWORD_LABEL_PASSWORD": "mot de passe",
+    "FORGOT_YOUR_USERNAME_OR_PASSWORD_URL_PASSWORD": "https://siriusxm.ca/oubliemotdepasse/?langpref=fr",
+    "FORGOT_YOUR_USERNAME_OR_PASSWORD_PT3": "?",
+    "BUTTON_LABEL": "Connexion",
+    "ACCOUNT_TYPE_NOT_SUPPORTED": "Votre compte ne peut pas être géré en ligne. Si vous avez besoin d'aide au sujet de votre compte, veuillez appeler au 1 866 635-0565.",
+    "KEEP_SIGNED_IN": "Maintenir ma connexion",
+    "KEEP_SIGNED_IN_TOOLTIP": "Cocher la boîte « Me garder connecté » vous connectera automatiquement chaque fois que vous visiterez le Centre des comptes en ligne SiriusXM, où vous pouvez gérer votre abonnement SiriusXM. Laissez cette boîte non cochée si vous utilisez un ordinateur public, ou si vous ne voulez pas que d'autres personnes utilisent cet ordinateur pour avoir accès à votre compte.",
+    "UNEXPECTED_ERROR": "Une erreur inattendue est apparue. Veuillez réessayer.",
+    "SXIR_ACCOUNT_TYPE_NOT_SUPPORTED": "Le nom d’utilisateur/mot de passe que vous avez saisis sont vos identifiants de connexion à l’écoute en continu. <a href=\"https://player.siriusxm.ca/fr/\"> Cliquez ici pour écouter en ligne</a>. Pour gérer votre compte, veuillez vous connecter à l’aide de vos identifiants du Centre de compte en ligne. Vous pouvez également appeler le service à la clientèle au 1 866 539-7474 pour obtenir de l’aide supplémentaire.",
+    "PROSPECT_ACCOUNT_TYPE_NOT_SUPPORTED": "Le nom d’utilisateur/mot de passe que vous avez saisi est votre identifiant pour votre essai d’écoute en continu. Si vous avez déjà un abonnement SiriusXM que vous souhaitez gérer, veuillez utiliser les identifiants que vous avez créés pour ce compte. Si vous êtes nouveau sur SiriusXM, vous pouvez vous <a href=\"https://care.siriusxm.ca/account/registration?langpref=fr\"> inscrire ici</a>. Vous pouvez également appeler le service à la clientèle au 1 866 539-7474 pour obtenir de l’aide supplémentaire.",
+    "MAX_INVALID_ATTEMPT_REACHED": "Il semble que vous ayez tenté de vous connecter à votre compte trop souvent. Veuillez fermer votre navigateur et réessayer. Vous pouvez également utiliser les fonctions Nom d’utilisateur oublié/Mot de passe oublié pour retrouver votre nom d’utilisateur/réinitialiser votre mot de passe."
+}

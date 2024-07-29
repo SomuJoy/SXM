@@ -1,0 +1,12 @@
+{
+    "TITLE": "Set up your payment",
+    "BODY": {
+        "CANCEL_ANYTIME": "Cancel anytime.",
+        "POST_TRIAL_DEFAULT": "You won't be charged until your trial subscription is over. Remember, you can change or cancel anytime.",
+        "POST_TRIAL_PLAN_STARTS_AFTER_PROMO": "Cancel anytime. Plan starts after your current promo ends on {{trialEndDate}}"
+    },
+    "CONTINUE_BUTTON_TEXT": "Review Order",
+    "INELIGIBLE_LOADING_ALERT": "That offer is for new subscribers, but here’s another option for you.",
+    "INELIGIBLE_LOADING_BODY": "Finding another great plan for you.",
+    "EMAIL/USERNAME": "Email/Username:"
+}

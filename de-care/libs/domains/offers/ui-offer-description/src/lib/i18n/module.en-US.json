@@ -1,0 +1,28 @@
+{
+    "domainsOffersUiOfferDescriptionModule": {
+        "offerDescriptionComponent": {
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "month",
+                    "other": "months"
+                }
+            },
+            "TERM_AND_PRICE": "<span class=\"offer-price text-color-raspberry\">{{ termLength }} {{ monthsPluralized }}</span><span class=\"standard-copy bold\"> for </span><span class=\"offer-price text-color-raspberry\">{{ pricePerMonth }}</span><span class=\"standard-copy\">/mo</span>",
+            "TERM_AND_PRICE_MCP": "<span class=\"offer-price text-color-raspberry\">{{ termLength }} {{ monthsPluralized }}</span><span class=\"standard-copy bold\"> for </span><span class=\"offer-price text-color-raspberry\">{{ pricePerMonth }}</span><span class=\"standard-copy\">/mo</span>",
+            "FULL_TERM_PRICE": "<span class=\"offer-price text-color-raspberry\">{{ termLength }} {{ monthsPluralized }}</span><span class=\"standard-copy bold\"> for </span><span class=\"offer-price text-color-raspberry\">{{ price }}</span>",
+            "FULL_PRICE": "{{ pricePerMonth }}<span class=\"standard-copy\">/mo</span>",
+            "MRD_PRICE": "<span class=\"offer-price text-color-raspberry\">{{ pricePerMonth }}</span><span class=\"text-color-raspberry standard-copy\">/mo</span>",
+            "TERM_AND_PRICE_FREE": "<span class=\"offer-price text-color-raspberry text-capitalize\">{{ termLength }} {{ monthsPluralized }} free </span>",
+            "MRD_OFFER_COPY": "Family Discount pricing. <strike>Reg {{msrpPrice}}/mo.</strike>",
+            "SEE_OFFER_BELOW": "See <strong>Offer Details</strong> below.",
+            "SEE_OFFER_BELOW_PROMO": "Then {{ retailPrice }}/mo. See <strong>Offer Details</strong> below.",
+            "SEE_OFFER_BELOW_NEW": "New subscribers only.<br>See <strong>Offer Details</strong> below.",
+            "SEE_OFFER_BELOW_PROMO_NEW": "Then {{ retailPrice }}/mo. New subscribers only.<br>See <strong>Offer Details</strong> below.",
+            "FEES": "{{ price }} processing fee applies",
+            "SAVINGS_OFFER": "Savings Offer",
+            "OFFER_TAGLINE": "Your favorites, with your choice of where to enjoy them.",
+            "SEE_OFFER_BELOW_ADVANTAGE": "Reg <strike>${{ price }}/mo</strike>. Save ${{ savingsAmount }}/mo for as long as you maintain your subscription. See <strong>Offer Details</strong> below.",
+            "FULL_PRICE_ADVANTAGE": "<span class=\"offer-price text-color-raspberry\">{{ pricePerMonth }}</span><span class=\"standard-copy\">/mo</span>"
+        }
+    }
+}

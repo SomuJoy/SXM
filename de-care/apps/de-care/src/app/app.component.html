@@ -1,0 +1,9 @@
+<div class="sxm-loader" id="sxm-loader" *ngIf="pageDataIsLoading$ | async">
+    <mat-icon svgIcon="logo-animated" [attr.aria-valuetext]="translateKeyPrefix + '.ARIA_LOADING_TEXT' | translate" aria-busy="true"></mat-icon>
+</div>
+
+<div [@routeAnimations]="prepareRoute(outlet)" class="router-wrapper">
+    <router-outlet #outlet="outlet"></router-outlet>
+</div>
+
+<ng-template #sessionTimeoutModal></ng-template>

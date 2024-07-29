@@ -1,0 +1,21 @@
+{
+    "DeCareUseCasesSharedUiHeaderBarModule": {
+        "HeaderBarComponent": {
+            "EDIT_PROVINCE": "Modifier",
+            "SWITCH_LANGUAGE": {
+                "LABEL": "EN",
+                "VALUE": "en-CA"
+            },
+            "PROVINCE_SELECTOR_MODAL_TITLE": "Paramètres du site"
+        },
+        "HeaderBarWithAccountNumberComponent": {
+            "EDIT_PROVINCE": "Modifier",
+            "SWITCH_LANGUAGE": {
+                "LABEL": "EN",
+                "VALUE": "en-CA"
+            },
+            "PROVINCE_SELECTOR_MODAL_TITLE": "Paramètres du site",
+            "ACCOUNT": "Compete: {{accountNumber}}"
+        }
+    }
+}

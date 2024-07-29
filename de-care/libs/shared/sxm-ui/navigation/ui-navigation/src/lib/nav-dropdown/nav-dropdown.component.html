@@ -1,0 +1,19 @@
+<button
+    sxmUiDataClickTrack="ui"
+    [attr.data-link-key]="buttonLinkKey"
+    [attr.data-link-name]="buttonLinkName"
+    class="dropdown-toggler"
+    (click)="onToggle()"
+    [attr.aria-expanded]="open"
+    [attr.aria-label]="buttonAriaLabel"
+    [attr.title]="buttonAriaLabel"
+>
+    <ng-content select="[toggler]"></ng-content>
+    <div class="arrow" [class.show]="open" [style.background-color]="arrowColor"></div>
+</button>
+
+<div class="dropdown-content" [class.show]="open" [class.right]="align === 'right'">
+    <ng-content select="[content]"></ng-content>
+    <!-- The externalContent slot is used to project content into the nav dropdown that is not under the nav dropdown shadowdom encapsulation -->
+    <slot name="externalContent"></slot>
+</div>

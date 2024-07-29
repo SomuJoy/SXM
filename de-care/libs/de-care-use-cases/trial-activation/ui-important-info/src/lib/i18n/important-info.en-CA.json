@@ -1,0 +1,8 @@
+{
+    "DeCareUseCasesTrialActivationUiImportantInfo": {
+        "importantInfoComponent": {
+            "INFO": "Your SiriusXM service will automatically stop at the end of your trial unless you decide to subscribe. If you decide to continue service, the paid subscription plan you choose will automatically renew thereafter and you will be charged the rate in effect at that time and according to your chosen payment method. Fees and taxes extra. A Music Royalty and Administrative Fee (MRF) of 20.07% applies. To cancel you may call us at 1-888-539-7474. See our <a href='https://www.siriusxm.ca/terms'>Customer Agreement</a> and <a href='https://www.siriusxm.ca/privacy'>Privacy Policy</a> for complete terms. All fees and programming subject to change.",
+            "INFO_QUEBEC": "Your SiriusXM service will automatically stop at the end of your trial unless you decide to subscribe. If you decide to continue service, the paid subscription plan you choose will automatically continue thereafter for an indeterminate term and you will be charged the rate in effect at that time and according to your chosen payment method. Taxes extra. To cancel you may call us at 1-888-539-7474. See our <a href='https://www.siriusxm.ca/terms'>Customer Agreement</a> and <a href='https://www.siriusxm.ca/privacy'>Privacy Policy</a> for complete terms. All fees and programming subject to change."
+        }
+    }
+}

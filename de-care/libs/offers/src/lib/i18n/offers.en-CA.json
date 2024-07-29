@@ -1,0 +1,49 @@
+{
+    "offers": {
+        "offerDescriptionComponent": {
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "month",
+                    "other": "months"
+                }
+            },
+            "TERM_AND_PRICE": "<span class=\"large-copy\">Your first</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">for</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span> <span class=\"large-copy\">plus fees</span>",
+            "TERM_AND_PRICE_MCP": "<span class=\"large-copy\">Your first</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">for</span> <span class=\"offer-price text-color-watermelon\">{{ pricePerMonth }}</span><span class=\"large-copy\">/mo plus fees</span>",
+            "TERM_AND_PRICE_FREE": "<span class=\"offer-price text-color-watermelon text-capitalize\">{{ termLength }} {{ monthsPluralized }} free</span>",
+            "TERM_AND_PRICE_MONTHLY": "<span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">for</span> <span class=\"offer-price text-color-watermelon\">{{ pricePerMonth }}</span><span class=\"large-copy\"> /mo plus fees</span>",
+            "TERM_AND_PRICE_QUEBEC": "<span class=\"large-copy\">Your first</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">for</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span>",
+            "TERM_AND_PRICE_MCP_QUEBEC": "<span class=\"large-copy\">Your first</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">for</span> <span class=\"offer-price text-color-watermelon\">{{ pricePerMonth }}</span><span class=\"large-copy\">/mo</span>",
+            "TERM_AND_PRICE_MONTHLY_QUEBEC": "<span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">for</span> <span class=\"offer-price text-color-watermelon\">{{ pricePerMonth }}</span><span class=\"large-copy\">/mo</span>",
+            "FEES": "{{ price }} processing fee applies",
+            "FULL_TERM_PRICE": "<span class=\"large-copy\">Your first</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">for</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span> <span class=\"large-copy\">plus fees</span>",
+            "FULL_TERM_PRICE_QUEBEC": "<span class=\"large-copy\">Your first</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">for</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span>"
+        },
+        "leadOfferDetailsComponent": {
+            "PROMO_CODE_APPLIED": "Code '{{promoCode}}' applied"
+        },
+        "differentPlatformComponent": {
+            "EXPIRATION": "",
+            "SIRIUS": {
+                "EXCLUDES": "The Music & Entertainment Plan channel lineup compatible with your Sirius radio varies slightly from what's included with other radio models. Here's what's different:"
+            }
+        },
+        "importantInfoComponent": {
+            "BODY": "Your subscription starts immediately unless indicated otherwise. If your radio is not receiving the programming you are entitled to, please follow the activation instructions above. For your convenience, all subscriptions automatically renew until canceled. Your renewal will be billed at the then-current rate using the payment method on file. You can cancel your subscription at any time by calling Listener Care at <a href=\"tel:+1-833-838-7846\">1-833-838-7846</a>. Your subscription is governed by the SiriusXM Customer Agreement, which can be <a href=\"http://www.siriusxm.ca/terms\" target=\"_blank\" title=\" at siriusxm.ca/terms\">viewed online</a>. If you would like to receive a copy of the Customer Agreement by mail, you can call <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>."
+        },
+        "offerNotAvailableConfirmationComponent": {
+            "HELP": "Continue to see an available offer or call 1-888-539-7474 for help.",
+            "SEE_OFFERS": "SEE AVAILABLE OFFER",
+            "TRIAL_RADIO_NOT_ELIGIBLE": "Sorry, this offer is not available to customers with a trial subscription.",
+            "REDEEMED": "Sorry, this offer had already been redeemed.",
+            "EXPIRED": "Sorry, it looks like this offer has already expired.",
+            "OTHERS": "Sorry, this offer is not currently available.",
+            "NONE": "Sorry, this offer is not currently available."
+        },
+        "betterPricingComponent": {
+            "NEW_PRICE": "Get your first {{newTerm}} {{monthsPluralized}} for {{newPrice}}",
+            "NEW_PRICE_MCP": "Get your first {{newTerm}} {{monthsPluralized}} for {{newPrice}}/mo",
+            "ORIGINAL_PRICE": "Reg. {{originalPrice}}/mo, Plus fees",
+            "ORIGINAL_PRICE_QUEBEC": "Reg. {{originalPrice}}/mo"
+        }
+    }
+}

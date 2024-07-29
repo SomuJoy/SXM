@@ -1,0 +1,78 @@
+<main *ngIf="vm$ | async as vm" class="background-offwhite">
+    <sxm-ui-hero [heroData]="vm.salesHeroData" data-e2e="trialActivation.sl2c.hero" [class]="vm.salesHeroData.classes"></sxm-ui-hero>
+
+    <lead-offer-details *ngIf="offer$ | async as offer" [offer]="offer" [offerDescriptionData]="vm.offerDescriptionData" [isLegacyMode]="false"></lead-offer-details>
+
+    <div class="content-container">
+        <div class="row align-center">
+            <div class="column medium-2 no-padding background-white"></div>
+            <div class="column small-12 medium-6 background-white align-left">
+                <div class="partner-copy">
+                    <h5>
+                        {{ translateKey + "SUB_HEADER" | translate }}
+                    </h5>
+
+                    <p *ngIf="corpId$ | async as corpId">
+                        {{
+                            corpId
+                                | sl2cPartnerTextTranslationKey
+                                    : {
+                                          brandingType: brandingType$ | async,
+                                          prefix: translationKeyPrefix
+                                      }
+                                | translate
+                                    : {
+                                          partnerName:
+                                              corpId
+                                              | sl2cPartnerNameTranslationKey
+                                                  : {
+                                                        brandingType: brandingType$ | async,
+                                                        prefix: translationKeyPrefix
+                                                    }
+                                              | translate
+                                      }
+                        }}
+                    </p>
+                </div>
+            </div>
+            <div class="column medium-2 no-padding background-white"></div>
+        </div>
+
+        <div class="row align-center">
+            <div class="column medium-2 no-padding background-white"></div>
+            <div class="column small-12 medium-6 background-white">
+                <p *ngIf="showInvalidAddressError">
+                    {{ translationKeyPrefix + ".INVALID_SERVICE_ADDRESS_ERROR" | translate }}
+                </p>
+
+                <div *ngIf="unexpectedError === true" class="invalid-feedback">
+                    <p>{{ translationKeyPrefix + ".UNEXPECTED_ERROR" | translate }}</p>
+                </div>
+
+                <de-care-sl2c-form
+                    [correctedAddress]="correctedAddress"
+                    [vin]="vin$ | async"
+                    [loading]="loadingSubmission"
+                    (formSubmit)="formSubmitted($event)"
+                ></de-care-sl2c-form>
+            </div>
+            <div class="column medium-2 no-padding background-white"></div>
+        </div>
+    </div>
+
+    <sxm-ui-legal-copy [legalCopy]="vm.legalCopyData" data-e2e="trialActivation.sl2c.legalCopy"></sxm-ui-legal-copy>
+</main>
+
+<sxm-ui-modal [closed]="false" (modalClosed)="modalClosed()" *ngIf="addressNeedsModification" [ariaDescribedbyTextId]="featureSl2cMainModalAriaDescribedbyTextId">
+    <customer-verify-address
+        [ariaDescribedbyTextId]="featureSl2cMainModalAriaDescribedbyTextId"
+        [data]="{
+            headingText: translationKeyPrefix + '.CONFIRM_YOUR_ADDRESS' | translate,
+            correctedAddresses: avsInfo.correctedAddresses,
+            currentAddress: avsInfo.currentAddress,
+            addressCorrectionAction: avsInfo.addressCorrectionAction
+        }"
+        (editAddress)="proceedWithCorrectedAddress($event)"
+        (editExisting)="onEditExistingAddress()"
+    ></customer-verify-address>
+</sxm-ui-modal>

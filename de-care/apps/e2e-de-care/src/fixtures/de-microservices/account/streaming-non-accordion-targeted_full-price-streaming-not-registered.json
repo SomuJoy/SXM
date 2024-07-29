@@ -1,0 +1,128 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "mrdCapable": true,
+        "accountNumber": "10000200527",
+        "firstName": "emma",
+        "lastName": "balcazar",
+        "phone": "2222222222",
+        "userName": "emiba@siriusxm.com",
+        "email": "EMIBA@SIRIUSXM.COM",
+        "accountProfile": {
+            "profileNumber": "10000200399",
+            "billingStatus": "Active",
+            "accountRegistered": false,
+            "createdOnDate": "2022-09-29T15:49:24-04:00"
+        },
+        "accountState": {
+            "isInPreTrial": false,
+            "isOACRegistered": false
+        },
+        "serviceAddress": {
+            "streetAddress": "1 River Rd",
+            "city": "Schenectady",
+            "state": "NY",
+            "postalCode": "12345-6000",
+            "country": "USA",
+            "isAVSValidated": true
+        },
+        "billingAddress": {
+            "streetAddress": "1 River Rd",
+            "city": "Schenectady",
+            "state": "NY",
+            "postalCode": "12345-6000",
+            "country": "USA",
+            "isAVSValidated": true
+        },
+        "subscriptions": [
+            {
+                "id": "10000204569",
+                "status": "Active",
+                "plans": [
+                    {
+                        "dataCapable": false,
+                        "code": "Premier Streaming - Monthly",
+                        "label": "Streaming Platinum - Monthly",
+                        "packageName": "SIR_IP_SA",
+                        "termLength": 1,
+                        "minimumFollowOnTerm": 0,
+                        "startDate": "2022-10-03T00:00:00-04:00",
+                        "endDate": null,
+                        "nextCycleOn": "2022-11-01T00:00:00-04:00",
+                        "marketType": "self-pay:standard",
+                        "type": "SELF_PAID",
+                        "status": "active",
+                        "capabilities": ["IPAUD"],
+                        "price": 9.0,
+                        "product": null,
+                        "hasRadioService": false,
+                        "hasStreamingService": true,
+                        "parentPackageName": "",
+                        "isChangePlanAllowed": false,
+                        "isBasePlan": true,
+                        "isLifetime": false,
+                        "isRefundable": true,
+                        "isRecurring": true,
+                        "isPreTiering": false,
+                        "isFamiliyDiscountApplied": true
+                    }
+                ],
+                "followonPlans": [],
+                "radioService": null,
+                "streamingService": {
+                    "userName": "testnan@siriusxm.com",
+                    "maskedUserName": "tes******@siriusxm.com",
+                    "id": "10000203929",
+                    "status": "Active",
+                    "statusType": null,
+                    "lastStatusComment": null,
+                    "numberOfInstallments": "0",
+                    "validUserName": true,
+                    "isInactiveDueToNonPay": false,
+                    "isInactiveDueToSuspension": false,
+                    "isInactive": false,
+                    "randomCredentials": false,
+                    "systemGeneratedLogin": false
+                },
+                "devicePromoCode": null,
+                "createdOnDate": "2022-10-03T17:25:56-04:00",
+                "nickname": null,
+                "hasMarinePlan": false,
+                "hasAviationPlan": false,
+                "hasInactiveServiceDueToNonPay": false,
+                "hasInactiveServiceDueToSuspension": false,
+                "isClosed": false,
+                "isPrimary": false,
+                "isDataOnly": false,
+                "isMrdDriving": true,
+                "isEligibleForCancelOnline": false
+            }
+        ],
+        "billingSummary": {
+            "paymentType": "creditCard",
+            "creditCard": {
+                "last4Digits": "1111",
+                "type": "VISA",
+                "expiryMonth": 12,
+                "expiryYear": 2022,
+                "status": "ACTIVE"
+            },
+            "amountDue": 0,
+            "lastPaymentAmount": 9.16,
+            "lastPaymentDate": "2022-10-03",
+            "nextPaymentAmount": null,
+            "nextPaymentDate": null,
+            "hasFuturePaymentInfo": false,
+            "isAccountInCollection": false,
+            "isPaymentTypeInvoice": false
+        },
+        "consolidatedAccountNumbers": [],
+        "closedDevicesMap": {},
+        "closedDevices": [],
+        "onlineCancellationEligibilityInfo": null,
+        "streamingOnly": true,
+        "hasInstallments": false
+    }
+}

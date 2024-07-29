@@ -1,0 +1,163 @@
+<section class="grid-container" *ngIf="subscriptionCards?.length" [class.mb-20]="subscriptionCards?.length > 3">
+    <header>
+        <h5>{{ title }}</h5>
+        <p *ngIf="description">{{ description }}</p>
+    </header>
+    <ng-container [ngTemplateOutlet]="subscriptionCardsTemplate" [ngTemplateOutletContext]="{ subscriptionCards: subscriptionCards | slice: 0:3 }"> </ng-container>
+</section>
+<section *ngIf="subscriptionCards?.length > 3">
+    <sxm-ui-accordion-chevron
+        [collapsedText]="translateKeyPrefix + '.SHOW_ALL_SUBSCRIPTIONS' | translate"
+        [expandedText]="translateKeyPrefix + '.SHOW_FEWER_SUBSCRIPTIONS' | translate"
+        [opened]="subscriptionsExpanded"
+        (chevronClick)="onShowAllSubscriptionsClicked($event)"
+        data-test="showAllSubscriptionsToggle"
+    >
+        <section class="grid-container mb-20">
+            <ng-container
+                [ngTemplateOutlet]="subscriptionCardsTemplate"
+                [ngTemplateOutletContext]="{ subscriptionCards: subscriptionCards | slice: 3:subscriptionCards.length }"
+            >
+            </ng-container>
+        </section>
+    </sxm-ui-accordion-chevron>
+</section>
+
+<ng-template #subscriptionCardsTemplate let-subscriptionCards="subscriptionCards">
+    <div
+        *ngFor="let card of subscriptionCards"
+        class="card-container subscription-card"
+        [ngClass]="{
+            'grid-half-medium': card.span?.medium === 1,
+            'grid-full-medium': card.span?.medium === 2,
+            'grid-third-large': card.span?.large === 1,
+            'grid-two-thirds-large': card.span?.large === 2,
+            'grid-full-large': card.span?.large === 3
+        }"
+    >
+        <sxm-ui-my-account-card
+            [ngClass]="{
+                'flat no-padding': card.type === 'MARKETING',
+                'vertical-center': card.type === 'ADD_SUBSCRIPTION' || card.type === 'DONT_SEE_YOUR_SUBSCRIPTION' || card.type === 'NEW_SUBSCRIPTION',
+                'extra-padding-bottom':
+                    !card.footer &&
+                    card.type !== 'INACTIVE_SUBSCRIPTION' &&
+                    card.type !== 'INACTIVE_SUBSCRIPTION_DUE_TO_SEASONAL_SUSPENSION' &&
+                    card.type !== 'INACTIVE_STREAMING_SUBSCRIPTION_DUE_TO_SEASONAL_SUSPENSION' &&
+                    card.type !== 'INACTIVE_STREAMING_SUBSCRIPTION'
+            }"
+            data-test="subscriptionsMyAccountCard"
+        >
+            <ng-container body [ngSwitch]="card.type">
+                <ng-container *ngSwitchCase="'ACTIVE_SUBSCRIPTION'">
+                    <sxm-ui-active-subscription-actions
+                        [data]="card.data"
+                        (manage)="manage.emit({ subId: card.data?.id })"
+                        (editOrCreateUsername)="
+                            editOrCreateUsername.emit({
+                                subId: card.data?.id,
+                                sameAsAccountUsername: card.data?.isStreamingServiceSameAsAccountUsername,
+                                redirectToPhx: card.data?.redirectToPhx
+                            })
+                        "
+                        data-test="activeSubscriptionActions"
+                    ></sxm-ui-active-subscription-actions>
+                </ng-container>
+                <ng-container *ngSwitchCase="'STREAMING_SUBSCRIPTION'">
+                    <sxm-ui-streaming-subscription-actions
+                        [data]="card.data"
+                        (manage)="manage.emit({ subId: card.data?.id })"
+                        (editUsername)="
+                            editOrCreateUsername.emit({
+                                subId: card.data?.id,
+                                sameAsAccountUsername: card.data?.isStreamingServiceSameAsAccountUsername,
+                                redirectToPhx: card.data?.redirectToPhx
+                            })
+                        "
+                        data-test="streamingSubscriptionActions"
+                    ></sxm-ui-streaming-subscription-actions>
+                </ng-container>
+                <ng-container *ngSwitchCase="'AVIATION_SUBSCRIPTION'">
+                    <sxm-ui-aviation-subscription-actions
+                        [data]="card.data"
+                        (manage)="manage.emit({ subId: card.data?.id })"
+                        (editUsername)="
+                            editOrCreateUsername.emit({
+                                subId: card.data?.id,
+                                sameAsAccountUsername: card.data?.isStreamingServiceSameAsAccountUsername,
+                                redirectToPhx: card.data?.redirectToPhx
+                            })
+                        "
+                        data-test="aviationSubscriptionActions"
+                    ></sxm-ui-aviation-subscription-actions>
+                </ng-container>
+                <ng-container *ngSwitchCase="'MARINE_SUBSCRIPTION'">
+                    <sxm-ui-marine-subscription-actions
+                        [data]="card.data"
+                        (manage)="manage.emit({ subId: card.data?.id })"
+                        (editUsername)="
+                            editOrCreateUsername.emit({
+                                subId: card.data?.id,
+                                sameAsAccountUsername: card.data?.isStreamingServiceSameAsAccountUsername,
+                                redirectToPhx: card.data?.redirectToPhx
+                            })
+                        "
+                        data-test="marineSubscriptionActions"
+                    ></sxm-ui-marine-subscription-actions>
+                </ng-container>
+                <ng-container *ngSwitchCase="'INACTIVE_SUBSCRIPTION'">
+                    <sxm-ui-inactive-subscription-actions
+                        [data]="card.data"
+                        (removeDevice)="removeInactiveDevice.emit(card?.data?.radioId)"
+                        (activate)="activateInactiveDevice.emit({ isAccountNonPay: card.data?.isInactiveDueToNonPay, radioId: card.data?.radioId })"
+                        (cancelInactiveDevice)="cancelInactiveDevice.emit(card?.data?.id)"
+                        data-test="inactiveSubscriptionActions"
+                    ></sxm-ui-inactive-subscription-actions>
+                </ng-container>
+                <ng-container *ngSwitchCase="'INACTIVE_SUBSCRIPTION_DUE_TO_SEASONAL_SUSPENSION'">
+                    <sxm-ui-seasonally-suspended-inactive-subscriptions
+                        [data]="card.data"
+                        (activateSuspendedDevice)="openActivateSeasonalSuspendedSubscriptionModal.emit()"
+                        (cancelSuspendedDevice)="cancelInactiveDevice.emit(card.data?.id)"
+                        data-test="seasonalSuspendedInactiveSubscription"
+                    ></sxm-ui-seasonally-suspended-inactive-subscriptions>
+                </ng-container>
+                <ng-container *ngSwitchCase="'INACTIVE_STREAMING_SUBSCRIPTION_DUE_TO_SEASONAL_SUSPENSION'">
+                    <sxm-ui-seasonally-suspended-streaming-inactive-subscriptions
+                        [data]="card.data"
+                        (activateSuspendedDevice)="openActivateSeasonalSuspendedSubscriptionModal.emit()"
+                        (cancelSuspendedDevice)="cancelInactiveDevice.emit(card.data?.id)"
+                        data-test="seasonalSuspendedStreamingInactiveSubscription"
+                    ></sxm-ui-seasonally-suspended-streaming-inactive-subscriptions>
+                </ng-container>
+                <ng-container *ngSwitchCase="'INACTIVE_STREAMING_SUBSCRIPTION'">
+                    <sxm-ui-inactive-streaming-subscription-actions
+                        [data]="card.data"
+                        (cancelInactiveDevice)="cancelInactiveDevice.emit(card?.data?.id)"
+                        data-test="inactiveStreamingSubscriptionActions"
+                    ></sxm-ui-inactive-streaming-subscription-actions>
+                </ng-container>
+                <ng-container *ngSwitchCase="'ADD_SUBSCRIPTION'">
+                    <sxm-ui-add-subscription-actions
+                        (carAndStreaming)="carAndStreaming.emit()"
+                        (streaming)="streaming.emit()"
+                        data-test="addSubscriptionActions"
+                    ></sxm-ui-add-subscription-actions>
+                </ng-container>
+                <ng-container *ngSwitchCase="'NEW_SUBSCRIPTION'">
+                    <sxm-ui-new-subscription-actions
+                        (carAndStreaming)="carAndStreaming.emit()"
+                        (streaming)="streaming.emit()"
+                        data-test="newSubscriptionActions"
+                    ></sxm-ui-new-subscription-actions>
+                </ng-container>
+                <ng-container *ngSwitchCase="'DONT_SEE_YOUR_SUBSCRIPTION'">
+                    <sxm-ui-dont-see-your-radio (findSubscription)="findSubscription.emit()" data-test="dontSeeYourRadioSubscription"></sxm-ui-dont-see-your-radio>
+                </ng-container>
+                <ng-container *ngSwitchCase="'MARKETING'">
+                    <div>Marketing FPO</div>
+                </ng-container>
+            </ng-container>
+        </sxm-ui-my-account-card>
+    </div>
+</ng-template>

@@ -1,0 +1,131 @@
+<div>
+    <h5 class="info-item-box">
+        {{ "identification.ValidateUserRadioComponent.TITLE" | translate }}
+    </h5>
+    <p class="flex align-justify">
+        <span>
+            {{ "identification.ValidateUserRadioComponent.RADIO_LABEL" | translate }}
+            (****{{ last4DigitsOfRadioId }})
+        </span>
+        <a class="text-link-secondary no-underline" href="" (click)="edit($event)" data-track-click="Edit RadioId">
+            {{ "identification.ValidateUserRadioComponent.EDIT" | translate }}
+        </a>
+    </p>
+    <h5 class="verify-your-account">{{ "identification.ValidateUserRadioComponent.ACCOUNT_VERIFY" | translate }}</h5>
+    <p [id]="ariaDescribedbyTextId">{{ "identification.ValidateUserRadioComponent.MESSAGE" | translate }}</p>
+    <p>
+        {{ "identification.ValidateUserRadioComponent.TEXT-LINK" | translate }}
+        <a class="text-link" target="_blank" href="{{ 'identification.ValidateUserRadioComponent.PRIVACY_POLICY_URL' | translate }}">
+            {{ "identification.ValidateUserRadioComponent.PRIVACY" | translate }} </a
+        >.
+    </p>
+
+    <form [formGroup]="validateUserForm" #ngForm="ngForm" (ngSubmit)="onSubmit()">
+        <div *ngIf="validationError$ | async" class="invalid-feedback">
+            <p>
+                {{ "identification.ValidateUserRadioComponent.PLEASE_CALL_PART1" | translate }}
+                <a href="{{ 'identification.ValidateUserRadioComponent.PLEASE_CALL_URL' | translate }}">{{
+                    "identification.ValidateUserRadioComponent.PLEASE_CALL_LINK_TEXT" | translate
+                }}</a>
+                {{ "identification.ValidateUserRadioComponent.PLEASE_CALL_PART2" | translate }}
+            </p>
+        </div>
+        <div class="row">
+            <div class="column small-12">
+                <div
+                    class="input-container"
+                    [class.invalid]="(frmControls.lastName.dirty || ngForm.submitted) && frmControls.lastName.errors"
+                    [class.filled]="frmControls.lastName.value"
+                >
+                    <label for="{{ frmLastNameId }}">{{ "identification.ValidateUserRadioComponent.LAST_NAME" | translate }}</label>
+                    <input
+                        appTrimFormField
+                        type="text"
+                        formControlName="lastName"
+                        id="{{ frmLastNameId }}"
+                        maxlength="50"
+                        onFocus
+                        data-test="validateLastNameInput"
+                        data-e2e="validateLastNameInput"
+                    />
+                </div>
+                <div *ngIf="(frmControls.lastName.dirty || ngForm.submitted) && frmControls.lastName.errors" class="invalid-feedback">
+                    <p>{{ "identification.ValidateUserRadioComponent.ENTER_LAST" | translate }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column small-12">
+                <div
+                    class="input-container"
+                    [class.invalid]="(frmControls.phoneNumber.dirty || ngForm.submitted) && frmControls.phoneNumber.errors"
+                    [class.filled]="frmControls.phoneNumber.value"
+                >
+                    <label for="{{ frmPhoneId }}">{{ "identification.ValidateUserRadioComponent.PHONE_LABEL" | translate }}</label>
+                    <input
+                        type="text"
+                        appMaskPhoneNumber
+                        maxlength="14"
+                        formControlName="phoneNumber"
+                        id="{{ frmPhoneId }}"
+                        onFocus
+                        data-test="validatePhoneInput"
+                        data-e2e="validatePhoneInput"
+                    />
+                </div>
+                <div *ngIf="(frmControls.phoneNumber.dirty || ngForm.submitted) && frmControls.phoneNumber.errors" class="invalid-feedback">
+                    <p>{{ "identification.ValidateUserRadioComponent.ENTER_NUMBER" | translate }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column small-12">
+                <div
+                    class="input-container"
+                    [class.invalid]="(frmControls.zipCode.dirty || ngForm.submitted) && frmControls.zipCode.errors"
+                    [class.filled]="frmControls.zipCode.value"
+                >
+                    <label for="{{ frmZipId }}">{{ "identification.ValidateUserRadioComponent.POSTAL" | translate }}</label>
+                    <input
+                        type="text"
+                        appMaskZipCode
+                        [zipMaskIsCanada]="isCanada"
+                        formControlName="zipCode"
+                        id="{{ frmZipId }}"
+                        onFocus
+                        data-test="validateZipInput"
+                        data-e2e="validateZipInput"
+                    />
+                </div>
+                <div *ngIf="(frmControls.zipCode.dirty || ngForm.submitted) && frmControls.zipCode.errors" class="invalid-feedback">
+                    <p>{{ "identification.ValidateUserRadioComponent.ENTER_POSTAL" | translate }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row align-center">
+            <div class="column small-12 medium-12">
+                <ng-container
+                    [ngTemplateOutlet]="buttonTemplate"
+                    [ngTemplateOutletContext]="{
+                        loading: loading$ | async
+                    }"
+                ></ng-container>
+                <ng-template let-loading="loading" #buttonTemplate>
+                    <button
+                        type="submit"
+                        [disabled]="loading"
+                        class="button primary full-width"
+                        [class.loading]="loading"
+                        data-test="validateSubmissionButton"
+                        data-e2e="validateSubmissionButton"
+                    >
+                        <ng-container *ngIf="!loading">
+                            {{ "identification.ValidateUserRadioComponent.BUTTON_LABEL" | translate }}
+                        </ng-container>
+                        <span></span><span></span><span></span>
+                    </button>
+                </ng-template>
+            </div>
+        </div>
+    </form>
+</div>

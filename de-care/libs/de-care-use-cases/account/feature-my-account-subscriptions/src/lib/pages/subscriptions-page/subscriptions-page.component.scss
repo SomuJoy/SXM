@@ -1,0 +1,22 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    position: relative;
+}
+h5 {
+    margin-bottom: 8px;
+}
+p {
+    line-height: 19px;
+}
+
+main {
+    padding: 40px 16px;
+    @include bp(medium) {
+        padding: 48px 16px;
+    }
+    @include bp(large) {
+        padding: 48px 0;
+    }
+}

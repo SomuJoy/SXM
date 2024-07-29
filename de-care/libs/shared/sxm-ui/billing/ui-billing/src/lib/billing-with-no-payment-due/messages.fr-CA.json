@@ -1,0 +1,5 @@
+{
+    "HEADER": "Aucun paiement n’est dû pour le moment.",
+    "DESCRIPTION": "Votre prochain paiement est dû le {{date}}.",
+    "DATE_FORMAT": "d MMM y"
+}

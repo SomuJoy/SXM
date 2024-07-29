@@ -1,0 +1,31 @@
+{
+    "name": "domains-device-ui-refresh-device",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/device/ui-refresh-device/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/device/ui-refresh-device/src/**/*.ts", "libs/domains/device/ui-refresh-device/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/device/ui-refresh-device/jest.config.js",
+                "tsConfig": "libs/domains/device/ui-refresh-device/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/device/ui-refresh-device/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:ui", "scope:domain-ui"]
+}

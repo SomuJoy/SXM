@@ -1,0 +1,21 @@
+{
+    "DeCareUseCasesTrialActivationUiReadyToExploreModule": {
+        "ReadyToExploreComponent": {
+            "beforeYouGo": {
+                "link": {
+                    "LINK_URL": "https://www.siriusxm.ca/plans"
+                }
+            },
+            "links": {
+                "programSchedules": {
+                    "LINK_TEXT": "View program schedules",
+                    "LINK_URL": "https://siriusxm.ca/program-schedule"
+                },
+                "sportsSchedules": {
+                    "LINK_TEXT": "Live sports schedules",
+                    "LINK_URL": "https://www.siriusxm.ca/live-sports-schedule"
+                }
+            }
+        }
+    }
+}

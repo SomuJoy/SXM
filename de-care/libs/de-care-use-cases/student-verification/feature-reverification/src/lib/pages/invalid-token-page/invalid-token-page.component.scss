@@ -1,0 +1,24 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    @include page-content-legacy-markup(1fr);
+}
+
+h4 {
+    margin-bottom: 10px;
+}
+
+hr {
+    background-color: $gray-medium;
+    height: 1px;
+    border: 0;
+}
+
+.bold-text {
+    font-weight: calculate-font-weight("bold");
+}
+
+.copy-container {
+    padding: 120px 10px;
+}

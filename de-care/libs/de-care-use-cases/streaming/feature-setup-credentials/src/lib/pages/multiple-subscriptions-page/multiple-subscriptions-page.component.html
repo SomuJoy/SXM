@@ -1,0 +1,76 @@
+<main de-care-page-main>
+    <div *ngIf="headlineContent$ | async as headlineContent" [attr.data-e2e]="'StreamingFlepzMultipleSubscriptions.' + headlineContent.e2eAttributeSuffix">
+        <h4>{{ translateKeyPrefix + headlineContent.headlineKey | translate }}</h4>
+        <br />
+        <p>{{ translateKeyPrefix + headlineContent.instructionsKey | translate }}</p>
+    </div>
+    <br />
+    <hr />
+    <br />
+    <ng-container *ngFor="let subscription of subscriptionsToShow$ | async">
+        <div *ngIf="subscription.showOtherAccountsHeadlineBefore" data-e2e="StreamingFlepzMultipleSubscriptions.OtherAccountsSubHeadlineContent">
+            <h4>{{ translateKeyPrefix + "OTHER_ACCOUNTS_HEADLINE" | translate }}</h4>
+            <br />
+            <p>{{ translateKeyPrefix + "OTHER_ACCOUNTS_INSTRUCTIONS" | translate }}</p>
+            <br />
+            <hr />
+            <br />
+        </div>
+        <div class="row no-padding">
+            <div class="column small-8 align-left align-top no-padding">
+                <sxm-ui-subscription-summary-block [subscription]="subscription"></sxm-ui-subscription-summary-block>
+            </div>
+            <div class="column small-4 no-padding align-right align-top">
+                <a *ngIf="subscription.ctaType === 'ListenNow'" class="ctaLink" (click)="onListenNowClick()" sxmUiDataClickTrack="player">
+                    {{ translateKeyPrefix + "CTA.LISTEN_NOW" | translate }}
+                </a>
+                <a
+                    *ngIf="subscription.ctaType === 'CreateLogin'"
+                    class="ctaLink"
+                    (click)="onCreateLoginClick(subscription)"
+                    routerLink="../credential-setup"
+                    sxmUiDataClickTrack="routing"
+                >
+                    {{ translateKeyPrefix + "CTA.CREATE_LOGIN" | translate }}
+                </a>
+                <a *ngIf="subscription.ctaType === 'Reactivate'" class="ctaLink" (click)="onReactivateClick(subscription)" sxmUiDataClickTrack="routing">
+                    {{ translateKeyPrefix + "CTA.REACTIVATE" | translate }}
+                </a>
+                <a
+                    *ngIf="subscription.ctaType === 'Upgrade'"
+                    class="ctaLink"
+                    (click)="onUpgradeClick(subscription, translateKeyPrefix + 'CTA.UPGRADE_URL')"
+                    sxmUiDataClickTrack="routing"
+                >
+                    {{ translateKeyPrefix + "CTA.UPGRADE" | translate }}
+                </a>
+                <a
+                    *ngIf="subscription.ctaType === 'MakePayment'"
+                    class="ctaLink"
+                    (click)="makePayment(subscription, translateKeyPrefix + 'CTA.WEB_FORM_URL')"
+                    sxmUiDataClickTrack="routing"
+                >
+                    {{ translateKeyPrefix + "CTA.MAKE_PAYMENT" | translate }}
+                </a>
+            </div>
+        </div>
+        <br />
+        <hr />
+        <br />
+    </ng-container>
+    <button
+        sxm-proceed-button
+        [secondary]="true"
+        *ngIf="showLoadMoreButton$ | async"
+        (click)="loadMoreRadios()"
+        sxmUiDataClickTrack="ui"
+        data-e2e="StreamingFlepzMultipleSubscriptions.LoadMoreButton"
+    >
+        <span class="button-cta">{{ translateKeyPrefix + "LOAD_RADIO_BUTTON_TEXT" | translate }}</span>
+    </button>
+    <br />
+    <br />
+    <a routerLink="../no-match" class="enter-radio-id" sxmUiDataClickTrack="modal">
+        {{ translateKeyPrefix + "DONT_SEE_ACCOUNT_TEXT" | translate }}
+    </a>
+</main>

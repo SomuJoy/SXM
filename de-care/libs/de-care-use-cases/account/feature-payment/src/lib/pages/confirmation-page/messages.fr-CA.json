@@ -1,0 +1,19 @@
+{
+    "CUSTOMER_GREETING": "Bonjour {{customerName}}",
+    "ACCOUNT_NUMBER": "Compte: {{accountNumber}}",
+    "THANK_YOU_FOR_PAYMENT": "Merci pour votre paiement",
+    "COPY_OF_RECEIPT_EMAILED": "",
+    "PRINT_RECEIPT": "Imprimez votre reçu",
+    "AMOUNT_PAID": "Solde payé",
+    "BILLING_ADDRESS": "Adresse de facturation",
+    "GO_TO_MY_ACCOUNT_BUTTON": "REVENIR À MON COMPTE",
+    "EXPIRES": "Se termine le ",
+    "PAYMENT_INFO_UPDATED": "Vos infos de paiement ont été mises à jour",
+    "INCLUDES_SERVICE_CHARGES": "Inclut le solde actuel des services et des frais antérieurs.",
+    "INCLUDES_SERVICE_CHARGES_NO_FEES": "Inclut le solde actuel des services antérieurs.",
+    "INCLUDES_SERVICE_CHARGES_SUSPENDED_RADIOS": "Le montant comprend votre solde en souffrance, tout frais de retard et toute taxe applicable, plus les frais jusqu'à votre prochain renouvellement. Votre compte n'est pas facturé pour la période où votre service est suspendu.",
+    "INCLUDES_SERVICE_CHARGES_SUSPENDED_RADIOS_NO_FEES": "Le montant comprend votre solde en souffrance, toute taxe applicable, plus les frais jusqu'à votre prochain renouvellement. Votre compte n'est pas facturé pour la période où votre service est suspendu.",
+    "PAYMENT_INFO": "Renseignements de paiement",
+    "INCLUDES_SERVICE_CHARGES_UPCOMING_PAYMENT": "Comprend les montants pour le service et les frais à venir.",
+    "INCLUDES_SERVICE_CHARGES_UPCOMING_PAYMENT_NO_FEES": "Comprend les montants pour le service à venir."
+}

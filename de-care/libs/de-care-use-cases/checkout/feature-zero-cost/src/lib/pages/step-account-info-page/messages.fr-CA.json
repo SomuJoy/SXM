@@ -1,0 +1,9 @@
+{
+    "TITLE": "Vous êtes admissible",
+    "DEVICE_DESCRIPTION_VEHICLE": "{{make}} {{model}} {{year}}",
+    "DEVICE_DESCRIPTION_RADIO": "radio (ID: {{radioId}})",
+    "INSTRUCTIONS": "Votre <inject-content> est admissible à un essai gratuit de {{term}} mois de tout ce que SiriusXM a à offrir.",
+    "FORM_TITLE": "Créez votre compte",
+    "NOT_YOUR_CAR_MESSAGE": "Ce n'est pas votre véhicule?",
+    "ONCE_ACTIVATED_INSTRUCTIONS": "Une fois activé, nous vous communiquerons votre abonnement d'essai par e-mail ou par téléphone."
+}

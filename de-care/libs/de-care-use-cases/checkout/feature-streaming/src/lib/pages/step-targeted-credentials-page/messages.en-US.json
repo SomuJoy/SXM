@@ -1,0 +1,6 @@
+{
+    "TITLE": "Create your username",
+    "BODY": "Enter a unique username and password.",
+    "CONTINUE_BUTTON_TEXT": "Continue",
+    "MRD_RECAP_CARD": "<strong>{{platformAndPlanName}} ({{channelCount}}+ Channels)</strong><br/>{{mrdPrice}}/mo with Family Discount. <s>Reg. {{msrpPrice}}/mo</s>"
+}

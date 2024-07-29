@@ -1,0 +1,399 @@
+{
+    "identification": {
+        "accountLookupComponent": {
+            "EMAIL_PLACEHOLDER": "Email",
+            "EMAIL_DESCRIPTION": "We'll use this to create your account.",
+            "EMAIL_INVALID_MSG": "Enter a valid email address.",
+            "BUTTON_LABEL": "Continue"
+        },
+        "accountIdInfoComponent": {
+            "RADIO_INPUT_LABEL": "Radio ID",
+            "INVALID_RADIO_FEEDBACK": "Enter a valid Radio ID.",
+            "ACCOUNT_INPUT_LABEL": "Account Number",
+            "LASTNAME_INPUT_LABEL": "Last Name",
+            "INVALID_LASTNAME_FEEDBACK": "Enter your last name.",
+            "INVALID_ACCOUNT_FEEDBACK": "Enter a valid Account Number.",
+            "BUTTON": "CONTINUE",
+            "RADIO_ID_HELP_LABEL": "How do I find my Radio ID?",
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.com/privacy-policy"
+            },
+            "ACCOUNT_TYPE_NOT_SUPPORTED": "Your account cannot be managed online. Please call (888) 465-8516 if you need assistance with your account."
+        },
+        "PlatformUpgradeOptionComponent": {
+            "MODAL_TITLE": "{{ packageName }} details"
+        },
+        "activeSubscriptionComponent": {
+            "NAME": " Name:",
+            "EMAIL": "Email:",
+            "PHONE": "Phone:",
+            "ZIPCODE": "Zip:",
+            "VEHICLE": "{{year}} {{make}} {{model}}",
+            "RADIO": "Radio ID: ****{{ radioId }}",
+            "RENEWS": "Renews",
+            "EDIT": "Edit",
+            "OPTIONS": {
+                "LOGIN": "Log in to account",
+                "MANAGE": "Manage My Account",
+                "LOOKUP_RADIO": "LOOKUP A NEW RADIO"
+            },
+            "STREAMING": {
+                "NO_RADIO": "Don't have a radio?",
+                "PACKAGE_TEXT": "No problem. Check out our",
+                "PACKAGE_LINK": "streaming only packages",
+                "URL": "https://www.siriusxm.com/streaming"
+            },
+            "SUBSCRIPTION_INFO": {
+                "TITLE": "Looks like you already have a subscription.",
+                "SUB_TITLE": "Sign in to modify your subscription."
+            }
+        },
+        "RadioNoMatchComponent": {
+            "TITLE": "The information you provided does not match our records",
+            "TEXT_1-A": "You can continue to create a new account or try",
+            "LINK_EDIT_INFO": "editing your information",
+            "TEXT_1-B": "to find your existing account.",
+            "RADIO_LABEL": "Radio ID:",
+            "EDIT_LABEL": "Edit",
+            "BUTTON_LABEL": "Create New Account",
+            "CHAT_LABEL": "Chat with an agent"
+        },
+        "marketingPromoCodeComponent": {
+            "ADD_PROMO_LABEL": "Add a promo code",
+            "REMOVE_PROMO_LABEL": "Remove promo code",
+            "PROMO_CODE_PLACEHOLDER": "Promo code",
+            "APPLY_PROMO": "Apply",
+            "INVALID_PROMO": "Invalid Promo code",
+            "PROMO_CODE_APPLIED": "Code {{promoCode}} applied"
+        },
+        "flepzFormComponent": {
+            "BUTTON": "Continue",
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.com/privacy-policy"
+            },
+            "PHONE_INVALID_SUFFIX": ".",
+            "PHONE_INVALID_PREFIX": "We're unable to confirm your account. Please verify the information you entered and try again. For more help, call <a href=\"tel:+1-888-601-6271\">1-888-601-6271</a> or ",
+            "NO_RADIO_SUFFIX": " for more help.",
+            "NO_RADIO_PREFIX": "We couldn’t find your account. Please try re-entering your info, or ",
+            "NO_RADIO_TAB_LINK_PREFIX": "We couldn’t find your account. Please try re-entering your info or ",
+            "ERROR_SUFFIX": ".",
+            "ERROR_PREFIX": "We're unable to confirm your account. Please verify the information you entered and try again. For more help, call <a href=\"tel:+1-888-601-6271\">1-888-601-6271</a> or ",
+            "CHAT_LINK_TEXT": "chat with an agent",
+            "NO_RADIO_TAB_LINK_CHAT_LINK_TEXT": "Chat with an agent"
+        },
+        "helpFindingRadioComponent": {
+            "TITLE": "How do I find my Radio ID?",
+            "NEED_HELP_TEXT-1": "Tune your radio dial to channel 0 and the radio ID should display. If that did not work try accessing the menu function on your radio (Refer to your owner's manual for specific instructions).",
+            "NEED_HELP_TEXT-2": "For some Sirius radios, you will need to press and hold down the SAT or ESN button, or access your radio's menu functions.",
+            "TEXT_LINK-0": "Search by License Plate",
+            "TEXT_LINK-1": "Get help for Sirius radios",
+            "TEXT_LINK-1_URL": "https://www.siriusxm.com/help/findsirius",
+            "TEXT_LINK-2": "Get help for Marine and Aviation devices",
+            "DONT_HAVE_RADIO": {
+                "HEADLINE": "Don't have a radio?",
+                "SUB_HEADLINE": "No problem. Check out our",
+                "LINK_TEXT": "SiriusXM Streaming Trial",
+                "LINK_URL": "https://www.siriusxm.com/streaming"
+            }
+        },
+        "lookupRadioIdComponent": {
+            "TITLE": "Look up your Radio ID",
+            "GETTING_STARTED": "Your Radio ID will be 8 or 12 digits long",
+            "LOOKUP_ERROR_LABEL": "Radio ID",
+            "INVALID_FEEDBACK": "Enter a valid Radio ID.",
+            "PRIVACY": "Privacy Policy",
+            "PRIVACY_POLICY_URL": "https://www.siriusxm.com/privacy-policy",
+            "HELP_FINDING_RADIO_LINK_TEXT": "How do I find my Radio ID?",
+            "CONTINUE": "Continue",
+            "NEED_HELP_TEXT_LABEL": "Need Help?",
+            "RADIO_BUTTON_LABEL": "Radio ID",
+            "RADIO_LOOKUP_LABEL": "Radio Lookup",
+            "DEVICE_HELP": "Device Help",
+            "INFO_LOOKUP_LABEL": "Your Account",
+            "ACCOUNT_TYPE_NOT_SUPPORTED": "Your account cannot be managed online. Please call (888) 465-8516 if you need assistance with your account."
+        },
+        "lookupVinComponent": {
+            "TITLE": "Look up your VIN",
+            "GETTING_STARTED": "Your radio is linked to your Vehicle Identification Number (VIN).",
+            "LOOKUP_ERROR_LABEL": "VIN",
+            "INVALID_FEEDBACK": "Enter a valid VIN.",
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.com/privacy-policy"
+            },
+            "CONTINUE": "Continue",
+            "VIN_BUTTON_LABEL": "VIN",
+            "VIN_BUTTON_ARIA_LABEL": "VIN (Vehicle Identification Number)",
+            "ACCOUNT_TYPE_NOT_SUPPORTED": "Your account cannot be managed online. Please call (888) 465-8516 if you need assistance with your account."
+        },
+        "lookupLicensePlateComponent": {
+            "TITLE": "Look up your license plate number",
+            "GETTING_STARTED": "Start by entering your license plate number and state. We'll use this to find the matching VIN, which is linked to your radio.",
+            "LICENSE_PLATE_LABEL": "License Plate Number",
+            "STATE_LABEL": "State",
+            "INVALID_FEEDBACK": "Enter the license plate number.",
+            "ENTER_YOUR_STATE": "Enter your state.",
+            "VIN_LOOKUP_AGREEMENT": " I agree to a VIN lookup using my license plate number.",
+            "BEFORE_YOU_CONTINUE": "You must agree with the VIN lookup before continuing.",
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.com/privacy-policy"
+            },
+            "CONTINUE": "Continue",
+            "LICENSE_PLATE_BUTTON_LABEL": "License Plate Number",
+            "ACCOUNT_TYPE_NOT_SUPPORTED": "Your account cannot be managed online. Please call (888) 465-8516 if you need assistance with your account."
+        },
+        "DeviceHelpComponent": {
+            "TITLE": "Lookup your Marine or Aviation Device ID",
+            "MESSAGE": "<strong>There are a few places you can look to find your Radio ID or ESN.</strong>",
+            "NOTE": "Note: Radio IDs are 8 digits and letters, and ESN's are 12 digits.",
+            "UNORDERED_LIST": {
+                "item-1": "For most devices, access your <strong>Diagnostics</strong> or <strong>Settings</strong> menu, and then look for your ESN/Radio ID/Device ID to be listed.",
+                "item-2": "Additionally, on many devices you may also look on the bottom of the device, or the packaging that it came with for the Radio ID. In many cases, you may find <strong>it next to the serial number</strong> of the device.",
+                "item-3": "If your device also has audio capability, you may be able to <strong>tune to channel 0</strong> and it will display your Radio ID.",
+                "item-4": "If you are still having trouble, you <strong>can call your manufacturer and ask them</strong> to provide you with your Radio ID."
+            }
+        },
+        "ValidateUserRadioComponent": {
+            "TITLE": "Car Info",
+            "RADIO_LABEL": "Radio ID:",
+            "EDIT": "Edit",
+            "ACCOUNT_VERIFY": "Verify your account",
+            "MESSAGE": "To protect your account from unauthorized access, we need to match the information you used to purchase your vehicle.",
+            "TEXT-LINK": "For more on how we use your info, view our",
+            "PRIVACY": "Privacy Policy",
+            "PRIVACY_POLICY_URL": "https://www.siriusxm.com/privacy-policy",
+            "PLEASE_CALL_PART1": "We're unable to confirm your account. Please verify the information you entered and try again. For more help, call ",
+            "PLEASE_CALL_LINK_TEXT": "1-888-601-6271",
+            "PLEASE_CALL_URL": "tel:+1-888-601-6271",
+            "PLEASE_CALL_PART2": " or chat with an agent.",
+            "LAST_NAME": "Last Name",
+            "ENTER_LAST": "Enter the last name.",
+            "PHONE_LABEL": "Phone Number",
+            "ENTER_NUMBER": "Enter your phone number.",
+            "POSTAL": "Zip Code",
+            "ENTER_POSTAL": "Enter your zip code.",
+            "BUTTON_LABEL": "Continue"
+        },
+        "VinErrorComponent": {
+            "TITLE": "Oops, something went wrong.",
+            "MSG": "We're not able to perform a VIN lookup at this time.",
+            "CONTINUE_MSG": " You can use this service again later or try entering your Radio ID to continue.",
+            "TEXT-LINK": "Go to Radio ID search",
+            "CHAT_LINK_TEXT": "Chat with an agent"
+        },
+        "yourInfoComponent": {
+            "head-line": {
+                "radio-found": "Hi {{firstName}}! You have {{radioCount}} radio on your account.",
+                "radios-found": "Hi {{firstName}}! You have {{radioCount}} radios on your account."
+            },
+            "found": {
+                "radio": "We found {{ radioCount }} radio that matched the info you gave us.",
+                "radios": "We found {{ radioCount }} radios that matched the info you gave us."
+            },
+            "VEHICLE": "{{year}} {{make}} {{model}}",
+            "RADIO": "Radio ID: ****{{ radioId }}",
+            "HEADLINE": "Your Info",
+            "TITLE": "Trial",
+            "NOT_ACTIVE": "No Active Service",
+            "EDIT": "Edit",
+            "CHOOSE": "Choose",
+            "RADIO_ID": "Radio ID",
+            "CHOOSE_RADIO": "Choose the radio you'd like to add your subscription to.",
+            "DONT_SEE_RADIO": "Don't see your radio?",
+            "DONT_HAVE_RADIO": "Don't have a radio?",
+            "NO_PROB": "No problem. Check out our",
+            "NO_SERVICE": "No Active Service",
+            "STREAM_PACKAGES": "streaming only packages",
+            "BUTTON_LABEL": "Continue",
+            "packages": {
+                "empty": {
+                    "name": "No Active Service"
+                }
+            },
+            "empty": {
+                "name": ""
+            },
+            "ACCOUNT_TYPE_NOT_SUPPORTED": "Your account cannot be managed online. Please call (888) 465-8516 if you need assistance with your account."
+        },
+        "verifyDeviceTabsComponent": {
+            "ENTER_INFO_OR_SIGNIN": "Please enter your Car info. Or, if you already have a SiriusXM account, you can",
+            "FIRST": "First, tell us a little about yourself so we can find your radio.",
+            "OR": "Or, if you have your SiriusXM account,",
+            "partial_info_A": "sign in",
+            "partial_info_B": "to verify your account.",
+            "TABS_HEADING_TEXT": {
+                "DEFAULT": "Verify your account using your info or car info:",
+                "ACCOUNT_INFO_SCENARIO": "Verify your account using one of the options below:",
+                "RADIO_ID_SCENARIO": "Verify your account using your info or Radio ID:",
+                "VIN_SCENARIO": "Verify your account using your info or VIN:"
+            },
+            "LOGIN_INFO": "use your login info",
+            "VERIFY": "to verify your account.",
+            "CAR_INFO": "Car Info",
+            "YOUR_INFO": "Your Info",
+            "ACCOUNT_INFO": "Account Info",
+            "RADIO_INFO": "Radio Info",
+            "RADIO_ID_INFO": "Radio ID",
+            "VIN_INFO": "VIN",
+            "SHARED_MODAL_TITLE": "Use one of the radio lookup options below",
+            "TITLE": "Sign In",
+            "LOGIN_LINK": "https://care.siriusxm.com/login_view.action",
+            "MANAGE_LINK": "https://care.siriusxm.com/login_view.action",
+            "NO_RADIO_CAR_INFO_TAB_LINK_TEXT": "search using Car Info",
+            "NO_RADIO_CAR_INFO_TAB_LINK_DESC": " (Radio ID, VIN or License Plate). ",
+            "NO_RADIO_ACCOUNT_INFO_TAB_LINK_TEXT": "search using Account Info",
+            "NO_RADIO_ACCOUNT_INFO_TAB_LINK_DESC": " (Account Number and Radio ID). ",
+            "NO_RADIO_ACCOUNT_INFO_TAB_LINK_DESC_LN": " (Radio ID and Last Name). ",
+            "SIGN_IN_TITLE": "Sign in to continue."
+        },
+        "CarInfoTab": {
+            "BUTTON": "Continue"
+        },
+        "streamingLoginCompleteComponent": {
+            "HEADER_TITLE": "Streaming username setup complete",
+            "HEADER_CONTENT": "You're ready to listen online, on the app, smart TVs, speakers and more — 1 device at the same time",
+            "SIGN_IN": "Sign In",
+            "CREATE_LOGIN": "Create Login",
+            "UPGRADE": "Upgrade",
+            "BUTTON_LABEL": "Get SiriusXM App"
+        },
+        "yourSubscriptionsComponent": {
+            "HEADER_TITLE": "We found subscription(s) that matched the info you gave us.",
+            "HEADER_INCLUDED": "INCLUDED WITH SUBSCRIPTION",
+            "SUB_HEADER_INCLUDED": "Good news! Streaming on your home and mobile devices with the SXM App is already included at no additional cost.",
+            "HEADER_TRIAL": "TRIAL SUBSCRIPTIONS",
+            "SUB_HEADER_TRIAL": "Add a subscription when your trial ends."
+        },
+        "subscriptionItemComponent": {
+            "CREATE_LOGIN": "<a class=\"no-underline\">Create Login</a>",
+            "ADD_SUB": "<a class=\"no-underline\">Subscribe</a>",
+            "EXPIRED": "Expired",
+            "VEHICLE": "{{year}} {{make}} {{model}}",
+            "RADIO": "Radio ID: ****{{ radioId }}",
+            "EXPIRES": "Expires ",
+            "SING_IN_LINK_TEXT": "Listen",
+            "STREAMING_PLAYER_LINK": {
+                "STREAMING_RTP_OFFER": "https://sxm.smart.link/xeiz0zu5y?contentType=landing&channelName=accessnow&site_id=accessnow&creative_id=NA_NA_DL-COM-landing-landingpage-landingpage-STARTLISTENING-TRIALACTIVATIONRTP-NA-All-20210921-NA&cp_5=landingpage&cp_6=landingpage&cp_7=ALL&cp_8=STARTLISTENING&cp_9=TRIALACTIVATIONRTP&cp_10=COM&ALC=0",
+                "STREAMING_RTD_OFFER": "https://sxm.smart.link/xeiz0zu5y?contentType=landing&channelName=accessnow&site_id=accessnow&creative_id=NA_NA_DL-COM-landing-landingpage-landingpage-STARTLISTENING-TRIALACTIVATIONRTD-NA-All-20210921-NA&cp_5=landingpage&cp_6=landingpage&cp_7=ALL&cp_8=STARTLISTENING&cp_9=TRIALACTIVATIONRTD&cp_10=COM&ALC=0",
+                "SATELLITE_OFFER": "https://sxm.smart.link/xeiz0zu5y?creative_id=NA_NA_PL-EM-home-home-home-CONVERSION-COMCONFIRM-OEM-OEM-20211207-DECOM&cp_7=OEM&cp_8=CONVERSION&cp_9=COMCONFIRM&ALC=0"
+            }
+        },
+        "validateLpzFormComponent": {
+            "PRIVACY": "Privacy Policy",
+            "PRIVACY_POLICY_URL": "https://www.siriusxm.com/privacy-policy",
+            "PLEASE_CALL_PART1": "We're unable to confirm your account. Please verify the information you entered and try again. For more help, call ",
+            "PLEASE_CALL_LINK_TEXT": "1-888-601-6271",
+            "PLEASE_CALL_URL": "tel:+1-888-601-6271",
+            "PLEASE_CALL_PART2": " or chat with an agent.",
+            "LAST_NAME": "Last Name",
+            "ENTER_LAST": "Enter the last name.",
+            "PHONE_LABEL": "Phone Number",
+            "ENTER_NUMBER": "Enter your phone number.",
+            "POSTAL": "Zip Code",
+            "ENTER_POSTAL": "Enter your zip code.",
+            "BUTTON_LABEL": "Continue"
+        },
+        "rflzFormComponent": {
+            "STEP": "STEP 1 OF {{totalSteps}}",
+            "HEADER": "Check your eligibility",
+            "RADIO_ID_VIN": "Radio ID / VIN",
+            "RADIO_ID_VIN_NFL": "Radio ID/VIN",
+            "NO_RADIO": "No radio?",
+            "GET_STREAMING": {
+                "LINK_URL": "https://www.siriusxm.com/nouvstreamform",
+                "LINK_TEXT": "Get the SXM App"
+            },
+            "LOOKUP_BY_LICENSE_PLATE_TEXT": "Search by License Plate",
+            "FIRST_NAME": "First Name",
+            "LAST_NAME": "Last Name",
+            "ZIP_CODE": "Zip Code",
+            "PRIVACY_POLICY": {
+                "LINK_URL": "https://www.siriusxm.com/privacy-policy",
+                "LINK_URL_NFL": "https://www.siriusxm.com/privacy-policy?intcmp=MarketingLandingPage-Hero_NA_www:steelers-black-gold_PrivacyPolicy",
+                "LINK_TEXT": "Privacy Policy"
+            },
+            "BUTTON": "Check My Eligibility",
+            "ERRORS": {
+                "RADIO_ID": "Enter a valid Radio ID or VIN.",
+                "FIRST_NAME": "Enter your first name.",
+                "LAST_NAME": "Enter your last name.",
+                "ZIP_CODE": "Enter a valid zip code."
+            },
+            "NFL_BUTTON": "CONTINUE"
+        },
+        "rflzErrorComponent": {
+            "ERRORS": {
+                "107": "Looks like there’s already a paid subscription associated with this radio.",
+                "110": "Looks like you already have an active trial and your paid subscription will start once your trial is over.",
+                "106_PREFIX": "Unfortunately, our systems are down please try again later. For help ",
+                "106_SUFFIX": " or call 1-855-241-5969.",
+                "114_PREFIX": "We're sorry for the inconvenience, but this radio can't be activated online. ",
+                "114_SUFFIX": ", or call us at 1-888-601-6271 and let us help.",
+                "REFRESH_RADIO_TEXT": "refreshing your radio",
+                "REFRESH_RADIO_LINK": "https://care.siriusxm.com/retailrefresh_view.action?langpref=en",
+                "LOGIN_TEXT": "log in ",
+                "LOGIN_LINK": "https://care.siriusxm.com/login_view.action",
+                "TRY": "Try ",
+                "OR": ". Or, ",
+                "MANAGE_ACCOUNT": "to update/manage your account."
+            },
+            "SWEEPSTAKES": "You can also <a href=\"https://www.siriusxm.com/sweepstakes\" >enter the sweepstakes</a> without starting a subscription",
+            "CHAT_LINK_TEXT": "Chat with an agent"
+        },
+        "accountLookupFormComponent": {
+            "ACCOUNT_FOUND_MODAL_TITLE": "Your Account",
+            "VERIFY_MODAL_TITLE": "Verify",
+            "VERIFY_MODAL_HEADER_TITLE": "Verify your account",
+            "VERIFY_MODAL_HEADER_COPY": "We want to make sure it's really you before you create your username."
+        },
+        "deviceLookupWizardComponent": {
+            "RADIO_LOOKUP_HEADER": "Use one of the radio lookup options below",
+            "RADIO_LOOKUP_LABEL": "Radio Lookup",
+            "DEVICE_HELP": "Device Help",
+            "RADIO_ID_LOOKUP_LABEL": "Radio Lookup",
+            "VALIDATE_USER_INFO_LABEL": "Radio Lookup",
+            "LOOKUP_VIN_LABEL": "Radio Lookup",
+            "LOOKUP_LICENCE_PLATE_LABEL": "Radio Lookup",
+            "CONFIRM_VIN_LABEL": "Radio Lookup",
+            "VIN_ERROR_LABEL": "Radio Lookup"
+        },
+        "confirmVinComponent": {
+            "TITLE": "Confirm your VIN.",
+            "VIN_NUMBER": "The last 4 digits of your VIN are: <strong>{{vinNumber}}</strong>",
+            "LICENSE_PLATE": "We're confident this VIN matches the car's registered license plate, but before you click \"Yes\" look over the license plate you entered one more time. <br> {{state}} license plate: <strong>{{licensePlate}}</strong>",
+            "RADIO_ID": "Radio ID: {{radioId}}"
+        },
+        "zagFormComponent": {
+            "ZIP_CODE": "Zip Code",
+            "BIRTH_YEAR": "Birth Year",
+            "GENDER": "Gender",
+            "CONTINUE": "CONTINUE",
+            "GENDER_LIST": [
+                {
+                    "label": "Female",
+                    "key": "Female"
+                },
+                {
+                    "label": "Male",
+                    "key": "Male"
+                },
+                {
+                    "label": "Non-Binary",
+                    "key": "Non-Binary"
+                },
+                {
+                    "label": "Prefer not to say",
+                    "key": "Prefer not to say"
+                }
+            ],
+            "ERRORS": {
+                "ZIP_CODE": "Enter a valid ZIP Code.",
+                "BIRTH_YEAR": "Select your birth year.",
+                "GENDER": "Select your gender."
+            }
+        }
+    }
+}

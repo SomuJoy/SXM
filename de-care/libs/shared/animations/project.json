@@ -1,0 +1,31 @@
+{
+    "name": "shared-animations",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/animations/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/animations/src/**/*.ts", "libs/shared/animations/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/shared/animations/jest.config.js",
+                "tsConfig": "libs/shared/animations/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/shared/animations/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:ui-util", "scope:shared-ui-util"]
+}

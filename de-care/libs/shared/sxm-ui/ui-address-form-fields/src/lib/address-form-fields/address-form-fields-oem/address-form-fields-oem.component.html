@@ -1,0 +1,107 @@
+<ng-container [formGroup]="addressForm">
+    <div class="row no-padding">
+        <div class="column small-12">
+            <div class="input-container" [class.invalid]="controlIsInvalid(addressForm.controls.addressLine1)" [class.filled]="addressForm.controls.addressLine1.value">
+                <label for="addressLine1">{{ addressType + " address" | titlecase }}</label>
+                <input
+                    type="text"
+                    id="addressLine1"
+                    data-e2e="oem.CCAddress"
+                    formControlName="addressLine1"
+                    minlength="2"
+                    maxlength="100"
+                    qatag="CCAddress"
+                    onFocus
+                    required
+                    #addressLine1Element
+                />
+            </div>
+            <div *ngIf="controlIsInvalid(addressForm.controls.addressLine1)" class="invalid-feedback">
+                <ng-container *ngIf="addressForm.controls.addressLine1.hasError('cvvExclusion'); else addressError">
+                    <p>{{ translateKey + ".ERROR_CVV_FOUND" | translate }}</p>
+                </ng-container>
+                <ng-template #addressError>
+                    <p>{{ translateKey + ".ERROR_ADDRESS" | translate }}</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+    <div class="row no-padding">
+        <div class="column small-12">
+            <div class="input-container" [class.invalid]="controlIsInvalid(addressForm.controls.addressLine2)" [class.filled]="addressForm.controls.addressLine2.value">
+                <label for="addressLine2">{{ translateKey + ".ADDRESS_LINE_2" | translate }}</label>
+                <input type="text" id="addressLine2" formControlName="addressLine2" minlength="2" maxlength="100" qatag="CCAddress" onFocus #addressLine2Element />
+            </div>
+            <div *ngIf="controlIsInvalid(addressForm.controls.addressLine2)" class="invalid-feedback">
+                <ng-container *ngIf="addressForm.controls.addressLine2.hasError('cvvExclusion'); else addressError">
+                    <p>{{ translateKey + ".ERROR_CVV_FOUND" | translate }}</p>
+                </ng-container>
+                <ng-template #addressError>
+                    <p>{{ translateKey + ".ERROR_ADDRESS" | translate }}</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+    <div class="row no-padding">
+        <div class="column small-12">
+            <div class="input-container" [class.invalid]="controlIsInvalid(addressForm.controls.city)" [class.filled]="addressForm.controls.city.value">
+                <label for="city">{{ translateKey + ".CITY" | translate }}</label>
+                <input type="text" data-e2e="oem.CCCity" id="city" formControlName="city" minlength="2" maxlength="50" qatag="CCCity" onFocus required />
+            </div>
+            <div *ngIf="controlIsInvalid(addressForm.controls.city)" class="invalid-feedback">
+                <ng-container *ngIf="addressForm.controls.city.hasError('cvvExclusion'); else cityError">
+                    <p>{{ translateKey + ".ERROR_CVV_FOUND" | translate }}</p>
+                </ng-container>
+                <ng-template #cityError>
+                    <p>{{ translateKey + ".ERROR_CITY" | translate }}</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+    <div class="row align-top no-padding">
+        <div class="column small-12 medium-6 align-left">
+            <div class="input-container" [class.invalid]="controlIsInvalid(addressForm.controls.state)" [class.filled]="addressForm.controls.state.value">
+                <label for="state">{{ translateKey + ".STATE" | translate }}</label>
+                <input type="text" data-e2e="oem.CCState" id="state" formControlName="state" [maxlength]="2" qatag="CCState" onFocus required />
+            </div>
+            <div *ngIf="controlIsInvalid(addressForm.controls.state)" class="invalid-feedback">
+                <p *ngIf="addressForm.controls.state.errors as errors">
+                    {{
+                        errors.required
+                            ? (translateKey + ".ERROR_STATE" | translate)
+                            : errors.minlength || errors.notFound
+                            ? (translateKey + ".ERROR_STATE_INACCURATE" | translate)
+                            : ""
+                    }}
+                </p>
+            </div>
+        </div>
+
+        <div class="column small-12 medium-6 align-right">
+            <div class="input-container" [class.invalid]="controlIsInvalid(addressForm.controls.zip)" [class.filled]="addressForm.controls.zip.value">
+                <label for="zip">{{ translateKey + ".ZIPCODE" | translate }}</label>
+                <input
+                    type="text"
+                    id="zip"
+                    data-e2e="oem.CCZipCode"
+                    appMaskZipCode
+                    [zipMaskIsCanada]="settingsSrv.isCanadaMode"
+                    formControlName="zip"
+                    [minlength]="settingsSrv.isCanadaMode ? 6 : 5"
+                    [maxlength]="settingsSrv.isCanadaMode ? 7 : 10"
+                    qatag="CCZipCode"
+                    onFocus
+                    required
+                />
+            </div>
+            <div *ngIf="controlIsInvalid(addressForm.controls.zip)" class="invalid-feedback">
+                <ng-container *ngIf="addressForm.controls.zip.hasError('cvvExclusion'); else zipError">
+                    <p>{{ translateKey + ".ERROR_CVV_FOUND" | translate }}</p>
+                </ng-container>
+                <ng-template #zipError>
+                    <p>{{ translateKey + ".ERROR_ZIPCODE" | translate }}</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</ng-container>

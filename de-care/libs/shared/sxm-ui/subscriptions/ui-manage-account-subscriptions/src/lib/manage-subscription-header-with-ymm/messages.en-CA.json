@@ -1,0 +1,6 @@
+{
+    "BACK_BUTTON_LABEL": "BACK",
+    "ADD_RADIO_NICKNAME_LINK": "Add radio nickname",
+    "RADIO_ID_INFO": "{{platform}} Radio ID/ESN: {{radioId}}",
+    "360L_TOOLTIP": "<p>This next generation radio creates an interactive, personalized experience:</p><ul><li>Personalized recommendations</li><li>Voice search</li><li>Account management</li><li>Listener profiles</li><li>Ability to synchronize car with phone</li><li>Expanded content based upon package</li></ul>"
+}

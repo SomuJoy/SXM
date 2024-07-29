@@ -1,0 +1,21 @@
+{
+    "DeCareUseCasesPickAPlanFeaturePlanSelectionOrganicModule": {
+        "LandingPageComponent": {
+            "HERO": {
+                "TITLE": "Choisissez un forfait et obtenez {{termLength}} mois gratuits pour {{price}} $",
+                "SUBTITLE": "Voir les détails de l'offre ci-dessous. Modifiez ou annulez en tout temps."
+            },
+            "CHOICE_QUESTIONS_TFN": "1 833 838-7846",
+            "REACTIVE_QUESTIONS_TFN": "1 833 838-7846",
+            "PROACTIVE_QUESTIONS_TFN": "1 833 838-7846"
+        },
+        "FindYourAccountCardComponent": {
+            "TITLE": "Trouvons tout d’abord votre compte.",
+            "INSTRUCTIONS": "Nous aimerions apprendre à mieux vous connaître grâce à vos renseignements personnels ou ceux de votre véhicule. Vous aurez besoin de votre identifiant de radio ou votre NIV.",
+            "NO_RADIO": "",
+            "OUTSIDE_THE_CAR_LINK_URL": "https://www.siriusxm.ca/trouverradio",
+            "OUTSIDE_THE_CAR_LINK_TEXT": "Obtenez de l'aide pour trouver votre radio",
+            "QUESTIONS": "Des questions? Composez le "
+        }
+    }
+}

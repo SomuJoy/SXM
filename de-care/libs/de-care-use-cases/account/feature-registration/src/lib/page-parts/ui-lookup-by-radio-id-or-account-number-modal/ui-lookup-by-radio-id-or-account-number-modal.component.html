@@ -1,0 +1,14 @@
+<sxm-ui-modal #helpFindRadioId [closed]="true" titlePresent="true" title="{{ translateKeyPrefix + '.RADIO_LINK_TITLE' | translate }}" (modalClosed)="closed.emit(true)">
+    <de-care-help-find-radio-id-modal (openMarineAviationDevicesModal)="openMarineAviationDevicesModal()"></de-care-help-find-radio-id-modal>
+</sxm-ui-modal>
+
+<sxm-ui-modal
+    #marineAviationDevices
+    [closed]="true"
+    [showBackButton]="true"
+    (backButton)="backToRadioId()"
+    [titlePresent]="true"
+    title="{{ translateKeyPrefix + '.DEVICE_HELP' | translate }}"
+>
+    <de-care-lookup-your-marine-or-aviation-device-modal></de-care-lookup-your-marine-or-aviation-device-modal>
+</sxm-ui-modal>

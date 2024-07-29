@@ -1,0 +1,8 @@
+{
+    "TITLE": "Set up your payment",
+    "BODY": "Cancel online anytime.",
+    "CONTINUE_BUTTON_TEXT": "Review Order",
+    "INELIGIBLE_LOADING_ALERT": "That offer is for new subscribers, but here’s another option for you.",
+    "INELIGIBLE_LOADING_BODY": "Finding another great plan for you.",
+    "MRD_RECAP_CARD": "<strong>{{platformAndPlanName}} ({{channelCount}}+ Channels)</strong><br/>{{mrdPrice}}/mo with Family Discount. <s>Reg. {{msrpPrice}}/mo</s>"
+}

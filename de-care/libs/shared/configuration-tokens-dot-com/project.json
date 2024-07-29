@@ -1,0 +1,24 @@
+{
+    "name": "shared-configuration-tokens-dot-com",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/shared/configuration-tokens-dot-com/src",
+    "projectType": "library",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/configuration-tokens-dot-com/**/*.ts"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/shared/configuration-tokens-dot-com"],
+            "options": {
+                "jestConfig": "libs/shared/configuration-tokens-dot-com/jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": ["type:util", "scope:shared-util"]
+}

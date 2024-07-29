@@ -1,0 +1,137 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+// TODO: Move these to the global mixin spot
+@mixin content-container() {
+    width: 100%;
+    max-width: 1248px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 16px;
+    padding: 0 16px;
+    @include bp(medium) {
+        grid-template-columns: repeat(12, 1fr);
+        padding: 0 36px;
+        grid-column-gap: 24px;
+    }
+}
+@mixin reset-section() {
+    section {
+        margin: 0;
+        padding: 0;
+    }
+}
+@mixin reset-p-last-of-type() {
+    p:last-of-type {
+        margin-bottom: 0.625rem;
+
+        @media (min-width: 768px) {
+            margin-bottom: 0.75rem;
+        }
+    }
+}
+
+$hero-height-small: 220px;
+
+:host {
+    @include reset-p-last-of-type();
+    @include reset-section();
+    h1,
+    h2 {
+        margin: 0;
+    }
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-row-gap: 24px;
+    justify-items: center;
+    padding-bottom: 24px;
+    @include bp(medium) {
+        grid-row-gap: 48px;
+        padding-bottom: 48px;
+    }
+    main {
+        background: linear-gradient(to bottom, $blue $hero-height-small, $white $hero-height-small);
+        @include bp(medium) {
+            background: $blue;
+            padding-top: 32px;
+            padding-bottom: 32px;
+        }
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        section {
+            @include content-container();
+            grid-row-gap: 24px;
+            @include bp(medium) {
+                grid-row-gap: 0;
+            }
+            header,
+            article {
+                grid-column: 1 / span 6;
+            }
+            header {
+                display: grid;
+                align-content: center;
+                height: $hero-height-small;
+                color: $white;
+                grid-row: 1;
+                grid-gap: 16px;
+                @include bp(medium) {
+                    grid-column: 2 / span 5;
+                }
+                p {
+                    font-size: calculate-rem(16px);
+                    font-weight: calculate-font-weight(bold);
+                }
+            }
+            article {
+                grid-row: 2;
+                background: $white;
+                padding: 0;
+                height: fit-content;
+                login-form ::ng-deep button {
+                    margin-bottom: 0;
+                }
+                p {
+                    margin-bottom: 0;
+                }
+                @include bp(medium) {
+                    grid-row: 1;
+                    grid-column: 7 / span 5;
+                    padding: 24px;
+                }
+            }
+        }
+    }
+    footer {
+        @include content-container();
+        aside {
+            grid-column: 1 / span 6;
+            @include bp(medium) {
+                grid-column: 2 / span 11;
+            }
+            @include bp(medium) {
+                grid-column: 3 / span 8;
+            }
+            background: $white;
+            justify-items: center;
+            padding: 24px;
+            height: fit-content;
+            display: grid;
+            border: 3px solid $off-white;
+            grid-gap: 16px;
+            h2 {
+                margin: 0;
+                font-size: calculate-rem(18px);
+            }
+            ul {
+                @include list-reset;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+        }
+    }
+}

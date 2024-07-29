@@ -1,0 +1,16 @@
+{
+    "DomainsSubscriptionsUiRedeemAndLinkWithAmazonModule": {
+        "RedeemAndLinkWithAmazonComponent": {
+            "DEAL_REDEMPTION_INSTRUCTIONS": {
+                "image": {
+                    "src": "assets/img/device-echodot-gen4.png"
+                },
+                "TITLE": "<h5><b>Enable SiriusXM on all your Alexa devices now!</b></h5><p>Start using voice commands like, \"Alexa, play Hits 1 on SiriusXM.\"</p>",
+                "DESCRIPTION": [
+                    "Redemption codes will be delivered upon verification and may take up to 2 weeks. Your Echo Dot is fulfilled directly by Amazon and delivery is subject to Amazon inventory availability and may take up to 8 weeks for delivery. Periods of high demand may cause delays, so redeem as soon as your codes are received."
+                ]
+            },
+            "CTA_BUTTON_LABEL": "LINK WITH AMAZON"
+        }
+    }
+}

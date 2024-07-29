@@ -1,0 +1,8 @@
+{
+    "domainsOffersUiTrialFollowOnFormFieldModule": {
+        "trialFollowOnFormFieldComponent": {
+            "LABEL": "Keep {{followOnPackageName}} after my trial ends for just {{followOnPricePerMonth}} per month.",
+            "COPY": "We won't bill you until your trial is over and you can cancel anytime."
+        }
+    }
+}

@@ -1,0 +1,110 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "quote": {
+            "currentQuote": {
+                "totalTaxAmount": "0.29",
+                "totalFeesAmount": "0.35",
+                "totalTaxesAndFeesAmount": "0.64",
+                "totalAmount": "-8.50",
+                "discountAmount": "-9.00",
+                "pricePerMonth": "4.00",
+                "currentBalance": "-8.50",
+                "consolidatedCreditAmount": "-13.14",
+                "previousBalance": "0.00",
+                "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "0.35" }],
+                "taxes": [{ "description": "State Tax", "amount": "0.29" }],
+                "details": [
+                    {
+                        "planCode": "Premier Streaming - Monthly|Promo Student $4.00/mo PS for 12mos",
+                        "packageName": "SIR_IP_SA",
+                        "termLength": 12,
+                        "priceAmount": "4.00",
+                        "taxAmount": "0.29",
+                        "feeAmount": "0.35",
+                        "totalTaxesAndFeesAmount": "0.64",
+                        "taxes": [{ "description": "State Tax", "amount": "0.29" }],
+                        "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "0.35" }],
+                        "startDate": "2027-03-12",
+                        "endDate": "2027-04-12",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "student": true
+                    }
+                ],
+                "isUpgraded": false,
+                "isProrated": false
+            },
+            "futureQuote": null,
+            "proRatedRenewalQuote": null,
+            "promoRenewalQuote": {
+                "totalTaxAmount": "0.29",
+                "totalFeesAmount": "0.35",
+                "totalTaxesAndFeesAmount": "0.64",
+                "totalAmount": "4.64",
+                "discountAmount": "-9.00",
+                "pricePerMonth": "4.00",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "0.35" }],
+                "taxes": [{ "description": "State Tax", "amount": "0.29" }],
+                "details": [
+                    {
+                        "planCode": "Premier Streaming - Monthly|Promo Student $4.00/mo PS for 12mos",
+                        "packageName": "SIR_IP_SA",
+                        "termLength": 1,
+                        "priceAmount": "4.00",
+                        "taxAmount": "0.29",
+                        "feeAmount": "0.35",
+                        "totalTaxesAndFeesAmount": "0.64",
+                        "taxes": [{ "description": "State Tax", "amount": "0.29" }],
+                        "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "0.35" }],
+                        "startDate": "2027-04-12",
+                        "endDate": "2027-05-12",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "student": true
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            },
+            "renewalQuote": {
+                "totalTaxAmount": "0.94",
+                "totalFeesAmount": "1.14",
+                "totalTaxesAndFeesAmount": "2.08",
+                "totalAmount": "15.08",
+                "discountAmount": "0.00",
+                "pricePerMonth": "13.00",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "1.14" }],
+                "taxes": [{ "description": "State Tax", "amount": "0.94" }],
+                "details": [
+                    {
+                        "planCode": "Premier Streaming - Monthly",
+                        "packageName": "SIR_IP_SA",
+                        "termLength": 1,
+                        "priceAmount": "13.00",
+                        "taxAmount": "0.94",
+                        "feeAmount": "1.14",
+                        "totalTaxesAndFeesAmount": "2.08",
+                        "taxes": [{ "description": "State Tax", "amount": "0.94" }],
+                        "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "1.14" }],
+                        "startDate": "2028-03-12",
+                        "endDate": "2028-04-12",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "student": false
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+<h4>{{ translateKeyPrefix + ".TITLE" | translate }}</h4>
+<div *ngIf="selectionErrorMessage" class="invalid-feedback">
+    <p>{{ translateKeyPrefix + ".ERROR_REQUIRED" | translate }}</p>
+</div>
+<form [formGroup]="cancelReasonForm" (submit)="onSubmit($event)" data-e2e="cancelReasonForm" data-test="cancelReasonsForm">
+    <div *ngFor="let reason of cancelReasons" class="radio-item" data-test="cancelReasonsItems">
+        <input
+            formControlName="reason"
+            type="radio"
+            id="{{ reason['KEY'] }}"
+            [attr.data-test]="reason['KEY']"
+            name="reason"
+            value="{{ reason['KEY'] }}"
+            class="radio"
+            (click)="onReasonSelected()"
+        />
+        <label for="{{ reason['KEY'] }}" class="input-label"> {{ reason["TEXT"] }} </label>
+    </div>
+    <button type="submit" sxm-proceed-button [loading]="loading" qatag="CancelReasonsContinueButton" data-test="CancelReasonsContinueButton">
+        {{ translateKeyPrefix + ".CONTINUE_BUTTON" | translate }}
+    </button>
+</form>

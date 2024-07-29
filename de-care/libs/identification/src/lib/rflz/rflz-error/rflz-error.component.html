@@ -1,0 +1,58 @@
+<div *ngIf="errorCode" class="invalid-feedback">
+    <ng-container [ngSwitch]="errorCode">
+        <ng-container *ngSwitchCase="106">
+            <ng-container *ngTemplateOutlet="chatLinkError"></ng-container>
+        </ng-container>
+        <ng-container *ngSwitchCase="114">
+            <ng-container *ngTemplateOutlet="chatLinkError"></ng-container>
+        </ng-container>
+        <ng-container *ngSwitchCase="107">
+            <ng-container *ngTemplateOutlet="defaultTemplate"></ng-container>
+        </ng-container>
+        <ng-container *ngSwitchCase="110">
+            <ng-container *ngTemplateOutlet="defaultTemplate"></ng-container>
+        </ng-container>
+        <ng-template #defaultTemplate>
+            <sxm-ui-alert-pill class="animate-block alert-icon-notification">
+                <p class="pill-text">
+                    <span class="error-paragraph bottom-padding">{{ "identification.rflzErrorComponent.ERRORS." + errorCode | translate }}</span>
+                    <span class="error-paragraph">{{ "identification.rflzErrorComponent.ERRORS.TRY" | translate }}</span>
+                    <span class="error-paragraph text-link"
+                        ><a
+                            data-link-key="error:eligibility"
+                            sxmUiDataClickTrack="refresh"
+                            [href]="('identification.rflzErrorComponent.ERRORS.REFRESH_RADIO_LINK' | translate) + '&receiver=' + errorMsgData?.radioId + '#/refreshradio'"
+                            >{{ "identification.rflzErrorComponent.ERRORS.REFRESH_RADIO_TEXT" | translate }}</a
+                        >
+                    </span>
+                    <span class="error-paragraph">{{ "identification.rflzErrorComponent.ERRORS.OR" | translate }}</span>
+                    <span class="error-paragraph text-link"
+                        ><a data-link-key="error:eligibility" sxmUiDataClickTrack="login" [href]="'identification.rflzErrorComponent.ERRORS.LOGIN_LINK' | translate">{{
+                            "identification.rflzErrorComponent.ERRORS.LOGIN_TEXT" | translate
+                        }}</a>
+                    </span>
+                    <span class="error-paragraph">{{ "identification.rflzErrorComponent.ERRORS.MANAGE_ACCOUNT" | translate }}</span>
+                </p>
+            </sxm-ui-alert-pill>
+        </ng-template>
+        <ng-template #chatLinkError>
+            <sxm-ui-alert-pill class="animate-block alert-icon-notification">
+                <p class="pill-text">
+                    <span class="error-paragraph" [innerHTML]="'identification.rflzErrorComponent.ERRORS.' + errorCode + '_PREFIX' | translate: errorMsgData | safeHtml"></span
+                    ><chat-with-agent-link
+                        class="chat-underlined-link"
+                        data-link-key="error:eligibility"
+                        [sxmUiDataClickTrack]="'chat'"
+                        [chatLinkText]="'identification.rflzErrorComponent.CHAT_LINK_TEXT' | translate"
+                        [queue]="'general'"
+                    ></chat-with-agent-link
+                    ><span
+                        class="error-paragraph"
+                        [innerHTML]="'identification.rflzErrorComponent.ERRORS.' + errorCode + '_SUFFIX' | translate: errorMsgData | safeHtml"
+                    ></span>
+                </p>
+            </sxm-ui-alert-pill>
+        </ng-template>
+    </ng-container>
+    <p *ngIf="sweepstakesEligible" [innerHTML]="'identification.rflzErrorComponent.SWEEPSTAKES' | translate"></p>
+</div>

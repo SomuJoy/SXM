@@ -1,0 +1,33 @@
+@import "sxm.phoenix.imports";
+
+h4 {
+    margin-bottom: 10px;
+}
+
+hr {
+    background-color: $gray-medium;
+    height: 1px;
+    border: 0;
+}
+
+.bold-text {
+    font-weight: calculate-font-weight("bold");
+}
+
+.copy-container {
+    padding: 30px 10px;
+}
+
+.account-info {
+    padding: 8px 0px;
+}
+
+.column {
+    &.padding-up-to-footer {
+        padding-bottom: 20vh;
+
+        @include bp(medium) {
+            padding-bottom: 36vh;
+        }
+    }
+}

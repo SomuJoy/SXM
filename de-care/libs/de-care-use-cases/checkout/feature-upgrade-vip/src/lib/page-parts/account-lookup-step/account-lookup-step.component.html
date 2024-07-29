@@ -1,0 +1,89 @@
+<p class="gray-text head-line">{{ translateKeyPrefix + "HEAD_LINE" | translate }}</p>
+<sxm-ui-tabs ariaLabel="Packages">
+    <sxm-ui-tab-panel [tabTitle]="translateKeyPrefix + 'TABS.ACCOUNT_INFO' | translate" [tabInfo]="tabs['RADIO-ID-AND-ACCOUNT']">
+        <radio-id-and-lastname-lookup-form
+            *ngIf="isCanadaMode$ | async; else lookupUsa"
+            #lookupFormComponentCanada
+            (radioIdAndLastnameReadyToProcess)="doLookup($event)"
+        ></radio-id-and-lastname-lookup-form>
+        <ng-template #lookupUsa>
+            <radio-id-and-account-number-lookup-form #lookupFormComponent (radioIdAndAccountNumberReadyToProcess)="doLookup($event)"></radio-id-and-account-number-lookup-form>
+        </ng-template>
+    </sxm-ui-tab-panel>
+</sxm-ui-tabs>
+
+<sxm-ui-help-finding-radio-accordion [showSearchByLicensePlateLink]="false" (deviceHelp)="onDeviceHelp()">
+    <span #contentTitle class=".contentTitle"></span>
+</sxm-ui-help-finding-radio-accordion>
+<sxm-ui-modal #lpzModal [title]="translateKeyPrefix + 'RADIO_LOOKUP' | translate" [titlePresent]="true" (modalClosed)="closeLpzModal()">
+    <h5 class="info-item-box">
+        {{ translateKeyPrefix + "MODALS.LPZ.TITLE" | translate }}
+    </h5>
+    <p class="flex align-justify">
+        <span>
+            {{ translateKeyPrefix + "MODALS.LPZ.RADIO_LABEL" | translate }}
+            <ng-container *ngIf="radioIdSubmitted"> (****{{ radioIdSubmitted | slice: radioIdSubmitted.length - 4 }}) </ng-container>
+        </span>
+        <a class="text-link-secondary no-underline" (click)="closeLpzModal()" data-track-click="Edit RadioId">
+            {{ translateKeyPrefix + "MODALS.LPZ.EDIT" | translate }}
+        </a>
+    </p>
+    <h5 class="verify-your-account">{{ translateKeyPrefix + "MODALS.LPZ.ACCOUNT_VERIFY" | translate }}</h5>
+    <p>{{ "identification.ValidateUserRadioComponent.MESSAGE" | translate }}</p>
+    <p>
+        {{ translateKeyPrefix + "MODALS.LPZ.TEXT-LINK" | translate }}
+        <privacy-policy></privacy-policy>
+    </p>
+    <identification-validate-lpz-form #lpzFormComponent (lpzValidated)="lpzValidated($event)"></identification-validate-lpz-form>
+</sxm-ui-modal>
+<sxm-ui-modal [title]="translateKeyPrefix + 'RADIO_LOOKUP' | translate" [titlePresent]="true" #successModal>
+    <h5>{{ translateKeyPrefix + "MODALS.RADIO_LOOKUP.HEADER" | translate }}</h5>
+    <ul *ngIf="data.currentVehicle" class="list-with-subdescription" data-e2e="accountLookupStepModal.radioList">
+        <li>
+            <p>
+                <strong>{{
+                    data.currentVehicle
+                        | vehicleInfoTranslate
+                            : {
+                                  defaultText: translateKeyPrefix + "RADIO" | translate: { radioId: data.currentRadioId },
+                                  isFrench: currentLangIsFrench$ | async
+                              }
+                }}</strong>
+            </p>
+            <ng-container *ngIf="data.currentPackageName">
+                <p *ngIf="data.isFirstRadioTrial; else nonTrialRadio">
+                    {{
+                        translateKeyPrefix + "MODALS.RADIO_LOOKUP.TRIAL_PACKAGE_DESC"
+                            | translate
+                                : {
+                                      packageName: "app.packageDescriptions." + data.currentPackageName + ".name" | translate
+                                  }
+                    }}
+                </p>
+                <ng-template #nonTrialRadio>
+                    <p>{{ "app.packageDescriptions." + data.currentPackageName + ".name" | translate }}</p>
+                </ng-template>
+            </ng-container>
+        </li>
+    </ul>
+    <button
+        type="button"
+        sxm-proceed-button
+        (click)="successModal.close(); continue.next()"
+        data-test="accountLookupStepModal.submitButton"
+        data-e2e="accountLookupStepModal.submitButton"
+    >
+        {{ translateKeyPrefix + "CONTINUE_BUTTON" | translate }}
+    </button>
+</sxm-ui-modal>
+
+<sxm-ui-modal
+    #deviceHelpModal
+    [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"
+    [titlePresent]="true"
+    title="{{ translateKeyPrefix + 'RADIO_LOOKUP_MARINE_AVIATION' | translate }}"
+    [showBackButton]="true"
+    (backButton)="deviceHelpModal.close()"
+>
+    <sxm-ui-device-help [isCanadaMode]="isCanadaMode$ | async" [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"></sxm-ui-device-help>
+</sxm-ui-modal>

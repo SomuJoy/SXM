@@ -1,0 +1,70 @@
+{
+    "AUDIO_TITLE": "Audio",
+    "AUDIO_DESCRIPTION": "Listen on your car radio and stream on the SXM App.",
+    "INFOTAINMENT_TITLE": "Infotainment",
+    "INFOTAINMENT_DESCRIPTION": "Get latest traffic, weather, fuel prices, movie listings & more with Infotainment.",
+    "MARINE_TITLE": "Marine",
+    "AVIATION_TITLE": "Aviation",
+    "EDIT_NICKNAME_MODAL_TITLE": "Subscriptions",
+    "NICKNAME_ADDED": "Nickname successfully added.",
+    "NICKNAME_UPDATED": "Nickname successfully updated.",
+    "PRICE_CHANGE_MESSAGE_DATE": "03/14/2023",
+    "PRICE_CHANGE_MESSAGE_URL": "https://www.siriusxm.com/mar2023rates",
+    "MODIFY_SUBSCRIPTION_OPTIONS": {
+        "CHANGE_PLAN": {
+            "label": "Change my plan",
+            "routerLink": "subscription/change",
+            "url": "{{oacUrl}}/changesubscriptiondestination_execute.action?changeAction=modify&esnOrSirLogin={{radioId}}&flowOrigin=changesubscription",
+            "subscriptionId": "{{subscriptionId}}",
+            "langpref": "en"
+        },
+        "CHANGE_TERM": {
+            "label": "Change my term",
+            "routerLink": "subscription/change",
+            "url": "{{oacUrl}}/changesubscriptiondestination_execute.action?changeAction=modify&flow=changesubscriptionterm&esnOrSirLogin={{radioId}}",
+            "subscriptionId": "{{subscriptionId}}",
+            "langpref": "en"
+        },
+        "REFRESH_RADIO": {
+            "label": "Resend radio signal",
+            "url": "{{oacUrl}}/retailrefreshtext_view.action?receiver={{radioId}}&langpref=en#/refreshradio"
+        },
+        "REPLACE_RADIO": {
+            "label": "Replace this radio",
+            "routerLink": "transfer/radio/swap",
+            "subscriptionId": "{{subscriptionId}}",
+            "langpref": "en"
+        },
+        "DOWNLOAD_MANUAL": {
+            "label": "Download radio manual",
+            "url": "https://www.siriusxm.ca/help/guides/",
+            "target": "_blank"
+        },
+        "TRANSFER_SUBSCRIPTION": {
+            "label": "Transfer subscription",
+            "routerLink": "transfer/radio/swap",
+            "subscriptionId": "{{subscriptionId}}",
+            "langpref": "en"
+        },
+        "CANCEL_SUBSCRIPTION": {
+            "label": "Cancel subscription",
+            "modalId": "cancel",
+            "paymentAlertModalId": "paymentAlert",
+            "pvipAlertModalId": "cancelPvipAlert",
+            "routerLink": "subscription/cancel",
+            "subscriptionId": "{{subscriptionId}}"
+        },
+        "ADD_RENEWAL_PLAN": {
+            "label": "Add a renewal plan (add a subscription to the end of my trial)",
+            "routerLink": "subscription/change",
+            "subscriptionId": "{{subscriptionId}}",
+            "oemsetuptype": "renewal",
+            "langpref": "en"
+        },
+        "REVERIFY_STUDENT_STATUS": {
+            "label": "Reverify my student status",
+            "routerLink": "student/re-verify",
+            "langpref": "en"
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "DomainsAccountUiAccountAndSubscriptionsInfoModule": {
+        "AccountAndSubscriptionsInfoComponent": {
+            "ACCOUNT_LABEL": "ACCOUNT",
+            "VERIFY_LINK_TEXT": "Verify",
+            "RADIO_ID_LABEL": "Radio ID: ",
+            "USERNAME": "Username: "
+        }
+    }
+}

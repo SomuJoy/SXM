@@ -1,0 +1,202 @@
+{
+    "OFFER_DESTINATIONS": {
+        "CHECKOUT": {
+            "ROUTER_LINK": "subscribe/checkout",
+            "URL": "",
+            "QUERY_PARAMS": [
+                {
+                    "KEY": "programCode",
+                    "VALUE": "{{programCode}}"
+                }
+            ]
+        },
+        "CHECKOUT_TARGETED": {
+            "ROUTER_LINK": "subscribe/checkout",
+            "URL": "",
+            "QUERY_PARAMS": [
+                {
+                    "KEY": "programCode",
+                    "VALUE": "{{programCode}}"
+                },
+                {
+                    "KEY": "radioId",
+                    "VALUE": "{{radioId}}"
+                },
+                {
+                    "KEY": "act",
+                    "VALUE": "{{last4DigitsOfAccountNumber}}"
+                }
+            ]
+        },
+        "CHANGE": {
+            "ROUTER_LINK": "subscription/change",
+            "URL": "",
+            "QUERY_PARAMS": [
+                {
+                    "KEY": "subscriptionId",
+                    "VALUE": "{{subscriptionId}}"
+                }
+            ]
+        },
+        "SHOP": {
+            "ROUTER_LINK": "",
+            "URL": "https://shop.siriusxm.com/Subscriber-Exclusive/?c=38274&bp=sub&utm_campaign=38274&utm_source=OAC&utm_medium=banner&intcmp=OAC-HP-MYACC-BLUEBOX"
+        },
+        "ADD_PVIP_RADIO": {
+            "ROUTER_LINK": "subscribe/upgrade-vip/add-second-radio",
+            "URL": "",
+            "QUERY_PARAMS": [
+                {
+                    "KEY": "subscriptionId",
+                    "VALUE": "{{subscriptionId}}"
+                }
+            ]
+        },
+        "ACTIVATE": {
+            "ROUTER_LINK": "subscribe/checkout/purchase/satellite/add-radio-router/activate-radio-init",
+            "URL": "",
+            "STATE": [
+                {
+                    "KEY": "radioId",
+                    "VALUE": "{{radioId}}"
+                }
+            ]
+        }
+    },
+    "OFFER_PROFILES": {
+        "TRIAL": {
+            "TITLE": "Get 3 more months FREE",
+            "SUBTITLE": "with our Platinum Plan",
+            "LEGAL_COPY": "$2 processing fee applies. Then $22.99/mo.<br/>See Offer Details.",
+            "LABEL": "subscribe"
+        },
+        "TRIAL_NO_BRAND": {
+            "TITLE": "Get all live sports, Pandora stations, every channel, and more",
+            "SUBTITLE": "when you upgrade {{ device }} to Platinum plan.",
+            "LEGAL_COPY": "See Offer Details.",
+            "LABEL": "get platinum",
+            "DEVICE_MAP": {
+                "YMM": "your {{ identifier }}",
+                "NICKNAME": "{{ identifier }}",
+                "DEFAULT": "your subscription"
+            }
+        },
+        "TRIAL_FOLLOWON": {
+            "TITLE": "Get a free radio.",
+            "SUBTITLE": "Listen at home, in your office or in another vehicle.",
+            "LEGAL_COPY": "Additional minimum subscription, credit card and shipping required. See Offer Details.",
+            "LABEL": "get a free radio"
+        },
+        "PROMO_ME_LESS_12": {
+            "TITLE": "Get a free radio.",
+            "SUBTITLE": "Listen at home, in your office or in another vehicle.",
+            "LEGAL_COPY": "Additional minimum subscription, credit card and shipping required. See Offer Details.",
+            "LABEL": "get a free radio"
+        },
+        "PROMO_ME_12_MORE": {
+            "TITLE": "Get a free radio.",
+            "SUBTITLE": "Listen at home, in your office or in another vehicle.",
+            "LEGAL_COPY": "Additional minimum subscription, credit card and shipping required. See Offer Details.",
+            "LABEL": "get a free radio"
+        },
+        "SELFPAY_ME": {
+            "TITLE": "Get all live sports, Pandora stations, every channel, and more",
+            "SUBTITLE": "when you upgrade {{ device }} to Platinum plan.",
+            "LEGAL_COPY": "See Offer Details.",
+            "LABEL": "get platinum",
+            "DEVICE_MAP": {
+                "YMM": "your {{ identifier }}",
+                "NICKNAME": "{{ identifier }}",
+                "DEFAULT": "your subscription"
+            }
+        },
+        "PROMO_FP_PLATINUM": {
+            "TITLE": "Get a free radio.",
+            "SUBTITLE": "Listen at home, in your office or in another vehicle.",
+            "LEGAL_COPY": "Additional minimum subscription, credit card and shipping required. See Offer Details.",
+            "LABEL": "get a free radio"
+        },
+        "PVIP_NO_2ND_RADIO": {
+            "TITLE": "Want to add a second radio to your Platinum VIP plan?",
+            "SUBTITLE": "Remember, you get service in 2 cars plus 2 streaming logins.",
+            "LEGAL_COPY": "No additional charge.",
+            "LABEL": "Add second radio"
+        },
+        "BUNDLE_NO_2ND_RADIO": {
+            "TITLE": "Want to add a second radio to your Platinum Bundle plan?",
+            "SUBTITLE": "Please call us at <a href=\"tel:+1-866-607-4225\">1-866-607-4225</a> to add a radio at no additional charge.",
+            "LEGAL_COPY": "",
+            "LABEL": ""
+        },
+        "SELFPAY_MS": {
+            "TITLE": "Get 200 more channels, thousands of shows and videos on-demand",
+            "SUBTITLE": "when you upgrade to the Music & Entertainment plan.",
+            "LEGAL_COPY": "See Offer Details.",
+            "LABEL": "subscribe"
+        },
+        "PROMO_MS": {
+            "TITLE": "Get 200 more channels, thousands of shows and videos on-demand",
+            "SUBTITLE": "when you upgrade to the Music & Entertainment plan.",
+            "LEGAL_COPY": "See Offer Details.",
+            "LABEL": "subscribe"
+        },
+        "SELFPAY_NST": {
+            "TITLE": "Get 200 more channels, thousands of shows and videos on-demand",
+            "SUBTITLE": "when you upgrade to the Music & Entertainment plan.",
+            "LEGAL_COPY": "See Offer Details.",
+            "LABEL": "subscribe"
+        },
+        "SELFPAY_STREAMING_PLATINUM": {
+            "TITLE": "Get a free radio.",
+            "SUBTITLE": "Listen at home, in your office or in another vehicle.",
+            "LEGAL_COPY": "Additional minimum subscription, credit card and shipping required. See Offer Details.",
+            "LABEL": "get a free radio"
+        },
+        "SELFPAY_STREAMING_ME": {
+            "TITLE": "Get a free radio.",
+            "SUBTITLE": "Listen at home, in your office or in another vehicle.",
+            "LEGAL_COPY": "Additional minimum subscription, credit card and shipping required. See Offer Details.",
+            "LABEL": "get a free radio"
+        },
+        "EMPLOYEE": {
+            "TITLE": "Get a free radio.",
+            "SUBTITLE": "Listen at home, in your office or in another vehicle.",
+            "LEGAL_COPY": "Additional minimum subscription, credit card and shipping required. See Offer Details.",
+            "LABEL": "get a free radio"
+        },
+        "DEMO": {
+            "TITLE": "Get a free radio.",
+            "SUBTITLE": "Listen at home, in your office or in another vehicle.",
+            "LEGAL_COPY": "Additional minimum subscription, credit card and shipping required. See Offer Details.",
+            "LABEL": "get a free radio"
+        },
+        "INACTIVE": {
+            "TITLE": "Activate {{ device }}",
+            "SUBTITLE": "Missing SiriusXM? We’ve got a great plan for you.",
+            "LEGAL_COPY": "",
+            "LABEL": "activate radio",
+            "DEVICE_MAP": {
+                "YMM": "the radio in your {{ identifier }}",
+                "NICKNAME": "the radio in {{ identifier }}",
+                "DEFAULT": "your radio"
+            }
+        },
+        "DEFAULT_PLATINUM": {
+            "TITLE": "Get all live sports, Pandora stations, every channel, and more",
+            "SUBTITLE": "when you upgrade {{ device }} to Platinum plan.",
+            "LEGAL_COPY": "See Offer Details.",
+            "LABEL": "get platinum",
+            "DEVICE_MAP": {
+                "YMM": "your {{ identifier }}",
+                "NICKNAME": "{{ identifier }}",
+                "DEFAULT": "your subscription"
+            }
+        },
+        "DEFAULT_FREE_RADIO": {
+            "TITLE": "Get a free radio.",
+            "SUBTITLE": "Listen at home, in your office or in another vehicle.",
+            "LEGAL_COPY": "Additional minimum subscription, credit card and shipping required. See Offer Details.",
+            "LABEL": "get a free radio"
+        }
+    }
+}

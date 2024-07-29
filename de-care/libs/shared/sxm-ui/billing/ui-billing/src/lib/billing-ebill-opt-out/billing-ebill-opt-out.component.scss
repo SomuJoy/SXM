@@ -1,0 +1,45 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    h4 {
+        margin-bottom: 12px;
+        color: $black;
+        font-size: calculate-rem(24px);
+        font-weight: calculate-font-weight("black");
+    }
+
+    .opt-out-instruction {
+        color: $black;
+        font-size: calculate-rem(14px);
+        font-weight: calculate-font-weight("book");
+    }
+
+    .invalid-feedback {
+        font-size: calculate-rem(12px);
+        font-weight: calculate-font-weight("bold");
+        margin-top: 24px;
+    }
+
+    .cancel-cta {
+        color: $blue;
+        font-size: calculate-rem(12px);
+        font-weight: calculate-font-weight("bold");
+        letter-spacing: 1.7px;
+        text-align: center;
+        background: $white;
+        text-transform: uppercase;
+        line-height: 20px;
+        padding-bottom: 12px;
+        padding-top: 12px;
+        border: 0;
+
+        &::before {
+            border-color: $white;
+        }
+    }
+
+    .button.primary {
+        @include short-button;
+    }
+}

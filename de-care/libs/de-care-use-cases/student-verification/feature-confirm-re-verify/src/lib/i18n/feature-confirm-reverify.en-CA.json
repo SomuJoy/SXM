@@ -1,0 +1,22 @@
+{
+    "deCareUseCasesStudentVerificationFeatureConfirmReVerifyModule": {
+        "errorPageComponent": {
+            "HERO_COPY": "We're not able to complete this online",
+            "SUB_HEADER_TOP": "Please call 1-888-539-7474 for more help completing your reverification.",
+            "SUB_HEADER_BOTTOM": "If your student status cannot be verified, service will automatically renew thereafter every month in the {{offerName}} plan at then-current rates (currently ${{retailPrice}}/month, plus fees and taxes)."
+        },
+        "activeSubscriptionPageComponent": {
+            "BUTTON_LINK": "https://care.siriusxm.ca/login_view.action"
+        },
+        "offerToOfferConfirmationPageComponent": {
+            "STREAMING_PLAYER_LINK": ""
+        },
+
+        "rollOverCompleteComponent": {
+            "STREAMING_PLAYER_LINK": "",
+            "SUBSCRIPTION_IMPORTANT_INFO": {
+                "BODY": "Your subscription starts immediately unless indicated otherwise. If your radio is not receiving the programming you are entitled to, please follow the activation instructions above. For your convenience, all subscriptions automatically renew until canceled. Your renewal will be billed at the then-current rate using the payment method on file. You can cancel your subscription at any time by calling Listener Care at <a href=\"tel:+1-833-838-7846\">1-833-838-7846</a>. Your subscription is governed by the SiriusXM Customer Agreement, which can be <a href=\"http://www.siriusxm.ca/terms\" target=\"_blank\" title=\" at siriusxm.ca/terms\">viewed online</a>. If you would like to receive a copy of the Customer Agreement by mail, you can call <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>."
+            }
+        }
+    }
+}

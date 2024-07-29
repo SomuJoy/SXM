@@ -1,0 +1,71 @@
+{
+    "DeCareSharedUiProvinceSelectionModule": {
+        "COMMON": {
+            "PROVINCES": [
+                {
+                    "label": "ALBERTA",
+                    "key": "AB"
+                },
+                {
+                    "label": "COLOMBIE-BRITANNIQUE",
+                    "key": "BC"
+                },
+                {
+                    "label": "MANITOBA",
+                    "key": "MB"
+                },
+                {
+                    "label": "NOUVEAU-BRUNSWICK",
+                    "key": "NB"
+                },
+                {
+                    "label": "TERRE-NEUVE-ET-LABRADOR",
+                    "key": "NL"
+                },
+                {
+                    "label": "TERRITOIRES DU NORD-OUEST",
+                    "key": "NT"
+                },
+                {
+                    "label": "NOUVELLE-ÉCOSSE",
+                    "key": "NS"
+                },
+                {
+                    "label": "NUNAVUT",
+                    "key": "NU"
+                },
+                {
+                    "label": "ONTARIO",
+                    "key": "ON"
+                },
+                {
+                    "label": "ÎLE-DU-PRINCE-ÉDOUARD",
+                    "key": "PE"
+                },
+                {
+                    "label": "QUÉBEC",
+                    "key": "QC"
+                },
+                {
+                    "label": "SASKATCHEWAN",
+                    "key": "SK"
+                },
+                {
+                    "label": "YUKON",
+                    "key": "YT"
+                }
+            ]
+        },
+        "CurrentProvinceComponent": {
+            "PROVINCE_LABEL_TEXT": "Province: "
+        },
+        "ProvinceSelectionComponent": {
+            "EDIT_LINK_TEXT": "Modifier",
+            "MODAL_TITLE": "Paramètres du site",
+            "PROVINCE_CHANGE_TITLE": "Confirmez votre province",
+            "PROVINCE_CHANGE_INSTRUCTIONS": "La tarification peut varier selon la province.",
+            "SELECT_PROVINCE_DROPDOWN_PLACEHOLDER": "Province",
+            "PROVINCE_CHANGE_CONTINUE_BUTTON_TEXT": "Sauvegarder les paramètres"
+        }
+    }
+}

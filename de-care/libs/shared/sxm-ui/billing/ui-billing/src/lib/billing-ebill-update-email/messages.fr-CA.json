@@ -1,0 +1,8 @@
+{
+    "TITLE": "Update email",
+    "INSTRUCTIONS": "Changing this email address will also update the email address for your account.",
+    "UPDATE_BUTTON": "Update",
+    "CANCEL_BUTTON": "Cancel",
+    "SERVER_ERROR": "Server error here",
+    "EMAIL_REQUIRED_ERROR": "Enter a valid email address."
+}

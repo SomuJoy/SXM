@@ -1,0 +1,66 @@
+<main de-care-page-main>
+    <sxm-ui-dot-progress-bar-stepper [staticStepData]="{ step: 1, subStep: 1 }">
+        <sxm-ui-dot-progress-bar-step>
+            <ng-container *ngIf="{ hasMultipleAccounts: hasMultipleAccounts$ | async, accounts: accountDataInfo$ | async } as accountInfo">
+                <h1>{{ translateKeyPrefix + (accountInfo.hasMultipleAccounts ? ".TITLE_MULTIPLE_ACCOUNTS" : ".TITLE") | translate }}</h1>
+                <p>{{ translateKeyPrefix + (accountInfo.hasMultipleAccounts ? ".NOTE_MULTIPLE_ACCOUNTS" : ".NOTE") | translate }}</p>
+                <hr />
+
+                <div class="col accounts-list">
+                    <div class="row no-padding" *ngFor="let account of accountInfo.accounts">
+                        <account-and-subscriptions-info
+                            data-test="accountAndSubscriptionsInfo"
+                            [accountDataInfo]="account"
+                            [displayVerifyLink]="accountInfo.hasMultipleAccounts"
+                            (verifyClicked)="onVerifyClicked($event)"
+                        ></account-and-subscriptions-info>
+                        <hr />
+                    </div>
+                </div>
+
+                <button
+                    *ngIf="!accountInfo.hasMultipleAccounts"
+                    data-test="verifySingleAccountButton"
+                    data-e2e="verifySingleAccountButton"
+                    type="submit"
+                    (click)="verifySingleAccount(accountInfo.accounts)"
+                    sxm-proceed-button
+                    [loading]="loading$ | async"
+                >
+                    {{ translateKeyPrefix + ".CONTINUE_BUTTON" | translate }}
+                </button>
+                <div *ngIf="notInStepUp$ | async" class="link-container">
+                    <a class="text-link" (click)="onClickAccountNotFound()">{{ translateKeyPrefix + ".LINK_ACCOUNT_TEXT" | translate }}</a>
+                </div>
+            </ng-container>
+        </sxm-ui-dot-progress-bar-step>
+        <!-- TODO: Temporary use of dummy stepper. Registration flow need to be refactored.-->
+        <sxm-ui-dot-progress-bar-step> </sxm-ui-dot-progress-bar-step>
+        <sxm-ui-dot-progress-bar-step> </sxm-ui-dot-progress-bar-step>
+    </sxm-ui-dot-progress-bar-stepper>
+    <two-factor-auth-modal
+        #twoFactorAuthModal
+        (verifyCompleted)="onVerifyCompleted()"
+        [localeToInclude]="translationsForComponentService.currentLang$ | async"
+    ></two-factor-auth-modal>
+</main>
+
+<sxm-ui-modal
+    *ngIf="accountNotFoundLink"
+    [closed]="false"
+    titlePresent="true"
+    [ariaDescribedbyTextId]="selectAccVerifyModalAriaDescribedbyTextId"
+    [title]="translateKeyPrefix + '.ACCOUNT_LOOKUP_MODAL.MODAL_TITLE' | translate"
+    (modalClosed)="onClickAccountNotFoundModalClosed()"
+>
+    <h1>{{ translateKeyPrefix + ".ACCOUNT_LOOKUP_MODAL.TITLE" | translate }}</h1>
+    <p [id]="selectAccVerifyModalAriaDescribedbyTextId">{{ translateKeyPrefix + ".ACCOUNT_LOOKUP_MODAL.DESCRIPTION" | translate }}</p>
+    <hr />
+    <ui-lookup-by-radio-id-or-account-number (opened)="open()"></ui-lookup-by-radio-id-or-account-number>
+</sxm-ui-modal>
+
+<de-care-ui-lookup-by-radio-id-or-account-number-modal
+    [style.display]="openModal ? 'block' : 'none'"
+    [open]="openModal"
+    (closed)="close()"
+></de-care-ui-lookup-by-radio-id-or-account-number-modal>

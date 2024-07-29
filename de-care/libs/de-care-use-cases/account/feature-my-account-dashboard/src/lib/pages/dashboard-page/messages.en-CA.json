@@ -1,0 +1,78 @@
+{
+    "BILLING_TITLE": "Billing",
+    "SUBSCRIPTIONS_TITLE": "Subscriptions",
+    "DASHBOARD_TITLE": "Dashboard",
+    "FAQ_TITLE": "FAQs",
+    "TRENDING_TITLE": "Trending",
+    "BILLING_LINK_LABEL": "Go to Billing",
+    "SUBSCRIPTIONS_LINK_LABEL": "View all",
+    "FAQ_LINK_LABEL": "Visit Help Center",
+    "BILLING_LINK_ARIA": "View your billing history",
+    "FAQ_URL": "{{dotComUrl}}/help/?intcmp=NA_NA_CAhelp_execute.action?tab=myhelpsupport_MKTG_na",
+    "RADIO_REMOVED": "Radio successfully removed.",
+    "EDIT_CREATE_USERNAME_USER_CREDENTIALS_URL": "{{oacUrl}}/updateusercredentials_view.action?subscriptionNumber={{subscriptionId}}&langpref=en",
+    "EDIT_CREATE_USERNAME_INTERNET_CREDENTIALS_URL": "{{oacUrl}}/updateinternetcredentials_view.action?subscriptionNumber={{subscriptionId}}&langpref=en",
+    "CAR_STREAMING_URL": "{{oacUrl}}/accountconsolidation_view.action?allowPHXRedirectAfterRadioEntry=true&langpref=en#/verifyradio",
+    "SELF_PAY_FAQ": [
+        {
+            "COPY": "How do I change or cancel service?",
+            "LINK": "/aactpcancel"
+        },
+        {
+            "COPY": "Do I get a discount if I combine accounts?",
+            "LINK": "/aactpac"
+        },
+        {
+            "COPY": "Why is my radio not working properly?",
+            "LINK": "/acctprefresh"
+        },
+        {
+            "COPY": "How do I transfer or add a radio to my account?",
+            "LINK": "/aactptransfer"
+        }
+    ],
+    "TRIAL_ONLY_FAQ": [
+        {
+            "COPY": "How do I activate my SiriusXM trial?",
+            "LINK": "/acctpactivate"
+        },
+        {
+            "COPY": "Do I get a discount if I combine accounts?",
+            "LINK": "/aactpac"
+        },
+        {
+            "COPY": "What channels are included in my plan?",
+            "LINK": "/acctpchlineup"
+        },
+        {
+            "COPY": "Why is my radio not working properly?",
+            "LINK": "/acctprefresh"
+        }
+    ],
+    "TRIAL_SELF_PAY_FAQ": [
+        {
+            "COPY": "How do I change or cancel service?",
+            "LINK": "/aactpcancel"
+        },
+        {
+            "COPY": "Do I get a discount if I combine accounts?",
+            "LINK": "/aactpac"
+        },
+        {
+            "COPY": "How do I activate my SiriusXM trial?",
+            "LINK": "/acctpactivate"
+        },
+        {
+            "COPY": "Why is my radio not working properly?",
+            "LINK": "/acctprefresh"
+        },
+        {
+            "COPY": "What channels are included in my plan?",
+            "LINK": "/acctpchlineup"
+        },
+        {
+            "COPY": "How do I transfer or add a radio to my account?",
+            "LINK": "/aactptransfer"
+        }
+    ]
+}

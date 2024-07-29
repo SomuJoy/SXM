@@ -1,0 +1,60 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "libs/sxm-assets/scss/ui_reset.scss";
+@import "components/buttons";
+
+:host {
+    h4 {
+        margin-bottom: 12px;
+        color: $black;
+        font-size: calculate-rem(28px);
+        font-weight: calculate-font-weight("black");
+    }
+
+    .reason-instruction {
+        color: $black;
+        font-size: calculate-rem(14px);
+    }
+
+    .reason-form {
+        margin-top: 24px;
+    }
+
+    .invalid-feedback {
+        font-size: calculate-rem(12px);
+        font-weight: calculate-font-weight("bold");
+    }
+
+    .server-error {
+        margin-bottom: 16px;
+    }
+
+    .mt-8 {
+        margin-top: 8px;
+    }
+
+    .cancel-cta {
+        color: $blue;
+        font-size: calculate-rem(12px);
+        font-weight: calculate-font-weight("bold");
+        letter-spacing: 1.7px;
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 20px;
+        padding: 12px 0;
+        border: 0;
+
+        &::before {
+            border-color: $white;
+        }
+    }
+
+    .button.primary {
+        @include short-button;
+    }
+
+    sxm-ui-dropdown {
+        display: block;
+        margin-bottom: 0px;
+    }
+}

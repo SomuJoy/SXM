@@ -1,0 +1,21 @@
+<div class="checkbox-item display-flex">
+    <div>
+        <input
+            class="checkbox"
+            type="checkbox"
+            id="{{ uniqueId }}"
+            [(ngModel)]="checked"
+            data-e2e="chargeAgreementCheckbox"
+            qatag="ChargeMyCardCheckbox"
+            data-track-click="Charge agreement checkbox"
+            aria-label="charge agreement checkbox"
+        />
+        <label class="input-label small-copy" for="{{ uniqueId }}" qatag="ChargeMyCardText" data-track-click="Charge agreement checkbox">
+            <span [innerHTML]="translateKeyPrefix + currentLang + '.AGREEMENT_TEXT' | translate"></span>
+            <br />
+            <span role="button" tabindex="0" data-track-click="Change language" class="pseudo-link" (click)="changeLanguage($event)">{{
+                translateKeyPrefix + currentLang + ".LANGUAGE_CHANGE_COPY" | translate
+            }}</span>
+        </label>
+    </div>
+</div>

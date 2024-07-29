@@ -1,0 +1,82 @@
+<div class="checkbox-item">
+    <input
+        class="checkbox"
+        type="checkbox"
+        id="{{ uniqueId }}"
+        [(ngModel)]="checked"
+        data-e2e="chargeAgreementCheckbox"
+        qatag="ChargeMyCardCheckbox"
+        data-track-click="Charge agreement checkbox"
+        aria-label="charge agreement checkbox"
+    />
+    <label class="input-label small-copy" for="{{ uniqueId }}" data-test="ChargeMyCardText" qatag="ChargeMyCardText">
+        <span qatag="EnEspanolLink">
+            <ng-container *ngIf="details?.etf; else longTerm">
+                <span [innerHtml]="'reviewOrder.chargeAgreementComponent.copy_etf.' + currentLang + '.' + copyPartCardAgreement | translate: details | safeHtml"></span>
+                <br />
+                <a href="" (click)="changeLanguage($event)" *ngIf="showChangeLanguageLink" data-track-click="Change language">
+                    {{ "reviewOrder.chargeAgreementComponent.copy_etf." + currentLang + ".languagelinktext" | translate }}
+                </a>
+            </ng-container>
+            <ng-template #longTerm>
+                <ng-container *ngIf="details?.isLongTerm; else platinumVip">
+                    <span [innerHTML]="'reviewOrder.chargeAgreementComponent.copy_longTerm.' + currentLang + '.text' | translate | safeHtml"></span>
+                    <br />
+                    <a href="" (click)="changeLanguage($event)" *ngIf="showChangeLanguageLink" data-track-click="Change language">
+                        {{ "reviewOrder.chargeAgreementComponent.copy_longTerm." + currentLang + ".languagelinktext" | translate }}
+                    </a>
+                </ng-container>
+            </ng-template>
+            <ng-template #platinumVip>
+                <ng-container *ngIf="details?.isPlatinumVip; else default">
+                    <span
+                        [innerHTML]="'reviewOrder.chargeAgreementComponent.COPY_PLATINUM_VIP.' + currentLang + '.' + copyPartCardAgreement | translate: details | safeHtml"
+                    ></span>
+                    <br />
+                    <a href="" (click)="changeLanguage($event)" *ngIf="showChangeLanguageLink">
+                        {{ "reviewOrder.chargeAgreementComponent.COPY_PLATINUM_VIP." + currentLang + ".languagelinktext" | translate }}
+                    </a>
+                </ng-container>
+            </ng-template>
+            <ng-template #default>
+                <span
+                    [class.new-line]="settingsService.isCanadaMode"
+                    [innerHtml]="'reviewOrder.chargeAgreementComponent.copy.' + currentLang + '.' + copyPart1aKey | translate"
+                ></span>
+                <span [innerHtml]="'reviewOrder.chargeAgreementComponent.copy.' + currentLang + '.part1b' | translate"></span>
+                <a
+                    class="thin-underline-link"
+                    href="{{ 'reviewOrder.chargeAgreementComponent.copy.' + currentLang + '.linkurl1' | translate }}"
+                    target="_blank"
+                    title="{{ 'reviewOrder.chargeAgreementComponent.copy.' + currentLang + '.linkalt1' | translate }}"
+                    >{{ "reviewOrder.chargeAgreementComponent.copy." + currentLang + ".linktext1" | translate }}</a
+                >
+                {{ "reviewOrder.chargeAgreementComponent.copy." + currentLang + ".part2" | translate }}
+                <a
+                    class="thin-underline-link"
+                    href="{{ 'reviewOrder.chargeAgreementComponent.copy.' + currentLang + '.linkurl2' | translate }}"
+                    target="_blank"
+                    title="{{ 'reviewOrder.chargeAgreementComponent.copy.' + currentLang + '.linkalt2' | translate }}"
+                    >{{ "reviewOrder.chargeAgreementComponent.copy." + currentLang + ".linktext2" | translate }}</a
+                >
+                <span *ngIf="settingsService.isCanadaMode"
+                    ><span [innerHTML]="'reviewOrder.chargeAgreementComponent.copy.' + currentLang + '.' + copyPart3aKey | translate"></span>
+                    <a class="thin-underline-link" href="{{ 'reviewOrder.chargeAgreementComponent.copy.' + currentLang + '.linkurl3' | translate }}" target="_blank">
+                        {{ "reviewOrder.chargeAgreementComponent.copy." + currentLang + ".linktext3" | translate }}
+                    </a>
+                </span>
+                <span [innerHTML]="'reviewOrder.chargeAgreementComponent.copy.' + currentLang + '.' + copyPart4aKey | translate | safeHtml"></span>
+                <br />
+                <a
+                    class="thin-underline-link"
+                    href=""
+                    (click)="changeLanguage($event)"
+                    *ngIf="showChangeLanguageLink && !settingsService.settings.isOem"
+                    data-track-click="Change language"
+                >
+                    {{ "reviewOrder.chargeAgreementComponent.copy." + currentLang + ".languagelinktext" | translate }}
+                </a>
+            </ng-template>
+        </span>
+    </label>
+</div>

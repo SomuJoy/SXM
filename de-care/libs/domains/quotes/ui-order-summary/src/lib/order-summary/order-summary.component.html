@@ -1,0 +1,491 @@
+<div class="order-summary" data-e2e="orderSummary">
+    <div class="order-summary-container" [attr.data-e2e]="item.quoteType" *ngFor="let item of quotesArray; let i = index">
+        <p data-e2e="summaryCard.nonStudentRecurringCharge" *ngIf="!isStudentFlow" [ngClass]="i === 0 ? '' : 'recurring-charge-copy'">
+            <ng-container *ngIf="item.quoteType === 'currentQuote'">
+                <!-- If balance on account then dont show header -->
+                <ng-container *ngIf="math.sign(item.quote.currentBalance + 0) > 0">
+                    <ng-container *ngIf="!(isClosedRadio || isNewAccount)">
+                        <ng-container *ngIf="item.quote.isUpgraded; else cqhNonUpgrade">
+                            {{ "quotes.orderSummaryComponent.CURRENT_QUOTE.HEADER.ALL_ACCESS" | translate: item.QuoteTp }}
+                        </ng-container>
+                        <ng-template #cqhNonUpgrade>
+                            <ng-container *ngIf="isChangeSubscription && isCurrentSubscriptionTrial && item.quote.totalAmount !== '0.00' && !isClosedStreaming">
+                                {{ "quotes.orderSummaryComponent.CURRENT_QUOTE.HEADER.PROMO_PLAN" | translate: item.QuoteTp }}
+                            </ng-container>
+                        </ng-template>
+                    </ng-container>
+                    <ng-container *ngIf="item.quote.isProrated">
+                        {{ "quotes.orderSummaryComponent.CURRENT_QUOTE.HEADER.PRORATED" | translate: item.QuoteTp }}
+                    </ng-container>
+                </ng-container>
+            </ng-container>
+            <ng-container *ngIf="item.quoteType === 'futureQuote'">
+                <ng-container *ngIf="item.hasBalance; else fqNonBalance">
+                    <ng-container *ngIf="item.quote.isProrated; else fqbNonProrated">
+                        {{ "quotes.orderSummaryComponent.FUTURE_QUOTE.HEADER.NO_UPGRADE.BALANCE.PRORATED" | translate: item.QuoteTp }}
+                    </ng-container>
+                    <ng-template #fqbNonProrated>
+                        {{ "quotes.orderSummaryComponent.FUTURE_QUOTE.HEADER.NO_UPGRADE.BALANCE.NON_PRORATED" | translate: item.QuoteTp }}
+                    </ng-template>
+                </ng-container>
+                <ng-template #fqNonBalance>
+                    <ng-container *ngIf="item.quote.isProrated; else fqnbNonProrated">
+                        <ng-container *ngIf="isClosedRadio; else fqnbpTrial">
+                            {{ "quotes.orderSummaryComponent.FUTURE_QUOTE.HEADER.NO_UPGRADE.NON_BALANCE.PRORATED.CLOSED" | translate: item.QuoteTp }}
+                        </ng-container>
+                        <ng-template #fqnbpTrial>
+                            {{ "quotes.orderSummaryComponent.FUTURE_QUOTE.HEADER.NO_UPGRADE.NON_BALANCE.PRORATED.TRIAL" | translate: item.QuoteTp }}
+                        </ng-template>
+                    </ng-container>
+                    <ng-template #fqnbNonProrated>
+                        {{ "quotes.orderSummaryComponent.FUTURE_QUOTE.HEADER.NO_UPGRADE.NON_BALANCE.NON_PRORATED" | translate: item.QuoteTp }}
+                    </ng-template>
+                </ng-template>
+            </ng-container>
+            <ng-container *ngIf="item.quoteType === 'promoRenewalQuote'">
+                <ng-container *ngIf="item.isMCP; else prqNonMCP">
+                    <ng-container *ngIf="item.hasBalance; else prqmcpNonBalance">
+                        <ng-container *ngIf="item.quote.isProrated; else prqmcpnbNonProrated">
+                            {{ "quotes.orderSummaryComponent.PROMO_RENEWAL_QUOTE.HEADER.NO_UPGRADE.MCP.BALANCE.PRORATED" | translate: item.QuoteTp }}
+                        </ng-container>
+                        <ng-template #prqmcpnbNonProrated>
+                            {{ "quotes.orderSummaryComponent.PROMO_RENEWAL_QUOTE.HEADER.NO_UPGRADE.MCP.BALANCE.NON_PRORATED" | translate: item.QuoteTp }}
+                        </ng-template>
+                    </ng-container>
+                    <ng-template #prqmcpNonBalance>
+                        {{ "quotes.orderSummaryComponent.PROMO_RENEWAL_QUOTE.HEADER.NO_UPGRADE.MCP.NON_BALANCE" | translate: item.QuoteTp }}
+                    </ng-template>
+                </ng-container>
+                <ng-template #prqNonMCP>
+                    <ng-container *ngIf="item.hasBalance; else prqnmcpNonBalance">
+                        <ng-container *ngIf="item.quote.isProrated; else prqnmcpnbNonProrated">
+                            {{ "quotes.orderSummaryComponent.PROMO_RENEWAL_QUOTE.HEADER.NO_UPGRADE.NON_MCP.BALANCE.PRORATED" | translate: item.QuoteTp }}
+                        </ng-container>
+                        <ng-template #prqnmcpnbNonProrated>
+                            {{ "quotes.orderSummaryComponent.PROMO_RENEWAL_QUOTE.HEADER.NO_UPGRADE.NON_MCP.BALANCE.NON_PRORATED" | translate: item.QuoteTp }}
+                        </ng-template>
+                    </ng-container>
+                    <ng-template #prqnmcpNonBalance>
+                        {{ "quotes.orderSummaryComponent.PROMO_RENEWAL_QUOTE.HEADER.NO_UPGRADE.NON_MCP.NON_BALANCE" | translate: item.QuoteTp }}
+                    </ng-template>
+                </ng-template>
+            </ng-container>
+            <ng-container *ngIf="item.quoteType === 'proRatedRenewalQuote'">
+                <ng-container *ngIf="item.hasBalance || item.quote.isUpgraded; else rqNonBalance">
+                    {{ "quotes.orderSummaryComponent.PRORATED_RENEWAL_QUOTE.HEADER.NO_UPGRADE.BALANCE" | translate: item.QuoteTp }}
+                </ng-container>
+                <ng-template #rqNonBalance>
+                    <ng-container *ngIf="item.quote.isProrated; else rqhnuNonProrated">
+                        {{ "quotes.orderSummaryComponent.PRORATED_RENEWAL_QUOTE.HEADER.NO_UPGRADE.NON_BALANCE.PRORATED" | translate: item.QuoteTp }}
+                    </ng-container>
+                    <ng-template #rqhnuNonProrated>
+                        <p>{{ "quotes.orderSummaryComponent.PRORATED_RENEWAL_QUOTE.HEADER.NO_UPGRADE.NON_BALANCE.NON_PRORATED" | translate: item.QuoteTp }}</p>
+                    </ng-template>
+                </ng-template>
+                <p class="see-offer-copy legal-copy text-color-gray-dark no-padding">
+                    {{ "quotes.orderSummaryComponent.ORDER_DETAILS.DESCRIPTION" | translate }}
+                </p>
+            </ng-container>
+            <ng-container *ngIf="item.quoteType === 'renewalQuote'">
+                <ng-container *ngIf="item.hasBalance || item.quote.isUpgraded; else rqNonBalance">
+                    {{ "quotes.orderSummaryComponent.RENEWAL_QUOTE.HEADER.NO_UPGRADE.BALANCE" | translate: item.QuoteTp }}
+                </ng-container>
+                <ng-template #rqNonBalance>
+                    <ng-container *ngIf="item.quote.isProrated; else rqhnuNonProrated">
+                        {{ "quotes.orderSummaryComponent.RENEWAL_QUOTE.HEADER.NO_UPGRADE.NON_BALANCE.PRORATED" | translate: item.QuoteTp }}
+                    </ng-container>
+                    <ng-template #rqhnuNonProrated>
+                        <p>{{ "quotes.orderSummaryComponent.RENEWAL_QUOTE.HEADER.NO_UPGRADE.NON_BALANCE.NON_PRORATED" | translate: item.QuoteTp }}</p>
+                    </ng-template>
+                </ng-template>
+            </ng-container>
+        </p>
+
+        <sxm-ui-accordion-chevron
+            *ngIf="i !== 0; else elseTpl"
+            [collapsedText]="'quotes.orderSummaryComponent.ORDER_DETAILS.ACCORDION_CHEVRON.COLLAPSED_TEXT' | translate"
+            [expandedText]="'quotes.orderSummaryComponent.ORDER_DETAILS.ACCORDION_CHEVRON.EXPANDED_TEXT' | translate"
+            [aria]="{
+                collapsedText: 'quotes.orderSummaryComponent.ORDER_DETAILS.ACCORDION_CHEVRON.ORDER_ARIA_COLLAPSED_TEXT' | translate,
+                expandedText: 'quotes.orderSummaryComponent.ORDER_DETAILS.ACCORDION_CHEVRON.ORDER_ARIA_EXPANDED_TEXT' | translate
+            }"
+            [expandOnPrint]="true"
+            [opened]="isCanada || expandOrderSummaryDetails || (i === 1 && (!isMCP || isCurrentSubscriptionTrial)) || (isMCP && i === 2)"
+            (chevronClick)="viewDetails($event, item.quoteType, false, item.quote.isProrated)"
+            data-e2e="orderSummary.accordion"
+        >
+            <ng-container [ngTemplateOutlet]="elseTpl" [ngTemplateOutletContext]="{ hideQstgst: true }"></ng-container>
+        </sxm-ui-accordion-chevron>
+
+        <ng-template #elseTpl let-hideQstgst="hideQstgst">
+            <sxm-ui-content-card
+                data-e2e="orderSummary.accordion.contentCard"
+                [headlinePresent]="item.headlinePresent"
+                [footerPresent]="math.sign(item.quote.currentBalance + 0) === -1 ? true : false"
+            >
+                <div htmlContentForHead>
+                    <p class="text-color-white large-copy">
+                        <strong>{{ "quotes.orderSummaryComponent.ORDER_DETAILS.HEAD_LINE" | translate }}</strong>
+                    </p>
+                </div>
+                <div htmlContentForBody>
+                    <div class="order-summary-body">
+                        <ng-container *ngFor="let details of item.quote.details; let i = index">
+                            <!-- NOTE instead of doing all the template logic prob would be better to create child components for each ngFor and do the logic in the component ts file -->
+                            <!-- If it is credit balance -->
+                            <ng-container *ngIf="details.balanceType === 'PREVIOUS_BALANCE' || details.balanceType === 'CREDIT_REMAINING_ON_ACCOUNT'; else noCurrentBalance">
+                                <!-- If the user owes a balance then show -->
+                                <ng-container *ngIf="math.sign(details.priceAmount + 0) !== -1">
+                                    <ng-container *ngTemplateOutlet="noCurrentBalance"></ng-container>
+                                </ng-container>
+                                <div class="row align no-padding" *ngIf="item.hasCredit">
+                                    <div class="column small-8 align-left align-top no-padding">
+                                        <p class="large-copy">
+                                            {{ "quotes.orderSummaryComponent.ORDER_DETAILS.HAS_CREDIT" | translate }}
+                                        </p>
+                                    </div>
+                                    <div class="column small-4 align-right align-top no-padding">
+                                        <p class="large-copy">
+                                            {{ details.priceAmount | currency: "USD":"symbol-narrow":undefined:currentLang }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </ng-container>
+                            <ng-template #noCurrentBalance>
+                                <div class="content-container">
+                                    <div class="row no-padding">
+                                        <div class="column small-8 align-left no-padding">
+                                            <p class="no-margin large-copy price">
+                                                <ng-container *ngIf="details.balanceType === 'GIFT_CARD'; else noPrepaid">
+                                                    <span data-e2e="quoteGiftCardText">{{ "quotes.orderSummaryComponent.PACKAGES.PREPAID.NAME" | translate }}</span>
+                                                </ng-container>
+                                                <ng-template #noPrepaid>
+                                                    <strong data-e2e="contentCard.orderDetails.packageName" *ngIf="details.packageName; else previousBalance">{{
+                                                        details | translateOfferName
+                                                    }}</strong>
+                                                    <ng-container *ngIf="details.dealType">
+                                                        <br *ngIf="details.dealType !== 'HULU'" />
+                                                        <strong data-e2e="quoteDealTypeText">
+                                                            + {{ "app.packageDescriptions." + details.dealType + ".name" | translate }}</strong
+                                                        >
+                                                        <strong *ngIf="details.dealType === 'HULU'"
+                                                            ><br />
+                                                            {{ "quotes.orderSummaryComponent.PACKAGES.DETAILS.HULU" | translate }}</strong
+                                                        >
+                                                    </ng-container>
+                                                    <ng-template #previousBalance>
+                                                        <span data-e2e="quotePreviousBalance">{{
+                                                            "quotes.orderSummaryComponent.PACKAGES.PREVIOUS_BALANCE.NAME" | translate
+                                                        }}</span>
+                                                    </ng-template>
+                                                    <sxm-ui-tooltip *ngIf="!details.packageName" (click)="viewToolTip('Previous Balance')">
+                                                        <p>
+                                                            {{ "quotes.orderSummaryComponent.PACKAGES.PREVIOUS_BALANCE.TOOLTIP" | translate }}
+                                                        </p>
+                                                    </sxm-ui-tooltip>
+                                                </ng-template>
+                                            </p>
+
+                                            <p data-e2e="contentCard.orderDetails.termAndPrice" class="small-copy text-color-grey-dark" *ngIf="details.packageName">
+                                                <ng-container
+                                                    *ngIf="
+                                                        details.isMrdEligible &&
+                                                            (item.quoteType === 'renewalQuote' || (item?.quote?.isProrated && item.quoteType === 'futureQuote' && isCanada));
+                                                        else secondCheck
+                                                    "
+                                                >
+                                                    {{
+                                                        "quotes.orderSummaryComponent.ORDER_DETAILS.MRD_ELEGIBLE"
+                                                            | translate
+                                                                : {
+                                                                      monthlyExpression:
+                                                                          details.termLength
+                                                                          | i18nPlural
+                                                                              : ("quotes.orderSummaryComponent.ORDER_DETAILS.TERM_LENGTH.PLURAL_MAP.MONTH_PLAN" | translate)
+                                                                  }
+                                                    }}
+                                                </ng-container>
+                                                <ng-template #secondCheck>
+                                                    <ng-container
+                                                        *ngIf="
+                                                            item.quoteType === 'currentQuote' &&
+                                                                !(isClosedRadio || isNewAccount || isStreamingFlow || isChangeSubscription || isDataOnlyTrial);
+                                                            else thirdCheck
+                                                        "
+                                                    >
+                                                        {{ "quotes.orderSummaryComponent.ORDER_DETAILS.TRIAL_UPGRADE_FEE" | translate }}
+                                                    </ng-container>
+                                                </ng-template>
+
+                                                <ng-template #thirdCheck>
+                                                    <ng-container
+                                                        *ngIf="
+                                                            !item.quote.isProrated &&
+                                                                (item.quoteType === 'futureQuote' ||
+                                                                    item.quoteType === 'promoRenewalQuote' ||
+                                                                    (item.quoteType === 'currentQuote' &&
+                                                                        (isClosedStreaming ||
+                                                                            isClosedRadio ||
+                                                                            isNewAccount ||
+                                                                            item.isStudentQuote ||
+                                                                            (isChangeSubscription && details.type !== 'SELF_PAY'))));
+                                                            else fourthCheck
+                                                        "
+                                                    >
+                                                        {{
+                                                            (isCanada && (item.isMCP || (item.isStudentQuote && item.quoteType === "promoRenewalQuote"))
+                                                                ? "quotes.orderSummaryComponent.ORDER_DETAILS.MONTHS_FOR_MCP"
+                                                                : "quotes.orderSummaryComponent.ORDER_DETAILS.MONTHS_FOR"
+                                                            )
+                                                                | translate
+                                                                    : {
+                                                                          length: details.termLength,
+                                                                          pluralizedMonth:
+                                                                              item.termLength
+                                                                              | i18nPlural
+                                                                                  : ("quotes.orderSummaryComponent.ORDER_DETAILS.TERM_LENGTH.PLURAL_MAP.MONTHS" | translate),
+                                                                          price:
+                                                                              (isCanada ? details.priceAmount : item.quote.pricePerMonth)
+                                                                              | currency: "USD":"symbol-narrow":undefined:currentLang
+                                                                      }
+                                                        }}
+                                                    </ng-container>
+                                                </ng-template>
+                                                <ng-template #fourthCheck>
+                                                    <ng-container *ngIf="item.quoteType === 'currentQuote'; else renewalQuoteCheck">
+                                                        {{
+                                                            details.termLength
+                                                                | i18nPlural: ("quotes.orderSummaryComponent.ORDER_DETAILS.TERM_LENGTH.PLURAL_MAP.MONTH_PLAN" | translate)
+                                                        }}
+                                                    </ng-container>
+                                                    <ng-template #renewalQuoteCheck>
+                                                        <ng-container *ngIf="item.quoteType === 'renewalQuote'">
+                                                            <ng-container *ngIf="details.termLength === 1 || details.termLength === 12; else termMonthPlan">
+                                                                {{
+                                                                    details.termLength
+                                                                        | i18nPlural
+                                                                            : ("quotes.orderSummaryComponent.ORDER_DETAILS.TERM_LENGTH.PLURAL_MAP.MONTH_PLAN" | translate)
+                                                                }}
+                                                            </ng-container>
+                                                            <ng-template #termMonthPlan>
+                                                                <span class="text-capitalize">
+                                                                    {{
+                                                                        "quotes.orderSummaryComponent.ORDER_DETAILS.TERM_MONTH_PLAN"
+                                                                            | translate
+                                                                                : {
+                                                                                      termLength: details.termLength
+                                                                                  }
+                                                                    }}
+                                                                </span>
+                                                            </ng-template>
+                                                        </ng-container>
+                                                    </ng-template>
+                                                </ng-template>
+                                            </p>
+                                        </div>
+                                        <div class="column small-4 align-right align-top no-padding">
+                                            <p data-e2e="contentCard.orderDetails.amount" class="large-copy">
+                                                <strong>{{ details.priceAmount | currency: "USD":"symbol-narrow":undefined:currentLang }}</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row align no-padding feesAndTaxes" *ngIf="details.packageName">
+                                        <div class="column small-8 align-left align-top no-padding">
+                                            <p class="large-copy">
+                                                {{
+                                                    "quotes.orderSummaryComponent.ORDER_DETAILS." +
+                                                        ((userSettingsService.isQuebec$ | async) ? "FEES_AND_TAXES_QUEBEC" : "FEES_AND_TAXES") | translate
+                                                }}
+                                            </p>
+                                        </div>
+                                        <div class="column small-4 align-right align-top no-padding">
+                                            <p data-e2e="contentCard.orderDetails.feesAndTaxesAmount" class="large-copy">
+                                                {{ item.quote.totalTaxesAndFeesAmount | currency: "USD":"symbol-narrow":undefined:currentLang }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Details Dropdown -->
+                                <div class="row align no-padding details" *ngIf="details.packageName && item.quote.totalTaxesAndFeesAmount != '0.00'">
+                                    <div class="column small-12 align-left align-top no-padding">
+                                        <sxm-ui-accordion-chevron
+                                            [collapsedText]="'quotes.orderSummaryComponent.ORDER_DETAILS.ACCORDION_CHEVRON.COLLAPSED_TEXT' | translate"
+                                            [expandedText]="'quotes.orderSummaryComponent.ORDER_DETAILS.ACCORDION_CHEVRON.EXPANDED_TEXT' | translate"
+                                            [aria]="{
+                                                collapsedText:
+                                                    'quotes.orderSummaryComponent.ORDER_DETAILS.ACCORDION_CHEVRON.' +
+                                                        (!item.quote.fees || item.quote.fees?.length === 0 ? 'ARIA_COLLAPSED_TEXT_TAXES_ONLY' : 'ARIA_COLLAPSED_TEXT')
+                                                    | translate: { packageName: item?.quote?.details[0] | translateOfferName },
+                                                expandedText:
+                                                    'quotes.orderSummaryComponent.ORDER_DETAILS.ACCORDION_CHEVRON.' +
+                                                        (!item.quote.fees || item.quote.fees?.length === 0 ? 'ARIA_EXPANDED_TEXT_TAXES_ONLY' : 'ARIA_EXPANDED_TEXT')
+                                                    | translate: { packageName: item?.quote?.details[0] | translateOfferName }
+                                            }"
+                                            [expandOnPrint]="true"
+                                            (chevronClick)="viewDetails($event, item.quoteType, true, item.quote.isProrated)"
+                                            data-e2e="contentCard.orderDetails.detailsLink"
+                                            qatag="OrderSummaryDetailsLink"
+                                            [opened]="isCanada"
+                                        >
+                                            <ng-container *ngTemplateOutlet="taxesAndFeesDetails"></ng-container>
+                                        </sxm-ui-accordion-chevron>
+                                        <ng-template #taxesAndFeesDetails>
+                                            <div class="row align no-padding" *ngFor="let fee of item.fees">
+                                                <div class="column small-8 align-left align-top no-padding">
+                                                    <p class="small-copy text-color-grey-dark" data-e2e="quoteFeeAmountText" qatag="RenewalChargesText">
+                                                        {{
+                                                            tranlateFeesAndTaxes
+                                                                ? ("quotes.orderSummaryComponent.FEES_AND_TAXES_DESCRIPTIONS." + (fee.description | uppercase) | translate)
+                                                                : fee.description
+                                                        }}
+                                                        <sxm-ui-tooltip *ngIf="fee.isRoyaltyFee" (click)="viewToolTip(fee.description)">
+                                                            <div [innerHTML]="'quotes.orderSummaryComponent.ORDER_DETAILS.TOOLTIP.MUSIC_ROYALTY_FEE' | translate"></div>
+                                                        </sxm-ui-tooltip>
+                                                    </p>
+                                                </div>
+                                                <div class="column small-4 align-right align-top no-padding">
+                                                    <p data-e2e="contentCard.orderDetails.detailsLink.feeAmount" class="small-copy text-color-grey-dark">
+                                                        {{ fee.amount | currency: "USD":"symbol-narrow":undefined:currentLang }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="row align no-padding" *ngFor="let tax of item.quote.taxes">
+                                                <div class="column small-8 align-left align-top no-padding">
+                                                    <p data-e2e="quoteTaxAmountText" class="small-copy text-color-grey-dark">
+                                                        {{
+                                                            tranlateFeesAndTaxes
+                                                                ? ("quotes.orderSummaryComponent.FEES_AND_TAXES_DESCRIPTIONS." + (tax.description | uppercase) | translate)
+                                                                : tax.description
+                                                        }}
+                                                    </p>
+                                                </div>
+                                                <div class="column small-4 align-right align-top no-padding">
+                                                    <p data-e2e="contentCard.orderDetails.detailsLink.taxAmount" class="small-copy text-color-grey-dark">
+                                                        {{ tax.amount | currency: "USD":"symbol-narrow":undefined:currentLang }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </ng-template>
+                                    </div>
+                                </div>
+                                <div
+                                    *ngIf="showUnusedCreditLine && item.quoteType === 'currentQuote' && item.quote.consolidatedCreditAmount as creditAmount"
+                                    class="row no-padding credit-quote-margin"
+                                >
+                                    <div class="column small-8 align-left no-padding">
+                                        <p>
+                                            <span class="large-copy">
+                                                {{ "quotes.orderSummaryComponent.PACKAGES.CREDIT.NAME" | translate }}
+                                            </span>
+                                            <sxm-ui-tooltip (click)="viewToolTip('Credit Balance')">
+                                                {{ "quotes.orderSummaryComponent.PACKAGES.CREDIT.TOOLTIP" | translate }}
+                                            </sxm-ui-tooltip>
+                                        </p>
+                                    </div>
+                                    <div class="column small-4 align-right align-top no-padding">
+                                        <p class="large-copy">{{ creditAmount | currency: "USD":"symbol-narrow":undefined:currentLang }}</p>
+                                    </div>
+                                    <p class="small-copy text-color-grey-dark">
+                                        {{ "quotes.orderSummaryComponent.PACKAGES.CREDIT.SUB_NAME" | translate }}
+                                    </p>
+                                </div>
+                            </ng-template>
+                        </ng-container>
+                        <!-- Total Due -->
+                        <div class="row no-padding">
+                            <div class="column small-12 no-padding">
+                                <hr class="full-width" />
+                            </div>
+                        </div>
+                        <div class="row no-padding total">
+                            <div data-e2e="contentCard.orderDetails.totalDueText" class="column small-8 align-left no-padding">
+                                <p class="large-copy">
+                                    <strong>{{ "quotes.orderSummaryComponent." + item.quoteLangKey + ".DUE.NO_UPGRADE" | translate: item.QuoteTp }}</strong>
+                                </p>
+                            </div>
+                            <div data-e2e="contentCard.orderDetails.totalDue" class="column small-4 align-right no-padding">
+                                <ng-container *ngIf="item.quoteType === 'currentQuote' && item.quote.currentBalance !== ''; else noCurrentBalance">
+                                    <p [ngSwitch]="math.sign(item.quote.currentBalance + 0)" class="large-copy">
+                                        <strong *ngSwitchCase="-1">
+                                            {{ 0.0 | currency: "USD":"symbol-narrow":"1.2-2":currentLang }}
+                                        </strong>
+                                        <strong *ngSwitchCase="0">
+                                            {{ 0.0 | currency: "USD":"symbol-narrow":"1.2-2":currentLang }}
+                                        </strong>
+                                        <strong *ngSwitchCase="1">
+                                            {{ item.quote.currentBalance | currency: "USD":"symbol-narrow":undefined:currentLang }}
+                                        </strong>
+                                    </p>
+                                </ng-container>
+                                <ng-template #noCurrentBalance>
+                                    <p class="large-copy">
+                                        <strong>
+                                            {{ item.quote.totalAmount | currency: "USD":"symbol-narrow":undefined:currentLang }}
+                                        </strong>
+                                    </p>
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ng-container htmlContentForFooter>
+                    <div class="row no-padding" *ngIf="math.sign(item.quote.currentBalance + 0) === -1" data-e2e="quoteCreditOnAccount">
+                        <div class="column small-8 align-left no-padding">
+                            <p class="large-copy">
+                                <strong>{{ "quotes.orderSummaryComponent.ORDER_DETAILS.CREDIT_ON_ACCOUNT" | translate }}</strong>
+                            </p>
+                        </div>
+                        <div class="column small-4 align-right no-padding">
+                            <p class="large-copy">
+                                <strong>
+                                    {{ math.abs(item.quote.currentBalance) | currency: "USD":"symbol-narrow":undefined:currentLang }}
+                                </strong>
+                            </p>
+                        </div>
+                    </div>
+                </ng-container>
+            </sxm-ui-content-card>
+            <div *ngIf="!hideQstgst && isCanada">
+                <br /><span data-e2e="quoteGST">{{ "quotes.orderSummaryComponent.GST" | translate }}</span> <br /><span
+                    data-e2e="quoteQST"
+                    *ngIf="userSettingsService.isQuebec$ | async"
+                    >{{ "quotes.orderSummaryComponent.QST" | translate }}</span
+                >
+            </div>
+            <ng-container *ngIf="item.isStudentQuote && item.quoteType === 'currentQuote'">
+                <p data-e2e="contentCard.studentCurrentQuoteRecurringCharge" class="recurring-charge-copy">
+                    {{
+                        item.quote.details[0].type === "RTP_OFFER"
+                            ? ("quotes.orderSummaryComponent.STUDENTS_QUOTE.FOOTER.STUDENTS_RTP_PLAN"
+                              | translate: { amount: promoPrice | currency: "USD":"symbol-narrow":undefined:currentLang, startDate: endDateForNote })
+                            : ("quotes.orderSummaryComponent.STUDENTS_QUOTE.FOOTER.STUDENTS_MCP_PLAN"
+                              | translate: { amount: promoPrice | currency: "USD":"symbol-narrow":undefined:currentLang, startDate: endDateForNote })
+                    }}
+                </p>
+                <p *ngIf="showHeadlineSeeOfferDetails" class="see-offer-copy legal-copy text-color-gray-dark no-padding">
+                    {{ "quotes.orderSummaryComponent.ORDER_DETAILS.DESCRIPTION" | translate }}
+                </p>
+            </ng-container>
+        </ng-template>
+        <div *ngIf="isStreamingFlow && item.quoteType === 'renewalQuote'">
+            <p class="recurring-charge-copy">
+                <strong>{{ "quotes.orderSummaryComponent.RENEWAL_QUOTE.HEADER.NO_UPGRADE.NON_BALANCE.CANCEL_TEXT_STREAMING" | translate }}</strong>
+            </p>
+        </div>
+    </div>
+    <div data-e2e="orderSummary.importantInfo" *ngIf="isStudentFlow" class="important-info-container">
+        <p
+            class="small-copy"
+            [innerHTML]="
+                'quotes.orderSummaryComponent.NOTES.IMPORTANT_NOTE_STUDENTS'
+                    | translate
+                        : {
+                              termlength: termLengthImportantNote,
+                              month: quotesArray[0].termLength | i18nPlural: ('quotes.orderSummaryComponent.ORDER_DETAILS.TERM_LENGTH.PLURAL_MAP.MONTHS_TERM' | translate),
+                              premierFullPrice: premierFullPrice | currency: 'USD':'symbol-narrow':undefined:currentLang
+                          }
+            "
+        ></p>
+    </div>
+</div>

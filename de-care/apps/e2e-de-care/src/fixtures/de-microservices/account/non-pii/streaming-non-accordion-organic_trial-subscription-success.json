@@ -1,0 +1,66 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "EMIBA",
+            "accountProfile": {
+                "accountRegistered": false
+            },
+            "accountState": {
+                "isInPreTrial": false
+            },
+            "serviceAddress": {
+                "state": "NY",
+                "country": "US"
+            },
+            "subscriptions": [
+                {
+                    "id": "10000204270",
+                    "plans": [
+                        {
+                            "code": "Trial - Premier Streaming - 2mo - $0.00 - (RTD)",
+                            "label": "Trial - Streaming Platinum - 2mo - $0.00",
+                            "packageName": "SIR_IP_SA",
+                            "termLength": 2,
+                            "startDate": "2022-09-23T00:00:00-04:00",
+                            "endDate": "2022-11-23T00:00:00-05:00",
+                            "nextCycleOn": null,
+                            "marketType": "trial:streaming",
+                            "type": "TRIAL",
+                            "capabilities": ["IPAUD"],
+                            "price": 0,
+                            "isBasePlan": true,
+                            "dataCapable": false
+                        }
+                    ],
+                    "followonPlans": [],
+                    "radioService": null,
+                    "streamingService": {
+                        "id": "10000206318",
+                        "maskedUserName": "emi******@siriusxm.com",
+                        "status": "Active",
+                        "randomCredentials": false
+                    },
+                    "status": "Active",
+                    "devicePromoCode": null,
+                    "isPrimary": true,
+                    "nickname": null,
+                    "hasDuplicateVehicleInfo": null
+                }
+            ],
+            "billingSummary": {
+                "creditCard": null,
+                "isPaymentTypeInvoice": false
+            },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true,
+            "maskedEmail": null,
+            "isEmailinTokenSameAsEmailOnFile": false,
+            "isAccountIdentifiedUsingFLEPZOrVIN": false
+        },
+        "marketingId": null,
+        "marketingAcctId": "7726"
+    }
+}

@@ -1,0 +1,14 @@
+<section id="mainContent" *ngrxLet="getOrganicAccountInfoViewModel$ as organicAccountInfoVM">
+    <sxm-ui-step-header>
+        <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+        <ng-container body> </ng-container>
+    </sxm-ui-step-header>
+    <sxm-ui-plan-recap-card [data]="organicAccountInfoVM?.longDescriptionPlanRecapCardViewModel"></sxm-ui-plan-recap-card>
+    <ng-container>
+        <de-care-account-info-and-zip-form-field-page
+            [country]="organicAccountInfoVM?.countryCode"
+            (formCompleted)="onformCompleted($event)"
+            [isFullAddressForm]="organicAccountInfoVM?.isFullAddressForm"
+        ></de-care-account-info-and-zip-form-field-page>
+    </ng-container>
+</section>

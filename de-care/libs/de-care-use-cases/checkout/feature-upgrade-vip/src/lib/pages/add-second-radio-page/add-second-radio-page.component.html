@@ -1,0 +1,73 @@
+<section id="hero" deCarePageFullWidthContent="mainWideContent">
+    <h1 class="ui-hero-copy--title h2" [innerHTML]="translateKeyPrefix + 'HERO' | translate"></h1>
+</section>
+<div deCarePageMainContent>
+    <section id="mainContent">
+        <sxm-ui-stepper-accordion #stepper>
+            <sxm-ui-step-accordion
+                (editClicked)="onFirstStepEdited()"
+                *ngrxLet="firstStepData$ as firstStepData"
+                [label]="translateKeyPrefix + 'STEPS.FIND_SECOND_RADIO.TITLE' | translate"
+            >
+                <ng-container>
+                    <p>{{ translateKeyPrefix + "STEPS.FIND_SECOND_RADIO.PARAGRAPH_WITH_STREAMING" | translate }}</p>
+                </ng-container>
+
+                <de-care-second-radio-lookup
+                    #secondRadioLookupComponent
+                    [couldSkipRadioSelection]="false"
+                    (continue)="onAddSecondaryStepContinue($event)"
+                    [secondVehicles]="firstStepData?.secondVehicles"
+                    [streamingAccounts]="firstStepData?.streamingAccounts"
+                    [isLoading]="secondStepLoading"
+                    [displayValidateUserRadioModal]="requireValidateUserRadioModal$ | async"
+                    [radioIdToValidate]="firstStepData?.platinumSubscriptionLast4"
+                    [enablePVIPStreamingFlag]="true"
+                ></de-care-second-radio-lookup>
+                <ng-template #inactiveContent>
+                    <div class="secondPlanDescription">
+                        <ng-container *ngIf="isStreaming$ | async; else secondRadio">
+                            <div *ngIf="(selectedStreaming$ | async).userName; else selectedStreaming">
+                                {{ (translateKeyPrefix + "STEPS.STREAMING.NEW_STREAMING" | translate) + "\n" + (selectedStreaming$ | async).userName }}
+                            </div>
+
+                            <ng-template #selectedStreaming>
+                                {{
+                                    ("app.packageDescriptions." + (selectedStreaming$ | async).packageName | translate).name +
+                                        "\n" +
+                                        (selectedStreaming$ | async).maskedUserName
+                                }}
+                            </ng-template>
+                        </ng-container>
+                        <ng-template #secondRadio>
+                            {{
+                                firstStepData?.selectedSecondRadio?.vehicleInfo
+                                    | vehicleInfoTranslate
+                                        : {
+                                              defaultText:
+                                                  translateKeyPrefix + "STEPS.FIND_SECOND_RADIO.RADIO_ID_MASKED"
+                                                  | translate: { lastFour: firstStepData?.selectedSecondRadio?.last4DigitsOfRadioId },
+                                              isFrench: false
+                                          }
+                            }}
+                        </ng-template>
+                    </div>
+                </ng-template>
+            </sxm-ui-step-accordion>
+            <sxm-ui-step-accordion (active)="onReviewStepActive()" [label]="translateKeyPrefix + 'STEPS.REVIEW.TITLE' | translate">
+                <add-second-radio-order-summary *ngIf="orderSummary$ | async as orderSummary" [data]="orderSummary"></add-second-radio-order-summary>
+                <button (click)="onAddSecondRadioButton()" type="button" sxm-proceed-button [loading]="reviewStepLoading">
+                    {{ translateKeyPrefix + "STEPS.REVIEW.ADD_BUTTON" | translate }}
+                </button>
+                <div class="creditCopyDescription">
+                    <p>
+                        {{ translateKeyPrefix + "RECEIVE_A_CREDIT_DESCRIPTION" | translate }}
+                    </p>
+                </div>
+            </sxm-ui-step-accordion>
+        </sxm-ui-stepper-accordion>
+    </section>
+</div>
+<section id="legalCopySection" deCarePageFullWidthContent>
+    <div [innerHTML]="translateKeyPrefix + 'LEGAL_COPY' | translate"></div>
+</section>

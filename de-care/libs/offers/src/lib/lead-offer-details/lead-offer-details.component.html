@@ -1,0 +1,86 @@
+<main
+    class="high-level-info background-offwhite"
+    [ngClass]="{
+        'theme-non-retail': offerDescriptionData?.theme === 'Theme2',
+        'presentation-no-icons-single-detail-visible': offerDescriptionData?.presentation === 'Presentation3',
+        'presentation-visible-details': offerDescriptionData?.presentation === 'Presentation4'
+    }"
+>
+    <!-- zone 2 start -->
+    <section class="no-padding-bottom no-padding-top">
+        <!-- package summary : begin -->
+        <div class="content-container">
+            <div class="row align-center no-padding-small">
+                <!-- TODO: refactor this column nest to use offsets once the legacy package card is removed below (ie. CMS data is exclusively used)-->
+                <div class="column small-12 medium-2 no-padding background-white"></div>
+                <div class="column small-12 medium-6 no-padding-medium background-white">
+                    <div class="hero-sales--plan-card background-white" [class.box-shadow]="isLegacyMode" [class.legacy-package-card]="!offerDescriptionData">
+                        <div *ngIf="marketingPromoCode && !hideMarketingPromoCode" class="hero-sales--plan-card-flag">
+                            <p class="small-copy text-uppercase" data-e2e="leadOfferDetails.promoCodeApplied">
+                                {{ "offers.leadOfferDetailsComponent.PROMO_CODE_APPLIED" | translate: { promoCode: marketingPromoCode } }}
+                            </p>
+                        </div>
+                        <ng-container *ngIf="isLegacyMode; else useOfferDescriptionData">
+                            <div class="hero-sales--plan-card-body">
+                                <div class="content-with-margin">
+                                    <personal-info
+                                        *ngIf="vehicleInfo || radioId || isStreaming"
+                                        [vehicleInfo]="vehicleInfo"
+                                        [radioId]="radioId"
+                                        [addHorizontalLine]="!!vehicleInfo || !!radioId || (isStreaming && !!maskedUsername)"
+                                        [isStreaming]="isStreaming"
+                                        [maskedUsername]="maskedUsername"
+                                    >
+                                    </personal-info>
+                                </div>
+                                <ng-container *ngIf="showPartialChannels; else defaultOfferCard">
+                                    <offer-card-with-partial-channels-visible
+                                        [isRTC]="isRTC"
+                                        [offerInfo]="offerInfo"
+                                        [excludePriceAndTermDisplay]="excludePriceAndTermDisplay"
+                                        [opened]="false"
+                                        [packageDescription]="packageDescriptionViewModel"
+                                        [selectedRenewalOfferPrice]="selectedRenewalOfferPrice"
+                                        [hidePlanGrid]="hidePlanGridInOfferCard"
+                                        [channelLimit]="partialChannelsLimit"
+                                    >
+                                    </offer-card-with-partial-channels-visible>
+                                </ng-container>
+                                <ng-template #defaultOfferCard>
+                                    <offer-card
+                                        [isRTC]="isRTC"
+                                        [offerInfo]="offerInfo"
+                                        [excludePriceAndTermDisplay]="excludePriceAndTermDisplay"
+                                        [opened]="isStreaming"
+                                        [packageDescription]="packageDescriptionViewModel"
+                                        [selectedRenewalOfferPrice]="selectedRenewalOfferPrice"
+                                        [hidePlanGrid]="hidePlanGridInOfferCard"
+                                    >
+                                    </offer-card>
+                                </ng-template>
+                            </div>
+                        </ng-container>
+                        <ng-template #useOfferDescriptionData>
+                            <div *ngIf="vehicleInfo || radioId || maskedUsername" class="upper-card-content">
+                                <personal-info
+                                    [vehicleInfo]="vehicleInfo"
+                                    [radioId]="radioId"
+                                    [addHorizontalLine]="false"
+                                    [isStreaming]="isStreaming"
+                                    [maskedUsername]="maskedUsername"
+                                >
+                                </personal-info>
+                                <hr />
+                            </div>
+                            <sxm-ui-primary-package-card
+                                [chevronClickTrackingText]="chevronClickTrackingText"
+                                [packageData]="offerDescriptionData"
+                            ></sxm-ui-primary-package-card>
+                        </ng-template>
+                    </div>
+                </div>
+                <div class="column small-12 medium-2 no-padding background-white"></div>
+            </div>
+        </div>
+    </section>
+</main>

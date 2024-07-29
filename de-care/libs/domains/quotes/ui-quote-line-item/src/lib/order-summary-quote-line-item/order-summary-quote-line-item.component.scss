@@ -1,0 +1,38 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: block;
+    width: 100%;
+
+    .line-item-description-title,
+    .line-item-amount {
+        font-weight: calculate-font-weight("bold");
+    }
+}
+
+:host.non-bold {
+    .line-item-description-title,
+    .line-item-amount {
+        font-size: 1rem;
+        line-height: 1.5;
+        font-weight: calculate-font-weight("book");
+    }
+}
+
+:host.de-emphasized {
+    .line-item-description-title,
+    .line-item-amount {
+        font-size: 0.75rem;
+        line-height: 1.5;
+        color: #736e7d;
+        font-weight: calculate-font-weight("book");
+    }
+}
+
+:host.large-copy {
+    .line-item-description-title,
+    .line-item-amount {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+}

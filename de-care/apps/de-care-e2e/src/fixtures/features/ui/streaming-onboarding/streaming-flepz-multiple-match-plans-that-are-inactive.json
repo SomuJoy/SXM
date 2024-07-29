@@ -1,0 +1,39 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": [
+        {
+            "subscriptions": [
+                {
+                    "hasOACCredentials": false,
+                    "status": "Closed",
+                    "eligibilityType": "CREATE_LOGIN",
+                    "radioService": { "last4DigitsOfRadioId": "2B89", "vehicleInfo": { "model": null, "make": null, "year": null }, "maskedRadioId": "****2B89" },
+                    "plans": [],
+                    "email": "MARYKATE@TESTER.COM",
+                    "inEligibleReasonCode": null,
+                    "eligibleService": null
+                }
+            ],
+            "last4DigitsOfAccountNumber": "4763",
+            "maskedAccountNumber": "**********4763"
+        },
+        {
+            "subscriptions": [
+                {
+                    "hasOACCredentials": false,
+                    "status": "Closed",
+                    "eligibilityType": "CREATE_LOGIN",
+                    "radioService": { "last4DigitsOfRadioId": "YD48", "vehicleInfo": { "model": "Optima", "make": "Kia", "year": 2013 }, "maskedRadioId": "****YD48" },
+                    "plans": [],
+                    "email": "MARYKATE@TESTER.COM",
+                    "inEligibleReasonCode": null,
+                    "eligibleService": null
+                }
+            ],
+            "last4DigitsOfAccountNumber": "5713",
+            "maskedAccountNumber": "**********5713"
+        }
+    ]
+}

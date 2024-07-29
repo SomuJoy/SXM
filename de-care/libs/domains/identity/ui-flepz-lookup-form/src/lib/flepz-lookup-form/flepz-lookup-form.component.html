@@ -1,0 +1,24 @@
+<form [formGroup]="form">
+    <div class="general-error">
+        <ng-content select="[flepzLookupError]"></ng-content>
+    </div>
+    <sxm-ui-first-name-form-field formControlName="firstName" data-test="AccountInfoFirstName"></sxm-ui-first-name-form-field>
+    <sxm-ui-last-name-form-field formControlName="lastName" data-test="AccountInfoLastName"></sxm-ui-last-name-form-field>
+    <sxm-ui-email-form-field
+        formControlName="email"
+        data-test="AccountInfoEmail"
+        [errorMsg]="translateKeyPrefix + (form.controls.email.hasError('usernameInUse') ? '.EMAIL_IN_USE_ERROR_MSG' : '.EMAIL_INVALID_MSG') | translate"
+    ></sxm-ui-email-form-field>
+    <sxm-ui-phone-number-form-field formControlName="phoneNumber" data-test="AccountInfoPhoneNumber"></sxm-ui-phone-number-form-field>
+    <sxm-ui-postal-code-form-field
+        formControlName="zipCode"
+        data-test="AccountInfoPostalCode"
+        [isCanada]="countryCodeIsCanada$ | async"
+        [errorMsg]="(invalidZipFromLookupError$ | async) ? (translateKeyPrefix + '.INVALID_ZIP_FROM_LOOKUP_ERROR' | translate) : ''"
+    ></sxm-ui-postal-code-form-field>
+    <privacy-policy></privacy-policy>
+    <ng-content select="[privacyPolicy]"></ng-content>
+    <button type="button" (click)="onFormSubmit()" sxmUiDataClickTrack="submit" sxm-proceed-button [loading]="processingSubmission$ | async" data-test="FlepzFormSubmitButton">
+        {{ translateKeyPrefix + ".CONTINUE_BUTTON_TEXT" | translate }}
+    </button>
+</form>

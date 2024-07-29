@@ -1,0 +1,53 @@
+{
+    "DeCareUseCasesCheckoutUiCommonModule": {
+        "SubscriptionSummaryComponent": {
+            "TRIAL": "{{name}} Trial",
+            "PROMO": "{{name}} Promo",
+            "NO_ACTIVE_SERVICE": "No Active Service",
+            "RENEWS": "Renews:",
+            "STARTS": "Starts:",
+            "ENDS": "Expires:",
+            "CLOSED": "Closed:"
+        },
+        "SatelliteUpsellsFormComponent": {
+            "HEADER_SINGLE_UPSELL": "(Optional)",
+            "HEADER_MULTI_UPSELL": "(Optional, you may choose one or both)",
+            "SUBMIT_BUTTON": "Continue"
+        },
+        "StreamingUpsellsFormComponent": {
+            "HEADER_SINGLE_UPSELL": "(Optional)",
+            "HEADER_MULTI_UPSELL": "(Optional, you may choose one or both)",
+            "SUBMIT_BUTTON": "Continue"
+        },
+        "AccountInfoAndPaymentInfoFormComponent": {
+            "BILLING_DETAILS_TITLE": "Billing Details",
+            "PAYMENT_DETAILS_TITLE": "Credit Card Details",
+            "CONFIRM_YOUR_ADDRESS": "Please confirm your address",
+            "CONTINUE_BUTTON_TEXT": "Review Order",
+            "CREDIT_CARD_PROCESSING_ERROR": "We were unable to authorize your credit card. Please update your payment information.",
+            "UNEXPECTED_ERROR": "An unexpected error occurred. Please try again.",
+            "CARD_TYPE_ICONS": ["visa", "mc", "discover", "amex"]
+        },
+        "AccountInfoBasicAndPaymentInfoFormComponent": {
+            "BILLING_DETAILS_TITLE": "Payment Info",
+            "CONTINUE_BUTTON_TEXT": "Review Order",
+            "CREDIT_CARD_PROCESSING_ERROR": "We were unable to authorize your credit card. Please update your payment information.",
+            "UNEXPECTED_ERROR": "An unexpected error occurred. Please try again.",
+            "INVALID_ZIP_FROM_LOOKUP_ERROR": "Enter a valid zip code"
+        },
+        "SxmUiLastNameFormFieldComponent": {
+            "PLACEHOLDER": "Last Name",
+            "ERROR_REQUIRED": "Enter your last name."
+        },
+        "PhoneNumberFormFieldComponent": {
+            "PLACEHOLDER": "Phone Number",
+            "ERROR_REQUIRED": "Enter a valid phone number."
+        },
+        "UsernameAndPasswordFormComponent": {
+            "CONTINUE_BUTTON_TEXT": "Continue",
+            "FORM_FIELD_USERNAME_LABEL": "Username",
+            "EMAIL_IN_USE_ERROR_MSG": "Username/Email address already in use.",
+            "SYSTEM_ERROR": "Sorry, we are having issues fulfilling this request. Please try again."
+        }
+    }
+}

@@ -1,0 +1,85 @@
+<main class="background-offwhite" *ngIf="confirmationData$ | async as confirmationData">
+    <div class="content-container">
+        <div class="row align-center no-padding-small">
+            <div class="column medium-2 no-padding background-white raised"></div>
+            <div class="column small-12 medium-6 background-white no-padding-small raised">
+                <div class="confirmation-content background-white">
+                    <svg class="icon large checkmark-circle">
+                        <use class="icon-check-mark-flex-stroke" xlink:href="#icon-check-mark-flex-stroke"></use>
+                    </svg>
+                    <h4 data-e2e="confirmationHeadline">{{ translateKeyPrefix + "HEADLINE" | translate }}</h4>
+                    <p class="mb-24" data-e2e="confirmationEmail">
+                        {{ translateKeyPrefix + "CONFIRMATION_EMAIL" | translate: { email: confirmationData.registerData.account.email } }}<br />
+                        <a class="text-link no-print" (click)="onPrintClick()" data-track-click="Print summary" data-e2e="confirmationPrintSummary">{{
+                            translateKeyPrefix + "PRINT_LINK_LABEL" | translate
+                        }}</a>
+                    </p>
+
+                    <hr class="mb-24" />
+
+                    <div class="mb-24">
+                        <p class="large-copy bold mb-16">{{ translateKeyPrefix + "CAR_DETAILS_TITLE" | translate }}</p>
+                        <sxm-ui-detail-blocks [detailData]="carDetailsPortData$ | async"></sxm-ui-detail-blocks>
+                    </div>
+                    <div class="mb-24">
+                        <p class="large-copy bold mb-16">{{ translateKeyPrefix + "SUBSCRIPTION_DETAILS_TITLE" | translate }}</p>
+                        <sxm-ui-detail-blocks [detailData]="subscriptionDetailsPortData$ | async"></sxm-ui-detail-blocks>
+                    </div>
+                    <div class="mb-24">
+                        <p class="large-copy bold mb-16">{{ translateKeyPrefix + "PAYMENT_DETAILS_TITLE" | translate }}</p>
+                        <de-care-compact-quote-summary
+                            [compactQuoteData]="quoteSummaryData$ | async"
+                            [detailsCollapsed]="hideSPQuoteInitially$ | async"
+                        ></de-care-compact-quote-summary>
+                    </div>
+
+                    <hr class="mb-24" />
+
+                    <div class="mb-24 no-print">
+                        <listen-now
+                            [infoForToken]="{ subscriptionId: confirmationData.selectedSubscriptionIDForSAL }"
+                            [customLink]="translateKeyPrefix + 'STREAMING_PLAYER_LINK' | translate"
+                            data-e2e="listenNow"
+                        ></listen-now>
+                    </div>
+                    <div *ngIf="confirmationData.isEligibleForRegistration" class="mb-24 no-print">
+                        <register-your-account
+                            [credentialState]="registerCredentialState"
+                            [account]="confirmationData.registerData?.account"
+                            [securityQuestions]="confirmationData.registerData?.securityQuestions"
+                            [registrationCompleted]="registrationCompleted"
+                            [passwordError]="passwordError"
+                            (register)="onRegisterAccount($event)"
+                            data-e2e="registerAccount"
+                        ></register-your-account>
+                    </div>
+                    <sxm-ui-ready-to-explore-wrapper
+                        [headerText]="translateKeyPrefix + 'READY_TO_EXPLORE' | translate"
+                        [listOfLinks]="translateKeyPrefix + 'READY_TO_EXPLORE_LINKS' | translate"
+                        [streamingLinkText]="translateKeyPrefix + 'STREAMING_LINK_TEXT' | translate"
+                        [streamingLinkUrl]="translateKeyPrefix + 'STREAMING_PLAYER_LINK' | translate"
+                        [subscriptionID]="confirmationData.selectedSubscriptionIDForSAL"
+                        class="no-print"
+                        data-e2e="readyToExplore"
+                    ></sxm-ui-ready-to-explore-wrapper>
+                    <button type="button" data-e2e="acscConfirmation.goToMyAccountCallToAction" sxm-proceed-button (click)="onGoToMyAccount()" class="no-print">
+                        {{ translateKeyPrefix + "GO_TO_MY_ACCOUNT_BUTTON" | translate }}
+                    </button>
+                </div>
+            </div>
+            <div class="column medium-2 no-padding background-white"></div>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="row align-center">
+            <div class="column small-12 medium-10 no-padding-medium">
+                <div class="important-info-container">
+                    <p class="legal-copy" data-e2e="confirmation-important-info">
+                        <strong>{{ translateKeyPrefix + "LEGAL_COPY_TITLE" | translate }}</strong>
+                    </p>
+                    <p class="legal-copy" [innerHTML]="translateKeyPrefix + 'LEGAL_COPY' | translate"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

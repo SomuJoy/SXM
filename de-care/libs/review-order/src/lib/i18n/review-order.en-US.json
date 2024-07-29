@@ -1,0 +1,75 @@
+{
+    "reviewOrder": {
+        "chargeAgreementComponent": {
+            "copy": {
+                "en": {
+                    "part1a": "Please charge my credit card for the amount due now and recurring charges as outlined above.  By clicking “Complete My Order”, I agree that my service will ",
+                    "part1b": "<b>AUTOMATICALLY RENEW and will be charged to my payment method at then-current rates at the time of each renewal, plus fees and taxes, until I cancel.</b> I agree to the SiriusXM ",
+                    "linktext1": "Customer Agreement",
+                    "linkurl1": "https://www.siriusxm.com/customeragreement",
+                    "linkalt1": " at siriusxm.com/customeragreement",
+                    "part2": " and ",
+                    "linktext2": "Privacy Policy",
+                    "linkurl2": "https://www.siriusxm.com/privacy-policy",
+                    "linkalt2": " at siriusxm.com/privacypolicy",
+                    "part4": " , including, receiving account notifications at the email address provided, the refund policy and how to cancel, which includes online methods or calling SiriusXM at 1-866-635-2349.",
+                    "languagelinktext": "En Español",
+                    "languagelink": "es"
+                },
+                "es": {
+                    "part1a": "Por favor cargue a mi tarjeta de crédito la cantidad que se debe ahora y los cargos recurrentes según descrito arriba.  Cuando presiono “Completar mi Orden”, yo acepto que mi servicio será ",
+                    "part1b": "<b>RENOVADO AUTOMATICAMENTE y que me cobrarán a mi método de pago las tarifas actuales en el momento de cada renovación, más tarifas e impuestos, hasta que yo cancele.</b>  Yo estoy de acuerdo con el ",
+                    "linktext1": "Acuerdo de Cliente",
+                    "linkurl1": "https://www.siriusxm.com/customeragreement#enespanol",
+                    "linkalt1": " en siriusxm.com/customeragreement#enespanol",
+                    "part2": " y ",
+                    "linktext2": "Política de Privacidad",
+                    "linkurl2": "https://www.siriusxm.com/privacy-policy#enespanol",
+                    "linkalt2": " en siriusxm.com/privacy-policy#enespanol",
+                    "part4": " de SiriusXM, incluyendo recibiendo notificaciones de la cuenta al correo electrónico provisto, la política de reembolso y de cancelación, que incluye métodos en línea o llamando a SiriusXM al 1-866-635-2349.",
+                    "languagelinktext": "In English",
+                    "languagelink": "en"
+                }
+            },
+            "copy_etf": {
+                "en": {
+                    "text": "Please charge this credit card for any amount due now, and all future and recurring charges billed to my account. I agree that my subscription will automatically renew at then-current rates plus fees and taxes. I can cancel at any time using the methods described in the SiriusXM Customer Agreement, including by calling Listener Care at 1-866-635-2349. <strong>I understand that if I cancel or terminate my subscription during the first {{ etfTerm }} months, I will be charged a ${{ etf }} EARLY TERMINATION FEE</strong>. I agree to the <a href='https://www.siriusxm.com/customeragreement' target='_blank'>Customer Agreement</a>, including the refund policy, and <a href='https://www.siriusxm.com/privacy-policy' target='_blank'>Privacy Policy</a>. I understand that fees and programming are subject to change. I consent that my subscription will automatically renew.",
+                    "languagelinktext": "En Español",
+                    "languagelink": "es"
+                },
+                "es": {
+                    "text": "Por favor cargar a esta tarjeta de crédito cualquier cantidad corriente, y cualquier cargo recurrente en el futuro a mi cuenta. Estoy de acuerdo con que mi suscripción se renueve automáticamente a las tarifas actuales en ese momento mas cargos y impuestos. Yo puede cancelar en cualquier momento usando los métodos descritos en el Acuerdo del Cliente de SiriusXM incluyendo llamando a Listener Care al 1-866-659-3966. <strong>Yo entiendo que si yo cancelo o termino mi suscripción dentro los primeros {{ etfTerm }} meses, me cargaran una TARIFA DE TERMINACION TEMPRANA DE ${{ etf }}</strong>. Estoy de acuerdo con el <a href='https://www.siriusxm.com/customeragreement#enespanol' target='_blank'>Acuerdo del cliente</a>, incluyendo la política de reembolso, y la <a href='https://www.siriusxm.com/privacy-policy#enespanol' target='_blank'>Política de Privacidad</a>. Yo entiendo que los cargos y la programación están sujetos a cambios. Estoy de acuerdo que mi suscripción se renovará automáticamente.",
+                    "languagelinktext": "In English",
+                    "languagelink": "en"
+                }
+            },
+            "copy_longTerm": {
+                "en": {
+                    "text": "Please charge my credit card for the amount due now which includes fees & taxes. I acknowledge that my chosen plan will not automatically renew, yet before it ends I can cancel. I agree to the SiriusXM <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\">Customer Agreement</a> and <a href=\"https://www.siriusxm.com/privacy-policy\" target=\"_blank\">Privacy Policy</a>, including the refund policy and how to cancel, which includes calling SiriusXM at 1-866-635-2349.",
+                    "languagelinktext": "En Español",
+                    "languagelink": "es"
+                },
+                "es": {
+                    "text": "Por favor cargue mi tarjeta de crédito para la suma debida ahora que incluye cargos e impuestos. Estoy de acuerdo que el plan que escogí no se renovará automáticamente, sin embargo, antes de que termine puedo cancelar. Estoy de acuerdo con el <a href=\"https://www.siriusxm.com/customeragreement#enespanol\" target=\"_blank\">Acuerdo de Cliente</a> de SiriusXM y la <a href=\"https://www.siriusxm.com/privacy-policy#enespanol\" target=\"_blank\">Política de Privacidad</a>, incluyendo la política de reembolsos y como cancelar, que incluye llamando a SiriusXM al 1-866-635-2349.",
+                    "languagelinktext": "In English",
+                    "languagelink": "en"
+                }
+            },
+            "COPY_PLATINUM_VIP": {
+                "en": {
+                    "text": "Please charge my credit card for the amount due now and recurring charges as outlined above. By clicking \"Complete My Order\",  I agree that my service will <b>AUTOMATICALLY RENEW and will be charged to my payment method at then-current rates at the time of each renewal, plus fees and taxes, until I cancel.</b> I understand that my Platinum VIP subscription will continue as long as there is at least one active radio on this plan. I agree to the SiriusXM <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\">Customer Agreement</a> and <a href=\"https://www.siriusxm.com/privacy-policy\" target=\"_blank\">Privacy Policy</a>, including, receiving account notifications at the email address provided, the refund policy and how to cancel, which includes online methods or calling SiriusXM at 1-866-635-2349.",
+                    "languagelinktext": "En Español",
+                    "languagelink": "es"
+                },
+                "es": {
+                    "text": "Por favor cargue a mi tarjeta de crédito la cantidad que se deben ahora y los cargos recurrentes según descrito arriba. Cuando presiono \"Completar mi Orden\", acepto que mi servicio será <b>RENOVADO AUTOMATICAMENTE y seré cargado a mi método de pago las tarifas actuales al momento de cada renovación, más cargos e impuestos, hasta que yo cancele.</b> Yo entiendo que mi suscripción Platino VIP continuará mientras hay por lo menos un radio activo en este plan. Yo estoy de acuerdo con el <a href=\"https://www.siriusxm.com/customeragreement#enespanol\" target=\"_blank\">Acuerdo del Cliente</a> y la <a href=\"https://www.siriusxm.com/privacy-policy#enespanol\" target=\"_blank\">Política de Privacidad</a> de SiriusXM, incluyendo recibiendo notificaciones de la cuenta al correo electrónico provisto,la política de reembolso y de cancelación, que incluye métodos en línea o llamando a SiriusXM al 1-866-635-2349.",
+                    "languagelinktext": "In English",
+                    "languagelink": "en"
+                }
+            }
+        },
+        "chargeAgreementWithValidationComponent": {
+            "ACCEPT_AGREEMENT": "Please accept the above agreement."
+        }
+    }
+}

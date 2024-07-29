@@ -1,0 +1,44 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    @include page-content-legacy-markup(1fr);
+    height: 100%;
+}
+
+.gray-text {
+    color: $gray-dark;
+    font-weight: bold;
+    &.your-info {
+        margin-bottom: 16px;
+    }
+}
+
+sxm-ui-stepper {
+    padding: 24px 4px 32px;
+    p {
+        margin: 0;
+    }
+    h4,
+    h5 {
+        margin-bottom: 8px;
+    }
+    > h5 {
+        font-size: 20px;
+    }
+}
+
+.setup-account-form {
+    display: flex;
+    flex-flow: column;
+    hr {
+        background-color: #d4d4d4;
+        height: 1px;
+        border: none;
+        margin: 24px 0;
+    }
+    login-form-fields {
+        padding-top: 24px;
+    }
+    margin-bottom: 24px;
+}

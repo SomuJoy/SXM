@@ -1,0 +1,31 @@
+{
+    "name": "shared-legacy-core-timer",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/legacy-core/timer/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/legacy-core/timer/src/**/*.ts", "libs/shared/legacy-core/timer/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/shared/legacy-core/timer/jest.config.js",
+                "tsConfig": "libs/shared/legacy-core/timer/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/shared/legacy-core/timer/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["scope:legacy"]
+}

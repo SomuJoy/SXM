@@ -1,0 +1,86 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "quote": {
+            "currentQuote": {
+                "totalTaxAmount": "0.44",
+                "totalFeesAmount": "0.81",
+                "totalTaxesAndFeesAmount": "1.25",
+                "totalAmount": "9.24",
+                "discountAmount": "0.00",
+                "pricePerMonth": "7.99",
+                "currentBalance": "9.24",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "0.00",
+                "fees": [{ "description": "Music_Royalty_and_Administrative_Fee", "amount": "0.81" }],
+                "taxes": [{ "description": "Goods_and_Services_Tax_GST", "amount": "0.44" }],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Essential Streaming - 1mo - 8.00",
+                        "packageName": "SIR_CAN_IP_SA_ESNTL",
+                        "termLength": 1,
+                        "priceAmount": "7.99",
+                        "taxAmount": "0.44",
+                        "feeAmount": "0.81",
+                        "totalTaxesAndFeesAmount": "1.25",
+                        "taxes": [{ "description": "Goods_and_Services_Tax_GST", "amount": "0.44" }],
+                        "fees": [{ "description": "Music_Royalty_and_Administrative_Fee", "amount": "0.81" }],
+                        "startDate": "2021-08-24",
+                        "endDate": "2021-09-24",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "SELF_PAY",
+                        "dealType": "",
+                        "isAdvantage": false,
+                        "isStudent": false
+                    }
+                ],
+                "isUpgraded": false,
+                "isProrated": false
+            },
+            "futureQuote": null,
+            "proRatedRenewalQuote": null,
+            "promoRenewalQuote": null,
+            "renewalQuote": {
+                "totalTaxAmount": "0.44",
+                "totalFeesAmount": "0.81",
+                "totalTaxesAndFeesAmount": "1.25",
+                "totalAmount": "9.24",
+                "discountAmount": "0.00",
+                "pricePerMonth": "7.99",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [{ "description": "Music_Royalty_and_Administrative_Fee", "amount": "0.81" }],
+                "taxes": [{ "description": "Goods_and_Services_Tax_GST", "amount": "0.44" }],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Essential Streaming - 1mo - 8.00",
+                        "packageName": "SIR_CAN_IP_SA_ESNTL",
+                        "termLength": 1,
+                        "priceAmount": "7.99",
+                        "taxAmount": "0.44",
+                        "feeAmount": "0.81",
+                        "totalTaxesAndFeesAmount": "1.25",
+                        "taxes": [{ "description": "Goods_and_Services_Tax_GST", "amount": "0.44" }],
+                        "fees": [{ "description": "Music_Royalty_and_Administrative_Fee", "amount": "0.81" }],
+                        "startDate": "2021-09-24",
+                        "endDate": "2021-10-24",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "SELF_PAY",
+                        "dealType": "",
+                        "isAdvantage": false,
+                        "isStudent": false
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            }
+        }
+    }
+}

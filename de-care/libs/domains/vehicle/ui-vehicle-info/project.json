@@ -1,0 +1,31 @@
+{
+    "name": "domains-vehicle-ui-vehicle-info",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/vehicle/ui-vehicle-info/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/vehicle/ui-vehicle-info/src/**/*.ts", "libs/domains/vehicle/ui-vehicle-info/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/vehicle/ui-vehicle-info/jest.config.js",
+                "tsConfig": "libs/domains/vehicle/ui-vehicle-info/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/vehicle/ui-vehicle-info/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

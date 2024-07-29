@@ -1,0 +1,28 @@
+{
+    "name": "shared-sxm-ui-navigation-ui-common-cta-navigation",
+    "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/sxm-ui/navigation/ui-common-cta-navigation/src",
+    "prefix": "sxm-ui",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/shared/sxm-ui/navigation/ui-common-cta-navigation"],
+            "options": {
+                "jestConfig": "libs/shared/sxm-ui/navigation/ui-common-cta-navigation/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/shared/sxm-ui/navigation/ui-common-cta-navigation/src/**/*.ts",
+                    "libs/shared/sxm-ui/navigation/ui-common-cta-navigation/src/**/*.html"
+                ]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:ui", "scope:shared-ui"]
+}

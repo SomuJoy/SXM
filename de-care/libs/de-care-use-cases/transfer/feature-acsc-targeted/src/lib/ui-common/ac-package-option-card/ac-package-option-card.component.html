@@ -1,0 +1,62 @@
+<sxm-ui-content-card [hasGrayBackground]="true" [flagPresent]="false" [headlinePresent]="true">
+    <div htmlContentForHead>
+        <div class="radio-item">
+            <input
+                class="radio"
+                type="radio"
+                [formControl]="control"
+                id="{{ controlId }}"
+                name="{{ formControlName }}"
+                [value]="offerPackageName"
+                data-e2e="radioOption"
+                [attr.data-track-click]="'package option - ' + offerPackageName"
+                data-e2e="radioInput"
+            />
+            <label [for]="controlId">
+                {{
+                    translateKeyPrefix + "HEADER"
+                        | translate
+                            : {
+                                  planName: "app.packageDescriptions." + offerPackageName + ".name" | translate
+                              }
+                }}
+            </label>
+        </div>
+    </div>
+    <div htmlContentForBody>
+        <div class="body" data-e2e="contentCopy">
+            <p [innerHTML]="bodyText"></p>
+            <p class="small-copy">
+                <span *ngIf="!isOfferRetail">
+                    {{
+                        translateKeyUiCommonPrefix + region + "THEN_PRICE_PER_MONTH"
+                            | translate
+                                : {
+                                      amount: offerRetailPrice | currency: "USD":"symbol-narrow":undefined:locale
+                                  }
+                    }}
+                </span>
+                <span [innerHTML]="translateKeyUiCommonPrefix + 'SEE_OFFER_DETAILS' | translate"></span>
+            </p>
+        </div>
+        <sxm-ui-accordion-chevron
+            [collapsedText]="translateKeyUiCommonPrefix + 'COLLAPSED_TEXT' | translate"
+            [expandedText]="translateKeyUiCommonPrefix + 'EXPANDED_TEXT' | translate"
+            [isInnerAccordion]="true"
+            data-track-click="AC Package Option Explore details"
+            data-e2e="detailsAccordion"
+        >
+            <div *ngIf="details" class="descriptions">
+                <p [innerHTML]="details.title"></p>
+                <ul>
+                    <li *ngFor="let desc of details.descriptions">
+                        <svg class="icon icon-utility check-mark">
+                            <use class="icon-check-mark-flex-stroke" xlink:href="#icon-check-mark-flex-stroke"></use>
+                        </svg>
+                        <span [innerHTML]="desc"></span>
+                    </li>
+                </ul>
+            </div>
+        </sxm-ui-accordion-chevron>
+    </div>
+</sxm-ui-content-card>

@@ -1,0 +1,18 @@
+@import "sxm.phoenix.imports";
+
+.invalid-feedback {
+    p {
+        font-size: 12px !important;
+    }
+}
+
+:host {
+    .invalid-feedback::ng-deep {
+        a {
+            font-size: 12px !important;
+            &::before {
+                background: $red;
+            }
+        }
+    }
+}

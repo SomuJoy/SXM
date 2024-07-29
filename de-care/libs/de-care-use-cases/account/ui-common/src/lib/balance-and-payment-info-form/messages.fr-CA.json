@@ -1,0 +1,23 @@
+{
+    "PAYMENT_AMOUNT": {
+        "TITLE": "Montant du paiement",
+        "OPTION_PAY_ALL": " - Solde actuel dû + montant du prochain paiement",
+        "OPTION_PAY_CURRENT_BALANCE": " - Solde actuel dû",
+        "ERROR": "Choisissez un montant à payer."
+    },
+    "PAYMENT_FREQUENCY": {
+        "TITLE": "Fréquence des paiements",
+        "OPTION_RECURRING": "Opter pour des paiements périodiques",
+        "OPTION_ONE_TIME": "Effectuer un paiement unique",
+        "ERROR": "Sélectionner la fréquence des paiements."
+    },
+    "SUBMIT_PAYMENT_BUTTON_TEXT": "SOUMETTRE LE PAIEMENT",
+    "BACK_TO_ACCOUNT_LINK_TEXT": "REVENIR À MON COMPTE",
+    "CARD_TYPE_ICONS": ["visa", "mc", "amex"],
+    "BILLING_DETAILS_TITLE": "Adresse de facturation",
+    "UPDATE_PAYMENT_BUTTON": "METTRE LE PAYMENT À JOUR",
+    "PAYMENT_DETAILS_TITLE": "Renseignements de paiement",
+    "CONFIRM_YOUR_ADDRESS": "Veuillez confirmer votre adresse",
+    "CREDIT_CARD_PROCESSING_ERROR": "Nous sommes dans l'impossibilité d'autoriser votre carte de crédit. Veuillez mettre à jour vos renseignements de paiement.",
+    "UNEXPECTED_ERROR": "Une erreur inattendue est apparue. Veuillez réessayer."
+}

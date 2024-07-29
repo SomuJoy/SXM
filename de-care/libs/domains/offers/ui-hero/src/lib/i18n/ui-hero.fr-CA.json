@@ -1,0 +1,41 @@
+{
+    "domainsOffersUiHeroModule": {
+        "heroComponent": {
+            "TITLE": {
+                "DEFAULT": "Que la musique continue grâce à cette excellente offre",
+                "GET_PLATFORM": "Obtenez un abonnement de {{termLength}} {{pluralizedMonth}} \u00E0 SiriusXM pour aussi peu que {{price}} {{perMonth}}",
+                "TRIAL_EXTENSION": "Profitez de SiriusXM pendant {{termLength}} mois",
+                "PICK_A_PLAN": "Vous n'êtes qu'à quelques minutes de pouvoir écouter",
+                "ADVANTAGE": "Obtenez un abonnement à SiriusXM pour aussi peu que {{price}} {{perMonth}}",
+                "ADVANTAGE_ANNUAL": "Obtenez un abonnement de {{termLength}} {{pluralizedMonth}} \u00E0 SiriusXM pour aussi peu que {{price}}",
+                "ORGANIC_STREAMING_ONLY": "Écoutez l’Appli SXM – Aucune auto requise",
+                "PROMO_DEAL": {
+                    "AMZ_DOT": "Obtenez un Echo Dot GRATUIT avec un abonnement SiriusXM",
+                    "GGLE_HUB": "Google Nest Hub + {{termLength}} {{pluralizedMonth}} de {{planType}}",
+                    "GGLE_HUB_SUBTITLE": "",
+                    "GGLE_MINI": "Recevez un Google Nest Mini gratuit avec un abonnement SiriusXM",
+                    "APPLE": "Obtenez SiriusXM + jusqu’à 6 mois gratuits d’Apple Music"
+                },
+                "STREAMING": "Écoutez l’Appli SXM – Aucune auto requise",
+                "STREAMING_STUDENT": "Obtenez plus de 300 stations sur votre téléphone, à la maison et en ligne",
+                "PROMO_UPGRADE": "Offre d’une durée limitée!",
+                "PROMO_UPGRADE_QUEBEC": "Offre d’une durée limitée!",
+                "PROMO_UPGRADE_SUBTITLE": "<div class=\"package-upgrade-subtitle\"><span>{{price}} pendant {{termLength}} mois. plus frais</span><span>+ rehaussement GRATUIT</span><span>+ Echo Dot GRATUIT</span></div>",
+                "PROMO_UPGRADE_MCP_SUBTITLE": "<div class=\"package-upgrade-subtitle\"><span>{{price}}/mois pendant {{termLength}} mois. plus frais</span><span>+ rehaussement GRATUIT</span><span>+ Echo Dot GRATUIT</span></div>",
+                "PROMO_UPGRADE_QUEBEC_SUBTITLE": "<div class=\"package-upgrade-subtitle\"><span>{{price}} pendant {{termLength}} mois.</span><span>+ rehaussement GRATUIT</span><span>+ Echo Dot GRATUIT</span></div>",
+                "PROMO_UPGRADE_QUEBEC_MCP_SUBTITLE": "<div class=\"package-upgrade-subtitle\"><span>{{price}}/mois pendant {{termLength}} mois.</span><span>+ rehaussement GRATUIT</span><span>+ Echo Dot GRATUIT</span></div>",
+                "PROMO_UPGRADE_APPLE": "Obtenez un abonnement de {{termLength}} {{pluralizedMonth}} \u00E0 SiriusXM pour aussi peu que {{price}} {{perMonth}}",
+                "PROMO_UPGRADE_APPLE_QUEBEC": "Obtenez un abonnement de {{termLength}} {{pluralizedMonth}} \u00E0 SiriusXM pour aussi peu que {{price}} {{perMonth}}",
+                "THANKS": "Merci de vous être abonné. Maintenant, en route!",
+                "THANKS_STREAMING": "Merci de vous être abonné."
+            },
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "mois",
+                    "other": "mois"
+                }
+            },
+            "PER_MONTH_COPY": "par mois"
+        }
+    }
+}

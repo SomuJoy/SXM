@@ -1,0 +1,19 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "email": "ORIAED.TZHN@SIRIUSXM.COM",
+        "status": "SUCCESS",
+        "radioId": null,
+        "subscriptionId": "10000214384",
+        "maskedStreamingUserName": "ori******@siriusxm.com",
+        "accountNumber": "10000212080",
+        "maskedPhoneNumber": null,
+        "isUserNameSameAsEmail": true,
+        "isTwoFactorAuthNeeded": false,
+        "isEligibleForRegistration": true,
+        "isOfferStreamingEligible": true,
+        "isEligibleForStreamingCredentialsOnly": false
+    }
+}

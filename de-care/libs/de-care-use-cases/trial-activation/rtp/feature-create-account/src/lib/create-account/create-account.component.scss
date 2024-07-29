@@ -1,0 +1,159 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: block;
+}
+
+.ui-content {
+    padding-bottom: 16px;
+    @media only screen and (max-width: 540px) {
+        padding-bottom: 0 16px 0 16px;
+    }
+    @include bp(medium) {
+        padding: 32px;
+    }
+}
+
+main {
+    text-align: left;
+
+    h6 {
+        color: $gray-dark;
+        margin: 0 0 16px 0;
+    }
+
+    h4 {
+        margin-bottom: 8px;
+    }
+
+    p:first {
+        margin-bottom: 16px;
+    }
+
+    a {
+        margin-bottom: 24px;
+    }
+
+    hr {
+        background-color: $gray-medium;
+        border: 0;
+        height: 1px;
+        margin: 32px 0 32px;
+        width: 100%;
+    }
+
+    p.large-text {
+        font-size: 16px;
+        margin-bottom: 8px;
+        font-weight: calculate-font-weight("bold");
+    }
+
+    p.sub-header {
+        margin-bottom: 29px;
+    }
+
+    .your-info-header {
+        color: $gray-dark;
+        margin: 29px 0 16px 0;
+        font-weight: calculate-font-weight("bold");
+    }
+
+    button {
+        margin-top: 24px;
+    }
+
+    p.footer {
+        margin: 32px 0 32px 0;
+    }
+
+    .payment-info-header {
+        margin: 32px 0 16px 0;
+        color: $gray-dark;
+        font-weight: calculate-font-weight("bold");
+    }
+
+    sxm-ui-dropdown {
+        display: block;
+    }
+
+    .service-address-wrapper {
+        margin: 16px 0 24px 0;
+    }
+
+    sxm-ui-prepaid-redeem::ng-deep > form {
+        margin-bottom: 32px;
+    }
+
+    .privacy-policy {
+        margin: 32px 0 24px 0;
+    }
+
+    .row sxm-ui-tooltip {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        width: auto !important;
+    }
+
+    .legal-container {
+        max-width: 1336px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+}
+sxm-ui-follow-on-selection {
+    background-color: $white;
+    padding-top: 24px;
+    @include bp(medium) {
+        padding-top: 32px;
+    }
+}
+
+sxm-ui-plan-comparison-grid {
+    transition: all 0.45s ease-out;
+    transition-delay: 0.45s;
+    height: auto;
+}
+
+.step-header {
+    background-color: $white;
+}
+
+::ng-deep {
+    .row .column.no-padding,
+    .row .column.no-padding-small {
+        padding: 0 0px !important;
+    }
+
+    @media (min-width: 768px) {
+        p.copy-under-cta {
+            margin-bottom: 40px;
+        }
+        .page-title {
+            padding: 32px 0px 0px 0px;
+        }
+    }
+    @media (max-width: 768px) {
+        p.copy-under-cta {
+            margin-bottom: 32px;
+        }
+        #select-a-plan {
+            padding: 0 16px;
+        }
+        .page-title {
+            padding: 32px 16px 0px 16px;
+        }
+    }
+}
+
+.checkbox-item {
+    margin: 16px 0;
+
+    .invalid-feedback {
+        margin: 10px 0 0 30px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1.5;
+        text-align: left;
+    }
+}

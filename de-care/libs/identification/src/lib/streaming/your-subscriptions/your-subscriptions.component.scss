@@ -1,0 +1,28 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    .header-body {
+        padding: 10px 0;
+    }
+
+    .subscriptions {
+        padding-bottom: 8px;
+        border-bottom: 1px solid $gray-medium;
+        &:last-of-type {
+            border-bottom: none;
+        }
+    }
+
+    h5 {
+        margin-bottom: 32px;
+    }
+
+    h6 {
+        color: $gray-dark;
+        margin-top: 24px;
+    }
+
+    h6:first-of-type {
+        margin-top: 0px;
+    }
+}

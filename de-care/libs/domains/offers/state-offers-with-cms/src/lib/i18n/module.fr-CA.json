@@ -1,0 +1,38 @@
+{
+    "DomainsOffersStateOffersWithCmsModule": {
+        "PLURAL_MAP": {
+            "MONTH": {
+                "=1": "mois",
+                "other": "mois"
+            }
+        },
+        "RECAP_DESCRIPTION": {
+            "MRD_DISCOUNT_PRICE": "{{pricePerMonth}}/mois, plus frais avec rabais Multi-Radio.",
+            "MRD_DISCOUNT_PRICE_QUEBEC": "{{pricePerMonth}}/mois avec rabais Multi-Radio.",
+            "MRD_REGULAR_PRICE": "Rég. {{msrpPrice}}/mois.",
+            "NAME_AND_CHANNEL_COUNT": "{{name}} (Plus de {{channelCount}} chaînes)",
+            "TERM_AND_PRICE_MCP": "{{termLength}} {{monthString}} pour {{pricePerMonth}}/mois{{dealRecapCardSuffix}}.",
+            "TERM_AND_PRICE": "{{termLength}} {{monthString}} pour {{pricePerMonth}}{{dealRecapCardSuffix}}.",
+            "TERM_AND_PRICE_PLUS_FEES": "{{termLength}} {{monthString}} pour {{pricePerMonth}}{{dealRecapCardSuffix}} plus frais.",
+            "TERM_AND_PRICE_FREE": "{{termLength}} {{monthString}} Gratuits{{dealRecapCardSuffix}}.",
+            "TERM_AND_PRICE_FREE_FOR_ONE": "{{termLength}} {{monthString}} Gratuits.",
+            "FOLLOW_ON_PRICE": "Ensuite {{retailPricePerMonth}}/mois,",
+            "FOLLOW_ON_PRICE_QUEBEC": "Ensuite {{retailPricePerMonth}}/mois.",
+            "TERM_AND_PRICE_FOR_ONE": "{{pricePerMonth}}/mois,{{dealRecapCardSuffix}}",
+            "FEES_AND_TAXES_APPLY": "",
+            "PLUS_FEE": "plus frais.",
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "mois",
+                    "other": "mois"
+                }
+            }
+        }
+    },
+    "APPLE": {
+        "description": "<ul><li>Écoutez plus de 90 millions de chansons et 30 000 listes de lecture sans publicité, en ligne ou hors ligne</li><li>Transportez-vous dans un espace audio sans limite</li><li>Écoutez sur tous vos appareils, incluant Android</li><li>Chantez en chœur, battez le rythme ou tout simplement les paroles des chansons.</li></ul>",
+        "deviceImage": "assets/img/apple-music-logo.png",
+        "addonShowToggleText": "Voir plus",
+        "addonHideToggleText": "Voir moins"
+    }
+}

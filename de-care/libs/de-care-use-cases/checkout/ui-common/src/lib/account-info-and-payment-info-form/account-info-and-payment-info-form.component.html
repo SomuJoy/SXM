@@ -1,0 +1,49 @@
+<form [formGroup]="paymentForm">
+    <section class="billing-field-set">
+        <header>
+            <h3>{{ translateKeyPrefix + "BILLING_DETAILS_TITLE" | translate }}</h3>
+        </header>
+        <sxm-ui-first-name-form-field formControlName="firstName" data-test="BillingInfoFirstName" data-e2e="BillingInfoFirstName"></sxm-ui-first-name-form-field>
+        <sxm-ui-last-name-form-field formControlName="lastName" data-test="BillingInfoLastName" data-e2e="BillingInfoLastName"></sxm-ui-last-name-form-field>
+        <sxm-ui-phone-number-form-field formControlName="phoneNumber" data-test="BillingInfoPhoneNumber" data-e2e="BillingInfoPhoneNumber"></sxm-ui-phone-number-form-field>
+        <sxm-ui-address-form-fields
+            addressType="service"
+            formControlName="serviceAddress"
+            [submitted]="paymentFormSubmitted"
+            data-e2e="BillingInfoAddress"
+        ></sxm-ui-address-form-fields>
+        <input type="hidden" formControlName="country" />
+    </section>
+    <section class="billing-field-set credit-card-fields" id="creditCardFieldsSection" #creditCardFieldsSection>
+        <header>
+            <h3>{{ translateKeyPrefix + "PAYMENT_DETAILS_TITLE" | translate }}</h3>
+            <ul class="credit-card-icons-list">
+                <li *ngFor="let cardType of translateKeyPrefix + 'CARD_TYPE_ICONS' | translate">
+                    <svg class="icon icon-content cc-icon icon-{{ cardType }}">
+                        <use class="" [attr.xlink:href]="'#icon-cc-' + cardType"></use>
+                    </svg>
+                </li>
+            </ul>
+        </header>
+        <div *ngIf="creditCardSubmissionError$ | async" class="invalid-feedback" id="creditCardProcessingError">
+            <p>{{ translateKeyPrefix + "CREDIT_CARD_PROCESSING_ERROR" | translate }}</p>
+        </div>
+        <div *ngIf="unexpectedSubmissionError$ | async" class="invalid-feedback" id="unexpectedProcessingError">
+            <p>{{ translateKeyPrefix + "UNEXPECTED_ERROR" | translate }}</p>
+        </div>
+        <sxm-ui-credit-card-form-fields [formGroup]="paymentForm.controls.creditCardInfo"></sxm-ui-credit-card-form-fields>
+    </section>
+    <privacy-policy></privacy-policy>
+    <prepaid-redeem-ui (cardSubmitted)="onPrepaidCardSubmitted($event)" (cardCleared)="onPrepaidCardCleared()"></prepaid-redeem-ui>
+    <button type="submit" sxm-proceed-button [loading]="paymentFormProcessing$ | async" sxmUiDataClickTrack="submit" (click)="submitPaymentInfo()">
+        {{ translateKeyPrefix + "CONTINUE_BUTTON_TEXT" | translate }}
+    </button>
+</form>
+<sxm-ui-modal [closed]="true" (modalClosed)="onEditExistingAddress()" #verifyAddressModal  [ariaDescribedbyTextId]="accountInfoPaymentModalAriaDescribedbyTextId">
+    <customer-verify-address
+        [ariaDescribedbyTextId]="accountInfoPaymentModalAriaDescribedbyTextId"
+        [data]="verifyAddressesDataViewModel$ | async"
+        (editAddress)="onUseAddressFromValidation($event)"
+        (editExisting)="onEditExistingAddress()"
+    ></customer-verify-address>
+</sxm-ui-modal>

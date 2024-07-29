@@ -1,0 +1,13 @@
+{
+    "status": "FAILURE",
+    "httpStatusCode": 400,
+    "httpStatus": "BAD_REQUEST",
+    "error": {
+        "errorCode": "CREDITCARD_AUTHORIZATION_FAILED",
+        "errorPropKey": "error.purchase.service.credit.card.validation.failed",
+        "errorType": "BUSINESS",
+        "errorStackTrace": "AccountNumber: 10000209692 | RadioId: X65100AE | x-forwarded-for: [10.130.98.53] | URL: /services/purchase/change-subscription | Exception: ChangeSubscriptionException#null | StackTrace: ChangeSubscriptionServiceClient.java:89 | ErrorType: BUSINESS | ErrorMessage: ERROR : [errorCode : CREDITCARD_AUTHORIZATION_FAILED, errorPropKey : error.purchase.service.credit.card.validation.failed, errorType : CHECKED, errorLevel : ACTION, statusCode : 400 BAD_REQUEST, errorMessage : Credit Card Authorization Failed | , sourceErrorCode : 11-03-ESB-5161] | FullStackTrace: ",
+        "logId": "b7a6955f-accf-4a8c-8140-b728c639d5a9",
+        "failedTransactionId": "OAC-b7a6955f-accf-4a8c-8140-b728c639d5a9-761d21c1c6013878-761d21c1c6013878-7563636523020552419372165"
+    }
+}

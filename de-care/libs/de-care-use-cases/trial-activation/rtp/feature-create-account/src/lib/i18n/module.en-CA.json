@@ -1,0 +1,24 @@
+{
+    "deCareUseCasesTrialActivationRtpFeatureCreateAccountModule": {
+        "createAccountComponent": {
+            "DEFAULT_CAR": "vehicle",
+            "NOT_YOUR_CAR_LINK_TEXT": "Not your vehicle?",
+            "FORM_SUB_HEADER": "You'll get to review your order before subscribing.",
+            "STATE_LABEL": "Province",
+            "ZIP_LABEL": "Postal Code",
+            "AGREEMENT_TEXT": "I consent to receiving marketing communications by email, mail and phone once trial is activated.",
+            "ACCEPT_AGREEMENT": "Please accept the above agreement.",
+            "BUTTON": "ACTIVATE MY TRIAL",
+            "ERROR": {
+                "ZIP_CODE": "Enter a valid postal code",
+                "STATE": "Select your province."
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.ca/privacy"
+            },
+            "SUB_HEADER_LEAD_OFFER": "You can change or cancel any anytime.",
+            "QUESTIONS_TFN": "1-833-838-7846"
+        }
+    }
+}

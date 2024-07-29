@@ -1,0 +1,100 @@
+@import "sxm.phoenix.imports";
+@import "helper-classes";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+$pill-color: #fff9d5;
+
+sxm-ui-alert-pill {
+    position: relative;
+    top: 0px;
+    background: $pill-color;
+    margin-bottom: 23px;
+}
+
+:host {
+    @include page-content-markup(1fr);
+}
+
+.gray-text {
+    font-weight: 500;
+    color: $gray-dark;
+}
+
+hr {
+    @include hr;
+}
+
+form {
+    .terms-text {
+        color: $gray-dark;
+    }
+}
+
+p.outside-car-instructions {
+    padding: 20px 0 15px;
+}
+
+.ordered-list-additional-padding {
+    padding-top: 15px;
+}
+
+.invalid-feedback {
+    margin-top: 10px;
+}
+
+.extra-top-padding {
+    padding-top: 15px;
+}
+
+.error {
+    // TODO: get all these from sxm SCSS mixin for (invalid-feedback)
+    color: #d90909;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+sxm-ui-checkbox-with-label-form-field {
+    margin-top: 16px;
+
+    .invalid-feedback {
+        margin: 6px 0 0;
+    }
+}
+
+.header {
+    background-color: lighten($green, 65%);
+    margin-bottom: 10px;
+
+    p {
+        @include font-size(14px);
+        margin-top: 16px;
+    }
+}
+
+.icon.large.checkmark-circle {
+    @include icon-coin(26px, $green);
+    background: none;
+    padding: 4px;
+    margin: 13px 16px 13px 20px;
+
+    &.checkmark-circle-outline {
+        border: 3px solid $green;
+    }
+
+    .icon-check-mark-flex-stroke {
+        stroke: $green;
+        stroke-width: 2px;
+    }
+}
+.privacy-margin {
+    margin-top: 15px;
+}
+chat-with-agent-link::ng-deep a{
+    color: white;
+}
+.chatLink::ng-deep a{
+    color: #006ed7;
+}

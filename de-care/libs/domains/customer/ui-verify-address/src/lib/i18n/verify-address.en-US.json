@@ -1,0 +1,13 @@
+{
+    "DomainsCustomerUiVerifyAddressModule": {
+        "VerifyAddressComponent": {
+            "INVALID_FEEDBACK": "We were unable to validate your address with the United States Postal Service.",
+            "U_SURE": "Are you sure that the address below is a good address?",
+            "THIS_ADDRESS": "Use this Address",
+            "NEW_ADDRESS": "Enter New Address",
+            "CORRECTED_ADDRESS": "The following address has been recommended:",
+            "MULTIPLE_CORRECTED_ADDRESSES": "Please select your address from the list below.",
+            "ERROR_CHOOSE_ADDRESS": "Choose an address to continue"
+        }
+    }
+}

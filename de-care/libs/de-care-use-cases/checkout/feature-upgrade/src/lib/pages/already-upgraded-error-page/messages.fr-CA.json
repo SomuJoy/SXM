@@ -1,0 +1,12 @@
+{
+    "HERO": {
+        "TITLE": "Vous avez déjà rehaussé votre abonnement."
+    },
+    "MESSAGE_TEXT": "Pour modifier votre abonnement et gérer votre compte, veuillez continuer de vous identifier.",
+    "MANAGE_ACCOUNT_BUTTON_TEXT": "GÉRER LE COMPTE",
+    "CURRENT_PLAN": {
+        "TITLE": "Votre abonnement actuel:",
+        "NAME_AND_PRICE": "{{name}} - {{price}}/mois",
+        "NAME_AND_PRICE_ANNUAL": "{{name}} - {{price}}/yr"
+    }
+}

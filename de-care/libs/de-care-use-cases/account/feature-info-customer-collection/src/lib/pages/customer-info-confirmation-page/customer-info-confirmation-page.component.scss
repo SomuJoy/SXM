@@ -1,0 +1,56 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    @include page-content-markup(1fr);
+    #mainContent {
+        background-color: $off-white;
+        margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        text-align: center;
+        min-height: calc(90vh - 80px);
+        .header {
+            padding-top: 20px;
+            height: 200px;
+            background-color: $blue;
+            color: $white;
+            text-align: center;
+            @include bp(medium) {
+                padding-top: 40px;
+                height: 240px;
+            }
+        }
+
+        .container {
+            text-align: center;
+            padding: 0 0 80px;
+            margin-top: -80px;
+
+            .message-container {
+                padding: 24px 14px;
+                background-color: $white;
+                width: auto;
+                margin: 12px;
+                h2 {
+                    text-align: left;
+                    margin-bottom: 0;
+                    @include get-header-style(h4);
+                }
+                .link-container {
+                    margin-top: 24px;
+                    text-align: left;
+                    a {
+                        font-weight: calculate-font-weight("bold");
+                    }
+                }
+
+                @include bp(medium) {
+                    padding: 36px 96px;
+                    width: 640px;
+                    margin: auto;
+                }
+            }
+        }
+    }
+}

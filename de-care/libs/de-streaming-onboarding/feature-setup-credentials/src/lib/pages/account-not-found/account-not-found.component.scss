@@ -1,0 +1,17 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.hidden {
+    display: none;
+}
+.option-fields {
+    margin: 12px 0 24px 24px;
+}
+sxm-ui-alert-pill {
+    .pill-text {
+        .bottom-padding {
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+    }
+}

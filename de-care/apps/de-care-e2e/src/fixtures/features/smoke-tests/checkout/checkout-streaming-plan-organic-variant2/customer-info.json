@@ -1,0 +1,24 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "valid": true,
+        "emailValidation": {
+            "email": "asdsdasd@siriusxm.com",
+            "suggestedEmail": null,
+            "message": null,
+            "resultCode": "SUCCESS",
+            "errorCode": null,
+            "errorMessage": null,
+            "responseCode": null,
+            "verificationStatus": "VALID",
+            "verificationMessage": null,
+            "valid": true
+        },
+        "usernameValidation": { "valid": true },
+        "billingAddressValidation": null,
+        "serviceAddressValidation": null,
+        "ccValidation": null
+    }
+}

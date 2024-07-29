@@ -1,0 +1,11 @@
+{
+    "BILLING_DETAILS_TITLE": "Billing Details",
+    "PAYMENT_DETAILS_TITLE": "Payment Info",
+    "CONFIRM_YOUR_ADDRESS": "Please confirm your address",
+    "PROVIDE_PAYMENT_INFO": "Provide payment info to calculate fees and taxes",
+    "CONTINUE_BUTTON_TEXT": "Review Order",
+    "CREDIT_CARD_PROCESSING_ERROR": "We were unable to authorize your credit card. Please update your payment information.",
+    "UNEXPECTED_ERROR": "An unexpected error occurred. Please try again.",
+    "INVALID_ZIP_FROM_LOOKUP_ERROR": "Enter a valid zip code",
+    "ENTER_A_CAPTCHA_TO_FINISH": "Please enter CAPTCHA to finish"
+}

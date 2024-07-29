@@ -1,0 +1,9 @@
+{
+    "CONTINUE_BUTTON_TEXT": "Continuer",
+    "POST_TRIAL_PLAN_STARTS_AFTER_PROMO": "Le forfait débute après la fin de votre promo actuelle le {{trialEndDate}}.",
+    "VIEW_DETAILS_COLLAPSED": "Découvrez les détails du forfait",
+    "VIEW_DETAILS_EXPANDED": "Masquer",
+    "ARIA_VIEW_DETAILS_COLLAPSED": "Découvrez les détails du forfait - {{packageName}}",
+    "ARIA_VIEW_DETAILS_EXPANDED": "Masquer les détails du forfait - {{packageName}}",
+    "USERNAME": "Nom d'utilisateur : {{username}}"
+}

@@ -1,0 +1,135 @@
+@import "sxm.phoenix.imports";
+
+$common-body-spacing: 16px;
+$common-medium-body-spacing: 24px;
+
+@mixin handling-body-spacings($type, $padding-top-bottom: 0) {
+    #{$type}: #{$padding-top-bottom} $common-body-spacing;
+    @include bp(medium) {
+        #{$type}: #{$padding-top-bottom} $common-medium-body-spacing;
+    }
+}
+
+::ng-deep {
+    .hero-sales--plan-card-body {
+        offer-card,
+        offer-card-with-partial-channels-visible {
+            div.offer-card--container {
+                @include handling-body-spacings(padding);
+            }
+            sxm-ui-accordion-chevron {
+                div.accordion-content-wrapper {
+                    @include handling-body-spacings(padding);
+                    @include handling-body-spacings(padding, $common-body-spacing);
+                }
+                div.button-container {
+                    text-align: left;
+                    width: 100%;
+                    @include handling-body-spacings(padding, $common-body-spacing);
+                    background-color: #f1f5fd;
+                }
+            }
+        }
+    }
+}
+
+.hero-sales--plan-card {
+    padding: 0;
+    min-width: 100%;
+    min-height: 0;
+    margin-top: 0;
+    z-index: 9;
+
+    @include bp(medium) {
+        &.legacy-package-card {
+            margin-top: -108px;
+        }
+        width: 105%;
+    }
+
+    &-body {
+        .content-with-margin {
+            @include handling-body-spacings(margin);
+        }
+        padding-top: $common-body-spacing;
+    }
+
+    &-flag {
+        padding: 7px 16px;
+        background-color: $watermelon;
+        border: 1px solid transparent;
+        width: 100%;
+        @include bp(medium) {
+            padding: 7px 24px;
+        }
+        p {
+            font-weight: 700;
+            color: $white;
+            font-size: 12px;
+        }
+    }
+
+    .upper-card-content {
+        padding-top: $common-body-spacing;
+        @include handling-body-spacings(margin);
+        hr {
+            margin: 18px 0 0;
+        }
+        // TODO: when personal-info is visible, the space (margin) to the primary package card is reduced (8px)
+        // find a way to do this if personal-info component is refactored
+    }
+}
+
+hr {
+    background-color: $gray-medium;
+    height: 1px;
+    border: 0;
+    margin: 12px 0;
+}
+
+section {
+    padding: 0;
+}
+
+section,
+.content-container,
+.row,
+.row .column {
+    position: static;
+}
+
+h4 {
+    text-transform: uppercase;
+}
+
+h4 span.text-no-upper {
+    text-transform: none !important;
+}
+
+h4 span.text-yes-upper {
+    text-transform: uppercase !important;
+}
+
+.box-shadow {
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
+}
+
+// This is a temporary styling to make the package card placement more in-line with the components in cms mode.  Will not be needed once all flows are converted to cms
+// TODO: remove this once all flows that use the lead-offer-details are migrated to cms and legacy non cms code for the package card is not needed
+:host-context(.cms-triage) {
+    .hero-sales--plan-card {
+        margin-top: -52px;
+
+        @include bp(medium) {
+            &.legacy-package-card {
+                margin-top: -48px;
+            }
+        }
+    }
+}
+
+:host(.raised-card) {
+    .hero-sales--plan-card {
+        margin-top: -60px;
+    }
+}

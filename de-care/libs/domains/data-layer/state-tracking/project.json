@@ -1,0 +1,31 @@
+{
+    "name": "domains-data-layer-state-tracking",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/data-layer/state-tracking/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/data-layer/state-tracking/src/**/*.ts", "libs/domains/data-layer/state-tracking/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/data-layer/state-tracking/jest.config.js",
+                "tsConfig": "libs/domains/data-layer/state-tracking/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/data-layer/state-tracking/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:state", "id:domains-data-layer-state-tracking"]
+}

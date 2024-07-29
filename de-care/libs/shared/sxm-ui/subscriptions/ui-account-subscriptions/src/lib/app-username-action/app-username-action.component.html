@@ -1,0 +1,14 @@
+<div class="grid-container">
+    <div class="label-column tool-tip-grid">
+        <p class="lead-in large-copy bold label-title" [innerHTML]="translateKeyPrefix + '.STREAMING_TITLE' | translate"></p>
+        <sxm-ui-tooltip class="tooltip-display-right">{{ translateKeyPrefix + ".SXM_APP_TOOLTIP" | translate }}</sxm-ui-tooltip>
+    </div>
+    <p class="right-align link-column top-align">
+        <button class="text-link-secondary" (click)="editUsername.emit()" data-test="appEditOrCreateUserNameButton">
+            {{ translateKeyPrefix + (username ? ".EDIT_LINK" : ".CREATE_LINK") | translate }}
+        </button>
+    </p>
+    <p class="label-column lead-in" [class.text-overflow-ellipsis]="username">
+        {{ username ? username : (translateKeyPrefix + ".CREATE_INSTRUCTIONS" | translate) }}
+    </p>
+</div>

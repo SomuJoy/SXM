@@ -1,0 +1,11 @@
+{
+    "deCareUseCasesTrialActivationRtpFeatureReviewModule": {
+        "reviewComponent": {
+            "STEP_NUMBER": "Étape {{totalSteps}} de {{totalSteps}}",
+            "HEADER": "Revoyez et terminez votre commande",
+            "COMPLETE_MY_ORDER_BUTTON": "TERMINER MA COMMANDE",
+            "ENTER_A_CAPTCHA_TO_FINISH": "Veuillez entrer le CAPTCHA pour terminer",
+            "FOOTER": ""
+        }
+    }
+}

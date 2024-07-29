@@ -1,0 +1,45 @@
+<div class="content-container">
+    <div class="row align-left align-bottom no-padding">
+        <div class="column small-8 align-left no-padding">
+            <h5>{{ "identification.streamingLoginCompleteComponent.HEADER_TITLE" | translate }}</h5>
+        </div>
+        <div class="column small-4 align-right no-padding">
+            <svg class="icon icon-utility large checkmark-circle">
+                <use class="icon-checkmark-sm" xlink:href="#icon-checkmark-sm"></use>
+            </svg>
+        </div>
+    </div>
+</div>
+<p>{{ "identification.streamingLoginCompleteComponent.HEADER_CONTENT" | translate }}</p>
+<div class="radio-info">
+    <ng-container *ngIf="subscriptions && subscriptions.length > 1; else getSXMApp">
+        <div *ngFor="let subscription of subscriptions" class="subscription-item">
+            <div class="content-container">
+                <div class="row align-left no-padding">
+                    <div class="column small-7 align-left no-padding">
+                        <p>
+                            <strong>{{ subscription.vehicleInfo.year }} {{ subscription.vehicleInfo.make }} {{ subscription.vehicleInfo.model }}</strong>
+                        </p>
+                        <span>{{ "app.packageDescriptions." + subscription.packageName + ".name" | translate }}</span>
+                    </div>
+                    <div class="column small-5 align-right no-padding">
+                        <ng-container [ngSwitch]="subscription.allowedAction">
+                            <a *ngSwitchCase="streamingLoginActionEnum.CreateLogin" class="text-link-secondary" (click)="createLogin(subscription.last4DigitsOfRadioId)">{{
+                                "identification.streamingLoginCompleteComponent.CREATE_LOGIN" | translate
+                            }}</a>
+                            <a *ngSwitchCase="streamingLoginActionEnum.SignIn" class="text-link-secondary" (click)="signIn(subscription.last4DigitsOfRadioId)">{{
+                                "identification.streamingLoginCompleteComponent.SIGN_IN" | translate
+                            }}</a>
+                            <a *ngSwitchCase="streamingLoginActionEnum.Upgrade" class="text-link-secondary" (click)="upgrade(subscription.last4DigitsOfRadioId)">{{
+                                "identification.streamingLoginCompleteComponent.UPGRADE" | translate
+                            }}</a>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-template #getSXMApp>
+        <button class="button primary full-width" (click)="getApp()">{{ "identification.streamingLoginCompleteComponent.BUTTON_LABEL" | translate }}</button>
+    </ng-template>
+</div>

@@ -1,0 +1,25 @@
+{
+    "fallbackCorpId": null,
+    "partnerInfo": [
+        {
+            "corpId": "90005",
+            "partnerInfo": {
+                "en-US": {
+                    "name": "Placeholder Partner",
+                    "imageURL": "assets/img/placeholder_partnerlogo.png",
+                    "imageAlt": "Placeholder Partner"
+                },
+                "en-CA": {
+                    "name": "Placeholder Partner",
+                    "imageURL": "assets/img/placeholder_partnerlogo.png",
+                    "imageAlt": "Placeholder Partner"
+                },
+                "fr-CA": {
+                    "name": "Placeholder Partner (fr)",
+                    "imageURL": "assets/img/placeholder_partnerlogo.png",
+                    "imageAlt": "Placeholder Partner (fr)"
+                }
+            }
+        }
+    ]
+}

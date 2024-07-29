@@ -1,0 +1,252 @@
+{
+    "trialActivation": {
+        "activationFlowComponent": {
+            "HEADER_TEXT": "Upgrade your trial to include in-car listening.",
+            "STEP_PAGE_TITLES": {
+                "VERIFY_DEVICE_STEP": "Verify your device",
+                "ENTER_YOUR_INFO_STEP": "Enter your information"
+            },
+            "STEP_EDIT_LABEL": "Edit"
+        },
+        "oneStepActivationFlowComponent": {
+            "STEP_PAGE_TITLES": {
+                "NOT_YOUR_CAR_MESSAGE": "Not your car?",
+                "HEADING": "You're eligible",
+                "MESSAGE": "Your <inject-content> is eligible for a complimentary {{trialTerm}} month trial of everything SiriusXM has to offer.",
+                "MESSAGE_APPLE": "Your <inject-content> is eligible for a complimentary {{trialTerm}}-month free trial of SiriusXM's {{packageNameWithoutPlatform}} Plan.",
+                "DEFAULT_VEHICLE": "car",
+                "CREATE_YOUR_ACCOUNT": "Create your account",
+                "STEP_PROGRESS": "STEP 2 OF 3"
+            }
+        },
+        "oneStepActivationFlowThankYouComponent": {
+            "HEADER_TEXT": "Welcome to your SiriusXM Trial Subscription!",
+            "TRIAL_END_TEXT": "Your trial subscription will expire on"
+        },
+        "identificationStepComponent": {
+            "MESSAGE": "Let's find your car to upgrade your existing trial to include in-car listening."
+        },
+        "accountFormStepComponent": {
+            "LOGIN_INFO": "Login Info",
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.com/privacy-policy"
+            },
+            "BUTTON_TEXT": "Continue"
+        },
+        "newAccountFormStepComponent": {
+            "YOUR_INFO": "Your Info",
+            "LOGIN_INFO": "Login Info",
+            "FIRST_NAME": {
+                "LABEL": "First Name",
+                "ERRORS": {
+                    "REQUIRED": "Enter your first name."
+                }
+            },
+            "LAST_NAME": {
+                "LABEL": "Last Name",
+                "ERRORS": {
+                    "REQUIRED": "Enter your last name."
+                }
+            },
+            "PHONE_NUMBER": {
+                "LABEL": "Phone Number",
+                "ERRORS": {
+                    "REQUIRED": "Enter a valid phone number."
+                }
+            },
+            "ADDRESS_LINE": {
+                "LABEL": "Address (include Apt/Suite/Unit)",
+                "ERRORS": {
+                    "REQUIRED": "Enter a valid street address."
+                }
+            },
+            "CITY": {
+                "LABEL": "City",
+                "ERRORS": {
+                    "REQUIRED": "Enter your city"
+                }
+            },
+            "STATE": {
+                "LABEL": "State",
+                "ERRORS": {
+                    "REQUIRED": "Enter your state."
+                }
+            },
+            "ZIP_CODE": {
+                "LABEL": "Zip Code",
+                "ERRORS": {
+                    "REQUIRED": "Enter a valid zip code."
+                }
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.com/privacy-policy"
+            },
+            "BUTTON_TEXT": "Continue",
+            "CONFIRM_YOUR_ADDRESS": "Please confirm your address",
+            "UNEXPECTED_ERROR": "An unexpected error occurred. Please try again."
+        },
+        "oneStepNewAccountFormStepComponent": {
+            "YOUR_INFO": "Your Info",
+            "LOGIN_INFO": "Login Info",
+            "EMAIL": {
+                "LABEL": "Email",
+                "ERROR": "Enter a valid email address.",
+                "IN_USE_ERROR": "Username/Email address already in use."
+            },
+            "FIRST_NAME": {
+                "LABEL": "First Name",
+                "ERRORS": {
+                    "REQUIRED": "Enter your first name."
+                }
+            },
+            "LAST_NAME": {
+                "LABEL": "Last Name",
+                "ERRORS": {
+                    "REQUIRED": "Enter your last name."
+                }
+            },
+            "PHONE_NUMBER": {
+                "LABEL": "Phone Number",
+                "ERRORS": {
+                    "REQUIRED": "Enter a valid phone number."
+                }
+            },
+            "ADDRESS_LINE": {
+                "LABEL": "Address (include Apt/Suite/Unit)",
+                "ERRORS": {
+                    "REQUIRED": "Enter a valid street address."
+                }
+            },
+            "CITY": {
+                "LABEL": "City",
+                "ERRORS": {
+                    "REQUIRED": "Enter your city"
+                }
+            },
+            "STATE": {
+                "LABEL": "State",
+                "ERRORS": {
+                    "REQUIRED": "Enter your state."
+                }
+            },
+            "ZIP_CODE": {
+                "LABEL": "Zip Code",
+                "ERRORS": {
+                    "REQUIRED": "Enter a valid zip code."
+                }
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.com/privacy-policy"
+            },
+            "BUTTON_TEXT": "Continue",
+            "CONFIRM_YOUR_ADDRESS": "Please confirm your address",
+            "UNEXPECTED_ERROR": "An unexpected error occurred. Please try again.",
+            "ENTER_A_CAPTCHA_TO_FINISH": "Please enter CAPTCHA to finish"
+        },
+        "loginInfoComponent": {
+            "LOGIN_SUB_HEADER": "Stream SiriusXM online and manage your subscriptions.",
+            "EMAIL": {
+                "LABEL": "Email",
+                "ERROR": "Enter a valid email address.",
+                "IN_USE_ERROR": "Username/Email address already in use."
+            },
+            "PASSWORD": {
+                "LABEL": "Password",
+                "ERRORS": {
+                    "REQUIRED": "Enter your password.",
+                    "LENGTH": "Your password must be {{ min }} to {{ max }} characters long.",
+                    "POLICY": "Your password must contain at least one character from at least 3 different groups, as explained in our password policy.",
+                    "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}",
+                    "GENERIC": "We're sorry, your new password does not comply with our policy. Please try again."
+                }
+            },
+            "PLURAL_MAP": {
+                "WORD": {
+                    "=1": "word",
+                    "other": "words"
+                }
+            }
+        },
+        "trialExpiredOverlayComponent": {
+            "HEADER": "The original offer is only available to customers with an active trial subscription.",
+            "BODY_PREFIX": "You may be eligible for another trial. For more help you can ",
+            "BODY_SUFFIX": ".",
+            "CHAT_LINK_TEXT": "chat with an agent",
+            "BUTTON": "Continue"
+        },
+        "offerDetailsComponent": {
+            "LABEL": "OFFER DETAILS: ",
+            "BODY": "Available only on eligible, inactive factory-equipped satellite radios. Your {{offerName}} service will automatically stop at the end of your {{length}} {{pluralizedMonth}} subscription unless you decide to purchase another subscription. See our <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\">Customer Agreement</a> and <a href=\"https://www.siriusxm.com/privacy-policy\" target=\"_blank\">Privacy Policy</a> for complete terms. All fees and programming are subject to change.",
+            "TERM_LENGTH": {
+                "PLURAL_MAP": {
+                    "MONTHS": {
+                        "=1": "Month",
+                        "other": "Months"
+                    },
+                    "LENGTH": {
+                        "=1": "monthly",
+                        "=12": "annual",
+                        "other": "{{length}} month"
+                    }
+                }
+            }
+        },
+        "postActivationInstructionsComponent": {
+            "TEXT": "Once activated, we will communicate to you about your trial subscription via email or telephone."
+        },
+        "serviceLaneOneClickConfirmationComponent": {
+            "HEADER_TEXT": "Welcome to your SiriusXM Trial Subscription!",
+            "TRIAL_END_TEXT": "Your trial subscription will expire on",
+            "REFRESH_URL": "https://www.siriusxm.com/refresh",
+            "STREAMING_PLAYER_LINK": "?creative_id=NA_NA_PL-EM-home-home-home-CONVERSION-COMCONFIRM-OEM-OEM-20211207-DECOM&cp_7=OEM&cp_8=CONVERSION&cp_9=COMCONFIRM"
+        },
+        "oneStepActivationConfirmationComponent": {
+            "STEP_PROGRESS": "STEP 3 OF 3",
+            "STREAMING_PLAYER_LINK": "?creative_id=NA_NA_PL-EM-home-home-home-CONVERSION-NOUVCONFIRM-OEM-OEM-20211207-DECOM&cp_7=OEM&cp_8=CONVERSION&cp_9=NOUVCONFIRM"
+        },
+        "DefaultErrorPageComponent": {
+            "HEADER": {
+                "TITLE": "We’re Sorry",
+                "BODY": "This transaction can't be completed online."
+            },
+            "HELP": {
+                "TITLE": "Don't worry, we can help you.",
+                "CHAT": "Chat with an agent",
+                "OR_CALL": "or call",
+                "TFN": "1-855-516-0571"
+            }
+        },
+        "AlreadyHasSubscriptionErrorPageComponent": {
+            "HEADER": {
+                "TITLE": "We’re Sorry",
+                "BODY": "Your radio already has an active subscription."
+            },
+            "HELP": {
+                "TITLE": "Don't worry, we can help you.",
+                "YOU_CAN": "You can",
+                "LOGIN": "login",
+                "LOGIN_URL": "https://care.siriusxm.com/login_view.action",
+                "TO_MANAGE_SUB": "to manage your subscription.",
+                "FOR_MORE_HELP": "For more help,",
+                "CHAT": "chat with an agent",
+                "OR_CALL": "or call",
+                "TFN": "1-855-516-0571"
+            }
+        },
+        "IsNotEligibleErrorPageComponent": {
+            "HEADER": {
+                "TITLE": "We’re Sorry",
+                "BODY": "Your radio isn't eligible for a trial."
+            },
+            "HELP": {
+                "TITLE": "Don't worry, we can help you.",
+                "CHAT": "Chat with an agent",
+                "OR_CALL": "or call",
+                "TFN": "1-855-516-0571"
+            }
+        }
+    }
+}

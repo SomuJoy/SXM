@@ -1,0 +1,28 @@
+{
+    "name": "de-care-use-cases-third-party-linking-feature-device-link-google",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care-use-cases/third-party-linking/feature-device-link-google/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/de-care-use-cases/third-party-linking/feature-device-link-google"],
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/third-party-linking/feature-device-link-google/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/de-care-use-cases/third-party-linking/feature-device-link-google/src/**/*.ts",
+                    "libs/de-care-use-cases/third-party-linking/feature-device-link-google/src/**/*.html"
+                ]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:feature", "scope:de-care-use-case-feature"]
+}

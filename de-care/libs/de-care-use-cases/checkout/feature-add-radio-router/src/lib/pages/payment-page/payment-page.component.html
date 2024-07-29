@@ -1,0 +1,24 @@
+<ng-container *ngrxLet="viewModel$ as viewModel">
+    <section id="mainContent">
+        <sxm-ui-vehicle-ymm-info [vehicleInfoVM]="viewModel.vehicleInfo"></sxm-ui-vehicle-ymm-info>
+        <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+            <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+            <ng-container body>
+                <p>{{ translateKeyPrefix + ".BODY" | translate }}</p>
+            </ng-container>
+        </sxm-ui-step-header>
+        <sxm-ui-plan-recap-card *ngIf="viewModel.planRecapCard as planRecapCardViewModel" [data]="planRecapCardViewModel"></sxm-ui-plan-recap-card>
+        <de-care-payment-info-form
+            [options]="viewModel.paymentMethodOptions"
+            [initialState]="paymentFormInitialState$ | async"
+            (formCompleted)="onPaymentInfoCollected($event)"
+        ></de-care-payment-info-form>
+    </section>
+    <sxm-ui-loading-with-alert-message
+        *ngIf="displayIneligibleLoader$ | async"
+        [isLoading]="true"
+        [pillMessage]="translateKeyPrefix + '.INELIGIBLE_LOADING_ALERT' | translate"
+        [paragraph]="translateKeyPrefix + '.INELIGIBLE_LOADING_BODY' | translate"
+        (loadingCompleted)="onLoadingWithAlertMessageComplete($event)"
+    ></sxm-ui-loading-with-alert-message>
+</ng-container>

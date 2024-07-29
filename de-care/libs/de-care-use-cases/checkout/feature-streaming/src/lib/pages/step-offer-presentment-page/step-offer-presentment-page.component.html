@@ -1,0 +1,94 @@
+<ng-container *ngIf="offerViewModel$ | async as offerViewModel">
+    <section
+        id="heroContent"
+        *ngrxLet="campaignHeroViewModel$ as campaignHeroViewModel"
+        [style.background-image]="campaignHeroViewModel?.heroBackgroundImageUrl ? 'url(' + campaignHeroViewModel?.heroBackgroundImageUrl + ')' : ''"
+    >
+        <img *ngIf="campaignHeroViewModel?.heroForegroundImageUrl" [src]="campaignHeroViewModel.heroForegroundImageUrl" [attr.alt]="campaignHeroViewModel.heroImageAltText" />
+    </section>
+    <section id="mainContent">
+        <div data-test="offer-with-deal" class="offer-with-deal" *ngIf="offerViewModel.useOfferWithDealPresentment; else defaultPackageCard">
+            <ng-container [ngTemplateOutlet]="userInfo"></ng-container>
+            <sxm-ui-package-card-basic
+                [packageData]="{
+                    platformPlan: offerViewModel.offerDescription?.platformPlan,
+                    priceAndTermDescTitle: offerViewModel.offerDescription?.priceAndTermDescTitle,
+                    processingFeeDisclaimer: offerViewModel.offerDescription?.processingFeeDisclaimer
+                }"
+                [class.theme-non-retail]="offerViewModel.offerDescription?.nonRetailMode"
+            ></sxm-ui-package-card-basic>
+            <p class="post-trial-info" data-test="post-trial-info" *ngIf="offerViewModel.paymentPostTrialViewModel as data">
+                {{
+                    translateKeyPrefix + ".POST_TRIAL_" + data.type
+                        | translate
+                            : {
+                                  trialEndDate: data.trialEndDate | sxmDate: (translationsForComponentService.currentLang$ | async)
+                              }
+                }}
+            </p>
+            <sxm-ui-product-banner
+                [data]="{
+                    text: offerViewModel.offerDealCopy[0].title,
+                    imageUrl: offerViewModel.offerDealCopy[0].partnerImage
+                }"
+            ></sxm-ui-product-banner>
+
+            <sxm-ui-accordion-chevron
+                [collapsedText]="translateKeyPrefix + '.VIEW_DETAILS_COLLAPSED' | translate"
+                [isInnerAccordion]="true"
+                [expandedText]="translateKeyPrefix + '.VIEW_DETAILS_EXPANDED' | translate"
+                [aria]="{
+                    collapsedText: translateKeyPrefix + 'ARIA_VIEW_DETAILS_COLLAPSED' | translate: { packageName: offerViewModel?.offerDescription?.platformPlan },
+                    expandedText: translateKeyPrefix + 'ARIA_VIEW_DETAILS_EXPANDED' | translate: { packageName: offerViewModel?.offerDescription?.platformPlan }
+                }"
+                [opened]="offerViewModel.offerDescription.openLeadOfferDetails"
+                data-test="PrimaryPackageDetailsAccordion"
+                sxmUiDataClickTrack="ui"
+                data-link-key="explore-more"
+            >
+                <sxm-ui-features-list
+                    [data]="{
+                        features: offerViewModel.offerDescription.details,
+                        planName: offerViewModel.offerDescription.platformPlan
+                    }"
+                ></sxm-ui-features-list>
+            </sxm-ui-accordion-chevron>
+        </div>
+        <ng-template #defaultPackageCard>
+            <div class="shadow-helper">
+                <ng-container [ngTemplateOutlet]="userInfo"></ng-container>
+                <sxm-ui-primary-package-card
+                    [class.theme-non-retail]="offerViewModel?.offerDescription?.theme === 'Theme2'"
+                    [class.presentation-no-icons-single-detail-visible]="offerViewModel?.offerDescription?.presentation === 'Presentation3'"
+                    [packageData]="offerViewModel?.offerDescription"
+                ></sxm-ui-primary-package-card>
+            </div>
+        </ng-template>
+        <a
+            class="button primary full-width"
+            data-test="continueButton"
+            [routerLink]="pageStepRouteConfiguration.routeUrlNext"
+            queryParamsHandling="preserve"
+            sxmUiDataClickTrack="routing"
+        >
+            {{ translateKeyPrefix + ".CONTINUE_BUTTON_TEXT" | translate }}
+        </a>
+    </section>
+    <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+        <div [innerHTML]="offerViewModel.legalCopy"></div>
+    </section>
+</ng-container>
+<ng-template let-maskedUsername="maskedUserName" #userInfo>
+    <div class="username-container" *ngIf="getCurrentUserViewModel$ | async as userInfo">
+        <p>
+            {{
+                translateKeyPrefix + ".USERNAME"
+                    | translate
+                        : {
+                              username: userInfo.maskedUserNameFromToken
+                          }
+            }}
+        </p>
+        <hr />
+    </div>
+</ng-template>

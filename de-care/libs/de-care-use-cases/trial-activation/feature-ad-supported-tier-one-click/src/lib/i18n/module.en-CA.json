@@ -1,0 +1,20 @@
+{
+    "DeCareUseCasesTrialActivationFeatureAdSupportedTierOneClickModule": {
+        "DefaultErrorPageComponent": {
+            "HELP": {
+                "TFN": "1-866-635-0565"
+            }
+        },
+        "AlreadyHasSubscriptionErrorPageComponent": {
+            "HELP": {
+                "LOGIN_URL": "https://care.siriusxm.ca/login_view.action",
+                "TFN": "1-866-635-0565"
+            }
+        },
+        "IsNotEligibleErrorPageComponent": {
+            "HELP": {
+                "TFN": "1-866-635-0565"
+            }
+        }
+    }
+}

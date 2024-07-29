@@ -1,0 +1,45 @@
+{
+    "DeCareUseCasesTrialActivationFeatureSl2cModule": {
+        "DeCareUseCasesTrialActivationSl2CMainComponent": {
+            "TERM_LENGTH": {
+                "DEFAULT": "{{termLength}} mois"
+            },
+            "HERO_TEXT": "Débutez votre essai gratuit dès aujourd’hui!",
+            "SUB_HEADER": "Activez votre essai",
+            "SLTC_SERVICE_LANE": {
+                "OFFER_DETAILS": {
+                    "DEFAULT": "Offert uniquement pour les radios satellites inactives admissibles, installées en usine. Votre service {{offerName}} arrêtera automatiquement à la fin de votre abonnement actuel de {{trialTerm}} à moins que vous ne décidiez d’acheter un nouvel abonnement. Consultez <a href=\"https://www.siriusxm.ca/conditions\" target=\"_blank\">l’Entente du client</a> et <a href=\"https://www.siriusxm.ca/fr/politique-de-confidentialite/\" target=\"_blank\">la Politique de la vie privée</a> pour connaître toutes les conditions. Tous les frais et toute la programmation peuvent être modifiés.",
+                    "QUEBEC": "Offert uniquement pour les radios satellites inactives admissibles, installées en usine. Votre service {{offerName}} arrêtera automatiquement à la fin de votre abonnement actuel de {{trialTerm}} à moins que vous ne décidiez d’acheter un nouvel abonnement. Consultez <a href=\"https://www.siriusxm.ca/conditions\" target=\"_blank\">l’Entente du client</a> et <a href=\"https://www.siriusxm.ca/fr/politique-de-confidentialite/\" target=\"_blank\">la Politique de la vie privée</a> pour connaître toutes les conditions. La programmation peut être modifiée."
+                },
+                "partnerText": {
+                    "NO_PARTNER": "En prime lors de l’entretien de votre véhicule, SiriusXM vous offre un essai gratuit.",
+                    "WITH_PARTNER": "En prime lors de l’entretien de votre véhicule avec {{partnerName}}, SiriusXM vous offre un essai gratuit."
+                }
+            },
+            "SLTC_USED_CAR": {
+                "OFFER_DETAILS": {
+                    "DEFAULT": "Offert uniquement pour les radios satellites inactives admissibles, installées en usine. Votre service {{offerName}} arrêtera automatiquement à la fin de votre abonnement actuel de {{trialTerm}} à moins que vous ne décidiez d’acheter un nouvel abonnement. Consultez <a href=\"https://www.siriusxm.ca/conditions\" target=\"_blank\">l’Entente du client</a> et <a href=\"https://www.siriusxm.ca/fr/politique-de-confidentialite/\" target=\"_blank\">la Politique de la vie privée</a> pour connaître toutes les conditions. Tous les frais et toute la programmation peuvent être modifiés.",
+                    "QUEBEC": "Offert uniquement pour les radios satellites inactives admissibles, installées en usine. Votre service {{offerName}} arrêtera automatiquement à la fin de votre abonnement actuel de {{trialTerm}} à moins que vous ne décidiez d’acheter un nouvel abonnement. Consultez <a href=\"https://www.siriusxm.ca/conditions\" target=\"_blank\">l’Entente du client</a> et <a href=\"https://www.siriusxm.ca/fr/politique-de-confidentialite/\" target=\"_blank\">la Politique de la vie privée</a> pour connaître toutes les conditions. La programmation peut être modifiée."
+                },
+                "partnerText": {
+                    "NO_PARTNER": "En prime grâce à l’achat de votre véhicule, SiriusXM vous offre un essai gratuit.",
+                    "WITH_PARTNER": "En prime grâce à l’achat de votre véhicule avec {{partnerName}}, SiriusXM vous offre un essai gratuit."
+                }
+            },
+            "CONFIRM_YOUR_ADDRESS": "Veuillez confirmer votre adresse",
+            "UNEXPECTED_ERROR": "Une erreur inattendue est apparue. Veuillez réessayer.",
+            "INVALID_SERVICE_ADDRESS_ERROR": "Selon les dossiers de Postes Canada, votre adresse de service est invalide ou des renseignements importants sont manquants. Veuillez mettre à jour l'adresse de service pour continuer."
+        },
+        "DeCareUseCasesTrialActivationSl2CConfirmationComponent": {
+            "HERO_TEXT": "Bienvenue! Voici votre abonnement d'essai SiriusXM.",
+            "READY_TO_EXPLORE_LINKS": [
+                "<a data-track-click='View Program Schedule' class='text-link' href='https://siriusxm.ca/en-ondes' target='_blank'>Voir les horaires de programmation</a>",
+                "<a data-track-click='Live Sports Schedule' class='text-link' href='https://www.siriusxm.ca/sports-en-direct' target='_blank'>Horaires des sports en direct</a>"
+            ],
+            "STREAMING_LINK_TEXT": "Passez en mode écoute sur l’Appli SXM",
+            "READY_TO_EXPLORE_HEADER": "Prêt à explorer?",
+            "TRIAL_WILL_EXPIRE": "Votre abonnement d'essai prendra fin le {{trialEndDate}}.",
+            "STREAMING_PLAYER_LINK": ""
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "ACCOUNT_INFO_TITLE": "Infos sur le compte",
+    "BACK_BUTTON_LABEL": "RETOUR",
+    "HEADER": "Modifier les coordonnées",
+    "HEADER_DESCRIPTION": "Conformément à la <a href='http://www.siriusxm.ca/vieprivee' target='_blank'>politique de confidentialité</a> de SiriusXM, nous pouvons utiliser les renseignements que vous fournissez pour vous contacter.",
+    "CONTACT_INFO_UPDATE_SUCCESS_MESAGE": "Mise à jour des coordonnées réussie.",
+    "CONTACT_INFO_TITLE": "Coordonnées",
+    "SERVICE_ADDRESS_TITLE": "Adresse",
+    "BILLING_ADDRESS_CHECKBOX_LABEL": "L’adresse de facturation est la même",
+    "INVALID_SERVICE_ADDRESS_ERROR": "Selon les dossiers de Postes Canada, votre adresse de service est invalide ou des renseignements importants sont manquants. Veuillez mettre à jour l'adresse de service pour continuer.",
+    "SAVE_BUTTON": "SAUVEGARDER",
+    "CANCEL_BUTTON": "ANNULEZ",
+    "CONFIRM_YOUR_ADDRESS": "Veuillez confirmer votre adresse"
+}

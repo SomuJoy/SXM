@@ -1,0 +1,50 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "../page.scss";
+
+:host {
+    @include page-host;
+    .coin-with-checkmark {
+        color: $gray-dark;
+        @include icon-coin(48px, $gray-dark);
+        padding: 8px;
+    }
+    .bullet {
+        color: $blue;
+        stroke-width: 2px;
+        height: 15px;
+        width: 15px;
+        position: absolute;
+        top: 5px;
+        left: 0;
+    }
+    section {
+        display: grid;
+        grid-gap: 12px;
+    }
+    ul#benefitsList {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+            font-size: calculate-rem(14px);
+            position: relative;
+            margin: 8px 0 0;
+            padding-left: 23px;
+            line-height: 22px;
+            &:first-child {
+                margin-top: 0;
+            }
+            .icon {
+                position: absolute;
+                top: 5px;
+                left: 0;
+                width: 15px;
+                height: 15px;
+                use {
+                    stroke: #0000eb;
+                }
+            }
+        }
+    }
+}

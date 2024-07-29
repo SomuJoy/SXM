@@ -1,0 +1,16 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    h4 {
+        margin-bottom: 20px;
+        color: $black;
+        font-size: calculate-rem(28px);
+        font-weight: calculate-font-weight("black");
+    }
+
+    .add-second-radio-instruction {
+        color: $black;
+        font-size: calculate-rem(14px);
+    }
+}

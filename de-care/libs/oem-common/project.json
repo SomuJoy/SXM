@@ -1,0 +1,27 @@
+{
+    "name": "oem-common",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/oem-common/src",
+    "projectType": "library",
+    "generators": {},
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/oem-common/src/**/*.ts", "libs/oem-common/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/oem-common/jest.config.js",
+                "tsConfig": "libs/oem-common/tsconfig.spec.json",
+                "setupFile": "libs/oem-common/src/test-setup.ts",
+                "configPath": "./jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": ["type:feature", "scope:de-oem"]
+}

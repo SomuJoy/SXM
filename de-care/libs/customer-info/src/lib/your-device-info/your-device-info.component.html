@@ -1,0 +1,28 @@
+<div data-e2e="yourDeviceInfo">
+    <p *ngIf="vehicleInfo && (vehicleInfo.year || vehicleInfo.make || vehicleInfo.model)">
+        {{ "customerInfo.yourDeviceInfoComponent.VEHICLE" | translate: vehicleInfo }}
+    </p>
+    <p>
+        <ng-container *ngIf="!isClosedRadio; else closedRadio">
+            <ng-container *ngFor="let plan of plans">
+                <span
+                    *ngIf="plan.packageName"
+                    [innerHTML]="('app.packageDescriptions.' + plan.packageName + '.name' | translate) + ((plan.type | isTrialPlan) ? ' Trial' : '')"
+                    class="plan-name"
+                ></span>
+                <ng-container *ngIf="plan.endDate && expires">
+                    {{ "customerInfo.yourDeviceInfoComponent.EXPIRES" | translate }}: {{ plan.endDate | date: (dateFormat$ | async):timeZone:locale }}
+                </ng-container>
+            </ng-container>
+        </ng-container>
+
+        <ng-template #closedRadio>
+            <span class="plan-name">
+                {{ "customerInfo.yourDeviceInfoComponent.NO_ACTIVE_SERVICE" | translate }}
+            </span>
+            <ng-container *ngIf="endDate && closed">
+                {{ "customerInfo.yourDeviceInfoComponent.CLOSED" | translate }}: {{ endDate | date: (dateFormat$ | async):timeZone:locale }}
+            </ng-container>
+        </ng-template>
+    </p>
+</div>

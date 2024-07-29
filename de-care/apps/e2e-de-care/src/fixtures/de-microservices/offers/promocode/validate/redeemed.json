@@ -1,0 +1,15 @@
+{
+    "status": "FAILURE",
+    "httpStatusCode": 400,
+    "httpStatus": "BAD_REQUEST",
+    "error": {
+        "errorStackTrace": "AccountNumber: null | RadioId: null | x-forwarded-for: null | URL: /services/offers/promocode/validate | Exception: PromoCodeValidationServiceException#null | StackTrace: PromoCodeValidationServiceClient.java:63 | ErrorType: null | ErrorMessage: ERROR : [errorCode : null, errorPropKey : error.code.promo.code.service.already.redeemed, errorType : CHECKED, errorLevel : FIELD, statusCode : 400 BAD_REQUEST, errorMessage : Single use promotion code already redeemed in system | , sourceErrorCode : 11-03-SUBSC-5097] | FullStackTrace: ",
+        "fieldErrors": [
+            {
+                "errorPropKey": "error.code.promo.code.service.already",
+                "errorType": "BUSINESS",
+                "fieldName": "redeemed"
+            }
+        ]
+    }
+}

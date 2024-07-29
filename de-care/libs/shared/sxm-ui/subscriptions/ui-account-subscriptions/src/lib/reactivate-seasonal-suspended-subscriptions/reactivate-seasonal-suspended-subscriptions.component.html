@@ -1,0 +1,5 @@
+<h4 class="title">{{ translateKeyPrefix + ".DESCRIPTION" | translate }}</h4>
+<p class="help-instruction" [innerHTML]="translateKeyPrefix + '.HELP' | translate" [id]="ariaDescribedbyTextId"></p>
+<button class="button primary full-width" data-test="closeReactivateModalButton" sxmUiDataClickTrack="ui" data-link-name="Close reactivate modal" (click)="userClosed.emit()">
+    {{ translateKeyPrefix + ".CLOSE_BUTTON" | translate }}
+</button>

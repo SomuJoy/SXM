@@ -1,0 +1,24 @@
+{
+    "deviceLookupWizardComponent": {
+        "RADIO_LOOKUP_HEADER": {
+            "en-US": "Let's find the radio you're looking for.",
+            "fr-CA": "Trouvons la radio que vous cherchez."
+        },
+        "RADIO_LOOKUP_LABEL": {
+            "en-US": "Platinum VIP",
+            "fr-CA": "L’Ultime"
+        },
+        "RADIO_ID_LOOKUP_LABEL": {
+            "en-US": "Your Account",
+            "fr-CA": "Votre Compte"
+        },
+        "LOOKUP_VIN_LABEL": {
+            "en-US": "Your Account",
+            "fr-CA": "Votre Compte"
+        },
+        "LOOKUP_LICENCE_PLATE_LABEL": {
+            "en-US": "Your Account",
+            "fr-CA": "Votre Compte"
+        }
+    }
+}

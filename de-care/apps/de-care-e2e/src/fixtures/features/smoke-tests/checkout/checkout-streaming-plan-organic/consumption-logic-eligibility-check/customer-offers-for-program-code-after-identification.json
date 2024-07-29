@@ -1,0 +1,45 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "offers": [
+            {
+                "planCode": "Trial - Essential Streaming - 3mo - $1.00",
+                "packageName": "SIR_IP_SA_ESNTL",
+                "packageUpgrade": null,
+                "promoCode": "ES1RTP3MO",
+                "termLength": 3,
+                "type": "RTP_OFFER",
+                "marketType": "trial:streaming",
+                "price": 1.0,
+                "pricePerMonth": 0.33,
+                "retailPrice": 7.99,
+                "packageUpgradePrice": null,
+                "msrpPrice": 7.99,
+                "processingFee": null,
+                "supportedServices": ["SIR", "UNIVERSAL_LOGIN"],
+                "deal": null,
+                "priceChangeMessagingType": "",
+                "planEndDate": null,
+                "minimumFollowOnTerm": 1,
+                "order": null,
+                "bundledSavingPrice": null,
+                "bundleSubPackageNames": null,
+                "parentPackageName": "",
+                "fallbackReason": "",
+                "mrdEligible": false,
+                "invoiceEligible": false,
+                "advantage": false,
+                "student": false,
+                "fallback": false,
+                "streaming": false,
+                "upgradeOffer": false,
+                "bestPackage": false,
+                "dataCapable": false,
+                "bundled": null
+            }
+        ],
+        "presentment": null
+    }
+}

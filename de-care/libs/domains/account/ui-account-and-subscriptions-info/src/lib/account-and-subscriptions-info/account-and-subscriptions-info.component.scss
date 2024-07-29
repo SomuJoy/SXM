@@ -1,0 +1,39 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    .maskedRadioID::before {
+        content: "\2a \2a \2a \2a";
+    }
+
+    .list-header {
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 12px;
+        margin-bottom: 8px;
+        padding: 0px;
+
+        .verify-link {
+            font-weight: bold;
+            position: absolute;
+            font-size: 14px;
+            right: 0px;
+        }
+        .masked::before {
+            content: "  \2022 \2022 \2022 \2022 \2022 \2022 \2022 \2022 \2022 \2022 \2022 ";
+        }
+    }
+
+    .detail-row {
+        font-size: 14px;
+        line-height: 22px;
+        padding: 0px;
+    }
+
+    .list-row {
+        margin-top: 24px;
+    }
+
+    .radio-id {
+        margin-bottom: 12px;
+    }
+}

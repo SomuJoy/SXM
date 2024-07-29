@@ -1,0 +1,20 @@
+<div data-test="RefreshSignalComponent">
+    <!--  Todo: handle which of the 3 components should display by state persisted in this component, and updated by the 3 children? -->
+
+    <!--  1st Step: User tries to activate their radio by: A) Sending Refresh Signal, or B) Having instructions sent to them by Text -->
+    <activate-radio
+        [radioId]="radioId"
+        [phone]="phone"
+        [outsideCarSteps]="outsideCarSteps"
+        *ngIf="activeComponent === 'active-radio'"
+        (refreshError)="errorTypeToDisplay = $event"
+        (userInCar)="userInCar = $event"
+        (activeComponentUpdate)="activeComponentUpdate($event)"
+    >
+    </activate-radio>
+
+    <!--    2nd Step: Depending on success of 1st step, user is shown either Success or Error Message-->
+    <success-message *ngIf="activeComponent === 'success-message'" [userInCar]="userInCar"> </success-message>
+
+    <error-message *ngIf="activeComponent === 'error-message'" [errorType]="errorTypeToDisplay"> </error-message>
+</div>

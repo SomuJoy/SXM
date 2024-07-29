@@ -1,0 +1,88 @@
+<de-care-vip-layout>
+    <main de-care-page-main *ngIf="confirmationPageData$ | async as confirmationData">
+        <div class="title full-width text-left">
+            <h4>{{ translateKeyPrefix + "TITLE" | translate }}</h4>
+        </div>
+        <div class="pill-container" *ngIf="confirmationData.hasUpgradingErrors">
+            <sxm-ui-alert-pill class="alert-icon-notification rounded-corners">
+                <p>
+                    <span [innerHTML]="translateKeyPrefix + 'ERROR_PILL.FIRST' | translate"></span>
+                    <chat-with-agent-link [chatLinkText]="translateKeyPrefix + 'ERROR_PILL.CHAT' | translate" [queue]="'general'"></chat-with-agent-link>
+                    {{ translateKeyPrefix + "ERROR_PILL.LAST" | translate }}
+                </p>
+            </sxm-ui-alert-pill>
+        </div>
+        <hr />
+        <div class="partner-headline full-width text-left">
+            <h5>{{ translateKeyPrefix + "PARTNER_INFO.TITLE" | translate }}</h5>
+            <p>{{ translateKeyPrefix + "PARTNER_INFO.BODY" | translate }}</p>
+        </div>
+        <hr />
+        <div class="login-section full-width text-left">
+            <ng-container *ngIf="confirmationData.hasPendingCredentials; else nonPendingCredentials">
+                <h5>{{ translateKeyPrefix + "LOGIN_SECTION.PENDING_CRENDENTIALS.TITLE" | translate }}</h5>
+                <p>{{ translateKeyPrefix + "LOGIN_SECTION.PENDING_CRENDENTIALS.BODY" | translate }}</p>
+            </ng-container>
+            <ng-template #nonPendingCredentials>
+                <h5>{{ translateKeyPrefix + "LOGIN_SECTION.NON_PENDING_CREDENTIALS.TITLE" | translate }}</h5>
+                <p>{{ translateKeyPrefix + "LOGIN_SECTION.NON_PENDING_CREDENTIALS.BODY" | translate }}</p>
+            </ng-template>
+            <de-care-dynamic-form-for-radios
+                [confirmationData]="confirmationData"
+                [isFrench]="currentLangIsFrench$ | async"
+                [primaryRadioSubscriptionId]="primaryRadioSubscriptionId$ | async"
+                [secondaryRadioSubscriptionId]="secondaryRadioSubscriptionId$ | async"
+            ></de-care-dynamic-form-for-radios>
+        </div>
+        <hr />
+        <div class="quotes-section full-width text-left">
+            <h5>{{ translateKeyPrefix + "QUOTES_SECTION.TITLE" | translate }}</h5>
+            <p class="radio-info">
+                {{
+                    confirmationData.selectedDevices.firstRadio.vehicle
+                        | vehicleInfoTranslate
+                            : {
+                                  defaultText: translateKeyPrefix + "QUOTES_SECTION.RADIO" | translate : { radioId: confirmationData.selectedDevices.firstRadio.radioId },
+                                  isFrench: currentLangIsFrench$ | async
+                              }
+                }}
+            </p>
+            <p class="radio-info" *ngIf="confirmationData.selectedDevices.secondRadio">
+                {{
+                    confirmationData.selectedDevices.secondRadio.vehicle
+                        | vehicleInfoTranslate
+                            : {
+                                  defaultText: translateKeyPrefix + "QUOTES_SECTION.RADIO" | translate : { radioId: confirmationData.selectedDevices.secondRadio.radioId },
+                                  isFrench: currentLangIsFrench$ | async
+                              }
+                }}
+            </p>
+            <quote-summary
+                [showUnusedCreditLine]="true"
+                [giftCardUsed]="false"
+                [isNewAccount]="false"
+                [isClosedRadio]="false"
+                [isChangeSubscription]="true"
+                [quote]="confirmationData.quotes"
+                [extraData]="confirmationData.extraData"
+            ></quote-summary>
+            <a class="text-link" data-track-click="Print This Page" (click)="onPrintClick()">{{ translateKeyPrefix + "QUOTES_SECTION.PRINT_LINK" | translate }}</a>
+        </div>
+        <hr />
+        <div class="refresh-section full-width text-left">
+            <refresh-signal *ngIf="isRefreshAllowed$ | async" [radioId]="confirmationData.selectedDevices.firstRadio.radioId"></refresh-signal>
+        </div>
+    </main>
+    <div class="content-container background-offwhite important-info-section">
+        <div class="row no-padding-small">
+            <div class="column small-12 medium-10 offset-medium-1 align-top no-padding-medium">
+                <div class="main-content">
+                    <p class="legal-copy">
+                        <strong>{{ translateKeyPrefix + "IMPORTANT_INFORMATION_SECTION.TITLE" | translate }}</strong>
+                    </p>
+                    <important-info></important-info>
+                </div>
+            </div>
+        </div>
+    </div>
+</de-care-vip-layout>

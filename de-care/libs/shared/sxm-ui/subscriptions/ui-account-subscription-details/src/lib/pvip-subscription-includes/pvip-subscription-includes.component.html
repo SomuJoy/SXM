@@ -1,0 +1,18 @@
+<div>
+    <p class="title">{{ translateKeyPrefix + ".TITLE" | translate }}</p>
+    <p class="small-copy mb-4">
+        <a [href]="translateKeyPrefix + '.OFFER_DETAILS_URL' | translate: { dotComBaseUrl: _dotComBaseUrl }" data-test="seeOfferDetailsLink">{{
+            translateKeyPrefix + ".OFFER_DETAILS_LABEL" | translate
+        }}</a>
+    </p>
+</div>
+<ul>
+    <li>
+        <p [innerHTML]="translateKeyPrefix + '.STITCHER_DESCRIPTION' | translate"></p>
+        <img src="assets/img/stitcher.png" />
+    </li>
+    <li>
+        <p [innerHTML]="translateKeyPrefix + '.NUGS_DESCRIPTION' | translate"></p>
+        <img src="assets/img/nugs.png" />
+    </li>
+</ul>

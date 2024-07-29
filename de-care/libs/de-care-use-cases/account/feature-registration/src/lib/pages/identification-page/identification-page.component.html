@@ -1,0 +1,27 @@
+<sxm-ui-side-title [title]="translateKeyPrefix + '.TITLE' | translate" [mainParagraph]="translateKeyPrefix + '.INSTRUCTIONS' | translate">
+    <sxm-ui-alert-pill *ngIf="unexpectedSubmissionError$ | async" data-test="unexpectedProcessingError" class="alert-icon-info straight-corners no-shadow">
+        {{ translateKeyPrefix + ".UNEXPECTED_ERROR" | translate }}
+    </sxm-ui-alert-pill>
+    <p data-test="registrationIdentification.haveAccount" data-e2e="registrationIdentification.haveAccount">
+        {{ translateKeyPrefix + ".HAVE_ACCOUNT" | translate }}
+        <a class="text-link" [href]="translateKeyPrefix + '.CTA.VANITY_URL' | translate">{{ translateKeyPrefix + ".SIGN_IN" | translate }}</a>
+    </p>
+    <form [formGroup]="form" (ngSubmit)="onLookupSubmit()">
+        <sxm-ui-flepz-form-fields
+            data-e2e="registrationIdentificationFlepzForm"
+            formControlName="identification"
+            [submitted]="lookupSubmitInitiated"
+            [isInvalidPhone]="isInvalidPhone$ | async"
+        ></sxm-ui-flepz-form-fields>
+        <privacy-policy></privacy-policy>
+        <button
+            type="submit"
+            data-test="registrationIdentificationFlepzForm.continueButton"
+            data-e2e="registrationIdentificationFlepzForm.continueButton"
+            [loading]="lookupSubmitted$ | async"
+            sxm-proceed-button
+        >
+            {{ translateKeyPrefix + ".CONTINUE_BUTTON" | translate }}
+        </button>
+    </form>
+</sxm-ui-side-title>

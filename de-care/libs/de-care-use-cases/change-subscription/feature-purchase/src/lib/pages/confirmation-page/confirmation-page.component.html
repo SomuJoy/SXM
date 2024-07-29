@@ -1,0 +1,97 @@
+<main class="background-offwhite" *ngIf="confirmationData$ | async as confirmationData">
+    <hero-component [headerState]="translateKeyPrefix + 'HERO.TITLE' | translate" [showImage]="true"></hero-component>
+    <div class="content-container">
+        <div class="row align-center">
+            <div class="column medium-2 no-padding background-white raised"></div>
+            <div class="column small-12 medium-6 background-white raised">
+                <div class="order-confirmation--container">
+                    <div class="row no-padding align-center">
+                        <div class="column small-12 no-padding">
+                            <div class="full-width">
+                                <personal-info *ngIf="confirmationData.radioId; else streamingPersonalInfo" [radioId]="confirmationData.radioId"></personal-info>
+                                <ng-template #streamingPersonalInfo>
+                                    <personal-info [maskedUsername]="confirmationData.maskedUsername" [addHorizontalLine]="true" [isStreaming]="true"></personal-info>
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-padding align-center">
+                        <div class="column small-12 no-padding">
+                            <div class="full-width">
+                                <feature-toggle-provider [features]="enableQuoteSummaryFeatureToggle$ | async">
+                                    <ng-container *featureToggle="'enableQuoteSummary'">
+                                        <quote-summary
+                                            [showUnusedCreditLine]="true"
+                                            [giftCardUsed]="false"
+                                            [isNewAccount]="false"
+                                            [isClosedRadio]="false"
+                                            [isChangeSubscription]="true"
+                                            [isCurrentSubscriptionTrial]="confirmationData.planIsTrial"
+                                            [currentSubscriptionEndDate]="confirmationData.subscriptionEndDate"
+                                            [quote]="confirmationData.quotes"
+                                        ></quote-summary>
+                                    </ng-container>
+
+                                    <ng-container *featureToggle="'!enableQuoteSummary'">
+                                        <order-summary
+                                            [showUnusedCreditLine]="true"
+                                            [giftCardUsed]="false"
+                                            [isNewAccount]="false"
+                                            [isClosedRadio]="false"
+                                            [isChangeSubscription]="true"
+                                            [isCurrentSubscriptionTrial]="confirmationData.planIsTrial"
+                                            [quote]="confirmationData.quotes"
+                                        ></order-summary>
+                                    </ng-container>
+                                </feature-toggle-provider>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-padding align-center no-print">
+                        <div class="column small-12 no-padding">
+                            <div class="full-width">
+                                <a class="text-link" data-track-click="Print This Page" (click)="onPrintClick()">{{ translateKeyPrefix + "PRINT_LINK.TEXT" | translate }}</a>
+                                <hr />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-padding align-center no-print">
+                        <div class="column small-12 no-padding">
+                            <listen-now
+                                [infoForToken]="{ subscriptionId: confirmationData.subscriptionId }"
+                                [customLink]="
+                                    translateKeyPrefix + (confirmationData.radioId ? 'STREAMING_PLAYER_LINK.SATELLITE_OFFER' : 'STREAMING_PLAYER_LINK.STREAMING_OFFER')
+                                        | translate
+                                "
+                            ></listen-now>
+                            <hr *ngIf="confirmationData.radioId" />
+                        </div>
+                    </div>
+                    <div class="row no-padding align-center no-print">
+                        <div class="column small-12 no-padding no-hr">
+                            <div *ngIf="confirmationData.radioId && confirmationData.isRefreshAllowed" class="full-width">
+                                <refresh-signal [radioId]="confirmationData.fullRadioId"></refresh-signal>
+                            </div>
+                            <button data-track-click="back to my account" class="button secondary full-width apply-btn" (click)="backToMyAccount()">
+                                {{ translateKeyPrefix + "BACK_BUTTON.TEXT" | translate }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column medium-2 no-padding background-white"></div>
+        </div>
+    </div>
+    <div class="background-offwhite">
+        <div class="row align-center no-padding-small">
+            <div class="column small-12 medium-10 no-padding-medium">
+                <div class="important-info-container">
+                    <p class="legal-copy">
+                        <strong>{{ translateKeyPrefix + "IMPORTANT_INFO.LEGAL_COPY" | translate }}</strong>
+                    </p>
+                    <important-info></important-info>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

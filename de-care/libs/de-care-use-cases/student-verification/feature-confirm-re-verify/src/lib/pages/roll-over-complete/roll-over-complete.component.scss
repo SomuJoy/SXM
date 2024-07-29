@@ -1,0 +1,37 @@
+@import "sxm.phoenix.imports";
+
+@include bp(medium) {
+    .raised {
+        margin-top: -32px;
+    }
+}
+
+.order-confirmation--container {
+    @include bp(medium) {
+        padding-top: 16px;
+    }
+}
+
+.important-info-container {
+    padding: 24px 0;
+}
+
+.small-copy {
+    color: $gray-dark;
+
+    strong {
+        font-weight: 700;
+    }
+}
+
+hr {
+    background-color: $gray-medium;
+    border: 0;
+    height: 1px;
+    margin: 32px 0;
+    width: 100%;
+}
+
+.no-hr {
+    margin-bottom: 32px;
+}

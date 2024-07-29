@@ -1,0 +1,11 @@
+{
+    "status": "FAILURE",
+    "httpStatusCode": 400,
+    "httpStatus": "BAD_REQUEST",
+    "error": {
+        "errorStackTrace": "AccountNumber:  | RadioId:  | x-forwarded-for: [10.128.36.59] | URL: /services/offers/promocode/validate | Exception: PromoCodeValidationServiceException#null | StackTrace: PromoCodeValidationServiceClient.java:63 | ErrorType: null | ErrorMessage: ERROR : [errorCode : NOT_FOUND, errorPropKey : error.code.promo.code.service.not.found.marketingpromocode, errorType : CHECKED, errorLevel : FIELD, statusCode : 400 BAD_REQUEST, errorMessage : Promotion code not found | , sourceErrorCode : 11-03-SUBSC-5094] | FullStackTrace: ",
+        "logId": "8f4039d7-9421-40f9-ae66-ea21e5057a15",
+        "failedTransactionId": "OAC-8f4039d7-9421-40f9-ae66-ea21e5057a15-c0274033920b03d6-c0274033920b03d6-8342807170127774145184126",
+        "fieldErrors": [{ "errorCode": "NOT_FOUND", "errorPropKey": "error.code.promo.code.service.not.found", "errorType": "BUSINESS", "fieldName": "marketingpromocode" }]
+    }
+}

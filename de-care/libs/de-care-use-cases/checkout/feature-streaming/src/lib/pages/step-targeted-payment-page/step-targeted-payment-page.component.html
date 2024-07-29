@@ -1,0 +1,69 @@
+<section id="mainContent" *ngrxLet="targetedPaymentViewModel$ as model">
+    <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+        <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+        <ng-container body>
+            <p data-test="bodyTitle">
+                <ng-container *ngIf="model?.paymentPostTrialViewModel as data; else default">
+                    {{
+                        translateKeyPrefix + ".BODY.POST_TRIAL_" + data.type
+                            | translate
+                                : {
+                                      trialEndDate: data.trialEndDate | sxmDate: (translationsForComponentService.currentLang$ | async)
+                                  }
+                    }}
+                </ng-container>
+                <ng-template #default>
+                    {{ translateKeyPrefix + ".BODY.CANCEL_ANYTIME" | translate }}
+                </ng-template>
+            </p>
+        </ng-container>
+    </sxm-ui-step-header>
+    <sxm-ui-plan-recap-card *ngIf="model?.longDescriptionPlanRecapCardViewModel as planRecapCardViewModel" [data]="planRecapCardViewModel"></sxm-ui-plan-recap-card>
+    <div class="user-info" *ngIf="model?.currentUserViewModel as userInfo">
+        <h3 class="label">{{ translateKeyPrefix + ".EMAIL/USERNAME" | translate }}</h3>
+        <p>{{ userInfo.maskedUserNameFromToken }}</p>
+    </div>
+    <ng-container [ngSwitch]="model?.paymentFormMode">
+        <de-care-payment-info-basic-form
+            *ngSwitchCase="'ADDRESS_INFO_NON_REQUIRED'"
+            [options]="{
+                useCardOnFileAllowed: model.creditCardOnFileViewModel?.useCardOnFileAllowed,
+                cardType: model.creditCardOnFileViewModel?.cardType,
+                cardNumberLastFour: model.creditCardOnFileViewModel?.cardNumberLastFour,
+                countryCode: countrySettings.countryCode
+            }"
+            [initialState]="model.paymentInfo"
+            [continueButtonTextOverride]="translateKeyPrefix + '.CONTINUE_BUTTON_TEXT' | translate"
+            (formCompleted)="onPaymentInfoCollected($event)"
+        ></de-care-payment-info-basic-form>
+        <de-care-payment-info-with-phone-number-and-zip-form
+            *ngSwitchCase="'ADRESS_INFO_REQUIRED_BASIC'"
+            [options]="{
+                useCardOnFileAllowed: model.creditCardOnFileViewModel?.useCardOnFileAllowed,
+                cardType: model.creditCardOnFileViewModel?.cardType,
+                cardNumberLastFour: model.creditCardOnFileViewModel?.cardNumberLastFour,
+                countryCode: countrySettings.countryCode
+            }"
+            [initialState]="model?.paymentFormInitialState"
+            (formCompleted)="onPaymentInfoCollected($event)"
+        ></de-care-payment-info-with-phone-number-and-zip-form>
+        <de-care-payment-info-with-full-address-and-phone-form
+            *ngSwitchCase="'ADRESS_INFO_REQUIRED_FULL'"
+            [options]="{
+                useCardOnFileAllowed: model.creditCardOnFileViewModel?.useCardOnFileAllowed,
+                cardType: model.creditCardOnFileViewModel?.cardType,
+                cardNumberLastFour: model.creditCardOnFileViewModel?.cardNumberLastFour,
+                countryCode: countrySettings.countryCode
+            }"
+            [initialState]="model?.paymentFormInitialState"
+            (formCompleted)="onPaymentInfoCollected($event)"
+        ></de-care-payment-info-with-full-address-and-phone-form>
+    </ng-container>
+</section>
+<sxm-ui-loading-with-alert-message
+    *ngIf="displayIneligibleLoader$ | async"
+    [isLoading]="true"
+    [pillMessage]="translateKeyPrefix + '.INELIGIBLE_LOADING_ALERT' | translate"
+    [paragraph]="translateKeyPrefix + '.INELIGIBLE_LOADING_BODY' | translate"
+    (loadingCompleted)="onLoadingWithAlertMessageComplete($event)"
+></sxm-ui-loading-with-alert-message>

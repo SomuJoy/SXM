@@ -1,0 +1,208 @@
+<div class="content-section" *ngIf="customerInfo$ | async as customerInfo">
+    <div class="user-details vertical-spacing">
+        <div class="mb-24">
+            <h4 data-e2e="selectTransferHeadline">
+                {{
+                    translateKeyPrefix + "HEADLINE"
+                        | translate
+                            : {
+                                  customerFirstName: customerFirstName | titlecase,
+                                  vehicleMake: vehicleMake | withoutVehicleMake
+                              }
+                }}
+            </h4>
+        </div>
+
+        <p *ngIf="customerInfo.defaultMode === 'AC'" class="mb-32" data-e2e="newSubscriptionInstructions">
+            {{ translateKeyPrefix + "AC_ONLY_SUB_HEADER" | translate }}
+        </p>
+
+        <div class="mb-24">
+            <sxm-ui-vehicle-with-subscription-info
+                *ngIf="trialSubscriptionInfo$ | async as trialSubscriptionInfo"
+                [data]="trialSubscriptionInfo"
+                [eyebrow]="translateKeyPrefix + 'NEW_CAR' | translate"
+                data-e2e="trialSubscriptionInfo"
+            >
+            </sxm-ui-vehicle-with-subscription-info>
+            <ng-container *ngIf="isLoggedIn; else notLoggedEnterRadioIdLink">
+                <p class="radio-lookup-link small-copy">
+                    <button class="text-link" (click)="toRadioLookupPage.emit()">{{ translateKeyPrefix + "LINK_TEXT_ENTER_RADIO_ID_LOGGED_IN" | translate }}</button>
+                </p>
+            </ng-container>
+            <ng-template #notLoggedEnterRadioIdLink>
+                <p class="radio-lookup-link small-copy" [innerHTML]="translateKeyPrefix + 'LINK_TEXT_ENTER_RADIO_ID' | translate"></p>
+            </ng-template>
+        </div>
+    </div>
+    <hr class="mb-24" *ngIf="customerInfo.defaultMode !== 'AC'" />
+    <div *ngIf="customerInfo.defaultMode !== 'AC' && customerInfo.defaultMode !== 'SC'" class="content-section" [class.mb-24]="isTransferOptionSelected">
+        <div class="heading mb-6">
+            <h6 class="mb-8" data-e2e="transferQuestion">{{ translateKeyPrefix + "TRANSFER_QUESTION" | translate: { vehicleMake: vehicleMake | withoutVehicleMake } }}</h6>
+            <p
+                *ngIf="currentPlan"
+                data-e2e="transferDetails"
+                [innerHTML]="
+                    translateKeyPrefix + 'TRANSFER_DETAILS'
+                        | translate
+                            : {
+                                  planName: 'app.packageDescriptions.' + currentPlan.packageName + '.name' | translate | withoutPlatformName: currentPlan.packageName
+                              }
+                "
+            ></p>
+        </div>
+        <div class="content" data-scroll="scroll-method-selection">
+            <form [formGroup]="transferMethodForm" data-e2e="transferMethodForm">
+                <sxm-ui-radio-option-as-block-form-field
+                    formControlName="method"
+                    [labelCopy]="{
+                        title: translateKeyPrefix + 'TRANSFER_OPTION_NO' | translate,
+                        description:
+                            translateKeyPrefix + 'TRANSFER_OPTION_NO_SUBTEXT'
+                            | translate
+                                : {
+                                      vehicleMake: vehicleMake | withoutVehicleMake
+                                  }
+                    }"
+                    [value]="TRANSFER_MODES.AC"
+                    data-track-click="No. Add car"
+                    data-e2e="acMethodButton"
+                    data-test="acMethodButton"
+                >
+                </sxm-ui-radio-option-as-block-form-field>
+                <sxm-ui-radio-option-as-block-form-field
+                    formControlName="method"
+                    [labelCopy]="{
+                        title: translateKeyPrefix + 'TRANSFER_OPTION_YES' | translate,
+                        description:
+                            translateKeyPrefix + 'TRANSFER_OPTION_YES_SUBTEXT'
+                            | translate
+                                : {
+                                      vehicleMake: vehicleMake | withoutVehicleMake
+                                  }
+                    }"
+                    [value]="TRANSFER_MODES.SC"
+                    data-track-click="Yes. Transfer subscription"
+                    data-e2e="scMethodButton"
+                    data-test="scMethodButton"
+                >
+                </sxm-ui-radio-option-as-block-form-field>
+            </form>
+        </div>
+    </div>
+    <div *ngIf="isTransferOptionSelected || customerInfo.defaultMode === 'AC' || customerInfo.defaultMode === 'SC'">
+        <ng-container *ngIf="isAccountConsolidationSelected || customerInfo.defaultMode === 'AC'; else scSelected">
+            <div>
+                <p *ngIf="customerInfo.defaultMode !== 'AC'" class="mb-32" data-e2e="newSubscriptionInstructions">
+                    {{ translateKeyPrefix + "NEW_SUBSCRIPTION_INSTRUCTIONS" | translate }}
+                </p>
+                <div>
+                    <button
+                        [loading]="isProccessingAccountConsolidation"
+                        sxm-proceed-button
+                        data-track-click="Add New Car"
+                        class="button primary full-width"
+                        (click)="onAddVehicle()"
+                        data-e2e="addVehicleButton"
+                    >
+                        {{
+                            translateKeyPrefix + "BUTTON_TEXT_ADD_VEHICLE"
+                                | translate
+                                    : {
+                                          vehicleMake: vehicleMake | withoutVehicleMake
+                                      }
+                        }}
+                    </button>
+                </div>
+            </div>
+        </ng-container>
+        <ng-template #scSelected>
+            <div class="content-section">
+                <div class="mb-16 heading" data-scroll="scroll-error">
+                    <h6 class="mb-8" data-e2e="scTransferHeadline">
+                        <ng-template #scTransferHeadline let-isImmediate="isTrialEndingImmediately">
+                            {{
+                                translateKeyPrefix +
+                                    (transferOptions.length > 1
+                                        ? "TRANSFER_SUBSCRIPTION_HEADLINE_MULTIPLE_DEVICES" + (isImmediate ? "_IMMEDIATELY" : "")
+                                        : "TRANSFER_SUBSCRIPTION_HEADLINE_ONE_DEVICE" + (isImmediate ? "_IMMEDIATELY" : "")) | translate
+                            }}
+                        </ng-template>
+                        <ng-container *ngTemplateOutlet="scTransferHeadline; context: { isTrialEndingImmediately: isTrialEndingImmediately$ | async }"></ng-container>
+                    </h6>
+
+                    <p data-e2e="scTransferDetails">
+                        {{ translateKeyPrefix + "TRANSFER_SUBSCRIPTION_DETAILS" | translate }}
+                    </p>
+                </div>
+                <span *ngIf="submitted && !selectionMade" class="invalid-feedback" data-e2e="transferSelectionError">
+                    <p class="mb-16">{{ translateKeyPrefix + "SELECTION_ERROR" | translate }}</p>
+                </span>
+                <div class="content">
+                    <div class="mb-16">
+                        <form class="select-radio-section" [formGroup]="transferOptionForm">
+                            <ng-container *ngFor="let option of transferOptions">
+                                <div>
+                                    <sxm-ui-radio-option-card-with-flag-form-field
+                                        [formGroup]="transferOptionForm.get('radio')"
+                                        radioName="radioId"
+                                        [radioOption]="option"
+                                        [value]="option.last4DigitsOfRadioId"
+                                        [selectable]="transferOptions.length > 1"
+                                        flagName="isNoLongerOwned"
+                                        [hasFooter]="transferOptionForm.get(['radio', 'radioId']).value === option.last4DigitsOfRadioId"
+                                        data-e2e="scTransferRadioOption"
+                                    >
+                                        <sxm-ui-alert-pill
+                                            *ngIf="option.dataPlans?.length > 0 && option.dataPlans[0]?.warningMessageFlag"
+                                            class="alert-icon-info straight-corners no-shadow"
+                                            warningMessage
+                                        >
+                                            <div>
+                                                <p>{{ translateKeyPrefix + "DATA_PLAN_WARNING" | translate }}</p>
+                                                <ul class="xmark-list">
+                                                    <li *ngFor="let dataPlan of option.dataPlans">
+                                                        <div class="icon-remove-wrapper">
+                                                            <svg class="icon icon-utility small">
+                                                                <use class="icon-remove" xlink:href="#icon-remove"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <span>{{ "app.packageDescriptions." + dataPlan.packageName + ".name" | translate }}</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </sxm-ui-alert-pill>
+                                    </sxm-ui-radio-option-card-with-flag-form-field>
+                                </div>
+                            </ng-container>
+                        </form>
+                    </div>
+                    <div class="mb-32">
+                        <button class="text-link" (click)="onDontSeeYourCar()" data-track-click="Don't see your car" data-e2e="dontSeeYourCar">
+                            {{ translateKeyPrefix + "LINK_TEXT_DONT_SEE_CAR" | translate }}
+                        </button>
+                    </div>
+                    <div *ngIf="transferOptionForm.get(['radio', 'radioId'])">
+                        <button
+                            [loading]="isProccessingServiceContinuity"
+                            sxm-proceed-button
+                            data-track-click="Transfer Subscription"
+                            class="button primary full-width"
+                            (click)="onTransferSubscription()"
+                            data-e2e="transferSubscriptionButton"
+                            data-test="transferSubscriptionButton"
+                        >
+                            {{
+                                translateKeyPrefix + "BUTTON_TEXT_CONTINUE"
+                                    | translate
+                                        : {
+                                              vehicleMake: vehicleMake | withoutVehicleMake
+                                          }
+                            }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

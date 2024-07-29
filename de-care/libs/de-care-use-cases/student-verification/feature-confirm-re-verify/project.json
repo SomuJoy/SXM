@@ -1,0 +1,34 @@
+{
+    "name": "de-care-use-cases-student-verification-feature-confirm-re-verify",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care-use-cases/student-verification/feature-confirm-re-verify/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/de-care-use-cases/student-verification/feature-confirm-re-verify/src/**/*.ts",
+                    "libs/de-care-use-cases/student-verification/feature-confirm-re-verify/src/**/*.html"
+                ]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/student-verification/feature-confirm-re-verify/jest.config.js",
+                "tsConfig": "libs/de-care-use-cases/student-verification/feature-confirm-re-verify/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/de-care-use-cases/student-verification/feature-confirm-re-verify/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:feature", "scope:de-care-use-case-feature"]
+}

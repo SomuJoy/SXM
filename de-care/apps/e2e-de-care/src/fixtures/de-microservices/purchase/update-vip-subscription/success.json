@@ -1,0 +1,19 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "email": "ZTWXXG.KJDF@SIRIUSXM.COM",
+        "status": "SUCCESS",
+        "radioId": "00AG",
+        "subscriptionId": "10000206130",
+        "maskedStreamingUserName": "********YBp9",
+        "accountNumber": "10000204610",
+        "maskedPhoneNumber": null,
+        "isUserNameSameAsEmail": true,
+        "isTwoFactorAuthNeeded": false,
+        "isEligibleForRegistration": false,
+        "isOfferStreamingEligible": true,
+        "isEligibleForStreamingCredentialsOnly": true
+    }
+}

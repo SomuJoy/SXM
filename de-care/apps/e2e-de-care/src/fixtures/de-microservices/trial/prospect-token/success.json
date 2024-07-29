@@ -1,0 +1,13 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "firstname": "ABCD",
+        "lastname": "USAA",
+        "username": "testme02160153@si.com",
+        "promocode": "AA3MOTRIALGGLE",
+        "trialstartdate": "02/14/2024 00:00:00",
+        "trialenddate": "05/14/2024 00:00:00"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "SXM_LOGO": "assets/img/sxm-logo-white.png",
+    "SXM_LOGO_LINK": "https://www.siriusxm.com",
+    "HERO_IMAGE": "assets/img/iPhone13-Music-Generic.png",
+    "CONSIDER_TO_MONTH": "Consider staying for ${{amount}}/mo.",
+    "MORE_TO_EXPLORE": "There's so much more entertainment to explore.",
+    "OFFER_DETAILS_BELOW": "Offer Details below.",
+    "CURRENT_PLAN": "Current plan:",
+    "DETAIL_PLAN": "{{planName}}",
+    "SUBSCRIBE_FOR": "Subscribe for ${{amount}}/mo. See <u>Offer Details</u> below.",
+    "GET_THIS_PLAN_BUTTON": "GET THIS PLAN",
+    "KEEP_CURRENT_PLAN_BUTTON": "KEEP CURRENT PLAN",
+    "CANCEL_PLAN_BUTTON": "Continue to Cancel",
+    "CHAT_SUPPORT_LINK_TEXT": "Chat support",
+    "DESCRIPTIONS": {
+        "SXM_APP_HEADER": "100+ channels",
+        "SXM_APP_PARAGRAPH": "All on the SXM App",
+        "SXM_APP_IMAGE": "assets/img/sxm-app.svg",
+        "AD_FREE_HEADER": "Curated ad-free music",
+        "AD_FREE_PARAGRAPH": "Every genre, style and decade",
+        "AD_FREE_IMAGE": "assets/img/ad-free.svg",
+        "ORIGINAL_TALK_HEADER": "Original talk",
+        "ORIGINAL_TALK_PARAGRAPH": "10+ talk and news channels",
+        "ORIGINAL_TALK_IMAGE": "assets/img/talk-microphone.svg",
+        "VIDEO_LIBRARY_HEADER": " Video Library",
+        "VIDEO_LIBRARY_PARAGRAPH": "In-studio interviews & performances",
+        "VIDEO_LIBRARY_IMAGE": "assets/img/video-collections.svg"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "TITLE": "eBill",
+    "MODIFY_LABEL": "Modify",
+    "MODIFY_ARIA_LABEL": "modify your ebill options",
+    "CHANGE_EMAIL_LABEL": "Change email",
+    "CHANGE_EMAIL_URL": "{{oacBaseUrl}}/#",
+    "OPT_OUT_LABEL": "Switch to paper invoice",
+    "OPT_OUT_URL": "{{oacBaseUrl}}/#"
+}

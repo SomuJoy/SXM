@@ -1,0 +1,35 @@
+{
+    "DomainsIdentificationUiSetupLoginCredentialsFormModule": {
+        "SetupLoginCredentialsComponent": {
+            "SUBMISSION_ERROR": "We're sorry... something went wrong. We're experiencing technical issues and are working on resolving it. Please try again.",
+            "BUTTON_TEXT": "Create Login"
+        },
+        "LoginCredentialsEmailAsUsernameFormComponent": {
+            "USERNAME": {
+                "LABEL": "Username/Email",
+                "ERRORS": {
+                    "REQUIRED": "Enter an email or username.",
+                    "USERNAME_IN_USE": "The email or username entered is already being used, please try a different email or username.",
+                    "INVALID_USERNAME": "Please enter a valid email or username address.",
+                    "PATTERN": "Please enter a valid email or username address."
+                }
+            },
+            "PASSWORD": {
+                "LABEL": "Password",
+                "ERRORS": {
+                    "REQUIRED": "Enter a password.",
+                    "LENGTH": "Your password must be {{ min }} to {{ max }} characters long.",
+                    "POLICY": "Your password must contain at least one character from at least 3 different groups, as explained in our password policy.",
+                    "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}",
+                    "GENERIC": "We're sorry, your new password does not comply with our policy. Please try again."
+                },
+                "PLURAL_MAP": {
+                    "WORD": {
+                        "=1": "word",
+                        "other": "words"
+                    }
+                }
+            }
+        }
+    }
+}

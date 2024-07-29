@@ -1,0 +1,6 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": { "amount": 150.0, "currency": "USD", "cardNumber": "30100000015001", "giftCardExpiry": null, "isSuccess": true }
+}

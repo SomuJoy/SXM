@@ -1,0 +1,36 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 100%;
+    background-color: $off-white;
+
+    header.with-account-number {
+        .account-number {
+            @include font-size(12px);
+            line-height: 18px;
+        }
+
+        de-care-header-bar {
+            ::ng-deep {
+                .header-bar > div .align-right {
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-end;
+
+                    span.account-number + button {
+                        margin-left: 32px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sxm-limited-nav {
+    z-index: 10;
+    position: relative;
+    background: rgba(0, 0, 0, 0.8);
+}

@@ -1,0 +1,19 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 201,
+    "httpStatus": "CREATED",
+    "data": {
+        "email": "ELLIS.ORLANDO@SIRIUSXM.COM",
+        "status": "SUCCESS",
+        "radioId": null,
+        "subscriptionId": "10000239541",
+        "maskedStreamingUserName": "ell******@siriusxm.com",
+        "accountNumber": "10000237237",
+        "maskedPhoneNumber": null,
+        "isEligibleForRegistration": true,
+        "isTwoFactorAuthNeeded": true,
+        "isOfferStreamingEligible": true,
+        "isEligibleForStreamingCredentialsOnly": false,
+        "isUserNameSameAsEmail": true
+    }
+}

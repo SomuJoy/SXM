@@ -1,0 +1,25 @@
+<div class="content-container">
+    <div class="row error-hero align-center">
+        <div class="column small-12 medium-8 align-center" data-e2e="errorHero">
+            <h6>{{ translateKeyPrefix + "SORRY" | translate }}</h6>
+            <h2>{{ translateKeyPrefix + "TITLE" | translate }}</h2>
+        </div>
+    </div>
+
+    <div class="row align-center">
+        <div class="column small-12 medium-10">
+            <div class="recirculation--single">
+                <h5 data-e2e="errorHelp">{{ translateKeyPrefix + "RECIRC_TITLE" | translate }}</h5>
+                <p>
+                    <chat-with-agent-link
+                        *ngIf="isChatAvailable"
+                        class="chat-text-link"
+                        [chatLinkText]="translateKeyPrefix + 'CHAT_LINK' | translate"
+                        [queue]="'generalAgents'"
+                    ></chat-with-agent-link>
+                    <span class="stack" [innerHTML]="translateKeyPrefix + 'CALL' | translate"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+{
+    "deCareUseCasesTrialActivationRtpFeatureReviewModule": {
+        "reviewComponent": {
+            "STEP_NUMBER": "STEP {{totalSteps}} OF {{totalSteps}}",
+            "HEADER": "Review and complete your order",
+            "COMPLETE_MY_ORDER_BUTTON": "COMPLETE MY ORDER",
+            "FOOTER": "Once activated, we will communicate to you about your trial via email and mail.",
+            "ENTER_A_CAPTCHA_TO_FINISH": "Please enter CAPTCHA to finish"
+        }
+    }
+}

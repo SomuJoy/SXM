@@ -1,0 +1,120 @@
+<table *ngIf="showDataTable" cdk-table [dataSource]="dataSource" [trackBy]="trackByDatetime" multiTemplateDataRows>
+    <ng-container cdkColumnDef="date">
+        <th cdk-header-cell *cdkHeaderCellDef class="date">{{ translateKeyPrefix + ".DATE_LABEL" | translate }}</th>
+        <td cdk-cell *cdkCellDef="let row; let isFirst = first" class="date" [@statementExpand]="row.isExpanded || (isFirst && initLoad) ? 'expanded' : 'collapsed'">
+            {{ row.datetime | sxmUiDate : (translateKeyPrefix + ".DATE_FORMAT" | translate) }}
+            <ng-container *ngIf="row.description; else invoiceSubtitle">
+                <span class="invoice-subtitle">{{ row.description }}</span>
+            </ng-container>
+            <ng-template #invoiceSubtitle>
+                <span class="invoice-subtitle">{{ translateKeyPrefix + ".INVOICE_NUMBER_LABEL" | translate }}{{ row.invoiceNumber }}</span>
+            </ng-template>
+        </td>
+    </ng-container>
+
+    <ng-container cdkColumnDef="invoiceNumber">
+        <th cdk-header-cell *cdkHeaderCellDef class="invoice-number">{{ translateKeyPrefix + ".DESCRIPTION_LABEL" | translate }}</th>
+        <ng-container *cdkCellDef="let row; let isFirst = first">
+            <ng-container *ngIf="row.description; else invoice">
+                <td cdk-cell class="invoice-number">
+                    {{ row.description }}
+                </td>
+            </ng-container>
+            <ng-template #invoice>
+                <td cdk-cell class="invoice-number" [@statementExpand]="row.isExpanded || (isFirst && initLoad) ? 'expanded' : 'collapsed'">
+                    {{ translateKeyPrefix + ".INVOICE_NUMBER_LABEL" | translate }}{{ row.invoiceNumber }}
+                </td>
+            </ng-template>
+        </ng-container>
+    </ng-container>
+
+    <ng-container cdkColumnDef="amount">
+        <th cdk-header-cell *cdkHeaderCellDef class="amount">{{ translateKeyPrefix + ".AMOUNT_LABEL" | translate }}</th>
+        <td cdk-cell *cdkCellDef="let row; let isFirst = first" class="amount" [@statementExpand]="row.isExpanded || (isFirst && initLoad) ? 'expanded' : 'collapsed'">
+            {{ row.amount | sxmUiCurrency }}
+            <ng-container *ngIf="row.hasDetails; else nonArrowSpace">
+                <span>
+                    <mat-icon svgIcon="dropdown-arrow-small" [class.flipped]="row.isExpanded"></mat-icon>
+                </span>
+            </ng-container>
+            <ng-template #nonArrowSpace>
+                <span class="non-arrow-space"></span>
+            </ng-template>
+        </td>
+    </ng-container>
+
+    <ng-container cdkColumnDef="empty-column">
+        <td mat-cell *cdkCellDef="" class="empty-column"></td>
+    </ng-container>
+
+    <ng-container cdkColumnDef="details">
+        <td mat-cell *cdkCellDef="let row; let i = dataIndex" [attr.colspan]="2" class="details-column">
+            <div [@detailExpand]="row.isExpanded || (i === 0 && initLoad) ? 'expanded' : 'collapsed'" class="details">
+                <section *ngFor="let record of row.records; trackBy: trackByItemSetName">
+                    <article>
+                        <aside>
+                            <section class="header lead-in">
+                                <header>{{ record.name }}</header>
+                            </section>
+                            <section *ngIf="record.startDate && record.endDate" class="service-date lead-in">
+                                <span
+                                    >{{ translateKeyPrefix + ".SERVICE_DATE" | translate }} <br class="date-break" />
+                                    {{ record.startDate | sxmUiDate : (translateKeyPrefix + ".DATE_FORMAT" | translate) }} -
+                                    {{ record.endDate | sxmUiDate : (translateKeyPrefix + ".DATE_FORMAT" | translate) }}
+                                </span>
+                            </section>
+                            <section *ngFor="let lineItem of record.lineItems" class="lead-in">
+                                <span>{{ lineItem.description }}</span>
+                                <span class="amount">{{ lineItem.amount | sxmUiCurrency }}</span>
+                            </section>
+                        </aside>
+                    </article>
+                </section>
+            </div>
+        </td>
+    </ng-container>
+
+    <tr cdk-header-row *cdkHeaderRowDef="['date', 'invoiceNumber', 'amount']"></tr>
+    <tr
+        cdk-row
+        *cdkRowDef="let row; columns: ['date', 'invoiceNumber', 'amount']; let i = dataIndex"
+        (click)="row.hasDetails && toggleSubscriptions(row, i === 0 ? true : false)"
+        class="record-row"
+        [class.no-details]="!row.hasDetails"
+        [attr.tabindex]="row.hasDetails ? 0 : null"
+        [attr.aria-expanded]="row.isExpanded"
+        (keyup)="keyup($event, row)"
+    ></tr>
+    <tr cdk-row *cdkRowDef="let row; columns: ['empty-column', 'details']" [hidden]="!row.hasDetails" class="details-row"></tr>
+    <tr *cdkNoDataRow class="cdk-row no-data-row" data-test="noDataRow">
+        <td colspan="3">{{ translateKeyPrefix + ".NO_DATA_MESSAGE" | translate }}</td>
+    </tr>
+</table>
+
+<table *ngIf="showLoadingAnimation$ | async" cdk-table [dataSource]="skeletonLoadingSource" multiTemplateDataRows id="skeletonLoadingTable">
+    <ng-container cdkColumnDef="loading">
+        <td mat-cell *cdkCellDef="">
+            <sxm-ui-skeleton-loader-panel></sxm-ui-skeleton-loader-panel>
+        </td>
+    </ng-container>
+
+    <tr cdk-row *cdkRowDef="let row; columns: ['loading', 'loading', 'loading']" class="loading-row"></tr>
+</table>
+
+<p *ngIf="showServerError$ | async" class="server-error">{{ translateKeyPrefix + ".UNEXPECTED_ERROR" | translate }}</p>
+
+<div *ngIf="showLoadMoreButton$ | async" class="button-container">
+    <button
+        data-e2e="billingActivityLoadMoreButton"
+        class="button secondary full-width"
+        (click)="loadMoreActivities()"
+        sxm-proceed-button
+        [class.loading]="loading"
+        sxmUiDataClickTrack="ui"
+        data-link-name="Load More"
+        data-link-key="Billing activity"
+        data-test="billingActivityLoadMoreButton"
+    >
+        {{ translateKeyPrefix + ".LOAD_MORE_BUTTON_LABEL" | translate }}
+    </button>
+</div>

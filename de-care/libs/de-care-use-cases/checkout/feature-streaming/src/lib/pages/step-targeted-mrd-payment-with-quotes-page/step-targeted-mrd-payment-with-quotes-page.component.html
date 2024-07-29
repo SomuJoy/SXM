@@ -1,0 +1,36 @@
+<section id="mainContent">
+    <sxm-ui-alert-pill *ngIf="(offerViewModel$ | async)?.isFallbackOffer" class="streaming-eligibility black-alert-icon-notification rounded-corners">
+        <p class="pill-text" [innerHTML]="translateKeyPrefix + '.OFFER_FOR_NEW_SUBSCRIBERS' | translate"></p>
+    </sxm-ui-alert-pill>
+    <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+        <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+        <ng-container body>
+            <p>{{ translateKeyPrefix + ".BODY" | translate }}</p>
+        </ng-container>
+    </sxm-ui-step-header>
+    <sxm-ui-plan-recap-card *ngIf="planRecapCardViewModel$ | async as planRecapCardViewModel" [data]="planRecapCardViewModel"></sxm-ui-plan-recap-card>
+    <de-care-payment-info-basic-with-quotes-form
+        [options]="{ useCardOnFileAllowed: false, countryCode: countrySettings.countryCode }"
+        [initialState]="getPaymentInfo$ | async"
+        (paymentFormInfoSubmitted)="onPaymentInfoCollected($event)"
+        [quoteViewModel]="quoteViewModel$ | async"
+        [shouldIncludeNuCaptcha]="displayNuCaptcha$ | async"
+        [continueButtonTextOverride]="translateKeyPrefix + '.CONTINUE_BUTTON_TEXT' | translate"
+        [useQuotesAlternateHeader]="true"
+        [legacySettings]="{ isStreamingFlow: true, isNewAccount: true }"
+        (formCompleted)="submitForm()"
+        [isQuebecProvince]="isQuebecProvince$ | async"
+        [useRateVersionOfTextCopy]="isQuebecProvince$ | async"
+        class="renewal-quote-alt-header-1"
+    ></de-care-payment-info-basic-with-quotes-form>
+</section>
+<section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+    <div [innerHTML]="getSelectedOfferOfferInfoLegalCopy$ | async"></div>
+</section>
+<sxm-ui-loading-with-alert-message
+    *ngIf="displayIneligibleLoader$ | async"
+    [isLoading]="true"
+    [pillMessage]="translateKeyPrefix + '.INELIGIBLE_LOADING_ALERT' | translate"
+    [paragraph]="translateKeyPrefix + '.INELIGIBLE_LOADING_BODY' | translate"
+    (loadingCompleted)="onLoadingWithAlertMessageComplete($event)"
+></sxm-ui-loading-with-alert-message>

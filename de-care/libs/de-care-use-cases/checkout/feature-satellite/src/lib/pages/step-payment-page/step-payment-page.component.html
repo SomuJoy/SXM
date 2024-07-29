@@ -1,0 +1,39 @@
+<ng-container *ngrxLet="viewModel$ as viewModel">
+    <ng-container *ngIf="offerLoad$ | async as offerLoad">
+        <section id="mainContent">
+            <sxm-ui-vehicle-ymm-info [vehicleInfoVM]="viewModel.vehicleInfo"></sxm-ui-vehicle-ymm-info>
+            <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+                <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+                <ng-container body>
+                    <p>{{ translateKeyPrefix + ".BODY" | translate }}</p>
+                </ng-container>
+            </sxm-ui-step-header>
+            <article id="skeletonLoader" *ngIf="offerLoad.pending || offerLoad.error">
+                <sxm-ui-skeleton-loader-panel id="skeletonLoaderPlanRecap"></sxm-ui-skeleton-loader-panel>
+                <sxm-ui-skeleton-loader-payment-methods></sxm-ui-skeleton-loader-payment-methods>
+                <sxm-ui-button-cta-skeleton-loader></sxm-ui-button-cta-skeleton-loader>
+            </article>
+            <ng-container *ngIf="offerLoad.value">
+                <sxm-ui-plan-recap-card *ngIf="viewModel.planRecapCard" [data]="viewModel.planRecapCard"></sxm-ui-plan-recap-card>
+                <de-care-payment-info-form
+                    [options]="viewModel.paymentMethodOptions"
+                    [initialState]="paymentFormInitialState$ | async"
+                    (formCompleted)="onPaymentInfoCollected($event)"
+                ></de-care-payment-info-form>
+            </ng-container>
+        </section>
+        <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+            <div *ngIf="offerLoad.value" [innerHTML]="viewModel.legalCopy"></div>
+            <div *ngIf="offerLoad.pending">
+                <sxm-ui-skeleton-loader-text-copy></sxm-ui-skeleton-loader-text-copy>
+            </div>
+        </section>
+        <sxm-ui-loading-with-alert-message
+            *ngIf="displayIneligibleLoader$ | async"
+            [isLoading]="true"
+            [pillMessage]="translateKeyPrefix + '.INELIGIBLE_LOADING_ALERT' | translate"
+            [paragraph]="translateKeyPrefix + '.INELIGIBLE_LOADING_BODY' | translate"
+            (loadingCompleted)="onLoadingWithAlertMessageComplete($event)"
+        ></sxm-ui-loading-with-alert-message>
+    </ng-container>
+</ng-container>

@@ -1,0 +1,10 @@
+{
+    "domainsOffersUiOfferCardModule": {
+        "offerCardComponent": {
+            "VIEW_DETAILS_COLLAPSED": "Découvrez les détails du forfait",
+            "VIEW_DETAILS_EXPANDED": "Masquer",
+            "ARIA_VIEW_DETAILS_COLLAPSED": "Découvrez les détails du forfait - {{packageName}}",
+            "ARIA_VIEW_DETAILS_EXPANDED": "Masquer les détails du forfait - {{packageName}}"
+        }
+    }
+}

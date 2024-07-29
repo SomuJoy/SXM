@@ -1,0 +1,100 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "billItems": [
+            {
+                "eventType": "Subscription",
+                "startDate": "02/01/2023",
+                "endDate": "03/01/2023",
+                "transactionDate": "02/01/2023",
+                "billNumber": "B1-2048",
+                "serviceFor": "990005201430",
+                "description": "Platinum - 1mo - wActv",
+                "amount": 22.99,
+                "radioId": "990005201430",
+                "planLabel": "Platinum - 1mo - wActv",
+                "sXIRLogin": "p55nbvc.zfbr@siriusxm.com"
+            },
+            {
+                "eventType": "Subscription",
+                "startDate": "02/01/2023",
+                "endDate": "03/01/2023",
+                "transactionDate": "02/01/2023",
+                "billNumber": "B1-2048",
+                "serviceFor": "990005201430",
+                "description": "U.S. Music Royalty Fee",
+                "amount": 4.92,
+                "radioId": "990005201430",
+                "planLabel": "Platinum - 1mo - wActv",
+                "sXIRLogin": "p55nbvc.zfbr@siriusxm.com"
+            },
+            {
+                "eventType": "Subscription",
+                "startDate": "01/01/2023",
+                "endDate": "02/01/2023",
+                "transactionDate": "01/13/2023",
+                "billNumber": "B1-2037",
+                "serviceFor": "990005201430",
+                "description": "Platinum - 1mo - wActv",
+                "amount": 22.99,
+                "radioId": "990005201430",
+                "planLabel": "Platinum - 1mo - wActv",
+                "sXIRLogin": "p55nbvc.zfbr@siriusxm.com"
+            },
+            {
+                "eventType": "Subscription",
+                "startDate": "01/01/2023",
+                "endDate": "02/01/2023",
+                "transactionDate": "01/13/2023",
+                "billNumber": "B1-2037",
+                "serviceFor": "990005201430",
+                "description": "U.S. Music Royalty Fee",
+                "amount": 4.92,
+                "radioId": "990005201430",
+                "planLabel": "Platinum - 1mo - wActv",
+                "sXIRLogin": "p55nbvc.zfbr@siriusxm.com"
+            },
+            {
+                "eventType": "Subscription",
+                "startDate": "12/01/2022",
+                "endDate": "01/01/2023",
+                "transactionDate": "12/01/2022",
+                "billNumber": "B1-2032",
+                "serviceFor": "990005201430",
+                "description": "Platinum - 1mo - wActv",
+                "amount": 22.99,
+                "radioId": "990005201430",
+                "planLabel": "Platinum - 1mo - wActv",
+                "sXIRLogin": "p55nbvc.zfbr@siriusxm.com"
+            },
+            {
+                "eventType": "Subscription",
+                "startDate": "12/01/2022",
+                "endDate": "01/01/2023",
+                "transactionDate": "12/01/2022",
+                "billNumber": "B1-2032",
+                "serviceFor": "990005201430",
+                "description": " ESN - Activation Fee - 15.00",
+                "amount": 15.0,
+                "radioId": "990005201430",
+                "planLabel": "",
+                "sXIRLogin": "p55nbvc.zfbr@siriusxm.com"
+            },
+            {
+                "eventType": "Subscription",
+                "startDate": "12/01/2022",
+                "endDate": "01/01/2023",
+                "transactionDate": "12/01/2022",
+                "billNumber": "B1-2032",
+                "serviceFor": "990005201430",
+                "description": "U.S. Music Royalty Fee",
+                "amount": 4.92,
+                "radioId": "990005201430",
+                "planLabel": "Platinum - 1mo - wActv",
+                "sXIRLogin": "p55nbvc.zfbr@siriusxm.com"
+            }
+        ]
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "TITLE": "We’ve sent you an email.",
+    "SUB_TITLE_EMAIL": "We emailed recovery instructions to {{maskedEmail}}. Please check your inbox. If you don’t see the email shortly, check your spam folder.",
+    "BUTTON_TEXT": "BACK TO SIGN IN",
+    "FORGOT_PASSWORD_PAGE_TITLE": "Reset Password | SiriusXM "
+}

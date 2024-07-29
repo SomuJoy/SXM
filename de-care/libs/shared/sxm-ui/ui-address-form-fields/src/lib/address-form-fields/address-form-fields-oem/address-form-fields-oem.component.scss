@@ -1,0 +1,17 @@
+@import "sxm.phoenix.imports";
+
+@include bp(medium) {
+    .row {
+        .column {
+            &.medium-6 {
+                &:first-child {
+                    padding-right: 6px;
+                }
+
+                &:last-child {
+                    padding-left: 6px;
+                }
+            }
+        }
+    }
+}

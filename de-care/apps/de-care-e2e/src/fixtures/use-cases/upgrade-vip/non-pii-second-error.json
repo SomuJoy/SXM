@@ -1,0 +1,104 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "LIZ",
+            "accountProfile": {
+                "accountRegistered": false
+            },
+            "accountState": {
+                "isInPreTrial": false
+            },
+            "serviceAddress": {
+                "state": "NY",
+                "country": "USA"
+            },
+            "subscriptions": [
+                {
+                    "id": "10000211684",
+                    "plans": [
+                        {
+                            "code": "Sponsored - OEM Trial - All Access - 6mo - 77.70",
+                            "packageName": "SXM_SIR_AUD_ALLACCESS",
+                            "termLength": 6,
+                            "startDate": "2021-11-03T00:00:00-04:00",
+                            "endDate": "2022-05-03T00:00:00-04:00",
+                            "nextCycleOn": null,
+                            "marketType": "trial:new-car",
+                            "type": "TRIAL",
+                            "capabilities": ["AUD", "IPAUD"],
+                            "price": 0,
+                            "dataCapable": false,
+                            "isBasePlan": true
+                        },
+                        {
+                            "code": "Sponsored - OEM Trial - Traffic - 48mo - 18.00",
+                            "packageName": "SXM_SIR_DATA_TRAFF",
+                            "termLength": 48,
+                            "startDate": "2021-11-03T00:00:00-04:00",
+                            "endDate": "2025-11-03T00:00:00-05:00",
+                            "nextCycleOn": null,
+                            "marketType": "trial:new-car",
+                            "type": "TRIAL",
+                            "capabilities": ["TRF"],
+                            "price": 0,
+                            "dataCapable": true,
+                            "isBasePlan": false
+                        },
+                        {
+                            "code": "Sponsored - OEM Trial - Travel-Link - 48mo - 9.00",
+                            "packageName": "SXM_SIR_DATA_TRVLLNK",
+                            "termLength": 48,
+                            "startDate": "2021-11-03T00:00:00-04:00",
+                            "endDate": "2025-11-03T00:00:00-05:00",
+                            "nextCycleOn": null,
+                            "marketType": "trial:new-car",
+                            "type": "TRIAL",
+                            "capabilities": ["TRV"],
+                            "price": 0,
+                            "dataCapable": true,
+                            "isBasePlan": false
+                        }
+                    ],
+                    "followonPlans": [],
+                    "radioService": {
+                        "id": "10000210404",
+                        "last4DigitsOfRadioId": "00AV",
+                        "devicePromoCode": "1132",
+                        "vehicleInfo": {
+                            "year": null,
+                            "make": null,
+                            "model": null
+                        },
+                        "is360LCapable": false
+                    },
+                    "streamingService": {
+                        "id": "10000208356",
+                        "maskedUserName": "ubo******@siriusxm.com",
+                        "status": "Active",
+                        "randomCredentials": false
+                    },
+                    "status": "Active",
+                    "devicePromoCode": "1132",
+                    "isPrimary": true
+                }
+            ],
+            "billingSummary": {
+                "creditCard": {
+                    "last4Digits": "1111",
+                    "type": "VISA",
+                    "status": "ACTIVE"
+                },
+                "isPaymentTypeInvoice": false
+            },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true,
+            "isAccountIdentifiedUsingFLEPZOrVIN": true
+        },
+        "marketingId": "X65100AV",
+        "marketingAcctId": "9764",
+        "email": null
+    }
+}

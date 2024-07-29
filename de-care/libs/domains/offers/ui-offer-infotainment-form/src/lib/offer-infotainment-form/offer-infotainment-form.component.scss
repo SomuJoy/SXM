@@ -1,0 +1,9 @@
+@import "sxm.phoenix.imports";
+
+sxm-ui-content-card + sxm-ui-content-card {
+    margin-top: 16px;
+}
+
+.checkbox-item label {
+    padding-left: 36px;
+}

@@ -1,0 +1,60 @@
+<div *ngIf="data" class="grid-container">
+    <div>
+        <p *ngFor="let name of data.planName" class="label-column large-copy lead-in bold mb-4" [innerHTML]="name"></p>
+        <p class="label-column lead-in small-copy mb-4" [class.mb-16]="data.followOnPlans && !data.planUrl">
+            {{
+                translateKeyPrefix + ".PLAN_DESCRIPTION"
+                    | translate
+                        : {
+                              termWord: data.term | i18nPlural: (translateKeyPrefix + ".TERM_MAP" | translate),
+                              additionalPlanName: data.additionalPlanName | i18nSelect: (translateKeyPrefix + ".NAME_MAP" | translate)
+                          }
+            }}
+        </p>
+        <p *ngIf="data.planUrl" class="label-column lead-in small-copy" [class.mb-16]="data.followOnPlans">
+            <a [href]="data.planUrl" target="_blank" data-test="seePlansIncludedLink">{{ translateKeyPrefix + ".PLAN_LINK_LABEL" | translate }}</a>
+        </p>
+        <ng-container *ngFor="let followOnPlan of data.followOnPlans; index as i; count as len">
+            <p
+                *ngIf="followOnPlan.type === 'PROMO' || followOnPlan.type === 'PROMO_MCP'"
+                class="label-column lead-in small-copy"
+                [ngClass]="i === len - 1 ? 'mb-0' : 'mb-8'"
+                [innerHTML]="
+                    translateKeyPrefix + (followOnPlan.endDate ? '.FOLLOWON_DESCRIPTION_PROMO' : '.FOLLOWON_DESCRIPTION_SELFPAY')
+                        | translate
+                            : {
+                                  planName: followOnPlan.planName,
+                                  startDate: followOnPlan.startDate | sxmUiDate,
+                                  endDate: followOnPlan.endDate | sxmUiDate,
+                                  term: followOnPlan.term,
+                                  termWord: followOnPlan.term | i18nPlural: (translateKeyPrefix + '.TERM_MAP' | translate),
+                                  additionalPlanName: followOnPlan.additionalPlanName | i18nSelect: (translateKeyPrefix + '.NAME_MAP' | translate)
+                              }
+                "
+            ></p>
+            <p
+                *ngIf="followOnPlan.type === 'SELF_PAY' || followOnPlan.type === 'SELF_PAID'"
+                class="label-column lead-in small-copy"
+                [ngClass]="i === len - 1 ? 'mb-0' : 'mb-8'"
+                [innerHTML]="
+                    translateKeyPrefix + '.FOLLOWON_DESCRIPTION_SELFPAY' + (data.hasPromoFollowOn ? '_WITH_PROMO' : '')
+                        | translate
+                            : {
+                                  planName: followOnPlan.planName,
+                                  startDate: followOnPlan.startDate | sxmUiDate,
+                                  termWord: followOnPlan.term | i18nPlural: (translateKeyPrefix + '.TERM_MAP' | translate),
+                                  additionalPlanName: followOnPlan.additionalPlanName | i18nSelect: (translateKeyPrefix + '.NAME_MAP' | translate)
+                              }
+                "
+            ></p>
+        </ng-container>
+    </div>
+    <sxm-ui-dropdown-navigation-list
+        class="right-align top-align link-column"
+        [buttonLabel]="{
+            label: translateKeyPrefix + '.DROPDOWN_LABEL' | translate,
+            ariaLabel: translateKeyPrefix + '.ARIA_MODIFY_SUBSCRIPTION' | translate
+        }"
+        [listData]="dropdownListData"
+    ></sxm-ui-dropdown-navigation-list>
+</div>

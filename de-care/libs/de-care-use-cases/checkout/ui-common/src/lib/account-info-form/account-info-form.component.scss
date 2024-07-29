@@ -1,0 +1,16 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    section {
+        padding: 0;
+    }
+    header {
+        margin-bottom: 22px;
+    }
+    h3 {
+        margin: 0;
+        @include get-body-copy-style();
+        color: $gray-dark;
+        font-weight: calculate-font-weight("bold");
+    }
+}

@@ -1,0 +1,66 @@
+<form id="lookup-radio-id">
+    <h5>{{ "identification.lookupRadioIdComponent.TITLE" | translate }}</h5>
+
+    <p [id]="ariaDescribedbyTextId">{{ "identification.lookupRadioIdComponent.GETTING_STARTED" | translate }}</p>
+
+    <div class="input-container" [class.invalid]="submitted && (radioModel.errors || radioIdLookupError)">
+        <label for="{{ uniqueId }}" data-e2e="lookupRadioId.label">{{ "identification.lookupRadioIdComponent.LOOKUP_ERROR_LABEL" | translate }}</label>
+        <input
+            #radioModel="ngModel"
+            type="text"
+            id="{{ uniqueId }}"
+            qatag="LookUpRadioIDTextField"
+            [(ngModel)]="radioId"
+            [ngModelOptions]="{ standalone: true }"
+            onFocus
+            apRadioIdFormField
+            data-test="lookupRadioId.input"
+            data-e2e="lookupRadioId.input"
+        />
+    </div>
+    <div *ngIf="submitted && (radioModel.errors || radioIdLookupError)" class="invalid-feedback">
+        <p>{{ "identification.lookupRadioIdComponent.INVALID_FEEDBACK" | translate }}</p>
+    </div>
+
+    <div *ngIf="submitted && accountNotSupportedError" class="invalid-feedback">
+        <p>{{ "identification.lookupRadioIdComponent.ACCOUNT_TYPE_NOT_SUPPORTED" | translate }}</p>
+    </div>
+
+    <ng-content></ng-content>
+
+    <div class="links-block">
+        <p class="help-finding-radio-link-block">
+            <a class="text-link" (click)="helpFindingRadioModal.open()">{{ "identification.lookupRadioIdComponent.HELP_FINDING_RADIO_LINK_TEXT" | translate }}</a>
+        </p>
+        <p>
+            <a href="{{ 'identification.lookupRadioIdComponent.PRIVACY_POLICY_URL' | translate }}" target="blank" class="text-link">{{
+                "identification.lookupRadioIdComponent.PRIVACY" | translate
+            }}</a>
+        </p>
+    </div>
+    <button
+        (click)="submit()"
+        [disabled]="loading"
+        class="button primary full-width"
+        [class.loading]="loading"
+        qatag="LookUpContinueButton"
+        data-test="lookupRadioId.button"
+        data-e2e="lookupRadioId.button"
+    >
+        <ng-container *ngIf="!loading">{{ "identification.lookupRadioIdComponent.CONTINUE" | translate }}</ng-container>
+        <span></span><span></span><span></span>
+    </button>
+
+    <p class="need-help-text">
+        <b>{{ "identification.lookupRadioIdComponent.NEED_HELP_TEXT_LABEL" | translate }}</b>
+    </p>
+
+    <sxm-ui-help-finding-radio
+        class="inline-radio-help"
+        [showSearchByLicensePlateLink]="showSearchByLicensePlateLink"
+        (deviceHelp)="deviceHelp.emit()"
+        (licensePlateHelp)="licensePlateHelp.emit()"
+    ></sxm-ui-help-finding-radio>
+</form>
+
+<sxm-ui-help-finding-radio-modal #helpFindingRadioModal></sxm-ui-help-finding-radio-modal>

@@ -1,0 +1,7 @@
+{
+    "TITLE": "Your new plan has been added",
+    "LINK_TEXT": "GO TO MY ACCOUNT",
+    "STREAMING_PLAYER_LINK": "?contentType=live&channelName=home&site_id=home&creative_id=NA_NA_DL-OTH-live-home-home-APPHOME-JAN22CONFRIMPGTEST-NA-All-20220127-NA&cp_5=home&cp_6=home&cp_7=ALL&cp_8=APPHOME&cp_9=JAN22CONFRIMPGTEST&cp_10=OTH",
+    "PRICE_AND_TERM_SUBTEXT": "An early termination fee of ({{etfAmount}}) may apply if you cancel within the first {{etfTerm}} months.",
+    "USERNAME": "Username: {{username}}"
+}

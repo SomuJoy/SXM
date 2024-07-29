@@ -1,0 +1,66 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "mrdCapable": true,
+        "accountNumber": "10000244939",
+        "firstName": "JOHN",
+        "lastName": "SMITH",
+        "phone": "8052222222",
+        "userName": "iefftf.drfg@siriusxm.com",
+        "email": "IEFFTF.DRFG@SIRIUSXM.COM",
+        "accountProfile": { "profileNumber": "10000245195", "billingStatus": "Active", "accountRegistered": false, "createdOnDate": "2020-08-13T08:00:00-04:00" },
+        "serviceAddress": { "streetAddress": "1 River Rd", "city": "Schenectady", "state": "NY", "postalCode": "12345-6000", "country": "USA", "isAVSValidated": true },
+        "billingAddress": { "streetAddress": "1 River Rd", "city": "Schenectady", "state": "NY", "postalCode": "12345-6000", "country": "USA", "isAVSValidated": true },
+        "subscriptions": [
+            {
+                "id": "10000247243",
+                "status": "Active",
+                "plans": [
+                    {
+                        "code": "Select - 3mo - wActv",
+                        "packageName": "SXM_SIR_AUD_EVT",
+                        "termLength": 3,
+                        "startDate": "2020-08-13T00:00:00-04:00",
+                        "endDate": null,
+                        "nextCycleOn": "2020-11-13T00:00:00-05:00",
+                        "marketType": "self-pay:standard",
+                        "type": "SELF_PAID",
+                        "status": "active",
+                        "capabilities": ["IPAUD", "AUD"],
+                        "price": 50.97,
+                        "isChangePlanAllowed": false
+                    }
+                ],
+                "followonPlans": [],
+                "radioService": {
+                    "id": "10000246219",
+                    "status": "Active",
+                    "radioId": "X65100AH",
+                    "last4DigitsOfRadioId": "00AH",
+                    "vehicleInfo": { "year": null, "make": null, "model": null },
+                    "capabilities": ["BOF", "AUD", "OVR"],
+                    "is360LCapable": false
+                },
+                "streamingService": {
+                    "maskedUserName": "ief******@siriusxm.com",
+                    "id": "10000245707",
+                    "userName": "iefftf.drfg@siriusxm.com",
+                    "status": "Active",
+                    "randomCredentials": false
+                },
+                "isMrdDriving": true,
+                "isPrimary": true
+            }
+        ],
+        "billingSummary": {
+            "paymentType": "creditCard",
+            "creditCard": { "last4Digits": "1111", "type": "VISA", "expiryMonth": 3, "expiryYear": 2022, "status": "ACTIVE" },
+            "amountDue": 0.0
+        },
+        "consolidatedAccountNumbers": [],
+        "closedDevicesMap": {},
+        "closedDevices": []
+    }
+}

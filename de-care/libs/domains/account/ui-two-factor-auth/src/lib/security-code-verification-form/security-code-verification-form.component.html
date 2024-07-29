@@ -1,0 +1,24 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <sxm-ui-one-time-code-form-field
+        data-e2e="securityCodeVerificationForm.securityCodeField"
+        formControlName="securityCode"
+        [labelText]="translateKeyPrefix + '.CODE_LABEL' | translate"
+        [errorMsg]="translateKeyPrefix + '.ERROR_MESSAGE_REQUIRED' | translate"
+        [maxDigits]="6"
+    ></sxm-ui-one-time-code-form-field>
+    <div *ngIf="errorMsg && !form.get('securityCode').errors" class="invalid-feedback">
+        <p>{{ errorMsg }}</p>
+    </div>
+    <div *ngIf="!showResendLink" class="invalid-feedback">
+        <p>{{ translateKeyPrefix + ".MAX_RESEND_ATTEMPTS_EXCEEDED" | translate }}</p>
+    </div>
+    <div class="links">
+        <a *ngIf="showResendLink" (click)="resendCodeRequest.emit(); reset()">
+            {{ !!resendCodeLinkText ? resendCodeLinkText : (translateKeyPrefix + ".RESEND_CODE" | translate) }}
+        </a>
+        <!-- <a *ngIf="showChatWithAgentLink">{{ translateKeyPrefix + ".CHAT" | translate }}</a> -->
+    </div>
+    <button data-e2e="securityCodeVerificationForm.submitSecurityCode" type="submit" sxm-proceed-button [loading]="processing">
+        {{ translateKeyPrefix + ".CONTINUE_BUTTON" | translate }}
+    </button>
+</form>

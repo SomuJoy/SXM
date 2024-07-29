@@ -1,0 +1,14 @@
+{
+    "TITLE": "Vérifiez votre commande",
+    "BODY": {
+        "CONFIRM_YOUR_PLAN": "Confirmez votre forfait et commencez à écouter maintenant.",
+        "REMEMBER_YOU_CAN_CANCEL": "N’oubliez pas que vous pouvez annuler en tout temps.",
+        "POST_TRIAL_DEFAULT": "À la fin de votre période d’essai, le montant de {{futureCharge}} vous sera facturé une seule fois le {{dueDate}}.",
+        "POST_TRIAL_RTD": "À la fin de votre période d’essai, le montant de {{futureCharge}} vous sera facturé une seule fois le {{dueDate}}. N’oubliez pas que vous pouvez annuler en tout temps."
+    },
+    "PRICE_AND_TERM_SUBTEXT": "Des frais de {{etfAmount}} de résiliation anticipée peuvent s’appliquer si vous annulez dans les premiers {{etfTerm}} mois.",
+    "BODY_SUBTEXT": "Le rabais Multi-Radio est disponible tant que vous conservez un abonnement plein tarif admissible sur le même compte.",
+    "CONTINUE_BUTTON_TEXT": "Terminer Ma Commande",
+    "MRD_RECAP_CARD": "<strong>{{platformAndPlanName}} ({{channelCount}}+ Chaînes)</strong><br/>{{mrdPrice}}/mois, plus frais avec rabais Multi-Radio. <s>Rég. {{msrpPrice}}/mois</s>",
+    "MRD_RECAP_CARD_QUEBEC": "<strong>{{platformAndPlanName}} ({{channelCount}}+ Chaînes)</strong><br/>{{mrdPrice}}/mois avec rabais Multi-Radio. <s>Rég. {{msrpPrice}}/mois</s>"
+}

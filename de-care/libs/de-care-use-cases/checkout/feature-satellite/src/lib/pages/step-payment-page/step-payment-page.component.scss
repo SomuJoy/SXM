@@ -1,0 +1,21 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "../page.scss";
+
+:host {
+    @include page-host(1fr auto);
+    sxm-ui-plan-recap-card {
+        margin-bottom: 15px;
+    }
+
+    #skeletonLoader {
+        display: grid;
+        row-gap: 34px;
+    }
+    #skeletonLoaderPlanRecap {
+        width: 100%;
+        max-width: 440px;
+        height: 70px;
+        border-radius: 4px;
+    }
+}

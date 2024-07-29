@@ -1,0 +1,27 @@
+{
+    "TITLE": "Remove inactive radio",
+    "INSTRUCTIONS": "Select the reason for removing the radio from your account.",
+    "REMOVE_BUTTON": "Remove",
+    "CANCEL_BUTTON": "Cancel",
+    "ERROR_REQUIRED": "Select a reason to remove your radio.",
+    "SERVER_ERROR": "Server error here",
+    "SELECT_REASON_DROPDOWN": "Select a reason",
+    "REASONS_LIST": [
+        {
+            "label": "Vehicle sold or traded",
+            "key": "Vehicle sold or traded"
+        },
+        {
+            "label": "Radio lost, broken or stolen",
+            "key": "Radio lost, broken or stolen"
+        },
+        {
+            "label": "Radio sold, given away, or discarded",
+            "key": "Radio sold, given away, or discarded"
+        },
+        {
+            "label": "I have other reasons",
+            "key": "Other"
+        }
+    ]
+}

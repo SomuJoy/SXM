@@ -1,0 +1,14 @@
+<div class="row align-center no-padding">
+    <div class="column small-12 no-padding">
+        <div class="recirculation--single">
+            <h5>{{ translateKey + "HEADLINE" | translate }}</h5>
+            <p class="text-color-gray-dark listen-now-component-subhead">{{ translateKey + "SUB_HEADLINE" | translate }}</p>
+            <streaming-player-link
+                [infoForToken]="infoForToken"
+                [customLink]="customLink"
+                [customLinkText]="translateKey + 'LINK_TEXT' | translate"
+                [isButton]="true"
+            ></streaming-player-link>
+        </div>
+    </div>
+</div>

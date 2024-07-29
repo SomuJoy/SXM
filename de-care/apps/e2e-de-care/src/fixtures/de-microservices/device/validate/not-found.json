@@ -1,0 +1,13 @@
+{
+    "status": "FAILURE",
+    "httpStatusCode": 500,
+    "httpStatus": "INTERNAL_SERVER_ERROR",
+    "error": {
+        "errorCode": "",
+        "errorPropKey": "error.common.unhandled.generic.error",
+        "errorType": "SYSTEM",
+        "errorStackTrace": "AccountNumber:  | RadioId:  | x-forwarded-for: [10.130.98.68] | URL: /services/device/validate | Exception: DeviceServiceException#null | StackTrace: DeviceValidationServiceClient.java:79 | ErrorType: SYSTEM | ErrorMessage: ERROR : [errorCode : , errorPropKey : error.common.unhandled.generic.error, errorType : UNCHECKED, errorLevel : ACTION, statusCode : 500 INTERNAL_SERVER_ERROR, errorMessage : VIN Not Found | , sourceErrorCode : ] | FullStackTrace: ",
+        "logId": "b44a17c1-f87c-48ad-a46b-77451b517d79",
+        "failedTransactionId": "OAC-b44a17c1-f87c-48ad-a46b-77451b517d79-87592af88d83dfa7-87592af88d83dfa7-9195391577454628495761643"
+    }
+}

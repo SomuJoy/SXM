@@ -1,0 +1,25 @@
+{
+    "domainsOffersUiPromoCodeValidationFormModule": {
+        "promoCodeValidationComponent": {
+            "LABEL_TEXT": "Code promotionnel",
+            "CONTINUE_BUTTON": "Continuer",
+            "ERRORS": {
+                "DEFAULT_TEXT": "Entrez un code promotionnel valide",
+                "REDEEMED_TEXT": "Le code promotionnel que vous avez entré a déjà été utilisé. ",
+                "REDEEMED_LINK_TEXT": "Afficher d’autres offres",
+                "INVALID_TEXT": "Le code promo entré n'est pas valide. Essayez d'entrer de nouveau votre code promo ou continuez de ",
+                "INVALID_LINK_TEXT": "voir d'autres offres",
+                "EXPIRED_TEXT": "Le code promo entré n'est pas valide. Essayez d'entrer de nouveau votre code promo ou continuez de ",
+                "EXPIRED_LINK_TEXT": "voir d'autres offres"
+            }
+        },
+        "promoCodeValidationFormComponent": {
+            "ADD_PROMO_LABEL": "Ajouter un code promo",
+            "REMOVE_PROMO_LABEL": "Enlever un code promo",
+            "PROMO_CODE_PLACEHOLDER": "Code promo",
+            "APPLY_PROMO": "Appliquer",
+            "INVALID_PROMO": "Le code promo que vous avez entré est invalide ou ne peut être appliqué à cette transaction.",
+            "PROMO_CODE_APPLIED": "Code {{promoCode}} appliqué. Votre ou vos offres ont été mises à jour."
+        }
+    }
+}

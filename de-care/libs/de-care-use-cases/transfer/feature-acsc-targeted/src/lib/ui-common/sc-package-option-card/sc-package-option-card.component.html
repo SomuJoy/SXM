@@ -1,0 +1,146 @@
+<sxm-ui-content-card [hasGrayBackground]="true" [flagPresent]="false" [headlinePresent]="true">
+    <div htmlContentForHead>
+        <div class="radio-item">
+            <input
+                class="radio"
+                type="radio"
+                [formControl]="control"
+                id="{{ controlId }}"
+                name="{{ formControlName }}"
+                [value]="offerPackageName"
+                data-e2e="radioOption"
+                [attr.data-track-click]="'package option - ' + offerPackageName"
+                data-e2e="radioInput"
+            />
+            <label [for]="controlId">
+                {{ title }}
+            </label>
+        </div>
+    </div>
+    <div htmlContentForBody>
+        <ng-container
+            *ngIf="
+                isPlatformChangeScenario && isPackageSelect(offerPackageName) && ('app.packageDescriptions.' + nonPiiPackageName | translate)
+                    | getDiffExcludedChannels: offerPackageName as excludedChannels
+            "
+        >
+            <div class="platform-change">
+                <div class="icon">
+                    <svg class="icon icon-utility large icon-warning">
+                        <use class="icon-warning" xlink:href="#icon-warning"></use>
+                    </svg>
+                </div>
+                <div>
+                    <p class="platform-change-info">
+                        <span>
+                            {{ translateKeyPrefix + "BODY." + "PLATFORM_CHANGE_MESSAGE_INTRO" | translate }}
+                        </span>
+                        <sxm-ui-tooltip class="tooltip-component tooltip-display-top-medium-up tooltip-display-right-large-up">
+                            <span>
+                                {{ translateKeyPrefix + "BODY." + "PLATFORM_CHANGE_MESSAGE_TOOLTIP" | translate }}
+                            </span>
+                        </sxm-ui-tooltip>
+                    </p>
+                    <ul *ngFor="let channel of excludedChannels">
+                        <li *ngFor="let description of channel.descriptions">
+                            <svg class="icon icon-utility large">
+                                <use class="icon-x-mark-flex-stroke" xlink:href="#icon-x-mark-flex-stroke"></use>
+                            </svg>
+                            <span [innerHTML]="description"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </ng-container>
+        <div class="body" data-e2e="contentCopy">
+            <div class="price-definition">
+                <p class="large-copy">
+                    <ng-container *ngIf="isOfferRetail; else offerNotRetail">
+                        <!-- The offer type is SELF_PAY -->
+                        {{
+                            translateKeyUiCommonPrefix + region + "PRICE_PER_MONTH"
+                                | translate
+                                    : {
+                                          amount: offerRetailPrice | currency: "USD":"symbol-narrow":undefined:locale
+                                      }
+                        }}
+                    </ng-container>
+                    <ng-template #offerNotRetail>
+                        <ng-container *ngIf="isOfferTrialExt; else offerNotTrialExt">
+                            <!-- The offer type is TRIAL_EXT -->
+                            <ng-container *ngIf="isOfferFreeTrialExtInCA; else notFreeTrialExtCa">
+                                <!-- The trial extension is free with a processing fee (CA)-->
+                                {{
+                                    translateKeyPrefix + "BODY." + region + "TOTAL_PRICE_OFFER_HEADER"
+                                        | translate
+                                            : {
+                                                  amount: offer.processingFee | currency: "USD":"symbol-narrow":undefined:locale,
+                                                  termLength: offerTermLength | i18nPlural: (translateKeyUiCommonPrefix + "PLURAL_MONTH_MAP" | translate)
+                                              }
+                                }}
+                            </ng-container>
+                            <ng-template #notFreeTrialExtCa>
+                                <!-- The trial extension is not free (QC scenario)-->
+                                {{
+                                    translateKeyPrefix + "BODY." + region + "TOTAL_PRICE_OFFER_HEADER"
+                                        | translate
+                                            : {
+                                                  amount: offer.price | currency: "USD":"symbol-narrow":undefined:locale,
+                                                  termLength: offerTermLength | i18nPlural: (translateKeyUiCommonPrefix + "PLURAL_MONTH_MAP" | translate)
+                                              }
+                                }}
+                            </ng-template>
+                        </ng-container>
+                        <ng-template #offerNotTrialExt>
+                            <!-- The offer type is likely PROMO -->
+                            {{
+                                translateKeyPrefix + "BODY." + region + "PROMO_OFFER_HEADER"
+                                    | translate
+                                        : {
+                                              amount: offerPricePerMonth | currency: "USD":"symbol-narrow":undefined:locale,
+                                              termLength: offerTermLength | i18nPlural: (translateKeyUiCommonPrefix + "PLURAL_MONTH_MAP" | translate)
+                                          }
+                            }}
+                        </ng-template>
+                    </ng-template>
+                </p>
+                <p class="small-copy">
+                    <span *ngIf="!isOfferRetail">
+                        {{
+                            translateKeyUiCommonPrefix + region + "THEN_PRICE_PER_MONTH"
+                                | translate
+                                    : {
+                                          amount: offerRetailPrice | currency: "USD":"symbol-narrow":undefined:locale
+                                      }
+                        }}
+                    </span>
+                    <span [innerHTML]="translateKeyUiCommonPrefix + 'SEE_OFFER_DETAILS' | translate"></span>
+                </p>
+            </div>
+            <p>
+                {{ bodyText }}
+            </p>
+        </div>
+        <sxm-ui-accordion-chevron
+            [collapsedText]="translateKeyUiCommonPrefix + 'COLLAPSED_TEXT' | translate"
+            [expandedText]="translateKeyUiCommonPrefix + 'EXPANDED_TEXT' | translate"
+            [isInnerAccordion]="true"
+            data-track-click="SC Package Option Explore details"
+            data-e2e="detailsAccordion"
+        >
+            <div class="descriptions">
+                <p [innerHTML]="details.title"></p>
+                <ul>
+                    <li *ngFor="let desc of details.descriptions">
+                        <div class="icon-checkmark-sm-wrapper">
+                            <svg class="icon icon-utility small">
+                                <use class="icon-check-mark-flex-stroke" xlink:href="#icon-check-mark-flex-stroke"></use>
+                            </svg>
+                        </div>
+                        <span [innerHTML]="desc"></span>
+                    </li>
+                </ul>
+            </div>
+        </sxm-ui-accordion-chevron>
+    </div>
+</sxm-ui-content-card>

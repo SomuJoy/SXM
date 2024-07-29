@@ -1,0 +1,17 @@
+<div class="content-container" *ngIf="offer">
+    <div class="row align-center no-padding">
+        <div class="column small-12">
+            <div class="hero-sales--plan-card background-white">
+                <lead-offer-details-oem [offer]="offer" data-test="OfferDetailsCard"></lead-offer-details-oem>
+                <button data-e2e="oem.offerStep.Submit" class="button primary full-width" (click)="submitted.emit()">
+                    {{ "oemCommon.offerStepComponent.SUBSCRIBE_NOW" | translate | uppercase }}
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row align-center no-padding">
+        <div class="column small-12" data-e2e="oem.offerStep.legalCopy">
+            <sxm-ui-legal-copy [legalCopy]="legalCopy"></sxm-ui-legal-copy>
+        </div>
+    </div>
+</div>

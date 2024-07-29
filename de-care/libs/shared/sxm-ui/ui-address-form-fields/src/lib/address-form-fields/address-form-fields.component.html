@@ -1,0 +1,115 @@
+<ng-container [formGroup]="addressForm">
+    <div class="row no-padding">
+        <div class="column small-12 no-padding">
+            <div class="input-container" [class.invalid]="controlIsInvalid(addressForm.controls.addressLine1)" [class.filled]="addressForm.controls.addressLine1.value">
+                <label [for]="addressId">{{ translateKey + ".NEW_CC.CC_ADDRESS" | translate }}</label>
+                <input
+                    type="text"
+                    [id]="addressId"
+                    formControlName="addressLine1"
+                    minlength="2"
+                    maxlength="100"
+                    data-test="CCAddress"
+                    data-e2e="CCAddress"
+                    qatag="CCAddress"
+                    onFocus
+                    required
+                    #addressLine1Element
+                    appTrimFormField
+                    autocomplete="street-address"
+                />
+            </div>
+            <div *ngIf="controlIsInvalid(addressForm.controls.addressLine1)" class="invalid-feedback">
+                <ng-container *ngIf="addressForm.controls.addressLine1.hasError('cvvExclusion'); else addressError">
+                    <p>{{ translateKey + ".ERROR_CVV_FOUND" | translate }}</p>
+                </ng-container>
+                <ng-template #addressError>
+                    <p>{{ translateKey + ".NEW_CC.ERROR_CC_ADDRESS" | translate }}</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+    <div class="row no-padding">
+        <div class="column small-12 no-padding">
+            <div class="input-container" [class.invalid]="controlIsInvalid(addressForm.controls.city)" [class.filled]="addressForm.controls.city.value">
+                <label [for]="cityId">{{ translateKey + ".NEW_CC.CC_CITY" | translate }}</label>
+                <input
+                    type="text"
+                    [id]="cityId"
+                    appTrimFormField
+                    formControlName="city"
+                    minlength="2"
+                    maxlength="50"
+                    data-test="CCCity"
+                    data-e2e="CCCity"
+                    qatag="CCCity"
+                    onFocus
+                    required
+                    autocomplete="locality"
+                />
+            </div>
+            <div *ngIf="controlIsInvalid(addressForm.controls.city)" class="invalid-feedback">
+                <ng-container *ngIf="addressForm.controls.city.hasError('cvvExclusion'); else containsCCInfo">
+                    <p>{{ translateKey + ".ERROR_CVV_FOUND" | translate }}</p>
+                </ng-container>
+                <ng-template #containsCCInfo>
+                    <ng-container *ngIf="addressForm.controls.addressLine1.hasError('containsCCInfo'); else cityError">
+                        <p>{{ translateKey + ".NEW_CC.INVALID_CC_CITY" | translate }}</p>
+                    </ng-container>
+                </ng-template>
+                <ng-template #cityError>
+                    <p>{{ translateKey + ".NEW_CC.ERROR_CC_CITY" | translate }}</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+    <div class="row align-top no-padding">
+        <div class="column small-6 align-left no-padding">
+            <sxm-ui-dropdown
+                class="dropdown"
+                [class.invalid]="stateIsInvalid"
+                [showErrorMsg]="stateIsInvalid"
+                [errorMsg]="translateKey + '.NEW_CC.ERROR_CC_STATE' | translate"
+                tabindex="0"
+                [passedValue]="'app.areas' | translate"
+                key="key"
+                text="key"
+                name="region"
+                labelText="{{ translateKey + '.NEW_CC.CC_STATE' | translate }}"
+                formControlName="state"
+                data-test="CCState"
+                data-e2e="CCState"
+                qatag="CCState"
+                autocomplete="region"
+            ></sxm-ui-dropdown>
+        </div>
+        <div class="column small-6 align-right no-padding">
+            <div class="input-container" [class.invalid]="controlIsInvalid(addressForm.controls.zip)" [class.filled]="addressForm.controls.zip.value">
+                <label [for]="zipId">{{ translateKey + ".NEW_CC.CC_ZIPCODE" | translate }}</label>
+                <input
+                    type="text"
+                    [id]="zipId"
+                    appMaskZipCode
+                    [zipMaskIsCanada]="settingsSrv.isCanadaMode"
+                    formControlName="zip"
+                    [minlength]="settingsSrv.isCanadaMode ? 6 : 5"
+                    [maxlength]="settingsSrv.isCanadaMode ? 7 : 10"
+                    data-test="CCZipCode"
+                    data-e2e="CCZipCode"
+                    qatag="CCZipCode"
+                    onFocus
+                    required
+                    autocomplete="postal-code"
+                />
+            </div>
+            <div *ngIf="controlIsInvalid(addressForm.controls.zip)" class="invalid-feedback">
+                <ng-container *ngIf="addressForm.controls.zip.hasError('cvvExclusion'); else zipError">
+                    <p>{{ translateKey + ".ERROR_CVV_FOUND" | translate }}</p>
+                </ng-container>
+                <ng-template #zipError>
+                    <p>{{ translateKey + ".NEW_CC.ERROR_CC_ZIPCODE" | translate }}</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</ng-container>

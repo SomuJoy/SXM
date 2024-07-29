@@ -1,0 +1,27 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    width: 100%;
+
+    > div {
+        @include grid-container();
+        margin: 0 auto;
+
+        ::ng-deep > * {
+            grid-column: 1/7;
+
+            @include bp(medium) {
+                grid-column: 2/12;
+            }
+        }
+    }
+
+    &.main-wide-content {
+        > div::ng-deep > * {
+            @include bp(medium) {
+                grid-column: 3/11;
+            }
+        }
+    }
+}

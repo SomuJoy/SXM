@@ -1,0 +1,11 @@
+{
+    "OFFER_FOR_NEW_SUBSCRIBERS": "That offer is for new subscribers, but here’s another option for you.",
+    "TITLE": "Review your order",
+    "BODY": {
+        "CONFIRM_YOUR_PLAN": "Confirm your plan and start listening now.<br />Remember you can cancel online anytime.",
+        "POST_TRIAL_DEFAULT": "When your trial ends, your one-time charge will be {{futureCharge}} due {{dueDate}}.",
+        "POST_TRIAL_RTD": "When your trial ends, your one-time charge will be {{futureCharge}} due {{dueDate}}. Remember you can cancel online anytime."
+    },
+    "CONTINUE_BUTTON_TEXT": "Complete My Order",
+    "PRICE_AND_TERM_SUBTEXT": "An early termination fee of ({{etfAmount}}) may apply if you cancel within the first {{etfTerm}} months."
+}

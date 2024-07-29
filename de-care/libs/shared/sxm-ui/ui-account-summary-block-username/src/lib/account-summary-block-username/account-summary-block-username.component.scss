@@ -1,0 +1,37 @@
+@import "sxm.phoenix.imports";
+
+hr {
+    border: 1px solid $gray-light;
+}
+
+.text_color {
+    color: #736e7d;
+    font-weight: 500;
+}
+
+.text_spacing {
+    letter-spacing: 1.7px;
+}
+
+.primary {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+.text-link-verify {
+    text-decoration: none;
+}
+
+.verify-link {
+    font-weight: calculate-font-weight("bold");
+    @include font-size(14px);
+    position: relative;
+    text-align: right;
+    a {
+        text-decoration: none;
+    }
+}
+.link-container {
+    margin-top: 24px;
+}

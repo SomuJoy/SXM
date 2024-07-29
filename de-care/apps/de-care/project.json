@@ -1,0 +1,223 @@
+{
+    "name": "cuwi",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "apps/de-care/src",
+    "projectType": "application",
+    "prefix": "app",
+    "generators": {
+        "@schematics/angular:component": {
+            "styleext": "scss",
+            "inlineStyle": false,
+            "spec": true
+        },
+        "@schematics/angular:class": {
+            "spec": true
+        },
+        "@schematics/angular:directive": {
+            "spec": true
+        },
+        "@schematics/angular:guard": {
+            "spec": true
+        },
+        "@schematics/angular:module": {
+            "spec": true
+        },
+        "@schematics/angular:pipe": {
+            "spec": true
+        },
+        "@schematics/angular:service": {
+            "spec": true
+        }
+    },
+    "targets": {
+        "build": {
+            "executor": "@angular-devkit/build-angular:browser",
+            "options": {
+                "outputPath": "dist/apps/de-care",
+                "index": "apps/de-care/src/index.html",
+                "main": "apps/de-care/src/main.ts",
+                "polyfills": "apps/de-care/src/polyfills.ts",
+                "tsConfig": "apps/de-care/tsconfig.app.json",
+                "assets": [
+                    {
+                        "glob": "**/*",
+                        "input": "./apps/de-care/src/assets",
+                        "output": "./assets/"
+                    },
+                    {
+                        "glob": "**/*",
+                        "input": "./node_modules/sxm/assets/dist/css/minified/fonts",
+                        "output": "./assets/fonts"
+                    },
+                    {
+                        "glob": "**/*",
+                        "input": "./node_modules/sxm/assets/dist/css/minified/svg",
+                        "output": "./assets/svg"
+                    },
+                    {
+                        "glob": "**/*(sxm.min.css)",
+                        "input": "./node_modules/sxm/assets/dist/css/minified",
+                        "output": "./assets/"
+                    },
+                    {
+                        "glob": "**/*(sxm.slam.min.js)",
+                        "input": "./node_modules/sxm/assets/dist/js/minified",
+                        "output": "./assets/"
+                    }
+                ],
+                "styles": ["libs/sxm-assets/scss/global.scss"],
+                "stylePreprocessorOptions": {
+                    "includePaths": ["./node_modules/sxm/assets/src/scss/"]
+                },
+                "scripts": [],
+                "vendorChunk": true,
+                "extractLicenses": false,
+                "buildOptimizer": false,
+                "sourceMap": true,
+                "optimization": false,
+                "namedChunks": true
+            },
+            "configurations": {
+                "production": {
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/de-care/src/environments/environment.ts",
+                            "with": "apps/de-care/src/environments/environment.prod.ts"
+                        }
+                    ],
+                    "optimization": true,
+                    "outputHashing": "all",
+                    "sourceMap": false,
+                    "namedChunks": false,
+                    "extractLicenses": true,
+                    "vendorChunk": false,
+                    "buildOptimizer": true,
+                    "budgets": [
+                        {
+                            "type": "initial",
+                            "maximumWarning": "2mb",
+                            "maximumError": "5mb"
+                        }
+                    ]
+                },
+                "canada": {
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/de-care/src/environments/environment.ts",
+                            "with": "apps/de-care/src/environments/environment.canada.ts"
+                        }
+                    ]
+                },
+                "local": {
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/de-care/src/environments/environment.ts",
+                            "with": "apps/de-care/src/environments/environment.local.ts"
+                        }
+                    ]
+                },
+                "local-perf": {
+                    "optimization": {
+                        "scripts": true,
+                        "styles": {
+                            "minify": true,
+                            "inlineCritical": true
+                        },
+                        "fonts": true
+                    },
+                    "sourceMap": true,
+                    "namedChunks": true,
+                    "vendorChunk": false,
+                    "buildOptimizer": true,
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/de-care/src/environments/environment.ts",
+                            "with": "apps/de-care/src/environments/environment.local.ts"
+                        }
+                    ]
+                },
+                "local-canada": {
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/de-care/src/environments/environment.ts",
+                            "with": "apps/de-care/src/environments/environment.local.canada.ts"
+                        }
+                    ]
+                },
+                "local-atlas": {
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/de-care/src/environments/environment.ts",
+                            "with": "apps/de-care/src/environments/environment.local-atlas.ts"
+                        }
+                    ]
+                },
+                "local-atlas-canada": {
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/de-care/src/environments/environment.ts",
+                            "with": "apps/de-care/src/environments/environment.local-atlas.canada.ts"
+                        }
+                    ]
+                }
+            },
+            "defaultConfiguration": ""
+        },
+        "serve": {
+            "executor": "@angular-devkit/build-angular:dev-server",
+            "options": {
+                "browserTarget": "cuwi:build",
+                "port": 4200
+            },
+            "configurations": {
+                "production": {
+                    "browserTarget": "cuwi:build:production"
+                },
+                "canada": {
+                    "browserTarget": "cuwi:build:canada"
+                },
+                "local": {
+                    "browserTarget": "cuwi:build:local"
+                },
+                "local-perf": {
+                    "browserTarget": "cuwi:build:local-perf"
+                },
+                "local-canada": {
+                    "browserTarget": "cuwi:build:local-canada",
+                    "port": 4201
+                },
+                "local-atlas": {
+                    "browserTarget": "cuwi:build:local-atlas"
+                },
+                "local-atlas-canada": {
+                    "browserTarget": "cuwi:build:local-atlas-canada",
+                    "port": 4201
+                }
+            }
+        },
+        "extract-i18n": {
+            "executor": "@angular-devkit/build-angular:extract-i18n",
+            "options": {
+                "browserTarget": "cuwi:build"
+            }
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "apps/de-care/jest.config.js",
+                "tsConfig": "apps/de-care/tsconfig.spec.json",
+                "setupFile": "apps/de-care/src/test-setup.ts",
+                "configPath": "./jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["apps/de-care/src/**/*.ts", "apps/de-care//src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:app", "scope:de-care"]
+}

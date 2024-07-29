@@ -1,0 +1,106 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": [
+        {
+            "closed": false,
+            "id": "0.0.0.1 /service/subscription 10000214666 0",
+            "status": "Active",
+            "plans": [
+                {
+                    "code": "All Access - 6mo - wActv",
+                    "packageName": "1_SIR_AUD_ALLACCESS",
+                    "termLength": "6",
+                    "endDate": "2023-07-12T00:00:00-04:00",
+                    "type": "SELF_PAID",
+                    "marketType": "self-pay:standard",
+                    "capabilities": []
+                }
+            ],
+            "followonPlans": [],
+            "radioService": {
+                "last4DigitsOfRadioId": "00M5",
+                "vehicleInfo": {
+                    "model": null,
+                    "make": null,
+                    "year": null
+                },
+                "maskedRadioId": "****00M5"
+            },
+            "streamingService": {
+                "status": "Active",
+                "maskedUserName": "lz6******@siriusxm.com",
+                "randomCredentials": false
+            },
+            "nickname": null,
+            "duplicateVehicleInfo": null
+        },
+        {
+            "closed": false,
+            "id": "0.0.0.1 /service/subscription 10000215338 0",
+            "status": "Active",
+            "plans": [
+                {
+                    "code": "Platinum VIP - 1mo",
+                    "packageName": "1_SIR_AUD_VIP",
+                    "termLength": "1",
+                    "endDate": "2023-02-12T00:00:00-05:00",
+                    "type": "SELF_PAID",
+                    "marketType": "self-pay:standard",
+                    "capabilities": []
+                }
+            ],
+            "followonPlans": [],
+            "radioService": {
+                "last4DigitsOfRadioId": "004P",
+                "vehicleInfo": {
+                    "model": null,
+                    "make": null,
+                    "year": null
+                },
+                "maskedRadioId": "****004P"
+            },
+            "streamingService": {
+                "status": "Active",
+                "maskedUserName": "********2J4e",
+                "randomCredentials": false
+            },
+            "nickname": null,
+            "duplicateVehicleInfo": null
+        },
+        {
+            "closed": false,
+            "id": "0.0.0.1 /service/subscription 10000207957 0",
+            "status": "Active",
+            "plans": [
+                {
+                    "code": "All Access - 6mo - wActv",
+                    "packageName": "1_SIR_AUD_ALLACCESS",
+                    "termLength": "6",
+                    "endDate": "2023-07-11T00:00:00-04:00",
+                    "type": "SELF_PAID",
+                    "marketType": "self-pay:standard",
+                    "capabilities": []
+                }
+            ],
+            "followonPlans": [],
+            "radioService": {
+                "last4DigitsOfRadioId": "00RC",
+                "vehicleInfo": {
+                    "model": null,
+                    "make": null,
+                    "year": null
+                },
+                "maskedRadioId": "****00RC"
+            },
+            "streamingService": {
+                "status": "Active",
+                "maskedUserName": "0qg******@siriusxm.com",
+                "randomCredentials": false
+            },
+            "nickname": null,
+            "duplicateVehicleInfo": null
+        }
+    ]
+}

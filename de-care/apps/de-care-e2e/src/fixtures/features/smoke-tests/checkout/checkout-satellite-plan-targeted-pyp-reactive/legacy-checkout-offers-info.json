@@ -1,0 +1,42 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "locales": [
+            {
+                "locale": "en_US",
+                "offerInfos": [
+                    {
+                        "planCode": "Select - 1mo - wActv",
+                        "salesHero": { "title": "Get SiriusXM for as little as $17.99 for 1 month", "subTitle": null, "presentation": null },
+                        "offerDescription": {
+                            "priceAndTermDescTitle": "<span data-price>$17.99</span><strong>/mo</strong>",
+                            "processingFeeDisclaimer": "See <strong>Offer Details</strong> below",
+                            "packageName": "SiriusXM Music & Entertainment",
+                            "listeningOptions": ["Satellite", "Streaming"],
+                            "longDescription": null,
+                            "highlightsTitle": "<strong>SiriusXM Music & Entertainment</strong>&nbsp;<strong>Includes:</strong>",
+                            "highlightsText": [
+                                "<b>400+ channels,</b> including 155+ in your car, plus even more to stream on your devices",
+                                "<b>Ad-free music</b> for every genre & decade plus artist-created channels",
+                                "<b>Original talk, </b>podcasts, exclusive comedy & news from every angle",
+                                "<b>NHL® play-by-play,</b> NASCAR®, plus the biggest names in sports talk",
+                                "<b>SiriusXM video library </b>of in-studio shows & performances"
+                            ],
+                            "footer": "<strong id=\"docs-internal-guid-53d9bd58-7fff-0fbd-e12f-d938071f90e2\">The variety you want, </strong>with expertly curated ad-free music, celebrity-hosted talk, sports analysis &amp; more.",
+                            "packageFeatures": [{ "packageName": "SiriusXM Music & Entertainment", "features": [] }],
+                            "showToggleLabel": "Explore plan details",
+                            "hideToggleLabel": "Hide"
+                        },
+                        "deals": null,
+                        "addonHeaderOverride": null,
+                        "offerDetails": "<p><strong>OFFER DETAILS:</strong> Activate a SiriusXM Music & Entertainment subscription plan and pay the current rate of $17.99/month. Fees and taxes apply. A credit card is required on this offer. <strong>Service will automatically renew</strong> thereafter every month according to your chosen payment method and you will be charged at the then-current rates. <strong>Please see our <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\">Customer Agreement</a> at www.siriusxm.com for complete terms and how to cancel, which includes online methods or calling us at 1-866-635-2349.</strong> All fees, content and features are subject to change. This offer cannot be combined with any other and may be modified or terminated at any time.</p>\r\n",
+                        "presentation": { "theme": "Theme1", "style": "Presentation1" },
+                        "numberOfBullets": null
+                    }
+                ]
+            }
+        ]
+    }
+}

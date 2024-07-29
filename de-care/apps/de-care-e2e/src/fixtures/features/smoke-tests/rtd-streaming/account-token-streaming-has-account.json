@@ -1,0 +1,1 @@
+{ "status": "SUCCESS", "httpStatusCode": 200, "httpStatus": "OK", "data": { "hasValidAddress": true, "maskedUserName": "tes******@siriusxm.com", "hasAccount": true } }

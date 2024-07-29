@@ -1,0 +1,68 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "JOHN",
+            "accountProfile": {
+                "accountRegistered": false
+            },
+            "serviceAddress": {
+                "state": "NY"
+            },
+            "subscriptions": [
+                {
+                    "id": "10000204328",
+                    "plans": [
+                        {
+                            "dataCapable": false,
+                            "code": "Select - 12mo - wActv",
+                            "packageName": "SIR_AUD_EVT",
+                            "termLength": 12,
+                            "startDate": "2021-01-28T00:00:00-05:00",
+                            "endDate": null,
+                            "nextCycleOn": "2022-01-28T00:00:00-05:00",
+                            "type": "SELF_PAID",
+                            "capabilities": ["IPAUD", "AUD"],
+                            "price": 203.88,
+                            "isBasePlan": true
+                        }
+                    ],
+                    "followonPlans": [],
+                    "radioService": {
+                        "id": "10000206376",
+                        "last4DigitsOfRadioId": "6821",
+                        "vehicleInfo": {
+                            "year": null,
+                            "make": null,
+                            "model": null
+                        },
+                        "is360LCapable": false
+                    },
+                    "streamingService": {
+                        "id": "10000207400",
+                        "maskedUserName": "khz******@siriusxm.com",
+                        "status": "Active"
+                    },
+                    "status": "Active",
+                    "devicePromoCode": null
+                }
+            ],
+            "billingSummary": {
+                "creditCard": {
+                    "last4Digits": "1111",
+                    "type": "VISA",
+                    "status": "ACTIVE"
+                }
+            },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true,
+            "isAccountIdentifiedUsingFLEPZOrVIN": false
+        },
+        "maskedUserNameFromToken": null,
+        "marketingId": "990003306821",
+        "marketingAcctId": "7304",
+        "isUserNameInTokenSameAsAccount": false
+    }
+}

@@ -1,0 +1,28 @@
+<div class="grid-container">
+    <div class="label-column">
+        <p class="lead-in title" [innerHTML]="translateKeyPrefix + '.TITLE' | translate"></p>
+    </div>
+    <p class="no-margin right-align link-column top-align">
+        <button
+            class="text-link-secondary"
+            (click)="editPaymentMethod.emit()"
+            [attr.aria-label]="translateKeyPrefix + '.MODIFY_ARIA_LABEL' | translate"
+            sxmUiDataClickTrack="routing"
+            data-link-name="EditPaymentMethod"
+            data-link-key="Payment info"
+            data-test="editPaymentMethod"
+        >
+            {{ translateKeyPrefix + ".MODIFY_LINK" | translate }}
+        </button>
+    </p>
+    <ng-container *ngIf="paymentMethod.type === 'creditCard'; else default">
+        <p class="label-column lead-in">
+            <span>{{ paymentMethod.creditCard }} {{ translateKeyPrefix + ".CREDIT_CARD" | translate: { lastFourDigits: paymentMethod.lastFourDigits } }}</span>
+            <br />
+            <span>{{ translateKeyPrefix + ".EXPIRATION_DATE" | translate }} {{ paymentMethod.expMonth | number: "2.0-0" }}/{{ paymentMethod.expYear }}</span>
+        </p>
+    </ng-container>
+    <ng-template #default>
+        <p class="label-column lead-in">{{ paymentMethod.type }}</p>
+    </ng-template>
+</div>

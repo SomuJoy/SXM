@@ -1,0 +1,168 @@
+<main de-care-page-main>
+    <div *ngIf="successMessage$ | async" class="header flex">
+        <svg class="icon large checkmark-circle checkmark-circle-outline">
+            <use class="icon-check-mark-flex-stroke" xlink:href="#icon-check-mark-flex-stroke"></use>
+        </svg>
+        <p>{{ translateKeyPrefix + ".SUCCESS_MESSAGE" | translate }}</p>
+    </div>
+    <div *ngIf="showDeviceNotFoundError$ | async">
+        <sxm-ui-alert-pill class="alert-icon-notification rounded-corners animate-block">
+            <p>
+                {{ translateKeyPrefix + ".NO_DEVICE_FOUND" | translate }}
+            </p>
+        </sxm-ui-alert-pill>
+    </div>
+    <div *ngIf="systemError$ | async">
+        <sxm-ui-alert-pill class="alert-icon-error rounded-corners animate-block">
+            <p>
+                {{ translateKeyPrefix + ".SYSTEM_ERROR.PART1" | translate }}
+                <chat-with-agent-link class="chat" *ngIf="(translateKeyPrefix + '.SYSTEM_ERROR.CHAT_TEXT' | translate) !== ''"
+                    [chatLinkText]="translateKeyPrefix + '.SYSTEM_ERROR.CHAT_TEXT' | translate"
+                    queue="generalAgents"></chat-with-agent-link>
+                {{ translateKeyPrefix + ".SYSTEM_ERROR.PART2" | translate }}
+            </p>
+        </sxm-ui-alert-pill>
+    </div>
+    <div *ngIf="showInvalidvRadioError$ | async">
+        <sxm-ui-alert-pill class="alert-icon-notification rounded-corners animate-block">
+            <p>
+                {{ translateKeyPrefix + ".INVALID_VIRTUAL_RADIO_ID.PART1" | translate }}
+                <chat-with-agent-link class="chatLink"
+                    *ngIf="(translateKeyPrefix + '.INVALID_VIRTUAL_RADIO_ID.CHAT_TEXT' | translate) !== ''"
+                    [chatLinkText]="translateKeyPrefix + '.INVALID_VIRTUAL_RADIO_ID.CHAT_TEXT' | translate"
+                    queue="generalAgents"></chat-with-agent-link>
+                {{ translateKeyPrefix + ".INVALID_VIRTUAL_RADIO_ID.PART2" | translate }}
+            </p>
+        </sxm-ui-alert-pill>
+    </div>
+    <div *ngIf="showInactiveError$ | async">
+        <sxm-ui-alert-pill class="alert-icon-notification rounded-corners animate-block">
+            <p>
+                {{ translateKeyPrefix + ".NO_ACTIVE_SUBSCRIPTION_ONE" | translate }}
+                <a class="ctaLink" (click)="onReactivate(translateKeyPrefix + '.REACTIVATE_LINK')">
+                    {{ translateKeyPrefix + ".REACTIVATE_TEXT" | translate }}
+                </a>
+                {{ translateKeyPrefix + ".NO_ACTIVE_SUBSCRIPTION_TWO" | translate }}
+            </p>
+        </sxm-ui-alert-pill>
+    </div>
+    <div *ngIf="isShowMultipleRadioError$ | async">
+        <sxm-ui-alert-pill class="alert-icon-notification rounded-corners animate-block">
+            <p>
+                {{ translateKeyPrefix + ".MULTIPLE_RADIO_ID_ERROR" | translate }}
+            </p>
+        </sxm-ui-alert-pill>
+    </div>
+    <div *ngIf="showNonPayError$ | async">
+        <sxm-ui-alert-pill class="alert-icon-notification rounded-corners animate-block">
+            <p>
+                {{ translateKeyPrefix + ".NON_PAY_ERROR" | translate }}
+                <a class="ctaLink" (click)="onMakeAPayment(translateKeyPrefix + '.MAKE_PAYMENT_URL')">
+                    {{ translateKeyPrefix + ".MAKE_A_PAYMENT" | translate }}
+                </a>
+                <ng-container *ngIf="isCanada">
+                    {{ translateKeyPrefix + ".TO_CONTINUE_LISTENING" | translate }}
+                </ng-container>
+            </p>
+        </sxm-ui-alert-pill>
+    </div>
+    <br />
+
+    <h5>{{ translateKeyPrefix + ".TITLE" | translate }}</h5>
+    <hr />
+    <br />
+    <p class="gray-text">{{ translateKeyPrefix + ".SUB_TITLE" | translate }}</p>
+
+    <sxm-ui-tabs (tabSelected)="tabSelected($event)">
+        <!-- Yes Tab to Refresh Radio -->
+        <sxm-ui-tab-panel tabTitle="{{ translateKeyPrefix + '.YES_TEXT' | translate }}" [tabInfo]="tabInfoYes">
+            <ng-container *ngTemplateOutlet="inCarSteps"> </ng-container>
+        </sxm-ui-tab-panel>
+        <!-- No Tab to Text Instructions-->
+        <sxm-ui-tab-panel tabTitle="{{ translateKeyPrefix + '.NO_TEXT' | translate }}" [tabInfo]="tabInfoNo">
+            <p class="outside-car-instructions">
+                <strong>{{ translateKeyPrefix + ".NO_INSTRUCTIONS" | translate }}</strong>
+            </p>
+            <ol class="ordered-list">
+                <li>
+                    <p>{{ translateKeyPrefix + ".NO_POINT_ONE" | translate }}</p>
+                </li>
+                <li>
+                    <p>{{ translateKeyPrefix + ".NO_POINT_TWO" | translate }}</p>
+                </li>
+                <li>
+                    <p>{{ translateKeyPrefix + ".NO_POINT_THREE" | translate }}</p>
+                </li>
+            </ol>
+            <p class="outside-car-instructions">
+                {{ translateKeyPrefix + ".NO_FOOTER" | translate }}
+                <span [innerHTML]="translateKeyPrefix + '.SMS_TERM_CONDITION' | translate"></span>
+                {{ translateKeyPrefix + ".AND" | translate }}
+                <span [innerHTML]="translateKeyPrefix + '.PRIVACY_POLICY' | translate"></span>
+            </p>
+        </sxm-ui-tab-panel>
+    </sxm-ui-tabs>
+
+    <ng-template #inCarSteps>
+        <ol class="ordered-list">
+            <li>
+                <p>{{ translateKeyPrefix + ".YES_POINT_ONE" | translate }}</p>
+            </li>
+            <li>
+                <p>{{ translateKeyPrefix + ".YES_POINT_TWO" | translate }}</p>
+            </li>
+            <li>
+                <p>{{ translateKeyPrefix + ".YES_POINT_THREE" | translate }}</p>
+            </li>
+        </ol>
+        <form [formGroup]="sendSignalForm">
+            <sxm-ui-text-form-field
+                formControlName="radioIdVinOrPhoneNumber"
+                [labelText]="translateKeyPrefix + '.TEXT_FIELD_PLACEHOLDER' | translate"
+                data-e2e="radioIdInput"
+                [errorMsg]="
+                    sendSignalForm.get('radioIdVinOrPhoneNumber').hasError('required')
+                        ? (translateKeyPrefix + '.ERROR.RADIO_ID_INPUT_REQUIRED' | translate)
+                        : sendSignalForm.get('radioIdVinOrPhoneNumber').errors
+                        ? (translateKeyPrefix + '.ERROR.RADIO_ID_INPUT_FORMAT' | translate)
+                        : ''
+                "
+            >
+            </sxm-ui-text-form-field>
+        </form>
+        <privacy-policy [customLink]="translateKeyPrefix + '.PRIVACY_POLICY_LINK' | translate"></privacy-policy>
+        <button data-e2e="sendRefreshSignalButton" (click)="sendRefreshSignal()" [loading]="loading$ | async" sxm-proceed-button>
+            {{ translateKeyPrefix + ".YES_BUTTON_TEXT" | translate }}
+        </button>
+        <br />
+        <p>
+            <a data-link-name="Don't have a Radio ID (RID) or a Account Number" class="text-link" (click)="openFindradioIdModal()">{{
+                translateKeyPrefix + ".RADIOID_ACCOUNT_NUMBER_LOOKUP" | translate
+            }}</a>
+        </p>
+
+        <sxm-ui-modal
+            #helpFindingRadioModal
+            title="{{ translateKeyPrefix + '.HELP_FINDING_RADIO_TITLE' | translate }}"
+            [titlePresent]="true"
+            [showBackButton]="true"
+            (backButton)="helpFindingRadioModal.close()"
+            (modalClosed)="helpFindingRadioModal.close()"
+            data-e2e="helpFindingRadioIdModal"
+        >
+            <sxm-ui-help-finding-radio [needHelp]="true" (deviceHelp)="helpFindingRadioModal.close(); marineAviationModal.open()"> </sxm-ui-help-finding-radio>
+        </sxm-ui-modal>
+        <sxm-ui-modal
+            #marineAviationModal
+            [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"
+            [titlePresent]="true"
+            title="{{ translateKeyPrefix + '.RADIO_LOOKUP_MARINE_AVIATION' | translate }}"
+            [showBackButton]="true"
+            (backButton)="marineAviationModal.close(); openFindradioIdModal()"
+            (modalClosed)="openFindradioIdModal()"
+            data-e2e="helpFindingMarineAviationRadioIdModal"
+        >
+            <sxm-ui-device-help [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"></sxm-ui-device-help>
+        </sxm-ui-modal>
+    </ng-template>
+</main>

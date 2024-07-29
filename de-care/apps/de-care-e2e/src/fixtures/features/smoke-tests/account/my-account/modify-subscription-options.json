@@ -1,0 +1,35 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": [
+        {
+            "option": "CHANGE_PLAN",
+            "compatibleOption": null
+        },
+        {
+            "option": "CHANGE_TERM",
+            "compatibleOption": null
+        },
+        {
+            "option": "REFRESH_RADIO",
+            "compatibleOption": null
+        },
+        {
+            "option": "DOWNLOAD_MANUAL",
+            "compatibleOption": null
+        },
+        {
+            "option": "REPLACE_RADIO",
+            "compatibleOption": null
+        },
+        {
+            "option": "TRANSFER_SUBSCRIPTION",
+            "compatibleOption": null
+        },
+        {
+            "option": "CANCEL_SUBSCRIPTION",
+            "compatibleOption": ["VIEW_OFFER", "TRANSFER_RADIO"]
+        }
+    ]
+}

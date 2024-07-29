@@ -1,0 +1,12 @@
+{
+    "deCareUseCasesChangeSubscriptionUiCommonModule": {
+        "selectTermTypeFormComponent": {
+            "MONTHLY_LABEL": "Mensuel - {{amount}}/mois",
+            "ANNUAL_LABEL": "Annuel - {{amount}}/an",
+            "CURRENT": "(actuellement)",
+            "BUTTON_TEXT": "Continuer",
+            "ERROR_REQUIRED": "Choisissez un forfait de facturation pour continuer.",
+            "PLUS_FEES": "plus frais"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "name": "domains-utility-state-card-bin-ranges",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/utility/state-card-bin-ranges/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/domains/utility/state-card-bin-ranges"],
+            "options": {
+                "jestConfig": "libs/domains/utility/state-card-bin-ranges/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/utility/state-card-bin-ranges/src/**/*.ts", "libs/domains/utility/state-card-bin-ranges/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

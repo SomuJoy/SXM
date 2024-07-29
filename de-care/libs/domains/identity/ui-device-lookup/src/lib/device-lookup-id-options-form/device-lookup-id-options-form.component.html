@@ -1,0 +1,129 @@
+<form [formGroup]="form" data-e2e="deviceLookupIdOptionsForm" data-test="deviceLookupIdOptionsForm" class="reset-paragraph-last-of-type-margin">
+    <div *ngIf="isSystemError$ | async" class="invalid-feedback">
+        <p>{{ translateKeyPrefix + "SERVICE_ERROR_MESSAGES.SYSTEM_ERROR" | translate }}</p>
+    </div>
+    <sxm-ui-radio-option-form-field
+        formControlName="lookupType"
+        [label]="translateKeyPrefix + 'RADIO_ID_OPTION_LABEL' | translate"
+        value="radioId"
+        data-e2e="radioIdLookupTypeOption"
+        data-test="radioIdLookupTypeOption"
+    ></sxm-ui-radio-option-form-field>
+    <div [class.hidden]="form.get('lookupType').value !== 'radioId'" class="option-fields">
+        <sxm-ui-text-input-with-tooltip-form-field
+            formControlName="radioId"
+            [labelText]="translateKeyPrefix + 'RADIO_ID_INPUT_PLACEHOLDER' | translate"
+            data-e2e="radioIdInput"
+            data-test="radioIdInput"
+            [errorText]="
+                form.get('radioId').hasError('required')
+                    ? (translateKeyPrefix + 'ERROR.RADIO_ID_INPUT_REQUIRED' | translate)
+                    : form.get('radioId').errors
+                    ? (translateKeyPrefix + 'ERROR.RADIO_ID_INPUT_FORMAT' | translate)
+                    : ''
+            "
+        >
+            <div htmlContentForTooltip>{{ translateKeyPrefix + "RADIO_ID_INPUT_TOOLTIP" | translate }}</div>
+        </sxm-ui-text-input-with-tooltip-form-field>
+        <div *ngIf="isRadioIdExist$ | async" class="invalid-feedback" data-test="ErrorMessageInvalidRadioId">
+            <p>{{ translateKeyPrefix + "SERVICE_ERROR_MESSAGES.INVALID_RADIO_ID" | translate }}</p>
+        </div>
+        <p>
+            <a class="text-link" (click)="openFindradioIdModal()">{{ translateKeyPrefix + "RADIO_LINK_INSTRUCTIONS" | translate }}</a>
+        </p>
+        <ng-container *ngTemplateOutlet="privacyPolicyLink"></ng-container>
+    </div>
+
+    <sxm-ui-radio-option-form-field
+        formControlName="lookupType"
+        [label]="translateKeyPrefix + 'VIN_OPTION_LABEL' | translate"
+        [ariaLabel]="translateKeyPrefix + 'VIN_OPTION_ARIA_LABEL' | translate"
+        value="vin"
+        data-e2e="vinLookupTypeOption"
+        data-test="vinLookupTypeOption"
+    ></sxm-ui-radio-option-form-field>
+    <div [class.hidden]="form.get('lookupType').value !== 'vin'" class="option-fields">
+        <sxm-ui-text-form-field
+            formControlName="vin"
+            [labelText]="translateKeyPrefix + 'VIN_INPUT_PLACEHOLDER' | translate"
+            data-e2e="vinInput"
+            data-test="vinInput"
+            [errorMsg]="
+                form.get('vin').hasError('required')
+                    ? (translateKeyPrefix + 'ERROR.VIN_INPUT_REQUIRED' | translate)
+                    : form.get('vin').errors
+                    ? (translateKeyPrefix + 'ERROR.VIN_INPUT_FORMAT' | translate)
+                    : ''
+            "
+        ></sxm-ui-text-form-field>
+        <div *ngIf="isVinError$ | async" class="invalid-feedback" data-test="ErrorMessageInvalidVin">
+            <p>{{ translateKeyPrefix + "SERVICE_ERROR_MESSAGES.VIN_NOT_FOUND" | translate }}</p>
+        </div>
+        <ng-container *ngTemplateOutlet="privacyPolicyLink"></ng-container>
+    </div>
+
+    <ng-container *ngIf="allowLicensePlate">
+        <sxm-ui-radio-option-form-field
+            formControlName="lookupType"
+            [label]="translateKeyPrefix + 'LICENSE_PLATE_OPTION_LABEL' | translate"
+            value="licensePlate"
+            data-e2e="licensePlateLookupTypeOption"
+            data-test="licensePlateLookupTypeOption"
+        ></sxm-ui-radio-option-form-field>
+        <div [class.hidden]="form.get('lookupType').value !== 'licensePlate'" class="option-fields">
+            <sxm-ui-text-form-field
+                formControlName="licensePlate"
+                [labelText]="translateKeyPrefix + 'LICENSE_PLATE_INPUT_PLACEHOLDER' | translate"
+                [maxLength]="8"
+                data-e2e="licensePlateInput"
+                data-test="licensePlateInput"
+                [errorMsg]="
+                    form.get('licensePlate').hasError('required')
+                        ? (translateKeyPrefix + 'ERROR.LICENSE_PLATE_INPUT_REQUIRED' | translate)
+                        : form.get('licensePlate').errors
+                        ? (translateKeyPrefix + 'ERROR.LICENSE_PLATE_INPUT_FORMAT' | translate)
+                        : ''
+                "
+            ></sxm-ui-text-form-field>
+            <div *ngIf="isLicensePlateError$ | async" class="invalid-feedback" data-test="ErrorMessageInvalidLicensePlate">
+                <p>{{ translateKeyPrefix + "SERVICE_ERROR_MESSAGES.LICENSE_PLATE_NOT_FOUND" | translate }}</p>
+            </div>
+            <sxm-ui-us-state-dropdown-form-field formControlName="state" data-test="stateDropDown" data-e2e="stateDropDown"></sxm-ui-us-state-dropdown-form-field>
+            <ng-container *ngTemplateOutlet="privacyPolicyLink"></ng-container>
+        </div>
+    </ng-container>
+
+    <button data-test="continueButton" data-e2e="continueButton" type="button" (click)="onSubmit()" sxm-proceed-button [loading]="processingSubmission$ | async">
+        {{ translateKeyPrefix + "CONTINUE_BUTTON" | translate }}
+    </button>
+</form>
+
+<sxm-ui-modal
+    #helpFindingRadioModal
+    title="{{ translateKeyPrefix + 'HELP_FINDING_RADIO_TITLE' | translate }}"
+    [titlePresent]="true"
+    [showBackButton]="true"
+    (backButton)="helpFindingRadioModal.close(); handleModalClosed()"
+    (modalClosed)="helpFindingRadioModal.close(); handleModalClosed()"
+    data-e2e="helpFindingRadioIdModal"
+>
+    <sxm-ui-help-finding-radio (deviceHelp)="helpFindingRadioModal.close(); marineAviationModal.open()"></sxm-ui-help-finding-radio>
+</sxm-ui-modal>
+<sxm-ui-modal
+    #marineAviationModal
+    [titlePresent]="true"
+    [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"
+    title="{{ translateKeyPrefix + 'RADIO_LOOKUP_MARINE_AVIATION' | translate }}"
+    [showBackButton]="true"
+    (backButton)="marineAviationModal.close(); openFindradioIdModal()"
+    (modalClosed)="openFindradioIdModal()"
+    data-e2e="helpFindingMarineAviationRadioIdModal"
+>
+    <sxm-ui-device-help [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"></sxm-ui-device-help>
+</sxm-ui-modal>
+
+<ng-template #privacyPolicyLink>
+    <p>
+        <privacy-policy></privacy-policy>
+    </p>
+</ng-template>

@@ -1,0 +1,30 @@
+.offer-card--container {
+    padding: 16px;
+}
+
+.visible-channels {
+    margin-top: 8px;
+}
+
+// the following styles are there to help set the accordion checkmark list in line with checkmark list
+// that is visible outside the accordion, so it appears to be a single list when fully opened
+:host::ng-deep {
+    sxm-ui-accordion-chevron {
+        .accordion-content-wrapper {
+            padding: 0 16px;
+        }
+        .explore--button-container {
+            margin-top: 16px;
+        }
+        .accordion-content-wrapper {
+            &[aria-expanded] {
+                // using aria-expanded attribute selector to get higher specificity so it will overwrite existing styles
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+            &.opened-full {
+                overflow: hidden;
+            }
+        }
+    }
+}

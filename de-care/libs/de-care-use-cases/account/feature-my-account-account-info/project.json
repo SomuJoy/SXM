@@ -1,0 +1,28 @@
+{
+    "name": "de-care-use-cases-account-feature-my-account-account-info",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care-use-cases/account/feature-my-account-account-info/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/de-care-use-cases/account/feature-my-account-account-info"],
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/account/feature-my-account-account-info/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/de-care-use-cases/account/feature-my-account-account-info/src/**/*.ts",
+                    "libs/de-care-use-cases/account/feature-my-account-account-info/src/**/*.html"
+                ]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:feature", "scope:de-care-use-case-sub-feature"]
+}

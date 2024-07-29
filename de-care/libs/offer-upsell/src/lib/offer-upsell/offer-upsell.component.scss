@@ -1,0 +1,67 @@
+@import "sxm.phoenix.imports";
+
+$common-spacing: 16px;
+
+%common-content-spacings {
+    margin: 0 $common-spacing;
+}
+
+#review-quote {
+    .checkbox-item {
+        display: flex;
+        margin: 0;
+    }
+
+    .text-above-upsell-options {
+        margin-bottom: 24px;
+    }
+
+    sxm-ui-content-card:not(:first-of-type) {
+        .content-card {
+            margin-top: 16px;
+            @include bp(medium) {
+                margin-top: 24px;
+            }
+        }
+    }
+
+    promo-deal {
+        margin-bottom: 8px;
+    }
+
+    plan-grid {
+        .plan-grid {
+            margin-bottom: 0;
+        }
+    }
+
+    sxm-ui-accordion-chevron {
+        margin-top: 12px;
+        .component--accordion-title {
+            @include font-size(14px);
+        }
+        .accordion-content-container {
+            padding: 0 0 16px 0;
+        }
+    }
+
+    button[type="submit"] {
+        margin-bottom: 16px;
+    }
+}
+
+.text-advantage-upsell-price-details {
+    margin-top: -4px;
+}
+
+.original-term {
+    margin-bottom: 4px;
+}
+
+hr {
+    background-color: $gray-medium;
+    border: 0;
+    height: 1px;
+    margin: 16px 0;
+    width: 100%;
+}

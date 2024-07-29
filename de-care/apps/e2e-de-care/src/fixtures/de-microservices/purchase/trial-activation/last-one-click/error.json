@@ -1,0 +1,12 @@
+{
+    "status": "FAILURE",
+    "httpStatusCode": 500,
+    "httpStatus": "INTERNAL_SERVER_ERROR",
+    "error": {
+        "errorCode": "500",
+        "errorPropKey": "error.common.unhandled.generic.error",
+        "errorType": "SYSTEM",
+        "errorStackTrace": "",
+        "logId": "141f734f-0bce-4ed4-b4a6-38a997e0493d"
+    }
+}

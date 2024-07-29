@@ -1,0 +1,16 @@
+{
+    "STEP_PAGE_TITLES": {
+        "PICK_PACKAGE": "Pick your plan",
+        "PICK_TERM": "Pick your billing plan",
+        "ENTER_PAYMENT_INFO": "Enter your payment information",
+        "REVIEW": "Review and complete your order"
+    },
+    "STEP_EDIT_LABEL": "Edit",
+    "SELECTED_TERM_ANNUAL": "Annual - {{amount}}/yr",
+    "SELECTED_TERM_MONTHLY": "{{termLength}} Months for {{amount}}/mo",
+    "SELECTED_TERM_SEMI_ANNUAL": "Semi-Annual - {{amount}}/6 mo",
+    "SELECTED_TERM_OTHER": "{{termLength}} Months for {{amount}}",
+    "SELECTED_TERM_MONTH_TO_MONTH": "Monthly - {{amount}}/mo",
+    "PAYMENT_INFO_INACTIVE": "{{cardType}} ending in {{cardNumber}}",
+    "SUBMIT_CHANGE_BUTTON": "Complete My Order"
+}

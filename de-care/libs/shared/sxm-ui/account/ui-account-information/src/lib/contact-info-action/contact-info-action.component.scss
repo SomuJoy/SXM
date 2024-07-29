@@ -1,0 +1,50 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.grid-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto;
+    column-gap: 8px;
+    row-gap: 4px;
+    align-items: center;
+    .label-column {
+        grid-column: 1 / 2;
+    }
+    .link-column {
+        grid-row: span 2;
+    }
+    .right-align {
+        justify-self: end;
+        max-width: 100%;
+    }
+    .top-align {
+        align-self: start;
+    }
+    .title {
+        font-weight: calculate-font-weight("bold");
+        margin-top: 12px;
+        @include bp(medium) {
+            @include font-size(16px);
+            line-height: 21px;
+        }
+    }
+    .text-link-secondary {
+        @include text-link-secondary;
+        border: none;
+        line-height: 20px;
+        padding: 12px 0;
+        min-width: 44px;
+        text-align: right;
+    }
+    .text-overflow-ellipsis {
+        @include text-overflow-ellipsis;
+    }
+    .single-line {
+        display: block;
+    }
+    .address {
+        white-space: pre-line;
+    }
+}

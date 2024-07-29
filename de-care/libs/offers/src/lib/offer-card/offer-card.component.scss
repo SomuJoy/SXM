@@ -1,0 +1,11 @@
+.offer-card--container {
+    padding: 16px;
+}
+
+:host::ng-deep {
+    sxm-ui-accordion-chevron {
+        div.accordion-content-wrapper {
+            padding: 0 16px 16px;
+        }
+    }
+}

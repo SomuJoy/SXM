@@ -1,0 +1,33 @@
+{
+    "DomainsSubscriptionsUiPlayerAppIntegrationModule": {
+        "StreamingPlayerLinkComponent": {
+            "LISTEN_NOW_LINK_TEXT": "ÉCOUTER MAINTENANT",
+            "LISTEN_NOW_LINK": "https://siriusxm.ca/telechargerenligne"
+        },
+        "ListenNowComponent": {
+            "HEADLINE": "Diffusez maintenant",
+            "LINK_TEXT": "Écoutez maintenant",
+            "SUB_HEADLINE": "Vous êtes prêt à écouter sur téléphone, ordi, télé intelligente, haut-parleurs et autres avec l’Appli SXM."
+        },
+        "ListenNowWithIconComponent": {
+            "HEADLINE": "Diffusez maintenant",
+            "LINK_TEXT": "Écoutez maintenant",
+            "SUB_HEADLINE": "Vous êtes prêt à écouter sur téléphone, ordi, télé intelligente, haut-parleurs et autres avec l’Appli SXM."
+        },
+        "CredentialRecoveryHandshakeComponent": {
+            "BACK_TO": {
+                "ALEXA": "https://alexa-fed.siriusxm.com/as/authorization.oauth2?pfidpadapterid=ad..amzusaepa&client_id=Amazon&response_type=code",
+                "GOOGLE": "https://ghome-login.siriusxm.com/authorization.oauth2?response_type=code&client_id=Google",
+                "STITCHER": "https://token.prod.idm.siriusxm.com/auth/realms/SXM-Prod/protocol/openid-connect/auth?client_id=Stitcher&response_type=code&scope=openid&response_type=code",
+                "NUGS": "https://token.prod.idm.siriusxm.com/auth/realms/SXM-PROD/protocol/openid-connect/auth?client_id=Nugs&response_type=code",
+                "EVERESTPLAYER": "https://siriusxm.ca/allerecouter",
+                "PLAYER": "https://siriusxm.ca/allerecouter",
+                "STREAMING": "https://siriusxm.ca/allerecouter",
+                "ORGANIC": "https://siriusxm.ca/allerecouter",
+                "OAC": "https://care.siriusxm.ca/login_view.action?langpref=fr",
+                "SCLOGIN": "https://care.siriusxm.ca/transfer/radio/login?originUrl=COM&langpref=fr&intcmp=LogIntoYourAccount_NA_CAtransferyourservice_MKTG_na",
+                "PROFILEPORTAL": "https://portal.siriusxm.ca/?langPref=fr"
+            }
+        }
+    }
+}

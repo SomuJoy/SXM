@@ -1,0 +1,59 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "identificationState": "IDENTIFIED",
+        "customerSegment": "SELFPAY_PLATINUM",
+        "actions": [
+            {
+                "type": "SC_AC",
+                "subscriptionId": "10000202719",
+                "last4DigitsOfRadioId": null,
+                "noOfDaysLeftInTrial": null,
+                "endDate": null,
+                "favoriteChannel": null,
+                "hasActiveAudioSelfPayOrPromo": null,
+                "hasActiveAudioTrialPlan": null,
+                "subHasStreamingCredentials": null,
+                "accountRegistered": null
+            },
+            {
+                "type": "CREDENTIALS",
+                "subscriptionId": "10000202719",
+                "last4DigitsOfRadioId": null,
+                "noOfDaysLeftInTrial": null,
+                "endDate": null,
+                "favoriteChannel": null,
+                "hasActiveAudioSelfPayOrPromo": true,
+                "hasActiveAudioTrialPlan": false,
+                "subHasStreamingCredentials": null,
+                "accountRegistered": false
+            },
+            {
+                "type": "CONTENT",
+                "subscriptionId": "10000202719",
+                "last4DigitsOfRadioId": null,
+                "noOfDaysLeftInTrial": null,
+                "endDate": null,
+                "favoriteChannel": null,
+                "hasActiveAudioSelfPayOrPromo": null,
+                "hasActiveAudioTrialPlan": null,
+                "subHasStreamingCredentials": null,
+                "accountRegistered": null
+            },
+            {
+                "type": "DEVICES",
+                "subscriptionId": null,
+                "last4DigitsOfRadioId": null,
+                "noOfDaysLeftInTrial": null,
+                "endDate": null,
+                "favoriteChannel": null,
+                "hasActiveAudioSelfPayOrPromo": null,
+                "hasActiveAudioTrialPlan": null,
+                "subHasStreamingCredentials": null,
+                "accountRegistered": null
+            }
+        ]
+    }
+}

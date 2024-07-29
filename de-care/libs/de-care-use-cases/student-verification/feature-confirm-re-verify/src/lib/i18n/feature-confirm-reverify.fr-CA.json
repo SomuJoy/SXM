@@ -1,0 +1,29 @@
+{
+    "deCareUseCasesStudentVerificationFeatureConfirmReVerifyModule": {
+        "errorPageComponent": {
+            "HERO_COPY": "Nous n'arrivons à terminer ceci en ligne.",
+            "SUB_HEADER_TOP": "Veuillez appeler au 1-888-539-7474 pour obtenir de l'aide afin de terminer votre nouvelle vérification.",
+            "SUB_HEADER_BOTTOM": "Si votre statut d'étudiant ne peut être vérifié, le service sera automatiquement renouvelé ensuite tous les mois au tarif courant du forfait En continu {{offerName}} (actuellement {{retailPrice}} $/mois, frais et taxes en sus)."
+        },
+        "activeSubscriptionPageComponent": {
+            "HEADER": "Apparemment, vous avez déjà revérifié votre abonnement.",
+            "SUB_HEADER": "Connectez-vous pour modifier votre abonnement.",
+            "BUTTON": "SE CONNECTER AU COMPTE",
+            "BUTTON_LINK": "https://care.siriusxm.ca/login_view.action?langpref=fr"
+        },
+        "offerToOfferConfirmationPageComponent": {
+            "HERO_COPY": "Vous êtes fin prêt pour {{termLength}} mois",
+            "STREAMING_PLAYER_LINK": ""
+        },
+        "rollOverCompleteComponent": {
+            "PRINT_ORDER_SUMMARY_LINK_TEXT": "Imprimez le sommaire de votre commande",
+            "HERO_TEXT": "Merci de vous être abonné.",
+            "SUBSCRIPTION_IMPORTANT_INFO": {
+                "TITLE": "Renseignements importants au sujet de votre abonnement:",
+                "BODY": "Votre abonnement commence immédiatement à moins d'indications contraires. Si votre radio ne reçoit pas la programmation à laquelle vous avez droit, veuillez suivre les instructions d'activation ci-dessus. Pour votre commodité, tous les abonnements sont renouvelés automatiquement jusqu'à ce que vous les annuliez. Votre renouvellement sera facturé au tarif en vigueur à ce moment-là en utilisant le mode de paiement inscrit en dossier. Vous pouvez annuler votre abonnement en tout temps en appelant le Service à la clientèle au <a href=\"tel:+1-833-838-7846\">1 833 838-7846</a>. Votre abonnement est régi par l'Entente du client de SiriusXM, que vous pouvez <a href=\"http://www.siriusxm.ca/conditions\" target=\"_blank\" title=\" à siriusxm.ca/conditions\">consulter en ligne</a>. Si vous souhaitez recevoir un exemplaire de l'Entente du client par la poste, vous pouvez appeler au <a href=\"tel:+1-866-635-2349\">1 866 635-2349</a>."
+            },
+            "HEADER_STATE": "Merci de vous être abonné. Maintenant, en route!",
+            "STREAMING_PLAYER_LINK": ""
+        }
+    }
+}

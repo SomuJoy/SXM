@@ -1,0 +1,20 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "../page.scss";
+
+:host {
+    @include page-host(1fr auto);
+    [svgIcon="checkmark"] {
+        color: $gray-dark;
+        @include icon-coin(48px, $gray-dark);
+        padding: 8px;
+    }
+    #mainContent {
+        svg {
+            margin-bottom: 20px;
+        }
+        sxm-ui-button-cta-skeleton-loader {
+            margin-top: 32px;
+        }
+    }
+}

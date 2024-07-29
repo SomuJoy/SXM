@@ -1,0 +1,19 @@
+@import "sxm.phoenix.imports";
+:host {
+    text-align: center;
+    background-color: $blue-ultra-light;
+    padding: 64px 0 39px;
+    display: grid;
+    grid-auto-columns: minmax(auto, 807px);
+    justify-content: center;
+    .sorry {
+        color: $gray-dark;
+        text-transform: uppercase;
+    }
+    .try-again {
+        color: $gray-dark;
+    }
+    h2 {
+        margin-bottom: 24px;
+    }
+}

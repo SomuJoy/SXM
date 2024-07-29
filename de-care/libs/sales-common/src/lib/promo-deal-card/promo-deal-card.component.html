@@ -1,0 +1,63 @@
+<div class="background-offwhite">
+    <div class="content-container">
+        <div class="row align-center no-padding-small">
+            <div class="column small-12 medium-2 no-padding background-white"></div>
+            <div class="column small-12 medium-6 no-padding-medium background-white">
+                <div class="promo-deal-card-container">
+                    <sxm-ui-content-card class="deal-content-card mt-32" [flagPresent]="true">
+                        <div htmlContentForFlag>
+                            <p
+                                class="small-copy text-uppercase"
+                                [innerHTML]="
+                                    titleDealKey + '.header'
+                                        | translate
+                                            : {
+                                                  termLength: titleDealParams?.termLength,
+                                                  packageName:
+                                                      'app.packageDescriptions.' + titleDealParams?.packageUpgrade + '.name'
+                                                      | translate
+                                                      | withoutPlatformName: titleDealParams?.packageUpgrade
+                                              }
+                                "
+                                qatag="OurBestPackage"
+                                data-e2e="ourBestPackage"
+                            ></p>
+                        </div>
+                        <div htmlContentForBody>
+                            <promo-deal
+                                [deal]="!titleUpgradeDealKey ? deal : ''"
+                                [packageUpgradeInfo]="packageUpgradeInfo"
+                                [showDetails]="true"
+                                [dealOfferData]="dealOfferData"
+                            ></promo-deal>
+                        </div>
+                    </sxm-ui-content-card>
+                    <sxm-ui-content-card *ngIf="titleUpgradeDealKey" class="deal-content-card mt-32" [flagPresent]="true">
+                        <div htmlContentForFlag>
+                            <p
+                                class="small-copy text-uppercase"
+                                [innerHTML]="
+                                    titleUpgradeDealKey + '.header'
+                                        | translate
+                                            : {
+                                                  termLength: titleDealParams?.termLength,
+                                                  packageName:
+                                                      'app.packageDescriptions.' + titleDealParams?.packageUpgrade + '.name'
+                                                      | translate
+                                                      | withoutPlatformName: titleDealParams?.packageUpgrade
+                                              }
+                                "
+                                qatag="OurBestPackage"
+                                data-e2e="ourBestPackage"
+                            ></p>
+                        </div>
+                        <div htmlContentForBody>
+                            <promo-deal [deal]="deal" [showDetails]="true" [dealOfferData]="dealOfferData"></promo-deal>
+                        </div>
+                    </sxm-ui-content-card>
+                </div>
+            </div>
+            <div class="column small-12 medium-2 no-padding background-white"></div>
+        </div>
+    </div>
+</div>

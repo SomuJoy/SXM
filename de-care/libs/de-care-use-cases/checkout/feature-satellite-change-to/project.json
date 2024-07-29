@@ -1,0 +1,27 @@
+{
+    "name": "de-care-use-cases-checkout-feature-satellite-change-to",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care-use-cases/checkout/feature-satellite-change-to/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/de-care-use-cases/checkout/feature-satellite-change-to"],
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/checkout/feature-satellite-change-to/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/de-care-use-cases/checkout/feature-satellite-change-to/src/**/*.ts",
+                    "libs/de-care-use-cases/checkout/feature-satellite-change-to/src/**/*.html"
+                ]
+            }
+        }
+    },
+    "tags": ["type:feature", "scope:de-care-use-case-sub-feature"]
+}

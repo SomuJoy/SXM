@@ -1,0 +1,25 @@
+{
+    "name": "de-care-use-cases-account-ui-my-account",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care-use-cases/account/ui-my-account/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/de-care-use-cases/account/ui-my-account"],
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/account/ui-my-account/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/de-care-use-cases/account/ui-my-account/src/**/*.ts", "libs/de-care-use-cases/account/ui-my-account/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:ui", "scope:de-care-use-case-feature-ui"]
+}

@@ -1,0 +1,52 @@
+<p>
+    <ng-container *ngIf="viewModel?.firstDevice">
+        <span>
+            {{
+                viewModel.firstDevice?.vehicle
+                    | vehicleInfoTranslate
+                        : {
+                              defaultText: translateKeyPrefix + ".RADIO" | translate: { radioId: viewModel.firstDevice.radioId },
+                              isFrench: isFrench
+                          }
+            }}
+        </span>
+        <br />
+
+        <ng-container *ngIf="!viewModel.bothRadiosHaveSameStatus">
+            <span class="small-copy text-color-gray-dark description">
+                <ng-container *ngIf="viewModel.firstRadioIsTrial; else closedLine">{{ translateKeyPrefix + ".RADIO_STATUS_LINE.ACTIVE_TRIAL" | translate }}</ng-container>
+                <ng-template #closedLine>
+                    <ng-container *ngIf="viewModel.firstRadioIsClosed; else selfPaidLine">{{ translateKeyPrefix + ".RADIO_STATUS_LINE.CLOSED" | translate }}</ng-container>
+                </ng-template>
+                <ng-template #selfPaidLine>
+                    {{ translateKeyPrefix + ".RADIO_STATUS_LINE.SELF_PAY" | translate }}
+                </ng-template>
+            </span>
+            <ng-container *ngIf="viewModel?.secondDevice">
+                <br />
+                <br />
+            </ng-container>
+        </ng-container>
+    </ng-container>
+    <ng-container *ngIf="viewModel?.secondDevice">
+        <span>
+            {{
+                viewModel.secondDevice?.vehicle
+                    | vehicleInfoTranslate
+                        : {
+                              defaultText: translateKeyPrefix + ".RADIO" | translate: { radioId: viewModel.secondDevice.radioId },
+                              isFrench: isFrench
+                          }
+            }}
+        </span>
+        <br />
+        <span class="small-copy text-color-gray-dark description">
+            <ng-container *ngIf="viewModel.bothRadiosHaveSameStatus; else closedLine">
+                {{ translateKeyPrefix + ".RADIO_STATUS_LINE.SAME_STATUS" | translate }}
+            </ng-container>
+            <ng-template #closedLine>
+                {{ translateKeyPrefix + ".RADIO_STATUS_LINE.CLOSED" | translate }}
+            </ng-template>
+        </span>
+    </ng-container>
+</p>

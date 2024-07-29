@@ -1,0 +1,12 @@
+{
+    "TITLE": "Set up your payment",
+    "BODY": {
+        "CANCEL_ANYTIME": "You'll get to review your order before subscribing. Remember, you can change or cancel anytime.",
+        "CONTINUE_BUTTON_TEXT": "Continue"
+    },
+    "EMAIL/USERNAME": "Email/Username:",
+    "OFFER_FOR_NEW_SUBSCRIBERS": "That offer is for new subscribers, but here’s another option for you.",
+    "FEES_AND_TAXES_APPLY": "",
+    "CARD_TYPE_ICONS": ["visa", "mc", "amex"],
+    "PAYMENT_DETAILS_TITLE": "Payment Info"
+}

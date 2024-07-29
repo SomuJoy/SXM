@@ -1,0 +1,305 @@
+<div class="order-summary-container" *ngIf="item" [attr.data-e2e]="item.quoteType">
+    <p
+        class="non-student-recurring-charge"
+        data-e2e="summaryCard.nonStudentRecurringCharge"
+        [ngClass]="item.quote.displayProperties.headerClass"
+        *ngIf="(!vm.quoteVM.isStudentQuote && item.quote.displayProperties.quoteHeading) || item.quote.isProrated"
+    >
+        <ng-container *ngIf="item.quote.displayProperties.quoteHeading">
+            <span [innerHTML]="item.quote.displayProperties.quoteHeading | translate: item.QuoteTp"></span>
+        </ng-container>
+        <ng-container *ngIf="item.quote.isProrated">
+            {{ translateKeyPrefix + ".CURRENT_QUOTE.HEADER.PRORATED" | translate: item.QuoteTp }}
+        </ng-container>
+    </p>
+
+    <sxm-ui-accordion-chevron
+        *ngIf="item.quote.displayProperties.shouldShowMainAccordion; else elseTpl"
+        [collapsedText]="translateKeyPrefix + '.ORDER_DETAILS.ACCORDION_CHEVRON.COLLAPSED_TEXT' | translate"
+        [expandedText]="translateKeyPrefix + '.ORDER_DETAILS.ACCORDION_CHEVRON.EXPANDED_TEXT' | translate"
+        [expandOnPrint]="true"
+        [opened]="item.quote.displayProperties.isOpened"
+        (chevronClick)="viewDetails($event, item.quoteType, false, item.quote.isProrated)"
+        data-e2e="orderSummary.accordion"
+    >
+        <ng-container [ngTemplateOutlet]="elseTpl" [ngTemplateOutletContext]="{ hideQstgst: true }"></ng-container>
+    </sxm-ui-accordion-chevron>
+
+    <ng-template #elseTpl let-hideQstgst="hideQstgst">
+        <sxm-ui-content-card
+            data-e2e="orderSummary.accordion.contentCard"
+            [headlinePresent]="item.headlinePresent"
+            [footerPresent]="item.quote.displayProperties.isFooterPresent"
+        >
+            <div htmlContentForHead>
+                <p class="text-color-white large-copy">
+                    <strong>{{ translateKeyPrefix + ".ORDER_DETAILS.HEAD_LINE" | translate }}</strong>
+                </p>
+            </div>
+            <div htmlContentForBody>
+                <div class="order-summary-body">
+                    <!-- Package Description header with term and price -->
+                    <ng-container *ngFor="let detail of item.quote.details">
+                        <div class="content-container" *ngIf="detail.displayProperties.showPackageDescription">
+                            <div class="row no-padding">
+                                <order-summary-package-description-line-item
+                                    [vm]="{
+                                        titleE2e: 'contentCard.orderDetails.packageDetails',
+                                        amountE2e: 'contentCard.orderDetails.amount',
+                                        amount: detail.priceAmount | currency: 'USD':'symbol-narrow':undefined:vm.currentLang,
+                                        shouldShowDetailPackageName: detail.displayProperties.shouldShowDetailPackageName,
+                                        detailPackageName: detail | translateOfferName,
+                                        shouldShowDetailDealType: detail.displayProperties.shouldShowDetailDealType,
+                                        dealType: 'app.packageDescriptions.' + detail.dealType + '.name' | translate,
+                                        termAndPrice: detail.displayProperties.termAndPriceText,
+                                        termAndPriceSubText: detail.displayProperties.termAndPriceSubText,
+                                        shouldShowDetailDealTypeDetails: detail.displayProperties.shouldShowDetailDealTypeDetails,
+                                        shouldNotBoldPackageName: detail.displayProperties.shouldNotBoldPackageName,
+                                        dealTypeDetails: translateKeyPrefix + '.DEAL_TYPE_DETAILS.' + detail.dealType | translate,
+                                        shouldShowDetailTermAndPrice: detail.displayProperties.shouldShowDetailTermAndPrice
+                                    }"
+                                ></order-summary-package-description-line-item>
+                            </div>
+                        </div>
+                    </ng-container>
+
+                    <!-- ToDo: Refactoring is required for following UpgradeFees section. It has dependency on MS refactoring as well.
+                                           Quote details section should include the packageUpgradeFees.
+                                -->
+                    <ng-container *ngIf="item.quote.displayProperties.shouldShowUpgradeFees">
+                        <ng-container *ngFor="let upgradeFee of item.quote.upgradeFees">
+                            <div class="row align no-padding upgradeFees" *ngIf="upgradeFee.displayProperties.isFreeUpgrade">
+                                <order-summary-quote-line-item
+                                    class="large-copy"
+                                    [lineItemData]="{
+                                        title:
+                                            translateKeyPrefix + '.UPGRADE_DESCRIPTIONS.PACKAGE_UPGRADE_FEE'
+                                            | translate
+                                                : {
+                                                      termLength: upgradeFee.termLength,
+                                                      packageName:
+                                                          'app.packageDescriptions.' + upgradeFee.packageName + '.name'
+                                                          | translate
+                                                          | withoutPlatformName: upgradeFee.packageName
+                                                  },
+                                        amount: upgradeFee.amount | currency: 'USD':'symbol-narrow':undefined:vm.currentLang
+                                    }"
+                                ></order-summary-quote-line-item>
+                            </div>
+                        </ng-container>
+                    </ng-container>
+
+                    <ng-container *ngIf="item.quote.details[0]?.displayProperties.shouldShowAppleMusicFree">
+                        <div class="row align no-padding upgradeFees">
+                            <order-summary-quote-line-item
+                                class="large-copy"
+                                [lineItemData]="{
+                                    title: translateKeyPrefix + '.UPGRADE_DESCRIPTIONS.APPLE_MUSIC_6_MONTHS' | translate,
+                                    amount: 0 | currency: 'USD':'symbol-narrow':undefined:vm.currentLang
+                                }"
+                            ></order-summary-quote-line-item>
+                        </div>
+                    </ng-container>
+
+                    <!-- Fees and Taxes : no details, no loop-->
+                    <div class="row align no-padding feesAndTaxes" *ngIf="item.quote.displayProperties.showFeesAndTaxes">
+                        <order-summary-quote-line-item
+                            class="non-bold"
+                            [lineItemData]="{
+                                title:
+                                    translateKeyPrefix + '.ORDER_DETAILS.' + (!item.quote.fees || item.quote.fees?.length === 0 ? 'TAXES_ONLY' : 'FEES_AND_TAXES') | translate,
+                                amount: item.quote.totalTaxesAndFeesAmount | currency: 'USD':'symbol-narrow':undefined:vm.currentLang,
+                                titleE2e: '',
+                                amountE2e: 'contentCard.orderDetails.feesAndTaxesAmount'
+                            }"
+                        ></order-summary-quote-line-item>
+                    </div>
+
+                    <!-- Details Dropdown : Fees, UpgradeFees and Taxes -->
+                    <div class="row align no-padding details" *ngIf="item.quote.displayProperties.shouldShowDetailsDropDown">
+                        <div class="column small-12 align-left align-top no-padding">
+                            <sxm-ui-accordion-chevron
+                                [collapsedText]="translateKeyPrefix + '.ORDER_DETAILS.ACCORDION_CHEVRON.COLLAPSED_TEXT' | translate"
+                                [expandedText]="translateKeyPrefix + '.ORDER_DETAILS.ACCORDION_CHEVRON.EXPANDED_TEXT' | translate"
+                                [aria]="{
+                                    collapsedText:
+                                        translateKeyPrefix +
+                                            '.ORDER_DETAILS.ACCORDION_CHEVRON.' +
+                                            (!item.quote.fees || item.quote.fees?.length === 0 ? 'ARIA_COLLAPSED_TEXT_TAXES_ONLY' : 'ARIA_COLLAPSED_TEXT')
+                                        | translate: { packageName: item?.quote?.details[0] | translateOfferName },
+                                    expandedText:
+                                        translateKeyPrefix +
+                                            '.ORDER_DETAILS.ACCORDION_CHEVRON.' +
+                                            (!item.quote.fees || item.quote.fees?.length === 0 ? 'ARIA_EXPANDED_TEXT_TAXES_ONLY' : 'ARIA_EXPANDED_TEXT')
+                                        | translate: { packageName: item?.quote?.details[0] | translateOfferName }
+                                }"
+                                [expandOnPrint]="true"
+                                (chevronClick)="viewDetails($event, item.quoteType, true, item.quote.isProrated)"
+                                data-e2e="contentCard.orderDetails.detailsLink"
+                                qatag="OrderSummaryDetailsLink"
+                                [opened]="item.quote.displayProperties.isDetailDropDownOpened"
+                            >
+                                <ng-container *ngTemplateOutlet="taxesAndFeesDetails"></ng-container>
+                            </sxm-ui-accordion-chevron>
+                            <ng-template #taxesAndFeesDetails>
+                                <div class="row align no-padding" *ngFor="let fee of item.quote.fees">
+                                    <order-summary-quote-line-item
+                                        class="de-emphasized"
+                                        [lineItemData]="{
+                                            title: vm.tranlateFeesAndTaxes
+                                                ? (translateKeyPrefix + '.FEES_AND_TAXES_DESCRIPTIONS.' + (fee.description | uppercase) | translate)
+                                                : fee.description,
+                                            amount: fee.amount | currency: 'USD':'symbol-narrow':undefined:vm.currentLang,
+                                            titleE2e: 'quoteFeeAmountText',
+                                            amountE2e: 'contentCard.orderDetails.detailsLink.feeAmount'
+                                        }"
+                                    >
+                                        <sxm-ui-tooltip *ngIf="fee.displayProperties.isRoyaltyFee" (click)="viewToolTip(fee.description)">
+                                            <div
+                                                [innerHTML]="
+                                                    translateKeyPrefix +
+                                                        '.ORDER_DETAILS.TOOLTIP.' +
+                                                        (vm?.extraData?.isUpgradePkg ? 'MUSIC_ROYALTY_FEE_ONE' : 'MUSIC_ROYALTY_FEE') | translate
+                                                "
+                                            ></div>
+                                        </sxm-ui-tooltip>
+                                    </order-summary-quote-line-item>
+                                </div>
+
+                                <div class="row align no-padding" *ngFor="let tax of item.quote.taxes">
+                                    <order-summary-quote-line-item
+                                        class="de-emphasized"
+                                        [lineItemData]="{
+                                            title: vm.tranlateFeesAndTaxes
+                                                ? (translateKeyPrefix + '.FEES_AND_TAXES_DESCRIPTIONS.' + (tax.description | uppercase) | translate)
+                                                : tax.description,
+                                            amount: tax.amount | currency: 'USD':'symbol-narrow':undefined:vm.currentLang,
+                                            titleE2e: 'quoteTaxAmountText',
+                                            amountE2e: 'contentCard.orderDetails.detailsLink.taxAmount'
+                                        }"
+                                    ></order-summary-quote-line-item>
+                                </div>
+                            </ng-template>
+                        </div>
+                    </div>
+
+                    <!-- Previous Balance -->
+                    <ng-container *ngFor="let detail of item.quote.details">
+                        <div class="row no-padding credit-quote-margin" *ngIf="detail.displayProperties.showPreviousBalance">
+                            <order-summary-quote-line-item
+                                class="non-bold large-copy"
+                                [lineItemData]="{
+                                    title: translateKeyPrefix + '.PACKAGES.PREVIOUS_BALANCE.NAME' | translate,
+                                    amount: item.quote.previousBalance | currency: 'USD':'symbol-narrow':undefined:vm.currentLang,
+                                    titleE2e: 'quotePreviousBalance',
+                                    amountE2e: 'contentCard.orderDetails.amount'
+                                }"
+                            >
+                                <sxm-ui-tooltip (click)="viewToolTip('Previous Balance')">
+                                    <p>
+                                        {{ translateKeyPrefix + ".PACKAGES.PREVIOUS_BALANCE.TOOLTIP" | translate }}
+                                    </p>
+                                </sxm-ui-tooltip>
+                            </order-summary-quote-line-item>
+                        </div>
+                    </ng-container>
+
+                    <!-- Unused Credit -->
+                    <div *ngIf="item.quote.displayProperties.showUnusedCredit as creditAmount" class="row no-padding credit-quote-margin">
+                        <order-summary-quote-line-item
+                            class="non-bold"
+                            [lineItemData]="{
+                                title: translateKeyPrefix + '.PACKAGES.CREDIT.NAME' | translate,
+                                amount: creditAmount | currency: 'USD':'symbol-narrow':undefined:vm.currentLang
+                            }"
+                            ><sxm-ui-tooltip (click)="viewToolTip('Credit Balance')">
+                                {{ translateKeyPrefix + ".PACKAGES.CREDIT.TOOLTIP" | translate }}
+                            </sxm-ui-tooltip></order-summary-quote-line-item
+                        >
+                        <p class="small-copy text-color-grey-dark">
+                            {{ translateKeyPrefix + ".PACKAGES.CREDIT.SUB_NAME" | translate }}
+                        </p>
+                    </div>
+
+                    <!-- Remaining Credit -->
+                    <ng-container *ngFor="let detail of item.quote.details">
+                        <ng-container *ngIf="detail.displayProperties.showCredit">
+                            <order-summary-quote-line-item
+                                class="non-bold"
+                                [lineItemData]="{
+                                    title: translateKeyPrefix + '.ORDER_DETAILS.HAS_CREDIT' | translate,
+                                    amount: detail.priceAmount | currency: 'USD':'symbol-narrow':undefined:vm.currentLang
+                                }"
+                            >
+                            </order-summary-quote-line-item>
+                        </ng-container>
+                    </ng-container>
+
+                    <!-- Gift Card -->
+                    <ng-container *ngFor="let detail of item.quote.details">
+                        <ng-container *ngIf="detail.displayProperties.shouldShowGiftCardQuote">
+                            <order-summary-quote-line-item
+                                class="non-bold"
+                                [lineItemData]="{
+                                    title: translateKeyPrefix + '.PACKAGES.PREPAID.NAME' | translate,
+                                    amount: detail.priceAmount | currency: 'USD':'symbol-narrow':undefined:vm.currentLang,
+                                    titleE2e: 'quoteGiftCardText',
+                                    amountE2e: 'contentCard.orderDetails.amount'
+                                }"
+                            >
+                            </order-summary-quote-line-item>
+                        </ng-container>
+                    </ng-container>
+
+                    <!-- Total Due -->
+                    <div class="row no-padding">
+                        <div class="column small-12 no-padding">
+                            <hr class="full-width" />
+                        </div>
+                    </div>
+                    <div class="row no-padding total">
+                        <order-summary-quote-line-item
+                            class="large-copy"
+                            [lineItemData]="{
+                                title: translateKeyPrefix + '.CURRENT_QUOTE.DUE.' + (item.quote.displayProperties.showTotalAsPaid ? 'PAID' : 'NO_UPGRADE') | translate,
+                                amount: item.quote.displayProperties.balance | currency: 'USD':'symbol-narrow':item.quote.displayProperties.balanceFormat:vm.currentLang,
+                                titleE2e: 'contentCard.orderDetails.totalDueText',
+                                amountE2e: 'contentCard.orderDetails.totalDue'
+                            }"
+                        ></order-summary-quote-line-item>
+                    </div>
+                </div>
+            </div>
+            <!-- Quote Credit -->
+            <ng-container *ngIf="item.quote.displayProperties.showQuoteCredit" htmlContentForFooter>
+                <order-summary-quote-line-item
+                    [lineItemData]="{
+                        title: translateKeyPrefix + '.ORDER_DETAILS.CREDIT_ON_ACCOUNT' | translate,
+                        amount: item.quote.displayProperties.absCurrentBalance | currency: 'USD':'symbol-narrow':undefined:vm.currentLang,
+                        parentDataAttribute: 'quoteCreditOnAccount'
+                    }"
+                    class="large-copy"
+                >
+                </order-summary-quote-line-item>
+            </ng-container>
+        </sxm-ui-content-card>
+        <div *ngIf="!hideQstgst && item.quote.displayProperties.showGSTAndQST">
+            <br />
+            <span data-e2e="quoteGST">{{ translateKeyPrefix + ".GST" | translate }}</span> <br />
+            <span data-e2e="quoteQST" *ngIf="vm.isQuebec">{{ translateKeyPrefix + ".QST" | translate }}</span>
+        </div>
+        <ng-container *ngIf="item.quote.displayProperties.showStudentContainer">
+            <p data-e2e="contentCard.studentCurrentQuoteRecurringCharge" class="recurring-charge-copy">
+                {{
+                    (item.quote.displayProperties.isStudentRTPOffer
+                        ? translateKeyPrefix + ".STUDENTS_QUOTE.FOOTER.STUDENTS_RTP_PLAN"
+                        : translateKeyPrefix + ".STUDENTS_QUOTE.FOOTER.STUDENTS_MCP_PLAN"
+                    ) | translate: { amount: vm.promoPrice | currency: "USD":"symbol-narrow":undefined:vm.currentLang, startDate: item.quote.displayProperties.endDateForNote }
+                }}
+            </p>
+            <p *ngIf="item.quote.displayProperties.showHeadlineSeeOfferDetails" class="see-offer-copy legal-copy text-color-gray-dark no-padding">
+                {{ translateKeyPrefix + ".ORDER_DETAILS.DESCRIPTION" | translate }}
+            </p>
+        </ng-container>
+    </ng-template>
+</div>

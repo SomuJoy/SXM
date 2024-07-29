@@ -1,0 +1,13 @@
+{
+    "domainsAccountUiSecurityQuestionsFormFieldsModule": {
+        "securityQuestionsFormFieldsComponent": {
+            "QUESTION_PLACEHOLDER_TEXT": "Choisissez une question",
+            "ANSWER_PLACEHOLDER_TEXT": "Réponse",
+            "ERRORS": {
+                "QUESTION_REQUIRED": "Choisissez une question de sécurité.",
+                "ANSWER_REQUIRED": "Entrez la réponse.",
+                "ANSWER_MIN_LENGTH": "Entrez un numéro de téléphone valide."
+            }
+        }
+    }
+}

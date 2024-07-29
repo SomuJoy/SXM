@@ -1,0 +1,27 @@
+{
+    "name": "offer-upsell",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/offer-upsell/src",
+    "projectType": "library",
+    "generators": {},
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/offer-upsell/src/**/*.ts", "libs/offer-upsell/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/offer-upsell/jest.config.js",
+                "tsConfig": "libs/offer-upsell/tsconfig.spec.json",
+                "setupFile": "libs/offer-upsell/src/test-setup.ts",
+                "configPath": "./jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": ["scope:legacy"]
+}

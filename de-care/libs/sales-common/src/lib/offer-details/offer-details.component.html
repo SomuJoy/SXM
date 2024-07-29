@@ -1,0 +1,45 @@
+<main class="background-offwhite" data-e2e="offerDetails" qatag="OfferDetailsText">
+    <div class="row legal-container align-center">
+        <div class="column small-12 medium-10 no-padding-medium align-left" [ngSwitch]="offerDetailsType$ | async">
+            <ng-container *ngSwitchCase="'RTC'">
+                <p class="legal-copy">
+                    <span [innerHTML]="rtcFirstPartCopy$ | async"></span>
+                    <span *ngFor="let copy of rtcRenewalPackagesCopy$ | async" [innerHTML]="copy"></span>
+                    <span [innerHTML]="rtcLastPartCopy$ | async"></span>
+                </p>
+            </ng-container>
+            <ng-container *ngSwitchCase="'PICKAPLAN'">
+                <div *ngIf="hasSelectedOffer; else defaultOfferDetails">
+                    <p class="legal-copy">
+                        <span [innerHTML]="pickSelectedPlanOfferHTML$ | async"></span>
+                    </p>
+                </div>
+                <ng-template #defaultOfferDetails>
+                    <p class="legal-copy">
+                        <span [innerHTML]="pickAPlanFirstPartCopy$ | async"></span>
+                        <span *ngFor="let copy of pickAPlanPackagesCopy$ | async" [innerHTML]="copy"></span>
+                        <span [innerHTML]="pickAPlanMiddlePartCopy$ | async"></span>
+                        <span *ngFor="let copy of pickAPlanRenewalPackagesCopy$ | async" [innerHTML]="copy"></span>
+                        <span [innerHTML]="pickAPlanLastPartCopy$ | async"></span>
+                    </p>
+                </ng-template>
+            </ng-container>
+            <ng-container *ngSwitchCase="'PICKAPLAN3FOR1PYP'">
+                <p class="legal-copy">
+                    <span [innerHTML]="pickAPlan3FOR1PYPFirstPartCopy$ | async"></span>
+                    <span *ngFor="let copy of pickAPlan3FOR1PYPPackagesCopy$ | async" [innerHTML]="copy"></span>
+                    <span [innerHTML]="pickAPlan3FOR1PYPMiddlePartCopy$ | async"></span>
+                    <span *ngFor="let copy of pickAPlan3FOR1PYPRenewalPackagesCopy$ | async" [innerHTML]="copy"></span>
+                    <span [innerHTML]="pickAPlan3FOR1PYPLastPartCopy$ | async"></span>
+                </p>
+            </ng-container>
+            <ng-container *ngSwitchCase="'FULLPRICE'">
+                <p class="legal-copy" [innerHTML]="fullPriceCopy$ | async"></p>
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+                <p *ngFor="let copy of offerDetailsCopy$ | async" [innerHTML]="copy" class="legal-copy"></p>
+                <p *ngIf="copyOptions?.showLegalCopy" [innerHTML]="legalCopy$ | async" class="legal-copy"></p>
+            </ng-container>
+        </div>
+    </div>
+</main>

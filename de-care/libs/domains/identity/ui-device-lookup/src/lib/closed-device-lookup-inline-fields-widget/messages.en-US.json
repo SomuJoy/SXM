@@ -1,0 +1,11 @@
+{
+    "RADIO_LOOKUP": "Radio Lookup",
+    "CONFIRM_VIN_TITLE": "Confirm your VIN.",
+    "VIN_NUMBER": "The last 4 digits of your VIN are: <strong>{{vinNumber}}</strong>",
+    "VIN_LICENSE_MATCH": "We're confident this VIN matches the car's registered license plate, but before you click \"Yes\" look over the license plate you entered one more time.",
+    "LICENSE_PLATE": "{{state}} license plate: <strong>{{licensePlate}}</strong><br>",
+    "RADIO_ID": "Radio ID: <strong>{{last4DigitsOfRadioId}}</strong>",
+    "VEHICLE": "<strong>{{year}} {{make}} {{model}}</strong>",
+    "CONTINUE": "Use this Vin",
+    "TRY_AGAIN": "Try Again"
+}

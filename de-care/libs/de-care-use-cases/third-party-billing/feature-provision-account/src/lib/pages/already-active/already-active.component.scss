@@ -1,0 +1,26 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+:host {
+    @include page-content-legacy-markup(1fr);
+    height: 100%;
+}
+
+.container {
+    align-items: flex-start;
+}
+
+.title {
+    padding-top: 24px;
+}
+
+.body {
+    padding-top: 16px;
+}
+
+listen-button {
+    margin-bottom: 32px;
+}
+
+form {
+    width: 100%;
+}

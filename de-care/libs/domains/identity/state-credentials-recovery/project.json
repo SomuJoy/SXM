@@ -1,0 +1,25 @@
+{
+    "name": "domains-identity-state-credentials-recovery",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/identity/state-credentials-recovery/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/domains/identity/state-credentials-recovery"],
+            "options": {
+                "jestConfig": "libs/domains/identity/state-credentials-recovery/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/identity/state-credentials-recovery/src/**/*.ts", "libs/domains/identity/state-credentials-recovery/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

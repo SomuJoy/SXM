@@ -1,0 +1,302 @@
+<h4>{{ translateKeyPrefix + ".TITLE" | translate }}</h4>
+<br />
+<p class="text-color-gray-dark list-header">
+    {{ translateKeyPrefix + ".SUB_TITLE" | translate }}
+</p>
+<br />
+<hr />
+<!-- OAC -->
+
+<div *ngIf="srcData === 'oac'">
+    <div *ngFor="let accounts of accountData; let i = index">
+        <div class="column small-8 align-left align-top no-padding">
+            <div>
+                <p class="text-color-gray-dark list-header" *ngIf="i === 0">
+                    <strong> {{ translateKeyPrefix + ".ACCOUNT_LOGIN_LABEL" | translate }} </strong>
+                </p>
+            </div>
+        </div>
+        <ng-container *ngIf="accounts?.subscriptions.length === 0">
+            <br />
+            <div class="row no-padding">
+                <div class="column small-8 align-left align-top no-padding">
+                    <div>
+                        <b>
+                            <p class="text-color-black-dark list-header">
+                                {{ translateKeyPrefix + ".ACCOUNT_NUMBER_LABEL" | translate }}
+                                <span class="masked">••••••••••{{ accounts.last4DigitsOfAccountNumber }}</span>
+                            </p>
+                        </b>
+                        <p>{{ translateKeyPrefix + ".USERNAME_LABEL" | translate }}{{ accounts?.maskedUserName }}</p>
+                    </div>
+                </div>
+                <div class="column small-4 no-padding align-right align-center">
+                    <p class="verify-link" *ngIf="accounts?.accountState?.isOACRegistered">
+                        <a data-link-name="Reset" sxmUiDataClickTrack="submit" (click)="onVerifyClicked(accounts, 'oac', accounts?.subscriptions)"
+                            >{{ translateKeyPrefix + ".RESET" | translate }}
+                        </a>
+                    </p>
+                    <p class="verify-link" *ngIf="!accounts?.accountState?.isOACRegistered">
+                        <a data-link-name="Register" sxmUiDataClickTrack="exit" (click)="onRegisterClicked()">{{ translateKeyPrefix + ".REGISTER" | translate }} </a>
+                    </p>
+                </div>
+            </div>
+        </ng-container>
+        <br />
+
+        <div *ngFor="let accountSub of accounts.subscriptions | sortingSubscriptionsPipe">
+            <ng-container>
+                <div class="row no-padding">
+                    <div class="column small-8 align-left align-top no-padding">
+                        <div>
+                            <b>
+                                <p class="text-color-black-dark list-header">
+                                    {{ translateKeyPrefix + ".ACCOUNT_NUMBER_LABEL" | translate }}
+                                    <span class="masked">••••••••••{{ accounts.last4DigitsOfAccountNumber }}</span>
+                                </p>
+                            </b>
+                            <p>{{ translateKeyPrefix + ".USERNAME_LABEL" | translate }}{{ accounts?.maskedUserName }}</p>
+                        </div>
+                    </div>
+                    <div class="column small-4 no-padding align-right align-center">
+                        <p class="verify-link" *ngIf="accountSub?.inEligibleReasonCode !== 'ExistingSxirNoCredentials' && accounts?.accountState?.isOACRegistered">
+                            <a data-link-name="Reset" sxmUiDataClickTrack="submit" (click)="onVerifyClicked(accounts, 'oac', accountSub)"
+                                >{{ translateKeyPrefix + ".RESET" | translate }}
+                            </a>
+                        </p>
+                        <p class="verify-link" *ngIf="accountSub?.inEligibleReasonCode === 'ExistingSxirNoCredentials' && !accountSub?.isDataOnly">
+                            <a data-link-name="Create SXMApp Login" sxmUiDataClickTrack="submit" (click)="onAppLogin('login')"
+                                >{{ translateKeyPrefix + ".APP_LOGIN" | translate }}
+                            </a>
+                        </p>
+                        <p class="verify-link" *ngIf="!accounts?.accountState?.isOACRegistered && accountSub?.inEligibleReasonCode !== 'ExistingSxirNoCredentials'">
+                            <a data-link-name="Register" sxmUiDataClickTrack="exit" (click)="onRegisterClicked()">{{ translateKeyPrefix + ".REGISTER" | translate }} </a>
+                        </p>
+                    </div>
+                </div>
+                <br />
+            </ng-container>
+            <br />
+        </div>
+    </div>
+</div>
+
+<!-- Streaming -->
+
+<div *ngIf="srcData === 'streaming'">
+    <div *ngFor="let accounts of accountData; let i = index">
+        <div class="column small-8 align-left align-top no-padding">
+            <div *ngIf="accounts?.subscriptions.length > 0">
+                <p class="text-color-gray-dark list-header" *ngIf="i === 0">
+                    <strong> {{ translateKeyPrefix + ".STREAMING_LOGIN_LABEL" | translate }} </strong>
+                </p>
+                <br />
+            </div>
+        </div>
+        <div *ngFor="let accountSub of accounts.subscriptions | sortingSubscriptionsPipe">
+            <ng-container>
+                <div class="row no-padding">
+                    <div class="column small-8 align-left align-top no-padding">
+                        <div>
+                            <b>
+                                <p
+                                    *ngFor="let name of accountSub?.plans"
+                                    class="detail-row text-color-black-dark m-t"
+                                    [innerHTML]="'app.packageDescriptions.' + name.packageName + '.name' | translate"
+                                ></p>
+                            </b>
+                            <br />
+                            <div *ngIf="accountSub?.radioService?.vehicleInfo && !accountSub?.isDataOnly">
+                                <strong class="detail-row"
+                                    >{{ accountSub?.radioService?.vehicleInfo?.year }} {{ accountSub?.radioService?.vehicleInfo?.make }}
+                                    {{ accountSub?.radioService?.vehicleInfo?.model }}</strong
+                                >
+                            </div>
+                            <p>{{ translateKeyPrefix + ".USERNAME_LABEL" | translate }}{{ accountSub?.streamingService?.maskedUserName }}</p>
+                            <p *ngIf="accountSub?.isDataOnly">{{ translateKeyPrefix + ".NOT_STREAMING_LABEL" | translate }}</p>
+                        </div>
+                    </div>
+                    <div class="column small-4 no-padding align-right align-center">
+                        <p
+                            class="verify-link"
+                            *ngIf="accountSub?.inEligibleReasonCode !== 'ExistingSxirNoCredentials' && !accountSub?.isDataOnly && accounts?.accountState?.isOACRegistered"
+                        >
+                            <a data-link-name="Reset" sxmUiDataClickTrack="submit" (click)="onVerifyClicked(accounts, 'streaming', accountSub)"
+                                >{{ translateKeyPrefix + ".RESET" | translate }}
+                            </a>
+                        </p>
+                        <p class="verify-link" *ngIf="accountSub?.inEligibleReasonCode === 'ExistingSxirNoCredentials' && !accountSub?.isDataOnly">
+                            <a data-link-name="Create SXMApp Login" sxmUiDataClickTrack="submit" (click)="onAppLogin('login')"
+                                >{{ translateKeyPrefix + ".APP_LOGIN" | translate }}
+                            </a>
+                        </p>
+                        <p
+                            class="verify-link"
+                            *ngIf="!accounts?.accountState?.isOACRegistered && accountSub?.inEligibleReasonCode !== 'ExistingSxirNoCredentials' && !accountSub?.isDataOnly"
+                        >
+                            <a data-link-name="Reset" sxmUiDataClickTrack="submit" (click)="onVerifyClicked(accounts, 'streaming', accountSub)"
+                                >{{ translateKeyPrefix + ".RESET" | translate }}
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <br />
+            </ng-container>
+            <br />
+        </div>
+    </div>
+</div>
+<!-- Organic -->
+
+<div *ngIf="srcData === 'organic'">
+    <div *ngFor="let accounts of accountData">
+        <div *ngIf="accounts?.subscriptions.length === 0">
+            <div class="column small-8 align-left align-top no-padding">
+                <div>
+                    <p class="text-color-gray-dark list-header">
+                        <strong> {{ translateKeyPrefix + ".ACCOUNT_LOGIN_LABEL" | translate }} </strong>
+                    </p>
+                </div>
+            </div>
+            <ng-container *ngIf="accounts?.subscriptions.length === 0">
+                <br />
+                <div class="row no-padding">
+                    <div class="column small-8 align-left align-top no-padding">
+                        <div>
+                            <b>
+                                <p class="text-color-black-dark list-header">
+                                    {{ translateKeyPrefix + ".ACCOUNT_NUMBER_LABEL" | translate }}
+                                    <span class="masked">••••••••••{{ accounts.last4DigitsOfAccountNumber }}</span>
+                                </p>
+                            </b>
+                            <p>{{ translateKeyPrefix + ".USERNAME_LABEL" | translate }}{{ accounts?.maskedUserName }}</p>
+                        </div>
+                    </div>
+                    <div class="column small-4 no-padding align-right align-center">
+                        <p class="verify-link" *ngIf="accounts?.accountState?.isOACRegistered">
+                            <a data-link-name="Reset" sxmUiDataClickTrack="submit" (click)="onVerifyClicked(accounts, 'oac', accounts?.subscriptions)"
+                                >{{ translateKeyPrefix + ".RESET" | translate }}
+                            </a>
+                        </p>
+                        <p class="verify-link" *ngIf="!accounts?.accountState?.isOACRegistered">
+                            <a data-link-name="Register" sxmUiDataClickTrack="exit" (click)="onRegisterClicked()">{{ translateKeyPrefix + ".REGISTER" | translate }} </a>
+                        </p>
+                    </div>
+                </div>
+            </ng-container>
+            <br />
+            <hr />
+        </div>
+        <div *ngIf="accounts?.subscriptions.length >= 1">
+            <div class="column small-8 align-left align-top no-padding">
+                <div>
+                    <p class="text-color-gray-dark list-header">
+                        <strong> {{ translateKeyPrefix + ".ACCOUNT_LOGIN_LABEL" | translate }} </strong>
+                    </p>
+                    <br />
+                </div>
+            </div>
+            <div *ngFor="let accountSub of accounts.subscriptions | sortingSubscriptionsPipe; let i = index">
+                <ng-container *ngIf="i === 0">
+                    <div class="row no-padding">
+                        <div class="column small-8 align-left align-top no-padding">
+                            <div>
+                                <b>
+                                    <p class="text-color-black-dark list-header">
+                                        {{ translateKeyPrefix + ".ACCOUNT_NUMBER_LABEL" | translate }}
+                                        <span class="masked">••••••••••{{ accounts.last4DigitsOfAccountNumber }}</span>
+                                    </p>
+                                </b>
+                                <p *ngIf="accounts?.maskedUserName">{{ translateKeyPrefix + ".USERNAME_LABEL" | translate }}{{ accounts?.maskedUserName }}</p>
+                            </div>
+                        </div>
+                        <div class="column small-4 no-padding align-right align-center">
+                            <p class="verify-link" *ngIf="accounts?.accountState?.isOACRegistered">
+                                <a data-link-name="Reset" sxmUiDataClickTrack="submit" (click)="onVerifyClicked(accounts, 'oac', accountSub)"
+                                    >{{ translateKeyPrefix + ".RESET" | translate }}
+                                </a>
+                            </p>
+                            <p class="verify-link" *ngIf="!accounts?.accountState?.isOACRegistered">
+                                <a data-link-name="Register" sxmUiDataClickTrack="exit" (click)="onRegisterClicked()">{{ translateKeyPrefix + ".REGISTER" | translate }} </a>
+                            </p>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <br />
+            <div class="column small-8 align-left align-top no-padding">
+                <div *ngIf="accounts?.subscriptions.length > 0">
+                    <p class="text-color-gray-dark list-header">
+                        <strong> {{ translateKeyPrefix + ".STREAMING_LOGIN_LABEL" | translate }} </strong>
+                    </p>
+                    <br />
+                </div>
+            </div>
+            <div *ngFor="let accountSub of accounts.subscriptions | sortingSubscriptionsPipe">
+                <ng-container>
+                    <div class="row no-padding">
+                        <div class="column small-8 align-left align-top no-padding">
+                            <div>
+                                <b>
+                                    <p
+                                        *ngFor="let name of accountSub?.plans"
+                                        class="detail-row text-color-black-dark m-t"
+                                        [innerHTML]="'app.packageDescriptions.' + name.packageName + '.name' | translate"
+                                    ></p>
+                                </b>
+                                <br />
+                                <div *ngIf="accountSub?.radioService?.vehicleInfo && !accountSub?.isDataOnly">
+                                    <strong class="detail-row"
+                                        >{{ accountSub?.radioService?.vehicleInfo?.year }} {{ accountSub?.radioService?.vehicleInfo?.make }}
+                                        {{ accountSub?.radioService?.vehicleInfo?.model }}</strong
+                                    >
+                                </div>
+                                <p *ngIf="accountSub?.streamingService?.maskedUserName && !accountSub?.isDataOnly">
+                                    {{ translateKeyPrefix + ".USERNAME_LABEL" | translate }}{{ accountSub?.streamingService?.maskedUserName }}
+                                </p>
+                                <p *ngIf="accountSub?.isDataOnly">{{ translateKeyPrefix + ".NOT_STREAMING_LABEL" | translate }}</p>
+                                <p *ngIf="accountSub?.isSubUsernameSameAsAccUsername">
+                                    {{ translateKeyPrefix + ".INFORMATION_LABEL" | translate }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column small-4 no-padding align-right align-center">
+                            <p
+                                class="verify-link"
+                                *ngIf="
+                                    accountSub?.inEligibleReasonCode !== 'ExistingSxirNoCredentials' &&
+                                    !accountSub?.isDataOnly &&
+                                    (accountSub?.isShowResetCTA || (accounts?.accountState?.isOACRegistered && !accountSub?.isSubUsernameSameAsAccUsername))
+                                "
+                            >
+                                <a data-link-name="Reset" sxmUiDataClickTrack="submit" (click)="onVerifyClicked(accounts, 'streaming', accountSub)"
+                                    >{{ translateKeyPrefix + ".RESET" | translate }}
+                                </a>
+                            </p>
+                            <p
+                                class="verify-link"
+                                *ngIf="
+                                    accountSub?.inEligibleReasonCode !== 'ExistingSxirNoCredentials' &&
+                                    !accountSub?.isDataOnly &&
+                                    (accountSub?.isShowResetCTA || !accounts?.accountState?.isOACRegistered)
+                                "
+                            >
+                                <a data-link-name="Reset" sxmUiDataClickTrack="submit" (click)="onVerifyClicked(accounts, 'streaming', accountSub)"
+                                    >{{ translateKeyPrefix + ".RESET" | translate }}
+                                </a>
+                            </p>
+                            <p class="verify-link" *ngIf="accountSub?.inEligibleReasonCode === 'ExistingSxirNoCredentials' && !accountSub?.isDataOnly">
+                                <a data-link-name="Create SXMApp Login" sxmUiDataClickTrack="submit" (click)="onAppLogin('login')"
+                                    >{{ translateKeyPrefix + ".APP_LOGIN" | translate }}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <br />
+                </ng-container>
+                <br />
+            </div>
+            <hr />
+        </div>
+    </div>
+</div>

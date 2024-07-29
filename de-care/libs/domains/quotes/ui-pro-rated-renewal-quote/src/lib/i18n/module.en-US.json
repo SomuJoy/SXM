@@ -1,0 +1,103 @@
+{
+    "DomainsQuotesUiProRatedRenewalQuoteModule": {
+        "ProRatedRenewalQuoteComponent": {
+            "PRORATED_RENEWAL_QUOTE": {
+                "HEADER": {
+                    "NO_UPGRADE": {
+                        "NON_BALANCE": {
+                            "PRORATED": "When your promotion ends, your one-time charge of {{amount}} will be due {{startDate}}. This amount has been prorated to align with the billing date on your account",
+                            "NON_PRORATED": "When your trial ends, your one-time charge during your promotion period will be {{amount}} due {{startDate}}."
+                        },
+                        "BALANCE": "When your trial ends, your one-time charge during your promotion period will be {{amount}} due {{startDate}}."
+                    }
+                },
+                "DUE": {
+                    "NO_UPGRADE": "Total Due - {{startDate}}"
+                }
+            },
+            "UPGRADE_DESCRIPTIONS": {
+                "PACKAGE_UPGRADE_FEE": "{{termLength}} mo. {{packageName}} Free Upgrade"
+            },
+            "ORDER_DETAILS": {
+                "ACCORDION_CHEVRON": {
+                    "COLLAPSED_TEXT": "Details",
+                    "EXPANDED_TEXT": "Details",
+                    "ARIA_COLLAPSED_TEXT": "Prorated renewal details",
+                    "ARIA_EXPANDED_TEXT": "Close prorated renewal details"
+                },
+                "HAS_CREDIT": "Previous Credit",
+                "HEAD_LINE": "Order Summary",
+                "DESCRIPTION": "See Offer Details below.",
+                "TOOLTIP": {
+                    "MUSIC_ROYALTY_FEE": "<p><strong>U.S. Music Royalty Fee:</strong></p><p>SiriusXM is required by law to pay copyright music royalties.</p><p><a class=\"text-color-blue-secondary\" href=\"https://www.siriusxm.com/usmusicroyalty\" target=\"_blank\">View Music Royalties Fee FAQ</a></p>"
+                },
+                "TERM_LENGTH": {
+                    "PLURAL_MAP": {
+                        "PLAN": {
+                            "=1": "Monthly Plan",
+                            "=12": "",
+                            "other": ""
+                        },
+                        "MONTHS": {
+                            "=1": "Month for",
+                            "other": "Months for"
+                        },
+                        "LENGTH": {
+                            "=1": "monthly",
+                            "=12": "annual",
+                            "other": "{{termLength}} month"
+                        },
+                        "MONTH_PLAN": {
+                            "other": "Monthly Plan",
+                            "=6": "Semi-Annual Plan",
+                            "=12": "Annual Plan"
+                        },
+                        "MONTHS_TERM": {
+                            "=1": "month",
+                            "other": "months"
+                        }
+                    }
+                },
+                "TERM_MONTH_PLAN": "{{termLength}} month plan",
+                "MONTHS_FOR": "{{length}} {{pluralizedMonth}} {{price}}/mo",
+                "MRD_ELEGIBLE": "Family Discount {{monthlyExpression}}",
+                "TRIAL_UPGRADE_FEE": "Trial Upgrade Fee",
+                "FEES_AND_TAXES": "Fees and Taxes",
+                "TAXES_ONLY": "Fees and Taxes",
+                "CREDIT_ON_ACCOUNT": "Credit on Account"
+            },
+            "PACKAGES": {
+                "empty": {
+                    "NAME": "No Active Service"
+                },
+                "PREVIOUS_BALANCE": {
+                    "NAME": "Previous Balance",
+                    "TOOLTIP": "You have a previously unpaid balance on your account and this balance must be satisfied before you can complete your transaction."
+                },
+                "CREDIT": {
+                    "NAME": "Credit",
+                    "TOOLTIP": "A pro-rated credit for the unused service in your old subscription has been applied to your account. It will be used for future billing events, or can be refunded to you upon your request.",
+                    "SUB_NAME": "For unused service"
+                },
+                "PREPAID": {
+                    "NAME": "Prepaid or Gift Card"
+                },
+                "login-account": {
+                    "NAME": "Active Service"
+                }
+            },
+            "UPGRADE_DESCRIPTIONS": {
+                "PACKAGE_UPGRADE_FEE": "{{termLength}} mo. {{packageName}} Free Upgrade"
+            },
+            "NOTES": {
+                "IMPORTANT_NOTE_STUDENTS": "<span class=\"bold-text\">Important Note: </span>SiriusXM will reverify your student status near the end of your {{termlength}} {{month}} subscription in order to maintain your eligibility for our reduced rate for Premier. <span class=\"bold-text\">When your student status cannot be verified, service will automatically renew thereafter every month in the Premier package at then-current rates (currently {{premierFullPrice}}/month, plus fees and taxes).</span>"
+            },
+            "STUDENTS_QUOTE": {
+                "FOOTER": {
+                    "STUDENTS_RTP_PLAN": "When your trial ends, your estimated recurring monthly subscription charge while you are a verified student during your promotion period will be {{amount}} starting on {{startDate}}. Remember, you can cancel any time.",
+                    "STUDENTS_MCP_PLAN": "Your estimated recurring monthly subscription charge during your promotion period will be {{amount}} starting on {{startDate}}. Remember, you can change or cancel at any time."
+                }
+            }
+        }
+    }
+}

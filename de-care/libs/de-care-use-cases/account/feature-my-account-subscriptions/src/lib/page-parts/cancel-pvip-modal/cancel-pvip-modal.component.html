@@ -1,0 +1,14 @@
+<sxm-ui-modal [closed]="false" titlePresent="true" [title]="translateKeyPrefix + '.TITLE' | translate" (modalClosed)="onClosed()" data-test="cancelBauHybridLinksModal">
+    <h4>{{ translateKeyPrefix + ".ACTIVE_SUBSCRIPTIONS_WITH_PVIP" | translate : { packageDescriptionName: packageDescriptionName$ | async } }}</h4>
+
+    <p>{{ translateKeyPrefix + ".CANCELLING_YOUR_PLAN" | translate }}</p>
+    <p>
+        {{ translateKeyPrefix + ".DEACTIVATE_ONE_SUBSCRIPTION" | translate }}
+        <span *ngIf="cancelByPhone === false">
+            <chat-with-agent-link class="chat-link-text" [chatLinkText]="translateKeyPrefix + '.CHAT_WITH_AGENT' | translate"></chat-with-agent-link>
+        </span>
+    </p>
+    <button class="button primary full-width" (click)="goToCancelSummary()">
+        {{ translateKeyPrefix + ".CONTINUE_TO_REVIEW" | translate }}
+    </button>
+</sxm-ui-modal>

@@ -1,0 +1,94 @@
+@import "sxm.phoenix.imports";
+
+$mobileUpsellBackground: 767px;
+
+.header {
+    margin-bottom: 65px;
+    h5 {
+        border-bottom: 1px solid $gray-medium;
+        margin-bottom: 10px;
+        padding-bottom: 16px;
+    }
+    p {
+        margin-bottom: 0;
+    }
+    hr {
+        margin-bottom: 32px;
+    }
+}
+
+.upsell-container {
+    background: $gray-light;
+    overflow: hidden;
+    margin: 0px -40px -40px -40px;
+    padding: 32px 40px;
+
+    .sub-header {
+        color: $watermelon;
+        letter-spacing: 2px;
+        margin-bottom: 0;
+    }
+
+    h4 {
+        margin-top: 0;
+        margin-bottom: 14px;
+    }
+
+    .discludes {
+        line-height: 1.8;
+        padding-right: 35px;
+    }
+
+    ul {
+        padding-bottom: 8px;
+        color: black;
+        li {
+            padding-left: 20px;
+        }
+    }
+
+    use {
+        fill: black;
+    }
+
+    offer-details {
+        background: #eaeaea;
+        margin: -24px -16px;
+    }
+
+    @media only screen and (max-width: $mobileUpsellBackground) {
+        margin: -40px -16px;
+        padding: 32px 17px;
+        offer-details {
+            background: #eaeaea;
+            margin: -24px -16px;
+        }
+    }
+}
+
+.loading-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $purple;
+    height: 361px;
+
+    h5 {
+        text-align: center;
+    }
+
+    .loading {
+        span {
+            background: $purple;
+        }
+    }
+}
+
+.notification {
+    margin-bottom: 0.75rem;
+}
+
+.button.primary {
+    margin-bottom: 25px;
+}

@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="info">
+        <span class="vehicle-info" *ngIf="vehicleInfo"> {{ "identification.subscriptionItemComponent.VEHICLE" | translate: vehicleInfo }}</span>
+        <span *ngIf="maskedUserName"> {{ maskedUserName }}</span>
+        <span *ngIf="radioIdLast4">{{ "identification.subscriptionItemComponent.RADIO" | translate: { radioId: radioIdLast4 } }}</span>
+        <span class="plan-info">
+            {{ ("app.packageDescriptions." + basePlane.packageName + ".name" | translate) + ((basePlane.type | isTrialPlan) ? " Trial" : "") }}
+        </span>
+        <span>
+            {{
+                !!basePlane.endDate && !(sub?.followonPlans?.length > 0)
+                    ? ("identification.subscriptionItemComponent.EXPIRES" | translate) +
+                      (basePlane.expired
+                          ? ("identification.subscriptionItemComponent.EXPIRED" | translate)
+                          : (basePlane.endDate | date: (dateFormat$ | async):timezone:locale))
+                    : ""
+            }}
+        </span>
+    </div>
+
+    <div class="action">
+        <ng-container [ngSwitch]="sub?.subActionType">
+            <sxm-ui-streaming-player-link
+                *ngSwitchCase="subscriptionActionTypeEnum.SIGN_IN"
+                [customLinkClasses]="['no-underline']"
+                [customLinkText]="'identification.subscriptionItemComponent.SING_IN_LINK_TEXT' | translate"
+                [customLink]="streamingPlayerLink | translate"
+            ></sxm-ui-streaming-player-link>
+            <span *ngSwitchDefault [innerHTML]="'identification.subscriptionItemComponent.' + sub?.subActionType | translate" (click)="actionClicked.emit(sub)"></span>
+        </ng-container>
+    </div>
+</div>

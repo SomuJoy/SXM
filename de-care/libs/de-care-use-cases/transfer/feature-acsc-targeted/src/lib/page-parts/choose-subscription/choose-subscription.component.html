@@ -1,0 +1,135 @@
+<div class="content-section reset-paragraph-last-of-type-margin">
+    <div class="new-car-badge small-copy mb-24">
+        <span> {{ translateKeyPrefix + "NEW_CAR" | translate }} &nbsp;|&nbsp;</span>
+        <b> {{ translateKeyPrefix + "CHANGE_SUBSCRIPTION" | translate }} </b>
+    </div>
+    <div class="mb-24">
+        <h4 class="mb-12" data-e2e="packageSelectHeadline">
+            {{
+                translateKeyPrefix + "PACKAGE_SELECT_HEADLINE" + (isTrialEndingImmediately ? "_IMMEDIATELY" : "")
+                    | translate
+                        : {
+                              packageName: "app.packageDescriptions." + currentPackageName + ".name" | translate | withoutPlatformName: currentPackageName,
+                              daysLeft: currentPlanDaysLeft
+                          }
+            }}
+        </h4>
+        <p data-e2e="packageSelectDetails">
+            {{
+                translateKeyPrefix + "PACKAGE_SELECT_DETAILS" + (isTrialEndingImmediately ? "_IMMEDIATELY" : "")
+                    | translate
+                        : {
+                              startDate: currentPackageEndDate | date: (dateFormat$ | async):null:locale
+                          }
+            }}
+        </p>
+    </div>
+    <marketing-promo-code-form
+        #marketingPromoCodeForm
+        *ngIf="displayPromoCodeForm$ | async"
+        (marketingPromoRedeemed)="onMarketingPromoRedeemed($event)"
+        (marketingPromoCodeRemoved)="onMarketingPromoCodeRemoved()"
+    >
+    </marketing-promo-code-form>
+    <div data-scroll="scroll-error">
+        <button class="mb-16 text-link" (click)="openComparisonModal()" data-track-click="Compare Packages" data-e2e="comparePackagesLink">
+            {{ translateKeyPrefix + "COMPARE_PACKAGES" | translate }}
+        </button>
+        <span *ngIf="submitted && !selectionMade" class="invalid-feedback" data-e2e="packageDelectionError">
+            <p class="mb-16">{{ translateKeyPrefix + "SELECTION_ERROR" | translate }}</p>
+        </span>
+        <div>
+            <form class="offers-list" [formGroup]="offerForm" data-e2e="packageSelectOffersForm">
+                <ng-container *ngIf="isAccountConsolidationSelected$ | async; else scOffers">
+                    <div *ngFor="let offer of offers">
+                        <sxm-ui-ac-package-option-card
+                            formControlName="offer"
+                            [offers]="offers"
+                            [offer]="offer"
+                            [newVehicle]="newVehicle$ | async"
+                            [endsImmediately]="isTrialEndingImmediately"
+                            data-e2e="packageSelectionOption"
+                        >
+                        </sxm-ui-ac-package-option-card>
+                    </div>
+                </ng-container>
+                <ng-template #scOffers>
+                    <div *ngFor="let offer of offers">
+                        <sxm-ui-sc-package-option-card
+                            formControlName="offer"
+                            [offers]="offers"
+                            [offer]="offer"
+                            [isPlatformChangeScenario]="platformChangeScenario"
+                            [newVehicle]="newVehicle$ | async"
+                            [oldSubscription]="oldSubscription$ | async"
+                            [nonPiiPackageName]="resolvedPackageName"
+                            [oldClosedRadio]="oldClosedRadio$ | async"
+                            [isClosedRadio]="isSelfPayRadioClosed$ | async"
+                            [endsImmediately]="isTrialEndingImmediately"
+                            [notToShowPlusFees]="notToShowPlusFees$ | async"
+                            data-e2e="packageSelectionOption"
+                        >
+                        </sxm-ui-sc-package-option-card>
+                    </div>
+                </ng-template>
+            </form>
+        </div>
+        <div *ngIf="(isAccountConsolidationSelected$ | async) === false && isSelfPayAdvantage">
+            <p data-e2e="advantagePlanNote">
+                <span>
+                    {{ translateKeyPrefix + "DO_NOT_SEE_PLAN" | translate }}
+                </span>
+                <chat-with-agent-link
+                    *ngIf="isChatAvailable"
+                    [chatLinkText]="translateKeyPrefix + 'CHAT_WITH_AN_AGENT' | translate"
+                    [queue]="'generalAgents'"
+                ></chat-with-agent-link>
+                <span [innerHTML]="translateKeyPrefix + 'CALL' | translate"></span>
+            </p>
+        </div>
+    </div>
+    <div>
+        <div>
+            <button class="button primary full-width" (click)="onContinue()" data-track-click="Continue to Payment" data-e2e="packageSelectContinueButton">
+                {{
+                    translateKeyPrefix + (selectSelected && platformChangeScenario ? "KEEP_SELECT" : "CONTINUE")
+                        | translate
+                            : {
+                                  packageName:
+                                      "app.packageDescriptions." + (selectedOfferPackageName$ | async) + ".name"
+                                      | translate
+                                      | withoutPlatformName: (selectedOfferPackageName$ | async)
+                              }
+                }}
+            </button>
+        </div>
+        <div *ngIf="previousPageExists" class="back-button">
+            <button
+                *ngIf="isModeServiceContinuity$ | async"
+                class="text-link no-underline"
+                (click)="goBack()"
+                data-track-click="Go Back to Select Transfer"
+                data-e2e="packageSelectBackButton"
+            >
+                {{ translateKeyPrefix + "BACK" | translate }}
+            </button>
+        </div>
+    </div>
+</div>
+<sxm-ui-modal
+    *ngIf="packageComparisonParams"
+    #comparePackagesModal
+    [title]="translateKeyPrefix + 'COMPARE_PACKAGES' | translate"
+    [titlePresent]="true"
+    [showBackButton]="false"
+    data-e2e="packageComparisonModal"
+>
+    <sxm-ui-packages-comparison
+        [packages]="packageComparisonParams.packages"
+        [endDate]="packageComparisonParams.endDate"
+        [familyDiscount]="5"
+        [hideInYourTrial]="hideInYourTrialCopy$ | async"
+        class="no-selection-button no-price-line"
+    >
+    </sxm-ui-packages-comparison>
+</sxm-ui-modal>

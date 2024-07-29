@@ -1,0 +1,67 @@
+<button
+    *ngIf="isCanadaMode"
+    id="promocode-btn"
+    class="component--add-element-title"
+    [class.active]="formExpand"
+    data-add-element-trigger
+    data-e2e="marketingPromoCode.promoLabel"
+    data-open="add-element-promocode"
+    data-icon="add,remove"
+    tabindex="0"
+    (click)="togglePromoCode()"
+>
+    <ng-container *ngIf="!redeemSuccess; else removeIcon">
+        <span class="button-text">{{ "identification.marketingPromoCodeComponent.ADD_PROMO_LABEL" | translate }}</span>
+        <div class="icon-add-wrapper" *ngIf="!formExpand">
+            <svg class="icon icon-utility small">
+                <use class="icon-expand" xlink:href="#icon-expand"></use>
+            </svg>
+        </div>
+        <div class="icon-remove-wrapper" *ngIf="formExpand">
+            <svg class="icon icon-utility small">
+                <use class="icon-collapse" xlink:href="#icon-collapse"></use>
+            </svg>
+        </div>
+    </ng-container>
+    <ng-template #removeIcon>
+        <div>
+            <span class="button-text">{{ "identification.marketingPromoCodeComponent.REMOVE_PROMO_LABEL" | translate }}</span>
+            <div class="icon-remove-wrapper">
+                <svg class="icon icon-utility small">
+                    <use class="icon-remove" xlink:href="#icon-remove"></use>
+                </svg>
+            </div>
+        </div>
+    </ng-template>
+</button>
+<div [class.active]="formExpand" class="marketing-promocode-content">
+    <div class="add-element-content-container">
+        <div>
+            <svg *ngIf="redeemSuccess" class="icon icon-utility large" qatag="YourPromoCodeWasAppliedCheckmark">
+                <use class="icon-checkmark-sm" xlink:href="#icon-checkmark-sm"></use>
+            </svg>
+            <p data-e2e="marketingPromoCode.promoCodeAppliedText" qatag="YourPromoCodeWasAppliedText" *ngIf="redeemSuccessEmitter$ | async">
+                <strong>{{ "identification.marketingPromoCodeComponent.PROMO_CODE_APPLIED" | translate: { promoCode: promoCode } }}</strong>
+            </p>
+        </div>
+        <div class="input-container" *ngIf="!redeemSuccess && isCanadaMode" [class.filled]="promoCode" [class.invalid]="redeemSuccess === null && promoCode">
+            <label [for]="promoCodeId">{{ "identification.marketingPromoCodeComponent.PROMO_CODE_PLACEHOLDER" | translate }}</label>
+            <input
+                type="text"
+                [id]="promoCodeId"
+                data-e2e="marketingPromoCode.promoCodeTextField"
+                qatag="PromoCodeTextfield"
+                #promocode
+                onFocus
+                [(ngModel)]="promoCode"
+                (blur)="promoCodeBlur()"
+            />
+            <button type="button" class="apply-btn" data-e2e="marketingPromoCode.promoCodeApply" qatag="ApplyPromoCodeButton" (click)="submitPromoCode()">
+                {{ "identification.marketingPromoCodeComponent.APPLY_PROMO" | translate }}
+            </button>
+        </div>
+        <div data-e2e="marketingPromoCode.promoCodeInvalidText" *ngIf="redeemSuccess === null" class="invalid-feedback">
+            <p>{{ "identification.marketingPromoCodeComponent.INVALID_PROMO" | translate }}</p>
+        </div>
+    </div>
+</div>

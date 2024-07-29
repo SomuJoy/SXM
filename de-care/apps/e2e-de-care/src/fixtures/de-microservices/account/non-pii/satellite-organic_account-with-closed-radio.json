@@ -1,0 +1,121 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "MATT",
+            "accountProfile": {
+                "accountRegistered": false
+            },
+            "accountState": {
+                "isInPreTrial": false
+            },
+            "serviceAddress": {
+                "state": "FL",
+                "country": "US"
+            },
+            "subscriptions": [],
+            "billingSummary": {
+                "creditCard": {
+                    "last4Digits": "1111",
+                    "type": "VISA",
+                    "status": "ACTIVE"
+                },
+                "isAccountInCollection": false,
+                "isPaymentTypeInvoice": false
+            },
+            "closedDevices": [
+                {
+                    "last4DigitsOfRadioId": "00MR",
+                    "closedDate": "2022-12-13T10:56:23-05:00",
+                    "vehicleInfo": {
+                        "year": null,
+                        "make": null,
+                        "model": null
+                    },
+                    "subscription": {
+                        "id": "10000207621",
+                        "plans": [
+                            {
+                                "code": "Sponsored - OEM Trial - All Access - 12mo - 159.39",
+                                "label": null,
+                                "packageName": "1_SIR_AUD_ALLACCESS",
+                                "termLength": 12,
+                                "startDate": null,
+                                "endDate": null,
+                                "nextCycleOn": null,
+                                "marketType": "trial:new-car",
+                                "type": "TRIAL",
+                                "capabilities": ["AUD", "IPAUD"],
+                                "price": null,
+                                "isBasePlan": false,
+                                "dataCapable": false
+                            },
+                            {
+                                "code": "Video - 1mo",
+                                "label": null,
+                                "packageName": "1_SIR_IP_VID",
+                                "termLength": 1,
+                                "startDate": null,
+                                "endDate": null,
+                                "nextCycleOn": null,
+                                "marketType": "self-pay:standard",
+                                "type": "SELF_PAY",
+                                "capabilities": ["IPVID"],
+                                "price": null,
+                                "isBasePlan": false,
+                                "dataCapable": false
+                            },
+                            {
+                                "code": "Sponsored - OEM Trial - TravelLink - 36mo - 23.83",
+                                "label": null,
+                                "packageName": "1_SIR_DATA_TRVLLNK",
+                                "termLength": 36,
+                                "startDate": null,
+                                "endDate": null,
+                                "nextCycleOn": null,
+                                "marketType": "trial:new-car",
+                                "type": "TRIAL",
+                                "capabilities": ["TRV"],
+                                "price": null,
+                                "isBasePlan": false,
+                                "dataCapable": true
+                            },
+                            {
+                                "code": "Sponsored - OEM Trial - Traffic - 36mo - 47.78",
+                                "label": null,
+                                "packageName": "1_SIR_DATA_TRAFF",
+                                "termLength": 36,
+                                "startDate": null,
+                                "endDate": null,
+                                "nextCycleOn": null,
+                                "marketType": "trial:new-car",
+                                "type": "TRIAL",
+                                "capabilities": ["TRF"],
+                                "price": null,
+                                "isBasePlan": false,
+                                "dataCapable": true
+                            }
+                        ],
+                        "followonPlans": null,
+                        "radioService": null,
+                        "streamingService": null,
+                        "status": "Closed",
+                        "devicePromoCode": "FALSE",
+                        "isPrimary": true,
+                        "nickname": null,
+                        "hasDuplicateVehicleInfo": null
+                    },
+                    "isRemovedFromAccount": false
+                }
+            ],
+            "hasEmailAddressOnFile": true,
+            "maskedEmail": null,
+            "isAccountIdentifiedUsingFLEPZOrVIN": true,
+            "isEmailinTokenSameAsEmailOnFile": false
+        },
+        "marketingId": "01U000MR",
+        "marketingAcctId": "5317"
+    }
+}

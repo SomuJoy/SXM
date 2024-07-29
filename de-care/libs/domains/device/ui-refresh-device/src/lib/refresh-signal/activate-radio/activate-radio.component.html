@@ -1,0 +1,65 @@
+<div>
+    <h5>{{ "refreshDevice.ActivateRadioComponent.HEADLINE" | translate }}</h5>
+
+    <!-- If user is in CA, they can't see the No Tab w/ Text Instructions. So, Hide this question if user is in CA -->
+    <p class="gray-text" *ngIf="outsideCarSteps">{{ "refreshDevice.ActivateRadioComponent.ARE_YOU_IN_CAR_QUESTION" | translate }}</p>
+
+    <!--User in US? Show both the Yes and No Tab -->
+    <sxm-ui-tabs
+        *ngIf="outsideCarSteps; else inCarSteps"
+        ariaLabel="{{ 'refreshDevice.ActivateRadioComponent.IN_A_CAR_ARIAL_LABEL' | translate }}"
+        (tabSelected)="tabSelected($event)"
+    >
+        <!-- Yes Tab to Refresh Radio -->
+        <sxm-ui-tab-panel tabTitle="{{ 'refreshDevice.ActivateRadioComponent.YES_TAB_LABEL' | translate }}" [tabInfo]="tabInfoYes">
+            <ng-container *ngTemplateOutlet="inCarSteps"> </ng-container>
+        </sxm-ui-tab-panel>
+        <!-- No Tab to Text Instructions-->
+        <sxm-ui-tab-panel tabTitle="{{ 'refreshDevice.ActivateRadioComponent.NO_TAB_LABEL' | translate }}" [tabInfo]="tabInfoNo">
+            <p class="outside-car-instructions">{{ "refreshDevice.ActivateRadioComponent.OUTSIDE_CAR_INSTRUCTIONS" | translate }}</p>
+
+            <!--  Todo: Add client side validation for tel # and pull text from Translation -->
+            <form [formGroup]="textInstructionsForm" (ngSubmit)="sendTextInstructions()">
+                <div class="input-container" [class.invalid]="formControls.phoneNumber | formControlInvalid: submitted" [class.filled]="formControls.phoneNumber.value">
+                    <label for="{{ phoneId }}"> {{ "refreshDevice.ActivateRadioComponent.PHONE_NUMBER_LABEL" | translate }} </label>
+                    <input type="tel" appMaskPhoneNumber maxlength="14" formControlName="phoneNumber" id="{{ phoneId }}" onFocus />
+                    <div *ngIf="formControls.phoneNumber | formControlInvalid: submitted" class="invalid-feedback">
+                        <p>{{ "refreshDevice.ActivateRadioComponent.INPUT_ERROR_INVALID_NUMBER" | translate }}</p>
+                    </div>
+                </div>
+                <!--  Agree to SMS Terms-->
+                <div
+                    class="checkbox-item"
+                    [class.invalid]="formControls.checkbox | formControlInvalid: submitted"
+                    [class.extra-top-padding]="formControls.phoneNumber | formControlInvalid: submitted"
+                >
+                    <div *ngIf="formControls.checkbox | formControlInvalid: submitted" class="invalid-feedback">
+                        <p>{{ "refreshDevice.ActivateRadioComponent.CHECKBOX_ERROR_MUST_ACCEPT_AGREEMENT" | translate }}</p>
+                    </div>
+                    <input class="checkbox" type="checkbox" id="{{ outsideCarLegalId }}" formControlName="checkbox" />
+                    <label class="input-label" for="{{ outsideCarLegalId }}">
+                        <p class="small-copy" [innerHTML]="'refreshDevice.ActivateRadioComponent.OUTSIDE_CAR_STEP_LEGAL_TEXT' | translate"></p>
+                    </label>
+                </div>
+                <button class="full-width primary button" type="submit" sxmUiDataClickTrack="submit">
+                    {{ "refreshDevice.ActivateRadioComponent.OUTSIDE_CAR_BUTTON_TEXT" | translate }}
+                </button>
+            </form>
+        </sxm-ui-tab-panel>
+    </sxm-ui-tabs>
+
+    <!-- User Not in US? Then they can't see "No" Tab w/ Text Instructions. So, just show the In-Car Refresh Instructions-->
+    <ng-template #inCarSteps>
+        <ol class="ordered-list" [class.ordered-list-additional-padding]="outsideCarSteps">
+            <li>
+                <p>{{ "refreshDevice.ActivateRadioComponent.IN_CAR_STEP_1" | translate }}</p>
+            </li>
+            <li>
+                <p>{{ "refreshDevice.ActivateRadioComponent.IN_CAR_STEP_2" | translate }}</p>
+            </li>
+        </ol>
+        <button (click)="sendRefreshSignal()" class="full-width primary button" data-e2e="sendRefreshSignalButton" sxmUiDataClickTrack="refresh">
+            {{ "refreshDevice.ActivateRadioComponent.IN_CAR_BUTTON_TEXT" | translate }}
+        </button>
+    </ng-template>
+</div>

@@ -1,0 +1,73 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host::ng-deep {
+    .important-underline {
+        text-decoration: underline !important;
+    }
+    .normal-text {
+        font-weight: normal;
+    }
+    .legal-copy {
+        a {
+            @include underline(default);
+        }
+    }
+}
+
+.legal-container {
+    max-width: 1336px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+:host-context(.oem-theme) {
+    main {
+        background-color: transparent;
+    }
+    .row {
+        padding: 20px 0;
+        .column {
+            padding: 0;
+        }
+    }
+
+    .row .column.medium-10 {
+        width: 100%;
+    }
+}
+
+:host-context(.full-width-transparent) {
+    main {
+        background-color: transparent;
+        @include bp(medium) {
+            background-color: transparent;
+        }
+        .legal-container {
+            @include bp(medium) {
+                padding: 0;
+            }
+            .column {
+                @include bp(medium) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+:host-context(.reduced-padding) {
+    main {
+        .legal-container {
+            padding: 16px;
+            height: auto;
+            .column {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.underline {
+    text-decoration: underline;
+}

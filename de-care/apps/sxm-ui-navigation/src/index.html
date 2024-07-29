@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>SXM UI Navigation Elements</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <style>
+            body,
+            html {
+                margin: 0;
+            }
+            h1 {
+                margin: 10px;
+            }
+        </style>
+        <script src="assets/settings.js"></script>
+        <script src="https://www.siriusxm.com/launch/98980a4572ae/1bd3a0633b81/launch-3fb91f334981-development.min.js" async></script>
+    </head>
+    <body>
+        <h2>My Account Header</h2>
+        <sxm-ui-nav-my-account-header name="Penelope" account-number="1023120321"></sxm-ui-nav-my-account-header>
+        <h2>Account Presence</h2>
+        <section style="margin: 24px">
+            <header style="background-color: black; justify-content: end; display: flex; padding: 12px; position: relative">
+                <sxm-ui-nav-account-presence-icons></sxm-ui-nav-account-presence-icons>
+            </header>
+            <div style="height: 500px; background-color: gray"></div>
+        </section>
+        <h2>Login</h2>
+        <section style="margin: 24px">
+            <div style="background-color: white; width: 430px; padding: 24px">
+                <sxm-ui-login-form
+                    redirect-uri="https://care.siriusxm.com/account/manage"
+                    registration-uri="https://care.siriusxm.com/account/registration"
+                ></sxm-ui-login-form>
+            </div>
+        </section>
+        <h2>Login (Dark theme)</h2>
+        <section style="margin: 24px">
+            <div style="background-color: #16163d; width: 430px; padding: 24px">
+                <sxm-ui-login-form
+                    class="login-form-theme-dark"
+                    redirect-uri="https://care.siriusxm.com/account/manage"
+                    registration-uri="https://care.siriusxm.com/account/registration"
+                ></sxm-ui-login-form>
+            </div>
+        </section>
+        <h2>Login (not configured message)</h2>
+        <section style="margin: 24px">
+            <sxm-ui-login-form style="width: 342px"></sxm-ui-login-form>
+        </section>
+    </body>
+</html>

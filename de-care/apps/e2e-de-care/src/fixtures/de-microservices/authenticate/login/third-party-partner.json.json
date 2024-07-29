@@ -1,0 +1,16 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "accountNum": "10000243316",
+        "subscriptionId": "0.0.0.1 /service/subscription -1 0",
+        "refreshToken": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NjAyNDEwMTIsImV4cCI6MTY2MDI0ODIxMiwidHJ1c3RMZXZlbCI6IjUwIiwiaWRtUmVmcmVzaFRva2VuIjoiaHM4dzJyNy55Yzl2QHNpcml1c3htLmNvbTE2NjAyNDEwMTI2NjIifQ.SCJhpdLtyow8nZOK4RRA60FpAUobGBeWJeLMZQYc0HU",
+        "accessToken": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NjAyNDEwMTIsImd1aWQiOiJndWlkIiwiZXhwIjoxNjYwMjQ0NjEyfQ.u8g0Z7U9xa-kBABON7UNvNYI5qIKnUx4HBsKd4CPs6w",
+        "trustLevel": "50",
+        "subscriptionType": "oac",
+        "accountType": "individual",
+        "thirdPartyPartnerName": "Roku",
+        "thirdPartyPartnerType": null
+    }
+}

@@ -1,0 +1,16 @@
+@import "sxm.phoenix.imports";
+:host {
+    display: grid;
+    grid-template-columns: 22px auto;
+    column-gap: 9px;
+    mat-icon {
+        color: $blue-secondary;
+    }
+    p {
+        padding-top: 2px;
+        line-height: 20px;
+        a {
+            white-space: nowrap;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "valid": true,
+        "emailValidation": null,
+        "usernameValidation": null,
+        "billingAddressValidation": null,
+        "serviceAddressValidation": {
+            "confidenceLevel": "Verified",
+            "correctedAddress": [{ "addressLine1": "1100 boul René-Lévesque", "addressLine2": " ", "city": "SAINT-EUSTACHE", "state": "QC", "zip": "J7R 7L2" }],
+            "resultCode": "SUCCESS",
+            "validationStatus": "VALID"
+        },
+        "ccValidation": null
+    }
+}

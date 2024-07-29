@@ -1,0 +1,6 @@
+{
+    "BACK_BUTTON_LABEL": "BACK",
+    "HEADER": "Edit account login",
+    "HEADER_DESCRIPTION": "Changing your account login will also change the streaming login for your streaming subscription.",
+    "USERNAME_UPDATE_SUCCESS_MESAGE": "Login info successfully updated"
+}

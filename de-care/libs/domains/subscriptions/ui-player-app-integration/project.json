@@ -1,0 +1,25 @@
+{
+    "name": "domains-subscriptions-ui-player-app-integration",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/subscriptions/ui-player-app-integration/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/domains/subscriptions/ui-player-app-integration"],
+            "options": {
+                "jestConfig": "libs/domains/subscriptions/ui-player-app-integration/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/subscriptions/ui-player-app-integration/src/**/*.ts", "libs/domains/subscriptions/ui-player-app-integration/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:ui", "scope:domain-ui"]
+}

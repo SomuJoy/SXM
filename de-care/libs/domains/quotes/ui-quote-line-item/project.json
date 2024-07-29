@@ -1,0 +1,31 @@
+{
+    "name": "domains-quotes-ui-quote-line-item",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/quotes/ui-quote-line-item/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/quotes/ui-quote-line-item/src/**/*.ts", "libs/domains/quotes/ui-quote-line-item/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/quotes/ui-quote-line-item/jest.config.js",
+                "tsConfig": "libs/domains/quotes/ui-quote-line-item/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/quotes/ui-quote-line-item/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:ui", "scope:domain-ui"]
+}

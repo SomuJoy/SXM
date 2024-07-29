@@ -1,0 +1,41 @@
+{
+    "reviewOrder": {
+        "chargeAgreementComponent": {
+            "copy": {
+                "en": {
+                    "part1a": "Veuillez débiter ma carte du montant actuellement dû et la carte à mon dossier pour tous les paiements futurs.",
+                    "part1a_QUEBEC": "Veuillez débiter ma carte du montant actuellement dû et la carte à mon dossier pour tous les paiements futurs.",
+                    "part1b": "En cliquant sur “Compléter ma commande”, j’accepte (1) ",
+                    "linktext1": "Entente du client",
+                    "linkurl1": "http://www.siriusxm.ca/conditions",
+                    "linkalt1": " at siriusxm.ca/conditions",
+                    "part2": " et la",
+                    "linktext2": " Politique de la vie privée",
+                    "linkurl2": "http://www.siriusxm.ca/vieprivee",
+                    "linkalt2": " at siriusxm.ca/vieprivee",
+                    "part3": " de SiriusXM Canada, (ii) de recevoir des notifications sur mon compte à l’adresse courriel fournie; ET (iii) que mon service <strong><u>se poursuivra automatiquement</u></strong> et que ma carte de crédit sera débitée du prix régulier alors en vigueur jusqu’à ce que j’annule. Prix régulier sujet à changement sur préavis approprié. Frais et taxes en sus. Je comprends que je peux annuler à tout moment et que je peux appeler SiriusXM Canada au ",
+                    "part3_QUEBEC": " de SiriusXM Canada, (ii) de recevoir des notifications sur mon compte à l’adresse courriel fournie; ET (iii) que mon service <strong><u>se prolongera automatiquement</u></strong> et que ma carte de crédit sera débitée du prix régulier alors en vigueur jusqu’à ce que j’annule. Prix régulier sujet à changement sur préavis approprié. Taxes en sus. Je comprends que je peux annuler à tout moment et que je peux appeler SiriusXM Canada au ",
+                    "linktext3": "1 888 539-7474",
+                    "linkurl3": "tel:+1-888-539-7474",
+                    "part4": " pour annuler mon ou mes abonnements. Je comprends que toute la programmation est sujette à changement.",
+                    "part4_QUEBEC": " pour annuler mon ou mes abonnements. Je comprends que toute la programmation est sujette à changement. <span style='display:inline-block;position:relative;top:10px'>Les services me sont fournis pour une durée indéterminée et me sont facturés pour la période de facturation convenue.</span>"
+                }
+            },
+            "copy_etf": {
+                "en": {
+                    "text": "Veuillez débiter ma carte pour le solde dû et conserver les renseignements de la carte à mon dossier pour tous les futurs paiements. J’accepte l’<a href='https://www.siriusxm.ca/conditions' target='_blank'>Entente du Client</a> et la <a href='https://www.siriusxm.ca/vieprivee' target='_blank'>Politique de la vie privée</a> de SiriusXM Canada. J’accepte que mon abonnement soit maintenu et que ma carte de crédit soit débitée du prix ordinaire alors applicable jusqu’à ce que j’annule mon abonnement. (Le prix ordinaire est sujet à changement moyennant un préavis suffisant.) Frais et taxes en sus. Je reconnais que je peux annuler mon abonnement en tout temps et que je peux téléphoner à SiriusXM Canada au 1 888 539-7474 pour annuler mon abonnement. <strong>J'accepte que si j'annule ou résilie mon abonnement pendant les {{ etfTerm }} premiers mois, des FRAIS DE RÉSILIATION ANTICIPÉE DE {{ etf }} $ me seront facturés</strong>. J’accepte que toute la programmation soit sujette à changement.",
+                    "text_QUEBEC": "Veuillez débiter ma carte du montant dû actuellement et garder les renseignements de la carte dans mon dossier pour tous les futurs paiements. J’accepte l’<a href='https://www.siriusxm.ca/conditions' target='_blank'>Entente du Client</a> et la <a href='https://www.siriusxm.ca/vieprivee' target='_blank'>Politique de la vie privée</a> de SiriusXM Canada. J’accepte que mon service soit maintenu et que ma carte de crédit soit débitée du tarif alors applicable jusqu’à ce que j’annule mon abonnement. (Le tarif ordinaire est sujet à changement moyennant un préavis suffisant.) Taxes en sus. Les services me sont fournis pour une période indéterminée et me sont facturés pour la période de facturation convenue. Je reconnais que je peux annuler mon abonnement en tout temps et que je peux téléphoner à SiriusXM Canada au 1 888 539-7474 pour annuler mon abonnement. J’accepte que toute la programmation soit sujette à changement."
+                }
+            },
+            "COPY_PLATINUM_VIP": {
+                "en": {
+                    "text": "<span style='display:inline-block;padding-bottom:5px'>Veuillez débiter ma carte du montant actuellement dû et la carte à mon dossier pour tous les paiements futurs.</span> En cliquant sur “Compléter ma commande”, j’accepte (1) <a href='https://www.siriusxm.ca/conditions' target='_blank'>Entente du Client</a> et la <a href='https://www.siriusxm.ca/vieprivee' target='_blank'>Politique de la vie privée</a> de SiriusXM Canada, (ii) de recevoir des notifications sur mon compte à l’adresse courriel fournie; ET (iii) que mon service <strong><u>se poursuivra automatiquement</u></strong> et que ma carte de crédit sera débitée du prix régulier alors en vigueur jusqu’à ce que j’annule. Prix régulier sujet à changement sur préavis approprié. Frais et taxes en sus. Je comprends que je peux annuler à tout moment et que je peux appeler SiriusXM Canada au 1 888 539-7474 pour annuler mon ou mes abonnements. Je comprends que toute la programmation est sujette à changement. Je comprends que mon abonnement Le Complet Plus sera prolongé tant qu’il reste au moins une radio active sur cet abonnement.",
+                    "text_QUEBEC": "<span style='display:inline-block;padding-bottom:5px'>Veuillez débiter ma carte du montant actuellement dû et la carte à mon dossier pour tous les paiements futurs.</span> En cliquant sur “Compléter ma commande”, j’accepte (1) <a href='https://www.siriusxm.ca/conditions' target='_blank'>Entente du Client</a> et la <a href='https://www.siriusxm.ca/vieprivee' target='_blank'>Politique de la vie privée</a> de SiriusXM Canada, (ii) de recevoir des notifications sur mon compte à l’adresse courriel fournie; ET (iii) que mon service <strong><u>se prolongera automatiquement</u></strong> et que ma carte de crédit sera débitée du prix régulier alors en vigueur jusqu’à ce que j’annule. Prix régulier sujet à changement sur préavis approprié. Taxes en sus. Je comprends que je peux annuler à tout moment et que je peux appeler SiriusXM Canada au 1 888 539-7474 pour annuler mon ou mes abonnements. Je comprends que toute la programmation est sujette à changement.<span style='display:inline-block;position:relative;top:10px'> Les services me sont fournis pour une durée indéterminée et me sont facturés pour la période de facturation convenue. Je comprends que mon abonnement Le Complet Plus sera prolongé tant qu’il reste au moins une radio active sur cet abonnement.</span>"
+                }
+            }
+        },
+        "chargeAgreementWithValidationComponent": {
+            "ACCEPT_AGREEMENT": "S'il vous plaît accepter l'accord ci-dessus."
+        }
+    }
+}

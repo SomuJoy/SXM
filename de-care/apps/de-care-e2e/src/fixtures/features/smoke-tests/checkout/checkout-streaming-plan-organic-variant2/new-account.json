@@ -1,0 +1,19 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 201,
+    "httpStatus": "CREATED",
+    "data": {
+        "email": "",
+        "status": "SUCCESS",
+        "radioId": null,
+        "subscriptionId": "10000228693",
+        "maskedStreamingUserName": "var******@siriusxm.com",
+        "accountNumber": "10000232341",
+        "maskedPhoneNumber": null,
+        "isTwoFactorAuthNeeded": false,
+        "isUserNameSameAsEmail": false,
+        "isEligibleForRegistration": true,
+        "isOfferStreamingEligible": true,
+        "isEligibleForStreamingCredentialsOnly": false
+    }
+}

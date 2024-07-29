@@ -1,0 +1,68 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "locales": [
+            {
+                "locale": "en_US",
+                "upsellOfferInfo": {
+                    "packageUpsellOfferInfo": {
+                        "header": "OUR BEST PLAN",
+                        "title": "Upgrade to XM Platinum",
+                        "description": "Add premium channels for an additional $3.34 per month",
+                        "upsellDeals": null,
+                        "listeningOptions": ["Satellite", "Streaming", "Pandora"],
+                        "highlightsTitle": "XM Platinum&nbsp;Includes:",
+                        "highlightsText": [
+                            "<b>425+ channels,</b> including 165+ in your car, plus even more to stream on your devices",
+                            "<b>Ad-free music </b>for every genre & decade plus artist-created channels",
+                            "<b>Original talk,</b> podcasts, exclusive comedy & news from every angle",
+                            "<b>NFL, MLB®, NBA, NHL®, and NCAA® play-by-play,</b> NASCAR®, plus the biggest names in sports talk",
+                            "<b>2 Howard Stern channels,</b> including video",
+                            "<b>Create Pandora stations</b> based on artists",
+                            "<b>SiriusXM video library </b>of in-studio shows & performances"
+                        ],
+                        "showToggleLabel": "Explore plan details",
+                        "hideToggleLabel": "Hide"
+                    },
+                    "termUpsellOfferInfo": {
+                        "title": "Start with&nbsp;12 Months and Save",
+                        "description": "<p>Add 6 more months for an additional $3.26 per month</p>\r\n\r\n<p><strong>Get 12 months of XM Music & Entertainment for $99 and save $38.88</strong> based on $17.99/mo rate. Fees and taxes apply. See offer details.</p>\r\n",
+                        "upsellDeals": null,
+                        "showToggleLabel": "Explore plan details",
+                        "hideToggleLabel": "Hide"
+                    },
+                    "packageAndTermUpsellOfferInfo": {
+                        "packageUpsellOfferInfo": {
+                            "header": "OUR BEST PLAN",
+                            "title": "Upgrade to XM Platinum",
+                            "description": "Add premium channels for an additional $1.74 per month",
+                            "upsellDeals": null,
+                            "listeningOptions": ["Satellite", "Streaming", "Pandora"],
+                            "highlightsTitle": "XM Platinum&nbsp;Includes:",
+                            "highlightsText": [
+                                "<b>425+ channels,</b> including 165+ in your car, plus even more to stream on your devices",
+                                "<b>Ad-free music </b>for every genre & decade plus artist-created channels",
+                                "<b>Original talk,</b> podcasts, exclusive comedy & news from every angle",
+                                "<b>NFL, MLB®, NBA, NHL®, and NCAA® play-by-play,</b> NASCAR®, plus the biggest names in sports talk",
+                                "<b>2 Howard Stern channels,</b> including video",
+                                "<b>Create Pandora stations</b> based on artists",
+                                "<b>SiriusXM video library </b>of in-studio shows & performances"
+                            ],
+                            "showToggleLabel": "Explore plan details",
+                            "hideToggleLabel": "Hide"
+                        },
+                        "termUpsellOfferInfo": {
+                            "title": "Start with 12 Months and Save",
+                            "description": "<p>Add 6 more months for an additional $1.66 per month</p>\r\n\r\n<p><strong>Get 12 months of XM Platinum for $119.88 and save $68.05</strong> based on $22.99/mo rate. Fees and taxes apply. See offer details.</p>\r\n",
+                            "upsellDeals": null,
+                            "showToggleLabel": "Explore plan details",
+                            "hideToggleLabel": "Hide"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "HEADING_TEXT": "Prêt à explorer?",
+    "BEFORE_YOU_GO": {
+        "INTRO_TEXT": "Avant de vous en aller, ",
+        "LINK": {
+            "LINK_TEXT": "Consultez notre excellente offre.",
+            "LINK_URL": "https://www.siriusxm.ca/forfaits"
+        }
+    },
+    "LINKS": {
+        "PROGRAM_SCHEDULES": {
+            "LINK_TEXT": "Voir les horaires de programmation",
+            "LINK_URL": "https://siriusxm.ca/en-ondes"
+        },
+        "SPORTS_SCHEDULES": {
+            "LINK_TEXT": "Horaires des sports en direct",
+            "LINK_URL": "https://www.siriusxm.ca/sports-en-direct"
+        }
+    }
+}

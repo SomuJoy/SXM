@@ -1,0 +1,29 @@
+@import "sxm.phoenix.imports";
+
+#personal-info {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    @include bp(medium) {
+        flex-flow: row;
+
+        p {
+            width: 50%;
+            //text-align: center;
+        }
+    }
+}
+
+.column {
+    align-items: flex-start;
+    @include bp(medium) {
+        align-items: center;
+    }
+}
+
+hr {
+    background-color: $gray-medium;
+    height: 1px;
+    border: 0;
+    margin: 16px 0 24px;
+}

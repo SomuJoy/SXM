@@ -1,0 +1,45 @@
+{
+    "domainsOffersUiHeroModule": {
+        "heroComponent": {
+            "TITLE": {
+                "DEFAULT": "Keep the music going for as little as {{monthlyPrice}} a month",
+                "GET_PLATFORM": "Get SiriusXM for as little as {{price}} {{perMonth}} for {{termLength}} {{pluralizedMonth}}",
+                "TRIAL_EXTENSION": "Get {{termLength}} more months of SiriusXM",
+                "PICK_A_PLAN": "You're just moments away from listening",
+                "ADVANTAGE": "Get SiriusXM for as little as {{price}} {{perMonth}}",
+                "ADVANTAGE_ANNUAL": "Get SiriusXM for as little as {{price}} for {{termLength}} {{pluralizedMonth}}",
+                "ORGANIC_STREAMING_ONLY": "Start listening today",
+                "STREAMING": "Get 300+ channels on your phone, at home, <span class='inline-block'>and online</span>",
+                "THANKS": "Thanks for subscribing. Now let's ride!",
+                "THANKS_STREAMING": "Thanks for subscribing.",
+                "PROMO_UPGRADE": "Limited time offer",
+                "PROMO_UPGRADE_SUBTITLE": "<div class=\"package-upgrade-subtitle\"><span>{{monthlyPrice}}/mo. for {{termLength}} mo.</span><span>+ FREE upgrade</span></div>",
+                "PROMO_UPGRADE_MCP_SUBTITLE": "<div class=\"package-upgrade-subtitle\"><span>{{monthlyPrice}}/mo. for {{termLength}} mo.</span><span>+ FREE upgrade</span></div>",
+                "PROMO_UPGRADE_AMZ_DOT": "Limited time offer",
+                "PROMO_UPGRADE_AMZ_DOT_SUBTITLE": "<div class=\"package-upgrade-subtitle\"><span>{{monthlyPrice}}/mo. for {{termLength}} mo.</span><span>+ FREE upgrade</span><span>+ FREE Echo Dot</span></div>",
+                "PROMO_UPGRADE_AMZ_DOT_MCP_SUBTITLE": "<div class=\"package-upgrade-subtitle\"><span>{{monthlyPrice}}/mo. for {{termLength}} mo.</span><span>+ FREE upgrade</span><span>+ FREE Echo Dot</span></div>",
+                "PROMO_UPGRADE_APPLE": "Get SiriusXM for as little as {{price}} {{perMonth}} for {{termLength}} {{pluralizedMonth}}",
+                "PROMO_DEAL": {
+                    "GGLE_HUB": "Get a Google Nest Hub with the purchase of a {{termLength}}-month Subscription to SiriusXM for {{price}}",
+                    "GGLE_HUB_SUBTITLE": "Credit card required. See Offer Details below.",
+                    "PANDORA": "Get your first {{termLength}} months of SiriusXM {{planNameSuffix}} for {{monthlyPrice}} per month",
+                    "GGLE_MINI": "Get a FREE Google Nest Mini with a SiriusXM subscription",
+                    "AMZ_DOT": "Get a FREE Amazon Echo Dot with a SiriusXM subscription",
+                    "HULU": "Get SiriusXM plus {{termLength}} months of Hulu"
+                }
+            },
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "month",
+                    "other": "months"
+                }
+            },
+            "PER_MONTH_COPY": "per month",
+            "IMAGES": {
+                "THANKS_DEFAULT": "assets/img/tokenized-sales-hero-card-2.jpg",
+                "THANKS_STREAMING": "assets/img/thanks-streaming-hero.jpg",
+                "THANKS_MILITARY": "assets/img/military-confirmation-hero-card.jpg"
+            }
+        }
+    }
+}

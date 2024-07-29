@@ -1,0 +1,48 @@
+<form [formGroup]="validateLpzForm" #ngForm="ngForm" (ngSubmit)="onSubmit()">
+    <div *ngIf="validationError" class="invalid-feedback">
+        <p>
+            {{ "identification.validateLpzFormComponent.PLEASE_CALL_PART1" | translate }}
+            <a href="{{ 'identification.validateLpzFormComponent.PLEASE_CALL_URL' | translate }}">{{
+                "identification.validateLpzFormComponent.PLEASE_CALL_LINK_TEXT" | translate
+            }}</a>
+            {{ "identification.validateLpzFormComponent.PLEASE_CALL_PART2" | translate }}
+        </p>
+    </div>
+
+    <div class="input-container" [class.invalid]="controlIsInvalid(validateLpzForm.controls.lastName)" [class.filled]="validateLpzForm.controls.lastName.value">
+        <label for="{{ frmLastNameId }}">{{ "identification.validateLpzFormComponent.LAST_NAME" | translate }}</label>
+        <input type="text" formControlName="lastName" id="{{ frmLastNameId }}" maxlength="50" onFocus />
+    </div>
+    <div *ngIf="controlIsInvalid(validateLpzForm.controls.lastName)" class="invalid-feedback">
+        <p>{{ "identification.validateLpzFormComponent.ENTER_LAST" | translate }}</p>
+    </div>
+    <div class="input-container" [class.invalid]="controlIsInvalid(validateLpzForm.controls.phoneNumber)" [class.filled]="validateLpzForm.controls.phoneNumber.value">
+        <label for="{{ frmPhoneId }}">{{ "identification.validateLpzFormComponent.PHONE_LABEL" | translate }}</label>
+        <input type="text" appMaskPhoneNumber maxlength="14" formControlName="phoneNumber" id="{{ frmPhoneId }}" onFocus />
+    </div>
+    <div *ngIf="controlIsInvalid(validateLpzForm.controls.phoneNumber)" class="invalid-feedback">
+        <p>{{ "identification.validateLpzFormComponent.ENTER_NUMBER" | translate }}</p>
+    </div>
+    <div class="input-container" [class.invalid]="controlIsInvalid(validateLpzForm.controls.zipCode)" [class.filled]="validateLpzForm.controls.zipCode.value">
+        <label for="{{ frmZipId }}">{{ "identification.validateLpzFormComponent.POSTAL" | translate }}</label>
+        <input type="text" appMaskZipCode [zipMaskIsCanada]="isCanada" formControlName="zipCode" id="{{ frmZipId }}" onFocus />
+    </div>
+    <div *ngIf="controlIsInvalid(validateLpzForm.controls.zipCode)" class="invalid-feedback">
+        <p>{{ "identification.validateLpzFormComponent.ENTER_POSTAL" | translate }}</p>
+    </div>
+    <div class="row no-padding privacy-policy">
+        <div class="column small-12 medium-12 align-left no-padding">
+            <a class="text-link" target="_blank" href="{{ 'identification.ValidateUserRadioComponent.PRIVACY_POLICY_URL' | translate }}">
+                {{ "identification.ValidateUserRadioComponent.PRIVACY" | translate }}
+            </a>
+        </div>
+    </div>
+    <div class="row align-center no-padding">
+        <div class="column small-12 medium-12 no-padding">
+            <button type="submit" class="button primary align-center text-center text-uppercase align-justify full-width" [class.loading]="loading" [disabled]="loading">
+                <ng-container *ngIf="!loading"> {{ "identification.validateLpzFormComponent.BUTTON_LABEL" | translate }}</ng-container>
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</form>

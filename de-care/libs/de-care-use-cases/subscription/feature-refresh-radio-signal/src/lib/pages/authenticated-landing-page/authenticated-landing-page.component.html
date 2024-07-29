@@ -1,0 +1,109 @@
+<main de-care-page-main>
+    <div *ngIf="successMessage$ | async" class="header flex">
+        <svg class="icon large checkmark-circle checkmark-circle-outline">
+            <use class="icon-check-mark-flex-stroke" xlink:href="#icon-check-mark-flex-stroke"></use>
+        </svg>
+        <p>{{ translateKeyPrefix + ".SUCCESS_MESSAGE" | translate }}</p>
+    </div>
+    <div *ngIf="systemError$ | async">
+        <sxm-ui-alert-pill class="alert-icon-error rounded-corners animate-block">
+            <p>
+                {{ translateKeyPrefix + ".SYSTEM_ERROR.PART1" | translate }}
+                <chat-with-agent-link class="chat" *ngIf="(translateKeyPrefix + '.SYSTEM_ERROR.CHAT_TEXT' | translate) !== ''"
+                    [chatLinkText]="translateKeyPrefix + '.SYSTEM_ERROR.CHAT_TEXT' | translate"
+                    queue="generalAgents"></chat-with-agent-link>
+                {{ translateKeyPrefix + ".SYSTEM_ERROR.PART2" | translate }}
+            </p>
+        </sxm-ui-alert-pill>
+    </div>
+    <div *ngIf="showInvalidvRadioError$ | async">
+        <sxm-ui-alert-pill class="alert-icon-notification rounded-corners animate-block">
+            <p>
+                {{ translateKeyPrefix + ".INVALID_VIRTUAL_RADIO_ID.PART1" | translate }}
+                <chat-with-agent-link class="chatLink"
+                    *ngIf="(translateKeyPrefix + '.INVALID_VIRTUAL_RADIO_ID.CHAT_TEXT' | translate) !== ''"
+                    [chatLinkText]="translateKeyPrefix + '.INVALID_VIRTUAL_RADIO_ID.CHAT_TEXT' | translate"
+                    queue="generalAgents"></chat-with-agent-link>
+                {{ translateKeyPrefix + ".INVALID_VIRTUAL_RADIO_ID.PART2" | translate }}
+            </p>
+        </sxm-ui-alert-pill>
+    </div>
+    <div *ngIf="showInactiveError$ | async">
+        <sxm-ui-alert-pill class="alert-icon-notification rounded-corners animate-block">
+            <p>
+                {{ translateKeyPrefix + ".NO_ACTIVE_SUBSCRIPTION_ONE" | translate }}
+                <a class="ctaLink" (click)="onReactivate(translateKeyPrefix + '.REACTIVATE_LINK')">
+                    {{ translateKeyPrefix + ".REACTIVATE_TEXT" | translate }}
+                </a>
+                {{ translateKeyPrefix + ".NO_ACTIVE_SUBSCRIPTION_TWO" | translate }}
+            </p>
+        </sxm-ui-alert-pill>
+    </div>
+    <div *ngIf="showNonPayError$ | async">
+        <sxm-ui-alert-pill class="alert-icon-notification rounded-corners animate-block">
+            <p>
+                {{ translateKeyPrefix + ".NON_PAY_ERROR" | translate }}
+                <a class="ctaLink" (click)="onMakeAPayment()">
+                    {{ translateKeyPrefix + ".MAKE_A_PAYMENT" | translate }}
+                </a>
+                <ng-container *ngIf="isCanada">
+                    {{ translateKeyPrefix + ".TO_CONTINUE_LISTENING" | translate }}
+                </ng-container>
+            </p>
+        </sxm-ui-alert-pill>
+    </div>
+    <br />
+
+    <h5>{{ translateKeyPrefix + ".TITLE" | translate }}</h5>
+    <hr />
+    <br />
+    <p class="gray-text">{{ translateKeyPrefix + ".SUB_TITLE" | translate }}</p>
+
+    <sxm-ui-tabs (tabSelected)="tabSelected($event)">
+        <!-- Yes Tab to Refresh Radio -->
+        <sxm-ui-tab-panel tabTitle="{{ translateKeyPrefix + '.YES_TEXT' | translate }}" [tabInfo]="tabInfoYes">
+            <ng-container *ngTemplateOutlet="inCarSteps"> </ng-container>
+        </sxm-ui-tab-panel>
+        <!-- No Tab to Text Instructions-->
+        <sxm-ui-tab-panel tabTitle="{{ translateKeyPrefix + '.NO_TEXT' | translate }}" [tabInfo]="tabInfoNo">
+            <p class="outside-car-instructions">{{ translateKeyPrefix + ".NO_INSTRUCTIONS" | translate }}</p>
+            <form [formGroup]="textInstructionsForm">
+                <sxm-ui-phone-number-form-field
+                    formControlName="phoneNumber"
+                    labelText="{{ translateKeyPrefix + '.MOBILE_FORM_PLACEHOLDER' | translate }}"
+                    errorMsg="{{ translateKeyPrefix + '.ERROR.MOBILE_REQUIRED' | translate }}"
+                >
+                </sxm-ui-phone-number-form-field>
+                <div class="checkbox-item">
+                    <sxm-ui-checkbox-with-label-form-field formControlName="checkbox">
+                        <p class="terms-text">
+                            <span [innerHTML]="translateKeyPrefix + '.CUSTOMER_AGREEMENT_CHECKBOX_TEXT' | translate"></span>
+                        </p>
+                        <div *ngIf="submitted && textInstructionsForm.get('checkbox').errors" class="invalid-feedback">
+                            <p>{{ translateKeyPrefix + ".ERROR.MESSAGE_AGREE_TO_TEXT_MESSAGE" | translate }}</p>
+                        </div>
+                    </sxm-ui-checkbox-with-label-form-field>
+                </div>
+                <button type="submit" [loading]="loadingInstructions$ | async" sxm-proceed-button (click)="sendRefreshSignalInstructions()">
+                    {{ translateKeyPrefix + ".NO_BUTTON_TEXT" | translate }}
+                </button>
+            </form>
+        </sxm-ui-tab-panel>
+    </sxm-ui-tabs>
+
+    <ng-template #inCarSteps>
+        <ol class="ordered-list">
+            <li>
+                <p>{{ translateKeyPrefix + ".YES_POINT_ONE" | translate }}</p>
+            </li>
+            <li>
+                <p>{{ translateKeyPrefix + ".YES_POINT_TWO" | translate }}</p>
+            </li>
+        </ol>
+        <privacy-policy></privacy-policy>
+        <button data-e2e="sendRefreshSignalButton" (click)="sendRefreshSignal()" [loading]="loading$ | async" sxm-proceed-button>
+            {{ translateKeyPrefix + ".YES_BUTTON_TEXT" | translate }}
+        </button>
+        <br />
+    </ng-template>
+</main>

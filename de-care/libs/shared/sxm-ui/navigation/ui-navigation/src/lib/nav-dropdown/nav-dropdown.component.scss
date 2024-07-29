@@ -1,0 +1,67 @@
+@import "sxm.phoenix.imports";
+::ng-deep :root {
+    --panel-margin: 18px;
+    // Does not work for setting a default value as long as component is using viewEncapsulation shadowdom.
+    // Setting this default value in the host does not allow it to be overwritten by ancestor elements
+}
+:host {
+    .dropdown-toggler {
+        display: inline-block;
+        position: relative;
+        background: transparent;
+        cursor: pointer;
+        border: 0;
+        padding: 0;
+        &:after {
+            content: "";
+            position: absolute;
+            top: -8px;
+            left: -3px;
+            background: transparent;
+            width: 120%;
+            height: 160%;
+        }
+        .arrow {
+            display: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            width: 13px;
+            height: 13px;
+            z-index: 1;
+            bottom: -26px; // fallback if css variables not supported
+            bottom: calc(-1 * (var(--panel-margin) + 8px));
+            &.show {
+                display: inline-block;
+            }
+        }
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        // These styles will get the dropdown to show full width in the current snapshot position, but will not work if the position of the nav is changed to no longer be right flushed.
+        // May need some custom css variables for future customization
+        left: unset;
+        right: 0;
+        width: 100vw;
+        // ---------
+        background: $white;
+        box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 18px; // fallback if css variables not supported
+        margin-top: var(--panel-margin);
+        &.show {
+            display: block;
+        }
+        @include bp(mobile-medium) {
+            width: 354px;
+            &.left {
+                left: 0;
+                right: unset;
+            }
+            &.right {
+                left: unset;
+                right: 0;
+            }
+        }
+    }
+}

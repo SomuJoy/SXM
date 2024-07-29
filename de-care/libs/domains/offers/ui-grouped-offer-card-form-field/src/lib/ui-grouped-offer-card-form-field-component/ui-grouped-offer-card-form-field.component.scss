@@ -1,0 +1,34 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.offer-card--container {
+    padding: 16px;
+}
+
+.sub-header {
+    font-weight: calculate-font-weight("bold");
+    padding-bottom: 9px;
+}
+
+.radio-item {
+    margin-bottom: 6px;
+    display: flex;
+}
+
+.tooltip {
+    margin-top: -2px;
+}
+
+.description-title {
+    font-weight: calculate-font-weight("bold");
+    padding-bottom: 9px;
+}
+
+.description {
+    font-weight: calculate-font-weight("light");
+    padding-bottom: 6px;
+}
+
+.accordion {
+    margin-left: 18px;
+}

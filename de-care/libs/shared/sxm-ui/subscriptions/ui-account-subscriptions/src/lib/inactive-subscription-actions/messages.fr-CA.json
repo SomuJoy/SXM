@@ -1,0 +1,9 @@
+{
+    "RADIO_ID": "Code de radio: {{radioId}}",
+    "PLAN_TITLE": "Forfait",
+    "NO_PLANS": "Aucun forfait actif",
+    "NONPAY_PLAN": "Suspendu",
+    "NONPAY_MESSAGE": "Compte en souffrance.",
+    "ACTIVATE_LINK": "Activer",
+    "REMOVE_LABEL": "Supprimer de mon compte"
+}

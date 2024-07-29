@@ -1,0 +1,8 @@
+{
+    "DEVICE_LOOK_UP": "Rechercher une radio",
+    "CONTINUE_BUTTON": "CONTINUER",
+    "VEHICLE": "{{make}} {{model}} {{year}}",
+    "RADIO_ID": "****{{radioId}}",
+    "TITLE": "Sélectionnez votre radio",
+    "BODY": "Sélectionnez une radio ou ajoutez une autre radio si la vôtre ne figure pas dans la liste."
+}

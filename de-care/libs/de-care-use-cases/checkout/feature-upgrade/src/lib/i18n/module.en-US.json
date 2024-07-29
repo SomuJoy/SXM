@@ -1,0 +1,144 @@
+{
+    "DeCareUseCasesCheckoutFeatureUpgradeModule": {
+        "DefaultErrorPageComponent": {
+            "HEADER": {
+                "TITLE": "We’re Sorry",
+                "BODY": "This transaction can't be completed online."
+            },
+            "HELP": {
+                "TITLE": "Don't worry, we can help you.",
+                "CHAT": "Chat with an agent",
+                "OR_CALL": "or call",
+                "TFN": "1-855-516-0571"
+            }
+        },
+        "ExpiredErrorPageComponent": {
+            "SUB_HEADER": "WE'RE SORRY",
+            "HEADER": "Unfortunately this offer has expired",
+            "TEXT_HEADER": "Need help with your current plan?",
+            "MESSAGE_LOGIN": "You may <a href='https://care.siriusxm.com/login_view.action'>sign in</a> to manage your subscription.",
+            "MESSAGE_CALL": "Call <a href=\"tel:+1-855-516-0571\">1-855-516-0571</a> to speak with an agent."
+        },
+        "RedeemedErrorPageComponent": {
+            "SUB_HEADER": "WE'RE SORRY",
+            "HEADER": "It looks like you already redeemed this offer",
+            "TEXT_HEADER": "Need help with your current plan?",
+            "MESSAGE_LOGIN": "You may <a href='https://care.siriusxm.com/login_view.action'>sign in</a> to manage your subscription.",
+            "MESSAGE_CALL": "Call <a href=\"tel:+1-855-516-0571\">1-855-516-0571</a> to speak with an agent."
+        },
+        "CurrentChargesMessageComponent": {
+            "CURRENT_CHARGES": "Current Charges",
+            "ABOUT_UPGRADE": "Your upgrade will go into effect immediately, and will not affect your current billing charges during the 3-month promotional period.",
+            "ABOUT_UPGRADE_ANNUAL": "Your upgrade will go into effect immediately at no additional charge for the remainder of your current subscription term.",
+            "INSTRUCTION_TEXT": "You can cancel your upgrade at any time prior to your renewal to stay on your current plan."
+        },
+        "TierUpPurchasePageComponent": {
+            "CURRENT_PLAN": {
+                "TITLE": "Your current plan:",
+                "NAME_AND_PRICE": "{{name}} - {{price}}/mo",
+                "NAME_AND_PRICE_ANNUAL": "{{name}} - {{price}}/yr"
+            },
+            "PLUS_FEES": " plus fees",
+            "STEPS": {
+                "PAYMENT_INFO": {
+                    "TITLE": "Your billing information",
+                    "CONTINUE_BUTTON_TEXT": "Continue",
+                    "REMEMBER_TEXT": "You'll get to review your order before subscribing. Remember, you can change or cancel anytime.",
+                    "SELECTED_PAYMENT_METHOD_SUMMARY": "{{cardType}} ending in {{cardNumberLastFour}}"
+                },
+                "REVIEW": {
+                    "TITLE": "Review and complete your order",
+                    "CONTINUE_BUTTON_TEXT": "Complete my order"
+                }
+            },
+            "COMPLETE_ORDER_BUTTON": "Complete My Order"
+        },
+        "TierUpConfirmationPageComponent": {
+            "TITLE": "Your subscription has been updated!",
+            "REVIEW_ORDER": {
+                "CURRENT_CHARGES": "Current Charges:",
+                "ABOUT_UPGRADE": "Your upgrade will go into effect immediately, and will not affect your current billing charges during the 3-month promotional period.",
+                "ABOUT_UPGRADE_ANNUAL": "Your upgrade will go into effect immediately at no additional charge for the remainder of your current subscription term.",
+                "INSTRUCTION_TEXT": "You can cancel your upgrade at any time prior to your renewal to stay on your current plan."
+            },
+            "RADIO_INFO": {
+                "RADIO_ID_MASKED": "Radio ID: ****{{ radioId }}"
+            },
+            "QUOTE": {
+                "PRINT_YOUR_ORDER": "Print your order summary"
+            },
+            "SUBSCRIPTION_IMPORTANT_INFO": {
+                "TITLE": "Important information about your subscription:",
+                "BODY": "Your subscription starts immediately unless indicated otherwise. If your radio is not receiving the programming you are entitled to, please follow the activation instructions above. For your convenience, all subscriptions automatically renew until canceled. Your renewal will be billed at the then-current rate using the payment method on file. You can cancel your subscription at any time by calling Listener Care at <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>. Your subscription is governed by the SiriusXM Customer Agreement, which can be <a href=\"https://www.siriusxm.com/customeragreement?desktop=yes\" target=\"_blank\">viewed online</a>. If you would like to receive a copy of the Customer Agreement by mail, you can call <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>."
+            }
+        },
+        "TierUpOfferComponent": {
+            "TITLE": "Limited Time Offer",
+            "UPGRADE_INCLUDES": "Your upgrade includes:"
+        },
+        "FullPricePurchasePageComponent": {
+            "CURRENT_PLAN": {
+                "TITLE": "Your current subscription:",
+                "NAME_AND_PRICE": "{{name}} - {{price}}/mo",
+                "NAME_AND_PRICE_ANNUAL": "{{name}} - {{price}}/yr"
+            },
+            "TERM_MAP": {
+                "=1": "Monthly - {{amount}}/mo",
+                "=3": "Quarterly - {{amount}}/3 mo",
+                "=6": "Semi-Annual - {{amount}}/6 mo",
+                "=12": "Annual - {{amount}}/yr",
+                "other": "{{termLength}}-Month  - {{amount}}/{{termLength}} mo"
+            },
+            "PLUS_FEES": " plus fees",
+            "STEPS": {
+                "UPGRADED_PLAN_INFO": {
+                    "TITLE": "Your upgraded plan",
+                    "SELECTED_PLAN_INFO": "{{selectedPlan}}",
+                    "DEAL_INFO_APPLE": "<br>Plus up to 6 months of Apple Music on us",
+                    "DEAL_INFO_AMZ_DOT": "<br>Plus a free Echo Dot on us",
+                    "CONTINUE_BUTTON_TEXT": "Continue"
+                },
+                "PICK_YOUR_BILLING_PLAN": {
+                    "TITLE": "Pick your billing plan",
+                    "CONTINUE_BUTTON_TEXT": "Continue"
+                },
+                "PAYMENT_INFO": {
+                    "TITLE": "Enter your payment information",
+                    "CONTINUE_BUTTON_TEXT": "Review my order",
+                    "REMEMBER_TEXT": "You'll get to review your order before subscribing. Remember, you can change or cancel anytime.",
+                    "SELECTED_PAYMENT_METHOD_SUMMARY": "{{cardType}} ending in {{cardNumberLastFour}}"
+                },
+                "REVIEW": {
+                    "TITLE": "Review and complete your order",
+                    "CONTINUE_BUTTON_TEXT": "Complete my order"
+                }
+            },
+            "COMPLETE_ORDER_BUTTON": "Complete My Order"
+        },
+        "FullPriceConfirmationPageComponent": {
+            "TITLE": "Your subscription has been updated!",
+            "RADIO_INFO": {
+                "RADIO_ID_MASKED": "Radio ID: ****{{ radioId }}"
+            },
+            "QUOTE": {
+                "PRINT_YOUR_ORDER": "Print your order summary"
+            },
+            "SUBSCRIPTION_IMPORTANT_INFO": {
+                "TITLE": "Important information about your subscription:",
+                "BODY": "Your subscription starts immediately unless indicated otherwise. If your radio is not receiving the programming you are entitled to, please follow the activation instructions above. For your convenience, all subscriptions automatically renew until canceled. Your renewal will be billed at the then-current rate using the payment method on file. You can cancel your subscription at any time by calling Listener Care at <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>. Your subscription is governed by the SiriusXM Customer Agreement, which can be <a href=\"https://www.siriusxm.com/customeragreement?desktop=yes\" target=\"_blank\">viewed online</a>. If you would like to receive a copy of the Customer Agreement by mail, you can call <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>."
+            },
+            "BACK_BUTTON": {
+                "TEXT": "Back To My Account"
+            },
+            "DEAL_REDEMPTION_INSTRUCTIONS": {
+                "APPLE": {
+                    "TITLE": "Your Apple Music special offer is coming",
+                    "DESCRIPTION": "<p align=\"center\">An email with your unique code will be sent to the email address provided. Simply follow the prompts to start enjoying up to 6 months free.</p>",
+                    "image": {
+                        "src": "assets/img/apple-music-logo.png"
+                    }
+                }
+            }
+        }
+    }
+}

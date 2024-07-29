@@ -1,0 +1,12 @@
+<main>
+    <h3>{{ "trialActivation.trialExpiredOverlayComponent.HEADER" | translate }}</h3>
+    <p>
+        {{ "trialActivation.trialExpiredOverlayComponent.BODY_PREFIX" | translate }}
+        <chat-with-agent-link [chatLinkText]="'trialActivation.trialExpiredOverlayComponent.CHAT_LINK_TEXT' | translate" [queue]="'general'"></chat-with-agent-link
+        >{{ "trialActivation.trialExpiredOverlayComponent.BODY_SUFFIX" | translate }}
+    </p>
+    <button (click)="continue()" class="button primary text-center text-uppercase align-justify" type="submit">
+        {{ "trialActivation.trialExpiredOverlayComponent.BUTTON" | translate }}
+        <span></span><span></span><span></span>
+    </button>
+</main>

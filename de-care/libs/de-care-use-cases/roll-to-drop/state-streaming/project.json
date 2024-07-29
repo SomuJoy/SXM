@@ -1,0 +1,31 @@
+{
+    "name": "de-care-use-cases-roll-to-drop-state-streaming",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care-use-cases/roll-to-drop/state-streaming/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/de-care-use-cases/roll-to-drop/state-streaming/src/**/*.ts", "libs/de-care-use-cases/roll-to-drop/state-streaming/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/roll-to-drop/state-streaming/jest.config.js",
+                "tsConfig": "libs/de-care-use-cases/roll-to-drop/state-streaming/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/de-care-use-cases/roll-to-drop/state-streaming/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:state", "scope:de-care"]
+}

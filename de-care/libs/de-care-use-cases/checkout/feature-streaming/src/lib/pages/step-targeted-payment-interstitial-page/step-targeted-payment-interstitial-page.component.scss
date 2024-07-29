@@ -1,0 +1,20 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "../page.scss";
+
+:host {
+    @include page-host;
+    .checkmark-circle-outline {
+        @include icon-coin(48px, $gray-dark);
+        padding: 7px;
+        use.icon-check-mark-flex-stroke {
+            stroke: $gray-dark;
+            stroke-width: 1px;
+        }
+    }
+    #mainContent {
+        svg {
+            margin-bottom: 20px;
+        }
+    }
+}

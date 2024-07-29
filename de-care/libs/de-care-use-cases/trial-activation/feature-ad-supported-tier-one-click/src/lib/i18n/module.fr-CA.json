@@ -1,0 +1,42 @@
+{
+    "DeCareUseCasesTrialActivationFeatureAdSupportedTierOneClickModule": {
+        "DefaultErrorPageComponent": {
+            "HEADER": {
+                "TITLE": "DÉSOLÉS",
+                "BODY": "Cette transaction ne peut être complétée en ligne."
+            },
+            "HELP": {
+                "TITLE": "Laissez-nous vous aider.",
+                "OR_CALL": "Pour plus d’aide, composez le",
+                "TFN": "1-866-635-0565"
+            }
+        },
+        "AlreadyHasSubscriptionErrorPageComponent": {
+            "HEADER": {
+                "TITLE": "DÉSOLÉS",
+                "BODY": "Votre radio a déjà un abonnement actif."
+            },
+            "HELP": {
+                "TITLE": "Laissez-nous vous aider.",
+                "YOU_CAN": "Vous pouvez vous",
+                "LOGIN": "connecter",
+                "LOGIN_URL": "https://care.siriusxm.ca/login_view.action?langpref=fr",
+                "TO_MANAGE_SUB": "pour gérer votre abonnement.",
+                "FOR_MORE_HELP": "Pour plus d’aide,",
+                "OR_CALL": "composez le",
+                "TFN": "1-866-635-0565"
+            }
+        },
+        "IsNotEligibleErrorPageComponent": {
+            "HEADER": {
+                "TITLE": "DÉSOLÉS",
+                "BODY": "Votre radio n’est pas admissible à un essai."
+            },
+            "HELP": {
+                "TITLE": "Laissez-nous vous aider.",
+                "OR_CALL": "Pour plus d’aide, composez le",
+                "TFN": "1-866-635-0565"
+            }
+        }
+    }
+}

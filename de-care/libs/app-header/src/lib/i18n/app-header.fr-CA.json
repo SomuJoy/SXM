@@ -1,0 +1,17 @@
+{
+    "appHeader": {
+        "headerBarComponent": {
+            "EDIT_PROVINCE": "Modifier",
+            "SWITCH_LANGUAGE": {
+                "LABEL": "EN",
+                "VALUE": "en-CA"
+            },
+            "PROVINCE_SELECTOR_MODAL_TITLE": "Paramètres du site"
+        },
+        "provinceSelectorComponent": {
+            "HEADER_TITLE": "Confirmez votre province",
+            "PRICING_VARY": "La tarification peut varier selon la province.",
+            "SUBMIT_BUTTON": "Sauvegarder les paramètres"
+        }
+    }
+}

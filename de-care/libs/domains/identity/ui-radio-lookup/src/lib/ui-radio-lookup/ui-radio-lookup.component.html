@@ -1,0 +1,35 @@
+<radio-id-and-account-number-lookup-form
+    #radioIdAndAccountNumberForm
+    *ngIf="additionalFieldType === 'ACCOUNT_NUMBER'"
+    (radioIdAndAccountNumberReadyToProcess)="doRadioIdLookupByAccountNumber($event)"
+></radio-id-and-account-number-lookup-form>
+<radio-id-and-lastname-lookup-form
+    #radioIdAndLastNameForm
+    *ngIf="additionalFieldType === 'LAST_NAME'"
+    (radioIdAndLastnameReadyToProcess)="doRadioIdLookupByLastName($event)"
+></radio-id-and-lastname-lookup-form>
+<sxm-ui-modal #lpzModal [title]="translateKeyPrefix + '.RADIO_LOOKUP' | translate" [ariaDescribedbyTextId]="radioLookupModalAriaDescribedbyTextId" [titlePresent]="true" (modalClosed)="closeLpzModal()">
+    <section class="lpz-form-container">
+        <section>
+            <h5 class="lpz-title">{{ translateKeyPrefix + ".LPZ_TITLE" | translate }}</h5>
+            <p class="radio-info">
+                <span>
+                    {{ translateKeyPrefix + ".LPZ_RADIO_LABEL" | translate }}
+                    <ng-container *ngIf="selectedRadioId"> {{ selectedRadioId }} </ng-container>
+                </span>
+                <a (click)="closeLpzModal()">
+                    {{ translateKeyPrefix + ".LPZ_EDIT_LINK_LABEL" | translate }}
+                </a>
+            </p>
+        </section>
+        <section>
+            <h5>{{ translateKeyPrefix + ".LPZ_ACCOUNT_VERIFY" | translate }}</h5>
+            <p [id]="radioLookupModalAriaDescribedbyTextId">{{ translateKeyPrefix + ".VALIDATE_MESSAGE" | translate }}</p>
+            <p>
+                {{ translateKeyPrefix + ".LPZ_PRIVACY_POLICY_MESSAGE" | translate }}
+                <privacy-policy></privacy-policy>
+            </p>
+        </section>
+        <identification-validate-lpz-form #lpzFormComponent (lpzValidated)="lpzValidated($event)"></identification-validate-lpz-form>
+    </section>
+</sxm-ui-modal>

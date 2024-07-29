@@ -1,0 +1,33 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "ADSDS",
+            "accountProfile": {
+                "accountRegistered": false
+            },
+            "accountState": {
+                "isInPreTrial": false
+            },
+            "serviceAddress": {
+                "state": "NY",
+                "country": "US"
+            },
+            "subscriptions": [],
+            "billingSummary": {
+                "creditCard": null,
+                "isPaymentTypeInvoice": false
+            },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true,
+            "isAccountIdentifiedUsingFLEPZOrVIN": false
+        },
+        "maskedUserNameFromToken": "ces******@siriusxm.com",
+        "marketingId": null,
+        "marketingAcctId": "5441",
+        "email": null,
+        "isUserNameInTokenSameAsAccount": true
+    }
+}

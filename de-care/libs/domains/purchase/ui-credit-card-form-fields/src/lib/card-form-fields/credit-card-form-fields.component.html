@@ -1,0 +1,130 @@
+<div *ngIf="paymentForm" [formGroup]="paymentForm">
+    <p class="text-color-grey-dark payment-info-title" qatag="PaymentInfoSubheader">
+        <strong>{{ copyKey + "PAYMENT_INFO_SUBHEADER" | translate }}</strong>
+    </p>
+
+    <div id="new-cc-form">
+        <div *ngIf="serviceError" class="invalid-feedback">
+            <p>{{ copyKey + "UNEXPECTED_ERROR" | translate }}</p>
+        </div>
+        <div *ngIf="ccError" class="invalid-feedback" data-e2e="creditCardFormFields.CCUnexpectedErrorCopy">
+            <p>{{ copyKey + "NEW_CC.UNAUTHORIZED_ERROR" | translate }}</p>
+        </div>
+        <div>
+            <div class="row">
+                <div class="column small-12">
+                    <div class="input-container" [class.invalid]="controlIsInvalid(paymentForm.controls.ccName)" [class.filled]="paymentForm.controls.ccName.value">
+                        <label for="cc-name">{{ copyKey + "NEW_CC.CC_NAME" | translate }}</label>
+                        <input
+                            type="text"
+                            id="cc-name"
+                            name="cc-name"
+                            formControlName="ccName"
+                            minlength="2"
+                            maxlength="100"
+                            data-e2e="CCNameOnCardTextfield"
+                            qatag="CCNameOnCardTextfield"
+                            onFocus
+                            required
+                            autocomplete="cc-name"
+                            #creditCardName
+                            data-e2e="creditCardFormFields.ccNameOnCard"
+                        />
+                    </div>
+                    <div *ngIf="controlIsInvalid(paymentForm.controls.ccName)" class="invalid-feedback">
+                        <ng-container *ngIf="paymentForm.controls.ccName.hasError('cvvExclusion'); else ccNameError">
+                            <p>{{ copyKey + "ERROR_CVV_FOUND" | translate }}</p>
+                        </ng-container>
+                        <ng-template #ccNameError>
+                            <p>{{ copyKey + "NEW_CC.ERROR_CC_NAME" | translate }}</p>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column small-12">
+                    <credit-card-number-input
+                        [labelText]="copyKey + 'NEW_CC.CC_NUM' | translate"
+                        [isMasked]="maskCreditCardNumber"
+                        [maskedNum]="maskedCCNum"
+                        (unmask)="handleUnmaskCC()"
+                        (cardEntryEvent)="checkGiftCardEntry($event)"
+                        formControlName="ccNum"
+                    ></credit-card-number-input>
+                    <div *ngIf="isGiftCardEntered" class="invalid-feedback">
+                        <p>{{ copyKey + "NEW_CC.ERROR_CC_NUM_FOUND_GC" | translate }}</p>
+                    </div>
+                    <div *ngIf="!isGiftCardEntered && !maskCreditCardNumber && controlIsInvalid(paymentForm.controls.ccNum)" class="invalid-feedback">
+                        <p>{{ copyKey + "NEW_CC.ERROR_CC_NUM" | translate }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+	            <ng-container *ngIf="isCVVEnabled; else expirationDateFormInputTemplate">
+	                <div class="column small-6">
+	                    <ng-template [ngTemplateOutlet]="expirationDateControlTemplate"></ng-template>
+	                    <!-- This part is required to allocate empty space in case CVV has input error but Expiration Date has not -->
+		                <div *ngIf="controlIsInvalid(paymentForm.controls.ccCVV) && !(controlIsInvalid(paymentForm.controls.ccExpDate) || paymentForm.hasError('invalidDate'))"  class="empty-invalid-feedback"></div>
+	                </div>
+	                <div class="column small-6 no-padding">
+	                    <div class="input-container" [class.invalid]="controlIsInvalid(paymentForm.controls.ccCVV)" [class.filled]="paymentForm.controls.ccCVV.value">
+	                        <label for="cc-csc">{{ copyKey + "NEW_CC.CC_CVV" | translate }}</label>
+	                        <input
+	                            type="password"
+	                            formControlName="ccCVV"
+	                            id="cc-csc"
+	                            name="cc-csc"
+	                            minlength="3"
+	                            maxlength="4"
+	                            data-e2e="ccCVV"
+	                            qatag="ccCVV"
+	                            onFocus
+	                            required
+	                            #cvvInput
+	                            autocomplete="cc-csc"
+	                        />
+	                    </div>
+	                    <sxm-ui-tooltip>
+	                        <p>{{ copyKey + "TOOLTIP_MESSAGE_1" | translate }}</p>
+	                        <p>{{ copyKey + "TOOLTIP_MESSAGE_2" | translate }}</p>
+	                    </sxm-ui-tooltip>
+	                    <div *ngIf="controlIsInvalid(paymentForm.controls.ccCVV)" class="invalid-feedback">
+	                        <p>{{ copyKey + "NEW_CC.ERROR_CC_CVV" | translate }}</p>
+	                    </div>
+	                    <!-- This part is required to allocate empty space in case Expiration Date has input error but CVV has not -->
+		                <div *ngIf="!controlIsInvalid(paymentForm.controls.ccCVV) && (controlIsInvalid(paymentForm.controls.ccExpDate) || paymentForm.hasError('invalidDate'))"  class="empty-invalid-feedback"></div>
+	                </div>
+	            </ng-container>
+	            <ng-template #expirationDateFormInputTemplate>
+	                <div class="column small-12">
+	                    <ng-template [ngTemplateOutlet]="expirationDateControlTemplate"></ng-template>
+	                </div>
+	            </ng-template>
+	            <ng-template #expirationDateControlTemplate>
+	                <div class="input-container" [class.invalid]="controlIsInvalid(paymentForm.controls.ccExpDate) || paymentForm.hasError('invalidDate')">
+	                    <label for="cc-exp">{{ copyKey + (isCVVEnabled ? "NEW_CC.CC_EXP_DATE_INLINE" : "NEW_CC.CC_EXP_DATE") | translate }}</label>
+	                    <input
+	                        appMaskExpirationDate
+	                        type="text"
+	                        id="cc-exp"
+	                        name="cc-exp"
+	                        formControlName="ccExpDate"
+	                        minlength="5"
+	                        maxlength="5"
+	                        data-e2e="ccExpDateOnCardTextfield"
+	                        qatag="ccExpDateOnCardTextfield"
+	                        onFocus
+	                        required
+	                        autocomplete="cc-exp"
+	                        data-e2e="creditCardFormFields.ccExpirationDate"
+	                    />
+	                </div>
+	                <div *ngIf="controlIsInvalid(paymentForm.controls.ccExpDate) || paymentForm.hasError('invalidDate')" class="invalid-feedback">
+	                    <p>{{ copyKey + "NEW_CC.ERROR_CC_EXP_INVALID" | translate }}</p>
+	                </div>
+	            </ng-template>
+	        </div>
+        </div>
+    </div>
+</div>

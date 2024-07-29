@@ -1,0 +1,57 @@
+<form [formGroup]="flepzForm">
+    <div id="flepz_form">
+        <div *ngIf="flepzError" class="invalid-feedback">
+            <p *ngIf="hasDynamicErrorMsgWithAlternativeLookupLink()">
+                <span [innerHTML]="flepzError + '_TAB_LINK_PREFIX' | translate | safeHtml"> ></span
+                ><a
+                    (click)="onSwitchAlternativeLookup($event)"
+                    [id]="'errorLink-' + errorMsgAlternativeLookupLinkData.alternativeLookupId"
+                    class="alternative-lookup-link"
+                    [attr.data-track-click]="'errorLink-' + errorMsgAlternativeLookupLinkData.alternativeLookupId"
+                    ><span [innerHTML]="errorMsgAlternativeLookupLinkData.alternativeLookupLinkText | safeHtml"></span></a
+                ><span [innerHTML]="errorMsgAlternativeLookupLinkData.alternativeLookupLinkDesc | safeHtml"> ></span>
+                <chat-with-agent-link
+                    [chatLinkText]="'identification.flepzFormComponent.NO_RADIO_TAB_LINK_CHAT_LINK_TEXT' | translate"
+                    [queue]="'general'"
+                ></chat-with-agent-link
+                ><span [innerHTML]="flepzError + '_SUFFIX' | translate | safeHtml"></span>
+            </p>
+            <p *ngIf="!hasDynamicErrorMsgWithAlternativeLookupLink()">
+                <span [innerHTML]="flepzError + '_PREFIX' | translate | safeHtml"> ></span>
+                <chat-with-agent-link [chatLinkText]="'identification.flepzFormComponent.CHAT_LINK_TEXT' | translate" [queue]="'general'"></chat-with-agent-link
+                ><span [innerHTML]="flepzError + '_SUFFIX' | translate | safeHtml"></span>
+            </p>
+        </div>
+        <sxm-ui-flepz-form-fields
+            formControlName="flepz"
+            [submitted]="submitted"
+            [includeZip]="true"
+            [isInvalidPhone]="flepzError && flepzError === 'identification.flepzFormComponent.PHONE_INVALID'"
+            [prefilledAccountData]="prefilledAccountData"
+        ></sxm-ui-flepz-form-fields>
+    </div>
+    <ng-content></ng-content>
+    <div class="privacy-policy">
+        <a href="{{ 'identification.flepzFormComponent.PRIVACY_POLICY.LINK_URL' | translate }}" target="_blank" class="text-link">
+            {{ "identification.flepzFormComponent.PRIVACY_POLICY.LINK_TEXT" | translate }}
+        </a>
+    </div>
+    <!-- opt in (Only for NFL) - Optional-->
+    <sxm-ui-nfl-opt-in *ngIf="nflOptInEnabled" (submitVerifyAccountForm)="onVerifyAccountClick($event)"> </sxm-ui-nfl-opt-in>
+</form>
+<div class="row align-center no-padding">
+    <div class="column small-12 medium-12 no-padding">
+        <button
+            (click)="doFlepzSearch()"
+            type="submit"
+            [fullWidth]="true"
+            [loading]="loading"
+            data-test="flepzForm.continueButton"
+            data-e2e="flepzForm.continueButton"
+            qatag="FlepzContinueButton"
+            sxm-proceed-button
+        >
+            {{ "identification.flepzFormComponent.BUTTON" | translate }}
+        </button>
+    </div>
+</div>

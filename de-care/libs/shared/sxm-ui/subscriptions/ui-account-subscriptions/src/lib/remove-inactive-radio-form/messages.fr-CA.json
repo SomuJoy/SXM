@@ -1,0 +1,27 @@
+{
+    "TITLE": "Supprimez votre radio inactive",
+    "INSTRUCTIONS": "Sélectionnez la raison pour laquelle vous voulez supprimer la radio de votre compte.",
+    "REMOVE_BUTTON": "SUPPRIMEZ",
+    "CANCEL_BUTTON": "ANNULEZ",
+    "ERROR_REQUIRED": "Sélectionnez la raison pour laquelle vous souhaitez supprimer votre radio.",
+    "SERVER_ERROR": "Erreur de serveur ici",
+    "SELECT_REASON_DROPDOWN": "Sélectionnez la raison",
+    "REASONS_LIST": [
+        {
+            "label": "Véhicule vendu ou échangé",
+            "key": "Vehicle sold or traded"
+        },
+        {
+            "label": "Radio perdue, brisée ou volée",
+            "key": "Radio lost, broken or stolen"
+        },
+        {
+            "label": "Radio vendue, donnée ou supprimée",
+            "key": "Radio sold, given away, or discarded"
+        },
+        {
+            "label": "J’ai d’autres raisons",
+            "key": "Other"
+        }
+    ]
+}

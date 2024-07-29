@@ -1,0 +1,10 @@
+{
+    "ACCOUNT_INFO_TITLE": "Infos sur le compte",
+    "BACK_BUTTON_LABEL": "RETOUR",
+    "HEADER": "Modifier l’adresse de facturation",
+    "BILLING_ADDRESS_UPDATE_SUCCESS_MESAGE": "Mise à jour de l’adresse réussie.",
+    "ADDRESS_TITLE": "Adresse",
+    "INVALID_BILLING_ADDRESS_ERROR": "Selon les dossiers de Postes Canada, votre adresse de facturation est invalide ou des renseignements importants sont manquants. Veuillez mettre à jour l'adresse de facturation pour continuer.",
+    "SAVE_BUTTON": "SAUVEGARDER",
+    "CANCEL_BUTTON": "ANNULEZ"
+}

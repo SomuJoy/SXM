@@ -1,0 +1,41 @@
+<ng-container *ngrxLet="viewModel$ as viewModel">
+    <ng-container *ngIf="dataLoad$ | async as dataLoad">
+        <section id="heroContent"></section>
+        <section id="mainContent">
+            <ng-container *ngIf="dataLoad.pending || dataLoad.error">
+                <article id="skeletonLoaderOfferCard">
+                    <div class="shadow-helper">
+                        <sxm-ui-primary-package-card-skeleton-loader></sxm-ui-primary-package-card-skeleton-loader>
+                    </div>
+                    <sxm-ui-button-cta-skeleton-loader></sxm-ui-button-cta-skeleton-loader>
+                </article>
+            </ng-container>
+            <ng-container *ngIf="dataLoad.value">
+                <div>
+                    <div class="shadow-helper">
+                        <sxm-ui-primary-package-card
+                            [class.theme-non-retail]="viewModel?.offerDescription?.theme === 'Theme2'"
+                            [class.presentation-no-icons-single-detail-visible]="viewModel?.offerDescription?.presentation === 'Presentation3'"
+                            [packageData]="viewModel?.offerDescription"
+                        ></sxm-ui-primary-package-card>
+                    </div>
+                </div>
+                <a
+                    sxmUiButtonCta
+                    data-test="continueButton"
+                    [routerLink]="pageStepRouteConfiguration.routeUrlNext"
+                    queryParamsHandling="preserve"
+                    sxmUiDataClickTrack="routing"
+                >
+                    {{ translateKeyPrefix + ".CONTINUE_BUTTON_TEXT" | translate }}
+                </a>
+            </ng-container>
+        </section>
+        <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+            <div *ngIf="dataLoad.value" [innerHTML]="viewModel.legalCopy"></div>
+            <div *ngIf="dataLoad.pending">
+                <sxm-ui-skeleton-loader-text-copy></sxm-ui-skeleton-loader-text-copy>
+            </div>
+        </section>
+    </ng-container>
+</ng-container>

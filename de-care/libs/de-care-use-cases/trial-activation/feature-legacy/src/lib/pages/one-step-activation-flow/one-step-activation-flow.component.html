@@ -1,0 +1,63 @@
+<main class="background-offwhite">
+    <div class="content-container">
+        <div class="row align-center no-padding-small">
+            <div class="column medium-2 no-padding background-white"></div>
+            <div class="column small-12 medium-6 no-padding-small background-white">
+                <div class="trial-accordion-container background-white">
+                    <h6 class="text-color-gray-dark step-header">{{ "trialActivation.oneStepActivationFlowComponent.STEP_PAGE_TITLES.STEP_PROGRESS" | translate }}</h6>
+                    <h4>{{ "trialActivation.oneStepActivationFlowComponent.STEP_PAGE_TITLES.HEADING" | translate }}</h4>
+                    <p>
+                        <sxm-ui-translation-splitter
+                            data-e2e="oneStepNewAccountFormStep.vehicleEligibilityText"
+                            [text]="
+                                'trialActivation.oneStepActivationFlowComponent.STEP_PAGE_TITLES.MESSAGE' + (offer.deal?.type === 'APPLE' ? '_APPLE' : '')
+                                    | translate
+                                        : {
+                                              trialTerm: termLength,
+                                              packageNameWithoutPlatform:
+                                                  'app.packageDescriptions.' + offer.packageName + '.name' | translate | withoutPlatformNameStreaming: offer.packageName
+                                          }
+                            "
+                        >
+                            <span data-content-slot="1">{{
+                                vehicleInfo
+                                    | vehicleInfoTranslate: { defaultText: "trialActivation.oneStepActivationFlowComponent.STEP_PAGE_TITLES.DEFAULT_VEHICLE" | translate }
+                            }}</span>
+                        </sxm-ui-translation-splitter>
+                    </p>
+                    <p>
+                        <a class="text-link" (click)="notYourCarClick()">{{
+                            "trialActivation.oneStepActivationFlowComponent.STEP_PAGE_TITLES.NOT_YOUR_CAR_MESSAGE" | translate
+                        }}</a>
+                    </p>
+                    <hr class="extra-margin-top" />
+                </div>
+            </div>
+            <div class="column medium-2 no-padding background-white"></div>
+        </div>
+        <div class="row align-center no-padding-small">
+            <div class="column medium-2 no-padding background-white"></div>
+            <div class="column small-12 medium-6 no-padding-small background-white">
+                <div class="trial-accordion-container background-white">
+                    <h6 class="step-title">{{ "trialActivation.oneStepActivationFlowComponent.STEP_PAGE_TITLES.CREATE_YOUR_ACCOUNT" | translate }}</h6>
+                    <ng-container *ngIf="lang$ | async as lang">
+                        <one-step-new-account-form-step
+                            [lang]="lang"
+                            [country]="country$ | async"
+                            [prospectData]="prospectData"
+                            [isLoadingExternally]="isLoading"
+                            [hasExternalError]="hasSubmissionError"
+                            [canEditUsername]="true"
+                            (submitNewAccount)="onNewAccountFormSubmit($event, lang)"
+                            [displayNucaptcha]="displayNucaptcha"
+                        >
+                        </one-step-new-account-form-step>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="column medium-2 no-padding background-white"></div>
+        </div>
+    </div>
+</main>
+
+<sxm-ui-legal-copy [legalCopy]="offerDetails$ | async"></sxm-ui-legal-copy>

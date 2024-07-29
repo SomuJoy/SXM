@@ -1,0 +1,86 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.mb-32 {
+    margin-bottom: 32px;
+}
+
+.mb-24 {
+    margin-bottom: 24px;
+}
+
+.mb-16 {
+    margin-bottom: 16px;
+}
+
+.mb-8 {
+    margin-bottom: 8px;
+}
+
+hr {
+    @include hr;
+}
+
+.content-section {
+    .heading {
+        margin-bottom: 16px;
+        h6 {
+            font-weight: calculate-font-weight("bold");
+            line-height: 24px;
+            margin: 0;
+            margin-bottom: 8px;
+        }
+        p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+    .content {
+        & > form {
+            display: flex;
+
+            sxm-ui-radio-option-as-block-form-field:first-child {
+                margin-right: 24px;
+            }
+        }
+    }
+
+    .select-radio-section {
+        & > div:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+    .invalid-feedback {
+        margin-top: 8px;
+    }
+}
+
+.button.primary {
+    @include bp(medium) {
+        margin-top: 48px;
+    }
+}
+
+.user-details {
+    .radio-lookup-link {
+        margin: 8px 0 0 56px;
+        a,
+        .text-link {
+            font-size: inherit;
+            font-weight: inherit;
+            text-decoration: underline;
+            border-bottom: none;
+        }
+    }
+}
+
+sxm-ui-alert-pill {
+    background: $vanilla;
+    .xmark-list {
+        margin: 0;
+        li {
+            color: inherit;
+        }
+    }
+}

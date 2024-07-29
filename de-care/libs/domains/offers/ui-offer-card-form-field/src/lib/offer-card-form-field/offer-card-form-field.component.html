@@ -1,0 +1,38 @@
+<sxm-ui-content-card [hasGrayBackground]="true" [flagPresent]="flagPresent" [headlinePresent]="headlinePresent" data-e2e="offerCardForm">
+    <div htmlContentForFlag>
+        <p class="small-copy text-uppercase" qatag="OurBestPackage">
+            {{ translationKeyPrefix + "CONTENT_CARD_FLAG" | translate }}
+        </p>
+    </div>
+    <div htmlContentForHead>
+        <div class="radio-item" (click)="packageClicked.emit()">
+            <input
+                [formControl]="control"
+                [attr.name]="formControlName"
+                [value]="planCode"
+                [id]="inputID"
+                class="radio"
+                type="radio"
+                qatag="ChangePackageButton"
+                data-e2e="offerCardForm.radioButton"
+            />
+
+            <label class="input-label text-color-white large-copy" [for]="inputID">
+                <ng-container *ngIf="isAddingPackage; else nonAddingPackage">
+                    {{ translationKeyPrefix + "CONTENT_CARD_HEADLINE3" | translate }}
+                </ng-container>
+                <ng-template #nonAddingPackage>
+                <ng-container *ngIf="isCurrentPackage; else defaultTextCopy">
+                    {{ translationKeyPrefix + "CONTENT_CARD_HEADLINE2" | translate }}
+                </ng-container>
+                </ng-template>
+                <ng-template #defaultTextCopy>
+                    {{ translationKeyPrefix + "CONTENT_CARD_HEADLINE1" | translate }}
+                </ng-template>
+            </label>
+        </div>
+    </div>
+    <div htmlContentForBody>
+        <offer-card [offerInfo]="offerInfo" [packageDescription]="packageDescription"> </offer-card>
+    </div>
+</sxm-ui-content-card>

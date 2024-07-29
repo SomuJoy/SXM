@@ -1,0 +1,82 @@
+<ng-container *ngrxLet="viewModel$ as viewModel">
+    <ng-container *ngIf="offerLoad$ | async as offerLoad">
+        <section id="mainContent">
+            <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+                <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+                <ng-container body>
+                    <p>
+                        {{ translateKeyPrefix + ".BODY" | translate }}<a routerLink="/account/login">{{ translateKeyPrefix + ".SIGN_IN_LINK_TEXT" | translate }}</a
+                        >.
+                    </p>
+                </ng-container>
+            </sxm-ui-step-header>
+            <article id="skeletonLoader" *ngIf="offerLoad.pending || offerLoad.error">
+                <sxm-ui-skeleton-loader-panel id="skeletonLoaderPlanRecap"></sxm-ui-skeleton-loader-panel>
+            </article>
+            <ng-container *ngIf="offerLoad.value">
+                <sxm-ui-plan-recap-card *ngIf="viewModel.planRecapCard" [data]="viewModel.planRecapCard"></sxm-ui-plan-recap-card>
+            </ng-container>
+            <sxm-ui-tabs ariaLabel="{{ translateKeyPrefix + '.TABS_ARIA_LABEL' | translate }}">
+                <sxm-ui-tab-panel
+                    [tabInfo]="{ id: 'flepz', qaTag: 'flepzLookupTab', index: 0, isSelected: true }"
+                    tabTitle="{{ translateKeyPrefix + '.TAB_TITLE_FLEPZ' | translate }}"
+                >
+                    <flepz-lookup (lookupCompleted)="showFlepzResultsData()"></flepz-lookup>
+                </sxm-ui-tab-panel>
+                <sxm-ui-tab-panel
+                    [tabInfo]="{ id: 'deviceLookup', qaTag: 'deviceLookupTab', index: 1, isSelected: false }"
+                    tabTitle="{{ translateKeyPrefix + '.TAB_TITLE_DEVICE_LOOKUP' | translate }}"
+                >
+                    <!-- // TODO: Add device lookup form here -->
+                </sxm-ui-tab-panel>
+                <sxm-ui-tab-panel
+                    *ngIf="viewModel.showRadioLookupWithAccountNumber || viewModel.showRadioLookupWithLastName"
+                    [tabInfo]="{ id: 'radioInfo', qaTag: 'radioInfoTab', index: 2, isSelected: false }"
+                    tabTitle="{{ translateKeyPrefix + '.TAB_TITLE_RADIO_INFO' | translate }}"
+                >
+                    <radio-lookup-form
+                        [additionalFieldType]="viewModel.showRadioLookupWithAccountNumber ? 'ACCOUNT_NUMBER' : 'LAST_NAME'"
+                        (deviceIdSelected)="setRadioIdSelectedAndContinue($event)"
+                    ></radio-lookup-form>
+                </sxm-ui-tab-panel>
+            </sxm-ui-tabs>
+        </section>
+        <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+            <div *ngIf="offerLoad.value" [innerHTML]="viewModel.legalCopy"></div>
+            <div *ngIf="offerLoad.pending">
+                <sxm-ui-skeleton-loader-text-copy></sxm-ui-skeleton-loader-text-copy>
+            </div>
+        </section>
+        <ng-container *ngrxLet="flepzResultsVM$ as flepzResultsVM">
+            <sxm-ui-modal
+                #multipleDevicesFoundModal
+                [title]="translateKeyPrefix + '.RADIO_LOOKUP_MODAL_TITLE' | translate"
+                [titlePresent]="true"
+                (modalClosed)="onDeviceFoundClosed()"
+            >
+                <sxm-ui-multiple-devices-found [viewModel]="flepzResultsVM" (deviceIdSelected)="onDeviceSelected($event)"> </sxm-ui-multiple-devices-found>
+                <ng-container footer *ngTemplateOutlet="dontSeeYourRadio; context: { modalName: 'multipleDevicesFoundModal' }"></ng-container>
+            </sxm-ui-modal>
+            <sxm-ui-modal #deviceFoundModal [title]="translateKeyPrefix + '.RADIO_LOOKUP_MODAL_TITLE' | translate" [titlePresent]="true" (modalClosed)="onDeviceFoundClosed()">
+                <sxm-ui-device-found [subscriptionFound]="flepzResultsVM.flepzResultsForDisplay[0]" (deviceIdSelected)="onDeviceSelected($event)"> </sxm-ui-device-found>
+                <ng-container footer *ngTemplateOutlet="dontSeeYourRadio; context: { modalName: 'deviceFoundModal' }"></ng-container>
+            </sxm-ui-modal>
+            <sxm-ui-modal
+                #activeSubscriptionFoundModal
+                [title]="translateKeyPrefix + '.RADIO_LOOKUP_MODAL_TITLE' | translate"
+                [titlePresent]="true"
+                (modalClosed)="onDeviceFoundClosed()"
+            >
+                <sxm-ui-active-subscription-found [subscriptionFound]="flepzResultsVM.flepzResultsForDisplay[0]"> </sxm-ui-active-subscription-found>
+                <ng-container footer *ngTemplateOutlet="dontSeeYourRadio; context: { modalName: 'activeSubscriptionFoundModal' }"></ng-container>
+            </sxm-ui-modal>
+            <ng-template #dontSeeYourRadio let-modalName="modalName">
+                <p class="bold">
+                    {{ translateKeyPrefix + ".DONT_SEE_RADIO" | translate }}
+                </p>
+                <a (click)="onTryAgainClicked(modalName)">{{ translateKeyPrefix + ".TRY_AGAIN_LINK" | translate }}</a>
+                {{ translateKeyPrefix + ".TRY_AGAIN_TEXT" | translate }}
+            </ng-template>
+        </ng-container>
+    </ng-container>
+</ng-container>

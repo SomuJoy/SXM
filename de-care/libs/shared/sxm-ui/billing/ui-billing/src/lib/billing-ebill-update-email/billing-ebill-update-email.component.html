@@ -1,0 +1,21 @@
+<h4>{{ translateKeyPrefix + ".TITLE" | translate }}</h4>
+<p class="update-email-instruction" [id]="ariaDescribedbyTextId">{{ translateKeyPrefix + ".INSTRUCTIONS" | translate }}</p>
+
+<form [formGroup]="updateEmailForm" (ngSubmit)="onSubmit()" class="update-email-form">
+    <div class="invalid-feedback" *ngIf="updateEmailServerError">
+        <p>{{ translateKeyPrefix + ".SERVER_ERROR" | translate }}</p>
+    </div>
+    <sxm-ui-email-form-field
+        class="mb-32"
+        formControlName="email"
+        data-e2e="emailField"
+        [errorMsg]="!updateEmailForm.valid ? (translateKeyPrefix + '.EMAIL_REQUIRED_ERROR' | translate) : ''"
+    ></sxm-ui-email-form-field>
+
+    <button data-e2e="updateEmailButton" class="button primary full-width" type="submit" sxm-proceed-button [loading]="loading" data-test="updateEmailButton">
+        {{ translateKeyPrefix + ".UPDATE_BUTTON" | translate }}
+    </button>
+</form>
+<button data-e2e="updateEmailCancelButton" class="full-width cancel-cta" (click)="onCancel()" data-test="updateEmailCancelButton">
+    {{ translateKeyPrefix + ".CANCEL_BUTTON" | translate }}
+</button>

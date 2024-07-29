@@ -1,0 +1,74 @@
+<div class="plan-and-price" data-test="planToCancelInfo">
+    <div class="package-and-term-plan">
+        <ng-container *ngIf="planInfo.hasSubscriptionWithTrialAndFollowOn; else regularPlan">
+            <p>
+                <strong>{{ translateKeyPrefix + ".TRIAL_ENDS_ON" | translate : { date: planInfo.endDate | date : (dateFormat$ | async) } }}</strong>
+            </p>
+            <p>
+                {{ translateKeyPrefix + ".RENEWAL_PLAN_CANCELLED" | translate }}
+            </p>
+            <div class="trial-plan-description">
+                <p class="current-plan">
+                    <span [innerHTML]="planInfo?.name"></span>
+                    <span
+                        [innerHTML]="
+                            translateKeyPrefix + '.PLAN'
+                                | translate
+                                    : {
+                                          length: planInfo.termLength,
+                                          pluralizedMonth: planInfo.termLength | i18nPlural : (translateKeyPrefix + '.TERM_LENGTH.PLURAL_MAP.LENGTH' | translate)
+                                      }
+                        "
+                    ></span>
+                </p>
+                <p>
+                    {{ translateKeyPrefix + ".START_AFTER_TRIAL_ENDS" | translate : { date: planInfo.endDate | date : (dateFormat$ | async) } }}
+                </p>
+            </div>
+        </ng-container>
+    </div>
+    <div class="review-list-container" data-test="cancelSummaryBulletList" *ngIf="!(planInfo.isDataCapableOrAviationMarine || planInfo.isTrial)">
+        <p>
+            <strong>{{ translateKeyPrefix + ".YOU_WILL_LOSE" | translate }}</strong>
+        </p>
+        <div class="review-list">
+            <mat-icon svgIcon="close"></mat-icon>
+            <p *ngIf="planInfo.streamingOnly">
+                {{ translateKeyPrefix + ".BULLET_1_STREAMING" | translate }}
+                <streaming-player-link
+                    [infoForToken]="{ subscriptionId: planInfo.subscriptionId }"
+                    [customLinkText]="translateKeyPrefix + '.SXM_APP' | translate"
+                    [isButton]="false"
+                ></streaming-player-link>
+            </p>
+            <p *ngIf="!planInfo.streamingOnly">
+                {{ translateKeyPrefix + ".BULLET_1_SATELLITE" | translate }}
+                <streaming-player-link
+                    [infoForToken]="{ subscriptionId: planInfo.subscriptionId }"
+                    [customLinkText]="translateKeyPrefix + '.SXM_APP' | translate"
+                    [isButton]="false"
+                ></streaming-player-link>
+            </p>
+            <mat-icon svgIcon="close"></mat-icon>
+            <p [innerHtml]="translateKeyPrefix + '.BULLET_2' | translate"></p>
+            <mat-icon svgIcon="close"></mat-icon>
+            <p [innerHtml]="translateKeyPrefix + '.BULLET_3' | translate"></p>
+        </div>
+    </div>
+</div>
+
+<ng-template #regularPlan>
+    <p class="current-plan">
+        <span [innerHTML]="planInfo?.name"></span>
+        <span
+            [innerHTML]="
+                translateKeyPrefix + '.PLAN'
+                    | translate
+                        : {
+                              length: planInfo.termLength,
+                              pluralizedMonth: planInfo.termLength | i18nPlural : (translateKeyPrefix + '.TERM_LENGTH.PLURAL_MAP.LENGTH' | translate)
+                          }
+            "
+        ></span>
+    </p>
+</ng-template>

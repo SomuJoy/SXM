@@ -1,0 +1,18 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    padding: 16px;
+    display: grid;
+    row-gap: 12px;
+    grid-template-rows: auto 1fr;
+    height: 100%;
+    background: linear-gradient(#19447a, #0f2d54);
+    color: $white;
+    header {
+        height: 38px;
+        [svgIcon="logo"] {
+            width: 104px;
+            fill: $white;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+hr {
+    background-color: $gray-medium;
+    border: 0;
+    height: 1px;
+    margin: 26px 0;
+    width: 100%;
+}
+
+.important-info-container {
+    padding-top: 2.5em;
+}
+
+.padding-top {
+    padding-top: 1.5em;
+}
+
+sxm-ui-ready-to-explore-wrapper {
+    padding: 16px 0 32px;
+}

@@ -1,0 +1,27 @@
+{
+    "DeCareUseCasesTrialActivationUiReadyToExploreModule": {
+        "ReadyToExploreComponent": {
+            "HEADING_TEXT": "Prêt à explorer?",
+            "beforeYouGo": {
+                "INTRO_TEXT": "Avant de vous en aller, ",
+                "link": {
+                    "LINK_TEXT": "Consultez notre excellente offre",
+                    "LINK_URL": "https://www.siriusxm.ca/forfaits"
+                }
+            },
+            "links": {
+                "programSchedules": {
+                    "LINK_TEXT": "Voir les horaires de programmation",
+                    "LINK_URL": "https://siriusxm.ca/en-ondes"
+                },
+                "sportsSchedules": {
+                    "LINK_TEXT": "Horaires des sports en direct",
+                    "LINK_URL": "https://www.siriusxm.ca/sports-en-direct"
+                },
+                "listenNow": {
+                    "LINK_TEXT": "Passez en mode écoute sur l’Appli SXM"
+                }
+            }
+        }
+    }
+}

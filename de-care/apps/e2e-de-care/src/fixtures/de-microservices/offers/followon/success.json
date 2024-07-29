@@ -1,0 +1,107 @@
+{
+    "status": 200,
+    "statusText": "",
+    "headers": [
+        {
+            "name": "Server",
+            "value": "nginx/1.12.2"
+        },
+        {
+            "name": "Date",
+            "value": "Thu, 03 Sep 2020 13:02:07 GMT"
+        },
+        {
+            "name": "Content-Type",
+            "value": "application/json;charset=UTF-8"
+        },
+        {
+            "name": "Transfer-Encoding",
+            "value": "chunked"
+        },
+        {
+            "name": "Connection",
+            "value": "keep-alive"
+        },
+        {
+            "name": "Vary",
+            "value": "Accept-Encoding"
+        },
+        {
+            "name": "X-Content-Type-Options",
+            "value": "nosniff"
+        },
+        {
+            "name": "X-XSS-Protection",
+            "value": "1; mode=block"
+        },
+        {
+            "name": "Cache-Control",
+            "value": "no-cache, no-store, max-age=0, must-revalidate"
+        },
+        {
+            "name": "Pragma",
+            "value": "no-cache"
+        },
+        {
+            "name": "Expires",
+            "value": "0"
+        },
+        {
+            "name": "X-Frame-Options",
+            "value": "DENY"
+        },
+        {
+            "name": "X-Frame-Options",
+            "value": ": ALLOW-FROM https://www.siriusxm.ca"
+        },
+        {
+            "name": "Content-Security-Policy",
+            "value": ": frame-ancestors https://*.siriusxm.ca"
+        },
+        {
+            "name": "Content-Encoding",
+            "value": "gzip"
+        }
+    ],
+    "cookies": [],
+    "content": {
+        "mimeType": "application/json",
+        "text": {
+            "status": "SUCCESS",
+            "httpStatusCode": 200,
+            "httpStatus": "OK",
+            "data": {
+                "offers": [
+                    {
+                        "planCode": "Premier Streaming - Monthly|Promo Student $4.00/mo PS for 12mos",
+                        "packageName": "SIR_IP_SA",
+                        "packageUpgrade": null,
+                        "promoCode": "PSS6MO1RTP1MO",
+                        "termLength": 12,
+                        "type": "PROMO_MCP",
+                        "marketType": "self-pay:promo",
+                        "price": 4,
+                        "pricePerMonth": 4,
+                        "retailPrice": 13,
+                        "packageUpgradePrice": null,
+                        "msrpPrice": 13,
+                        "processingFee": null,
+                        "supportedServices": ["SIR", "UNIVERSAL_LOGIN"],
+                        "deal": null,
+                        "priceChangeMessagingType": "",
+                        "planEndDate": null,
+                        "fallbackReason": null,
+                        "minimumFollowOnTerm": 0,
+                        "order": null,
+                        "streaming": false,
+                        "fallback": false,
+                        "mrdEligible": false,
+                        "upgradeOffer": false,
+                        "student": true
+                    }
+                ],
+                "presentment": null
+            }
+        }
+    }
+}

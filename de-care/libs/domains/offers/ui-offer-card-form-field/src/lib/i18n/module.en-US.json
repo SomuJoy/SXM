@@ -1,0 +1,10 @@
+{
+    "domainsOffersUIOfferCardFormFieldModule": {
+        "offerCardFormFieldComponent": {
+            "CONTENT_CARD_FLAG": "Our Best Plan",
+            "CONTENT_CARD_HEADLINE1": "Switch to this plan",
+            "CONTENT_CARD_HEADLINE2": "Keep this plan",
+            "CONTENT_CARD_HEADLINE3": "Add this plan"
+        }
+    }
+}

@@ -1,0 +1,51 @@
+<table *ngIf="showDataTable" cdk-table [dataSource]="dataSource" [trackBy]="trackById">
+    <ng-container cdkColumnDef="date">
+        <th cdk-header-cell *cdkHeaderCellDef>{{ translateKeyPrefix + ".COLUMN_HEADER_DATE" | translate }}</th>
+        <td cdk-cell *cdkCellDef="let row" class="date">
+            {{ row.datetime | sxmUiDate : (translateKeyPrefix + ".DATE_FORMAT" | translate) }}
+            <span class="transaction-subtitle">{{ row.description }}</span>
+        </td>
+    </ng-container>
+    <ng-container cdkColumnDef="transaction">
+        <th cdk-header-cell *cdkHeaderCellDef>{{ translateKeyPrefix + ".COLUMN_HEADER_TRANSACTION" | translate }}</th>
+        <td cdk-cell *cdkCellDef="let row" class="transaction">
+            <span>{{ row.description }}</span>
+        </td>
+    </ng-container>
+    <ng-container cdkColumnDef="amount">
+        <th cdk-header-cell *cdkHeaderCellDef class="amount">{{ translateKeyPrefix + ".COLUMN_HEADER_AMOUNT" | translate }}</th>
+        <td cdk-cell *cdkCellDef="let row" class="amount">{{ row.amount | sxmUiCurrency }}</td>
+    </ng-container>
+
+    <tr cdk-header-row *cdkHeaderRowDef="['date', 'transaction', 'amount']"></tr>
+    <tr cdk-row *cdkRowDef="let row; columns: ['date', 'transaction', 'amount']"></tr>
+    <tr *cdkNoDataRow class="cdk-row no-data-row" data-test="noDataRow">
+        <td colspan="3">{{ translateKeyPrefix + ".NO_DATA_MESSAGE" | translate }}</td>
+    </tr>
+</table>
+
+<table *ngIf="showLoadingAnimation$ | async" cdk-table [dataSource]="skeletonLoadingSource" multiTemplateDataRows id="skeletonLoadingTable">
+    <ng-container cdkColumnDef="loading">
+        <td mat-cell *cdkCellDef="">
+            <sxm-ui-skeleton-loader-panel></sxm-ui-skeleton-loader-panel>
+        </td>
+    </ng-container>
+
+    <tr cdk-row *cdkRowDef="let row; columns: ['loading', 'loading', 'loading']" class="loading-row"></tr>
+</table>
+
+<div *ngIf="showLoadMoreButton$ | async" class="button-container">
+    <button
+        data-e2e="paymentActivityLoadMoreButton"
+        class="button secondary full-width"
+        (click)="loadMoreActivities()"
+        sxm-proceed-button
+        [class.loading]="loading"
+        sxmUiDataClickTrack="ui"
+        data-link-name="Load More"
+        data-link-key="Payment history"
+        data-test="paymentActivityLoadMoreButton"
+    >
+        {{ translateKeyPrefix + ".LOAD_MORE_BUTTON_LABEL" | translate }}
+    </button>
+</div>

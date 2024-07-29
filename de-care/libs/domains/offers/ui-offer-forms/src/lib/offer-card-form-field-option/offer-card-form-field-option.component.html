@@ -1,0 +1,34 @@
+<sxm-ui-content-card [hasGrayBackground]="true" [headlinePresent]="!hideHead" [flagPresent]="!!offerOptionData.headlineFlagCopy" [formGroup]="formControl.parent">
+    <div htmlContentForFlag *ngIf="offerOptionData.headlineFlagCopy" data-e2e="OfferCardFormField.HeadlineFlag">
+        <p class="small-copy text-uppercase large-headline" [innerHTML]="offerOptionData.headlineFlagCopy"></p>
+    </div>
+    <div htmlContentForHead class="card-header" [style.display]="hideHead ? 'none' : 'block'">
+        <p *ngIf="offerOptionData.planCodeOptions?.length > 1" [innerHTML]="offerOptionData.fieldLabel"></p>
+        <sxm-ui-radio-option-form-field
+            *ngIf="offerOptionData.planCodeOptions?.length === 1"
+            class="text-color-white"
+            [formControlName]="formControlName"
+            [formControl]="formControl"
+            [label]="offerOptionData.fieldLabel"
+            [ariaLabel]="offerOptionData.ariaLabel"
+            [value]="offerOptionData.planCodeOptions[0].planCode"
+        ></sxm-ui-radio-option-form-field>
+    </div>
+    <div htmlContentForBody>
+        <sxm-ui-primary-package-card
+            [class.theme-non-retail]="offerOptionData?.packageData?.theme === 'Theme2'"
+            [packageData]="offerOptionData.packageData | toLegacyPackageDataForPrimaryPackageCard"
+        >
+            <ng-container *ngIf="offerOptionData.planCodeOptions?.length > 1" additionalPrimaryContent>
+                <p class="sub-header" [innerHTML]="offerOptionData.optionsHeaderCopy"></p>
+                <sxm-ui-radio-option-with-tooltip-form-field-set
+                    [formControlName]="formControlName"
+                    [formControl]="formControl"
+                    [options]="offerOptionData.planCodeOptions | planCodeOptionsToRadioInputOptions"
+                    class="small-bottom-margin"
+                    data-e2e="groupedOfferCardFormField.planOptions"
+                ></sxm-ui-radio-option-with-tooltip-form-field-set>
+            </ng-container>
+        </sxm-ui-primary-package-card>
+    </div>
+</sxm-ui-content-card>

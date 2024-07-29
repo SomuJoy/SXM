@@ -1,0 +1,53 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    display: grid;
+    row-gap: 16px;
+    h3 {
+        margin: 0;
+    }
+    section {
+        padding: 0;
+        header {
+            margin-bottom: 16px;
+        }
+    }
+    button[sxm-proceed-button] {
+        margin: 8px 0 0 0;
+    }
+
+    .billing-field-set h3 {
+        @include get-body-copy-style();
+        color: $gray-dark;
+        font-weight: calculate-font-weight("bold");
+        @include bp(medium) {
+            font-weight: calculate-font-weight("bold");
+        }
+    }
+
+    .credit-card-fields {
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .credit-card-icons-list {
+                list-style: none;
+                display: flex;
+                justify-content: space-between;
+                margin: 0;
+                width: 112px;
+                padding: 0;
+                svg {
+                    width: 24px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+
+    privacy-policy {
+        margin: 28px 0;
+        display: block;
+    }
+}

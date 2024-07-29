@@ -1,0 +1,44 @@
+<ng-container *ngrxLet="organicPaymentViewModel$ as organicPaymentViewModel">
+    <section id="mainContent">
+        <sxm-ui-alert-pill *ngIf="organicPaymentViewModel?.showAlternateOfferAlert" class="streaming-eligibility black-alert-icon-notification rounded-corners">
+            <p class="pill-text" [innerHTML]="translateKeyPrefix + '.OFFER_FOR_NEW_SUBSCRIBERS' | translate"></p>
+        </sxm-ui-alert-pill>
+        <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+            <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+            <ng-container body>
+                <p>
+                    {{ translateKeyPrefix + ".BODY.CANCEL_ANYTIME" | translate }}
+                </p>
+            </ng-container>
+        </sxm-ui-step-header>
+        <sxm-ui-plan-recap-card
+            *ngIf="organicPaymentViewModel?.longDescriptionPlanRecapCardViewModel"
+            [data]="organicPaymentViewModel.longDescriptionPlanRecapCardViewModel"
+        ></sxm-ui-plan-recap-card>
+        <ng-container>
+            <div class="billing-field-set credit-card-fields" id="creditCardFieldsSection">
+                <header>
+                    <h3>{{ translateKeyPrefix + ".PAYMENT_DETAILS_TITLE" | translate }}</h3>
+                    <ul class="credit-card-icons-list">
+                        <li *ngFor="let cardType of translateKeyPrefix + '.CARD_TYPE_ICONS' | translate">
+                            <svg class="icon icon-content cc-icon icon-{{ cardType }}">
+                                <use class="" [attr.xlink:href]="'#icon-cc-' + cardType"></use>
+                            </svg>
+                        </li>
+                    </ul>
+                </header>
+            </div>
+            <div>
+                <sxm-ui-credit-card-form-fields [formGroup]="creditcardForm.controls.creditCardInfo"></sxm-ui-credit-card-form-fields>
+                <prepaid-redeem-ui (cardSubmitted)="onPrepaidCardSubmitted($event)" (cardCleared)="onPrepaidCardCleared()"></prepaid-redeem-ui>
+                <privacy-policy></privacy-policy>
+            </div>
+            <button type="submit" sxm-proceed-button sxmUiDataClickTrack="submit" class="primary button full-width" (click)="onPaymentInfoCollected()">
+                {{ translateKeyPrefix + ".BODY.CONTINUE_BUTTON_TEXT" | translate }}
+            </button>
+        </ng-container>
+    </section>
+    <section *ngIf="organicPaymentViewModel?.offerInfoLegalCopy as legalCopy" id="legalCopySection" deCarePageFullWidthContent="fullWidthContent" data-test="offerLegalCopy">
+        <div [innerHTML]="legalCopy"></div>
+    </section>
+</ng-container>

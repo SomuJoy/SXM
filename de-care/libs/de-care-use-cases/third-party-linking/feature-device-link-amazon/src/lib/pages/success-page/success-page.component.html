@@ -1,0 +1,19 @@
+<!-- // TODO: simplify markup to use de-care-page-main component when merged into code base -->
+<main class="background-offwhite">
+    <div class="content-container">
+        <div class="row align-center no-padding-small">
+            <div class="column medium-2 no-padding background-white"></div>
+            <div class="column small-12 medium-6 background-white align-left">
+                <div class="header flex align-justify align-middle">
+                    <h5>{{ translatePrefix + ".TITLE" | translate }}</h5>
+                    <svg class="icon icon-utility large checkmark-circle">
+                        <use class="icon-checkmark-sm" xlink:href="#icon-checkmark-sm"></use>
+                    </svg>
+                </div>
+                <p>{{ translatePrefix + ".MESSAGE" | translate }}</p>
+                <p>{{ translatePrefix + ".INSTRUCTIONS" | translate }}</p>
+            </div>
+            <div class="column medium-2 no-padding background-white"></div>
+        </div>
+    </div>
+</main>

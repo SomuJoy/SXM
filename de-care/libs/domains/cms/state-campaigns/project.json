@@ -1,0 +1,25 @@
+{
+    "name": "domains-cms-state-campaigns",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/cms/state-campaigns/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/domains/cms/state-campaigns"],
+            "options": {
+                "jestConfig": "libs/domains/cms/state-campaigns/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/cms/state-campaigns/src/**/*.ts", "libs/domains/cms/state-campaigns/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

@@ -1,0 +1,24 @@
+{
+    "domainsPurchaseUiCreditCardFormFieldsModule": {
+        "creditCardFormFieldsComponent": {
+            "PAYMENT_INFO_SUBHEADER": "Infos de paiement",
+            "UNEXPECTED_ERROR": "Une erreur inattendue est apparue. Veuillez réessayer.",
+            "TOOLTIP_MESSAGE_1": "Pour Visa et Mastercard, utilisez les 3 chiffres figurant au verso de votre carte.",
+            "TOOLTIP_MESSAGE_2": "Pour American Express, utilisez les 4 chiffres figurant au recto de votre carte.",
+            "NEW_CC": {
+                "CC_CVV": "CVV",
+                "CC_NAME": "Nom sur la carte",
+                "UNAUTHORIZED_ERROR": "Nous sommes dans l'impossibilité d'autoriser votre carte de crédit. Veuillez mettre à jour vos renseignements de paiement.",
+                "ERROR_CC_NAME": "Entrez votre nom comme il apparaît sur votre carte.",
+                "CC_NUM": "Numéro de carte",
+                "ERROR_CC_NUM": "Entrez un numéro de carte de crédit valide.",
+                "ERROR_CC_NUM_FOUND_GC": "Le num\u00E9ro de carte que vous avez entr\u00E9 correspond \u00E0 une carte-cadeau SiriusXM. Veuillez \u00E9changer votre carte-cadeau ci-dessous ou entrer un num\u00E9ro de carte de cr\u00E9dit valide.",
+                "CC_EXP_DATE": "Date d’expiration (MM/AA)",
+                "CC_EXP_DATE_INLINE": "MM/AA",
+                "ERROR_CC_EXP_INVALID": "Entrez une date d’expiration valide.",
+                "ERROR_CC_CVV": "Entrez un Code de sécurité valide."
+            },
+            "ERROR_CVV_FOUND": "Le champ contient des caractères qui ressemblent aux informations de sécurité de la carte de crédit. Pour continuer, veuillez les revoir et apporter les changements appropriés."
+        }
+    }
+}

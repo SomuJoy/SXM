@@ -1,0 +1,17 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "email": "oacuser1@siriusxm.com",
+        "status": "SUCCESS",
+        "radioId": "00BC",
+        "subscriptionId": "10000312350",
+        "accountNumber": "10000416052",
+        "isEligibleForStreamingCredentialsOnly": false,
+        "isUserNameSameAsEmail": false,
+        "isEligibleForRegistration": true,
+        "isTwoFactorAuthNeeded": false,
+        "isOfferStreamingEligible": true
+    }
+}

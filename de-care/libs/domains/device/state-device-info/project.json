@@ -1,0 +1,31 @@
+{
+    "name": "domains-device-state-device-info",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/device/state-device-info/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/device/state-device-info/src/**/*.ts", "libs/domains/device/state-device-info/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/device/state-device-info/jest.config.js",
+                "tsConfig": "libs/domains/device/state-device-info/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/device/state-device-info/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

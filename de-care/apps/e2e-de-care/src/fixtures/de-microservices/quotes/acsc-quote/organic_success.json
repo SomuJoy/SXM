@@ -1,0 +1,88 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "quote": {
+            "currentQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "0.00",
+                "totalTaxesAndFeesAmount": "0.00",
+                "totalAmount": "0.00",
+                "discountAmount": "0.00",
+                "pricePerMonth": "0.00",
+                "currentBalance": "0.00",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "0.00",
+                "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "0.00" }],
+                "taxes": [],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Promo - Select - 12mo - 72.00 - ($6.00/mo)",
+                        "packageName": "SIR_AUD_EVT",
+                        "termLength": 12,
+                        "priceAmount": "0.00",
+                        "taxAmount": "0.00",
+                        "feeAmount": "0.00",
+                        "totalTaxesAndFeesAmount": "0.00",
+                        "taxes": [],
+                        "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "0.00" }],
+                        "startDate": "2022-11-11",
+                        "endDate": "2023-11-11",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "",
+                        "dealType": "",
+                        "isStudent": false,
+                        "isAdvantage": false,
+                        "isMilitary": false
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            },
+            "futureQuote": null,
+            "proRatedRenewalQuote": null,
+            "promoRenewalQuote": null,
+            "renewalQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "3.65",
+                "totalTaxesAndFeesAmount": "3.65",
+                "totalAmount": "21.64",
+                "discountAmount": "0.00",
+                "pricePerMonth": "17.99",
+                "currentBalance": "0.00",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "0.00",
+                "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "3.65" }],
+                "taxes": [],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Select - 1mo - wActv",
+                        "packageName": "SIR_AUD_EVT",
+                        "termLength": 1,
+                        "priceAmount": "17.99",
+                        "taxAmount": "0.00",
+                        "feeAmount": "3.65",
+                        "totalTaxesAndFeesAmount": "3.65",
+                        "taxes": [],
+                        "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "3.65" }],
+                        "startDate": "2023-11-11",
+                        "endDate": "2023-12-11",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "",
+                        "dealType": "",
+                        "isStudent": false,
+                        "isAdvantage": false,
+                        "isMilitary": false
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            }
+        }
+    }
+}

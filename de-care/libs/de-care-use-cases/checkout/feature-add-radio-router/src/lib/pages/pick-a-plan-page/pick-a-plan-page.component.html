@@ -1,0 +1,39 @@
+<ng-container *ngIf="offerLoad$ | async as offerLoad">
+    <ng-container *ngrxLet="viewModel$ as viewModel">
+        <sxm-ui-toast-notification>{{ translateKeyPrefix + ".ALERT_PILL" | translate }}</sxm-ui-toast-notification>
+        <section id="mainContent" data-test="PickAPlanPage">
+            <sxm-ui-vehicle-ymm-info [vehicleInfoVM]="viewModel.vehicleInfo"></sxm-ui-vehicle-ymm-info>
+            <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+                <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+                <ng-container body>
+                    <p>{{ translateKeyPrefix + ".BODY.FAMILY_DISCOUNT_ELIGIBLE" | translate }}</p>
+                </ng-container>
+            </sxm-ui-step-header>
+            <ng-container *ngIf="offerLoad.pending || offerLoad.error">
+                <article id="skeletonLoaderOfferCard">
+                    <div class="shadow-helper">
+                        <sxm-ui-multi-package-card-selection-skeleton-loader></sxm-ui-multi-package-card-selection-skeleton-loader>
+                    </div>
+                    <sxm-ui-button-cta-skeleton-loader></sxm-ui-button-cta-skeleton-loader>
+                </article>
+            </ng-container>
+            <ng-container *ngIf="offerLoad.value">
+                <multi-offer-selection-form
+                    *ngIf="multiOfferSelectionData$ | async as offerOptions"
+                    [offerOptions]="offerOptions"
+                    [allowContinueWithoutSelection]="false"
+                    [preSelectedPlanCode]="viewModel.planCode"
+                    (submitted)="submitForm($event)"
+                    (selected)="selectedPlan($event)"
+                >
+                </multi-offer-selection-form>
+            </ng-container>
+        </section>
+        <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+            <div *ngIf="offerLoad.value" [innerHTML]="viewModel.legalCopy"></div>
+            <div *ngIf="offerLoad.pending">
+                <sxm-ui-skeleton-loader-text-copy></sxm-ui-skeleton-loader-text-copy>
+            </div>
+        </section>
+    </ng-container>
+</ng-container>

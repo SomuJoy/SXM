@@ -1,0 +1,10 @@
+{
+    "status": "FAILURE",
+    "httpStatusCode": 400,
+    "httpStatus": "BAD_REQUEST",
+    "error": {
+        "errorCode": "CC_FRAUD_REJECT",
+        "errorPropKey": "error.purchase.service.creditcard.fraud.reject",
+        "errorType": "BUSINESS"
+    }
+}

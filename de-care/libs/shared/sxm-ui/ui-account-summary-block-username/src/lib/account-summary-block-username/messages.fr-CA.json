@@ -1,0 +1,15 @@
+{
+    "TITLE": "Nous avons trouvé un ou plusieurs abonnements qui correspondent à vos infos.",
+    "SUB_TITLE": "Choisissez le nom d’utilisateur que vous voulez récupérer.",
+    "ACCOUNT_NOT_MATCHED": "Vous ne voyez pas votre compte?",
+    "RESET": "Obtenez votre nom d’utilisateur",
+    "REGISTER": "S’abonner",
+    "ACCOUNT_NUMBER_LABEL": "ACCOUNT",
+    "STREAMING_LOGIN_LABEL": "INFOS DE CONNEXION À L’ÉCOUTE EN CONTINU",
+    "ACCOUNT_LOGIN_LABEL": "INFOS DE CONNEXION AU COMPTE",
+    "USERNAME_LABEL": "Nom d’utilisateur: ",
+    "NO_ACTIVE_SERVICE": "No Active Service",
+    "APP_LOGIN": "Obtenez l’accès à l’Appli SXM",
+    "NOT_STREAMING_LABEL": "Cet abonnement n'inclut pas l'écoute en ligne",
+    "INFORMATION_LABEL": "Vos informations de connexion à l’Appli SXM pour ce forfait sont les mêmes que celles de votre compte."
+}

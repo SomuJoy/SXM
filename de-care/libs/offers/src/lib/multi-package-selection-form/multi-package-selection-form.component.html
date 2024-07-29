@@ -1,0 +1,85 @@
+<form *ngIf="form" [formGroup]="form" (ngSubmit)="onContinue()" data-e2e="multiPackageSelectionForm">
+    <div *ngIf="multiPackageFormInvalid" class="invalid-feedback">
+        <ng-container *ngIf="usePromotionalTextCopy; else defaultError">
+            <p>{{ "offers.multiPackageSelectionFormComponent.ERROR_PROMOTIONAL.TEXT" | translate }}</p>
+        </ng-container>
+        <ng-template #defaultError>
+            <p>
+                {{ "offers.multiPackageSelectionFormComponent.ERROR.TEXT" | translate
+                }}<span (click)="onContinueWithCurrentPackage()" class="underline cursor-pointer">{{
+                    "offers.multiPackageSelectionFormComponent.ERROR.LINK" | translate
+                }}</span>
+            </p>
+        </ng-template>
+    </div>
+    <div *ngFor="let packageWithUid of eligiblePackagesWithUID; let i = index">
+        <ng-container
+            [ngTemplateOutlet]="packageWithUid.packageData.packageOptions ? groupedPackageContent : packageContent"
+            [ngTemplateOutletContext]="{
+                packageWithUid: packageWithUid,
+                i: i,
+                packagesType: 'eligiblePackages'
+            }"
+        >
+        </ng-container>
+    </div>
+
+    <sxm-ui-accordion-chevron
+        *ngIf="!!additionalEligiblePackagesWithUID && additionalEligiblePackagesWithUID.length > 0"
+        class="extra-top-margin remove-padding"
+        [collapsedText]="'offers.multiPackageSelectionFormComponent.VIEW_MORE_PACKAGES' | translate"
+        [expandedText]="'offers.multiPackageSelectionFormComponent.HIDE_PACKAGES' | translate"
+    >
+        <div *ngFor="let packageWithUid of additionalEligiblePackagesWithUID; let i = index">
+            <ng-container
+                [ngTemplateOutlet]="packageWithUid.packageData.packageOptions ? groupedPackageContent : packageContent"
+                [ngTemplateOutletContext]="{
+                    packageWithUid: packageWithUid,
+                    i: i,
+                    packagesType: 'additionalEligiblePackages'
+                }"
+            >
+            </ng-container>
+        </div>
+    </sxm-ui-accordion-chevron>
+
+    <button sxm-proceed-button type="submit" data-at="switch-subscription-btn">
+        <ng-container *ngIf="usePromotionalTextCopy; else useDefaultContinueButtonCopy">
+            {{ "offers.multiPackageSelectionFormComponent.PROMOTIONAL_CONTINUE" | translate }}
+        </ng-container>
+        <ng-template #useDefaultContinueButtonCopy>
+            {{ "offers.multiPackageSelectionFormComponent.CONTINUE" | translate }}
+        </ng-template>
+    </button>
+
+    <ng-template #packageContent let-packageWithUid="packageWithUid" let-i="i" let-packagesType="packagesType">
+        <offer-card-form-field
+            formControlName="planCode"
+            [planCode]="packageWithUid.packageData.planCode"
+            [flagPresent]="packageWithUid.packageData.packageName | multiPackageIsBestPackage: packagesType:data.bestPackages"
+            [headlinePresent]="totalNumberOfPackages > 1"
+            [isCurrentPackage]="data.currentPackageName === packageWithUid.packageData.packageName"
+            [offerInfo]="packageWithUid.packageData"
+            [isAddingPackage]="isAddingPackage"
+            [packageDescription]="
+                'app.packageDescriptions.' + packageWithUid.packageData.packageName | translate | multiPackagePackageDescriptionForOfferCard: packageWithUid.packageData
+            "
+        >
+        </offer-card-form-field>
+    </ng-template>
+
+    <ng-template #groupedPackageContent let-packageWithUid="packageWithUid" let-i="i" let-packagesType="packagesType">
+        <ui-grouped-offer-card-form-field
+            formControlName="planCode"
+            [parentOffer]="packageWithUid.packageData"
+            [packageDescription]="
+                'app.packageDescriptions.' + packageWithUid.packageData.packageName | translate | multiPackagePackageDescriptionForOfferCard: packageWithUid.packageData
+            "
+            [packageOptions]="packageWithUid.packageData.packageOptions"
+            [flagPresent]="packageWithUid.packageData.packageName | multiPackageIsBestPackage: packagesType:data.bestPackages"
+            [headlinePresent]="totalNumberOfPackages > 1"
+            [isCurrentPackage]="data.currentPackageName === packageWithUid.packageData.packageName"
+        >
+        </ui-grouped-offer-card-form-field>
+    </ng-template>
+</form>

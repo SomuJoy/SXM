@@ -1,0 +1,96 @@
+<main de-care-page-main>
+    <h1 class="mb-24">{{ translateKeyPrefix + "TITLE" | translate }}</h1>
+    <div class="mb-24">
+        <sxm-ui-vehicle-with-subscription-info
+            [data]="transferFromData$ | async"
+            [eyebrow]="translateKeyPrefix + 'TRANSFER_EYEBROW' | translate"
+            data-e2e="transferSubscriptionInfo"
+        ></sxm-ui-vehicle-with-subscription-info>
+    </div>
+
+    <hr class="mb-24" />
+    <p class="large-copy bold mb-16">{{ translateKeyPrefix + "FORM_TITLE" | translate }}</p>
+    <form [formGroup]="form" (ngSubmit)="submitForm()" class="grid" data-e2e="radioIdForm">
+        <div>
+            <sxm-ui-text-form-field
+                controlId="radio-id-verify"
+                formControlName="radioId"
+                dataFieldType="radioId"
+                labelText="{{ translateKeyPrefix + 'INPUT_LABEL' | translate }}"
+                errorMsg="{{ translateKeyPrefix + 'ERROR_INVALID_RADIO' | translate }}"
+                (keyup)="onRadioIdChange()"
+            >
+            </sxm-ui-text-form-field>
+            <div [class.mb-24]="showError">
+                <button class="text-link" type="button" (click)="helpFindingRadioModal.open()">
+                    {{ translateKeyPrefix + "FIND_RADIO" | translate }}
+                </button>
+            </div>
+        </div>
+        <div *ngIf="showError" class="invalid-feedback">
+            <ng-container [ngSwitch]="errorCode">
+                <p *ngSwitchCase="ErrorEnum.NOT_CAPABLE">
+                    <span [innerHTML]="translateKeyPrefix + 'ERRORS.NOT_CAPABLE_PT1' | translate"></span>
+                    <ng-container *ngIf="showChat">
+                        <chat-with-agent-link [chatLinkText]="translateKeyPrefix + 'ERRORS.CHAT_LINK' | translate"></chat-with-agent-link>
+                        <span [innerHTML]="translateKeyPrefix + 'ERRORS.NOT_CAPABLE_PT2' | translate"></span>
+                    </ng-container>
+                </p>
+                <p *ngSwitchCase="ErrorEnum.LIFETIME">
+                    <span [innerHTML]="translateKeyPrefix + 'ERRORS.LIFETIME_PT1' | translate"></span>
+                    <ng-container *ngIf="showChat">
+                        <chat-with-agent-link [chatLinkText]="translateKeyPrefix + 'ERRORS.CHAT_LINK' | translate"></chat-with-agent-link>
+                        <span [innerHTML]="translateKeyPrefix + 'ERRORS.LIFETIME_PT2' | translate"></span>
+                    </ng-container>
+                </p>
+                <p *ngSwitchCase="ErrorEnum.SAME_ACCOUNT">
+                    <span [innerHTML]="translateKeyPrefix + 'ERRORS.SAME_ACCOUNT' | translate"></span>
+                </p>
+                <p *ngSwitchCase="ErrorEnum.INVALID_RADIO">
+                    <span [innerHTML]="translateKeyPrefix + 'ERROR_INVALID_RADIO' | translate"></span>
+                </p>
+                <p *ngSwitchCase="ErrorEnum.INVALID_VIN">
+                    <span [innerHTML]="translateKeyPrefix + 'ERROR_INVALID_VIN' | translate"></span>
+                </p>
+                <p *ngSwitchCase="ErrorEnum.NOT_FOUND_VIN">
+                    <span [innerHTML]="translateKeyPrefix + 'ERROR_NOT_FOUND_VIN' | translate"></span>
+                </p>
+                <p *ngSwitchCase="ErrorEnum.OTHER">
+                    <span [innerHTML]="translateKeyPrefix + 'ERRORS.OTHER_PT1' | translate"></span>
+                    <ng-container *ngIf="showChat">
+                        <chat-with-agent-link [chatLinkText]="translateKeyPrefix + 'ERRORS.CHAT_LINK' | translate"></chat-with-agent-link>
+                        <span [innerHTML]="translateKeyPrefix + 'ERRORS.OTHER_PT2' | translate"></span>
+                    </ng-container>
+                </p>
+            </ng-container>
+        </div>
+        <div>
+            <button
+                [loading]="isProcessingRadioLookup"
+                sxm-proceed-button
+                data-track-click="Find My Radio"
+                class="button primary full-width"
+                type="submit"
+                data-e2e="findMyRadioButton"
+            >
+                {{ translateKeyPrefix + "CTA_BUTTON" | translate }}
+            </button>
+        </div>
+    </form>
+</main>
+<sxm-ui-modal #helpFindingRadioModal title="{{ translateKeyPrefix + 'HELP_FINDING_RADIO_MODAL_TITLE' | translate }}" [titlePresent]="true">
+    <sxm-ui-help-finding-radio (deviceHelp)="helpFindingRadioModal.close(); deviceHelpModal.open()">
+        <p #contentParagraphOne class="paragraph-1">{{ translateKeyPrefix + "HELP_FINDING_RADIO_P1" | translate }}</p>
+    </sxm-ui-help-finding-radio>
+</sxm-ui-modal>
+<sxm-ui-modal
+    #deviceHelpModal
+    [titlePresent]="true"
+    [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"
+    title="{{ translateKeyPrefix + 'RADIO_LOOKUP_MARINE_AVIATION_MODAL_TITLE' | translate }}"
+    [showBackButton]="true"
+    (modalClosed)="helpFindingRadioModal.open()"
+    (backButton)="deviceHelpModal.close(); helpFindingRadioModal.open()"
+>
+    <sxm-ui-device-help [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"></sxm-ui-device-help>
+</sxm-ui-modal>

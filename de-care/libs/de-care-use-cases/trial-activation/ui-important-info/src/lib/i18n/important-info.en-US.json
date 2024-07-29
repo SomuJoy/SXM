@@ -1,0 +1,8 @@
+{
+    "DeCareUseCasesTrialActivationUiImportantInfo": {
+        "importantInfoComponent": {
+            "INFO": "Your SiriusXM service will automatically stop at the end of your trial unless you decide to subscribe. If you decide to continue service, the paid subscription plan you choose will automatically renew thereafter and you will be charged the rate in effect at that time and according to your chosen payment method. Fees and taxes apply. You may cancel at any time by calling 1-866-635-2349. See our <a href='https://www.siriusxm.com/customeragreement' target='_blank'>Customer Agreement</a> for complete terms in your Welcome Kit or at www.siriusxm.com. All fees and programming subject to change.",
+            "IMPORTANT_INFO_TITLE": "Important information about your subscription:"
+        }
+    }
+}

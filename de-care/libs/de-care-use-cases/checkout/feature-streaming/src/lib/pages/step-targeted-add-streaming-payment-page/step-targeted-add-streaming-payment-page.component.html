@@ -1,0 +1,32 @@
+<ng-container *ngrxLet="addStreamingPaymentViewModel$ as addStreamingPaymentViewModel">
+    <section id="mainContent">
+        <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+            <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+            <ng-container body>
+                <p>{{ translateKeyPrefix + ".BODY" | translate }}</p>
+            </ng-container>
+        </sxm-ui-step-header>
+        <de-care-pick-a-plan-term-billing-form [billingTerms]="addStreamingPaymentViewModel.pickAPlanTermBillingPlanModel"></de-care-pick-a-plan-term-billing-form>
+        <de-care-payment-info-basic-form
+            [options]="{
+                useCardOnFileAllowed: addStreamingPaymentViewModel?.creditCardOnFileViewModel?.useCardOnFileAllowed,
+                cardType: addStreamingPaymentViewModel?.creditCardOnFileViewModel?.cardType,
+                cardNumberLastFour: addStreamingPaymentViewModel?.creditCardOnFileViewModel?.cardNumberLastFour,
+                countryCode: countrySettings.countryCode
+            }"
+            [initialState]="addStreamingPaymentViewModel?.paymentInfo"
+            [continueButtonTextOverride]="translateKeyPrefix + '.CONTINUE_BUTTON_TEXT' | translate"
+            (formCompleted)="onPaymentInfoCollected($event)"
+        ></de-care-payment-info-basic-form>
+    </section>
+    <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+        <div [innerHTML]="addStreamingPaymentViewModel?.legalCopy"></div>
+    </section>
+    <sxm-ui-loading-with-alert-message
+        *ngIf="displayIneligibleLoader$ | async"
+        [isLoading]="true"
+        [pillMessage]="translateKeyPrefix + '.INELIGIBLE_LOADING_ALERT' | translate"
+        [paragraph]="translateKeyPrefix + '.INELIGIBLE_LOADING_BODY' | translate"
+        (loadingCompleted)="onLoadingWithAlertMessageComplete($event)"
+    ></sxm-ui-loading-with-alert-message>
+</ng-container>

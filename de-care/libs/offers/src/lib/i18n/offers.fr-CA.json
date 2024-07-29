@@ -1,0 +1,122 @@
+{
+    "offers": {
+        "betterPricingComponent": {
+            "DESCRIPTION": "Bonne nouvelle! Vous êtes admissible à une offre spéciale en lien à ce forfait.",
+            "NEW_PRICE": "Obtenez votre durée intiale de {{newTerm}} pour {{newPrice}}",
+            "NEW_PRICE_MCP": "Obtenez votre durée intiale de {{newTerm}} pour {{newPrice}}/mois",
+            "ORIGINAL_PRICE": "Ord. {{originalPrice}}/mois, Plus frais",
+            "ORIGINAL_PRICE_QUEBEC": "Ord. {{originalPrice}}/mois",
+            "DETAILS": "Voir les détails de l'offre ci-dessous"
+        },
+        "differentPlatformComponent": {
+            "TITLE": "Voici ce que nous avons trouvé",
+            "NOTIFICATION_PREFIX": "Le forfait",
+            "NOTIFICATION_1": "  que vous avez choisi est compatible avec votre radio, mais la gamme de stations est légèrement différente.",
+            "NOTIFICATION_2": "Le contenu des forfaits peut varier selon les différents types de radios. Votre voiture est équipée d'une radio. Voyez ce que cela signifie pour vous.",
+            "NOTIFICATION_3": " radios. Votre voiture est équipée d'une radio",
+            "BUTTON": "ACCEPTER ET CONTINUER",
+            "EMPTY_PACKAGE_NAME": "Aucun service actif",
+            "EXPIRATION": "",
+            "CLOSED": "Fermé",
+            "EXPIRES": "Se termine le",
+            "VEHICLE": "{{make}} {{model}} {{year}}",
+            "TRIAL": "Essai Gratuit",
+            "SIRIUS": {
+                "TITLE": "Apparemment, votre radio Sirius est assortie d’un menu de stations différent.",
+                "LOADER_MSG_TOP": "Récupération des détails de votre",
+                "LOADER_MSG_BOTTOM": "nouveau forfaits",
+                "RADIO_INFO": "Infos de votre radio d’auto :",
+                "SUBSCRIPTION": "Abonnement d’essai",
+                "NEW_PACKAGE": "VOTRE NOUVEAU FORFAIT",
+                "EXCLUDES": "Le guide des chaînes du forfait Le Musical Plus compatible avec votre radio Sirius est légèrement différent de celui inclus avec d’autres modèles de radio. Voici ce qui est différent :",
+                "ACCEPT": "ACCEPTER ET CONTINUER"
+            }
+        },
+        "offerDescriptionComponent": {
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "mois",
+                    "other": "mois"
+                }
+            },
+            "TERM_AND_PRICE": "<span class=\"large-copy\">Votre durée initiale de</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">pour</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span> <span class=\"large-copy\">plus frais</span>",
+            "TERM_AND_PRICE_MCP": "<span class=\"large-copy\">Votre durée initiale de</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">pour</span> <span class=\"offer-price text-color-watermelon\">{{ pricePerMonth }}</span><span class=\"large-copy\">/mois plus frais</span>",
+            "TERM_AND_PRICE_FREE": "<span class=\"offer-price text-color-watermelon text-capitalize\"> {{ termLength }} {{ monthsPluralized }} gratuits</span>",
+            "TERM_AND_PRICE_MONTHLY": "<span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">pour</span> <span class=\"offer-price text-color-watermelon\">{{ pricePerMonth }}</span><span class=\"large-copy\">/mois plus frais</span>",
+            "TERM_AND_PRICE_QUEBEC": "<span class=\"large-copy\">Votre durée initiale de</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">pour</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span>",
+            "TERM_AND_PRICE_MCP_QUEBEC": "<span class=\"large-copy\">Votre durée initiale de</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">pour</span> <span class=\"offer-price text-color-watermelon\">{{ pricePerMonth }}</span><span class=\"large-copy\">/mois</span>",
+            "TERM_AND_PRICE_MONTHLY_QUEBEC": "<span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">pour</span> <span class=\"offer-price text-color-watermelon\">{{ pricePerMonth }}</span><span class=\"large-copy\">/mois</span>",
+            "FULL_TERM_PRICE": "<span class=\"large-copy\">Votre durée initiale de</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">pour</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span> <span class=\"large-copy\">plus frais</span>",
+            "FULL_PRICE": "{{ pricePerMonth }}<span class=\"large-copy\">/mois</span>",
+            "FULL_TERM_PRICE_QUEBEC": "<span class=\"large-copy\">Votre durée initiale de</span> <span class=\"offer-price text-color-watermelon\">{{ termLength }} {{ monthsPluralized }}</span> <span class=\"large-copy\">pour</span> <span class=\"offer-price text-color-watermelon\">{{ price }}</span>",
+            "SEE_OFFER_BELOW": "Voir <strong>les détails de l'offre</strong> ci-dessous.",
+            "SEE_OFFER_BELOW_PROMO": "Ensuite {{ retailPrice }} $/mois. Voir <strong>les détails de l'offre</strong> ci-dessous.",
+            "FEES": "Des frais de traitement de {{ price }} s'appliquent.",
+            "SAVINGS_OFFER": "Offre d'économie",
+            "OFFER_TAGLINE": "Vos favoris, avec votre choix d’endroits où les apprécier."
+        },
+        "leadOfferDetailsComponent": {
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "mois",
+                    "other": "mois"
+                }
+            },
+            "DETAILS_FOOTER_SUFFIX": "pour seulement {{ price }} {{ perMonth }} pour {{ termLength }} {{ monthsPluralized }}. C'est {{ savings }}% de rabais sur le prix ordinaire mensuel de {{ retailPrice }}.",
+            "PROMO_CODE_APPLIED": "Le code '{{promoCode}}' a été appliqué.",
+            "PER_MONTH_COPY": "par mois"
+        },
+        "moreContentUpsellComponent": {
+            "HEADER_TOP": "Vous voulez plus de contenu?",
+            "HEADER_BOTTOM": "Choisissez Privilège pour :",
+            "PRICE_TOP": "Ajoutez Le Complet pour {{ priceDifferencePerMonth }}/mois de plus.",
+            "PRICE_BOTTOM": "{{ pricePerMonth }}/mois. Voir les détails du forfait ci-dessous.",
+            "DETAILS": "Voir les détails du forfait"
+        },
+        "importantInfoComponent": {
+            "BODY": "Votre abonnement commence immédiatement à moins d'indications contraires. Si votre radio ne reçoit pas la programmation à laquelle vous avez droit, veuillez suivre les instructions d'activation ci-dessus. Pour votre commodité, tous les abonnements sont renouvelés automatiquement jusqu'à ce que vous les annuliez. Votre renouvellement sera facturé au tarif en vigueur à ce moment-là en utilisant le mode de paiement inscrit en dossier. Vous pouvez annuler votre abonnement en tout temps en appelant le Service à la clientèle au <a href=\"tel:+1-833-838-7846\">1 833 838-7846</a>. Votre abonnement est régi par l'Entente du client de SiriusXM, que vous pouvez <a href=\"http://www.siriusxm.ca/conditions\" target=\"_blank\" title=\" à siriusxm.ca/conditions\">consulter en ligne</a>. Si vous souhaitez recevoir un exemplaire de l'Entente du client par la poste, vous pouvez appeler au <a href=\"tel:+1-866-635-2349\">1 866 635-2349</a>."
+        },
+        "platformUpgradeOptionComponent": {
+            "GET": "Obtenez",
+            "BUY_NOW": "Acheter maintenant",
+            "KEEP_SELECT": "Conserver la sélection",
+            "DETAILS_FOOTER_ONLY": "La totalité de ce que nous avons : notre plus grande variété de divertissement, maintenant avec le pouvoir de la personnalisation pour vous.",
+            "DETAILS_FOOTER": "La totalité de ce que nous avons : notre plus grande variété de divertissement, maintenant avec le pouvoir de la personnalisation pour vous, ",
+            "DETAILS_FOOTER_SUFFIX": "pour seulement {{ price }} pour {{ termLength }} {{ monthsPluralized }}. C'est {{ savings }}% de rabais sur le prix ordinaire mensuel de {{ retailPrice }}.",
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "mois",
+                    "other": "mois"
+                }
+            }
+        },
+        "offerNotAvailableConfirmationComponent": {
+            "HELP": "Continuez pour voir une offre disponible ou appelez au 1 888 539-7474 pour obtenir de l’aide.",
+            "SEE_OFFERS": "VOIR L’OFFRE DISPONSIBLE",
+            "EXPIRED": "Désolé, apparemment cette offre a déjà pris fin.",
+            "REDEEMED": "Désolé, cette offre a déjà été échangée.",
+            "TRIAL_RADIO_NOT_ELIGIBLE": "Désolé, cette offre n'est pas disponible pour les clients bénéficiant d'un abonnement d'essai.",
+            "OTHERS": "Désolé, cette offre n'est pas disponible actuellement.",
+            "NONE": "Désolé, cette offre n'est pas disponible actuellement."
+        },
+        "multiPackageSelectionFormComponent": {
+            "CONTINUE": "Continuer",
+            "PROMOTIONAL_CONTINUE": "CHANGER D’ABONNEMENT",
+            "CONTENT_CARD_FLAG": "Notre Meilleur Forfait",
+            "VIEW_MORE_PACKAGES": "Voir plus de forfaits",
+            "HIDE_PACKAGES": "Cacher les forfaits",
+            "CONTENT_CARD_HEADLINE1": "Passer à ce forfait",
+            "CONTENT_CARD_HEADLINE2": "Garder ce forfait",
+            "ERROR": {
+                "TEXT": "Choisissez un forfait ci-dessous ou ",
+                "LINK": "continuez avec votre forfait actuel."
+            },
+            "ERROR_PROMOTIONAL": {
+                "TEXT": "Sélectionnez une offre ci-dessous"
+            }
+        },
+        "planComparisonGridComponent": {
+            "GET": "Obtenez "
+        }
+    }
+}

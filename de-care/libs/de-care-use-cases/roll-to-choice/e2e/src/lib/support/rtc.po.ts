@@ -1,0 +1,30 @@
+import { e2eChargeAgreementCheckbox } from '@de-care/review-order';
+import { e2ePaymentInfoUseExistingCard, e2ePaymentConfirmationButton } from '@de-care/customer-info';
+import { e2eRtcOrganicLandingFindYourAccount, e2eRtcOrganicLandingPage } from '@de-care/de-care-use-cases/roll-to-choice/feature-plan-choice-organic';
+import { e2eAccountInfoAccountNumber, e2eAccountInfoContinueButton, e2eAccountInfoRadioId, e2eYourInfoContinueButton } from '@de-care/identification';
+import { e2eRTCFollowOnSelectionOption, e2eRtcPlanComparisonGridButton, e2eRTCFollowOnPlanNotAvailableError } from '@de-care/offers';
+import { e2eReviewOrderCompleteButton } from '@de-care/purchase';
+import { e2eOfferDetails } from '@de-care/sales-common';
+
+export const cyGetMainProactiveOrganicLandingPage = () => cy.get(e2eRtcOrganicLandingPage);
+export const cyGetFollowOnSelectionOptions = () => cy.get(e2eRTCFollowOnSelectionOption);
+export const cyGetPlanComparisonGridButton = () => cy.get(e2eRtcPlanComparisonGridButton);
+export const cyGetFindYourAccount = () => cy.get(e2eRtcOrganicLandingFindYourAccount);
+export const cyGetAccountInfoRadioId = () => cy.get(e2eAccountInfoRadioId);
+export const cyGetAccountInfoAccountNumber = () => cy.get(e2eAccountInfoAccountNumber);
+export const cyGetAccountInfoContinueButton = () => cy.get(e2eAccountInfoContinueButton);
+export const cyGetOfferDetails = () => cy.get(e2eOfferDetails);
+export const cyGetYourInfoContinueButton = () => cy.get(e2eYourInfoContinueButton);
+export const cyGetGenreFormComponent = () => cy.get('sxm-ui-choose-genre-form');
+export const cyGetAccountCardComponent = () => cy.get('find-your-account-card');
+export const cyGetRTCFollowOnPlanNotAvaliableError = () => cy.get(e2eRTCFollowOnPlanNotAvailableError);
+export const cyGetRTCChoiceGenreSelectionForm = () => cy.get('[data-e2e="rtcChoiceGenreSelectionForm"]');
+export const cyGetRTCChoiceGenreSelectionFormFirstOption = () =>
+    cy.get('[data-e2e="rtcChoiceGenreSelectionForm"]').within(() => cy.get('sxm-ui-radio-option-with-tooltip-form-field').find('input:first-child'));
+export const cyGetRTCChoiceGenreSelectionFormSubmitButton = () => cy.get('[data-e2e="rtcChoiceGenreSelectionFormSubmitButton"]');
+export const cyGetRTCChoiceGenreSelectionFormError = () => cy.get('[data-e2e="rtcChoiceGenreSelectionFormError"]');
+export const cyGetPaymentInfoUseExistingCard = () => cy.get(e2ePaymentInfoUseExistingCard);
+export const cyGetPaymentConfirmationButton = () => cy.get(e2ePaymentConfirmationButton);
+export const cyGetChargeAgreementCheckbox = () => cy.get(e2eChargeAgreementCheckbox);
+export const cyGetReviewOrderCompleteButton = () => cy.get(e2eReviewOrderCompleteButton);
+export const cyGetAppThanksComponent = () => cy.get('app-thanks');

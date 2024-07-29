@@ -1,0 +1,184 @@
+[
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/account"
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "subscriptionWithPlatinumPackage": [],
+                        "mrdCapable": true,
+                        "accountNumber": "10000258230",
+                        "firstName": "JOHN",
+                        "lastName": "SMITH",
+                        "phone": "2122222222",
+                        "userName": "rgjrzw.abdz@siriusxm.com",
+                        "email": "RGJRZW.ABDZ@SIRIUSXM.COM",
+                        "accountProfile": {
+                            "profileNumber": "10000258486",
+                            "billingStatus": "Active",
+                            "accountRegistered": true,
+                            "createdOnDate": "2022-02-08T01:49:40-05:00"
+                        },
+                        "accountState": { "isInPreTrial": false },
+                        "serviceAddress": {
+                            "streetAddress": "1 River Rd",
+                            "city": "Schenectady",
+                            "state": "NY",
+                            "postalCode": "12345-6000",
+                            "country": "USA",
+                            "isAVSValidated": true
+                        },
+                        "billingAddress": {
+                            "streetAddress": "1 River Rd",
+                            "city": "Schenectady",
+                            "state": "NY",
+                            "postalCode": "12345-6000",
+                            "country": "USA",
+                            "isAVSValidated": true
+                        },
+                        "subscriptions": [
+                            {
+                                "id": "10000260534",
+                                "status": "Active",
+                                "plans": [
+                                    {
+                                        "dataCapable": false,
+                                        "code": "All Access - 12mo - wActv",
+                                        "packageName": "SIR_AUD_ALLACCESS",
+                                        "termLength": 12,
+                                        "minimumFollowOnTerm": 0,
+                                        "startDate": "2022-02-08T00:00:00-05:00",
+                                        "endDate": null,
+                                        "nextCycleOn": "2023-02-08T00:00:00-05:00",
+                                        "marketType": "self-pay:standard",
+                                        "type": "SELF_PAID",
+                                        "status": "active",
+                                        "capabilities": ["AUD", "IPAUD"],
+                                        "price": 275.88,
+                                        "product": null,
+                                        "parentPackageName": "",
+                                        "isChangePlanAllowed": false,
+                                        "isBasePlan": true,
+                                        "isPreTiering": false,
+                                        "isFamiliyDiscountApplied": false
+                                    }
+                                ],
+                                "followonPlans": [],
+                                "radioService": {
+                                    "id": "10000260022",
+                                    "status": "Active",
+                                    "radioId": "990004837786",
+                                    "last4DigitsOfRadioId": "7786",
+                                    "devicePromoCode": null,
+                                    "vehicleInfo": { "year": null, "make": null, "model": null },
+                                    "capabilities": ["AUD", "BOF"],
+                                    "is360LCapable": false
+                                },
+                                "streamingService": {
+                                    "id": "10000257974",
+                                    "userName": "rgjrzw.abdz@siriusxm.com",
+                                    "status": "Active",
+                                    "maskedUserName": "rgj******@siriusxm.com",
+                                    "randomCredentials": false,
+                                    "systemGeneratedLogin": false,
+                                    "validUserName": true
+                                },
+                                "devicePromoCode": null,
+                                "isClosed": false,
+                                "isPrimary": true,
+                                "isMrdDriving": true,
+                                "isDataOnly": false
+                            }
+                        ],
+                        "billingSummary": {
+                            "paymentType": "creditCard",
+                            "creditCard": { "last4Digits": "9424", "type": "DISCOVER", "expiryMonth": 1, "expiryYear": 2024, "status": "ACTIVE" },
+                            "amountDue": 0,
+                            "isPaymentTypeInvoice": false
+                        },
+                        "consolidatedAccountNumbers": [],
+                        "closedDevicesMap": {},
+                        "closedDevices": []
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/device/validate",
+            "postData": { "radioId": "990004837786" }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "last4DigitsOfRadioId": "7786",
+                        "deviceStatus": "USED",
+                        "channelId": "101",
+                        "primaryBrandId": "9999",
+                        "capabilityList": ["AUD", "BOF"],
+                        "promoCode": null
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/account/acsc",
+            "postData": {
+                "radioId": "5931",
+                "subscriptionId": "10000262360",
+                "swapFlow": true
+            }
+        },
+        "response": {
+            "status": 400,
+            "statusText": "",
+            "headers": [],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "FAILURE",
+                    "httpStatusCode": 400,
+                    "httpStatus": "BAD_REQUEST",
+                    "error": {
+                        "errorStackTrace": "AccountNumber: 10000263512 | RadioId: 990003235931 | x-forwarded-for: [10.130.99.120] | URL: /services/account/acsc | Exception: AccountServiceException#null | StackTrace: ACSCAccountServiceImpl.java:259 | ErrorType: null | ErrorMessage: ERROR : [errorCode : NEW_RADIO_ELIGIBLE_FOR_LIFE_TIME_PLAN, errorPropKey : error.account.service.new.radio.eligible.for.life.time.plan, errorType : CHECKED, errorLevel : FIELD, statusCode : 400 BAD_REQUEST, errorMessage : null | , sourceErrorCode : null] | FullStackTrace: ",
+                        "logId": "765fdc77-1c71-40e1-9a9d-2ec2c3a1c922",
+                        "fieldErrors": [
+                            {
+                                "errorCode": "NEW_RADIO_ELIGIBLE_FOR_LIFE_TIME_PLAN",
+                                "errorPropKey": "error.account.service.new.radio.eligible.for.life.time",
+                                "errorType": "BUSINESS",
+                                "fieldName": "plan"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    }
+]

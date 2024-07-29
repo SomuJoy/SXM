@@ -1,0 +1,121 @@
+<div class="grid-wrapper" *ngIf="parameters$ | async as parameters">
+    <!--   Monthly Price After -->
+    <div class="grid-row" data-e2e="planComparisonMonthlyPlanContainer">
+        <div class="grid-row-first-item">
+            <p
+                class="feature-name"
+                data-e2e="planComparisonMonthlyRateText"
+                [innerHTML]="'offers.planComparisonGridComponent.MONTHLY_PRICE_AFTER' | translate: { endDate: endDate | date: (dateFormat$ | async):null:locale }"
+            ></p>
+        </div>
+        <div (click)="selectedPlanIndex(i)" *ngFor="let retailPrice of retailPrices; let i = index" [class.follow-on-selected]="i === parameters.selectedPackageIndex">
+            <p class="feature-p-el" data-e2e="planComparisonMonthlyPrice">${{ retailPrice.pricePerMonth }}<span *ngIf="familyDiscount && retailPrice.mrdEligible">*</span></p>
+        </div>
+    </div>
+
+    <!--   Channel Count, and, Package Features with Check or X marks-->
+    <ng-container *ngIf="parameters$ | async as parameters">
+        <div data-e2e="planComparisonFeatureContainer" *ngFor="let feature of parameters.features; let i = index" class="grid-row">
+            <div class="grid-row-first-item">
+                <p>
+                    <span class="feature-name" data-e2e="planComparisonFeatureName" [innerHTML]="feature.name"></span>
+                    <sxm-ui-tooltip
+                        [attr.data-track-click]="
+                            feature.name | planComparisionGridTooltipLinkId: (parameters.selectedName | withoutPlatformName: parameters.selectedPackageName)
+                        "
+                        *ngIf="feature.tooltipText"
+                        class="tooltip-component tooltip-display-right-medium-up tooltip-display-bottom"
+                    >
+                        <span [innerHTML]="feature.tooltipText"></span>
+                    </sxm-ui-tooltip>
+                </p>
+            </div>
+            <!-- If count exist, show it. Else, Display Check marks -->
+            <ng-container *ngIf="feature.counts[0]; else showCheckMarks">
+                <div (click)="selectedPlanIndex(i)" *ngFor="let count of feature.counts; let i = index" [class.follow-on-selected]="i === parameters.selectedPackageIndex">
+                    <p data-e2e="planComparisonFeatureCount" class="feature-p-el" [class.follow-on-selected]="i === parameters.selectedPackageIndex">{{ count }}</p>
+                </div>
+            </ng-container>
+            <ng-template #showCheckMarks>
+                <div (click)="selectedPlanIndex(i)" data-e2e="planComparisonFeatureMark" *ngFor="let showCheckMark of feature.checkMarks; let i = index">
+                    <svg *ngIf="showCheckMark === true" [class.follow-on-selected]="i === parameters.selectedPackageIndex" class="icon icon-utility check-mark">
+                        <use class="icon-check-mark-flex-stroke" xlink:href="#icon-check-mark-flex-stroke"></use>
+                    </svg>
+                    <!--  Show dash when feature isn't available -->
+                    <svg *ngIf="showCheckMark !== true" [class.follow-on-selected]="i === parameters.selectedPackageIndex" class="icon icon-utility x-mark">
+                        <use class="icon-x-mark-flex-stroke" xlink:href="#icon-x-mark-flex-stroke"></use>
+                    </svg>
+                </div>
+            </ng-template>
+        </div>
+
+        <!--  Channel Lineup URL -->
+        <div data-e2e="planComparisonChannelLineUpContainer" class="grid-row channel-lineup-row">
+            <div class="grid-row-first-item">
+                <ng-container
+                    [ngTemplateOutlet]="channelsLineupTemplate"
+                    [ngTemplateOutletContext]="{
+                        channelsLineUpText: 'offers.planComparisonGridComponent.CHANNELS_LINEUP' | translate
+                    }"
+                >
+                </ng-container>
+                <ng-template #channelsLineupTemplate let-channelsLineUpText="channelsLineUpText">
+                    <p>
+                        <span data-e2e="planComparisonChannelLineUpText" class="feature-name">{{ channelsLineUpText }}</span>
+                        <sxm-ui-tooltip
+                            [attr.data-track-click]="
+                                channelsLineUpText | planComparisionGridTooltipLinkId: (parameters.selectedName | withoutPlatformName: parameters.selectedPackageName)
+                            "
+                            class="tooltip-component tooltip-display-top tooltip-display-top-medium-up"
+                        >
+                            <span>
+                                {{ "offers.planComparisonGridComponent.CHANNEL_LINEUP_TOOLTIP_COPY" | translate }}
+                            </span>
+                        </sxm-ui-tooltip>
+                    </p>
+                </ng-template>
+            </div>
+            <div class="text-center" *ngFor="let name of parameters.names; let i = index">
+                <a
+                    class="bold channel-lineup-link"
+                    data-e2e="planComparisonChannelLineUpLink"
+                    [class.follow-on-selected]="i === parameters.selectedPackageIndex"
+                    [href]="parameters.channelLineUpURLs[i]"
+                    target="_blank"
+                >
+                    {{ "offers.planComparisonGridComponent.VIEW_LINEUP" | translate }}
+                </a>
+            </div>
+        </div>
+    </ng-container>
+
+    <!--   Primary CTA and TFN -->
+    <div class="row no-padding align-right" *ngIf="displayCallsToAction">
+        <div class="column small-12 large-9 no-padding full-width-of-comparison">
+            <!--   Primary CTA -->
+            <button data-e2e="planComparisonGridButton" class="button primary full-width" (click)="onContinue()">
+                {{ selectedPackageType ? (translateKey + "GET" | translate) + selectedPackageType : (translateKey + "PRIMARY_CTA_COPY" | translate) }}
+            </button>
+            <!--   TFN -->
+            <p class="text-center copy-under-cta">
+                {{ "offers.planComparisonGridComponent.TFN_COPY" | translate }}
+                <a class="text-link" href="{{ 'tel:' + questionsPhoneNumber }}">
+                    {{ questionsPhoneNumber }}
+                </a>
+            </p>
+        </div>
+    </div>
+    <div class="grid-row grid-row-ctas" data-e2e="planComparisonGridFamilyDiscount" *ngIf="familyDiscount">
+        <div class="full-width-of-comparison">
+            <p class="text-center">
+                {{
+                    "offers.planComparisonGridComponent.FAMILY_DISCOUNT"
+                        | translate
+                            : {
+                                  price: familyDiscount | currency: "USD":"symbol-narrow":priceFormat:currentLang
+                              }
+                }}
+            </p>
+        </div>
+    </div>
+</div>

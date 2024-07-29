@@ -1,0 +1,35 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "locales": [
+            {
+                "locale": "en_US",
+                "upsellOfferInfo": {
+                    "packageUpsellOfferInfo": {
+                        "header": "OUR BEST PLAN",
+                        "title": "Upgrade to Sirius Platinum",
+                        "description": "Add premium channels for an additional $5.00 per month",
+                        "upsellDeals": null,
+                        "listeningOptions": ["Satellite", "Streaming", "Pandora"],
+                        "highlightsTitle": "Sirius Platinum&nbsp;Includes:",
+                        "highlightsText": [
+                            "<b>350+ channels, </b>including 165+ in your car, plus even more to stream on your devices",
+                            "<b>Ad-free music </b>for every genre & decade plus artist-created channels",
+                            "<b>Original talk, </b>podcasts, exclusive comedy & news from every angle",
+                            "<b>NFL, MLB®, NBA, NHL®, and NCAA® play-by-play,</b> NASCAR®, plus the biggest names in sports talk",
+                            "<b>2 Howard Stern channels,</b> including video",
+                            "<b>Create Pandora stations</b> based on artists",
+                            "<b>SiriusXM video library</b> of in-studio shows & performances"
+                        ],
+                        "showToggleLabel": "Explore plan details",
+                        "hideToggleLabel": "Hide"
+                    },
+                    "termUpsellOfferInfo": null,
+                    "packageAndTermUpsellOfferInfo": null
+                }
+            }
+        ]
+    }
+}

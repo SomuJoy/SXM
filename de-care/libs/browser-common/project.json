@@ -1,0 +1,27 @@
+{
+    "name": "browser-common",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/browser-common/src",
+    "projectType": "library",
+    "generators": {},
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/browser-common/src/**/*.ts", "libs/browser-common/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/browser-common/jest.config.js",
+                "tsConfig": "libs/browser-common/tsconfig.spec.json",
+                "setupFile": "libs/browser-common/src/test-setup.ts",
+                "configPath": "./jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": ["scope:legacy", "scope:shared-ui-util"]
+}

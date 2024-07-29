@@ -1,0 +1,39 @@
+<div class="grid-container">
+    <mat-icon svgIcon="streaming"></mat-icon>
+    <p class="large-copy span-2 lead-in center-horz-align bold text-overflow-ellipsis mb-20">
+        {{ translateKeyPrefix + ".TITLE" | translate }}
+    </p>
+    <hr class="span-2" />
+    <p class="label-column lead-in bold mb-4">
+        {{ translateKeyPrefix + ".PLAN_TITLE" | translate: { plansPlural: data?.plans?.length | i18nPlural: (translateKeyPrefix + ".PLURAL_MAP.PLANS" | translate) } }}
+    </p>
+    <!-- TODO: Check Manage link -->
+    <!-- <p class="right-align no-margin">
+        <button
+            class="text-link-secondary"
+            (click)="manage.emit()"
+            sxmUiDataClickTrack="exit"
+            [attr.data-link-name]="'Manage|' + (data?.index === 0 ? 'Primary' : (data?.index ?? 0) + 1)"
+            [attr.data-link-key]="'StreamingSubscriptionActions'"
+        >
+            {{ translateKeyPrefix + ".MANAGE_LINK" | translate }}
+        </button>
+    </p> -->
+    <p *ngFor="let plan of data?.plans" class="lead-in label-column plan-name">{{ plan }}</p>
+    <div class="label-column tool-tip-grid">
+        <p class="lead-in bold mb-4 mt-8" [innerHTML]="translateKeyPrefix + '.STREAMING_TITLE' | translate"></p>
+        <sxm-ui-tooltip class="tooltip-display-right"
+            ><p>{{ translateKeyPrefix + ".SXM_APP_TOOLTIP" | translate }}</p></sxm-ui-tooltip
+        >
+    </div>
+    <p class="mt-8 no-margin right-align">
+        <!-- TODO -->
+        <!-- <button class="text-link-secondary" (click)="editUsername.emit()">{{ translateKeyPrefix + ".EDIT_LINK" | translate }}</button> -->
+    </p>
+    <p class="label-column lead-in text-overflow-ellipsis mb-4">{{ data.username }}</p>
+    <p class="bottom-element span-2 center-horz-align" *ngIf="data?.isInactiveDueToSuspensionOrNonPay">
+        <button class="text-link" (click)="cancelInactiveDevice.emit()" data-test="cancelInactiveSubscriptionsButton">
+            {{ translateKeyPrefix + ".CANCEL_LABEL" | translate }}
+        </button>
+    </p>
+</div>

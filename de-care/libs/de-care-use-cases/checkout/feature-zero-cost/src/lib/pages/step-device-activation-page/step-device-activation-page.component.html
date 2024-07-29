@@ -1,0 +1,30 @@
+<ng-container *ngrxLet="viewModel$ as viewModel">
+    <section id="mainContent">
+        <sxm-ui-stepper-progress-breadcrumb *ngIf="!viewModel.refreshComplete" [currentStepNumber]="3" [numberOfSteps]="3"></sxm-ui-stepper-progress-breadcrumb>
+        <header *ngIf="viewModel.refreshComplete">
+            <h4>{{ translateKeyPrefix + ".HEADER_TEXT" | translate }}</h4>
+            {{ translateKeyPrefix + ".TRIAL_END_TEXT" | translate }}
+            {{ viewModel.trialEndDate | sxmUiDate: null:viewModel.currentLang }}.
+            <hr />
+        </header>
+        <refresh-signal [radioId]="viewModel.radioId" (signalCompleted)="refreshComplete$.next(true)"></refresh-signal>
+        <ng-container *ngIf="viewModel.refreshComplete">
+            <hr />
+            <sxm-ui-ready-to-explore>
+                <streaming-player-link
+                    listenNowLink
+                    [customLinkText]="translateKeyPrefix + '.LISTEN_NOW_LINK_TEXT' | translate"
+                    [infoForToken]="viewModel.listenNowTokenData"
+                ></streaming-player-link>
+            </sxm-ui-ready-to-explore>
+            <hr />
+            <register-your-account
+                [securityQuestions]="viewModel.registrationViewModel.securityQuestions"
+                [account]="viewModel.registrationViewModel.accountInfo"
+                [credentialState]="viewModel.registerCredentialsState"
+                (register)="onRegisterAccount($event)"
+                [registrationCompleted]="registrationCompleted$ | async"
+            ></register-your-account>
+        </ng-container>
+    </section>
+</ng-container>

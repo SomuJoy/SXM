@@ -1,0 +1,38 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: block;
+}
+
+.header-bar {
+    padding: 12px 0;
+
+    .column {
+        height: auto;
+    }
+}
+
+.province-bar {
+    width: 100%;
+    background-color: white;
+}
+
+.logo-bar {
+    color: white;
+
+    button {
+        color: white;
+    }
+}
+
+strong button {
+    font-weight: bold;
+}
+
+@include bp(medium) {
+    .column {
+        &.align-left {
+            padding: 0px;
+        }
+    }
+}

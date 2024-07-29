@@ -1,0 +1,5 @@
+<p
+    *ngIf="!!priceChangeMessagingType"
+    [innerHTML]="priceChangeKey + priceChangeMessagingType + (isQuebec ? '_QUEBEC' : '') | translate"
+    data-e2e="priceIncreaseMessage.messageCopy"
+></p>

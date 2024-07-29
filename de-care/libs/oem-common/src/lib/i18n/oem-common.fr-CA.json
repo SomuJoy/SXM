@@ -1,0 +1,55 @@
+{
+    "oemCommon": {
+        "oemFlowComponent": {
+            "STEP_PAGE_TITLES": {
+                "OFFER_STEP": "Choisissez un forfait",
+                "PAYMENT_STEP": "Entrez des renseignements de paiement",
+                "BILLING_ADDRESS_STEP": "Adresse de facturation",
+                "ADDRESS_CONFIRMATION_STEP": "Confirmer l’adresse",
+                "SUMMARY_STEP": "Récapitulatif de commande",
+                "CONFIRMATION_STEP": "Confirmation"
+            }
+        },
+        "subscriptionConfirmationComponent": {
+            "TITLE": "Félicitations! Vous êtes prêt.",
+            "MESSAGE": "Votre Entente du client vous sera envoyée sous forme d’un lien dans votre courriel de confirmation.",
+            "MESSAGE2": "Fermer votre navigateur pour retourner à l’application SiriusXM."
+        },
+        "subscriptionErrorComponent": {
+            "TITLE": "Veuillez téléphoner à SiriusXM au 1-844-823-0844 pour vous abonner ou gérer votre compte.<br>Please call SiriusXM at 1-844-823-0844 to subscribe or manage account.",
+            "LEGAL_COPY": "Vous pouvez lire <strong>L’entente du client</strong> et <strong>la Politique de la vie privée</strong> à siriusxm.ca/ententes.<br>You can read our <strong>Customer Agreement</strong> and <strong>Privacy Policy</strong> at siriusxm.ca/agreements.",
+            "PAGE_TITLE": "SiriusXM - Abonnement"
+        },
+        "manageAccountComponent": {
+            "TITLE": "Veuillez téléphoner à SiriusXM au 1-844-823-0844 pour vous abonner ou gérer votre compte.",
+            "LEGAL_COPY": "Vous pouvez lire <strong>l’Entente du client</strong> et la <strong>Politique de la vie privée</strong> à siriusxm.ca/ententes",
+            "PAGE_TITLE": "SiriusXM – Gérer votre compte"
+        },
+        "paymentInfoComponent": {
+            "SUBMIT_PAYMENT_INFO_ERROR": "Nous sommes dans l'impossibilité d'autoriser votre carte de crédit. Veuillez mettre à jour vos renseignements de paiement.",
+            "NAME_LABEL": "Nom comme il apparaît sur la carte",
+            "CC_NUMBER_LABEL": "Numéro de carte",
+            "EXPIRATION_MONTH_LABEL": "Mois d’expiration (MM)",
+            "EXPIRATION_YEAR_LABEL": "Année d’expiration (AAAA)",
+            "ERROR_CC_EXP_MONTH": "Entrez un mois d'expiration valide.",
+            "ERROR_CC_EXP_YEAR": "Entrez une année d'expiration valide.",
+            "ERROR_CC_EXP_EARLY": "La date d’expiration ne peut être antérieure au mois courant.",
+            "CVV_LABEL": "Code de sécurité",
+            "NOTE": "Remarque : Cette information n’est jamais conservée dans la voiture. Consultez la Politique de la vie privée à siriusxm.ca/ententes",
+            "BUTTON_TEXT": "SUIVANT"
+        },
+        "billingAddressComponent": {
+            "ADDRESS_NOTE": "Remarque : Cette information n’est jamais conservée dans la voiture. Consultez la Politique de la vie privée à siriusxm.ca/ententes",
+            "BUTTON_TEXT": "SUIVANT",
+            "EMAIL": "Adresse de courriels",
+            "ERROR_EMAIL": "Entrez une adresse courriel valide."
+        },
+        "offerStepComponent": {
+            "SUBSCRIBE_NOW": "ABONNEZ-VOUS MAINTENANT"
+        },
+        "summaryStepComponent": {
+            "INSTRUCTIONS": "Veuillez accepter l’Entente ci-dessus.",
+            "BUTTON_TEXT": "TERMINER MA COMMANDE"
+        }
+    }
+}

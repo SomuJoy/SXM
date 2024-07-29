@@ -1,0 +1,40 @@
+{
+    "DeCareUseCasesCheckoutFeatureStreamingModule": {
+        "COMMON": {
+            "STREAMING_PLAYER_LINK": ""
+        },
+        "PurchaseTargetedPageComponent": {
+            "STEP_PAGE_TITLES": {
+                "": ""
+            }
+        },
+        "ConfirmationPageComponent": {
+            "TITLE": "Merci de vous être abonné.",
+            "USERNAME": "Nom d’utilisateur:",
+            "TITLE_WITH_SXM_STREAMING": "Merci de vous être abandonné à l’écoute en continu SXM",
+            "DEAL_REDEMPTION_INSTRUCTIONS": {
+                "DISCOVERY_PLUS": {
+                    "TITLE": "1 mois de discovery+ ",
+                    "DESCRIPTION": [
+                        "Un courriel de réclamation avec votre code unique sera envoyé dans un délai de 48 heures à l’adresse courriel fournie. Suivez simplement les instructions pour commencer à profiter de Discovery+ pendant 1 mois."
+                    ],
+                    "image": {
+                        "src": "assets/img/discovery_plus_16x9.png"
+                    }
+                }
+            },
+            "PRICE_AND_TERM_SUBTEXT": "Des frais de {{etfAmount}} de résiliation anticipée peuvent s’appliquer si vous annulez dans les premiers {{etfTerm}} mois."
+        },
+        "IneligibleErrorPageComponent": {
+            "LOADER_SUBTEXT": "Trouver un autre bon plan pour vous.",
+            "3494": "Malheureusement, nous ne trouvons pas votre radio. Toutefois, vous pouvez diffuser en continu au moyen de l'appli SXM avec un abonnement Le Complet.",
+            "103": "Malheureusement, votre radio n'est pas équipée pour le service satellite. Toutefois, vous pouvez diffuser en continu au moyen de l'appli SXM avec un abonnement Le Complet.",
+            "5035": "Malheureusement, cette radio n'est pas admissible à un abonnement d'essai. Toutefois, vous pouvez commencer à profiter de SiriusXM grâce à cette excellente offre d'abonnement.",
+            "101": "Malheureusement, cette radio n'est pas admissible à un abonnement d'essai. Toutefois, vous pouvez commencer à profiter de SiriusXM grâce à cette excellente offre d'abonnement.",
+            "109": "Il semble que vous avez actuellement un essai actif. Vous pouvez ajouter un abonnement, ainsi vous ne manquerez aucune note une fois que votre essai prendra fin.",
+            "111": "Il semble que vous avez déjà un essai actif de 3 mois. Vous pouvez ajouter un abonnement, ainsi vous ne manquerez aucune note une fois que votre essai prendra fin.",
+            "112": "Malheureusement, votre essai a pris fin récemment et votre radio n'est pas admissible à un abonnement d'essai. Toutefois, vous pouvez commencer à profiter de SiriusXM grâce à cette excellente offre d'abonnement.",
+            "113": "Malheureusement, votre essai a pris fin récemment et votre radio n'est pas admissible à un abonnement d'essai. Toutefois, vous pouvez commencer à profiter de SiriusXM grâce à cette excellente offre d'abonnement."
+        }
+    }
+}

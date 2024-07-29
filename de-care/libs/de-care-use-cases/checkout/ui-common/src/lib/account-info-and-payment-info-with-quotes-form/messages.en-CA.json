@@ -1,0 +1,10 @@
+{
+    "BILLING_DETAILS_TITLE": "Billing Details",
+    "PAYMENT_DETAILS_TITLE": "Credit Card Details",
+    "CONFIRM_YOUR_ADDRESS": "Please confirm your address",
+    "CONTINUE_BUTTON_TEXT": "Review Order",
+    "CREDIT_CARD_PROCESSING_ERROR": "We were unable to authorize your credit card. Please update your payment information.",
+    "UNEXPECTED_ERROR": "An unexpected error occurred. Please try again.",
+    "CARD_TYPE_ICONS": ["visa", "mc", "amex"],
+    "ENTER_A_CAPTCHA_TO_FINISH": "Please enter CAPTCHA to finish"
+}

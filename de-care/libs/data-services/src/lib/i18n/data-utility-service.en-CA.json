@@ -1,0 +1,17 @@
+{
+    "dataServices": {
+        "dataUtilityService": {
+            "securityQuestions": {
+                "100": "What is your favourite pet's name?",
+                "101": "What was your favourite place to visit as a child?",
+                "103": "What is your favourite sports team?",
+                "104": "What is your favourite beverage?",
+                "105": "What is your favourite movie?",
+                "107": "What is the name of your favourite childhood friend?",
+                "109": "What is the name of the favourite school you attended?",
+                "113": "Who is your favourite band/artist?",
+                "114": "What's your favourite genre of music?"
+            }
+        }
+    }
+}

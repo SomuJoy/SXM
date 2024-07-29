@@ -1,0 +1,31 @@
+{
+    "name": "domains-purchase-state-change-subscription",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/purchase/state-change-subscription/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/purchase/state-change-subscription/src/**/*.ts", "libs/domains/purchase/state-change-subscription/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/purchase/state-change-subscription/jest.config.js",
+                "tsConfig": "libs/domains/purchase/state-change-subscription/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/purchase/state-change-subscription/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

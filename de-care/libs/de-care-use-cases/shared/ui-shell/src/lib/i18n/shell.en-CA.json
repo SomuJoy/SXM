@@ -1,0 +1,9 @@
+{
+    "DeCareUseCasesSharedUiShellModule": {
+        "ShellComponent": {
+            "SIRIUSXM_LOGO_SRC": "assets/img/sxm-logo-white.png",
+            "SIRIUSXM_LOGO_LINK": "https://siriusxm.ca/",
+            "SIRIUSXM_LOGO_ALT": "SiriusXM"
+        }
+    }
+}

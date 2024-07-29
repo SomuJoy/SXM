@@ -1,0 +1,77 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+@mixin transition {
+    transition: all 400ms ease;
+}
+
+table {
+    width: 100%;
+    border: 1px solid $gray-medium;
+    border-collapse: collapse;
+    tr {
+        &:first-child th {
+            border-bottom: 1px solid $gray-medium;
+            background: $off-white;
+        }
+        th {
+            padding: 16px 16px 12px;
+            text-align: left;
+        }
+        td {
+            padding: 0 16px 4px;
+            @include transition;
+        }
+        th:nth-child(2),
+        td:nth-child(2) {
+            text-align: right;
+        }
+    }
+    &.collapsed {
+        tr:last-child td {
+            padding-bottom: 16px;
+        }
+    }
+}
+hr {
+    @include hr;
+    @include transition;
+    margin: 0 0 12px;
+    &.hidden {
+        border: none;
+        margin: 0;
+    }
+}
+.details-toggle-btn {
+    position: relative;
+    padding-right: 16px;
+    @include font-size(14px);
+    &.opened {
+        .icon-dropdown-sm-wrapper {
+            transform: rotate(180deg);
+        }
+    }
+    .icon-dropdown-sm-wrapper {
+        position: absolute;
+        top: 2px;
+        right: 0;
+    }
+}
+
+.cancel-note {
+    position: relative;
+    span {
+        color: $gray-dark;
+        padding-right: 24px;
+    }
+    sxm-ui-tooltip {
+        position: absolute;
+        top: -4px;
+        right: 0;
+    }
+}
+
+price-increase-message {
+    display: inline-block;
+    margin-bottom: 16px;
+}

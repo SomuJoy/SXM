@@ -1,0 +1,15 @@
+{
+    "TITLE": "Streaming",
+    "PLAN_TITLE": "{{plansPlural}}",
+    "MANAGE_LINK": "Manage",
+    "PLAN_NAME_TRIAL": "{{plan}} Trial",
+    "STREAMING_TITLE": "Streaming login",
+    "EDIT_LINK": "Edit",
+    "SXM_APP_TOOLTIP": "Your plan includes streaming on your phone, computer, smart TV, and speakers with the SXM App.",
+    "PLURAL_MAP": {
+        "PLANS": {
+            "=1": "Plan",
+            "other": "Plans"
+        }
+    }
+}

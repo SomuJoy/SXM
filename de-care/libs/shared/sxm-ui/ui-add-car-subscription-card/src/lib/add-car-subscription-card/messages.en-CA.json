@@ -1,0 +1,13 @@
+{
+    "TITLE_WITH_PRICE": "Get SXM in your car too.<br/> Upgrade and get your first <span>{{termLength}} {{monthsPluralized}} for {{price}}</span>.",
+    "DISCLAIMER": "Fees, taxes and Offer Details apply.",
+    "DISCLAIMER_NO_FEES": "Taxes and Offer Details apply.",
+    "DISCLAIMER_NO_FEES_NO_TAXES": "Offer Details apply.",
+    "PLURAL_MAP": {
+        "MONTH": {
+            "=1": "month",
+            "other": "months"
+        }
+    },
+    "ADD_SUB_CTA_BUTTON_LABEL": "Ugrade Plan"
+}

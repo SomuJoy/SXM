@@ -1,0 +1,5 @@
+<bummer-error
+    [errorMessage]="translateKeyPrefix + '.ERROR_MESSAGE' | translate"
+    [ctaLink]="activatedRoute.snapshot.queryParams?.ctaURL ? activatedRoute.snapshot.queryParams?.ctaURL : activatedRoute.snapshot.data?.ctaURL"
+>
+</bummer-error>

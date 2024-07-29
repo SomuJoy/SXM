@@ -1,0 +1,93 @@
+<form [formGroup]="addressValidationForm" (ngSubmit)="onSubmit()" novalidate>
+    <div id="verify-address" *ngIf="data">
+        <p class="heading" [id]="ariaDescribedbyTextId">
+            <b>
+                {{ data.headingText }}
+            </b>
+        </p>
+
+        <div class="invalid-feedback">
+            <p>
+                {{ "customerInfo.verifyAddressComponent.INVALID_FEEDBACK" | translate }}
+            </p>
+        </div>
+
+        <ng-container *ngIf="data.addressCorrectionAction === 2 && data.currentAddress">
+            <p>
+                <b>{{ "customerInfo.verifyAddressComponent.U_SURE" | translate }}</b>
+            </p>
+            <div>
+                <span>{{ data.currentAddress.addressLine1 }}</span
+                ><br />
+                <span>{{ data.currentAddress.city }} {{ data.currentAddress.state }} {{ data.currentAddress.zip }}</span
+                ><br />
+            </div>
+        </ng-container>
+
+        <ng-template #address let-i="index" let-correctedAddress="correctedAddress">
+            <label for="suggested_address_{{ i }}">
+                <span>{{ correctedAddress.addressLine1 }}</span
+                ><br />
+                <span>{{ correctedAddress.city }} {{ correctedAddress.state }} {{ correctedAddress.zip }}</span
+                ><br />
+            </label>
+        </ng-template>
+
+        <ng-container *ngIf="data.addressCorrectionAction === 0 && data.correctedAddresses">
+            <ng-container *ngIf="data.correctedAddresses.length > 1; else singleAddress">
+                <p>
+                    <b>
+                        {{ "customerInfo.verifyAddressComponent.MULTIPLE_CORRECTED_ADDRESSES" | translate }}
+                    </b>
+                </p>
+                <span *ngIf="addressSelectionErrorMessage" class="invalid-feedback">
+                    <p>
+                        {{ "customerInfo.verifyAddressComponent.ERROR_CHOOSE_ADDRESS" | translate }}
+                    </p>
+                </span>
+                <div *ngFor="let correctedAddress of data.correctedAddresses; let i = index" class="radio-item">
+                    <input
+                        type="radio"
+                        class="radio"
+                        name="addressValidation"
+                        id="suggested_address_{{ i }}"
+                        [value]="['suggested_address', correctedAddress]"
+                        formControlName="addressValidation"
+                        [style.display]="'none'"
+                    />
+                    <ng-container [ngTemplateOutlet]="address" [ngTemplateOutletContext]="{ index: i, correctedAddress: correctedAddress }"></ng-container>
+                </div>
+            </ng-container>
+            <ng-template #singleAddress>
+                <p>
+                    <b>
+                        {{ "customerInfo.verifyAddressComponent.CORRECTED_ADDRESS" | translate }}
+                    </b>
+                </p>
+                <ng-container [ngTemplateOutlet]="address" [ngTemplateOutletContext]="{ index: 0, correctedAddress: data.correctedAddresses[0] }"></ng-container>
+            </ng-template>
+        </ng-container>
+    </div>
+    <div class="verify-actions">
+        <div class="flex align-center">
+            <button
+                data-e2e="verifyAddress.retainButton"
+                type="submit"
+                [ngClass]="['button', 'primary', 'align-center', 'text-center', 'text-uppercase', 'align-justify', addressValidationForm.valid ? '' : 'disabled']"
+                [disabled]="!addressValidationForm.valid"
+            >
+                {{ "customerInfo.verifyAddressComponent.THIS_ADDRESS" | translate }}
+            </button>
+        </div>
+        <div class="flex align-center">
+            <button
+                data-e2e="verifyAddress.reenterButton"
+                type="button"
+                class="button primary align-center text-center text-uppercase align-justify"
+                (click)="editExisting.emit()"
+            >
+                {{ "customerInfo.verifyAddressComponent.NEW_ADDRESS" | translate }}
+            </button>
+        </div>
+    </div>
+</form>

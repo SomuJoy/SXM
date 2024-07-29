@@ -1,0 +1,8 @@
+<main de-care-page-main>
+    <h4>{{ translateKeyPrefix + "TITLE" | translate }}</h4>
+    <br />
+    <div [innerHTML]="translateKeyPrefix + 'INSTRUCTIONS' | translate"></div>
+    <button type="submit" sxm-proceed-button sxmUiDataClickTrack="player" (click)="onSignInClick()">
+        {{ translateKeyPrefix + "CONTINUE_BUTTON_TEXT" | translate }}
+    </button>
+</main>

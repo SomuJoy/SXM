@@ -1,0 +1,78 @@
+<ng-container *ngIf="subscriptionInfo">
+    <div class="info-item-box flex align-justify" *ngIf="flepzData">
+        <div class="info-item-box-info">
+            <p>{{ "identification.activeSubscriptionComponent.NAME" | translate }} {{ flepzData.firstName }} {{ flepzData.lastName }}</p>
+            <p>{{ "identification.activeSubscriptionComponent.EMAIL" | translate }} {{ flepzData.email }}</p>
+            <p>{{ "identification.activeSubscriptionComponent.PHONE" | translate }} {{ flepzData.phoneNumber | PhoneNumber }}</p>
+            <p>{{ "identification.activeSubscriptionComponent.ZIPCODE" | translate }} {{ flepzData.zipCode }}</p>
+        </div>
+        <div class="info-item-box-edit-link">
+            <a class="text-link-secondary edit-btn" data-track-click="Edit" (click)="editAccountInfoRequested.emit()">
+                {{ "identification.activeSubscriptionComponent.EDIT" | translate }}
+            </a>
+        </div>
+    </div>
+
+    <div class="info-item-box-info">
+        <h5>{{ "identification.activeSubscriptionComponent.SUBSCRIPTION_INFO.TITLE" | translate }}</h5>
+        <p>{{ "identification.activeSubscriptionComponent.SUBSCRIPTION_INFO.SUB_TITLE" | translate }}</p>
+    </div>
+
+    <hr class="full-width" />
+
+    <div class="full-width info-item-box-info">
+        <p *ngIf="subscriptionInfo.radioId && !streaming">
+            <strong *ngIf="hasVehicle; else noVehicleInfo">
+                {{ "identification.activeSubscriptionComponent.VEHICLE" | translate: subscriptionInfo.vehicle }}
+                ({{ "identification.activeSubscriptionComponent.RADIO" | translate: subscriptionInfo }})
+            </strong>
+            <ng-template #noVehicleInfo>
+                <strong>
+                    {{ "identification.activeSubscriptionComponent.RADIO" | translate: subscriptionInfo }}
+                </strong>
+            </ng-template>
+        </p>
+        <p *ngIf="subscriptionInfo.maskedUserName && streaming">
+            {{ subscriptionInfo.maskedUserName }}
+        </p>
+        <ng-container *ngFor="let plan of subscriptionInfo.plans">
+            <p class="initial-height" [innerHTML]="'app.packageDescriptions.' + plan?.packageName + '.name' | translate"></p>
+            <p *ngIf="(plan?.endDate || plan?.nextCycleOn) && !streaming">
+                {{ "identification.activeSubscriptionComponent.RENEWS" | translate }}
+                {{ plan?.endDate || plan?.nextCycleOn | date: (dateFormat$ | async):timeZone:locale }}
+            </p>
+        </ng-container>
+    </div>
+
+    <hr class="full-width" />
+
+    <button *ngIf="!isSignedIn; else manage" class="button primary full-width" (click)="loginRequested.emit()">
+        {{ "identification.activeSubscriptionComponent.OPTIONS.LOGIN" | translate }}
+    </button>
+    <ng-template #manage>
+        <button class="button primary full-width" (click)="manageAccountRequested.emit()">
+            {{ "identification.activeSubscriptionComponent.OPTIONS.MANAGE" | translate }}
+        </button>
+    </ng-template>
+
+    <br />
+
+    <ng-container *ngIf="!streaming">
+        <div class="full-width align-center">
+            <a (click)="lookupNewRadioRequested.emit()" class="text-link-secondary lookup-radio">
+                {{ "identification.activeSubscriptionComponent.OPTIONS.LOOKUP_RADIO" | translate }}
+            </a>
+        </div>
+
+        <div class="full-width align-center no-radio">
+            <h5>{{ "identification.activeSubscriptionComponent.STREAMING.NO_RADIO" | translate }}</h5>
+            <p>
+                {{ "identification.activeSubscriptionComponent.STREAMING.PACKAGE_TEXT" | translate }}
+                <a href="{{ 'identification.activeSubscriptionComponent.STREAMING.URL' + streamingUrlPart | translate }}">{{
+                    "identification.activeSubscriptionComponent.STREAMING.PACKAGE_LINK" | translate
+                }}</a
+                >.
+            </p>
+        </div>
+    </ng-container>
+</ng-container>

@@ -1,0 +1,9 @@
+<div id="personal-info" data-e2e="personalInfo">
+    <p class="no-margin" qatag="DeviceDetailsVehicleInfo" *ngIf="vehicleInfo?.model || vehicleInfo?.make || vehicleInfo?.year">
+        {{ "sales-common.PersonalInfoComponent.vehicle" | translate: { model: vehicleInfo.model || "", make: vehicleInfo.make || "", year: vehicleInfo.year || "" } }}
+    </p>
+
+    <p qatag="DeviceDetailsRadioInfo" *ngIf="radioId">{{ "sales-common.PersonalInfoComponent.radio" | translate: { radioId: radioId } }}</p>
+    <p *ngIf="!radioId && isStreaming && !!maskedUsername">{{ "sales-common.PersonalInfoComponent.USERNAME" | translate }} ({{ maskedUsername }})</p>
+</div>
+<hr *ngIf="addHorizontalLine" />

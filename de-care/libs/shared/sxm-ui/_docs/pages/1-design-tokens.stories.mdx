@@ -1,0 +1,83 @@
+import { Meta, Canvas, ColorPalette, ColorItem, Source } from "@storybook/addon-docs";
+import dedent from "ts-dedent";
+import sassVariables from "!style-loader!css-loader!sass-loader!./common.module.scss";
+
+<Meta title="Design Tokens" />
+
+# Design Tokens
+
+## Color Palettes
+
+<ColorPalette>
+    <ColorItem title="Primary brand colors" colors={{ $black: sassVariables.black, $blue: sassVariables.blue, $white: sassVariables.white }} />
+    <ColorItem
+        title="Secondary brand colors"
+        subtitle="white"
+        colors={{ "$off-white": sassVariables["off-white"], "$off-white-2": sassVariables["off-white-2"], "$off-white-dark": sassVariables["off-white-dark"] }}
+    />
+    <ColorItem title="Secondary brand colors" subtitle="gray" colors={{ "$gray-light": sassVariables["gray-light"], "$gray-medium": sassVariables["gray-medium"] }} />
+    <ColorItem
+        title="Secondary brand colors"
+        subtitle="blue"
+        colors={{ "$blue-ultra-light": sassVariables["blue-ultra-light"], "$blue-light": sassVariables["blue-light"] }}
+    />
+    <ColorItem
+        title="Deep grays"
+        colors={{
+            "$gray-dark": sassVariables["gray-dark"],
+            "$gray-semi-dark": sassVariables["gray-semi-dark"],
+            "$gray-charcoal": sassVariables["gray-charcoal"],
+            $silver: sassVariables["silver"],
+        }}
+    />
+    <ColorItem
+        title="Attention"
+        colors={{
+            $red: sassVariables["red"],
+            $green: sassVariables["green"],
+            $orange: sassVariables["orange"],
+        }}
+    />
+</ColorPalette>
+
+[Add typography]
+
+## Other Variables
+
+#### Breakpoints
+
+<Source
+    language="css"
+    dark
+    format={false}
+    code={dedent`
+    $breakpoints: (
+        mobile-small: 320px,
+        mobile-medium: 375px,
+        mobile-large: 414px,
+        small: 540px,
+        medium: 768px,
+        large: 1024px,
+        xlarge: 1336px,
+        // Temporary breakpoint for nav to fix logo clipping
+        // TODO: remove this when new nav is ready
+        nav-temp: 1115px
+    );
+  `}
+/>
+
+## Mixins
+
+#### Breakpoint
+
+<Source
+    language="scss"
+    dark
+    format={false}
+    code={dedent`
+    // pass in one of the $breakpoints string names
+    @include bp(mobile-medium) {
+        margin-top: 1px;
+    }
+  `}
+/>

@@ -1,0 +1,342 @@
+{
+    "data": {
+        "plans": [
+            {
+                "id": "0.0.0.1 /plan 10000107429 0",
+                "name": "Internet Radio - 1mo",
+                "descriptor": "SIR_IP_SA",
+                "marketType": "self-pay:standard",
+                "termLength": 1,
+                "quotes": [
+                    {
+                        "type": "CURRENT_QUOTE",
+                        "serviceQuoteLineItem": {
+                            "description": "Amount",
+                            "price": 15.99
+                        },
+                        "taxQuoteLineItem": {
+                            "description": "Tax Amount",
+                            "price": 0
+                        },
+                        "feeQuoteLineItems": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "price": 1.41
+                            }
+                        ],
+                        "total": {
+                            "description": "Total Amount",
+                            "price": 17.4
+                        },
+                        "startDate": 1540368000000,
+                        "endDate": 1543053600000
+                    },
+                    {
+                        "type": "RENEWAL_QUOTE",
+                        "serviceQuoteLineItem": {
+                            "description": "Amount",
+                            "price": 15.99
+                        },
+                        "taxQuoteLineItem": {
+                            "description": "Tax Amount",
+                            "price": 0
+                        },
+                        "feeQuoteLineItems": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "price": 1.41
+                            }
+                        ],
+                        "total": {
+                            "description": "Total Amount",
+                            "price": 17.4
+                        },
+                        "startDate": 1543053600000,
+                        "endDate": 1545645600000
+                    }
+                ],
+                "eligibleForMrd": false
+            },
+            {
+                "id": "0.0.0.1 /plan 10000107143 0",
+                "name": "Internet Radio - 3mo",
+                "descriptor": "SIR_IP_SA",
+                "marketType": "self-pay:standard",
+                "termLength": 3,
+                "quotes": [
+                    {
+                        "type": "CURRENT_QUOTE",
+                        "serviceQuoteLineItem": {
+                            "description": "Amount",
+                            "price": 47.97
+                        },
+                        "taxQuoteLineItem": {
+                            "description": "Tax Amount",
+                            "price": 0
+                        },
+                        "feeQuoteLineItems": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "price": 4.22
+                            }
+                        ],
+                        "total": {
+                            "description": "Total Amount",
+                            "price": 52.19
+                        },
+                        "startDate": 1540368000000,
+                        "endDate": 1548324000000
+                    },
+                    {
+                        "type": "RENEWAL_QUOTE",
+                        "serviceQuoteLineItem": {
+                            "description": "Amount",
+                            "price": 47.97
+                        },
+                        "taxQuoteLineItem": {
+                            "description": "Tax Amount",
+                            "price": 0
+                        },
+                        "feeQuoteLineItems": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "price": 4.22
+                            }
+                        ],
+                        "total": {
+                            "description": "Total Amount",
+                            "price": 52.19
+                        },
+                        "startDate": 1548324000000,
+                        "endDate": 1556092800000
+                    }
+                ],
+                "eligibleForMrd": false
+            },
+            {
+                "id": "0.0.0.1 /plan 10000111552 0",
+                "name": "Introductory - Internet Radio - 36mo w/3mo Savings",
+                "descriptor": "SIR_IP_SA",
+                "marketType": "self-pay:introductory",
+                "termLength": 36,
+                "quotes": [
+                    {
+                        "type": "CURRENT_QUOTE",
+                        "serviceQuoteLineItem": {
+                            "description": "Amount",
+                            "price": 527.67
+                        },
+                        "taxQuoteLineItem": {
+                            "description": "Tax Amount",
+                            "price": 0
+                        },
+                        "feeQuoteLineItems": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "price": 46.43
+                            }
+                        ],
+                        "total": {
+                            "description": "Total Amount",
+                            "price": 574.1
+                        },
+                        "startDate": 1540368000000,
+                        "endDate": 1635062400000
+                    },
+                    {
+                        "type": "RENEWAL_QUOTE",
+                        "serviceQuoteLineItem": {
+                            "description": "Amount",
+                            "price": 575.64
+                        },
+                        "taxQuoteLineItem": {
+                            "description": "Tax Amount",
+                            "price": 0
+                        },
+                        "feeQuoteLineItems": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "price": 50.66
+                            }
+                        ],
+                        "total": {
+                            "description": "Total Amount",
+                            "price": 626.3
+                        },
+                        "startDate": 1635062400000,
+                        "endDate": 1729756800000
+                    }
+                ],
+                "eligibleForMrd": false
+            },
+            {
+                "id": "0.0.0.1 /plan 10000106809 0",
+                "name": "Introductory - Internet Radio - 24mo w/2mo Savings",
+                "descriptor": "SIR_IP_SA",
+                "marketType": "self-pay:introductory",
+                "termLength": 24,
+                "quotes": [
+                    {
+                        "type": "CURRENT_QUOTE",
+                        "serviceQuoteLineItem": {
+                            "description": "Amount",
+                            "price": 351.78
+                        },
+                        "taxQuoteLineItem": {
+                            "description": "Tax Amount",
+                            "price": 0
+                        },
+                        "feeQuoteLineItems": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "price": 30.96
+                            }
+                        ],
+                        "total": {
+                            "description": "Total Amount",
+                            "price": 382.74
+                        },
+                        "startDate": 1540368000000,
+                        "endDate": 1603526400000
+                    },
+                    {
+                        "type": "RENEWAL_QUOTE",
+                        "serviceQuoteLineItem": {
+                            "description": "Amount",
+                            "price": 383.76
+                        },
+                        "taxQuoteLineItem": {
+                            "description": "Tax Amount",
+                            "price": 0
+                        },
+                        "feeQuoteLineItems": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "price": 33.77
+                            }
+                        ],
+                        "total": {
+                            "description": "Total Amount",
+                            "price": 417.53
+                        },
+                        "startDate": 1603526400000,
+                        "endDate": 1666598400000
+                    }
+                ],
+                "eligibleForMrd": false
+            },
+            {
+                "id": "0.0.0.1 /plan 10000109374 0",
+                "name": "Introductory - Internet Radio - 12mo w/1mo Savings",
+                "descriptor": "SIR_IP_SA",
+                "marketType": "self-pay:introductory",
+                "termLength": 12,
+                "quotes": [
+                    {
+                        "type": "CURRENT_QUOTE",
+                        "serviceQuoteLineItem": {
+                            "description": "Amount",
+                            "price": 175.89
+                        },
+                        "taxQuoteLineItem": {
+                            "description": "Tax Amount",
+                            "price": 0
+                        },
+                        "feeQuoteLineItems": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "price": 15.48
+                            }
+                        ],
+                        "total": {
+                            "description": "Total Amount",
+                            "price": 191.37
+                        },
+                        "startDate": 1540368000000,
+                        "endDate": 1571904000000
+                    },
+                    {
+                        "type": "RENEWAL_QUOTE",
+                        "serviceQuoteLineItem": {
+                            "description": "Amount",
+                            "price": 191.88
+                        },
+                        "taxQuoteLineItem": {
+                            "description": "Tax Amount",
+                            "price": 0
+                        },
+                        "feeQuoteLineItems": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "price": 16.89
+                            }
+                        ],
+                        "total": {
+                            "description": "Total Amount",
+                            "price": 208.77
+                        },
+                        "startDate": 1571904000000,
+                        "endDate": 1603526400000
+                    }
+                ],
+                "eligibleForMrd": false
+            },
+            {
+                "id": "0.0.0.1 /plan 10000105694 0",
+                "name": "Internet Radio - 6mo",
+                "descriptor": "SIR_IP_SA",
+                "marketType": "self-pay:standard",
+                "termLength": 6,
+                "quotes": [
+                    {
+                        "type": "CURRENT_QUOTE",
+                        "serviceQuoteLineItem": {
+                            "description": "Amount",
+                            "price": 95.94
+                        },
+                        "taxQuoteLineItem": {
+                            "description": "Tax Amount",
+                            "price": 0
+                        },
+                        "feeQuoteLineItems": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "price": 8.44
+                            }
+                        ],
+                        "total": {
+                            "description": "Total Amount",
+                            "price": 104.38
+                        },
+                        "startDate": 1540368000000,
+                        "endDate": 1556092800000
+                    },
+                    {
+                        "type": "RENEWAL_QUOTE",
+                        "serviceQuoteLineItem": {
+                            "description": "Amount",
+                            "price": 95.94
+                        },
+                        "taxQuoteLineItem": {
+                            "description": "Tax Amount",
+                            "price": 0
+                        },
+                        "feeQuoteLineItems": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "price": 8.44
+                            }
+                        ],
+                        "total": {
+                            "description": "Total Amount",
+                            "price": 104.38
+                        },
+                        "startDate": 1556092800000,
+                        "endDate": 1571904000000
+                    }
+                ],
+                "eligibleForMrd": false
+            }
+        ]
+    }
+}

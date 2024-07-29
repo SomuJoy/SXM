@@ -1,0 +1,25 @@
+{
+    "DomainsSubscriptionsUiPlayerAppIntegrationModule": {
+        "StreamingPlayerLinkComponent": {
+            "LISTEN_NOW_LINK": "https://siriusxm.ca/downloadstreaming"
+        },
+        "ListenNowComponent": {
+            "LINK_HREF": "https://player.siriusxm.ca/"
+        },
+        "CredentialRecoveryHandshakeComponent": {
+            "BACK_TO": {
+                "ALEXA": "https://alexa-fed.siriusxm.com/as/authorization.oauth2?pfidpadapterid=ad..amzusaepa&client_id=Amazon&response_type=code",
+                "GOOGLE": "https://ghome-login.siriusxm.com/authorization.oauth2?response_type=code&client_id=Google",
+                "STITCHER": "https://token.prod.idm.siriusxm.com/auth/realms/SXM-Prod/protocol/openid-connect/auth?client_id=Stitcher&response_type=code&scope=openid&response_type=code",
+                "NUGS": "https://token.prod.idm.siriusxm.com/auth/realms/SXM-PROD/protocol/openid-connect/auth?client_id=Nugs&response_type=code",
+                "EVERESTPLAYER": "https://siriusxm.ca/golisten",
+                "PLAYER": "https://siriusxm.ca/golisten",
+                "STREAMING": "https://siriusxm.ca/golisten",
+                "ORGANIC": "https://siriusxm.ca/golisten",
+                "OAC": "https://care.siriusxm.ca/login_view.action?langpref=en",
+                "SCLOGIN": "https://care.siriusxm.ca/transfer/radio/login?originUrl=COM&langpref=en&langpref=en&intcmp=LogIntoYourAccount_NA_CAtransferyourservice_MKTG_na",
+                "PROFILEPORTAL": "https://portal.siriusxm.ca/"
+            }
+        }
+    }
+}

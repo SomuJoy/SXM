@@ -1,0 +1,60 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "locales": [
+            {
+                "locale": "en_US",
+                "offerInfos": [
+                    {
+                        "planCode": "Trial - All Access - 3mo - $0.00 - GOOGLE - (WEB)",
+                        "salesHero": {
+                            "title": "Upgrade your trial to include in-car listening.",
+                            "subTitle": null,
+                            "presentation": null
+                        },
+                        "offerDescription": {
+                            "priceAndTermDescTitle": "<span data-duration=\"\">3 months Free</span>",
+                            "processingFeeDisclaimer": "See <strong>Offer Details</strong> below.",
+                            "packageName": "Sirius Platinum",
+                            "listeningOptions": ["Satellite", "Streaming", "Pandora"],
+                            "longDescription": null,
+                            "highlightsTitle": "Sirius Platinum&nbsp;Includes:",
+                            "highlightsText": [
+                                "<b>425+ channels, </b>including 165+ in your car, plus even more to stream on your devices",
+                                "<b>Ad-free music </b>for every genre & decade plus artist-created channels",
+                                "<b>Original talk, </b>exclusive comedy, news from every angle",
+                                "<b>Popular podcast series,</b> including SXM originals and Marvel, plus access to Stitcher Premium’s collection",
+                                "<b>NFL, MLB®, NBA, NHL®, and NCAA® play-by-play,</b> NASCAR®, plus the biggest names in sports talk",
+                                "<b>2 Howard Stern channels,</b> including video",
+                                "<b>Create Pandora stations</b> based on artists",
+                                "<b>SiriusXM video library</b> of in-studio shows & performances"
+                            ],
+                            "footer": "<strong id=\"docs-internal-guid-d6ba7fe8-7fff-a77f-c18d-bac8a91bc939\">The ultimate in entertainment. </strong>Expertly curated ad-free music, Pandora stations, sports play-by-play, celebrity-hosted talk, Howard Stern &amp; more.",
+                            "packageFeatures": [
+                                {
+                                    "packageName": "Sirius Platinum",
+                                    "features": []
+                                }
+                            ],
+                            "showToggleLabel": "Explore plan details",
+                            "hideToggleLabel": "Hide",
+                            "recapDescription": "<strong>Sirius Platinum (425+ Channels)</strong><br />\r\n3 Months for Free.",
+                            "recapLongDescription": "<strong>Sirius Platinum (425+ Channels)</strong><br />\r\n3 Months for Free."
+                        },
+                        "deals": null,
+                        "addonHeaderOverride": null,
+                        "offerDetails": "<p><strong>OFFER DETAILS:</strong> Your SiriusXM service will automatically stop at the end of the stated trial subscription term unless you decide to subscribe. See the SiriusXM <a href=\"http://www.siriusxm.com/customeragreement\" target=\"_blank\">Customer Agreement</a> &amp; <a href=\"http://www.siriusxm.com/privacy-policy\" target=\"_blank\">Privacy Policy</a> at www.siriusxm.com for full terms of service and how to cancel, which includes calling 1-866-635-2349. By registering for a trial subscription, SiriusXM may contact you at the registration information provided with special offers from time to time. You may always change your contact preferences with us. All fees, content and features are subject to change. This offer cannot be combined with any other and may be modified or terminated at any time. This offer is available only on eligible, inactive factory-equipped satellite radios. Satellite and streaming lineups vary.</p>\r\n",
+                        "presentation": {
+                            "theme": "Theme2",
+                            "style": "Presentation1"
+                        },
+                        "numberOfBullets": null,
+                        "paymentInterstitialBullets": null
+                    }
+                ]
+            }
+        ]
+    }
+}

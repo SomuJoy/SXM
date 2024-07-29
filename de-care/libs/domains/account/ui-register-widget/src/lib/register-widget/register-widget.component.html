@@ -1,0 +1,10 @@
+<register-your-account
+    [credentialState]="credentialState"
+    [account]="account"
+    [securityQuestions]="securityQuestions"
+    [registrationCompleted]="registrationCompleted"
+    [isTwoFactorAuthNeeded]="needsTwoFactorAuth"
+    (register)="process($event)"
+    (registerClicked)="registerClicked.emit()"
+></register-your-account>
+<two-factor-auth-modal #twoFactorAuthModal (verifyCompleted)="completed()"></two-factor-auth-modal>

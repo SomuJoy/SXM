@@ -1,0 +1,19 @@
+{
+    "STEP_TEXT": "VOTRE ESSAI A DÉBUTÉ",
+    "TITLE": "Voulez-vous continuer le forfait {{planName}} à la fin de votre période d’essai?",
+    "CONTINUE_BUTTON_TEXT": "Continuer",
+    "CONTINUE_BUTTON_TEXT_SETUP": "CONFIGURER LE PAIEMENT",
+    "USERNAME": "Nom d’utilisateur: {{maskedUserName}}",
+    "ERROR": "Veuillez choisir une option ci-dessous pour continuer",
+    "OPTIONS": {
+        "PLANCODE": {
+            "TITLE": "Oui, je voudrais continuer le forfait {{planName}} pour {{price}}/mois.",
+            "DESCRIPTION": "Vous ne serez pas facturé avant la fin de votre essai.<br/>Des frais et des taxes s’appliquent. Annulez à tout moment.",
+            "DESCRIPTION_NO_FEES_AND_TAXES": "Vous ne serez pas facturé avant la fin de votre essai.<br/>Annulez à tout moment."
+        },
+        "SKIP": {
+            "TITLE": "Non, je voudrais juste avoir ma période d'essai.",
+            "DESCRIPTION": "Accompagnez-moi pour télécharger l’application afin que je puisse commencer à écouter."
+        }
+    }
+}

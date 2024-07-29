@@ -1,0 +1,18 @@
+{
+    "DeCareUseCasesTrialActivationUiPartnerShellModule": {
+        "PartnerShellComponent": {
+            "CORP_ID_NOT_FOUND": "CORP_ID_NOT_FOUND",
+            "SIRIUSXM_LOGO_SRC": "assets/img/sxm-logo-white.png",
+            "SIRIUSXM_LOGO_LINK": "https://siriusxm.ca/",
+            "SIRIUSXM_LOGO_ALT": "SiriusXM",
+            "partnerInfo": {
+                "CORP_ID_NOT_FOUND": "CORP_ID_NOT_FOUND",
+                "90005": {
+                    "IMAGE_SRC": "assets/img/placeholder_partnerlogo.png",
+                    "LINK": "",
+                    "ALT_TEXT": "Partner (en)"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,128 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        th {
+            text-align: left;
+            text-transform: uppercase;
+            vertical-align: top;
+            color: $gray-dark;
+            font-size: calculate-rem(12px);
+            font-weight: calculate-font-weight(bold);
+            padding: 24px 0px 12px 0px;
+            letter-spacing: 1px;
+            display: none;
+            @include bp(medium) {
+                display: table-cell;
+            }
+            &.amount {
+                text-align: right;
+            }
+        }
+        tr {
+            &:first-child {
+                td {
+                    border-top: 1px solid $gray-light;
+                }
+            }
+            &.no-data-row {
+                td {
+                    @include font-size(16px);
+                    font-weight: calculate-font-weight(bold);
+                    color: $gray-dark;
+                    padding: 24px 0 20px;
+                }
+            }
+        }
+        td {
+            text-align: left;
+            vertical-align: top;
+            font-size: calculate-rem(16px);
+            padding-top: 24px;
+            border-bottom: 1px solid $gray-light;
+            padding-bottom: 24px;
+            &.date {
+                font-weight: calculate-font-weight(bold);
+                @include bp(medium) {
+                    min-width: 20%;
+                }
+                .transaction-subtitle {
+                    display: block;
+                    padding-top: 4px;
+                    color: $black;
+                    font-size: calculate-rem(12px);
+                    font-weight: calculate-font-weight(book);
+                    @include bp(medium) {
+                        display: none;
+                    }
+                }
+            }
+            &.transaction {
+                display: none;
+                @include font-size(14px);
+                @include bp(medium) {
+                    display: table-cell;
+                }
+            }
+            &.amount {
+                font-weight: calculate-font-weight(bold);
+                text-align: right;
+            }
+        }
+    }
+    .button-container {
+        display: grid;
+        grid-template-columns: repeat(6, [col-start] 1fr);
+        @include bp(medium) {
+            grid-template-columns: repeat(12, [col-start] 1fr);
+        }
+    }
+
+    .button.secondary {
+        grid-column: 1/7;
+        @include short-button;
+        @include bp(medium) {
+            grid-column: 3/11;
+        }
+        @include bp(large) {
+            grid-column: 4/10;
+        }
+    }
+    #skeletonLoadingTable {
+        tr {
+            &.loading-row {
+                td {
+                    padding: 24px 0;
+                    border-bottom: 1px solid $gray-light;
+                    sxm-ui-skeleton-loader-panel {
+                        height: 21px;
+                    }
+                    &:first-child {
+                        sxm-ui-skeleton-loader-panel {
+                            width: 79px;
+                        }
+                    }
+                    &:nth-child(2) {
+                        display: none;
+                        @include bp(medium) {
+                            display: table-cell;
+                        }
+                        sxm-ui-skeleton-loader-panel {
+                            width: 133px;
+                        }
+                    }
+                    &:last-child {
+                        display: flex;
+                        justify-content: flex-end;
+                        sxm-ui-skeleton-loader-panel {
+                            width: 92px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

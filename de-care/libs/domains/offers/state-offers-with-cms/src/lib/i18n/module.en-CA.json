@@ -1,0 +1,31 @@
+{
+    "DomainsOffersStateOffersWithCmsModule": {
+        "RECAP_DESCRIPTION": {
+            "MRD_DISCOUNT_PRICE": "{{pricePerMonth}}/mo plus fees with Multi-Radio Discount.",
+            "MRD_DISCOUNT_PRICE_QUEBEC": "{{pricePerMonth}}/mo with Multi-Radio Discount.",
+            "MRD_REGULAR_PRICE": "Reg. {{msrpPrice}}/mo.",
+            "NAME_AND_CHANNEL_COUNT": "{{name}} ({{channelCount}}+ Channels)",
+            "TERM_AND_PRICE_MCP": "{{termLength}} {{monthString}} for {{pricePerMonth}}/mo{{dealRecapCardSuffix}}.",
+            "TERM_AND_PRICE": "{{termLength}} {{monthString}} for {{pricePerMonth}}{{dealRecapCardSuffix}}.",
+            "TERM_AND_PRICE_FOR_ONE": "{{pricePerMonth}}/mo{{dealRecapCardSuffix}}",
+            "TERM_AND_PRICE_FREE": "{{termLength}} {{monthString}} for Free{{dealRecapCardSuffix}}.",
+            "TERM_AND_PRICE_FREE_FOR_ONE": "{{termLength}} {{monthString}} for Free.",
+            "FOLLOW_ON_PRICE": "Then {{retailPricePerMonth}}/mo.",
+            "FOLLOW_ON_PRICE_QUEBEC": "Then {{retailPricePerMonth}}/mo.",
+            "PLUS_FEE": " plus fees.",
+            "FEES_AND_TAXES_APPLY": "",
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "Month",
+                    "other": "Months"
+                }
+            }
+        }
+    },
+    "APPLE": {
+        "description": "<ul><li>Stream over 90 million songs and 30,000 playlists ad-free, online or off</li><li>Immerse yourself in spatial audio to hear sound all around</li><li>Listen across all of your devices, including Android</li><li>Sing along. tap ahead, or just listen with lyrics view</li></ul>",
+        "deviceImage": "assets/img/apple-music-logo.png",
+        "addonShowToggleText": "View more",
+        "addonHideToggleText": "View less"
+    }
+}

@@ -1,0 +1,55 @@
+{
+    "deCareUseCasesThirdPartyBillingModule": {
+        "alreadyActivePageComponent": {
+            "TITLE": "Your login credentials have already been created.",
+            "BODY": "<p>You can continue to listen now with the email and password you previously provided.</p><p>Manage your SiriusXM subscription with <a href={{resellerURL}} target=\"_blank\"> {{ resellerName }}</a>.</p>",
+            "CHAT_WITH_AGENT": "Chat with an agent",
+            "FORGOTUSERNAMEPASSWORD": "<a href=\"http://siriusxm.com/resetpassword\" target=\"_blank\">Forgot username and password</a>",
+            "STREAMING_PLAYER_LINK": "https://sxm.smart.link/xeiz0zu5y?contentType=landing&channelName=accessnow&site_id=accessnow&creative_id=NA_NA_DL-COM-landing-landingpage-landingpage-STARTLISTENING-TRIALACTIVATIONRTP-NA-All-20210921-NA&cp_5=landingpage&cp_6=landingpage&cp_7=ALL&cp_8=STARTLISTENING&cp_9=TRIALACTIVATIONRTP&cp_10=COM&ALC=0"
+        },
+        "setupAccountComponent": {
+            "SETUP_YOUR_LOGIN": "Set Up Your Login",
+            "SETUP_YOUR_LOGIN_SUBTITLE": "To manage this subscription, please visit <a href={{resellerURL}} target=\"_blank\"> {{ resellerName }}</a>",
+            "SETUP_YOUR_LOGIN_BODY": {
+                "SUBTITLE": "The username and password will be used to listen to SiriusXM."
+            },
+            "YOUR_INFO": "Your Info",
+            "CONTINUE_BUTTON": "SUBMIT",
+            "ALL_IS_SET": "You’re all set!",
+            "LISTENING_INFO": "<p>Start listening to SiriusXM using your new credentials.</p><p>Manage your SiriusXM subscription with <a href={{resellerURL}} target=\"_blank\"> {{ resellerName }}</a>.</p>",
+            "COMPLETE_YOUR_ACCOUNT": "Complete your account",
+            "LABELS": {
+                "FIRST_NAME": "First Name",
+                "LAST_NAME": "Last Name"
+            },
+            "ERRORS": {
+                "EMPTY_FIRST_NAME": "Enter your first name",
+                "EMPTY_LAST_NAME": "Enter your last name"
+            },
+            "PRIVACY_LINK": "https://www.siriusxm.com/privacy-policy",
+            "STREAMING_PLAYER_LINK": "https://sxm.smart.link/xeiz0zu5y?contentType=landing&channelName=accessnow&site_id=accessnow&creative_id=NA_NA_DL-COM-landing-landingpage-landingpage-STARTLISTENING-TRIALACTIVATIONRTP-NA-All-20210921-NA&cp_5=landingpage&cp_6=landingpage&cp_7=ALL&cp_8=STARTLISTENING&cp_9=TRIALACTIVATIONRTP&cp_10=COM&ALC=0"
+        },
+        "entitlementErrorComponent": {
+            "BACK": "BACK",
+            "GENERIC_ERROR_TITLE": "We're sorry... something went wrong",
+            "GENERIC_ERROR_BODY": [
+                "We're experiencing technical issues and are working on resolving it. ",
+                "Until then, please",
+                "go back",
+                "and try again.",
+                "For questions regarding your SiriusXM subscription, please contact"
+            ],
+            "ENTITLEMENT_ERROR_TITLE": "Oops, something went wrong.",
+            "ENTITLEMENT_ERROR_BODY": "We couldn't find your subscription details. Please contact the provider from which you purchased your SiriusXM subscription.",
+            "CHAT_WITH_AGENT": "Chat with an agent"
+        },
+        "13500": {
+            "NAME": "T-Mobile",
+            "URL": "https://www.t-mobile.com"
+        },
+        "13501": {
+            "NAME": "Sam's Club",
+            "URL": "https://www.samsclub.com/"
+        }
+    }
+}

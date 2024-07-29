@@ -1,0 +1,46 @@
+<div class="hero-login">
+    <div class="hero-background"></div>
+    <div class="content-container">
+        <div class="row">
+            <div class="column small-12 align-left align-center-medium-up">
+                <h1>{{ translateKeyPrefix + "TITLE" | translate }}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content-container reset-paragraph-last-of-type-margin">
+    <div class="row align-center">
+        <div class="column small-12 medium-10">
+            <div class="form-container">
+                <div class="login-block">
+                    <p class="show-large-up large-copy bold mb-16">{{ translateKeyPrefix + "SIGN_IN_TITLE" | translate }}</p>
+                    <login-form (fetchedAccountNumber)="onLoginFetchedAccountNumber()" (loginError)="onLoginError()" [isLoading]="isProcessingLogin"></login-form>
+                </div>
+                <div class="register-block">
+                    <p class="large-copy bold mb-16">{{ translateKeyPrefix + "REGISTER_TITLE" | translate }}</p>
+                    <ol class="ordered-list">
+                        <li>
+                            <p [innerHTML]="translateKeyPrefix + 'REGISTRATION_ITEM_1' | translate"></p>
+                        </li>
+                        <li>
+                            <p [innerHTML]="translateKeyPrefix + 'REGISTRATION_ITEM_2' | translate"></p>
+                        </li>
+                    </ol>
+                    <button
+                        sxm-proceed-button
+                        data-track-click="Start Registration"
+                        class="button primary full-width secondary align-bottom-large-up"
+                        data-e2e="startRegistrationButton"
+                        (click)="onStartRegistration()"
+                    >
+                        {{ translateKeyPrefix + "REGISTER_BUTTON" | translate }}
+                    </button>
+                </div>
+            </div>
+            <div *ngIf="showLoginChat$ | async" class="chat-block">
+                <p>{{ translateKeyPrefix + "ACCOUNT_HELP" | translate }}</p>
+                <chat-with-agent-link [chatLinkText]="translateKeyPrefix + 'CHAT_LINK' | translate" [inheritColor]="false"></chat-with-agent-link>
+            </div>
+        </div>
+    </div>
+</div>

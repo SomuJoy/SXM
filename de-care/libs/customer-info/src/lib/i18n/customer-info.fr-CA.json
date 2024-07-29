@@ -1,0 +1,286 @@
+{
+    "customerInfo": {
+        "verifyAddressComponent": {
+            "INVALID_FEEDBACK": "Nous n'avons pas pu valider votre adresse auprès de Postes Canada.",
+            "U_SURE": "Êtes-vous sûr que l'adresse indiquée ci-dessous est une adresse exacte?",
+            "THIS_ADDRESS": "Utilisez cette adresse",
+            "NEW_ADDRESS": "Entrez une nouvelle adresse",
+            "CORRECTED_ADDRESS": "L'adresse suivante a été recommandée:",
+            "MULTIPLE_CORRECTED_ADDRESSES": "Veuillez sèlectionner votre adresse dans la liste ci-dessous.",
+            "ERROR_CHOOSE_ADDRESS": "Choisissez une adresse pour continuer"
+        },
+        "paymentInfoComponent": {
+            "CONTINUE_BUTTON": "Continuer",
+            "REVIEW_BEFORE": "Vous allez pouvoir vérifier votre commande avant de vous inscrire. Souvenez-vous que vous pouvez procéder à des modifications ou à une annulation en tout temps.",
+            "YOUR_INFO": "Votre info",
+            "ACCOUNT_INFO": "Infos du compte",
+            "ENJOYING_YOUR_TRIAL": "Vous allez pouvoir vérifier votre commande avant de vous inscrire. Souvenez-vous que vous pouvez procéder à des modifications ou à une annulation en tout temps.",
+            "PAYMENT_INFO_SUBHEADER": "Infos de paiement",
+            "UNEXPECTED_ERROR": "Une erreur inattendue est apparue. Veuillez réessayer.",
+            "AUTH_ERROR": "Nous sommes dans l'impossibilité d'autoriser votre carte de crédit. Veuillez mettre à jour vos renseignements de paiement.",
+            "LOGIN_INFO_SUBHEADER": "Nom d’utilisateur et mot de passe",
+            "CREATE_LOGIN": "Créez votre mot de passe pour écouter sur votre téléphone, à la maison et en ligne.",
+            "EMAIL": {
+                "LABEL": "Courriel",
+                "ALREADY_IN_USE_ERROR": "Username/Email address already in use.",
+                "INVALID_ERROR": "Entrez une adresse courriel valide.",
+                "CVV_EXCLUDE": "Le champ contient des caract\u00E8res qui ressemblent aux informations de s\u00E9curit\u00E9 de la carte de cr\u00E9dit. Pour continuer, veuillez les revoir et apporter les changements appropri\u00E9s."
+            },
+            "PASSWORD": {
+                "LABEL": "Mot de passe",
+                "ERRORS": {
+                    "REQUIRED": "Entrez un mot de passe.",
+                    "LENGTH": "Votre mot de passe doit contenir de {{min}} à {{max}} caractères.",
+                    "POLICY": "Votre mot de passe doit contenir au minimum un caractère appartenant à au moins 3 groupes différents, comme indiqué dans notre politique de mot de passe.",
+                    "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}",
+                    "GENERIC": "Nous sommes désolés, votre nouveau mot de passe n'est pas conforme à notre politique. Veuillez réessayer."
+                }
+            },
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "mois",
+                    "other": "mois"
+                }
+            },
+            "CC_SELECT": {
+                "SAVED_CARD": "Utilisez ma carte {{ type }} inscrite se terminant par {{ last4Digits }}",
+                "ERROR_EXPIRED": "Votre carte de crédit est expirée. Veuillez entrer de nouveaux renseignements de paiement.",
+                "NEW_CC_PROMPT": "Entrez une nouvelle carte de crédit",
+                "NEW_CC_NOTE": "(Note : Celle-ci remplacera votre carte de crédit actuelle)",
+                "ERROR_CHOOSE_OPTION": "Veuillez choisir une option de paiement",
+                "TOOLTIP_MESSAGE_1": "Pour Visa et Mastercard, utilisez les 3 chiffres figurant au verso de votre carte.",
+                "TOOLTIP_MESSAGE_2": "Pour American Express, utilisez les 4 chiffres figurant au recto de votre carte."
+            },
+            "NEW_CC": {
+                "UNAUTHORIZED_ERROR": "Nous sommes dans l'impossibilité d'autoriser votre carte de crédit. Veuillez mettre à jour vos renseignements de paiement.",
+                "CC_NAME": "Nom sur la carte",
+                "ERROR_CC_NAME": "Entrez votre nom comme il apparaît sur votre carte.",
+                "CC_NUM": "Numéro de carte",
+                "ERROR_CC_NUM": "Entrez un numéro de carte de crédit valide.",
+                "ERROR_CC_NUM_FOUND_GC": "Le num\u00E9ro de carte que vous avez entr\u00E9 correspond \u00E0 une carte-cadeau SiriusXM. Veuillez \u00E9changer votre carte-cadeau ci-dessous ou entrer un num\u00E9ro de carte de cr\u00E9dit valide.",
+                "CC_EXP_DATE": "Date d’expiration (MM/AA)",
+                "CC_EXP_DATE_INLINE": "MM/AA",
+                "ERROR_CC_EXP_INVALID": "Entrez une date d’expiration valide.",
+                "CC_CVV": "CVV",
+                "ERROR_CC_CVV": "Entrez un Code de sécurité valide.",
+                "CC_ADDRESS": "Adresse (incluant app./bureau/unité)",
+                "ERROR_CC_ADDRESS": "Entrez une adresse valide.",
+                "CC_CITY": "Ville",
+                "ERROR_CC_CITY": "Entrez votre ville.",
+                "INVALID_CC_CITY": "Entrez une ville valide.",
+                "CC_STATE": "Province",
+                "ERROR_CC_STATE": "Sélectionnez votre province.",
+                "CC_ZIPCODE": "Code postal",
+                "ERROR_CC_ZIPCODE": "Entrez un code postal valide."
+            },
+            "ADDRESS": {
+                "CONFIRM_YOUR_BILLING_ADDRESS": "Veuillez confirmer votre adresse de facturation.",
+                "CONFIRM_YOUR_SERVICE_ADDRESS": "Veuillez confirmer votre adresse de service",
+                "SERVICE_ADDRESS_LABEL": "L'adresse de service est la même",
+                "SERVICE_ADDRESS": "L'adresse de service"
+            },
+            "PREPAID": {
+                "REDEEM_LABEL": "Échanger une carte-cadeau de service prépayé",
+                "ADD_CARD": "Ajoutez une carte-cadeau de service SiriusXM prépayé (optionalle)",
+                "PIN_NUMBER": "Numéro NIP",
+                "APPLY": "Appliquer",
+                "REMOVE_LABEL": "Enlever la carte-cadeau de service prépayé",
+                "CARD_APPLIED": "Votre carte-cadeau de service prépayé a été appliquée",
+                "ERROR_VALID_PIN": "Entrez un NIP valide."
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Politique de la vie privée",
+                "LINK_URL": "http://www.siriusxm.ca/vieprivee"
+            },
+            "ERROR_CVV_FOUND": "Le champ contient des caractères qui ressemblent aux informations de sécurité de la carte de crédit. Pour continuer, veuillez les revoir et apporter les changements appropriés."
+        },
+        "PaymentInfoStreamingOrganicComponent": {
+            "CONTINUE_BUTTON": "Continuer",
+            "ACCOUNT_INFO": "Détails de facturation",
+            "PAYMENT_INFO_SUBHEADER": "Détails de la carte de crédit",
+            "UNEXPECTED_ERROR": "Une erreur inattendue est apparue. Veuillez réessayer.",
+            "AUTH_ERROR": "Nous sommes dans l'impossibilité d'autoriser votre carte de crédit. Veuillez mettre à jour vos renseignements de paiement.",
+            "LOGIN_INFO_SUBHEADER": "Nom d’utilisateur et mot de passe",
+            "CREATE_LOGIN": "Créez votre mot de passe pour écouter sur votre téléphone, à la maison et en ligne.",
+            "EMAIL": {
+                "LABEL": "Courriel",
+                "ALREADY_IN_USE_ERROR": "Username/Email address already in use.",
+                "INVALID_ERROR": "Entrez une adresse courriel valide.",
+                "CVV_EXCLUDE": "Le champ contient des caract\u00E8res qui ressemblent aux informations de s\u00E9curit\u00E9 de la carte de cr\u00E9dit. Pour continuer, veuillez les revoir et apporter les changements appropri\u00E9s."
+            },
+            "PASSWORD": {
+                "LABEL": "Mot de passe",
+                "ERRORS": {
+                    "REQUIRED": "Entrez un mot de passe.",
+                    "LENGTH": "Votre mot de passe doit contenir de {{min}} à {{max}} caractères.",
+                    "POLICY": "Votre mot de passe doit contenir au minimum un caractère appartenant à au moins 3 groupes différents, comme indiqué dans notre politique de mot de passe.",
+                    "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}"
+                }
+            },
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "mois",
+                    "other": "mois"
+                }
+            },
+            "CC_SELECT": {
+                "SAVED_CARD": "Utilisez ma carte {{ type }} inscrite se terminant par {{ last4Digits }}",
+                "ERROR_EXPIRED": "Votre carte de crédit est expirée. Veuillez entrer de nouveaux renseignements de paiement.",
+                "NEW_CC_PROMPT": "Entrez une nouvelle carte de crédit",
+                "NEW_CC_NOTE": "(Note : Celle-ci remplacera votre carte de crédit actuelle)",
+                "ERROR_CHOOSE_OPTION": "Veuillez choisir une option de paiement",
+                "TOOLTIP_MESSAGE_1": "Pour Visa et Mastercard, utilisez les 3 chiffres figurant au verso de votre carte.",
+                "TOOLTIP_MESSAGE_2": "Pour American Express, utilisez les 4 chiffres figurant au recto de votre carte."
+            },
+            "NEW_CC": {
+                "UNAUTHORIZED_ERROR": "Nous sommes dans l'impossibilité d'autoriser votre carte de crédit. Veuillez mettre à jour vos renseignements de paiement.",
+                "CC_NAME": "Nom sur la carte",
+                "ERROR_CC_NAME": "Entrez votre nom comme il apparaît sur votre carte.",
+                "CC_NUM": "Numéro de carte",
+                "ERROR_CC_NUM": "Entrez un numéro de carte de crédit valide.",
+                "ERROR_CC_NUM_FOUND_GC": "Le num\u00E9ro de carte que vous avez entr\u00E9 correspond \u00E0 une carte-cadeau SiriusXM. Veuillez \u00E9changer votre carte-cadeau ci-dessous ou entrer un num\u00E9ro de carte de cr\u00E9dit valide.",
+                "CC_EXP_DATE": "Date d’expiration (MM/AA)",
+                "CC_EXP_DATE_INLINE": "MM/AA",
+                "ERROR_CC_EXP_INVALID": "Entrez une date d’expiration valide.",
+                "CC_CVV": "CVV",
+                "ERROR_CC_CVV": "Entrez un Code de sécurité valide.",
+                "CC_ADDRESS": "Adresse (incluant app./bureau/unité)",
+                "ERROR_CC_ADDRESS": "Entrez une adresse valide.",
+                "CC_CITY": "Ville",
+                "ERROR_CC_CITY": "Entrez votre ville.",
+                "INVALID_CC_CITY": "Entrez une ville valide.",
+                "CC_STATE": "Province",
+                "ERROR_CC_STATE": "Sélectionnez votre province.",
+                "CC_ZIPCODE": "Code postal",
+                "ERROR_CC_ZIPCODE": "Entrez un code postal valide."
+            },
+            "ADDRESS": {
+                "CONFIRM_YOUR_BILLING_ADDRESS": "Veuillez confirmer votre adresse de facturation.",
+                "CONFIRM_YOUR_SERVICE_ADDRESS": "Veuillez confirmer votre adresse de service",
+                "SERVICE_ADDRESS_LABEL": "L'adresse de service est la même",
+                "SERVICE_ADDRESS": "L'adresse de service"
+            },
+            "PREPAID": {
+                "REDEEM_LABEL": "Échanger une carte-cadeau de service prépayé",
+                "ADD_CARD": "Ajoutez une carte-cadeau de service SiriusXM prépayé (optionalle)",
+                "PIN_NUMBER": "Numéro NIP",
+                "APPLY": "Appliquer",
+                "REMOVE_LABEL": "Enlever la carte-cadeau de service prépayé",
+                "CARD_APPLIED": "Votre carte-cadeau de service prépayé a été appliquée",
+                "ERROR_VALID_PIN": "Entrez un NIP valide."
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Politique de la vie privée",
+                "LINK_URL": "http://www.siriusxm.ca/vieprivee"
+            },
+            "ERROR_CVV_FOUND": "Le champ contient des caractères qui ressemblent aux informations de sécurité de la carte de crédit. Pour continuer, veuillez les revoir et apporter les changements appropriés."
+        },
+        "PaymentInfoWithInvoiceComponent": {
+            "CONTINUE_BUTTON": "Continuer",
+            "REVIEW_BEFORE": "Vous allez pouvoir vérifier votre commande avant de vous inscrire. Souvenez-vous que vous pouvez procéder à des modifications ou à une annulation en tout temps.",
+            "ACCOUNT_INFO": "Infos du compte",
+            "ENJOYING_YOUR_TRIAL": "Aucun montant ne vous sera facturé avant la fin de votre abonnement d’essai.Souvenez-vous que vous pouvez procéder à des modifications ou à une annulation en tout temps.",
+            "PAYMENT_INFO_SUBHEADER": "Infos de paiement",
+            "UNEXPECTED_ERROR": "Une erreur inattendue est apparue. Veuillez réessayer.",
+            "AUTH_ERROR": "Nous sommes dans l'impossibilité d'autoriser votre carte de crédit. Veuillez mettre à jour vos renseignements de paiement.",
+            "LOGIN_INFO_SUBHEADER": "Nom d’utilisateur et mot de passe",
+            "CREATE_LOGIN": "Créez votre mot de passe pour écouter sur votre téléphone, à la maison et en ligne.",
+            "EMAIL": {
+                "LABEL": "Courriel",
+                "ALREADY_IN_USE_ERROR": "Username/Email address already in use.",
+                "INVALID_ERROR": "Entrez une adresse courriel valide.",
+                "CVV_EXCLUDE": "Le champ contient des caract\u00E8res qui ressemblent aux informations de s\u00E9curit\u00E9 de la carte de cr\u00E9dit. Pour continuer, veuillez les revoir et apporter les changements appropri\u00E9s."
+            },
+            "PASSWORD": {
+                "LABEL": "Mot de passe",
+                "ERRORS": {
+                    "REQUIRED": "Entrez un mot de passe.",
+                    "LENGTH": "Votre mot de passe doit contenir de {{min}} à {{max}} caractères.",
+                    "POLICY": "Votre mot de passe doit contenir au minimum un caractère appartenant à au moins 3 groupes différents, comme indiqué dans notre politique de mot de passe.",
+                    "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}",
+                    "GENERIC": "Nous sommes désolés, votre nouveau mot de passe n'est pas conforme à notre politique. Veuillez réessayer."
+                }
+            },
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "mois",
+                    "other": "mois"
+                }
+            },
+            "CC_SELECT": {
+                "SAVED_CARD": "Utilisez ma carte {{ type }} inscrite se terminant par {{ last4Digits }}",
+                "ERROR_EXPIRED": "Votre carte de crédit est expirée. Veuillez entrer de nouveaux renseignements de paiement.",
+                "NEW_CC_PROMPT": "Entrez une nouvelle carte de crédit",
+                "NEW_CC_NOTE": "(Note : Celle-ci remplacera votre carte de crédit actuelle)",
+                "ERROR_CHOOSE_OPTION": "Veuillez choisir une option de paiement",
+                "TOOLTIP_MESSAGE_1": "Pour Visa et Mastercard, utilisez les 3 chiffres figurant au verso de votre carte.",
+                "TOOLTIP_MESSAGE_2": "Pour American Express, utilisez les 4 chiffres figurant au recto de votre carte."
+            },
+            "NEW_CC": {
+                "UNAUTHORIZED_ERROR": "Nous sommes dans l'impossibilité d'autoriser votre carte de crédit. Veuillez mettre à jour vos renseignements de paiement.",
+                "CC_NAME": "Nom sur la carte",
+                "ERROR_CC_NAME": "Entrez votre nom comme il apparaît sur votre carte.",
+                "CC_NUM": "Numéro de carte",
+                "ERROR_CC_NUM": "Entrez un numéro de carte de crédit valide.",
+                "ERROR_CC_NUM_FOUND_GC": "Le num\u00E9ro de carte que vous avez entr\u00E9 correspond \u00E0 une carte-cadeau SiriusXM. Veuillez \u00E9changer votre carte-cadeau ci-dessous ou entrer un num\u00E9ro de carte de cr\u00E9dit valide.",
+                "CC_EXP_DATE": "Date d’expiration (MM/AA)",
+                "CC_EXP_DATE_INLINE": "MM/AA",
+                "ERROR_CC_EXP_INVALID": "Entrez une date d’expiration valide.",
+                "CC_CVV": "CVV",
+                "ERROR_CC_CVV": "Entrez un Code de sécurité valide.",
+                "CC_ADDRESS": "Adresse (incluant app./bureau/unité)",
+                "ERROR_CC_ADDRESS": "Entrez une adresse valide.",
+                "CC_CITY": "Ville",
+                "ERROR_CC_CITY": "Entrez votre ville.",
+                "INVALID_CC_CITY": "Entrez une ville valide.",
+                "CC_STATE": "Province",
+                "ERROR_CC_STATE": "Sélectionnez votre province.",
+                "CC_ZIPCODE": "Code postal",
+                "ERROR_CC_ZIPCODE": "Entrez un code postal valide."
+            },
+            "ADDRESS": {
+                "CONFIRM_YOUR_BILLING_ADDRESS": "Veuillez confirmer votre adresse de facturation.",
+                "CONFIRM_YOUR_SERVICE_ADDRESS": "Veuillez confirmer votre adresse de service",
+                "SERVICE_ADDRESS_LABEL": "L'adresse de service est la même",
+                "SERVICE_ADDRESS": "L'adresse de service"
+            },
+            "PREPAID": {
+                "REDEEM_LABEL": "Échanger une carte-cadeau de service prépayé",
+                "ADD_CARD": "Ajoutez une carte-cadeau de service SiriusXM prépayé (optionalle)",
+                "PIN_NUMBER": "Numéro NIP",
+                "APPLY": "Appliquer",
+                "REMOVE_LABEL": "Enlever la carte-cadeau de service prépayé",
+                "CARD_APPLIED": "Votre carte-cadeau de service prépayé a été appliquée",
+                "ERROR_VALID_PIN": "Entrez un NIP valide."
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Politique de la vie privée",
+                "LINK_URL": "http://www.siriusxm.ca/vieprivee"
+            },
+            "ERROR_CVV_FOUND": "Le champ contient des caractères qui ressemblent aux informations de sécurité de la carte de crédit. Pour continuer, veuillez les revoir et apporter les changements appropriés."
+        },
+        "yourDeviceInfoComponent": {
+            "NO_ACTIVE_SERVICE": "Aucun service actif",
+            "VEHICLE": "{{make}} {{model}} {{year}}",
+            "CLOSED": "Fermé",
+            "EXPIRES": "Se termine le"
+        },
+        "addressFormFieldsOemComponent": {
+            "ADDRESS_LINE_1": "Ligne d’adresse 1",
+            "ADDRESS_LINE_2": "Ligne d’adresse 2",
+            "ERROR_ADDRESS": "Entrez une adresse valide.",
+            "CITY": "Ville",
+            "ERROR_CITY": "Entrez votre ville.",
+            "STATE": "Province",
+            "ERROR_STATE": "Sélectionnez votre province.",
+            "ERROR_STATE_INACCURATE": "Entrez une adresse courriel valide.",
+            "ZIPCODE": "Code postal",
+            "ERROR_ZIPCODE": "Entrez un code postal valide.",
+            "ERROR_CVV_FOUND": "Le champ contient des caractères qui ressemblent aux informations de sécurité de la carte de crédit. Pour continuer, veuillez les revoir et apporter les changements appropriés."
+        },
+        "invalidAddressMessageComponent": {
+            "INVALID_BILLING_ADDRESS_ERROR": "Selon les dossiers de Postes Canada, votre adresse de facturation est invalide ou des renseignements importants sont manquants. Veuillez mettre à jour l'adresse de facturation pour continuer.",
+            "INVALID_SERVICE_ADDRESS_ERROR": "Selon les dossiers de Postes Canada, votre adresse de service est invalide ou des renseignements importants sont manquants. Veuillez mettre à jour l'adresse de service pour continuer."
+        }
+    }
+}

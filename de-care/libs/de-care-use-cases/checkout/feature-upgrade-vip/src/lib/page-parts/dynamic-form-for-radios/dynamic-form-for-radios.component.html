@@ -1,0 +1,113 @@
+<ng-container *ngIf="confirmationData?.selectedDevices?.firstRadio" [ngSwitch]="confirmationData?.devicesCredentialsStatuses?.firstDeviceCredentialsStatus">
+    <ng-container *ngSwitchCase="DeviceCredentialsStatusEnum.EligibleForRegistration">
+        <setup-registration-credentials
+            class="new-line-margin"
+            [credentialState]="registerCredentialState"
+            [account]="confirmationData?.registerData?.account"
+            [securityQuestions]="confirmationData?.registerData?.securityQuestions"
+        >
+            <ng-container registrationFormHeader>
+                <p class="radio-header-margin bold">
+                    {{
+                        confirmationData?.selectedDevices?.firstRadio?.vehicle
+                            | vehicleInfoTranslate
+                                : {
+                                      defaultText: translateKeyPrefix + "RADIO" | translate: { radioId: confirmationData?.selectedDevices?.firstRadio?.radioId },
+                                      isFrench: isFrench
+                                  }
+                    }}
+                </p>
+                <p class="radio-text-margin">{{ translateKeyPrefix + "FIRST_RADIO.TEXT" | translate }}</p>
+            </ng-container>
+            <ng-container registrationCompletedPresentment>
+                <de-care-listen-to-radio
+                    class="new-line-margin"
+                    [maskedUserName]="confirmationData?.registerData?.account?.email"
+                    [device]="confirmationData?.selectedDevices?.firstRadio"
+                    [isFrench]="isFrench"
+                    [subscriptionId]="primaryRadioSubscriptionId"
+                ></de-care-listen-to-radio>
+            </ng-container>
+        </setup-registration-credentials>
+    </ng-container>
+    <ng-container *ngSwitchCase="DeviceCredentialsStatusEnum.EligibleForStreamingCredentialsOnly">
+        <setup-login-credentials
+            class="new-line-margin"
+            [hidePrivacyPolicyLink]="true"
+            [radioId]="confirmationData?.selectedDevices?.firstRadio?.radioId"
+            (credentialsCreated)="firstRadioMaskedUsername = $event"
+        >
+            <ng-container loginFormHeader>
+                <p class="radio-header-margin bold">
+                    {{
+                        confirmationData?.selectedDevices?.firstRadio?.vehicle
+                            | vehicleInfoTranslate
+                                : {
+                                      defaultText: translateKeyPrefix + "RADIO" | translate: { radioId: confirmationData?.selectedDevices?.firstRadio?.radioId },
+                                      isFrench: isFrench
+                                  }
+                    }}
+                </p>
+
+                <p class="radio-text-margin">{{ translateKeyPrefix + "SECOND_RADIO.TEXT" | translate }}</p>
+            </ng-container>
+            <ng-container loginCompletedPresentment>
+                <de-care-listen-to-radio
+                    [maskedUserName]="firstRadioMaskedUsername"
+                    [device]="confirmationData?.selectedDevices?.firstRadio"
+                    [isFrench]="isFrench"
+                    [subscriptionId]="primaryRadioSubscriptionId"
+                ></de-care-listen-to-radio>
+            </ng-container>
+        </setup-login-credentials>
+    </ng-container>
+    <ng-container *ngSwitchCase="DeviceCredentialsStatusEnum.AlreadyRegistered">
+        <de-care-listen-to-radio
+            [maskedUserName]="confirmationData?.devicesExistingMaskedUserNames?.firstDeviceExistingMaskedUsername"
+            [device]="confirmationData?.selectedDevices?.firstRadio"
+            [isFrench]="isFrench"
+            [subscriptionId]="primaryRadioSubscriptionId"
+        ></de-care-listen-to-radio>
+    </ng-container>
+</ng-container>
+
+<ng-container *ngIf="confirmationData?.selectedDevices?.secondRadio" [ngSwitch]="confirmationData?.devicesCredentialsStatuses?.secondDeviceCredentialsStatus">
+    <ng-container *ngSwitchCase="DeviceCredentialsStatusEnum.EligibleForStreamingCredentialsOnly">
+        <setup-login-credentials
+            class="new-line-margin"
+            [hidePrivacyPolicyLink]="true"
+            [radioId]="confirmationData?.selectedDevices?.secondRadio?.radioId"
+            (credentialsCreated)="secondRadioMaskedUsername = $event"
+        >
+            <ng-container loginFormHeader>
+                <p class="radio-header-margin bold">
+                    {{
+                        confirmationData?.selectedDevices?.secondRadio?.vehicle
+                            | vehicleInfoTranslate
+                                : {
+                                      defaultText: translateKeyPrefix + "RADIO" | translate: { radioId: confirmationData?.selectedDevices?.secondRadio?.radioId },
+                                      isFrench: isFrench
+                                  }
+                    }}
+                </p>
+                <p class="radio-text-margin">{{ translateKeyPrefix + "SECOND_RADIO.TEXT" | translate }}</p>
+            </ng-container>
+            <ng-container loginCompletedPresentment>
+                <de-care-listen-to-radio
+                    [maskedUserName]="secondRadioMaskedUsername"
+                    [device]="confirmationData?.selectedDevices?.secondRadio"
+                    [isFrench]="isFrench"
+                    [subscriptionId]="secondaryRadioSubscriptionId"
+                ></de-care-listen-to-radio>
+            </ng-container>
+        </setup-login-credentials>
+    </ng-container>
+    <ng-container *ngSwitchCase="DeviceCredentialsStatusEnum.AlreadyRegistered">
+        <de-care-listen-to-radio
+            [maskedUserName]="confirmationData?.devicesExistingMaskedUserNames?.secondDeviceExistingMaskedUsername"
+            [device]="confirmationData?.selectedDevices?.secondRadio"
+            [isFrench]="isFrench"
+            [subscriptionId]="secondaryRadioSubscriptionId"
+        ></de-care-listen-to-radio>
+    </ng-container>
+</ng-container>

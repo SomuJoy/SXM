@@ -1,0 +1,53 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "MIKE",
+            "accountProfile": { "accountRegistered": false },
+            "accountState": { "isInPreTrial": false },
+            "serviceAddress": { "state": "NY", "country": "USA" },
+            "subscriptions": [
+                {
+                    "id": "10000211612",
+                    "plans": [
+                        {
+                            "code": "OEM Trial - Select - 3mo - 0.00",
+                            "packageName": "SXM_SIR_AUD_EVT",
+                            "termLength": 3,
+                            "startDate": "2021-11-30T00:00:00-05:00",
+                            "endDate": "2022-03-01T00:00:00-05:00",
+                            "nextCycleOn": null,
+                            "marketType": "trial:new-car",
+                            "type": "TRIAL",
+                            "capabilities": ["IPAUD", "AUD"],
+                            "price": 0,
+                            "isBasePlan": true,
+                            "dataCapable": false
+                        }
+                    ],
+                    "followonPlans": [],
+                    "radioService": {
+                        "id": "10000208284",
+                        "last4DigitsOfRadioId": "00AE",
+                        "devicePromoCode": "LEX3AUTRWETL",
+                        "vehicleInfo": { "year": 2020, "make": "Ford", "model": "Mustang" },
+                        "is360LCapable": false
+                    },
+                    "streamingService": { "id": "10000209308", "maskedUserName": "erj******@siriusxm.com", "status": "Active", "randomCredentials": false },
+                    "status": "Active",
+                    "devicePromoCode": "LEX3AUTRWETL",
+                    "isPrimary": true
+                }
+            ],
+            "billingSummary": { "creditCard": { "last4Digits": "1111", "type": "VISA", "status": "ACTIVE" }, "isPaymentTypeInvoice": false },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true,
+            "isAccountIdentifiedUsingFLEPZOrVIN": false
+        },
+        "marketingId": "X65100AE",
+        "marketingAcctId": "9692",
+        "email": null
+    }
+}

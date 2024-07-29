@@ -1,0 +1,58 @@
+{
+    "DomainsIdentificationUiSetupRegistrationCredentialsFormModule": {
+        "SetupRegistrationCredentialsComponent": {
+            "SUCCESS_MSG": "Vous vous êtes bien enregistré",
+            "PLURAL_MAP": {
+                "WORD": {
+                    "=1": "word",
+                    "other": "words"
+                }
+            },
+            "REGISTER_FORM": {
+                "USERNAME": {
+                    "LABEL": "Nom d'utilisateur",
+                    "ERRORS": {
+                        "REQUIRED": " Entrez un nom d'utilisateur",
+                        "USERNAME_IN_USE": " Le nom d'utilisateur entré est déjà utilisé, veuillez essayer un nom d'utilisateur différent.",
+                        "INVALID_USERNAME": " Veuillez entrer un nom d'utilisateur de 6 à 20 caractères - des lettres et des chiffres uniquement.",
+                        "PATTERN": " Veuillez entrer un nom d'utilisateur de 6 à 20 caractères - des lettres et des chiffres uniquement."
+                    }
+                },
+                "PASSWORD": {
+                    "LABEL": "Mot de passe",
+                    "ERRORS": {
+                        "REQUIRED": "Entrez un mot de passe.",
+                        "LENGTH": "Votre mot de passe doit contenir de {{min}} à {{max}} caractères.",
+                        "POLICY": "Votre mot de passe doit contenir au minimum un caractère appartenant à au moins 3 groupes différents, comme indiqué dans notre politique de mot de passe.",
+                        "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}",
+                        "GENERIC": "Nous sommes désolés, votre nouveau mot de passe n'est pas conforme à notre politique. Veuillez réessayer."
+                    }
+                },
+                "SECURITY_QUESTIONS": {
+                    "HEADER": "Questions de sécurité",
+                    "LABEL": "Choisissez une question",
+                    "ANSWER": "Réponse",
+                    "ERRORS": {
+                        "SELECT_A_QUESTION": "Choisissez une question de sécurité.",
+                        "REQUIRED": "Entrez la réponse.",
+                        "MIN_LENGTH": "La réponse doit comprendre au moins 3 caractères"
+                    }
+                }
+            },
+            "AUDIO": {
+                "HEADER": "Créez votre mot de passe pour gérer votre compte."
+            },
+            "STREAMING": {
+                "HEADER": "Créez votre mot de passe en ligne pour écouter sur votre téléphone, à la maison ou en ligne et pour gérer votre compte."
+            },
+            "TRIAL_ACTIVATION": {
+                "HEADER": "Enregistrez votre compte pour que {{email}} puisse gérer vos abonnements et diffuser en continu."
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Vie Privée",
+                "LINK_URL": "http://www.siriusxm.ca/vieprivee"
+            },
+            "REGISTER": "Terminer la configuration"
+        }
+    }
+}

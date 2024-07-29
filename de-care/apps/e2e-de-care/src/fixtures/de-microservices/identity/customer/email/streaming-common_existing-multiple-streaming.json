@@ -1,0 +1,64 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": [
+        {
+            "closed": false,
+            "id": "10000222954",
+            "status": "Active",
+            "plans": [
+                {
+                    "code": "All Access - 12mo - wActv",
+                    "packageName": "SIR_AUD_ALLACCESS",
+                    "termLength": "12",
+                    "endDate": null,
+                    "type": "SELF_PAID",
+                    "marketType": "self-pay:standard",
+                    "capabilities": ["AUD", "IPAUD"]
+                }
+            ],
+            "followonPlans": [],
+            "radioService": { "last4DigitsOfRadioId": "8067", "vehicleInfo": { "model": null, "make": null, "year": null }, "maskedRadioId": "****8067" },
+            "streamingService": { "status": "Active", "maskedUserName": "hcj******@siriusxm.com", "randomCredentials": false }
+        },
+        {
+            "closed": false,
+            "id": "10000223690",
+            "status": "Active",
+            "plans": [
+                {
+                    "code": "Select - 12mo - wActv",
+                    "packageName": "1_SIR_AUD_EVT",
+                    "termLength": "12",
+                    "endDate": null,
+                    "type": "SELF_PAID",
+                    "marketType": "self-pay:standard",
+                    "capabilities": ["IPAUD", "AUD"]
+                }
+            ],
+            "followonPlans": [],
+            "radioService": { "last4DigitsOfRadioId": "000G", "vehicleInfo": { "model": null, "make": null, "year": null }, "maskedRadioId": "****000G" },
+            "streamingService": { "status": "Active", "maskedUserName": "wih******@siriusxm.com", "randomCredentials": false }
+        },
+        {
+            "closed": false,
+            "id": "10000228128",
+            "status": "Active",
+            "plans": [
+                {
+                    "code": "A La Carte + Howard - 1mo - wActv",
+                    "packageName": "SIR_AUD_PKG_ALH",
+                    "termLength": "1",
+                    "endDate": null,
+                    "type": "SELF_PAID",
+                    "marketType": "self-pay:standard",
+                    "capabilities": ["AUD", "ALC"]
+                }
+            ],
+            "followonPlans": [],
+            "radioService": { "last4DigitsOfRadioId": "5630", "vehicleInfo": { "model": null, "make": null, "year": null }, "maskedRadioId": "****5630" },
+            "streamingService": null
+        }
+    ]
+}

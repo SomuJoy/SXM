@@ -1,0 +1,95 @@
+@import "sxm.phoenix.imports";
+
+@keyframes fadeInslideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+:host {
+    display: block;
+    background-color: $black;
+    color: $white;
+    padding: 40px 0;
+    z-index: 3;
+    position: relative;
+
+    @include bp(large) {
+        padding: 48px 0;
+    }
+}
+
+:host(.animate-component) {
+    .animate-block {
+        animation-name: fadeInslideUp;
+        animation-duration: 0.4s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: both;
+    }
+
+    .text-content .animate-block {
+        &:nth-child(1) {
+            animation-delay: 0.6s;
+        }
+
+        &:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        &:nth-child(3) {
+            animation-delay: 1.2s;
+        }
+
+        &:nth-child(4) {
+            animation-delay: 1.4s;
+        }
+    }
+}
+
+.content-wrapper {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto;
+    grid-template-columns: auto;
+    margin: 0 -16px;
+
+    div {
+        padding: 0 16px;
+    }
+
+    @include bp(large) {
+        -ms-grid-columns: 1.5fr 1fr;
+        grid-template-columns: 1.5fr 1fr;
+    }
+}
+
+.text-content {
+    @include bp(large) {
+        -ms-grid-column: 1;
+        grid-column: 1;
+        -ms-grid-row: 1;
+        grid-row: 1;
+    }
+
+    h2 {
+        margin-bottom: 24px;
+    }
+
+    a {
+        color: $white;
+    }
+}
+
+.form-content {
+    @include bp(large) {
+        -ms-grid-column: 2;
+        grid-column: 2;
+        -ms-grid-row: 1;
+        grid-row: 1;
+    }
+}

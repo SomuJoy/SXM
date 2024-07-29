@@ -1,0 +1,13 @@
+{
+    "TERM_MAP": {
+        "=1": "Mensuel - {{amount}}/mois",
+        "=3": "Trimestriel - {{amount}}/3 mois",
+        "=6": "Semi-Annuel - {{amount}}/6 mois",
+        "=12": "Annuel - {{amount}}/an",
+        "other": "{{termLength}}-Mois  - {{amount}}/{{termLength}} mois"
+    },
+    "CURRENT": " (actuellement)",
+    "BUTTON_TEXT": "Continuer",
+    "ERROR_REQUIRED": "Choisissez un forfait de facturation pour continuer.",
+    "PLUS_FEES": " plus frais"
+}

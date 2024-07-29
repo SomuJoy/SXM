@@ -1,0 +1,34 @@
+{
+    "domainsAccountUiLoginFormFieldsModule": {
+        "loginFormFieldsComponent": {
+            "UNEXPECTED_ERROR": "Une erreur inattendue est apparue. Veuillez réessayer.",
+            "EMAIL": {
+                "LABEL": "Adresse courriel",
+                "ERROR": "Entrez une adresse courriel valide.",
+                "IN_USE_ERROR": "Le nom d’utilisateur ou le courriel est déjà utilisé."
+            },
+            "USERNAME": {
+                "LABEL": "nom d'utilisateur",
+                "ERROR": "Le nom d'utilisateur doit comporter 6 à 20 caractères, lettres et chiffres uniquement.",
+                "IN_USE_ERROR": "Ce nom d'utilisateur est lié à un compte actif."
+            },
+            "PASSWORD": {
+                "LABEL": "Mot de passe",
+                "ERRORS": {
+                    "REQUIRED": "Entrer un mot de passe.",
+                    "LENGTH": "Votre mot de passe doit contenir de {{min}} à {{max}} caractères.",
+                    "POLICY": "Votre mot de passe doit contenir au minimum un caractère appartenant à au moins 3 groupes différents, comme indiqué dans notre politique de mot de passe.",
+                    "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}",
+                    "GENERIC": "Nous sommes désolés, votre nouveau mot de passe n'est pas conforme à notre politique. Veuillez réessayer.",
+                    "PII_DATA": "Le mot de passe ne peut pas inclure prénom, nom de famille ou adresse courriel."
+                }
+            },
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "mois",
+                    "other": "mois"
+                }
+            }
+        }
+    }
+}

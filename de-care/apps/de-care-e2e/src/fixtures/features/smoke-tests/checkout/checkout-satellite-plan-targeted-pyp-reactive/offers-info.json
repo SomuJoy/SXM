@@ -1,0 +1,99 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "locales": [
+            {
+                "locale": "en_US",
+                "offerInfos": [
+                    {
+                        "planCode": "Promo - Mostly Music - 3mo - 1.00 - (PyP)",
+                        "salesHero": { "title": "You&#39;re just moments from listening", "subTitle": null, "presentation": null },
+                        "offerDescription": {
+                            "priceAndTermDescTitle": "<span data-duration=\"\">3 months</span> for <span data-price=\"\">$1</span>",
+                            "processingFeeDisclaimer": "Then $12.99/mo. See <strong>Offer Details</strong> below.",
+                            "packageName": "SiriusXM Music Showcase",
+                            "listeningOptions": ["Satellite", "Streaming"],
+                            "longDescription": null,
+                            "highlightsTitle": "SiriusXM Music Showcase Includes:",
+                            "highlightsText": [
+                                "<b>100+ channels, </b>including 80+ in your car, plus more to stream on your devices",
+                                "<b>Ad-free music </b>for every genre & decade plus artist-created channels",
+                                "<b>10+ talk and news channels</b>",
+                                "<b>SiriusXM video library </b>of in-studio shows & performances"
+                            ],
+                            "footer": "<strong id=\"docs-internal-guid-a0adf176-7fff-b7cc-acfd-351f7872fac2\">All music, all the time. </strong>A wide range of our expertly curated ad-free music channels for a listening experience you won&#39;t hear anywhere else.",
+                            "packageFeatures": [{ "packageName": "SiriusXM Music Showcase", "features": [] }],
+                            "showToggleLabel": "Explore plan details",
+                            "hideToggleLabel": "Hide"
+                        },
+                        "deals": null,
+                        "addonHeaderOverride": null,
+                        "offerDetails": "<p><strong>OFFER DETAILS:</strong> Activate a Music Showcase subscription and pay $1.00 for your first 3 months, a savings of 97% off the current monthly rate of $12.99, plus get free activation (an additional $15 savings). <strong>A credit card is required on this offer. Fees and taxes apply. Service will automatically renew thereafter every month and you will be charged at then-current rates. Please see our <a href=\"http://siriusxm.com/agreements\" target=\"_blank\">Customer Agreement</a> for complete terms and how to cancel, which includes calling us at 1-866-635-2349.</strong> All fees, content and features are subject to change. This offer cannot be combined with any other and may be modified or terminated at any time.</p>",
+                        "presentation": { "theme": "Theme2", "style": "Presentation1" },
+                        "numberOfBullets": null
+                    },
+                    {
+                        "planCode": "Promo - Select - 3mo - 1.00 - (PyP)",
+                        "salesHero": { "title": "You&#39;re just moments from listening", "subTitle": null, "presentation": null },
+                        "offerDescription": {
+                            "priceAndTermDescTitle": "<span data-duration=\"\">3 months</span> for <span data-price=\"\">$1</span>",
+                            "processingFeeDisclaimer": "Then $17.99/mo. See <strong>Offer Details</strong> below.",
+                            "packageName": "SiriusXM Music & Entertainment",
+                            "listeningOptions": ["Satellite", "Streaming"],
+                            "longDescription": null,
+                            "highlightsTitle": "<strong>SiriusXM Music & Entertainment</strong>&nbsp;<strong>Includes:</strong>",
+                            "highlightsText": [
+                                "<b>325+ channels,</b> including 155+ in your car, plus even more to stream on your devices",
+                                "<b>Ad-free music</b> for every genre & decade plus artist-created channels",
+                                "<b>Original talk, </b>podcasts, exclusive comedy & news from every angle",
+                                "<b>NHL® play-by-play,</b> NASCAR®, plus the biggest names in sports talk",
+                                "<b>SiriusXM video library </b>of in-studio shows & performances"
+                            ],
+                            "footer": "Listen &amp; watch your favorites in all your favorite places&mdash;in your car, on your phone, or at home for only $1.00 for 3 months. That is 98% off the regular monthly price of $17.99.",
+                            "packageFeatures": [{ "packageName": "SiriusXM Music & Entertainment", "features": [] }],
+                            "showToggleLabel": "Explore plan details",
+                            "hideToggleLabel": "Hide"
+                        },
+                        "deals": null,
+                        "addonHeaderOverride": null,
+                        "offerDetails": "<p><strong>OFFER DETAILS:</strong> Activate a Music & Entertainment subscription and pay $1.00 for your first 3 months, a savings of 98% off the current monthly rate of $17.99, plus get free activation (an additional $15 savings). <strong>A credit card is required on this offer. Fees and taxes apply. Service will automatically renew thereafter every month and you will be charged at then-current rates. Please see our <a href=\"http://siriusxm.com/agreements\" target=\"_blank\">Customer Agreement</a> for complete terms and how to cancel, which includes calling us at 1-866-635-2349.</strong> All fees, content and features are subject to change. This offer cannot be combined with any other and may be modified or terminated at any time.</p>",
+                        "presentation": { "theme": "Theme2", "style": "Presentation1" },
+                        "numberOfBullets": null
+                    },
+                    {
+                        "planCode": "Promo - All Access - 3mo - 1.00 - (PyP)",
+                        "salesHero": { "title": "You&#39;re just moments from listening", "subTitle": null, "presentation": null },
+                        "offerDescription": {
+                            "priceAndTermDescTitle": "<span data-duration=\"\">3 months</span> for <span data-price=\"\">$1</span>",
+                            "processingFeeDisclaimer": "Then $22.99/mo. See <strong>Offer Details</strong> below.",
+                            "packageName": "SiriusXM Platinum",
+                            "listeningOptions": ["Satellite", "Streaming", "Pandora"],
+                            "longDescription": null,
+                            "highlightsTitle": "SiriusXM Platinum&nbsp;Includes:",
+                            "highlightsText": [
+                                "<b>350+ channels,</b> including 165+ in your car, plus even more to stream on your devices",
+                                "<b>Ad-free music</b> for every genre & decade plus artist-created channels",
+                                "<b>Original talk,</b> podcasts, exclusive comedy & news from every angle",
+                                "<b>NFL, MLB®, NBA, NHL®, and NCAA® play-by-play, </b>NASCAR®, plus the biggest names in sports talk",
+                                "<b>2 Howard Stern channels,</b> including video",
+                                "<b>Create Pandora stations</b> based on artists",
+                                "<b>SiriusXM video library</b> of in-studio shows & performances"
+                            ],
+                            "footer": "Listen &amp; watch your favorites in all your favorite places-in your car, on your phone or at home for only $1.00 for 3 months. That is 98% off the regular monthly price of $22.99.",
+                            "packageFeatures": [{ "packageName": "SiriusXM Platinum", "features": [] }],
+                            "showToggleLabel": "Explore plan details",
+                            "hideToggleLabel": "Hide"
+                        },
+                        "deals": null,
+                        "addonHeaderOverride": null,
+                        "offerDetails": "<p><strong>OFFER DETAILS:</strong> Activate a Platinum subscription and pay $1.00 for your first 3 months, a savings of 98% off the current monthly rate of $22.99, plus get free activation (an additional $15 savings). <strong>A credit card is required on this offer. Fees and taxes apply. Service will automatically renew thereafter every month and you will be charged at then-current rates. Please see our <a href=\"http://siriusxm.com/agreements\" target=\"_blank\">Customer Agreement</a> for complete terms and how to cancel, which includes calling us at 1-866-635-2349.</strong> All fees, content and features are subject to change. This offer cannot be combined with any other and may be modified or terminated at any time.</p>",
+                        "presentation": { "theme": "Theme2", "style": "Presentation1" },
+                        "numberOfBullets": null
+                    }
+                ]
+            }
+        ]
+    }
+}

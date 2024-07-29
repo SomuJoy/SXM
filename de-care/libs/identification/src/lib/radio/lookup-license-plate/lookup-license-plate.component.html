@@ -1,0 +1,69 @@
+<form id="lookup-license-plate" [formGroup]="licencePlateForm">
+    <h5>{{ "identification.lookupLicensePlateComponent.TITLE" | translate }}</h5>
+
+    <p [id]="ariaDescribedbyTextId">{{ "identification.lookupLicensePlateComponent.GETTING_STARTED" | translate }}</p>
+
+    <div class="input-container" [class.invalid]="submitted && controlIsInvalid(fControls.licensePlate)">
+        <label for="{{ uniqueId1 }}">{{ "identification.lookupLicensePlateComponent.LICENSE_PLATE_LABEL" | translate }}</label>
+        <input
+            type="text"
+            formControlName="licensePlate"
+            id="{{ uniqueId1 }}"
+            data-test="LookUpLicensePlateNumberTextField"
+            qatag="LookUpLicensePlateNumberTextField"
+            onFocus
+            appTrimFormField
+        />
+    </div>
+
+    <div *ngIf="submitted && controlIsInvalid(fControls.licensePlate)" class="invalid-feedback">
+        <p>{{ "identification.lookupLicensePlateComponent.INVALID_FEEDBACK" | translate }}</p>
+    </div>
+
+    <div *ngIf="submitted && accountNotSupportedError" class="invalid-feedback">
+        <p>{{ "identification.lookupLicensePlateComponent.ACCOUNT_TYPE_NOT_SUPPORTED" | translate }}</p>
+    </div>
+
+    <div class="state-dropdown flex">
+        <sxm-ui-dropdown
+            [uniqueId]="uniqueId2"
+            [qatag]="'LookUpLicensePlateStateDropDown'"
+            class="dropdown"
+            tabindex="0"
+            data-test="LicensePlateStateDropdown"
+            [filterSelected]="true"
+            key="key"
+            text="key"
+            [passedValue]="'app.areas' | translate"
+            labelText="{{ 'identification.lookupLicensePlateComponent.STATE_LABEL' | translate }}"
+            formControlName="state"
+            [class.invalid]="submitted && controlIsInvalid(fControls.state)"
+        ></sxm-ui-dropdown>
+    </div>
+
+    <div *ngIf="submitted && controlIsInvalid(fControls.state)" class="invalid-feedback">
+        <p>{{ "identification.lookupLicensePlateComponent.ENTER_YOUR_STATE" | translate }}</p>
+    </div>
+    <!---->
+    <div class="checkbox-item" [class.invalid]="submitted && controlIsInvalid(fControls.agreement)">
+        <input class="checkbox" data-test="VinLookUpByLicenseAgreementCheckbox" formControlName="agreement" type="checkbox" id="{{ uniqueId3 }}" onFocus />
+        <label class="input-label" for="{{ uniqueId3 }}">
+            <p class="small-copy text-color-grey-dark">
+                {{ "identification.lookupLicensePlateComponent.VIN_LOOKUP_AGREEMENT" | translate }}
+            </p>
+        </label>
+    </div>
+
+    <div *ngIf="submitted && controlIsInvalid(fControls.agreement)" class="invalid-feedback">
+        <p>{{ "identification.lookupLicensePlateComponent.BEFORE_YOU_CONTINUE" | translate }}</p>
+    </div>
+    <div class="privacy-policy">
+        <a href="{{ 'identification.lookupLicensePlateComponent.PRIVACY_POLICY.LINK_URL' | translate }}" target="blank" class="text-link">{{
+            "identification.lookupLicensePlateComponent.PRIVACY_POLICY.LINK_TEXT" | translate
+        }}</a>
+    </div>
+    <button class="button primary full-width" data-test="SubmitLicensePlateLookupButton" (click)="submit()" [disabled]="loading" [class.loading]="loading">
+        <ng-container *ngIf="!loading">{{ "identification.lookupLicensePlateComponent.CONTINUE" | translate }}</ng-container>
+        <span></span><span></span><span></span>
+    </button>
+</form>

@@ -1,0 +1,23 @@
+<div class="grid-container">
+    <div>
+        <p class="payment-alert-message mb-0 mt-0">
+            {{ data.copyContent }}
+        </p>
+        <p class="label-column mb-0 mt-0">
+            <a
+                rel=""
+                name=""
+                sxmUiDataClickTrack="exit"
+                [attr.data-link-key]="data.linkKey"
+                [attr.data-link-name]="data.linkName"
+                data-test="alertLinkWithCriticalIcon"
+                (click)="alertLinkClicked.emit(data.alertType)"
+            >
+                {{ data.urlLinkLabel }}
+            </a>
+        </p>
+    </div>
+    <svg class="icon icon-content end-horz-align center-align" id="icon-warning" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10zm-10 2V6m0 10v2" stroke-width="2" fill="none"></path>
+    </svg>
+</div>

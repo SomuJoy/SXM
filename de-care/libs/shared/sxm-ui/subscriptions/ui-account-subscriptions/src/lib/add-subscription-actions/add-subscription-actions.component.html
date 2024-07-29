@@ -1,0 +1,10 @@
+<div class="text-center">
+    <mat-icon svgIcon="additional-subscriptions"></mat-icon>
+    <p class="large-copy bold mb-4">{{ translateKeyPrefix + ".TITLE" | translate }}</p>
+    <p class="description">{{ translateKeyPrefix + ".DESCRIPTION" | translate }}</p>
+    <div class="links-container">
+        <button class="text-link" (click)="carAndStreaming.emit()" data-test="carAndStreamingLinkButton">{{ translateKeyPrefix + ".CAR_STREAMING_LINK" | translate }}</button>
+        <div class="vertical-bar"></div>
+        <button class="text-link" (click)="streaming.emit()" data-test="streamingLinkButton">{{ translateKeyPrefix + ".STREAMING_LINK" | translate }}</button>
+    </div>
+</div>

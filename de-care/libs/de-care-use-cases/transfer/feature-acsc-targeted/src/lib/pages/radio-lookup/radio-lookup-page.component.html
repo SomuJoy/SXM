@@ -1,0 +1,72 @@
+<div class="hero-radio-lookup">
+    <div class="hero-background"></div>
+    <div class="content-container">
+        <div class="row">
+            <div class="column small-12 align-left align-center-medium-up">
+                <h6>{{ translateKeyPrefix + "SUBTITLE" | translate }}</h6>
+                <h1>{{ translateKeyPrefix + "TITLE" | translate }}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content-container">
+    <div class="row align-center">
+        <div class="column small-12 medium-10">
+            <div class="form-container">
+                <sxm-ui-alert-pill *ngIf="showAlert" class="alert-icon-notification link-inherit-color">
+                    <ng-container [ngSwitch]="alertCode">
+                        <p *ngSwitchCase="AlertEnum.CLOSED" [innerHTML]="translateKeyPrefix + 'ALERT.CLOSED' | translate"></p>
+                        <p *ngSwitchCase="AlertEnum.NOT_FOUND" [innerHTML]="translateKeyPrefix + 'ALERT.NOT_FOUND' | translate"></p>
+                        <p *ngSwitchCase="AlertEnum.SAME_ACCOUNT" [innerHTML]="translateKeyPrefix + 'ALERT.SAME_ACCOUNT' | translate"></p>
+                        <p *ngSwitchCase="AlertEnum.OTHER" [innerHTML]="translateKeyPrefix + 'ALERT.OTHER_ERROR' | translate"></p>
+                    </ng-container>
+                </sxm-ui-alert-pill>
+                <form [formGroup]="form" (ngSubmit)="submitForm()" class="grid" data-e2e="radioIdForm">
+                    <div>
+                        <sxm-ui-text-form-field
+                            controlId="radio-id-verify"
+                            formControlName="radioId"
+                            dataFieldType="radioId"
+                            labelText="{{ translateKeyPrefix + 'INPUT_LABEL' | translate }}"
+                            errorMsg="{{ translateKeyPrefix + 'ERROR_INVALID_RADIO' | translate }}"
+                        >
+                        </sxm-ui-text-form-field>
+                        <div>
+                            <button class="text-link" type="button" (click)="helpFindingRadioModal.open()">
+                                {{ translateKeyPrefix + "FIND_RADIO" | translate }}
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <button
+                            [loading]="isProcessingRadioLookup"
+                            sxm-proceed-button
+                            data-track-click="Find My Radio"
+                            class="button primary full-width"
+                            type="submit"
+                            data-e2e="findMyRadioButton"
+                        >
+                            {{ translateKeyPrefix + "CTA_BUTTON" | translate }}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<sxm-ui-modal #helpFindingRadioModal title="{{ translateKeyPrefix + 'HELP_FINDING_RADIO_MODAL_TITLE' | translate }}" [titlePresent]="true">
+    <sxm-ui-help-finding-radio (deviceHelp)="helpFindingRadioModal.close(); deviceHelpModal.open()">
+        <p #contentParagraphOne class="paragraph-1">{{ translateKeyPrefix + "HELP_FINDING_RADIO_P1" | translate }}</p>
+    </sxm-ui-help-finding-radio>
+</sxm-ui-modal>
+<sxm-ui-modal
+    #deviceHelpModal
+    [titlePresent]="true"
+    [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"
+    title="{{ translateKeyPrefix + 'RADIO_LOOKUP_MARINE_AVIATION_MODAL_TITLE' | translate }}"
+    [showBackButton]="true"
+    (modalClosed)="helpFindingRadioModal.open()"
+    (backButton)="deviceHelpModal.close(); helpFindingRadioModal.open()"
+>
+    <sxm-ui-device-help  [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"></sxm-ui-device-help>
+</sxm-ui-modal>

@@ -1,0 +1,31 @@
+{
+    "name": "shared-browser-common-web-storage",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/browser-common/web-storage/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/browser-common/web-storage/src/**/*.ts", "libs/shared/browser-common/web-storage/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/shared/browser-common/web-storage/jest.config.js",
+                "tsConfig": "libs/shared/browser-common/web-storage/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/shared/browser-common/web-storage/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:ui-util", "scope:shared-ui-util"]
+}

@@ -1,0 +1,8 @@
+{
+    "image": {
+        "src": "assets/img/device-echodot-gen4.png"
+    },
+    "SUCCESS_TITLE": "<h5><b>Vos comptes ont été liés.</b></h5><p>Vous avez réussi à activer la « skill » SiriusXM sur votre nouvel appareil Alexa d’Amazon.</p>",
+    "ERROR_TITLE": "<h5><b>Oups! Quelque chose n’a pas fonctionné.</b></h5><p>Un problème s’est produit lors du lien entre votre compte SiriusXM et votre compte Amazon. Une fois que vous recevrez votre appareil, consultez la section Liens utiles dans votre courriel de remerciement ou <a class='no-underline' href='https://www.amazon.ca/dp/B06X9NK3KD/?language=fr_CA' target='_blank'>visitez notre page de soutien</a>.</p>",
+    "DESCRIPTION": "Vous recevrez des instructions par courriel dans les 48 heures suivantes afin d’obtenir votre appareil Amazon gratuit.  Votre Echo Dot est traité directement par Amazon et la livraison sera complétée selon la disponibilité de l’inventaire d’Amazon.  Les périodes de forte demande peuvent entraîner des délais, alors faites votre demande dès maintenant."
+}

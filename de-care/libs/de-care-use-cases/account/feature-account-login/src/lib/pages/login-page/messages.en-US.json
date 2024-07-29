@@ -1,0 +1,39 @@
+{
+    "TITLE": "Sign in",
+    "SUB_TITLE": "Sign in to manage your account, review your subscription, make a payment, update your info, and more.",
+    "SIGN_IN_FORM_TITLE": "Don't have an account?",
+    "REGISTRATION_LINK_TEXT": "Register",
+    "SIGN_IN_BUTTON_TEXT": "Sign In",
+    "NEED_HELP": "Need more help?",
+    "HELP_LINKS": [
+        {
+            "TEXT": "Pay My Bill",
+            "URL": "https://care.siriusxm.com/makeccpaymentlogin_view.action?isflepzview=true",
+            "linkName": "Pay My Bill",
+            "linkType": "exit"
+        },
+        {
+            "TEXT": "Subscribe",
+            "URL": "https://www.siriusxm.com/offers/you-choose",
+            "linkName": "Subscribe",
+            "linkType": "exit"
+        },
+        {
+            "TEXT": "Refresh My Radio",
+            "URL": "https://care.siriusxm.com/retailrefresh_view.action",
+            "linkName": "Refresh My Radio",
+            "linkType": "exit"
+        },
+        {
+            "TEXT": "Get the SXM App",
+            "URL": "https://player.siriusxm.com",
+            "linkName": "Get the SiriusXM App",
+            "linkType": "player"
+        }
+    ],
+    "PARTNER_LOGIN_REQUIRED_TITLE": "Your SiriusXM subscription is managed via {{partnerName}}.",
+    "PARTNER_LOGIN_REQUIRED_DESCRIPTION": "Please go to {{partnerName}} to manage your SiriusXM subscription.",
+    "PAGE_TITLE": "Login, Pay Bill & Manage My Account | SiriusXM",
+    "IAP_FREE_TIER_PARTNER_LOGIN_REQUIRED_TITLE": "Looks like one or more of your subscriptions are managed by {{partnerName}}.",
+    "IAP_FREE_TIER_PARTNER_LOGIN_REQUIRED_DESCRIPTION": "You can manage those subscriptions directly with {{partnerName}}, or in some cases via the app store or your device settings.<br><br><a class=\"tracklink\" href=\"https://www.siriusxm.com/iap-faq\" target=\"_blank\">View specific instructions</a> on where to find these options.<br><br>For subscriptions acquired directly from SiriusXM, <a class=\"tracklink\" href=\"https://www.siriusxm.com/contact-us\" target=\"_blank\">chat with an agent</a> for help logging in."
+}

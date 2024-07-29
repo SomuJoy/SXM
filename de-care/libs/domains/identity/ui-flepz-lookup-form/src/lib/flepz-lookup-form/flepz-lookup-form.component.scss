@@ -1,0 +1,10 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    .general-error {
+        color: $red;
+        font-size: calculate-rem(12px);
+        font-weight: calculate-font-weight("bold");
+    }
+}

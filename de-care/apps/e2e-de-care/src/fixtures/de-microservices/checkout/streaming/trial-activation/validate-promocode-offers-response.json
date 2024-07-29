@@ -1,0 +1,49 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "offers": [
+            {
+                "planCode": "Trial - Premier Streaming - 3mo - $0.00 - (RTD)",
+                "packageName": "SIR_IP_SA",
+                "packageUpgrade": null,
+                "promoCode": "PSFREERTD3MO",
+                "termLength": 3,
+                "type": "RTD_OFFER",
+                "marketType": "trial:streaming",
+                "price": 0,
+                "pricePerMonth": 0.0,
+                "retailPrice": 10.99,
+                "packageUpgradePrice": null,
+                "msrpPrice": 10.99,
+                "processingFee": null,
+                "supportedServices": ["SIR", "UNIVERSAL_LOGIN"],
+                "deal": null,
+                "priceChangeMessagingType": "",
+                "planEndDate": null,
+                "minimumFollowOnTerm": 0,
+                "order": null,
+                "bundledSavingPrice": null,
+                "bundleSubPackageNames": null,
+                "parentPackageName": "",
+                "fallbackReason": "",
+                "capability": ["IPAUD"],
+                "mrdEligible": false,
+                "invoiceEligible": false,
+                "advantage": false,
+                "student": false,
+                "fallback": false,
+                "streaming": true,
+                "upgradeOffer": false,
+                "bestPackage": true,
+                "leadOffer": false,
+                "dataCapable": false,
+                "bundled": null
+            }
+        ],
+        "presentment": null,
+        "digitalSegment": null,
+        "presentmentTestCell": null
+    }
+}

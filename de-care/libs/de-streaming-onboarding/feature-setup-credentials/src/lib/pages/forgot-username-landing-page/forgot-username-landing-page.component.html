@@ -1,0 +1,10 @@
+<sxm-ui-alert-pill *ngIf="isThirdPartyError" style="background-color: #fff9d5" class="alert-icon-notification straight-corners">
+    <p class="pill-text">
+        <span class="error-paragraph bottom-padding">{{ translateKeyPrefix + ".THIRD_PARTY_ERROR_MESSAGE" | translate }}</span>
+        <span class="error-paragraph bottom-padding">{{ translateKeyPrefix + ".THIRD_PARTY_SUB_ERROR_MESSAGE" | translate }}</span>
+        <span class="error-paragraph"><a class="text-link" (click)="onSignInClick()">{{ translateKeyPrefix + ".THIRD_PARTY_LISTEN_NOW" | translate }}</a></span>
+    </p> 
+</sxm-ui-alert-pill>
+<sxm-ui-forgot-username-form (lookupCompleted)="onLookupCompleted($event)">
+    <de-streaming-onboarding-privacy-policy privacyPolicy></de-streaming-onboarding-privacy-policy>
+</sxm-ui-forgot-username-form>

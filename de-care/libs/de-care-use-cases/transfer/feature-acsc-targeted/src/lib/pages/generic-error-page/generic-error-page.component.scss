@@ -1,0 +1,49 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    background-color: $white;
+    .recirculation--single {
+        position: relative;
+        &:before {
+            left: 0;
+            transform: none;
+            width: 100%;
+        }
+    }
+}
+.error-hero {
+    padding: 40px 0;
+    margin-bottom: 40px;
+    background-color: $blue-ultra-light;
+    text-align: center;
+    @include bp(medium) {
+        padding: 86px 0 64px;
+        margin-bottom: 48px;
+    }
+    h6 {
+        color: $gray-dark;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+    }
+    h2 {
+        margin-bottom: 0;
+    }
+}
+
+chat-with-agent-link {
+    display: block;
+    margin-bottom: 8px;
+    color: $blue-secondary;
+    @include bp(medium) {
+        display: inline-block;
+        margin: 0;
+    }
+}
+
+.stack {
+    display: block;
+    margin-left: 4px;
+    @include bp(medium) {
+        display: inline-block;
+    }
+}

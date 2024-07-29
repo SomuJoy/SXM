@@ -1,0 +1,56 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.hero-radio-lookup {
+    position: relative;
+    padding: 40px 0;
+    text-align: center;
+    color: $white;
+    .hero-background {
+        position: absolute;
+        top: 0;
+        bottom: -48px;
+        width: 100%;
+        background-color: $purple;
+    }
+    @include bp(medium) {
+        padding: 48px 0;
+    }
+    h6 {
+        margin-bottom: 8px;
+        text-transform: uppercase;
+    }
+    h1 {
+        @include get-header-style(h2);
+        margin-bottom: 0;
+        text-align: left;
+    }
+}
+
+.form-container {
+    padding: 24px;
+    width: 100%;
+    background: $white;
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
+    @include bp(medium) {
+        padding: 32px;
+    }
+    form {
+        display: grid;
+        grid-template-columns: 100%;
+        @include bp(medium) {
+            grid-template-columns: 61fr 39fr;
+            column-gap: 24px;
+            button {
+                margin: 0;
+            }
+        }
+    }
+}
+
+sxm-ui-alert-pill {
+    background: $vanilla;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 16px;
+}

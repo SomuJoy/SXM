@@ -1,0 +1,72 @@
+<sxm-ui-modal #radioLookupOptionsModal [titlePresent]="true" [title]="translateKey + 'RADIO_LOOKUP_LABEL' | translate" [ariaDescribedbyTextId]="radioLookupOptionsModalAriaDescribedbyTextId">
+    <h5>{{ translateKey + "RADIO_LOOKUP_HEADER" | translate }}</h5>
+    <p class="radio-lookup-options-subtitle" [id]="radioLookupOptionsModalAriaDescribedbyTextId" *ngIf="options?.radioLookupOptionsSubtitle">{{ options.radioLookupOptionsSubtitle }}</p>
+    <radio-lookup-options (sentValue)="onRadioLookupOptionsSelectedValue($event)"></radio-lookup-options>
+</sxm-ui-modal>
+
+<sxm-ui-modal
+    #radioModal
+    [ariaDescribedbyTextId]="lookupRadioIdModalAriaDescribedbyTextId"
+    [showBackButton]="true"
+    (backButton)="onLookupRadioIdBackButton()"
+    [titlePresent]="true"
+    [title]="translateKey + 'RADIO_ID_LOOKUP_LABEL' | translate"
+>
+    <lookup-radio-id (selectedData)="onLookupRadioIdSelectedData($event)" (noAccountFound)="onRadioIdLookupNoAccountFound($event)" (deviceHelp)="onDeviceHelp()" [ariaDescribedbyTextId]="lookupRadioIdModalAriaDescribedbyTextId">
+    </lookup-radio-id>
+</sxm-ui-modal>
+
+<sxm-ui-modal
+    #validateUserRadioModal
+    [ariaDescribedbyTextId]="validateUserRadioModalAriaDescribedbyTextId"
+    [showBackButton]="true"
+    (backButton)="onValidateUserBackButton()"
+    [titlePresent]="true"
+    [title]="translateKey + 'VALIDATE_USER_INFO_LABEL' | translate"
+>
+    <validate-user-radio
+        #validateUserContent
+        [ariaDescribedbyTextId]="validateUserRadioModalAriaDescribedbyTextId"
+        *ngIf="deviceLookupWizardOutput.selectedRadio?.last4DigitsOfRadioId"
+        [last4DigitsOfRadioId]="deviceLookupWizardOutput.selectedRadio.last4DigitsOfRadioId"
+        [isRadioClosed]="deviceLookupWizardOutput.selectedRadioIsClosed"
+        [prefilledLastName]="options?.prefilledValidateUserAccountData?.lastName"
+        (validUserInfo)="onValidUserInfoFromValidateUserRadio($event)"
+        (invalidUserInfo)="onInvalidUserInfoFromValidateUserRadio($event)"
+        (editInfo)="onValidateUserBackButton()"
+    >
+    </validate-user-radio>
+</sxm-ui-modal>
+
+<sxm-ui-modal #deviceHelpModal [showBackButton]="true" (backButton)="onDeviceHelpBackButton()" [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId" [titlePresent]="true" [title]="translateKey + 'DEVICE_HELP' | translate">
+    <sxm-ui-device-help [isCanadaMode]="isCanadaMode" [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"></sxm-ui-device-help>
+</sxm-ui-modal>
+
+<sxm-ui-modal [showBackButton]="true" (backButton)="onLookupVinBackButton()" #vinModal [titlePresent]="true" [ariaDescribedbyTextId]="lookupVinModalAriaDescribedbyTextId" [title]="translateKey + 'LOOKUP_VIN_LABEL' | translate">
+    <lookup-vin (selectedData)="onLookupVinSelectedData($event)" (vinError)="onVinError()" (noAccountFound)="onVinNoAccountFound($event)" [ariaDescribedbyTextId]="lookupVinModalAriaDescribedbyTextId"> </lookup-vin>
+</sxm-ui-modal>
+
+<sxm-ui-modal
+    #licensePlateModal
+    [titlePresent]="true"
+    [ariaDescribedbyTextId]="lookupLicensePlateModalAriaDescribedbyTextId"
+    [title]="translateKey + 'LOOKUP_LICENCE_PLATE_LABEL' | translate"
+    [showBackButton]="true"
+    (backButton)="onLookupLicencePlateBackButton()"
+>
+    <lookup-license-plate
+        (licensePlateError)="onLicencePlateError()"
+        [ariaDescribedbyTextId]="lookupLicensePlateModalAriaDescribedbyTextId"
+        (selectedVin)="onSelectedLicensePlateVin($event)"
+        (noAccountFound)="onLookupLicencePlateAccountNotFound($event)"
+    >
+    </lookup-license-plate>
+</sxm-ui-modal>
+
+<sxm-ui-modal #confirmVinModal [showBackButton]="true" (backButton)="onTryLicenseLookupAgain()" [titlePresent]="true" [title]="translateKey + 'CONFIRM_VIN_LABEL' | translate"  [ariaDescribedbyTextId]="confirmVinModalAriaDescribedbyTextId">
+    <confirm-vin *ngIf="confirmVinModalData" [data]="confirmVinModalData" (vinConfirmed)="vinConfirmedAction()" (tryAgainEvent)="onTryLicenseLookupAgain()"  [ariaDescribedbyTextId]="confirmVinModalAriaDescribedbyTextId"> </confirm-vin>
+</sxm-ui-modal>
+
+<sxm-ui-modal #vinErrorModal [title]="translateKey + 'VIN_ERROR_LABEL' | translate" [titlePresent]="true" [showBackButton]="true" (backButton)="vinErrorBackAction()"  [ariaDescribedbyTextId]="vinErrorModalAriaDescribedbyTextId">
+    <vin-error (radioIdSearchClick)="onVinRadioIdSearch()"  [ariaDescribedbyTextId]="vinErrorModalAriaDescribedbyTextId"></vin-error>
+</sxm-ui-modal>

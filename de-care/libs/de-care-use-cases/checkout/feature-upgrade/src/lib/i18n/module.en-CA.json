@@ -1,0 +1,22 @@
+{
+    "DeCareUseCasesCheckoutFeatureUpgradeModule": {
+        "DefaultErrorPageComponent": {
+            "HELP": {
+                "TFN": "1-866-635-0565"
+            }
+        },
+        "ExpiredErrorPageComponent": {
+            "MESSAGE_LOGIN": "You may <a href='https://care.siriusxm.ca/login_view.action'>sign in</a> to manage your subscription.",
+            "MESSAGE_CALL": "Call <a href=\"tel:+1-866-635-0565\">1-866-635-0565</a> to speak with an agent."
+        },
+        "RedeemedErrorPageComponent": {
+            "MESSAGE_LOGIN": "You may <a href='https://care.siriusxm.ca/login_view.action'>sign in</a> to manage your subscription.",
+            "MESSAGE_CALL": "Call <a href=\"tel:+1-866-635-0565\">1-866-635-0565</a> to speak with an agent."
+        },
+        "FullPriceConfirmationPageComponent": {
+            "SUBSCRIPTION_IMPORTANT_INFO": {
+                "BODY": "Your subscription starts immediately unless indicated otherwise. If your radio is not receiving the programming you are entitled to, please follow the activation instructions above. For your convenience, all subscriptions automatically renew until canceled. Your renewal will be billed at the then-current rate using the payment method on file. You can cancel your subscription at any time by calling Listener Care at <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>. Your subscription is governed by the SiriusXM Customer Agreement, which can be <a href=\"https://www.siriusxm.ca/terms\" target=\"_blank\">viewed online</a>. If you would like to receive a copy of the Customer Agreement by mail, you can call <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>."
+            }
+        }
+    }
+}

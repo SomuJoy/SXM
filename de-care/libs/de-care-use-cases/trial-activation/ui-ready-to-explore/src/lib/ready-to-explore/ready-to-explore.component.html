@@ -1,0 +1,28 @@
+<h5>{{ translationKeyPrefix + ".HEADING_TEXT" | translate }}</h5>
+<p>
+    <ng-container *ngIf="!isCanadaMode">
+        <a class="text-link" target="_blank" [href]="translationKeyPrefix + '.links.learnMoreAboutYourTrial.LINK_URL' | translate">{{
+            translationKeyPrefix + ".links.learnMoreAboutYourTrial.LINK_TEXT" | translate
+        }}</a
+        ><br />
+    </ng-container>
+    <a class="text-link" target="_blank" [href]="translationKeyPrefix + '.links.programSchedules.LINK_URL' | translate">{{
+        translationKeyPrefix + ".links.programSchedules.LINK_TEXT" | translate
+    }}</a
+    ><br />
+    <a class="text-link" target="_blank" [href]="translationKeyPrefix + '.links.sportsSchedules.LINK_URL' | translate">{{
+        translationKeyPrefix + ".links.sportsSchedules.LINK_TEXT" | translate
+    }}</a
+    ><br />
+    <streaming-player-link
+        [customLink]="listenNowCustomLink"
+        [customLinkText]="translationKeyPrefix + '.links.listenNow.LINK_TEXT' | translate"
+        [infoForToken]="infoForToken"
+    ></streaming-player-link>
+</p>
+<p>
+    {{ translationKeyPrefix + ".beforeYouGo.INTRO_TEXT" | translate }}
+    <a class="text-link" target="_blank" [href]="translationKeyPrefix + '.beforeYouGo.link.LINK_URL' | translate">{{
+        translationKeyPrefix + ".beforeYouGo.link.LINK_TEXT" | translate
+    }}</a>
+</p>

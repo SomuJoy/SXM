@@ -1,0 +1,12 @@
+{
+    "HEADER": "Votre paiement automatique est prévu dans {{daysDue}} {{daysPlural}}.",
+    "YOUR_AUTOMATED_PAYMENT_WILL_BE_CHARGED_TODAY": "Votre paiement automatique sera traité aujourd’hui.",
+    "YOUR_AUTOMATED_PAYMENT_WILL_BE_CHARGED_NO_DATE": "Votre paiement automatisé sera bientôt traité.",
+    "UPDATE_PAYMENT": "METTRE À JOUR VOTRE <span> MÉTHODE </span> DE PAIEMENT",
+    "PLURAL_MAP": {
+        "DAYS": {
+            "=1": "jour",
+            "other": "jours"
+        }
+    }
+}

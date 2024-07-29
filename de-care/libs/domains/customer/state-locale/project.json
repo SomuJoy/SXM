@@ -1,0 +1,27 @@
+{
+    "name": "domains-customer-state-locale",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/domains/customer/state-locale/src",
+    "projectType": "library",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/customer/state-locale/src/**/*.ts", "libs/domains/customer/state-locale/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/customer/state-locale/jest.config.js",
+                "tsConfig": "libs/domains/customer/state-locale/tsconfig.spec.json",
+                "setupFile": "libs/domains/customer/state-locale/src/test-setup.ts",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "generators": {},
+    "tags": ["type:state", "scope:domain-state"]
+}

@@ -1,0 +1,42 @@
+<section>
+    <quote-summary
+        *ngIf="quoteViewModel"
+        [quote]="quoteViewModel"
+        [class.alternate-header]="useQuotesAlternateHeader"
+        [isStreamingFlow]="legacySettings?.isStreamingFlow"
+        [isNewAccount]="legacySettings?.isNewAccount"
+        [extraData]="extraData"
+        [showUnusedCreditLine]="showUnusedCreditLine"
+        [isQCProvince]="isQuebecProvince"
+        [isClosedRadio]="isClosedRadio$ | async"
+    ></quote-summary>
+</section>
+<form id="transactionForm" [formGroup]="transactionForm">
+    <sxm-ui-charge-agreement-checkbox-form-field
+        formControlName="chargeAgreementAccepted"
+        [formButtonTextCopy]="continueButtonTextOverride || translateKeyPrefix + '.CONTINUE_BUTTON_TEXT' | translate"
+        [useRateVersionOfTextCopy]="useRateVersionOfTextCopy"
+        data-test="ChargeMyCardText"
+    ></sxm-ui-charge-agreement-checkbox-form-field>
+    <section *ngIf="shouldIncludeNuCaptcha" id="nuCaptchaFieldSection">
+        <hr />
+        <strong>{{ translateKeyPrefix + ".ENTER_A_CAPTCHA_TO_FINISH" | translate }}</strong>
+        <sxm-ui-nucaptcha
+            #nuCaptchaComponent
+            formControlName="nuCaptchaAnswer"
+            [submitted]="transactionForm.touched"
+            (gotCaptcha)="gotCaptcha($event)"
+            [captchaAnswerWrong]="captchaAnswerWrong$ | async"
+        ></sxm-ui-nucaptcha>
+    </section>
+    <button
+        type="button"
+        sxm-proceed-button
+        [loading]="transactionFormProcessing$ | async"
+        sxmUiDataClickTrack="submit"
+        (click)="submitTransaction()"
+        data-test="ReviewQuoteAndApproveFormSubmitButton"
+    >
+        {{ continueButtonTextOverride || translateKeyPrefix + ".CONTINUE_BUTTON_TEXT" | translate }}
+    </button>
+</form>

@@ -1,0 +1,31 @@
+{
+    "name": "domains-account-ui-login-form-fields",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/account/ui-login-form-fields/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/account/ui-login-form-fields/src/**/*.ts", "libs/domains/account/ui-login-form-fields/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/account/ui-login-form-fields/jest.config.js",
+                "tsConfig": "libs/domains/account/ui-login-form-fields/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/account/ui-login-form-fields/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:ui", "scope:domain-ui"]
+}

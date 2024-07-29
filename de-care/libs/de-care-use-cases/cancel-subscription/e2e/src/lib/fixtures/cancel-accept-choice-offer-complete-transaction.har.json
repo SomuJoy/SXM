@@ -1,0 +1,1189 @@
+[
+    {
+        "request": {
+            "method": "GET",
+            "url": "/services/utility/env-info",
+            "postData": ""
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Wed, 07 Oct 2020 18:28:27 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Connection",
+                    "value": "close"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                },
+                {
+                    "name": "X-CDN",
+                    "value": "Incapsula"
+                },
+                {
+                    "name": "X-Iinfo",
+                    "value": "13-5232963-5233010 ENNN RT(1602095303843 1230) q(0 0 0 -1) r(26 26) U5"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "mode": "test",
+                        "country": "us",
+                        "buildInfo": {
+                            "tag": "project/CARE_RELEASE_0052000",
+                            "smsDependency": "",
+                            "smsUser": "web1",
+                            "smsHost": "10.98.144.115:18201",
+                            "pvtTime": "2020-10-07 14:28:27.0"
+                        },
+                        "sessionInfo": {
+                            "id": "6fceb5bd-61c6-4f08-ba2f-f3ed986c54f6",
+                            "idleTimeout": "20",
+                            "absoluteTimeout": "Wed Oct 07 14:15:42 EDT 2020"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/account",
+            "postData": {
+                "accountNumber": "10001341678"
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Wed, 07 Oct 2020 18:28:28 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Connection",
+                    "value": "close"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://careqa.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                },
+                {
+                    "name": "X-CDN",
+                    "value": "Incapsula"
+                },
+                {
+                    "name": "X-Iinfo",
+                    "value": "4-3700730-3700756 ENNN RT(1602095305379 2423) q(0 0 0 -1) r(5 5) U5"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "mrdCapable": false,
+                        "accountNumber": "10001341678",
+                        "firstName": "ALAN",
+                        "lastName": "ALAN",
+                        "phone": "2222222222",
+                        "userName": "112mm22@siriusxm.com",
+                        "email": "112MM22@SIRIUSXM.COM",
+                        "accountProfile": {
+                            "profileNumber": "10001341934",
+                            "billingStatus": "Active",
+                            "accountRegistered": true,
+                            "createdOnDate": "2020-09-08T17:34:42-04:00"
+                        },
+                        "serviceAddress": {
+                            "streetAddress": "1 Blanchard Rd",
+                            "city": "Monson",
+                            "state": "ME",
+                            "postalCode": "04464-6612",
+                            "country": "USA",
+                            "isAVSValidated": true
+                        },
+                        "billingAddress": {
+                            "streetAddress": "1 Blanchard Rd",
+                            "city": "Monson",
+                            "state": "ME",
+                            "postalCode": "04464-6612",
+                            "country": "USA",
+                            "isAVSValidated": true
+                        },
+                        "subscriptions": [
+                            {
+                                "id": "10001339374",
+                                "status": "Active",
+                                "plans": [
+                                    {
+                                        "code": "Trial - Premier Streaming - 1mo - $0.00 - (RTD)",
+                                        "packageName": "SIR_IP_SA",
+                                        "termLength": 1,
+                                        "startDate": "2020-09-08T00:00:00-04:00",
+                                        "endDate": "2020-10-08T00:00:00-04:00",
+                                        "nextCycleOn": null,
+                                        "marketType": "trial:streaming",
+                                        "type": "TRIAL",
+                                        "status": "active",
+                                        "capabilities": ["IPAUD"],
+                                        "price": 0,
+                                        "isBasePlan": true,
+                                        "isChangePlanAllowed": true,
+                                        "isFamiliyDiscountApplied": false
+                                    }
+                                ],
+                                "followonPlans": [
+                                    {
+                                        "code": "Premier Streaming - Monthly",
+                                        "packageName": "SIR_IP_SA",
+                                        "termLength": 1,
+                                        "startDate": null,
+                                        "endDate": null,
+                                        "nextCycleOn": null,
+                                        "marketType": "self-pay:standard",
+                                        "type": "SELF_PAID",
+                                        "status": "active",
+                                        "capabilities": [],
+                                        "price": 13,
+                                        "isBasePlan": true,
+                                        "isChangePlanAllowed": false,
+                                        "isFamiliyDiscountApplied": false
+                                    }
+                                ],
+                                "radioService": null,
+                                "streamingService": {
+                                    "maskedUserName": "112******@siriusxm.com",
+                                    "id": "10001341422",
+                                    "userName": "112mm22@siriusxm.com",
+                                    "status": "Active",
+                                    "randomCredentials": false
+                                },
+                                "isPrimary": true,
+                                "isMrdDriving": false
+                            }
+                        ],
+                        "billingSummary": {
+                            "paymentType": "invoice",
+                            "creditCard": {
+                                "last4Digits": "1111",
+                                "type": "VISA",
+                                "status": "ACTIVE"
+                            },
+                            "amountDue": 0
+                        },
+                        "consolidatedAccountNumbers": [],
+                        "closedDevicesMap": {},
+                        "closedDevices": []
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/offers/customer/cancel",
+            "postData": {
+                "subscriptionId": 10001339374,
+                "cancelReason": "EXPENSIVE"
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Wed, 07 Oct 2020 18:28:44 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Connection",
+                    "value": "close"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://careqa.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                },
+                {
+                    "name": "X-CDN",
+                    "value": "Incapsula"
+                },
+                {
+                    "name": "X-Iinfo",
+                    "value": "5-4128091-4128108 NNNN CT(10 11 0) RT(1602095311743 109) q(0 0 0 -1) r(130 130) U5"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "offers": [
+                            {
+                                "planCode": "Essential Streaming - Monthly",
+                                "packageName": "SIR_IP_SA_ESNTL",
+                                "parentPackageName": null,
+                                "packageUpgrade": null,
+                                "promoCode": "PEGAOAC",
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 8,
+                                "pricePerMonth": 8,
+                                "retailPrice": 8,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 8,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "fallbackReason": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 1,
+                                "streaming": false,
+                                "fallback": false,
+                                "dataCapable": false,
+                                "mrdEligible": false,
+                                "upgradeOffer": false
+                            },
+                            {
+                                "planCode": "Choice Current Rock Streaming - 1mo",
+                                "packageName": "SIR_IP_CHOICE_ROCK",
+                                "parentPackageName": "SIR_IP_CHOICE_GENERIC",
+                                "packageUpgrade": null,
+                                "promoCode": "PEGAOAC",
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 4.99,
+                                "pricePerMonth": 4.99,
+                                "retailPrice": 4.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 4.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "fallbackReason": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 1,
+                                "streaming": false,
+                                "fallback": false,
+                                "dataCapable": false,
+                                "mrdEligible": false,
+                                "upgradeOffer": false
+                            },
+                            {
+                                "planCode": "Choice Hip-Hop/R+B Streaming - 1mo",
+                                "packageName": "SIR_IP_CHOICE_HH",
+                                "parentPackageName": "SIR_IP_CHOICE_GENERIC",
+                                "packageUpgrade": null,
+                                "promoCode": "PEGAOAC",
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 4.99,
+                                "pricePerMonth": 4.99,
+                                "retailPrice": 4.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 4.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "fallbackReason": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 2,
+                                "streaming": false,
+                                "fallback": false,
+                                "dataCapable": false,
+                                "mrdEligible": false,
+                                "upgradeOffer": false
+                            },
+                            {
+                                "planCode": "Choice Country Streaming - 1mo",
+                                "packageName": "SIR_IP_CHOICE_CTRY",
+                                "parentPackageName": "SIR_IP_CHOICE_GENERIC",
+                                "packageUpgrade": null,
+                                "promoCode": "PEGAOAC",
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 4.99,
+                                "pricePerMonth": 4.99,
+                                "retailPrice": 4.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 4.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "fallbackReason": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 3,
+                                "streaming": false,
+                                "fallback": false,
+                                "dataCapable": false,
+                                "mrdEligible": false,
+                                "upgradeOffer": false
+                            },
+                            {
+                                "planCode": "Choice Classic Rock Streaming - 1mo",
+                                "packageName": "SIR_IP_CHOICE_CLROCK",
+                                "parentPackageName": "SIR_IP_CHOICE_GENERIC",
+                                "packageUpgrade": null,
+                                "promoCode": "PEGAOAC",
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 4.99,
+                                "pricePerMonth": 4.99,
+                                "retailPrice": 4.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 4.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "fallbackReason": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 4,
+                                "streaming": false,
+                                "fallback": false,
+                                "dataCapable": false,
+                                "mrdEligible": false,
+                                "upgradeOffer": false
+                            },
+                            {
+                                "planCode": "Choice Pop Streaming - 1mo",
+                                "packageName": "SIR_IP_CHOICE_POP",
+                                "parentPackageName": "SIR_IP_CHOICE_GENERIC",
+                                "packageUpgrade": null,
+                                "promoCode": "PEGAOAC",
+                                "termLength": 1,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 4.99,
+                                "pricePerMonth": 4.99,
+                                "retailPrice": 4.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 4.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "fallbackReason": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 5,
+                                "streaming": false,
+                                "fallback": false,
+                                "dataCapable": false,
+                                "mrdEligible": false,
+                                "upgradeOffer": false
+                            },
+                            {
+                                "planCode": "Choice Pop Streaming - 12mo",
+                                "packageName": "SIR_IP_CHOICE_POP",
+                                "parentPackageName": "SIR_IP_CHOICE_GENERIC",
+                                "packageUpgrade": null,
+                                "promoCode": "PEGAOAC",
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 59.88,
+                                "pricePerMonth": 4.99,
+                                "retailPrice": 4.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 4.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "fallbackReason": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 6,
+                                "streaming": false,
+                                "fallback": false,
+                                "dataCapable": false,
+                                "mrdEligible": false,
+                                "upgradeOffer": false
+                            },
+                            {
+                                "planCode": "Choice Classic Rock Streaming - 12mo",
+                                "packageName": "SIR_IP_CHOICE_CLROCK",
+                                "parentPackageName": "SIR_IP_CHOICE_GENERIC",
+                                "packageUpgrade": null,
+                                "promoCode": "PEGAOAC",
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 59.88,
+                                "pricePerMonth": 4.99,
+                                "retailPrice": 4.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 4.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "fallbackReason": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 7,
+                                "streaming": false,
+                                "fallback": false,
+                                "dataCapable": false,
+                                "mrdEligible": false,
+                                "upgradeOffer": false
+                            },
+                            {
+                                "planCode": "Choice Country Streaming - 12mo",
+                                "packageName": "SIR_IP_CHOICE_CTRY",
+                                "parentPackageName": "SIR_IP_CHOICE_GENERIC",
+                                "packageUpgrade": null,
+                                "promoCode": "PEGAOAC",
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 59.88,
+                                "pricePerMonth": 4.99,
+                                "retailPrice": 4.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 4.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "fallbackReason": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 8,
+                                "streaming": false,
+                                "fallback": false,
+                                "dataCapable": false,
+                                "mrdEligible": false,
+                                "upgradeOffer": false
+                            },
+                            {
+                                "planCode": "Choice Hip-Hop/R+B Streaming - 12mo",
+                                "packageName": "SIR_IP_CHOICE_HH",
+                                "parentPackageName": "SIR_IP_CHOICE_GENERIC",
+                                "packageUpgrade": null,
+                                "promoCode": "PEGAOAC",
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 59.88,
+                                "pricePerMonth": 4.99,
+                                "retailPrice": 4.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 4.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "fallbackReason": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 9,
+                                "streaming": false,
+                                "fallback": false,
+                                "dataCapable": false,
+                                "mrdEligible": false,
+                                "upgradeOffer": false
+                            },
+                            {
+                                "planCode": "Choice Current Rock Streaming - 12mo",
+                                "packageName": "SIR_IP_CHOICE_ROCK",
+                                "parentPackageName": "SIR_IP_CHOICE_GENERIC",
+                                "packageUpgrade": null,
+                                "promoCode": "PEGAOAC",
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 59.88,
+                                "pricePerMonth": 4.99,
+                                "retailPrice": 4.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 4.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "fallbackReason": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 10,
+                                "streaming": false,
+                                "fallback": false,
+                                "dataCapable": false,
+                                "mrdEligible": false,
+                                "upgradeOffer": false
+                            },
+                            {
+                                "planCode": "Essential Streaming - Annual",
+                                "packageName": "SIR_IP_SA_ESNTL",
+                                "parentPackageName": null,
+                                "packageUpgrade": null,
+                                "promoCode": "PEGAOAC",
+                                "termLength": 12,
+                                "type": "SELF_PAY",
+                                "marketType": "self-pay:standard",
+                                "price": 96,
+                                "pricePerMonth": 8,
+                                "retailPrice": 8,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 8,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "fallbackReason": null,
+                                "minimumFollowOnTerm": 0,
+                                "order": 1,
+                                "streaming": false,
+                                "fallback": false,
+                                "dataCapable": false,
+                                "mrdEligible": false,
+                                "upgradeOffer": false
+                            }
+                        ],
+                        "presentment": [
+                            {
+                                "type": "LEAD_OFFERS",
+                                "planCodes": [
+                                    "Essential Streaming - Monthly",
+                                    "Choice Current Rock Streaming - 1mo",
+                                    "Choice Hip-Hop/R+B Streaming - 1mo",
+                                    "Choice Country Streaming - 1mo",
+                                    "Choice Classic Rock Streaming - 1mo",
+                                    "Choice Pop Streaming - 1mo"
+                                ]
+                            },
+                            {
+                                "type": "COMPATIBLE_OFFERS",
+                                "planCodes": [
+                                    "Choice Pop Streaming - 12mo",
+                                    "Choice Classic Rock Streaming - 12mo",
+                                    "Choice Country Streaming - 12mo",
+                                    "Choice Hip-Hop/R+B Streaming - 12mo",
+                                    "Choice Current Rock Streaming - 12mo",
+                                    "Essential Streaming - Annual"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/validate/customer-info",
+            "postData": {
+                "billingAddress": {
+                    "addressLine1": "1 River Road",
+                    "city": "Schenectady",
+                    "state": "NY",
+                    "zip": "12345"
+                },
+                "creditCard": {
+                    "creditCardNumber": "4111111111111111"
+                }
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Wed, 07 Oct 2020 18:32:48 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Connection",
+                    "value": "close"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://careqa.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                },
+                {
+                    "name": "X-CDN",
+                    "value": "Incapsula"
+                },
+                {
+                    "name": "X-Iinfo",
+                    "value": "10-4466534-4466563 NNNN CT(6 4 0) RT(1602095565219 104) q(0 0 0 -1) r(28 28) U5"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "valid": true,
+                        "emailValidation": null,
+                        "usernameValidation": null,
+                        "billingAddressValidation": {
+                            "confidenceLevel": "Verified",
+                            "correctedAddress": [
+                                {
+                                    "addressLine1": "1 River Rd",
+                                    "addressLine2": " ",
+                                    "city": "Schenectady",
+                                    "state": "NY",
+                                    "zip": "12345-6000"
+                                }
+                            ],
+                            "resultCode": "SUCCESS",
+                            "validationStatus": "VALID"
+                        },
+                        "serviceAddressValidation": null,
+                        "ccValidation": {
+                            "valid": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/quotes/quote",
+            "postData": {
+                "planCodes": ["Choice Hip-Hop/R+B Streaming - 12mo"],
+                "subscriptionId": "10001339374"
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Wed, 07 Oct 2020 18:32:49 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Connection",
+                    "value": "close"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://careqa.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                },
+                {
+                    "name": "X-CDN",
+                    "value": "Incapsula"
+                },
+                {
+                    "name": "X-Iinfo",
+                    "value": "14-5650908-5650927 NNNN CT(3 4 0) RT(1602095568447 102) q(0 0 0 -1) r(7 7) U5"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "quote": {
+                            "currentQuote": null,
+                            "futureQuote": null,
+                            "proRatedRenewalQuote": null,
+                            "promoRenewalQuote": null,
+                            "renewalQuote": {
+                                "totalTaxAmount": "3.91",
+                                "totalFeesAmount": "5.27",
+                                "totalTaxesAndFeesAmount": "9.18",
+                                "totalAmount": "69.06",
+                                "discountAmount": "0.00",
+                                "pricePerMonth": "4.99",
+                                "currentBalance": "",
+                                "consolidatedCreditAmount": "",
+                                "previousBalance": "",
+                                "fees": [
+                                    {
+                                        "description": "U.S. Music Royalty Fee",
+                                        "amount": "5.27"
+                                    }
+                                ],
+                                "taxes": [
+                                    {
+                                        "description": "Service Provider Tax",
+                                        "amount": "3.91"
+                                    }
+                                ],
+                                "details": [
+                                    {
+                                        "planCode": "Choice Hip-Hop/R+B Streaming - 12mo",
+                                        "packageName": "SIR_IP_CHOICE_HH",
+                                        "termLength": 12,
+                                        "priceAmount": "59.88",
+                                        "taxAmount": "3.91",
+                                        "feeAmount": "5.27",
+                                        "totalTaxesAndFeesAmount": "9.18",
+                                        "taxes": [
+                                            {
+                                                "description": "Service Provider Tax",
+                                                "amount": "3.91"
+                                            }
+                                        ],
+                                        "fees": [
+                                            {
+                                                "description": "U.S. Music Royalty Fee",
+                                                "amount": "5.27"
+                                            }
+                                        ],
+                                        "startDate": "2020-10-08",
+                                        "endDate": "2021-10-08",
+                                        "isMrdEligible": false,
+                                        "balanceType": null,
+                                        "type": "SELF_PAY",
+                                        "dealType": ""
+                                    }
+                                ],
+                                "isUpgraded": null,
+                                "isProrated": false
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/purchase/change-subscription",
+            "postData": {
+                "subscriptionId": 10001339374,
+                "plans": [{ "planCode": "Choice Hip-Hop/R+B Streaming - 12mo" }],
+                "paymentInfo": {
+                    "useCardOnfile": false,
+                    "paymentType": "creditCard",
+                    "cardInfo": { "cardNumber": 4111111111111111, "expiryMonth": "12", "expiryYear": 29, "nameOnCard": "Nancy Choice" },
+                    "transactionId": "OAC-05a545b0-ad1f-47d1-8317-68a78642f5a9"
+                },
+                "billingAddress": {
+                    "phone": "2222222222",
+                    "avsvalidated": false,
+                    "streetAddress": "1 River Rd  ",
+                    "city": "Schenectady",
+                    "state": "NY",
+                    "postalCode": "12345-6000",
+                    "firstName": "ALAN",
+                    "lastName": "ALAN",
+                    "email": "112MM22@SIRIUSXM.COM"
+                },
+                "serviceAddress": {
+                    "phone": "2222222222",
+                    "avsvalidated": false,
+                    "streetAddress": "1 River Rd  ",
+                    "city": "Schenectady",
+                    "state": "NY",
+                    "postalCode": "12345-6000",
+                    "firstName": "ALAN",
+                    "lastName": "ALAN",
+                    "email": "112MM22@SIRIUSXM.COM"
+                }
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Wed, 07 Oct 2020 18:32:49 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Connection",
+                    "value": "close"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://careqa.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                },
+                {
+                    "name": "X-CDN",
+                    "value": "Incapsula"
+                },
+                {
+                    "name": "X-Iinfo",
+                    "value": "14-5650908-5650927 NNNN CT(3 4 0) RT(1602095568447 102) q(0 0 0 -1) r(7 7) U5"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "email": "112MM22@SIRIUSXM.COM",
+                        "status": "SUCCESS",
+                        "radioId": null,
+                        "subscriptionId": "10000000000",
+                        "accountNumber": "10001341678",
+                        "isOfferStreamingEligible": true,
+                        "isUserNameSameAsEmail": true,
+                        "isEligibleForRegistration": true
+                    }
+                }
+            }
+        }
+    }
+]

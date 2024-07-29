@@ -1,0 +1,9 @@
+{
+    "TITLE": "Sign up for eBill",
+    "INSTRUCTIONS_PART1": "We'll notify you at this email when your invoice is ready to view online.",
+    "INSTRUCTIONS_PART2": "Changing this email address will also update the email address for your account.",
+    "SIGN_UP_BUTTON": "Sign up",
+    "CANCEL_BUTTON": "Cancel",
+    "SERVER_ERROR": "Server error here",
+    "EMAIL_REQUIRED_ERROR": "Enter a valid email address."
+}

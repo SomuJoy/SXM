@@ -1,0 +1,56 @@
+<header data-test="PreSelectedSecondPlanOfferHeader">
+    <figure>
+        <img class="hero-image" [src]="translateKeyPrefix + '.HERO_IMAGE' | translate" [alt]="'SXM App on mobile'" />
+        <figcaption>
+            <a [href]="translateKeyPrefix + '.SXM_LOGO_LINK' | translate" target="_blank"
+                ><img class="sxm-logo" [src]="translateKeyPrefix + '.SXM_LOGO' | translate" [alt]="'SXM'"
+            /></a>
+            <h1>{{ translateKeyPrefix + ".CONSIDER_TO_MONTH" | translate : { amount: preSelectedPlanInfo.price } }}</h1>
+            <p class="lead-in mb-8">
+                <strong> {{ translateKeyPrefix + ".SAVE_OVER_50" | translate }} </strong>{{ translateKeyPrefix + ".BEST_STREAMING_PLAN" | translate }}
+            </p>
+        </figcaption>
+    </figure>
+</header>
+<main>
+    <div class="content">
+        <section class="current-plan">
+            <sxm-ui-your-current-plan [headerText]="translateKeyPrefix + '.CURRENT_PLAN' | translate" [planData]="currentPlan"></sxm-ui-your-current-plan>
+            <hr />
+        </section>
+        <section class="plan-features">
+            <h2 class="premium-plan-title">{{ translateKeyPrefix + ".DETAIL_PLAN" | translate : { planName: preSelectedPlanInfo.planName } }}</h2>
+            <h2>{{ translateKeyPrefix + ".SUBSCRIBE_FOR" | translate : { amount: preSelectedPlanInfo.price } }}</h2>
+            <p class="header-paragraph" [innerHTML]="translateKeyPrefix + '.FOLLOW_ON_PLAN' | translate"></p>
+            <ul>
+                <li *ngFor="let description of channelDescriptions">
+                    <figure>
+                        <img [src]="translateKeyPrefix + '.DESCRIPTIONS.' + description.name + '_IMAGE' | translate" [alt]="''" />
+                        <figcaption>
+                            <h4>{{ translateKeyPrefix + ".DESCRIPTIONS." + description.name + "_HEADER" | translate }}</h4>
+                            <p *ngIf="!description.includesInnerHtml">{{ translateKeyPrefix + ".DESCRIPTIONS." + description.name + "_PARAGRAPH" | translate }}</p>
+                            <p
+                                *ngIf="description.includesInnerHtml"
+                                [innerHTML]="translateKeyPrefix + '.DESCRIPTIONS.' + description.name + '_PARAGRAPH' | translate | safeHtml"
+                            ></p>
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </section>
+        <section class="plan-ctas">
+            <button type="button" (click)="onGetThisPlan()" sxm-proceed-button data-test="getThisPlanButton">
+                {{ translateKeyPrefix + ".GET_THIS_PLAN_BUTTON" | translate | uppercase }}
+            </button>
+            <button type="button" (click)="onKeepCurrentPlan()" sxm-proceed-button [secondary]="true" data-test="keepCurrentPlanButton">
+                {{ translateKeyPrefix + ".KEEP_CURRENT_PLAN_BUTTON" | translate | uppercase }}
+            </button>
+            <button type="button" (click)="onCancelPlan()" sxm-proceed-button [secondary]="true" data-test="cancelPlanButton">
+                {{ translateKeyPrefix + ".CANCEL_PLAN_BUTTON" | translate | uppercase }}
+            </button>
+            <div class="text-link-container">
+                <chat-with-agent-link [chatLinkText]="translateKeyPrefix + '.CHAT_SUPPORT_LINK_TEXT' | translate" [queue]="'cancelOnline'"></chat-with-agent-link>
+            </div>
+        </section>
+    </div>
+</main>

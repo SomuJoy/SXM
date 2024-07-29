@@ -1,0 +1,12 @@
+{
+    "status": "FAILURE",
+    "httpStatusCode": 400,
+    "httpStatus": "BAD_REQUEST",
+    "error": {
+        "errorCode": "ACCOUNT_OR_USERNAME_NOT_FOUND",
+        "errorPropKey": "error.identity.account.or.username.notfound",
+        "errorType": "BUSINESS",
+        "errorStackTrace": "AccountNumber:  | RadioId:  | x-forwarded-for: [10.130.99.127] | URL: /services/identity/customer/credentials-recovery | Exception: IdentityAccountServiceException#null | StackTrace: IdentityServiceImpl.java:170 | ErrorType: BUSINESS | ErrorMessage: ERROR : [errorCode : ACCOUNT_OR_USERNAME_NOT_FOUND, errorPropKey : error.identity.account.or.username.notfound, errorType : CHECKED, errorLevel : ACTION, statusCode : 400 BAD_REQUEST, errorMessage : null | , sourceErrorCode : null] | FullStackTrace: ",
+        "logId": "17787215-1a80-4e4d-85e6-6cf679f3703f"
+    }
+}

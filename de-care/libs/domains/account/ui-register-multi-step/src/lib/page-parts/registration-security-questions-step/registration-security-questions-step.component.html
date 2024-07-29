@@ -1,0 +1,17 @@
+<h4>{{ translateKeyPrefix + "FORM_HEADLINE_SECURITY_QUESTIONS" | translate }}</h4>
+<br />
+<p>{{ translateKeyPrefix + "FORM_INSTRUCTIONS_SECURITY_QUESTIONS" | translate }}</p>
+<br />
+<form [formGroup]="form" data-e2e="registration.securityQuestionsForm">
+    <security-questions-form-fields [questions]="securityQuestions" [formGroup]="form"></security-questions-form-fields>
+    <button
+        type="button"
+        (click)="onSubmit()"
+        sxm-proceed-button
+        [loading]="securityQuestionsFormProcessing$ | async"
+        sxmUiDataClickTrack="submit"
+        data-e2e="RegistrationSecurityQuestionsSubmitButton"
+    >
+        {{ translateKeyPrefix + "COMPLETE_SETUP_BUTTON_TEXT" | translate }}
+    </button>
+</form>

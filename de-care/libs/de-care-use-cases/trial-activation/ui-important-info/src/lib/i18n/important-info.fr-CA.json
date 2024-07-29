@@ -1,0 +1,9 @@
+{
+    "DeCareUseCasesTrialActivationUiImportantInfo": {
+        "importantInfoComponent": {
+            "INFO": "Votre service SiriusXM s’arrêtera automatiquement à la fin de votre essai, à moins que vous ne décidiez de vous abonner. Si vous décidez de garder le service, le forfait d’abonnement payant que vous choisissez sera renouvelé automatiquement ensuite et le tarif en vigueur à ce moment-là vous sera facturé selon le mode de paiement que vous aurez choisi. Frais et taxes en sus. Des redevances sur la musique et des frais administratifs (FRM) de 20,07 % s’appliquent. Pour annuler votre abonnement, vous pouvez nous appeler au 1 888 539-7474. Consultez notre <a href='https://www.siriusxm.ca/fr/conditions-generales/'>Entente du client</a> et notre <a href='https://www.siriusxm.ca/fr/politique-de-confidentialite/'>Politique de la vie privée</a> pour connaître toutes les conditions. Tous les frais et toute la programmation peuvent être modifiés.",
+            "INFO_QUEBEC": "Votre service SiriusXM s’arrêtera automatiquement à la fin de votre essai, à moins que vous ne décidiez de vous abonner. Si vous décidez de garder le service, continuera automatiquement ensuite pour une durée indéterminée et le tarif en vigueur à ce moment-là vous sera facturé selon le mode de paiement que vous aurez choisi. Taxes en sus. Pour annuler votre abonnement, vous pouvez nous appeler au 1 888 539-7474. Consultez notre <a href='https://www.siriusxm.ca/fr/conditions-generales/'>Entente du client</a> et notre <a href='https://www.siriusxm.ca/fr/politique-de-confidentialite/'>Politique de la vie privée</a> pour connaître toutes les conditions. Tous les frais et toute la programmation peuvent être modifiés.",
+            "IMPORTANT_INFO_TITLE": "Renseignements importants au sujet de votre abonnement:"
+        }
+    }
+}

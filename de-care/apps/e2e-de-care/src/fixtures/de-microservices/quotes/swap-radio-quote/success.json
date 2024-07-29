@@ -1,0 +1,39 @@
+{
+    "status": 200,
+    "statusText": "",
+    "headers": [],
+    "cookies": [],
+    "content": {
+        "mimeType": "application/json",
+        "text": {
+            "status": "SUCCESS",
+            "httpStatusCode": 200,
+            "httpStatus": "OK",
+            "data": {
+                "quote": {
+                    "currentQuote": {
+                        "totalTaxAmount": "0.00",
+                        "totalFeesAmount": "15.00",
+                        "totalTaxesAndFeesAmount": "15.00",
+                        "totalAmount": "15.00",
+                        "discountAmount": "0.00",
+                        "pricePerMonth": "0.00",
+                        "currentBalance": "15.00",
+                        "consolidatedCreditAmount": "",
+                        "previousBalance": "0.00",
+                        "fees": [{ "description": "Swap Fee", "amount": "15.00" }],
+                        "taxes": [],
+                        "packageUpgradeFees": [],
+                        "details": [],
+                        "isUpgraded": null,
+                        "isProrated": false
+                    },
+                    "futureQuote": null,
+                    "proRatedRenewalQuote": null,
+                    "promoRenewalQuote": null,
+                    "renewalQuote": null
+                }
+            }
+        }
+    }
+}

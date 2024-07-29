@@ -1,0 +1,49 @@
+<form [formGroup]="paymentForm">
+    <section class="billing-field-set credit-card-fields" id="creditCardFieldsSection" #creditCardFieldsSection>
+        <header>
+            <h3>{{ translateKeyPrefix + "BILLING_DETAILS_TITLE" | translate }}</h3>
+            <ul class="credit-card-icons-list">
+                <li>
+                    <svg class="icon icon-content cc-icon icon-visa">
+                        <use class="" xlink:href="#icon-cc-visa"></use>
+                    </svg>
+                </li>
+                <li>
+                    <svg class="icon icon-content cc-icon icon-mc">
+                        <use class="" xlink:href="#icon-cc-mc"></use>
+                    </svg>
+                </li>
+                <li>
+                    <svg class="icon icon-content cc-icon icon-discover">
+                        <use class="" xlink:href="#icon-cc-discover"></use>
+                    </svg>
+                </li>
+                <li>
+                    <svg class="icon icon-content cc-icon icon-amex">
+                        <use class="" xlink:href="#icon-cc-amex"></use>
+                    </svg>
+                </li>
+            </ul>
+        </header>
+        <div *ngIf="creditCardSubmissionError$ | async" class="invalid-feedback" id="creditCardProcessingError">
+            <p>{{ translateKeyPrefix + "CREDIT_CARD_PROCESSING_ERROR" | translate }}</p>
+        </div>
+        <div *ngIf="unexpectedSubmissionError$ | async" class="invalid-feedback" id="unexpectedProcessingError">
+            <p>{{ translateKeyPrefix + "UNEXPECTED_ERROR" | translate }}</p>
+        </div>
+        <sxm-ui-first-name-form-field formControlName="firstName" data-test="BillingInfoFirstName" data-e2e="BillingInfoFirstName"></sxm-ui-first-name-form-field>
+        <sxm-ui-last-name-form-field formControlName="lastName" data-test="BillingInfoLastName" data-e2e="BillingInfoLastName"></sxm-ui-last-name-form-field>
+        <input type="hidden" formControlName="country" />
+        <sxm-ui-credit-card-form-fields [nameOnCardAsHiddenInput]="nameOnCardAsHiddenInput" [formGroup]="paymentForm.controls.creditCardInfo"></sxm-ui-credit-card-form-fields>
+        <sxm-ui-postal-code-form-field
+            formControlName="zip"
+            [errorMsg]="(invalidZipFromLookupError$ | async) ? (translateKeyPrefix + 'INVALID_ZIP_FROM_LOOKUP_ERROR' | translate) : ''"
+        ></sxm-ui-postal-code-form-field>
+        <sxm-ui-phone-number-form-field formControlName="phoneNumber" data-test="BillingInfoPhoneNumber" data-e2e="BillingInfoPhoneNumber"></sxm-ui-phone-number-form-field>
+    </section>
+    <privacy-policy></privacy-policy>
+    <prepaid-redeem-ui (cardSubmitted)="onPrepaidCardSubmitted($event)" (cardCleared)="onPrepaidCardCleared()"></prepaid-redeem-ui>
+    <button type="submit" sxm-proceed-button [loading]="paymentFormProcessing$ | async" sxmUiDataClickTrack="submit" (click)="submitPaymentInfo()">
+        {{ translateKeyPrefix + "CONTINUE_BUTTON_TEXT" | translate }}
+    </button>
+</form>

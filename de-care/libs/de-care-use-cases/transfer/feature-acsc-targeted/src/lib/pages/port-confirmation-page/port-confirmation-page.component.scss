@@ -1,0 +1,41 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.confirmation-content {
+    padding: 32px 16px 96px;
+    width: 100%;
+    @include bp(medium) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+.icon.large.checkmark-circle {
+    @include icon-coin(40px, $green);
+    background: none;
+    padding: 8px;
+    margin-bottom: 24px;
+    .icon-check-mark-flex-stroke {
+        stroke: $green;
+        stroke-width: 1px;
+    }
+}
+
+h4 {
+    margin-bottom: 12px;
+}
+
+.vertical-spacing {
+    margin-bottom: 24px;
+}
+
+hr {
+    @include hr;
+}
+
+.account-overview-link {
+    margin-bottom: 40px;
+}
+
+.important-info-container {
+    margin: 32px 0;
+}

@@ -1,0 +1,27 @@
+{
+    "domainsOffersUiHeroModule": {
+        "heroComponent": {
+            "TITLE": {
+                "DEFAULT": "Keep the music going with this great offer",
+                "TRIAL_EXTENSION": "Get {{termLength}} months of SiriusXM",
+                "PICK_A_PLAN": "You're just moments from listening",
+                "PROMO_UPGRADE_AMZ_DOT_QUEBEC": "Limited time offer!",
+                "PROMO_UPGRADE_AMZ_DOT_SUBTITLE": "<div class=\"package-upgrade-subtitle\"><span>{{price}} for {{termLength}} mo. plus fees</span><span>+ FREE upgrade</span><span>+ FREE Echo Dot</span></div>",
+                "PROMO_UPGRADE_AMZ_DOT_MCP_SUBTITLE": "<div class=\"package-upgrade-subtitle\"><span>{{price}}/mo for {{termLength}} mo. plus fees</span><span>+ FREE upgrade</span><span>+ FREE Echo Dot</span></div>",
+                "PROMO_UPGRADE_AMZ_DOT_QUEBEC_SUBTITLE": "<div class=\"package-upgrade-subtitle\"><span>{{price}} for {{termLength}} mo.</span><span>+ FREE upgrade</span><span>+ FREE Echo Dot</span></div>",
+                "PROMO_UPGRADE_AMZ_DOT_QUEBEC_MCP_SUBTITLE": "<div class=\"package-upgrade-subtitle\"><span>{{price}}/mo for {{termLength}} mo.</span><span>+ FREE upgrade</span><span>+ FREE Echo Dot</span></div>",
+                "PROMO_UPGRADE_APPLE_QUEBEC": "Get SiriusXM for as little as {{price}} {{perMonth}} for {{termLength}} {{pluralizedMonth}}",
+                "PROMO_DEAL": {
+                    "AMZ_DOT": "Get a FREE Amazon Echo Dot with a SiriusXM subscription",
+                    "GGLE_HUB": "Google Nest Hub + {{termLength}} {{pluralizedMonth}} of {{planType}}",
+                    "GGLE_HUB_SUBTITLE": "",
+                    "GGLE_MINI": "Get a FREE Google Nest Mini with a SiriusXM subscription",
+                    "APPLE": "Get SiriusXM + up to 6 months free of Apple Music"
+                },
+                "STREAMING": "Listen on the SXM App – No Car Required",
+                "ORGANIC_STREAMING_ONLY": "Listen on the SXM App – No Car Required",
+                "STREAMING_STUDENT": "Get 300+ channels on your phone, at home, <span class='inline-block'>and online</span>"
+            }
+        }
+    }
+}

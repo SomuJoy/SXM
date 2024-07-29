@@ -1,0 +1,6 @@
+{
+    "CONTINUE_BUTTON_TEXT": "Continue",
+    "INVALID_ZIP_FROM_LOOKUP_ERROR": "Enter a valid zip code",
+    "EMAIL_INVALID_MSG": "Enter a valid email address.",
+    "EMAIL_IN_USE_ERROR_MSG": "Username/Email address already in use."
+}

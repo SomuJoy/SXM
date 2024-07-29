@@ -1,0 +1,28 @@
+{
+    "domainsCancellationUiCancel": {
+        "cancelReasonComponent": {
+            "TITLE": "Dites-nous pourquoi vous envisagez de partir.",
+            "CONTINUE_BUTTON": "continuer",
+            "ERROR_REQUIRED": "Choisissez la raison pour laquelle vous annulez.",
+            "cancelReasons": {
+                "EXPENSIVE": "Mon abonnement est trop onéreux",
+                "NO_LISTENTING_OPTIONS": "Je n’arrive pas à trouver ce que je veux écouter",
+                "DONT_LISTEN": "Je n’écoute pas assez",
+                "TECHNICAL_ISSUES": "J’ai des problèmes techniques",
+                "OTHER": "J’ai d’autres raisons"
+            }
+        },
+        "billingTermFormComponent": {
+            "NO_BILLING_SELECTED_ERROR": "Choisissez un forfait de facturation pour continuer.",
+            "CONTINUE_BUTTON": "continuer",
+            "TERM_LENGTH": {
+                "PLURAL_MAP": {
+                    "MONTHS": {
+                        "=1": "mois",
+                        "other": "mois"
+                    }
+                }
+            }
+        }
+    }
+}

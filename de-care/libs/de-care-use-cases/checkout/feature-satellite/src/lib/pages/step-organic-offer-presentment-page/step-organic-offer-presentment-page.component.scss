@@ -1,0 +1,24 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "../page.scss";
+
+:host {
+    @include page-host(auto 1fr auto);
+    #heroContent {
+        padding: 0;
+        background-color: $gray-medium;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        img {
+            width: 100%;
+            max-width: 440px;
+            height: auto;
+        }
+    }
+
+    #skeletonLoaderOfferCard {
+        display: grid;
+        row-gap: 32px;
+    }
+}

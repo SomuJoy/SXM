@@ -1,0 +1,43 @@
+@import "sxm.phoenix.imports";
+:host {
+    > div {
+        display: grid;
+        grid-template-columns: 35% 65%;
+    }
+    p,
+    h4 {
+        display: inline-block;
+    }
+    ::ng-deep {
+        .offer-price {
+            @include font-size(40px);
+            white-space: nowrap;
+        }
+        .large-copy {
+            @include font-size(28px);
+        }
+    }
+    .savings-offer {
+        margin-top: 5px;
+        order: 1;
+    }
+    .price-term {
+        text-align: right;
+    }
+    .see-offer {
+        order: 2;
+        text-align: right;
+        margin-bottom: 0;
+    }
+    .offer-tagline {
+        margin-top: 10px;
+        order: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        font-weight: 700;
+    }
+
+    .legal-copy {
+        margin-top: 5px;
+    }
+}

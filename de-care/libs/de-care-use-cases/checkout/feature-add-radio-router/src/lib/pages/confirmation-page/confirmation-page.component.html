@@ -1,0 +1,44 @@
+<ng-container *ngrxLet="confirmationViewModel$ as confirmationViewModel">
+    <section id="hero">
+        <h1>{{ translateKeyPrefix + ".TITLE" | translate }}</h1>
+    </section>
+
+    <section id="mainContent">
+        <section id="listennow">
+            <listen-now-with-icon class="hero-integration"></listen-now-with-icon>
+        </section>
+        <section id="quote">
+            <quote-summary
+                *ngIf="confirmationViewModel.quoteViewModel"
+                [isClosedRadio]="confirmationViewModel.isClosedRadio"
+                [quote]="confirmationViewModel.quoteViewModel"
+                [class.alternate-header]="true"
+                class="renewal-quote-alt-header-1"
+            ></quote-summary>
+        </section>
+        <section id="refresh">
+            <refresh-signal [radioId]="confirmationViewModel?.radioIdLastFour"></refresh-signal>
+            <button class="button secondary full-width apply-btn" (click)="backToMyAccount()">
+                {{ translateKeyPrefix + ".BACK_BUTTON.TEXT" | translate }}
+            </button>
+        </section>
+        <section id="register" class="no-print">
+            <register-your-account
+                *ngIf="confirmationViewModel.registrationViewModel"
+                [account]="confirmationViewModel.registrationViewModel.accountInfo"
+                [credentialState]="registerCredentialsState"
+                (register)="onRegisterAccount($event)"
+                [registrationCompleted]="registrationCompleted$ | async"
+            ></register-your-account>
+        </section>
+    </section>
+
+    <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+        <div>
+            <p>
+                <strong>{{ translateKeyPrefix + ".SUBSCRIPTION_IMPORTANT_INFO.TITLE" | translate }}</strong>
+            </p>
+            <p [innerHTML]="translateKeyPrefix + '.SUBSCRIPTION_IMPORTANT_INFO.BODY' | translate"></p>
+        </div>
+    </section>
+</ng-container>

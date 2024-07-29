@@ -1,0 +1,41 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    min-height: 100%;
+    background-color: $off-white;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 100%;
+}
+
+header {
+    padding: 12px 44px;
+    background-color: $white;
+    border-bottom: solid #d4d4d4 0.8px;
+    text-indent: 8.33333%;
+    @media (max-width: 767px) {
+        text-indent: 0;
+    }
+    > a {
+        text-decoration: none;
+        cursor: pointer;
+        > .icon {
+            .icon-logo {
+                color: $blue; //this color & fill can be deleted when the ui framework is updated
+                fill: $black;
+            }
+            height: 26px;
+            max-width: 135px;
+            @media (max-width: 767px) {
+                height: 20px;
+                max-width: 104px;
+            }
+        }
+    }
+    @media (max-width: 1023px) {
+        padding: 12px 24px;
+    }
+    @media (max-width: 767px) {
+        padding: 12px 12px;
+    }
+}

@@ -1,0 +1,417 @@
+{
+    "DeCareUseCasesCheckoutFeatureUpgradeVipModule": {
+        "PurchasePageComponent": {
+            "NO_RADIO": {
+                "TEXT": "No radio?",
+                "LINK_URL": "https://siriusxm.com/PHXstreaminglink",
+                "LINK_TEXT": "Get the SXM App"
+            },
+            "STEP_PAGE_TITLES": {
+                "YOUR_RADIOS": {
+                    "ACTIVE": "Your plans",
+                    "INACTIVE": "Your plans",
+                    "EDIT": "Edit"
+                },
+                "BILLING_INFORMATION": {
+                    "ACTIVE": "Enter your billing information",
+                    "INACTIVE": "Your billing information",
+                    "EDIT": "Edit"
+                },
+                "REVIEW_ORDER": {
+                    "ACTIVE": "Review and complete your order",
+                    "INACTIVE": "Review and complete your order",
+                    "EDIT": "Edit"
+                }
+            },
+            "PAYMENT_INFO_INACTIVE": "{{cardType}} ending in {{cardNumber}}",
+            "ERROR": {
+                "ACCOUNT_NUMBER_MISMATCH": {
+                    "HEADER": "Sorry, we are having issues fulfilling this request.",
+                    "MESSAGE": "Please call us at <a href=\"tel:+1-866-635-5027\">1-866-635-5027</a> for help."
+                },
+                "SUBSCRIPTION_HAS_VIP_PLATINUM_PACKAGE": {
+                    "HEADER": "Platinum VIP is already activated on your radio.",
+                    "MESSAGE": "Please <a href=\"{{oacUrl}}\">log in</a> to manage your Platinum VIP account."
+                },
+                "SUBSCRIPTION_HAS_INELIGIBLE_PLAN": {
+                    "HEADER": "Sorry, we are having issues fulfilling this request.",
+                    "MESSAGE": "Please call us at <a href=\"tel:+1-866-635-5027\">1-866-635-5027</a> for help."
+                },
+                "ALREADY_HAVE_2_RADIOS": {
+                    "HEADER": "Looks like you already have 2 radios on Platinum VIP plan.",
+                    "MESSAGE": "Please <a href=\"{{oacUrl}}\">log in</a> to manage your Platinum VIP account."
+                },
+                "INELIGIBLE_FOR_THE_OFFER": {
+                    "HEADER": "We're sorry you're ineligible for this offer",
+                    "MESSAGE": ""
+                },
+                "INELIGIBLE_FOR_SECOND_RADIO": {
+                    "HEADER": "We're sorry. This transaction can't be completed online",
+                    "MESSAGE": "Please call VIP Customer Care for assistance: <a href=\"tel:+1-866-607-4225\">1-866-607-4225</a>"
+                },
+                "DEFAULT": {
+                    "HEADER": "Sorry, we are having issues fulfilling this request.",
+                    "MESSAGE": "Please call us at <a href=\"tel:+1-866-635-5027\">1-866-635-5027</a> for help."
+                }
+            },
+            "RADIO": "Radio ID: ****{{ radioId }}",
+            "COMPLETE_ORDER_BUTTON": "Complete My Order",
+            "REVIEW_STEP": {
+                "HEADER": {
+                    "SINGULAR": "Then we'll upgrade your radio to the Platinum VIP plan.",
+                    "PLURAL": "Then we'll upgrade each of your 2 radios to the Platinum VIP plan."
+                }
+            },
+            "ENTER_A_CAPTCHA_TO_FINISH": "Please enter CAPTCHA to finish",
+            "IconLabels": {
+                "SATELLITE": "Listen<br/>in 2 Cars",
+                "STREAMING": "2 Logins<br/>to Stream",
+                "PANDORA": "Custom<br/>Stations",
+                "PERKS": "VIP<br/>Perks"
+            },
+            "CC_NOTE": "Remember, you can change or cancel anytime.",
+            "RECEIVE_A_CREDIT_DESCRIPTION": "If you are adding an active subscription to your PVIP plan, you may receive a credit towards your account after this transaction."
+        },
+        "uiLoadingWithAlertMessageComponent": {
+            "109": {
+                "pill": "Looks like you currently have an active trial. You can add a subscription, so you won’t miss a beat when your trial ends.",
+                "paragraph": "Finding another great plan for you."
+            },
+            "UpgradeVIPFallback": {
+                "pill": "Unfortunately, your trial or paid subscription recently ended and your radio is ineligible for a Platinum VIP subscription. However, you can start enjoying SiriusXM with this great subscription offer.",
+                "paragraph": "Finding another great plan for you."
+            }
+        },
+        "OrganicPageComponent": {
+            "NO_RADIO": {
+                "TEXT": "No radio?",
+                "LINK_URL": "https://siriusxm.com/PHXstreaminglink",
+                "LINK_TEXT": "Get the SXM App"
+            },
+            "STEP_PAGE_TITLES": {
+                "YOUR_RADIOS": {
+                    "ACTIVE": "Your plans",
+                    "INACTIVE": "Your plans",
+                    "EDIT": "Edit"
+                },
+                "VERIFY_YOUR_DEVICE": {
+                    "ACTIVE": "Verify your device",
+                    "INACTIVE": "Verify your device",
+                    "EDIT": "Edit"
+                },
+                "BILLING_INFORMATION": {
+                    "ACTIVE": "Enter your billing information",
+                    "INACTIVE": "Your billing information",
+                    "EDIT": "Edit"
+                },
+                "REVIEW_ORDER": {
+                    "ACTIVE": "Review and complete your order",
+                    "INACTIVE": "Review and complete your order",
+                    "EDIT": "Edit"
+                }
+            },
+            "PAYMENT_INFO_INACTIVE": "{{cardType}} ending in {{cardNumber}}",
+            "ERROR": {
+                "DEFAULT": {
+                    "HEADER": "Sorry, we are having issues fulfilling this request",
+                    "MESSAGE": "Please call us at <a href=\"tel:+1-866-635-5027\">1-866-635-5027</a> for help"
+                },
+                "ALREADY_ACTIVATED": {
+                    "HEADER": "Platinum VIP is already activated on your radio.",
+                    "MESSAGE": "Please <a class=\"text-link\" href=\"{{oacUrl}}\"><strong>log in</strong></a> to manage your Platinum VIP subscription."
+                }
+            },
+            "RADIO": "Radio ID: ****{{ radioId }}",
+            "COMPLETE_ORDER_BUTTON": "Complete My Order",
+            "ENTER_A_CAPTCHA_TO_FINISH": "Please enter CAPTCHA to finish",
+            "RECEIVE_A_CREDIT_DESCRIPTION": "If you are adding an active subscription to your PVIP plan, you may receive a credit towards your account after this transaction.",
+            "IconLabels": {
+                "SATELLITE": "Listen<br/>in 2 Cars",
+                "STREAMING": "2 Logins<br/>to Stream",
+                "PANDORA": "Custom<br/>Stations",
+                "PERKS": "VIP<br/>Perks"
+            },
+            "CC_NOTE": "Remember, you can change or cancel anytime."
+        },
+        "FirstStepComponent": {
+            "NO_SERVICE": "No active service",
+            "SECOND_RADIO_TITLE": "Choose your second Platinum VIP listening option:",
+            "ADD_SECOND_RADIO": "Add a second vehicle radio (includes streaming)",
+            "FIND_SECOND_RADIO": "Find second radio",
+            "CREATE_STREAMING_LOGIN": "Add a new streaming-only login (in lieu of a second vehicle)",
+            "YOUR_SUBSCRIPTION": "Hi, {{firstName}}. Here's the first radio for your Platinum VIP plan:",
+            "VIEW_MORE_RADIOS": "View more radios",
+            "HIDE_RADIOS": "Hide radios",
+            "CONTINUE_BUTTON": "Continue",
+            "FIND_SECOND_RADIO_BUTTON": "Find second radio",
+            "WILL_FIND_SECOND_RADIO": "We did not find any other radios using your information. Do you want to find another radio now, or add it later?",
+            "RADIO": "Radio ID: ****{{ radioId }}",
+            "RADIO_LOOKUP_OPTIONS_SUBTITLE": "Choose one of these search options:",
+            "TRIAL_PACKAGE_DESC": "{{packageName}} Trial",
+            "TRIAL_TOOLTIP": "Your Platinum trial will upgrade to Platinum VIP as soon as your transaction is complete."
+        },
+        "UpgradingDevicesPageComponent": {
+            "PROCESSING": "Please wait while we upgrade your plans.",
+            "UPGRADED": "Your plans are now upgraded to Platinum VIP.",
+            "NOT_UPGRADED": "One of your radios is not upgraded. Please wait. We’ll take you to the next step to complete the process.",
+            "UPGRADING": "Upgrading your ",
+            "RADIO": "Radio ID: ****{{ radioId }}",
+            "STREAMINGPLAN": "Streaming Platinum: {{streamingPlan}}"
+        },
+        "ConfirmationPageComponent": {
+            "TITLE": "Enjoy Platinum VIP",
+            "ERROR_PILL": {
+                "FIRST": "One of your radios is not upgraded.  Please call us at <a href=\"tel:+1-866-607-4225\">1-866-607-4225</a> or ",
+                "CHAT": "chat with an agent",
+                "LAST": " to complete your upgrade to Platinum VIP."
+            },
+            "PARTNER_INFO": {
+                "TITLE": "Access to Stitcher and nugs.net",
+                "BODY": "We'll email your activation details for each service, within an hour."
+            },
+            "LOGIN_SECTION": {
+                "PENDING_CRENDENTIALS": {
+                    "TITLE": "Set up your SiriusXM streaming login(s)",
+                    "BODY": "Each SXM App login also allows you to access your nugs.net account."
+                },
+                "NON_PENDING_CREDENTIALS": {
+                    "TITLE": "You're ready to stream SiriusXM",
+                    "BODY": "Each SXM App login also allows you to access your nugs.net account."
+                }
+            },
+            "DYNAMIC_FORM_FOR_RADIOS": {
+                "FIRST_RADIO": {
+                    "TEXT": "This login is also used to manage your account online."
+                },
+                "SECOND_RADIO": {
+                    "TEXT": "Set up your streaming login."
+                },
+                "RADIO": "Radio ID: ****{{ radioId }}"
+            },
+            "LISTEN_TO_RADIO": {
+                "RADIO": "Radio ID: ****{{ radioId }}",
+                "STREAMING_PLAYER_LINK": "?creative_id=NA_NA_PL-EM-home-home-home-CONVERSION-COMCONFIRM-OEM-OEM-20211207-DECOM&cp_7=OEM&cp_8=CONVERSION&cp_9=COMCONFIRM"
+            },
+            "QUOTES_SECTION": {
+                "TITLE": "Your order confirmation",
+                "RADIO": "Radio ID: ****{{ radioId }}",
+                "PRINT_LINK": "Print your order summary"
+            },
+            "IMPORTANT_INFORMATION_SECTION": {
+                "TITLE": "Important information about your subscription:"
+            }
+        },
+        "AccountLookupStepComponent": {
+            "RADIO_LOOKUP_MARINE_AVIATION": "Device Help",
+            "CONTINUE_BUTTON": "Continue",
+            "NO_SERVICE": "No active service",
+            "RADIO": "Radio ID: ****{{ radioId }}",
+            "HEAD_LINE": "Verify your account using your Radio ID and Account Number:",
+            "RADIO_LOOKUP": "Radio Lookup",
+            "MODALS": {
+                "RADIO_LOOKUP": {
+                    "HEADER": "We found 1 radio that matched the info you gave us.",
+                    "TRIAL_PACKAGE_DESC": "{{packageName}} Trial"
+                },
+                "LPZ": {
+                    "TITLE": "Car Info",
+                    "RADIO_LABEL": "Radio ID:",
+                    "EDIT": "Edit",
+                    "ACCOUNT_VERIFY": "Verify your account",
+                    "MESSAGE": "To protect your account from unauthorized access, we need to match the information you used to purchase your vehicle.",
+                    "TEXT-LINK": "For more on how we use your info, view our"
+                }
+            },
+            "TABS": {
+                "ACCOUNT_INFO": "Account Info"
+            }
+        },
+        "VipLayoutComponent": {
+            "SIRIUSXM_LOGO_SRC": "assets/img/sxm-logo-white.png",
+            "SIRIUSXM_LOGO_LINK": "https://www.siriusxm.com/",
+            "SIRIUSXM_LOGO_ALT": "SiriusXM"
+        },
+        "StreamingAccountCredentialsAndLookupStepComponent": {
+            "HEADER": "Create streaming login",
+            "ACCOUNT_FOUND_MODAL_TITLE": "Your Account",
+            "VERIFY_MODAL_TITLE": "Verify",
+            "VERIFY_MODAL_HEADER_TITLE": "Verify your account",
+            "VERIFY_MODAL_HEADER_COPY": "We want to make sure it's really you before we make changes to your account.",
+            "EMAIL_PLACEHOLDER": "Email",
+            "MODAL_TITLE": "Create streaming login",
+            "EMAIL_INVALID_MSG": "Enter a valid email address.",
+            "EMAIL_IN_USE_ERROR_MSG": "Username/Email address already in use.",
+            "BUTTON_LABEL": "Continue",
+            "PASSWORD": {
+                "LABEL": "Password",
+                "ERRORS": {
+                    "REQUIRED": "Enter a password.",
+                    "LENGTH": "Your password must be {{ min }} to {{ max }} characters long.",
+                    "POLICY": "Your password must contain at least one character from at least 3 different groups, as explained in our password policy.",
+                    "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}",
+                    "GENERIC": "We're sorry, your new password does not comply with our policy. Please try again."
+                }
+            },
+            "PLURAL_MAP": {
+                "WORD": {
+                    "=1": "word",
+                    "other": "words"
+                }
+            }
+        },
+        "ReviewStepHeaderComponent": {
+            "RADIO": "Radio ID: ****{{ radioId }}",
+            "RADIO_STATUS_LINE": {
+                "SELF_PAY": "This radio will be upgraded to Platinum VIP as soon as you complete your order.",
+                "CLOSED": "This radio will be activated with Platinum VIP as soon as you complete your order.",
+                "ACTIVE_TRIAL": "You can start enjoying Platinum VIP benefits on this radio today. When your trial ends, the service will continue under your Platinum VIP plan.",
+                "SAME_STATUS": "These radios will be activated with Platinum VIP as soon as you complete your order.",
+                "ONLY_FIRST_RADIO": "You can start enjoying Platinum VIP benefits on this radio today. When your trial ends, the service will continue under your Platinum VIP plan."
+            }
+        },
+        "AddSecondRadioPageComponent": {
+            "HERO": "Complete your Platinum VIP Plan",
+            "BLUE_PILL": {
+                "WANT_STREAMING_ONLY": "Want streaming only?",
+                "NEW_STREAMING_LINK": "Add a new streaming account",
+                "ADD_SECOND_RADIO_ANYTIME": "You can add a second radio anytime, at no additional cost by contacting customer care."
+            },
+            "RECEIVE_A_CREDIT_DESCRIPTION": "If you are adding an active subscription to your PVIP plan, you may receive a credit towards your account after this transaction.",
+            "STEPS": {
+                "STREAMING": {
+                    "NEW_STREAMING": "VIP Streaming"
+                },
+                "FIND_SECOND_RADIO": {
+                    "TITLE": "Choose your second Platinum VIP listening option",
+                    "RADIO_ID_MASKED": "Radio ID: (****{{lastFour}})",
+                    "PARAGRAPH_ONLY_RADIO": "For no additional charge, link a radio to your Platinum VIP subscription.",
+                    "PARAGRAPH_WITH_STREAMING": "There is no additional charge for adding a second radio."
+                },
+                "REVIEW": {
+                    "TITLE": "Review",
+                    "ADD_BUTTON": "COMPLETE"
+                }
+            },
+            "LEGAL_COPY": "<p><strong>Adding A Second Radio:</strong>  Your Platinum VIP subscription includes access to SiriusXM content on up to two radios with separate SXM App logins for each activated radio and other benefits as outlined when you activated your Platinum VIP subscription.  By activating this second radio on your Platinum VIP subscription, all terms as set forth in the <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\">Customer Agreement</a> and <a href=\"https://www.siriusxm.com/offers/platinum-vip?intcmp=Search%20Result_NA_sxm:search-phx_GetthePlatinumVIPPlanSiriusXM\" target=\"_blank\">Platinum VIP Offer Details</a> will also apply to this radio. Featured Benefit(s) will be provided solely to the one (1) primary account holder of the Plan. Your subscription will continue to automatically renew each month for as long as at least one radio remains active on this Plan.  You may cancel at any time by calling us at 866-635-2349. Upon cancellation of all radios on this subscription Plan your service and all VIP Featured Benefits will end.</p>"
+        },
+        "AddSecondRadioOrderSummaryComponent": {
+            "MAIN_PARAGRAPH": "Your {{deviceInfo}} will be added to your existing Platinum VIP today.",
+            "RADIO_ID_MASKED": "Radio ID: (****{{lastFour}})",
+            "CREDIT_ON_ACCOUNT": "Credit on Account",
+            "STREAMING_LINKED": "VIP Streaming will be added to your existing Platinum VIP Plan.",
+            "TOOLTIP": "A pro-rated credit for the unused service in your old subscription has been applied to your account. It will be used for future billing events, or can be refunded to you upon your request.",
+            "SELF_PAID_RADIO_PARAGRAPH": "Your account will be credited for any paid period remaining on your {{currentPackageName}}. As a reminder, your Platinum VIP recurring monthly payment of {{ monthlyPrice }} will remain the same, and your next payment is due on {{ nextPaymentDate }}. Your Platinum VIP subscription will continue as long as there is at least one active radio on the plan.",
+            "NON_SELF_PAID_RADIO_PARAGRAPH": "As a reminder, your Platinum VIP recurring monthly payment of {{ monthlyPrice }} will remain the same, and your next payment is due {{ nextPaymentDate }}. Your Platinum VIP subscription will continue as long as there is at least one active radio on the plan.",
+            "RADIO_PARAGRAPH_HTML": "By clicking “Complete,” all terms as set forth in the <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\">Customer Agreement</a> and <a href=\"https://www.siriusxm.com/offers/platinum-vip?intcmp=Search%20Result_NA_sxm:search-phx_GetthePlatinumVIPPlanSiriusXM\" target=\"_blank\">Platinum VIP Offer Details</a> will also apply to this radio. You can change or cancel at any time by contacting us by chat or by calling 1-866-607-4225.",
+            "SELF_PAID_STREAMING_PARAGRAPH": "Your account will be credited for any paid period remaining on your {{currentPackageName}}. As a reminder, your Platinum VIP recurring monthly payment of {{monthlyPrice}} will remain the same, and your next payment is due {{nextPaymentDate}}. Your Platinum VIP subscription will continue as long as there is at least one active satellite radio on the plan. You must maintain at least one active satellite-enabled radio on this plan. If your satellite-enabled radio is cancelled by SiriusXM and you have not contacted us, then SiriusXM will automatically downgrade your VIP Streaming to a standalone Streaming Platinum Plan, which will bill each month at the then-current rate of (currently, $10.99/month) plus fees and taxes, unless you contact us to cancel.",
+            "NON_SELF_PAID_STREAMING_PARAGRAPH": "As a reminder, your Platinum VIP recurring monthly payment of {{monthlyPrice}} will remain the same, and your next payment is due {{nextPaymentDate}}. Your Platinum VIP subscription will continue as long as there is at least one active satellite radio on the plan. You must maintain at least one active satellite-enabled radio on this plan. If your satellite-enabled radio is cancelled by SiriusXM and you have not contacted us, then SiriusXM will automatically downgrade your VIP Streaming to a standalone Streaming Platinum Plan, which will bill each month at the then-current rate of (currently, $10.99/month) plus fees and taxes, unless you contact us to cancel.",
+            "STREAMING_PARAGRAPH_HTML": "By clicking “Complete,” all terms as set forth in the <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\">Customer Agreement</a> and <a href=\"https://www.siriusxm.com/offers/platinum-vip?intcmp=Search%20Result_NA_sxm:search-phx_GetthePlatinumVIPPlanSiriusXM\" target=\"_blank\">Platinum VIP Offer Details</a> will also apply to this listening option. You can change or cancel at any time by contacting us by chat or by calling 1-866-607-4225."
+        },
+        "SecondRadioLookupComponent": {
+            "RADIO_STATUS": {
+                "CLOSED": "No active service",
+                "TRIAL": "{{packageName}} Trial",
+                "SELF_PAID": "{{packageName}}"
+            },
+            "LOGIN_INFO": {
+                "TITLE": "Setup your SiriusXM streaming login(s)",
+                "SUB_TITLE": "Each SXM App login also allows you to access your nugs.net account.",
+                "SETUP_LOGIN": "Set up your streaming login."
+            },
+            "TRIAL": "Trial",
+            "ADD_SECOND_RADIO": "Add a second vehicle radio (includes streaming)",
+            "FIND_SECOND_RADIO": "Add a second vehicle radio (includes streaming)",
+            "CREATE_STREAMING_LOGIN": "Add a new streaming-only login (in lieu of a second vehicle)",
+            "CHAT_WITH_AGENT": "chat with agent",
+            "CUSTOMER_INFO_COPY_ABOVE_CONTINUE": "Not finding what you are looking for?  Please call VIP Customer Care at 1-866-607-4225 or",
+            "VIEW_MORE_RADIOS": "View more radios",
+            "HIDE_RADIOS": "Hide radios",
+            "CONTINUE_BUTTON": "Continue",
+            "ADD_SECOND_RADIO_LATER": "Continue with one radio",
+            "ADD_SECOND_RADIO_LATER_PARAGRAPH": "You can add a second listening option later.",
+            "FIND_SECOND_RADIO_BUTTON": "Find second radio",
+            "WILL_FIND_SECOND_RADIO": "We did not find any other radios using your information. Do you want to find another radio now, or add it later?",
+            "RADIO": "Radio ID: ****{{ radioId }}",
+            "RADIO_LOOKUP_OPTIONS_SUBTITLE": "Choose one of these search options:",
+            "MODALS": {
+                "ARE_YOU_SURE": {
+                    "TITLE": "Platinum VIP",
+                    "HEADER": "Are you sure you want to continue with one radio?",
+                    "BODY": "Remember, Platinum VIP includes listening on 2 radios plus a streaming login for each. You can select a second radio now, or continue with one radio and add another later on.",
+                    "BUTTON": "Continue with one",
+                    "CHOOSE_A_SECOND_RADIO": "Choose a second radio"
+                },
+                "STREAMING_LOGIN": {
+                    "TITLE": "Streaming Login",
+                    "HEADER": "Create streaming login"
+                },
+                "CONFIRM_RADIO": {
+                    "TITLE": "Your Account",
+                    "HEADER": "Is this the second radio you want upgraded to Platinum VIP?",
+                    "BUTTON": "Yes, continue"
+                },
+                "NOT_ELIGIBLE": {
+                    "TITLE": "Platinum VIP",
+                    "HEADER": "This radio is not eligible for Platinum VIP",
+                    "BODY": {
+                        "FIRST": "You can continue with one radio, or ",
+                        "CHAT": "chat with an agent",
+                        "LAST": " to complete your upgrade."
+                    },
+                    "BUTTON": "Continue with one",
+                    "CHOOSE_A_SECOND_RADIO": "Choose another radio"
+                },
+                "NOT_ELIGIBLE_MANDATORY_RADIO_SELECTION": {
+                    "TITLE": "Your Account",
+                    "HEADER": "Unfortunately, this radio is not eligible for Platinum VIP",
+                    "BODY": {
+                        "FIRST": "You can try adding a different radio, or ",
+                        "CHAT": "chat with an agent",
+                        "LAST": " to discuss your options."
+                    },
+                    "BUTTON": "GO BACK"
+                },
+                "VALIDATE_USER_INFO": {
+                    "TITLE": "Radio Lookup"
+                }
+            }
+        },
+        "AddSecondRadioConfirmationPageComponent": {
+            "TITLE": "Your radio was successfully added.",
+            "STREAMING_TITLE": "Streaming login successfully added.",
+            "PLATINUM_STREAMING": "Platinum Streaming",
+            "LISTEN": "<a href='https://player.siriusxm.com' target='_blank'>Listen<a>",
+            "STREAMING_LINKED": "VIP Streaming will be added to your existing Platinum VIP Plan.",
+            "RADIO": "Radio ID: ****{{ radioId }}",
+            "LOGIN_INFO": {
+                "TITLE": "Setup your SiriusXM streaming login(s)",
+                "SUB_TITLE": "Each SXM App login also allows you to access your nugs.net account.",
+                "SETUP_LOGIN": "Set up your streaming login."
+            },
+            "CONFIRMATION": {
+                "TITLE": "Your order confirmation"
+            },
+            "QUOTES_SECTION": {
+                "PRINT_LINK": "Print your order summary"
+            },
+            "READY_TO_EXPLORE": {
+                "TITLE": "Ready to Explore?",
+                "LINKS": [
+                    {
+                        "TEXT": "View Program Schedules",
+                        "URL": "https://www.siriusxm.com/programschedules?intcmp=GN_HEADER_NEW_WhatsOn_FindaShoworChannel_ProgramSchedules"
+                    },
+                    {
+                        "TEXT": "Live Sports Schedules",
+                        "URL": "https://www.siriusxm.com/livesports?intcmp=GN_HEADER_NEW_WhatsOn_FindaShoworChannel_SiriusXMLiveSportsSchedule"
+                    }
+                ],
+                "GO_TO_MY_ACCOUNT_BUTTON": "GO TO MY ACCOUNT"
+            },
+            "LEGAL_COPY": {
+                "TITLE": "Important information about your subscription:",
+                "BODY": "Your subscription starts immediately unless indicated otherwise. If your radio is not receiving the programming you are entitled to, please follow the activation instructions above. For your convenience, all subscriptions automatically renew until canceled. Your renewal will be billed at the then-current rate using the payment method on file. You can cancel your subscription at any time by calling Listener Care at <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>. Your subscription is governed by the SiriusXM Customer Agreement, which can be <a href=\"https://www.siriusxm.com/customeragreement?desktop=yes\" target=\"_blank\">viewed online</a>. If you would like to receive a copy of the Customer Agreement by mail, you can call <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>."
+            }
+        }
+    }
+}

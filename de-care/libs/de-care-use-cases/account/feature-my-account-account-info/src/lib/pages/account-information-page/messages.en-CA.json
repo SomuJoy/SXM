@@ -1,0 +1,26 @@
+{
+    "CONTACT_AND_PAYMENT_INFO_TITLE": "Account & payment information",
+    "CONTACT_DESCRIPTION_PRELINK": "Visit the ",
+    "CONTACT_DESCRIPTION_LABEL": "Billing",
+    "CONTACT_DESCRIPTION_POSTLINK": " page to view your billing history.",
+    "CONTACT_DESCRIPTION_ARIA": "View your billing history",
+    "ACCOUNT_LOGIN_TITLE": "Account login",
+    "ACCOUNT_LOGIN_DESCRIPTION_PRELINK": "If you have additional streaming logins, you can manage them on the ",
+    "ACCOUNT_LOGIN_DESCRIPTION_LABEL": "Subscriptions",
+    "ACCOUNT_LOGIN_DESCRIPTION_POSTLINK": " page.",
+    "ACCOUNT_LOGIN_DESCRIPTION_ARIA": "Manage your subscriptions",
+    "ACCOUNT_LOGIN_NOTE": "Your account login is the same as your streaming login for your {{planName}} plan.",
+    "PAYMENT_METHOD_INVOICE": "Invoice",
+    "BILLING_EBILL_MODAL_TITLE": "Billing",
+    "EBILL_SIGN_UP_SUCCESS_MESAGE": "Successfully enrolled in eBill",
+    "EBILL_DROPDOWN_OPTIONS": {
+        "CHANGE_EMAIL_LABEL": {
+            "label": "Change email",
+            "modalId": "updateEmail"
+        },
+        "OPT_OUT_LABEL": {
+            "label": "Switch to paper invoice",
+            "modalId": "optOut"
+        }
+    }
+}

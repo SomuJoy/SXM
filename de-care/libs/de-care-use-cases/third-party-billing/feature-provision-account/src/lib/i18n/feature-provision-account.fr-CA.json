@@ -1,0 +1,10 @@
+{
+    "deCareUseCasesThirdPartyBillingModule": {
+        "alreadyActivePageComponent": {
+            "STREAMING_PLAYER_LINK": ""
+        },
+        "setupAccountComponent": {
+            "STREAMING_PLAYER_LINK": ""
+        }
+    }
+}

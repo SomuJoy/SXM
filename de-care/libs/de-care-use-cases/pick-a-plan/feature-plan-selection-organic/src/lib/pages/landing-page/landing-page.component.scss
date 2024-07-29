@@ -1,0 +1,50 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: block;
+}
+
+sxm-ui-follow-on-selection {
+    padding-top: 16px;
+    background-color: $white;
+}
+.grid-container {
+    max-width: 1336px;
+    margin: 48px auto 0;
+    @include bp(medium) {
+        padding: 0 24px;
+    }
+    @include bp(large) {
+        padding: 0 44px;
+    }
+    sxm-ui-plan-comparison-grid-detailed {
+        transition: all 0.45s ease-out;
+        transition-delay: 0.45s;
+        display: block;
+        margin: 0 auto;
+        @include bp(medium) {
+            width: 83.33333%;
+        }
+    }
+}
+
+// note: doesn't seem like this .authenticated class is being set in the template anymore, so the following styles won't get applied
+.authenticated {
+    sxm-ui-plan-comparison-grid-detailed {
+        overflow: visible;
+        height: auto;
+        max-height: 1400px;
+        padding-bottom: 30px;
+    }
+
+    find-your-account-card {
+        @include ie-styles {
+            display: none;
+        }
+    }
+}
+
+offer-details {
+    position: relative;
+    z-index: 2;
+}

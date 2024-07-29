@@ -1,0 +1,24 @@
+<ng-container *ngrxLet="viewModel$ as viewModel">
+    <section id="mainContent" data-test="ReviewPage">
+        <sxm-ui-vehicle-ymm-info [vehicleInfoVM]="viewModel.vehicleInfo"></sxm-ui-vehicle-ymm-info>
+        <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+            <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+        </sxm-ui-step-header>
+        <sxm-ui-plan-recap-card [data]="viewModel.planRecapCard"></sxm-ui-plan-recap-card>
+        <de-care-review-quote-and-approve-form
+            *ngIf="viewModel.quote"
+            [quoteViewModel]="viewModel.quote"
+            [continueButtonTextOverride]="translateKeyPrefix + '.CONTINUE_BUTTON' | translate"
+            [legacySettings]="{ isStreamingFlow: false, isNewAccount: true }"
+            (formCompleted)="submitTransaction()"
+            [class.alternate-header]="true"
+            class="renewal-quote-alt-header-1"
+            [class.hide-promo-renewal-quote-heading]="false"
+            [shouldIncludeNuCaptcha]="viewModel.displayNuCaptcha"
+        ></de-care-review-quote-and-approve-form>
+    </section>
+    <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+        <div [innerHTML]="viewModel.legalCopy"></div>
+    </section>
+</ng-container>
+<sxm-ui-loading-overlay-sxm-logo *ngIf="showFullViewLoader$ | async"></sxm-ui-loading-overlay-sxm-logo>

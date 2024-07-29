@@ -1,0 +1,39 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "locales": [
+            {
+                "locale": "en_US",
+                "offerInfos": [
+                    {
+                        "planCode": "Essential Streaming - Monthly",
+                        "salesHero": { "title": "Start listening today", "subTitle": null, "presentation": null },
+                        "offerDescription": {
+                            "priceAndTermDescTitle": "<span data-price=\"\">$7.99</span><strong>/mo</strong>",
+                            "processingFeeDisclaimer": "See <strong>Offer Details</strong> below",
+                            "packageName": "SiriusXM Streaming Music & Entertainment",
+                            "listeningOptions": ["Streaming"],
+                            "highlightsTitle": "SiriusXM Streaming Music & Entertainment Includes:",
+                            "highlightsText": [
+                                "<b>325+ channels</b> to stream with the SXM App",
+                                "<b>Ad-free music</b> for every genre & decade plus artist-created channels",
+                                "<b>Original talk,</b> podcasts, exclusive comedy & news from every angle",
+                                "<b>Play-by-play of select major sports,</b> NASCAR®, plus the biggest names in sports talk",
+                                "<b>SiriusXM video library</b> of in-studio shows & performances"
+                            ],
+                            "footer": "No car required to listen to your favorites in all your favorite places&mdash;on your phone, at home, and online.&nbsp;<a href=\"http://siriusxm.com/channels?package=SIR_IP_SA_ESNTL\">View Channel Lineup</a>",
+                            "showToggleLabel": "Explore package details",
+                            "hideToggleLabel": "Hide"
+                        },
+                        "deals": null,
+                        "addonHeaderOverride": null,
+                        "offerDetails": "<p><strong>OFFER DETAILS:</strong> Your selected subscription package will begin immediately upon completion of your order (if on trial your selected package will begin at the end of your trial period) and <strong>service will automatically renew thereafter and you will be charged according to your chosen payment method at the then-current rates of your selected package (current rates shown above). </strong>Fees and taxes apply. A credit card is required. <strong>See our <a href=\"http://www.siriusxm.com/pdf/siriusxm_customeragreement_eng.pdf\" target=\"_blank\">Customer Agreement</a> for complete terms and how to cancel, which includes calling us at 1-866-635-2349.</strong> All fees, content and features are subject to change. Channel lineup varies by package.</p>",
+                        "presentation": { "theme": "Theme1", "style": "Presentation3" }
+                    }
+                ]
+            }
+        ]
+    }
+}

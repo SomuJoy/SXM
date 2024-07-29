@@ -1,0 +1,11 @@
+{
+    "status": "FAILURE",
+    "httpStatusCode": 400,
+    "httpStatus": "BAD_REQUEST",
+    "error": {
+        "errorStackTrace": "AccountNumber: null | RadioId: null | x-forwarded-for: null | URL: /services/device/validate | Exception: DeviceServiceException#null | StackTrace: DeviceValidationServiceClient.java:79 | ErrorType: null | ErrorMessage: ERROR : [errorCode : INVALID_MISSING_VIN, errorPropKey : error.code.device.service.invalid.vin, errorType : CHECKED, errorLevel : FIELD, statusCode : 400 BAD_REQUEST, errorMessage : VIN Not Found | , sourceErrorCode : 11-09-ESB-1074] | FullStackTrace: ",
+        "logId": "2ff00215-3975-4d09-a890-8aead5d3a651",
+        "failedTransactionId": "OAC-2ff00215-3975-4d09-a890-8aead5d3a651-3846a8b8900cb9c7-3846a8b8900cb9c7-6250682876312631575627874",
+        "fieldErrors": [{ "errorCode": "INVALID_MISSING_VIN", "errorPropKey": "error.code.device.service.invalid", "errorType": "BUSINESS", "fieldName": "vin" }]
+    }
+}

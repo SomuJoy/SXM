@@ -1,0 +1,85 @@
+[
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/account/token/acsc",
+            "postData": {
+                "token": "1fff6fb7-9715-4f64-aed0-568b10a6d580"
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "trialAccountResponse": {
+                            "nonPIIAccount": {
+                                "firstName": "JOHN",
+                                "accountProfile": { "accountRegistered": false },
+                                "accountState": { "isInPreTrial": false },
+                                "serviceAddress": { "state": "NY", "country": "US" },
+                                "subscriptions": [
+                                    {
+                                        "id": "10000256860",
+                                        "plans": [
+                                            {
+                                                "code": "Sponsored - OEM Trial - ALL ACCESS - 12mo - 116.55",
+                                                "packageName": "SIR_AUD_ALLACCESS",
+                                                "termLength": 12,
+                                                "startDate": "2022-02-07T00:00:00-05:00",
+                                                "endDate": "2023-02-07T00:00:00-05:00",
+                                                "nextCycleOn": null,
+                                                "marketType": "trial:new-car",
+                                                "type": "TRIAL",
+                                                "capabilities": ["AUD", "IPAUD"],
+                                                "price": 0,
+                                                "isBasePlan": true,
+                                                "dataCapable": false
+                                            }
+                                        ],
+                                        "followonPlans": [],
+                                        "radioService": {
+                                            "id": "10000255196",
+                                            "last4DigitsOfRadioId": "5057",
+                                            "devicePromoCode": "1012",
+                                            "vehicleInfo": { "year": null, "make": null, "model": null },
+                                            "is360LCapable": false
+                                        },
+                                        "streamingService": {
+                                            "id": "10000253148",
+                                            "maskedUserName": "jcc******@siriusxm.com",
+                                            "status": "Active",
+                                            "randomCredentials": false
+                                        },
+                                        "status": "Active",
+                                        "devicePromoCode": "1012",
+                                        "isPrimary": false
+                                    }
+                                ],
+                                "billingSummary": { "creditCard": { "last4Digits": "1111", "type": "VISA", "status": "ACTIVE" }, "isPaymentTypeInvoice": false },
+                                "closedDevices": [],
+                                "hasEmailAddressOnFile": true,
+                                "isAccountIdentifiedUsingFLEPZOrVIN": false
+                            },
+                            "marketingId": "990004795057",
+                            "marketingAcctId": "6808",
+                            "email": null
+                        },
+                        "selfPayAccountNumberForACOnly": null,
+                        "eligibilityStatus": "TRIAL_ALREADY_CONSOLIDATED_AND_HAS_FOLLOWON",
+                        "sCEligibleClosedDevices": [],
+                        "sCEligibleSelfPaySubscriptions": [],
+                        "sPEligibleSelfPaySubscriptionIds": []
+                    }
+                }
+            }
+        }
+    }
+]

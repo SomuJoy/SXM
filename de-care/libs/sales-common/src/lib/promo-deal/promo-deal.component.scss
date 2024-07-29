@@ -1,0 +1,96 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    width: 100%;
+    display: block;
+}
+
+.promo-image {
+    align-self: center;
+    height: auto;
+    margin-left: auto;
+    max-height: 80px;
+    width: auto;
+    max-width: 110px;
+}
+
+.promo-title {
+    margin-top: 20px;
+}
+
+.promo-subtitle {
+    @include font-size(12px);
+    line-height: 1.5;
+    color: $gray-dark;
+}
+
+.promo-title-image {
+    max-width: 230px;
+}
+
+.promo-offer {
+    &::ng-deep {
+        h5 {
+            b {
+                font-weight: inherit;
+            }
+        }
+    }
+    .promo-image {
+        padding-bottom: 0;
+        padding-left: 8px;
+        padding-top: 0;
+    }
+}
+
+::ng-deep {
+    .promo-title {
+        h5 {
+            b {
+                font-weight: inherit;
+            }
+        }
+    }
+    .promo-upgrade-subtitle {
+        font-weight: 600;
+    }
+}
+
+.list {
+    padding-top: 12px;
+}
+
+.legal-copy {
+    margin: 0 0 8px 0;
+}
+
+hr {
+    background-color: $gray-medium;
+    border: 0;
+    height: 1px;
+    margin: 16px 0;
+    width: 100%;
+}
+
+.checkmark-list {
+    padding: 0;
+}
+
+.hulu-promo-description {
+    margin-top: 16px;
+}
+
+.hulu-promo-info {
+    .hulu-bottom--header {
+        margin-top: 0.4rem;
+        margin-bottom: 0;
+    }
+
+    .hulu-bottom--content {
+        margin-top: 0;
+    }
+}
+
+.hulu-image {
+    width: 90px;
+}

@@ -1,0 +1,97 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "mrdCapable": true,
+        "accountNumber": "10001086651",
+        "firstName": "JOHN",
+        "lastName": "SMITH",
+        "phone": "2222222222",
+        "userName": "kerekh.sqne@siriusxm.com",
+        "email": "KEREKH.SQNE@SIRIUSXM.COM",
+        "accountProfile": {
+            "profileNumber": "10001086907",
+            "billingStatus": "Active",
+            "accountRegistered": true,
+            "createdOnDate": "2020-08-18T14:20:03-04:00"
+        },
+        "serviceAddress": {
+            "streetAddress": "1 River Rd",
+            "city": "Schenectady",
+            "state": "NY",
+            "postalCode": "12345-6000",
+            "country": "USA",
+            "isAVSValidated": true
+        },
+        "billingAddress": {
+            "streetAddress": "1 River Rd",
+            "city": "Schenectady",
+            "state": "NY",
+            "postalCode": "12345-6000",
+            "country": "USA",
+            "isAVSValidated": true
+        },
+        "subscriptions": [
+            {
+                "id": "10001085883",
+                "status": "Active",
+                "plans": [
+                    {
+                        "code": "All Access - 12mo - wActv",
+                        "packageName": "SIR_AUD_ALLACCESS",
+                        "termLength": 12,
+                        "startDate": "2020-08-18T00:00:00-04:00",
+                        "endDate": null,
+                        "nextCycleOn": "2021-08-18T00:00:00-04:00",
+                        "marketType": "self-pay:standard",
+                        "type": "SELF_PAID",
+                        "status": "active",
+                        "capabilities": ["AUD", "IPAUD"],
+                        "price": 263.88,
+                        "isChangePlanAllowed": true,
+                        "isBasePlan": true,
+                        "isFamiliyDiscountApplied": false
+                    }
+                ],
+                "followonPlans": [],
+                "radioService": {
+                    "id": "10001085371",
+                    "status": "Active",
+                    "radioId": "002615230801",
+                    "last4DigitsOfRadioId": "0801",
+                    "vehicleInfo": {
+                        "year": null,
+                        "make": null,
+                        "model": null
+                    },
+                    "capabilities": ["BOF", "AUD"],
+                    "is360LCapable": false
+                },
+                "streamingService": {
+                    "maskedUserName": "ker******@siriusxm.com",
+                    "id": "10001087931",
+                    "userName": "kerekh.sqne@siriusxm.com",
+                    "status": "Active",
+                    "randomCredentials": false
+                },
+                "isPrimary": true,
+                "isMrdDriving": true
+            }
+        ],
+        "billingSummary": {
+            "paymentType": "creditCard",
+            "creditCard": {
+                "last4Digits": "1116",
+                "type": "VISA",
+                "expiryMonth": 1,
+                "expiryYear": 2022,
+                "status": "ACTIVE"
+            },
+            "amountDue": 0.0
+        },
+        "consolidatedAccountNumbers": [],
+        "closedDevicesMap": {},
+        "closedDevices": []
+    }
+}

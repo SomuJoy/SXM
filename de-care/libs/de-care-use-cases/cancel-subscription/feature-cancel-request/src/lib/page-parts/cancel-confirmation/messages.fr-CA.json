@@ -1,0 +1,31 @@
+{
+    "SUB_CANCELLED_MSG": "Votre abonnement a été annulé.",
+    "CANCELLED_SUBSCRIPTIONS": "Abonnement(s) annulé(s):",
+    "TRIAL_STILL_TAKE_ADVANTAGE": "Vous pouvez encore profiter pleinement de votre essai qui se termine le {{endDate}}.",
+    "CONFIRMATION_ID": "N<sup>o</sup> de confirmation: {{cancellationid}}",
+    "END_OF_CYCLE_SUB_CANCELLED_MSG": "L’abonnement que vous avez acheté sera annulé à la fin de votre essai actuel, le {{enddate}}.",
+    "CONFIRMATION_NUMBER": "N<sup>o</sup> de confirmation: {{cancellationNumber}}",
+    "CNACELLATION_DETAILS_HEADER_TEXT": "Détails de l’annulation",
+    "REFUND_AMT_TEXT": "Montant du remboursement",
+    "CREDIT_REMAINING_ACCOUNT": "Crédit restant du compte",
+    "FINAL_CONFIRMATION_MSG": "Une confirmation de cette transaction sera envoyée à l’adresse postale ou à l’adresse courriel figurant dans votre dossier dans un délai de 5 jours ouvrables. La confirmation comprendra les détails du montant de votre remboursement ou du solde restant dû dans votre compte.",
+    "FINAL_ETF_MSG": "Tous les frais de résiliation anticipée applicables seront supprimés. Les remboursements par carte de crédit sont généralement traités en 3 à 5 jours ouvrables et les remboursements par chèque en 7 à 10 jours ouvrables.",
+    "COMEBACK_REACTIVATE_MSG": "Lorsque vous choisirez de revenir, vous pourrez réactiver facilement votre abonnement en tout temps.",
+    "CANCELLATION_DETAILS_HEADER": "Détails de l’annulation",
+    "REMAINING_BAL_DUE": "Solde restant dû",
+    "MAKE_A_PAYMENT": "Effectuer un paiement",
+    "SORRY_TO_SEE_YOU_GO": "Nous sommes désolés de vous voir partir!",
+    "CANCELLED_SUB_HEADER": "N’oubliez pas que nous ajoutons toujours du nouveau contenu original. Nous espérons que vous reviendrez bientôt pour voir ce qu’il y a de nouveau.",
+    "PLAN_CANCELLED_MSG": "Votre forfait a été annulé.",
+    "BACK_BUTTON": "RETOUR À MON COMPTE",
+    "PLAN": " - {{pluralizedMonth}} Forfait",
+    "TERM_LENGTH": {
+        "PLURAL_MAP": {
+            "LENGTH": {
+                "=1": "Mois",
+                "=12": "Annuel",
+                "other": "Mois"
+            }
+        }
+    }
+}

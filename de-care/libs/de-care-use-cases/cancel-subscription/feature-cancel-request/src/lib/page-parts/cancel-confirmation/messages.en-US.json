@@ -1,0 +1,35 @@
+{
+    "SUB_CANCELLED_MSG": "Your subscription has been cancelled.",
+    "CANCELLED_SUBSCRIPTIONS": "Cancelled subscription(s):",
+    "TRIAL_STILL_TAKE_ADVANTAGE": "You can still take full advantage of your trial which ends on {{endDate}}.",
+    "CONFIRMATION_ID": "Confirmation #: {{cancellationid}}",
+    "END_OF_CYCLE_SUB_CANCELLED_MSG": "Your purchased subscription will be cancelled at the end of your current trial, on {{enddate}}.",
+    "CONFIRMATION_NUMBER": "Confirmation #: {{cancellationNumber}}",
+    "CNACELLATION_DETAILS_HEADER_TEXT": "Cancellation Details",
+    "CREDIT_TEXT": "Credit",
+    "CREDIT_TOOL_TIP": "A pro-rated credit for the unused service in your old subscription has been applied to your account. It will be used for future billing events, or can be refunded to you upon your request.",
+    "UNUSED_SERVICE_TEXT": "For unused service",
+    "REFUND_AMT_TEXT": "Refund Amount",
+    "CREDIT_REMAINING_ACCOUNT": "Credit Remaining on Account",
+    "NONREFUNDABLE_CREDIT_TOOL_TIP": "This amount reflects your account balance minus any applicable credits that may have been refunded.",
+    "FINAL_CONFIRMATION_MSG": "A confirmation of this transaction will be mailed to the address or email on file within 5 business days. The confirmation will include the details of your refund amount or remaining balance due on your account.",
+    "FINAL_ETF_MSG": "Any applicable early termination fees will be waived. Credit card refunds are typically processed in 3-5 business days and check refunds are typically processed in 7-10 business days.",
+    "COMEBACK_REACTIVATE_MSG": "When you're ready to come back, you'll be able to easily reactivate your subscription at any time.",
+    "CANCELLATION_DETAILS_HEADER": "Cancellation Details",
+    "REMAINING_BAL_DUE": "Remaining Balance Due",
+    "MAKE_A_PAYMENT": "Make a payment",
+    "SORRY_TO_SEE_YOU_GO": "We're sorry to see you go!",
+    "CANCELLED_SUB_HEADER": "Remember, we're always adding fresh and original content. We hope you'll check back in soon to see what's new.",
+    "PLAN_CANCELLED_MSG": "Your plan has been cancelled.",
+    "BACK_BUTTON": "Back To My Account",
+    "PLAN": " - {{pluralizedMonth}} Plan",
+    "TERM_LENGTH": {
+        "PLURAL_MAP": {
+            "LENGTH": {
+                "=1": "Monthly",
+                "=12": "Annual",
+                "other": "#-month"
+            }
+        }
+    }
+}

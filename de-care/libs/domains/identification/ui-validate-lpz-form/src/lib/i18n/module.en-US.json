@@ -1,0 +1,10 @@
+{
+    "DomainsIdentificationUiValidateLpzFormModule": {
+        "ValidateLpzFormComponent": {
+            "INVALID_ERROR": "We were unable to find a radio based on the information provided.",
+            "SYSTEM_ERROR": "Unfortunately, our systems are down please try again later.",
+            "SUBMIT_BUTTON": "Continue",
+            "PHONE_INVALID_PREFIX": "We're unable to confirm your account. Please verify the information you entered and try again. For more help, call <a href=\"tel:+1-888-601-6271\">1-888-601-6271</a> or chat with an agent."
+        }
+    }
+}

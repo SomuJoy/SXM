@@ -1,0 +1,112 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "mrdCapable": true,
+        "accountNumber": "10000242912",
+        "firstName": "JOHN",
+        "lastName": "SMITH",
+        "phone": "2122222222",
+        "userName": "enuzlu.ifgk@siriusxm.com",
+        "email": "ENUZLU.IFGK@SIRIUSXM.COM",
+        "accountProfile": {
+            "profileNumber": "10000243168",
+            "billingStatus": "Active",
+            "accountRegistered": true,
+            "createdOnDate": "2022-02-22T13:02:15-05:00"
+        },
+        "accountState": {
+            "isInPreTrial": false
+        },
+        "serviceAddress": {
+            "streetAddress": "1 River Rd",
+            "city": "Schenectady",
+            "state": "NY",
+            "postalCode": "12345-6000",
+            "country": "USA",
+            "isAVSValidated": true
+        },
+        "billingAddress": {
+            "streetAddress": "1 River Rd",
+            "city": "Schenectady",
+            "state": "NY",
+            "postalCode": "12345-6000",
+            "country": "USA",
+            "isAVSValidated": true
+        },
+        "subscriptions": [
+            {
+                "id": "10000242144",
+                "status": "Active",
+                "plans": [
+                    {
+                        "dataCapable": false,
+                        "code": "Platinum VIP - 1mo",
+                        "packageName": "SIR_AUD_VIP",
+                        "termLength": 1,
+                        "minimumFollowOnTerm": 0,
+                        "startDate": "2022-02-22T00:00:00-05:00",
+                        "endDate": null,
+                        "nextCycleOn": "2022-03-22T00:00:00-04:00",
+                        "marketType": "self-pay:standard",
+                        "type": "SELF_PAID",
+                        "status": "active",
+                        "capabilities": ["AUD", "IPAUD"],
+                        "price": 34.99,
+                        "product": null,
+                        "parentPackageName": "",
+                        "isFamiliyDiscountApplied": false,
+                        "isChangePlanAllowed": false,
+                        "isBasePlan": true,
+                        "isPreTiering": false
+                    }
+                ],
+                "followonPlans": [],
+                "radioService": {
+                    "id": "10000244192",
+                    "status": "Active",
+                    "radioId": "990005150767",
+                    "last4DigitsOfRadioId": "0767",
+                    "devicePromoCode": null,
+                    "vehicleInfo": {
+                        "year": null,
+                        "make": null,
+                        "model": null
+                    },
+                    "capabilities": ["AUD", "BOF"],
+                    "is360LCapable": false
+                },
+                "streamingService": {
+                    "id": "10000243680",
+                    "userName": "enuzlu.ifgk@siriusxm.com",
+                    "status": "Active",
+                    "maskedUserName": "enu******@siriusxm.com",
+                    "randomCredentials": false,
+                    "systemGeneratedLogin": false,
+                    "validUserName": true
+                },
+                "devicePromoCode": null,
+                "isClosed": false,
+                "isPrimary": true,
+                "isMrdDriving": true,
+                "isDataOnly": false
+            }
+        ],
+        "billingSummary": {
+            "paymentType": "creditCard",
+            "creditCard": {
+                "last4Digits": "1111",
+                "type": "VISA",
+                "expiryMonth": 1,
+                "expiryYear": 2024,
+                "status": "ACTIVE"
+            },
+            "amountDue": 0,
+            "isPaymentTypeInvoice": false
+        },
+        "consolidatedAccountNumbers": [],
+        "closedDevicesMap": {},
+        "closedDevices": []
+    }
+}

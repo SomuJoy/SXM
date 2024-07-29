@@ -1,0 +1,111 @@
+[
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/account/token",
+            "postData": {
+                "student": false,
+                "token": "0411d26a-664f-42e0-b39b-88a16956a657",
+                "tokenType": "SALES_AUDIO"
+            }
+        },
+        "response": {
+            "status": 404,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Mon, 25 Jan 2021 17:38:00 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Transfer-Encoding",
+                    "value": "chunked"
+                },
+                {
+                    "name": "Connection",
+                    "value": "keep-alive"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://dex-dev.corp.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "FAILURE",
+                    "httpStatusCode": 404,
+                    "httpStatus": "NOT_FOUND",
+                    "error": {
+                        "errorStackTrace": "AccountNumber: null | RadioId: null | x-forwarded-for: null | URL: /services/account/token | Exception: IdentityTokenServiceException#null | StackTrace: TokenServiceClient.java:65 | ErrorType: null | ErrorMessage: ERROR : [errorCode : DATA_NOT_FOUND, errorPropKey : error.identity.token.service.data.not.found.token, errorType : CHECKED, errorLevel : FIELD, statusCode : 404 NOT_FOUND, errorMessage : Data not found | , sourceErrorCode : 11-09-TS-1004] | FullStackTrace: ",
+                        "fieldErrors": [
+                            {
+                                "errorCode": "DATA_NOT_FOUND",
+                                "errorPropKey": "error.identity.token.service.data.not.found",
+                                "errorType": "BUSINESS",
+                                "fieldName": "token"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    }
+]

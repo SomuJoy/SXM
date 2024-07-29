@@ -1,0 +1,38 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 100%;
+    background-color: $off-white;
+}
+
+.sxm-limited-nav {
+    z-index: 10;
+    position: relative;
+    background: rgba(0, 0, 0, 0.8);
+}
+.sxmphx-nav-widget {
+    // us version
+    .sxm-full-nav-container[data-componenttype] {
+        height: 56px;
+        @include bp(large) {
+            height: 72px;
+        }
+    }
+
+    // canada version
+    .sxm-full-nav-container[data-area] {
+        height: 56px;
+        @include bp(medium) {
+            height: 72px;
+            .main-nav .main-nav-bar .top-nav .top-nav-item .top-nav-link {
+                border-top: 0;
+            }
+        }
+    }
+    .full-footer, .simple-footer {
+        position: relative;
+    }
+}

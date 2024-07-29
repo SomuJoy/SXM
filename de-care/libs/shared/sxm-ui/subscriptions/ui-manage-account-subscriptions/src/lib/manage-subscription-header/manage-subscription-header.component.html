@@ -1,0 +1,48 @@
+<div class="button-container">
+    <button class="back-button" type="button" (click)="back.emit()" data-test="manageSubscriptionsBackButton">
+        <div>
+            <svg class="icon">
+                <use xlink:href="#icon-back"></use>
+            </svg>
+            <span class="back-label">
+                {{ translateKeyPrefix + ".BACK_BUTTON_LABEL" | translate }}
+            </span>
+        </div>
+    </button>
+</div>
+
+<div class="grid-container">
+    <div>
+        <h2 class="vehicle-info" *ngIf="data.vehicleType === 'CAR'">
+            {{ translateKeyPrefix + ".CAR_LABEL" | translate }}
+        </h2>
+        <h2 class="vehicle-info" *ngIf="data.vehicleType === 'AVIATION'">
+            {{ translateKeyPrefix + ".AIRCRAFT_LABEL" | translate }}
+        </h2>
+        <h2 class="vehicle-info" *ngIf="data.vehicleType === 'MARINE'">
+            {{ translateKeyPrefix + ".MARINE_LABEL" | translate }}
+        </h2>
+        <div>
+            <button class="add-radio-nickname" (click)="addNickname.emit()" data-test="manageSubscriptionsNicknameButton">
+                {{ translateKeyPrefix + ".ADD_RADIO_NICKNAME_LINK" | translate }}
+            </button>
+        </div>
+    </div>
+    <div class="icon-division show-mobile-medium-up">
+        <svg class="icon icon-content" *ngIf="data.vehicleType === 'CAR'">
+            <use xlink:href="#icon-car"></use>
+        </svg>
+        <svg class="icon icon-content" *ngIf="data.vehicleType === 'AVIATION'">
+            <use xlink:href="#icon-aviation"></use>
+        </svg>
+        <svg class="icon icon-content" *ngIf="data.vehicleType === 'MARINE'">
+            <use xlink:href="#icon-marine"></use>
+        </svg>
+    </div>
+</div>
+<div class="tool-tip-grid">
+    <p class="radioId-info small-copy lead-in" *ngIf="data?.radioId">
+        {{ translateKeyPrefix + ".RADIO_ID_INFO" | translate: { radioId: data.radioId, platform: data.platform } }}
+    </p>
+    <sxm-ui-tooltip *ngIf="data?.is360L" class="tooltip-display-right"> <div [innerHTML]="translateKeyPrefix + '.360L_TOOLTIP' | translate"></div></sxm-ui-tooltip>
+</div>

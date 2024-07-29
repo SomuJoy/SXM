@@ -1,0 +1,44 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "locales": [
+            {
+                "locale": "en_US",
+                "offerInfos": [
+                    {
+                        "planCode": "Promo - Select - 6mo - 29.94 - (4.99FOR6) - 1X",
+                        "type": "PROMO",
+                        "salesHero": {
+                            "title": "CMS mock test: Keep the music going for as little as $5 a month",
+                            "subTitle": null,
+                            "presentation": { "style": null, "theme": "Theme1" }
+                        },
+                        "offerDescription": {
+                            "priceAndTermDescTitle": "CMS mock test: <span class=\"offer-price text-color-raspberry\">6 months</span><span class=\"standard-copy bold\"> for </span><span class=\"offer-price text-color-raspberry\">$4.99</span><span class=\"standard-copy\">/mo</span>",
+                            "processingFeeDisclaimer": "CMS mock test: Then $16.99/mo.<br/>See <strong>Offer Details</strong> below."
+                        },
+                        "offerDetails": [
+                            "<strong>CMS mock test: OFFER DETAILS:</strong>  Activate a Select subscription and pay $29.94 for your first 6 months, a savings of 70% off the current monthly rate of $16.99, plus get free activation (an additional $15 savings). <strong>A credit card is required on this offer. Fees and taxes apply. Service will automatically renew thereafter every month and you will be charged at then-current rates. Please see our <a href='https://www.siriusxm.com/customeragreement' target='_blank' title=' at siriusxm.com/agreements'>Customer Agreement</a> for complete terms and how to cancel, which includes calling us at <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>.</strong> All fees, content and features are subject to change. This offer cannot be combined with any other and may be modified or terminated at any time."
+                        ],
+                        "packageDescription": {
+                            "packageName": "SiriusXM Select",
+                            "listeningOptions": ["Satellite", "Streaming", "Pandora"],
+                            "highlightsText": [
+                                "325+ channels in your car, on your phone, at home, and online",
+                                "Every MLB<span>&reg;</span> and NBA game. NHL<span>&reg;</span>, NCAA<span>&reg;</span> and PGA TOUR<span>&reg;</span> coverage",
+                                "Ad-free music and Xtra channels to stream for every mood and activity",
+                                "News, entertainment, comedy, and sports",
+                                "Thousands of shows and videos available on demand"
+                            ],
+                            "footer": "Listen & watch your favorites in all your favorite places—in your car, on your phone, or at home.",
+                            "promoFooter": "Listen & watch your favorites in all your favorite places—in your car, on your phone, or at home.",
+                            "streamingOnly": false
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

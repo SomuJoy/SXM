@@ -1,0 +1,22 @@
+<main de-care-page-main data-scroll="scroll-top">
+    <sxm-ui-stepper [selectedIndex]="startingStepIndex" #stepper>
+        <sxm-ui-step id="portPaymentStep" (active)="onPaymentStepActive()" data-e2e="port-payment-step">
+            <de-care-port-payment (paymentFormCompleted)="onPaymentFormComplete($event)"></de-care-port-payment>
+        </sxm-ui-step>
+        <sxm-ui-step id="portReviewStep" (active)="onReviewStepActive()" data-e2e="port-review-step">
+            <ng-container *ngrxLet="displayPriceChangeMessage$ as displayPriceChangeMessage">
+                <de-care-port-review
+                    [priceChangeMessagingType]="displayPriceChangeMessage?.priceChangeMessagingType"
+                    [priceChangeMessagingTypeFeatureFlag]="displayPriceChangeMessage?.priceChangeMessagingTypeFeatureFlag"
+                    (submitTransactionComplete)="onSubmitTransactionComplete()"
+                ></de-care-port-review>
+            </ng-container>
+        </sxm-ui-step>
+    </sxm-ui-stepper>
+    <div class="back-button">
+        <button (click)="onBack()" data-track-click="Service Portability back button" data-e2e="servicePortabilityBackButton">
+            {{ translateKeyPrefix + "BACK_BUTTON" | translate }}
+        </button>
+    </div>
+</main>
+<offer-details [isACSC]="true" [details]="{ offerType: 'SELF_PAY' }"></offer-details>

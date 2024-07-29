@@ -1,0 +1,40 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": [
+        {
+            "closed": false,
+            "id": null,
+            "status": "Active",
+            "plans": [
+                {
+                    "code": "OEM Trial - ALL ACCESS - 3mo - 0.00",
+                    "packageName": "SIR_AUD_ALLACCESS",
+                    "termLength": "3",
+                    "endDate": "2023-09-26T00:00:00-04:00",
+                    "type": "TRIAL",
+                    "marketType": "trial:new-car",
+                    "capabilities": []
+                }
+            ],
+            "followonPlans": [],
+            "radioService": {
+                "last4DigitsOfRadioId": "2412",
+                "vehicleInfo": {
+                    "model": null,
+                    "make": null,
+                    "year": null
+                },
+                "maskedRadioId": "****2412"
+            },
+            "streamingService": {
+                "status": "Active",
+                "maskedUserName": "ml4******@siriusxm.com",
+                "randomCredentials": false
+            },
+            "nickname": null,
+            "duplicateVehicleInfo": null
+        }
+    ]
+}

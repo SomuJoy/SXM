@@ -1,0 +1,24 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "deviceInformation": {
+            "radioId": "VVZ000M8",
+            "deviceStatus": "ESN not in use",
+            "primaryBrandId": "7777",
+            "primaryDealerId": "0",
+            "secondaryBrandId": "7777",
+            "secondaryDealerId": "0",
+            "promoCode": null,
+            "vehicle": {
+                "vin": "XVMOYVSGV8CBAI3OM",
+                "year": null,
+                "make": null,
+                "model": null
+            },
+            "service": null,
+            "capabilityList": ["AUD", "BOF"]
+        }
+    }
+}

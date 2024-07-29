@@ -1,0 +1,11 @@
+{
+    "OFFER_FOR_NEW_SUBSCRIBERS": "Cette offre est réservée aux nouveaux abonnés, mais voici une autre option pour vous.",
+    "TITLE": "Vérifiez votre commande",
+    "BODY": {
+        "CONFIRM_YOUR_PLAN": "Confirmez votre forfait et commencez à écouter maintenant.<br />N’oubliez pas que vous pouvez annuler en tout temps.",
+        "POST_TRIAL_DEFAULT": "À la fin de votre période d’essai, le montant de {{futureCharge}} vous sera facturé une seule fois le {{dueDate}}.",
+        "POST_TRIAL_RTD": "À la fin de votre période d’essai, le montant de {{futureCharge}} vous sera facturé une seule fois le {{dueDate}}. N’oubliez pas que vous pouvez annuler en tout temps."
+    },
+    "CONTINUE_BUTTON_TEXT": "Terminer Ma Commande",
+    "PRICE_AND_TERM_SUBTEXT": "Des frais de {{etfAmount}} de résiliation anticipée peuvent s’appliquer si vous annulez dans les premiers {{etfTerm}} mois."
+}

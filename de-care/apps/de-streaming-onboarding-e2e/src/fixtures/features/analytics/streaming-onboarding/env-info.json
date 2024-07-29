@@ -1,0 +1,16 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "mode": "test",
+        "country": "us",
+        "buildInfo": { "tag": "project/STREAMING_ONBOARDING", "smsDependency": "", "smsUser": "web1", "smsHost": "10.98.144.115:18001", "pvtTime": "2021-05-18T22:58:36.0" },
+        "sessionInfo": { "id": "a7e22ed1-91fd-4a3a-aded-f9ec90e6a0dd", "idleTimeout": "20", "absoluteTimeout": "Tue May 18 23:18:35 EDT 2021" },
+        "cmsBuildInfo": {
+            "cmsOfferInfoEndPoint": "http://uatcms-author.corp.siriusxm.com/phx/dvgllvdexoac01-17330-care/services/v1/rest/sites/sxm/types/SXMOffer",
+            "cmsPackageInfoEndPoint": "http://uatcms-author.corp.siriusxm.com/phx/dvgllvdexoac01-17330-care/services/v1/rest/sites/sxm/types/SXMPackage",
+            "cmsModeEnabled": true
+        }
+    }
+}

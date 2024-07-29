@@ -1,0 +1,21 @@
+{
+    "sharedSxmUiUiAddressFormFieldsModule": {
+        "addressFormFieldsComponent": {
+            "NEW_CC": {
+                "CC_CVV": "CVV",
+                "CC_STATE": "Province",
+                "ERROR_CC_STATE": "Select your province.",
+                "CC_ZIPCODE": "Postal Code",
+                "ERROR_CC_ZIPCODE": "Enter a valid postal code."
+            },
+            "ERROR_CVV_FOUND": "The field contains characters that resemble credit card security information. Please review and make appropriate changes to continue."
+        },
+        "addressFormFieldsOemComponent": {
+            "STATE": "Province",
+            "ERROR_STATE": "Enter your province.",
+            "ERROR_STATE_INACCURATE": "Enter a valid province.",
+            "ZIPCODE": "Postal Code",
+            "ERROR_ZIPCODE": "Enter your postal code."
+        }
+    }
+}

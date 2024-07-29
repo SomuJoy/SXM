@@ -1,0 +1,18 @@
+<button type="button" (click)="modal.open()" *ngIf="provinceSelection.provinceCanBeChanged$ | async">
+    <strong>{{ translateKeyPrefix + "EDIT_LINK_TEXT" | translate }}</strong>
+</button>
+<sxm-ui-modal #modal [title]="translateKeyPrefix + 'MODAL_TITLE' | translate" [titlePresent]="true" [ariaDescribedbyTextId]="provinceSelectionModalAriaDescribedbyTextId">
+    <h5>{{ translateKeyPrefix + "PROVINCE_CHANGE_TITLE" | translate }}</h5>
+    <p [id]="provinceSelectionModalAriaDescribedbyTextId">{{ translateKeyPrefix + "PROVINCE_CHANGE_INSTRUCTIONS" | translate }}</p>
+    <form [formGroup]="form" (ngSubmit)="onProvinceSet(form.value); modal.close()">
+        <sxm-ui-dropdown
+            formControlName="province"
+            [passedValue]="'DeCareSharedUiProvinceSelectionModule.COMMON.PROVINCES' | translate"
+            key="key"
+            text="label"
+            class="dropdown"
+            [labelText]="translateKeyPrefix + 'SELECT_PROVINCE_DROPDOWN_PLACEHOLDER' | translate"
+        ></sxm-ui-dropdown>
+        <button sxm-proceed-button sxmUiDataClickTrack="ui" type="submit">{{ translateKeyPrefix + "PROVINCE_CHANGE_CONTINUE_BUTTON_TEXT" | translate }}</button>
+    </form>
+</sxm-ui-modal>

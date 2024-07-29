@@ -1,0 +1,24 @@
+<h4>{{ translateKeyPrefix + ".TITLE" | translate }}</h4>
+<div class="signup-instruction">
+    <p [id]="ariaDescribedbyTextId">{{ translateKeyPrefix + ".INSTRUCTIONS_PART1" | translate }}</p>
+    <p>{{ translateKeyPrefix + ".INSTRUCTIONS_PART2" | translate }}</p>
+</div>
+
+<form [formGroup]="signUpEBillForm" (ngSubmit)="onSubmit()">
+    <div class="invalid-feedback" *ngIf="signUpEBillServerError">
+        <p>{{ translateKeyPrefix + ".SERVER_ERROR" | translate }}</p>
+    </div>
+    <sxm-ui-email-form-field
+        class="mb-32"
+        formControlName="email"
+        data-e2e="emailField"
+        [errorMsg]="!signUpEBillForm.valid ? (translateKeyPrefix + '.EMAIL_REQUIRED_ERROR' | translate) : ''"
+    ></sxm-ui-email-form-field>
+
+    <button data-e2e="signUpEBillButton" class="button primary full-width" type="submit" sxm-proceed-button [loading]="loading" data-test="signUpEBillButton">
+        {{ translateKeyPrefix + ".SIGN_UP_BUTTON" | translate }}
+    </button>
+</form>
+<button data-e2e="signUpEBillCancelButton" class="full-width cancel-cta" (click)="onCancel()" data-test="signUpEBillCancelButton">
+    {{ translateKeyPrefix + ".CANCEL_BUTTON" | translate }}
+</button>

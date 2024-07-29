@@ -1,0 +1,28 @@
+{
+    "deCareUseCasesStudentVerificationFeatureConfirmReVerifyModule": {
+        "errorPageComponent": {
+            "HERO_COPY": "We're not able to complete this online",
+            "SUB_HEADER_TOP": "Please call 1-866-635-2349 for more help completing your reverification.",
+            "SUB_HEADER_BOTTOM": "If your student status cannot be verified, service will automatically renew thereafter every month in the {{offerName}} plan at then-current rates (currently ${{retailPrice}}/month, plus fees and taxes)."
+        },
+        "activeSubscriptionPageComponent": {
+            "HEADER": "Looks like you already reverified your subscription.",
+            "SUB_HEADER": "Sign in to modify your subscription.",
+            "BUTTON": "SIGN IN TO ACCOUNT",
+            "BUTTON_LINK": "https://care.siriusxm.com/login_view.action"
+        },
+        "offerToOfferConfirmationPageComponent": {
+            "HERO_COPY": "You're all set for {{termLength}} months",
+            "STREAMING_PLAYER_LINK": "?contentType=landing&channelName=accessnow&site_id=accessnow&creative_id=NA_NA_DL-COM-landing-landingpage-landingpage-STARTLISTENING-TRIALACTIVATIONRTP-NA-All-20210921-NA&cp_5=landingpage&cp_6=landingpage&cp_7=ALL&cp_8=STARTLISTENING&cp_9=TRIALACTIVATIONRTP&cp_10=COM"
+        },
+        "rollOverCompleteComponent": {
+            "PRINT_ORDER_SUMMARY_LINK_TEXT": "Print your order summary",
+            "HERO_TEXT": "Thanks for subscribing.",
+            "SUBSCRIPTION_IMPORTANT_INFO": {
+                "TITLE": "Important information about your subscription:",
+                "BODY": "Your subscription starts immediately unless indicated otherwise. If your radio is not receiving the programming you are entitled to, please follow the activation instructions above. For your convenience, all subscriptions automatically renew until canceled. Your renewal will be billed at the then-current rate using the payment method on file. You can cancel your subscription at any time by calling Listener Care at <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>. Your subscription is governed by the SiriusXM Customer Agreement, which can be <a href=\"https://www.siriusxm.com/pdf/siriusxm_customeragreement_eng.pdf?desktop=yes\" target=\"_blank\">viewed online</a>. If you would like to receive a copy of the Customer Agreement by mail, you can call <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>."
+            },
+            "STREAMING_PLAYER_LINK": "https://sxm.smart.link/xeiz0zu5y?contentType=landing&channelName=accessnow&site_id=accessnow&creative_id=NA_NA_DL-COM-landing-landingpage-landingpage-STARTLISTENING-TRIALACTIVATIONRTP-NA-All-20210921-NA&cp_5=landingpage&cp_6=landingpage&cp_7=ALL&cp_8=STARTLISTENING&cp_9=TRIALACTIVATIONRTP&cp_10=COM&ALC=0"
+        }
+    }
+}

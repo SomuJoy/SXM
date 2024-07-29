@@ -1,0 +1,38 @@
+<h5>{{ "doNotCall.doNotCallFormComponent.TITLE" | translate }}</h5>
+<form [formGroup]="dncForm" (ngSubmit)="submitForm()">
+    <div class="row no-padding">
+        <div class="column small-12 align-left align-top no-padding">
+            <div class="input-container" [class.invalid]="dncForm.controls.phoneNumber | formControlInvalid: submitted" [class.filled]="dncForm.controls.phoneNumber.value">
+                <label for="{{ phoneId }}">{{ "doNotCall.doNotCallFormComponent.PHONE_NUMBER" | translate }}</label>
+                <input
+                    type="tel"
+                    appMaskPhoneNumber
+                    maxlength="14"
+                    formControlName="phoneNumber"
+                    id="{{ phoneId }}"
+                    data-test="DoNotCallPhoneNumberTextfield"
+                    qatag="DoNotCallPhoneNumberTextfield"
+                    onFocus
+                />
+            </div>
+            <div *ngIf="dncForm.controls.phoneNumber | formControlInvalid: submitted" class="invalid-feedback">
+                <p>{{ "doNotCall.doNotCallFormComponent.ERROR.PHONE_NUMBER" | translate }}</p>
+            </div>
+        </div>
+    </div>
+    <sxm-ui-nucaptcha
+        formControlName="nucaptcha"
+        #nuCaptcha
+        [submitted]="submitted"
+        [captchaAnswerWrong]="captchaAnswerWrong"
+        (gotCaptcha)="gotCaptcha($event)"
+        placement="Action"
+    ></sxm-ui-nucaptcha>
+    <div class="row no-padding">
+        <div class="column small-12 align-left align-top no-padding">
+            <button type="submit" [sxm-loading-indicator]="isLoading" [disabled]="isLoading" data-test="DoNotCallContinueButton" qatag="DoNotCallContinueButton">
+                {{ "doNotCall.doNotCallFormComponent.BUTTON" | translate }}
+            </button>
+        </div>
+    </div>
+</form>

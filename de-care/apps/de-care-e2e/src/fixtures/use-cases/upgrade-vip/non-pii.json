@@ -1,0 +1,84 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "LIZ",
+            "accountProfile": {
+                "accountRegistered": false
+            },
+            "accountState": {
+                "isInPreTrial": false
+            },
+            "serviceAddress": {
+                "state": "NY",
+                "country": "USA"
+            },
+            "subscriptions": [],
+            "billingSummary": {
+                "creditCard": {
+                    "last4Digits": "1111",
+                    "type": "VISA",
+                    "status": "ACTIVE"
+                },
+                "isPaymentTypeInvoice": false
+            },
+            "closedDevices": [
+                {
+                    "last4DigitsOfRadioId": "6821",
+                    "closedDate": "2021-11-03T10:00:51-04:00",
+                    "vehicleInfo": {
+                        "year": null,
+                        "make": null,
+                        "model": null
+                    },
+                    "subscription": {
+                        "id": "10000209736",
+                        "plans": [
+                            {
+                                "code": "Mostly Music - 6mo - wActv",
+                                "packageName": "SIR_AUD_PKG_MM",
+                                "termLength": 6,
+                                "startDate": null,
+                                "endDate": null,
+                                "nextCycleOn": null,
+                                "marketType": "self-pay:standard",
+                                "type": "SELF_PAY",
+                                "capabilities": ["IPAUD", "AUD"],
+                                "price": null,
+                                "dataCapable": false,
+                                "isBasePlan": false
+                            },
+                            {
+                                "code": "Video - 6mo",
+                                "packageName": "SIR_IP_VID",
+                                "termLength": 6,
+                                "startDate": null,
+                                "endDate": null,
+                                "nextCycleOn": null,
+                                "marketType": "self-pay:standard",
+                                "type": "SELF_PAY",
+                                "capabilities": ["IPVID"],
+                                "price": null,
+                                "dataCapable": false,
+                                "isBasePlan": false
+                            }
+                        ],
+                        "followonPlans": null,
+                        "radioService": null,
+                        "streamingService": null,
+                        "status": "Closed",
+                        "devicePromoCode": "",
+                        "isPrimary": true
+                    }
+                }
+            ],
+            "hasEmailAddressOnFile": true,
+            "isAccountIdentifiedUsingFLEPZOrVIN": true
+        },
+        "marketingId": "990003306821",
+        "marketingAcctId": "0504",
+        "email": null
+    }
+}

@@ -1,0 +1,48 @@
+<ng-container *ngrxLet="offerViewModel$ as offerViewModel">
+    <ng-container *ngIf="offerLoad$ | async as offerLoad">
+        <section
+            id="heroContent"
+            *ngrxLet="campaignHeroViewModel$ as campaignHeroViewModel"
+            [style.background-image]="campaignHeroViewModel?.heroBackgroundImageUrl ? 'url(' + campaignHeroViewModel?.heroBackgroundImageUrl + ')' : ''"
+        >
+            <img
+                *ngIf="campaignHeroViewModel?.heroForegroundImageUrl"
+                [src]="campaignHeroViewModel.heroForegroundImageUrl"
+                [attr.alt]="campaignHeroViewModel.heroImageAltText"
+            />
+        </section>
+        <section id="mainContent">
+            <ng-container *ngIf="offerLoad.pending || offerLoad.error">
+                <article id="skeletonLoaderOfferCard">
+                    <div class="shadow-helper">
+                        <sxm-ui-primary-package-card-skeleton-loader></sxm-ui-primary-package-card-skeleton-loader>
+                    </div>
+                    <sxm-ui-button-cta-skeleton-loader></sxm-ui-button-cta-skeleton-loader>
+                </article>
+            </ng-container>
+            <ng-container *ngIf="offerLoad.value">
+                <sxm-ui-primary-package-card
+                    [class.theme-non-retail]="offerViewModel?.offerDescription?.theme === 'Theme2'"
+                    [class.presentation-no-icons-single-detail-visible]="offerViewModel?.offerDescription?.presentation === 'Presentation3'"
+                    [packageData]="offerViewModel?.offerDescription"
+                ></sxm-ui-primary-package-card>
+                <sxm-ui-deal-addon-panel *ngIf="offerViewModel?.offerDealCopy as offerDealCopy" [copyContent]="offerDealCopy"></sxm-ui-deal-addon-panel>
+                <a
+                    class="button primary full-width"
+                    data-test="continueButton"
+                    [routerLink]="pageStepRouteConfiguration.routeUrlNext"
+                    queryParamsHandling="preserve"
+                    sxmUiDataClickTrack="routing"
+                >
+                    {{ translateKeyPrefix + ".CONTINUE_BUTTON_TEXT" | translate }}
+                </a>
+            </ng-container>
+        </section>
+        <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+            <div *ngIf="offerLoad.value" [innerHTML]="offerViewModel.legalCopy"></div>
+            <div *ngIf="offerLoad.pending">
+                <sxm-ui-skeleton-loader-text-copy></sxm-ui-skeleton-loader-text-copy>
+            </div>
+        </section>
+    </ng-container>
+</ng-container>

@@ -1,0 +1,23 @@
+{
+    "DeCareUseCasesSharedUiHeaderBarModule": {
+        "HeaderBarComponent": {
+            "SELECT_PROVINCE_LABEL": "Province:",
+            "EDIT_PROVINCE": "Edit",
+            "SWITCH_LANGUAGE": {
+                "LABEL": "FR",
+                "VALUE": "fr-CA"
+            },
+            "PROVINCE_SELECTOR_MODAL_TITLE": "Site settings"
+        },
+        "HeaderBarWithAccountNumberComponent": {
+            "SELECT_PROVINCE_LABEL": "Province:",
+            "EDIT_PROVINCE": "Edit",
+            "SWITCH_LANGUAGE": {
+                "LABEL": "FR",
+                "VALUE": "fr-CA"
+            },
+            "PROVINCE_SELECTOR_MODAL_TITLE": "Site settings",
+            "ACCOUNT": "Account: {{accountNumber}}"
+        }
+    }
+}

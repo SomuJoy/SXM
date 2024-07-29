@@ -1,0 +1,53 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": [
+        {
+            "subscriptions": [
+                {
+                    "id": "10011774253",
+                    "status": "Active",
+                    "plans": [
+                        {
+                            "code": "All Access - 12mo - wActv",
+                            "packageName": "SXM_SIR_AUD_ALLACCESS",
+                            "termLength": "12",
+                            "endDate": null,
+                            "type": "SELF_PAID",
+                            "marketType": "self-pay:standard",
+                            "capabilities": ["AUD", "IPAUD"]
+                        }
+                    ],
+                    "followonPlans": [],
+                    "radioService": {
+                        "last4DigitsOfRadioId": "2BWP",
+                        "vehicleInfo": {
+                            "model": null,
+                            "make": null,
+                            "year": null
+                        },
+                        "maskedRadioId": "****2BWP"
+                    },
+                    "streamingService": {
+                        "status": "Active",
+                        "maskedUserName": "olt******@siriusxm.com",
+                        "randomCredentials": false
+                    },
+                    "isPrimary": true,
+                    "inEligibleReasonCode": null,
+                    "isDataOnly": false,
+                    "isUsernameSameAsEmail": false
+                }
+            ],
+            "last4DigitsOfAccountNumber": "1949",
+            "accountState": {
+                "isOACRegistered": true
+            },
+            "maskedUserName": "olt******@siriusxm.com",
+            "maskedEmail": "NIN******@SIRIUSXM.COM",
+            "maskedPhoneNumber": "xxx-xxx-2222",
+            "isUsernameSameAsEmail": false
+        }
+    ]
+}

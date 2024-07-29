@@ -1,0 +1,253 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    .alert-count {
+        position: absolute;
+        box-sizing: border-box;
+        top: 1px;
+        right: -7px;
+        width: 16px;
+        height: 16px;
+        padding: 3px;
+        background: $blue-secondary;
+        border-radius: 50%;
+        @include font-size(10px);
+        line-height: 10px;
+        color: $white;
+    }
+}
+
+:host-context(.critical) {
+    .alert-count {
+        background: $red;
+    }
+}
+
+// alert count animation
+#bell-final-ringing-mask_tr {
+    animation: bell-final-ringing-mask_tr__tr 2880ms linear 1 normal forwards;
+}
+@keyframes bell-final-ringing-mask_tr__tr {
+    0% {
+        transform: translate(12px, 2.902834px) rotate(0deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    8.333333% {
+        transform: translate(12px, 2.902834px) rotate(15deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    11.111111% {
+        transform: translate(12px, 2.902834px) rotate(15deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    19.444444% {
+        transform: translate(12px, 2.902834px) rotate(-15deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    22.222222% {
+        transform: translate(12px, 2.902834px) rotate(-15deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    30.555556% {
+        transform: translate(12px, 2.902834px) rotate(15deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    33.333333% {
+        transform: translate(12px, 2.902834px) rotate(15deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    41.666667% {
+        transform: translate(12px, 2.902834px) rotate(-15deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    44.444444% {
+        transform: translate(12px, 2.902834px) rotate(-15deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    52.777778% {
+        transform: translate(12px, 2.902834px) rotate(15deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    55.555556% {
+        transform: translate(12px, 2.902834px) rotate(15deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    63.888889% {
+        transform: translate(12px, 2.902834px) rotate(-15deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    66.666667% {
+        transform: translate(12px, 2.902834px) rotate(-15deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    77.777778% {
+        transform: translate(12px, 2.902834px) rotate(15deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    80.555556% {
+        transform: translate(12px, 2.902834px) rotate(15deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    100% {
+        transform: translate(12px, 2.902834px) rotate(15deg);
+    }
+}
+#bell-final-ringing-clapper_tr {
+    animation: bell-final-ringing-clapper_tr__tr 2880ms linear 1 normal forwards;
+}
+@keyframes bell-final-ringing-clapper_tr__tr {
+    0% {
+        transform: translate(12.000373px, 2.506012px) rotate(0deg);
+    }
+    2.777778% {
+        transform: translate(12.000373px, 2.506012px) rotate(0deg);
+        animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    11.111111% {
+        transform: translate(12.000373px, 2.506012px) rotate(20deg);
+        animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    22.222222% {
+        transform: translate(12.000373px, 2.506012px) rotate(-20deg);
+        animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    33.333333% {
+        transform: translate(12.000373px, 2.506012px) rotate(20deg);
+        animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    44.444444% {
+        transform: translate(12.000373px, 2.506012px) rotate(-20deg);
+        animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    55.555556% {
+        transform: translate(12.000373px, 2.506012px) rotate(20deg);
+        animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    66.666667% {
+        transform: translate(12.000373px, 2.506012px) rotate(-20deg);
+        animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    80.555556% {
+        transform: translate(12.000373px, 2.506012px) rotate(20deg);
+    }
+    88.888889% {
+        transform: translate(12.000373px, 2.506012px) rotate(5deg);
+    }
+    94.444444% {
+        transform: translate(12.000373px, 2.506012px) rotate(10deg);
+    }
+    100% {
+        transform: translate(12.000373px, 2.506012px) rotate(5deg);
+    }
+}
+#bell-final-ringing-body_tr {
+    animation: bell-final-ringing-body_tr__tr 2880ms linear 1 normal forwards;
+}
+@keyframes bell-final-ringing-body_tr__tr {
+    0% {
+        transform: translate(10.341086px, 1.040931px) rotate(-7.5deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    8.333333% {
+        transform: translate(10.341086px, 1.040931px) rotate(7.5deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    11.111111% {
+        transform: translate(10.341086px, 1.040931px) rotate(7.5deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    19.444444% {
+        transform: translate(10.341086px, 1.040931px) rotate(-22.5deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    22.222222% {
+        transform: translate(10.341086px, 1.040931px) rotate(-22.5deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    30.555556% {
+        transform: translate(10.341086px, 1.040931px) rotate(7.5deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    33.333333% {
+        transform: translate(10.341086px, 1.040931px) rotate(7.5deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    41.666667% {
+        transform: translate(10.341086px, 1.040931px) rotate(-22.5deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    44.444444% {
+        transform: translate(10.341086px, 1.040931px) rotate(-22.5deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    52.777778% {
+        transform: translate(10.341086px, 1.040931px) rotate(7.5deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    55.555556% {
+        transform: translate(10.341086px, 1.040931px) rotate(7.5deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    63.888889% {
+        transform: translate(10.341086px, 1.040931px) rotate(-22.5deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    66.666667% {
+        transform: translate(10.341086px, 1.040931px) rotate(-22.5deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    77.777778% {
+        transform: translate(10.341086px, 1.040931px) rotate(7.5deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    80.555556% {
+        transform: translate(10.341086px, 1.040931px) rotate(7.5deg);
+        animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    }
+    100% {
+        transform: translate(10.341086px, 1.040931px) rotate(7.5deg);
+    }
+}
+
+// no alert count transition animation
+
+#bell-final-logout-mask_tr {
+    animation: bell-final-logout-mask_tr__tr 320ms linear 1 normal forwards;
+}
+@keyframes bell-final-logout-mask_tr__tr {
+    0% {
+        transform: translate(12px, 2.902834px) rotate(15deg);
+        animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    }
+    100% {
+        transform: translate(12px, 2.902834px) rotate(0deg);
+    }
+}
+#bell-final-logout-clapper_tr {
+    animation: bell-final-logout-clapper_tr__tr 320ms linear 1 normal forwards;
+}
+@keyframes bell-final-logout-clapper_tr__tr {
+    0% {
+        transform: translate(12.000373px, 2.506012px) rotate(5deg);
+        animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    }
+    100% {
+        transform: translate(12.000373px, 2.506012px) rotate(0deg);
+    }
+}
+#bell-final-logout-body_tr {
+    animation: bell-final-logout-body_tr__tr 320ms linear 1 normal forwards;
+}
+@keyframes bell-final-logout-body_tr__tr {
+    0% {
+        transform: translate(10.341086px, 1.040931px) rotate(7.5deg);
+        animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    }
+    100% {
+        transform: translate(10.341086px, 1.040931px) rotate(-7.5deg);
+    }
+}

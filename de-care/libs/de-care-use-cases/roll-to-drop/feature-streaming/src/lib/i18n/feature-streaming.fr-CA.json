@@ -1,0 +1,21 @@
+{
+    "deCareUseCasesRollToDropFeatureStreaming": {
+        "confirmationPageComponent": {
+            "HERO": {
+                "TITLE": "Merci de vous être abonné."
+            },
+            "IMPORTANT_INFO": {
+                "LEGAL_COPY": "Renseignements importants au sujet de votre abonnement:"
+            },
+            "STREAMING_PLAYER_LINK": ""
+        },
+        "rollToDropPageComponent": {
+            "ENTER_YOUR_EMAIL_STEP": "Entrez votre courriel",
+            "ENTER_YOUR_INFO_STEP": "Entrez vos renseignements",
+            "REVIEW_YOUR_ORDER_STEP": "Revoyez et terminez votre commande",
+            "EDIT_BUTTON_LABEL": "Modifier",
+            "SUBMIT_ORDER_BUTTON": "Terminer Ma Commande",
+            "ENTER_A_CAPTCHA_TO_FINISH": "Veuillez entrer le CAPTCHA pour terminer"
+        }
+    }
+}

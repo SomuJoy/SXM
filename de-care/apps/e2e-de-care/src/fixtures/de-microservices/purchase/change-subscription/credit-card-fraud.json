@@ -1,0 +1,12 @@
+{
+    "status": "FAILURE",
+    "httpStatusCode": 400,
+    "httpStatus": "BAD_REQUEST",
+    "error": {
+        "errorCode": "CC_FRAUD_REJECT",
+        "errorPropKey": "error.purchase.service.creditcard.fraud.reject",
+        "errorType": "BUSINESS",
+        "errorStackTrace": "AccountNumber: 10000226670 | RadioId:  | x-forwarded-for: [10.128.32.136] | URL: /services/purchase/change-subscription | Exception: PurchaseServiceException#CCFraudException | StackTrace: PaymentInfoValidator.java:180 | ErrorType: BUSINESS | ErrorMessage: ERROR : [errorCode : CC_FRAUD_REJECT, errorPropKey : error.purchase.service.creditcard.fraud.reject, errorType : CHECKED, errorLevel : ACTION, statusCode : 400 BAD_REQUEST, errorMessage : Card rejected for Fraud | Card rejected for Fraud, sourceErrorCode : null] | FullStackTrace: ",
+        "logId": "0af32f24-6861-4edd-9858-0a69ac860786"
+    }
+}

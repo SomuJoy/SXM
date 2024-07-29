@@ -1,0 +1,9 @@
+{
+    "DomainsIdentificationUiRadioIdAndLastnameLookupFormModule": {
+        "RadioIdAndLastnameLookupFormComponent": {
+            "LOOKUP_ERROR": "We could not find an account with this information.",
+            "SYSTEM_ERROR": "Unfortunately, our systems are down please try again later.",
+            "SUBMIT_BUTTON": "Continue"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+<main de-care-page-main>
+    <sxm-ui-verify-your-account-form-fields [account]="selectedAccount$ | async" (submitVerifyAccountForm)="onVerifyAccountClick($event)">
+        <privacy-policy privacyPolicy></privacy-policy>
+    </sxm-ui-verify-your-account-form-fields>
+    <br />
+    <a data-link-name="Dont see your account" class="text-link forgot-text" sxmUiDataClickTrack="exit" (click)="navigateToNoAccount()">
+        {{ translateKeyPrefix + ".NO_ACCOUNT_TEXT" | translate }}
+    </a>
+</main>

@@ -1,0 +1,13 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "firstname": "JOHN",
+        "lastname": "SMITH",
+        "username": "s65vuek.yba1@siriusxm.com",
+        "promocode": "AA3MOTRIALGGLE",
+        "trialstartdate": "02/21/2023 00:00:00",
+        "trialenddate": "05/21/2023 00:00:00"
+    }
+}

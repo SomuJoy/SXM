@@ -1,0 +1,37 @@
+<main class="background-offwhite">
+    <div class="content-container" *ngIf="entitlementErrorData$ | async as entitlementErrorData">
+        <div class="row align-center no-padding-small">
+            <div class="column small-12 medium-2 background-white raised"></div>
+            <div class="column small-12 medium-6 background-white raised title container">
+                <button *ngIf="entitlementErrorData.entitlementId && entitlementErrorData.partnerName" class="back-button" (click)="fireBackButton()">
+                    <svg class="icon icon-utility icon-arrow">
+                        <use class="icon-dropdown-sm" xlink:href="#icon-dropdown-sm"></use>
+                    </svg>
+                    {{ translateKeyPrefix + ".BACK" | translate }}
+                </button>
+                <h4 class="title">
+                    <ng-container *ngIf="entitlementErrorData.entitlementId && entitlementErrorData.partnerName; else entitlementErrorTitle">
+                        {{ translateKeyPrefix + ".GENERIC_ERROR_TITLE" | translate }}
+                    </ng-container>
+                    <ng-template #entitlementErrorTitle>
+                        {{ translateKeyPrefix + ".ENTITLEMENT_ERROR_TITLE" | translate }}
+                    </ng-template>
+                </h4>
+                <ng-container *ngIf="entitlementErrorData.entitlementId && entitlementErrorData.partnerName; else entitlementError">
+                    <div class="body" *ngIf="translateKeyPrefix + '.GENERIC_ERROR_BODY' | translate as bodyText">
+                        <p>{{ bodyText[0] }}</p>
+                        <p>
+                            {{ bodyText[1] }} <a class="text-link" (click)="fireBackButton()">{{ bodyText[2] }}</a>
+                            {{ bodyText[3] }}
+                        </p>
+                        <p>{{ bodyText[4] }} {{ entitlementErrorData.partnerName }}.</p>
+                    </div>
+                </ng-container>
+                <ng-template #entitlementError>
+                    <p class="body">{{ translateKeyPrefix + ".ENTITLEMENT_ERROR_BODY" | translate }}</p>
+                </ng-template>
+            </div>
+            <div class="column small-12 medium-2 background-white raised"></div>
+        </div>
+    </div>
+</main>

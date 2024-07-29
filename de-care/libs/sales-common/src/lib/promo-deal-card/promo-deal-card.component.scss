@@ -1,0 +1,72 @@
+@import "sxm.phoenix.imports";
+
+$common-spacing: 16px;
+$extended-spacing: 26px;
+
+%extended-spacing-sides {
+    padding-left: $common-spacing;
+    padding-right: $common-spacing;
+    @include bp(medium) {
+        padding-left: $extended-spacing;
+        padding-right: $extended-spacing;
+    }
+}
+
+:host {
+    .promo-deal-card-container::ng-deep {
+        div.content-card-body {
+            padding: $common-spacing 0 0;
+            promo-deal {
+                > div.row {
+                    @extend %extended-spacing-sides;
+                    &:last-child:not(:first-child) {
+                        padding: 0;
+                    }
+                    sxm-ui-accordion-chevron {
+                        display: block;
+                        width: 100%;
+                        div.accordion-content-wrapper {
+                            padding-bottom: 8px;
+                            padding-top: 4px;
+                            @extend %extended-spacing-sides;
+                        }
+                        div.button-container {
+                            text-align: left;
+                            width: 100%;
+                            padding-top: $common-spacing;
+                            padding-bottom: $common-spacing;
+                            @extend %extended-spacing-sides;
+                            background-color: $blue-ultra-light;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    sxm-ui-content-card.deal-content-card::ng-deep {
+        .small-copy {
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .content-card {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.promo-deal-card-container {
+    margin-bottom: 16px;
+    min-width: 100%;
+    z-index: 2;
+
+    @include bp(medium) {
+        width: 105%;
+    }
+}
+
+:host-context(.margin-bottom) {
+    .deal-content-card {
+        margin-bottom: 16px;
+    }
+}

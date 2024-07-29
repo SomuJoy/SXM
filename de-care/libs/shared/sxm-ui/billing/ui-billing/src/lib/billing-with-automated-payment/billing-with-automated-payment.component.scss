@@ -1,0 +1,18 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.billing-amount-and-date {
+    margin-top: 20px;
+}
+
+.btn-make-payment {
+    margin-top: 24px;
+}
+button::ng-deep {
+    span {
+        display: none;
+        @include bp(mobile-large) {
+            display: inline;
+        }
+    }
+}

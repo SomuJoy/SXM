@@ -1,0 +1,15 @@
+{
+    "TITLE": "Écoute en continu",
+    "PLAN_TITLE": "{{plansPlural}}",
+    "MANAGE_LINK": "Gérer",
+    "STREAMING_TITLE": "Connexion",
+    "EDIT_LINK": "Modifier",
+    "CANCEL_LABEL": "Annulment mon abonnement",
+    "SXM_APP_TOOLTIP": "Votre forfait inclut l'écoute en ligne sur votre téléphone, ordinateur, télévision intelligente et haut-parleurs grâce à l'Appli SXM.",
+    "PLURAL_MAP": {
+        "PLANS": {
+            "=1": "Forfait",
+            "other": "Forfaits"
+        }
+    }
+}

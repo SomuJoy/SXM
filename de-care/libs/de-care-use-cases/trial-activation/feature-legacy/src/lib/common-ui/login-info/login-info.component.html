@@ -1,0 +1,57 @@
+<div [formGroup]="parentForm">
+    <p class="gray-text">{{ "trialActivation.loginInfoComponent.LOGIN_SUB_HEADER" | translate }}</p>
+    <p *ngIf="!canEditEmail; else emailField">
+        <ng-container *ngIf="!!email">
+            <strong>{{ "trialActivation.loginInfoComponent.EMAIL.LABEL" | translate }}:</strong> <br />
+            {{ email }}
+            <input type="hidden" [formControlName]="emailControlName" />
+        </ng-container>
+    </p>
+    <ng-template #emailField>
+        <div class="input-container" [class.invalid]="parentForm.get(emailControlName) | formControlInvalid: submitted">
+            <input type="text" [formControlName]="emailControlName" placeholder="{{ 'trialActivation.loginInfoComponent.EMAIL.LABEL' | translate }}" />
+        </div>
+        <div class="invalid-feedback" *ngIf="parentForm.get(emailControlName) | formControlInvalid: submitted">
+            <p *ngIf="parentForm.get(emailControlName).errors && parentForm.get(emailControlName).errors.usernameInUse; else genericEmailError">
+                {{ "trialActivation.loginInfoComponent.EMAIL.IN_USE_ERROR" | translate }}
+            </p>
+            <ng-template #genericEmailError>
+                <p *ngIf="parentForm.get(emailControlName).errors">{{ "trialActivation.loginInfoComponent.EMAIL.ERROR" | translate }}</p>
+            </ng-template>
+        </div>
+    </ng-template>
+
+    <sxm-ui-password-strength
+        [formControlName]="passwordControlName"
+        [labelText]="'trialActivation.loginInfoComponent.PASSWORD.LABEL' | translate"
+        [id]="passwordElId"
+        [alwaysDisplayPasswordHint]="false"
+        [class.invalid]="parentForm.controls[passwordControlName] | formControlInvalid: submitted"
+        #passwordControl
+    >
+    </sxm-ui-password-strength>
+    <div *ngIf="parentForm.controls[passwordControlName] | formControlInvalid: submitted" class="invalid-feedback">
+        <p *ngIf="parentForm.controls[passwordControlName].hasError('required')">
+            {{ "trialActivation.loginInfoComponent.PASSWORD.ERRORS.REQUIRED" | translate }}
+        </p>
+        <p *ngIf="parentForm.controls[passwordControlName].hasError('length')">
+            {{ "trialActivation.loginInfoComponent.PASSWORD.ERRORS.LENGTH" | translate: parentForm.controls[passwordControlName].errors.length }}
+        </p>
+        <p *ngIf="parentForm.controls[passwordControlName].hasError('policy')">
+            {{ "trialActivation.loginInfoComponent.PASSWORD.ERRORS.POLICY" | translate }}
+        </p>
+        <p *ngIf="parentForm.controls[passwordControlName].hasError('generic')">
+            {{ "trialActivation.loginInfoComponent.PASSWORD.ERRORS.GENERIC" | translate }}
+        </p>
+        <p *ngIf="parentForm.controls[passwordControlName].errors?.reservedWords as reservedWordsError">
+            {{
+                "trialActivation.loginInfoComponent.PASSWORD.ERRORS.RESERVED_WORDS"
+                    | translate
+                        : {
+                              pluralWord: reservedWordsError.words.length | i18nPlural: ("trialActivation.loginInfoComponent.PLURAL_MAP.WORD" | translate),
+                              reservedWords: reservedWordsError.words.join(", ")
+                          }
+            }}
+        </p>
+    </div>
+</div>

@@ -1,0 +1,133 @@
+<ng-container *ngrxLet="translationsForComponentService.currentLang$ as currentLanguage">
+    <p class="bold mb-4" *ngIf="hasHeader">
+        {{ headerText || (translateKeyPrefix + ".HEADING" + (planData.isFollowon ? "_FOLLOW_ON" : "") | translate) }}
+    </p>
+
+    <!-- US -->
+    <div *ngIf="!planData.isCanada; else canadaTemplate" class="plan-and-price" data-e2e="yourCurrentPlan.plan">
+        <p>
+            <span [innerHTML]="'app.packageDescriptions.' + planData.packageName + '.name' | translate"></span>
+            <span>
+                <!-- Term and Price based on Plan Type  -->
+                <ng-container [ngSwitch]="planData.type">
+                    <!-- Promotion   -->
+                    <ng-container *ngSwitchCase="'PROMO'">
+                        {{ separator
+                        }}{{
+                            translateKeyPrefix + ".TERM.PER_MONTH"
+                                | translate
+                                    : {
+                                          termLength: planData?.termLength,
+                                          pluralizedMonth: planData?.termLength | i18nPlural: (translateKeyPrefix + ".PLURAL_MAP.MONTH" | translate)
+                                      }
+                        }}
+                        {{
+                            translateKeyPrefix + ".PRICE.PER_MONTH" + (planData.isQuebec ? "_WO_PLUS_FEES" : "")
+                                | translate: { price: planData.price / planData.termLength | currency: "USD":"symbol-narrow":undefined:currentLanguage }
+                        }}
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'PROMO_MCP'">
+                        {{ separator
+                        }}{{
+                            translateKeyPrefix + ".TERM.PER_MONTH"
+                                | translate
+                                    : {
+                                          termLength: planData?.termLength,
+                                          pluralizedMonth: planData?.termLength | i18nPlural: (translateKeyPrefix + ".PLURAL_MAP.MONTH" | translate)
+                                      }
+                        }}
+                        {{
+                            translateKeyPrefix + ".PRICE.PER_MONTH" + (planData.isQuebec ? "_WO_PLUS_FEES" : "")
+                                | translate: { price: planData.price | currency: "USD":"symbol-narrow":undefined:currentLanguage }
+                        }}
+                    </ng-container>
+                    <!-- Trial   -->
+                    <ng-container *ngSwitchCase="'TRIAL'">{{ separator }}{{ translateKeyPrefix + ".PRICE.FREE" | translate }}</ng-container>
+                    <!-- Trial Extension   -->
+                    <ng-container *ngSwitchCase="'TRIAL_EXT'"
+                        >{{ separator
+                        }}{{
+                            translateKeyPrefix + ".PRICE.TRIAL_EXT"
+                                | translate
+                                    : {
+                                          termLength: planData?.termLength,
+                                          pluralizedMonth: planData?.termLength | i18nPlural: (translateKeyPrefix + ".PLURAL_MAP.MONTH" | translate)
+                                      }
+                        }}</ng-container
+                    >
+                    <!-- Full Price   -->
+                    <ng-container *ngSwitchDefault>
+                        <ng-container *ngIf="planData.price > 0">
+                            {{ separator }}
+                            {{
+                                translateKeyPrefix + ".PRICE.PER_MONTH" + (planData.isQuebec ? "_WO_PLUS_FEES" : "")
+                                    | translate: { price: planData.price / planData.termLength | currency: "USD":"symbol-narrow":undefined:currentLanguage }
+                            }}
+                        </ng-container>
+                    </ng-container>
+                </ng-container>
+            </span>
+        </p>
+    </div>
+
+    <!-- CANADA -->
+    <ng-template #canadaTemplate>
+        <div *ngIf="'app.packageDescriptions.' + planData.packageName + '.name' | translate as packageFullName">
+            <p>
+                <span [innerHTML]="packageFullName"></span>
+                <span>
+                    <!-- Term and Price based on Plan Type  -->
+                    <ng-container [ngSwitch]="planData.type">
+                        <!-- Promotion   -->
+                        <ng-container *ngSwitchCase="'PROMO'">
+                            {{ separator }}{{ translateKeyPrefix + ".TERM.PER_MONTH" | translate: planData }}
+                            {{
+                                translateKeyPrefix + ".PRICE.TOTAL" + (planData.isQuebec ? "_WO_PLUS_FEES" : "")
+                                    | translate: { price: planData.price | currency: "USD":"symbol-narrow":undefined:currentLanguage }
+                            }}
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'PROMO_MCP'">
+                            {{ separator }}{{ translateKeyPrefix + ".TERM.PER_MONTH" | translate: planData }}
+                            {{
+                                translateKeyPrefix + ".PRICE.PER_MONTH" + (planData.isQuebec ? "_WO_PLUS_FEES" : "")
+                                    | translate: { price: planData.price | currency: "USD":"symbol-narrow":undefined:currentLanguage }
+                            }}
+                        </ng-container>
+                        <!-- Trial   -->
+                        <ng-container *ngSwitchCase="'TRIAL'">{{ separator }}{{ translateKeyPrefix + ".PRICE.FREE" | translate }}</ng-container>
+                        <ng-container *ngSwitchCase="'TRIAL_EXT'">
+                            {{ separator }}{{ translateKeyPrefix + ".TERM.PER_MONTH" | translate: planData }}
+                            {{
+                                planData.isQuebec
+                                    ? ""
+                                    : (translateKeyPrefix + ".PRICE.TOTAL" | translate: { price: planData.price | currency: "USD":"symbol-narrow":undefined:currentLanguage })
+                            }}
+                        </ng-container>
+                        <!-- Full Price   -->
+                        <ng-container *ngSwitchDefault>
+                            {{ separator }}
+                            {{
+                                translateKeyPrefix + ".PRICE.PER_MONTH" + (planData.isQuebec ? "_WO_PLUS_FEES" : "")
+                                    | translate: { price: planData.price / planData.termLength | currency: "USD":"symbol-narrow":undefined:currentLanguage }
+                            }}
+                        </ng-container>
+                    </ng-container>
+                </span>
+            </p>
+        </div>
+    </ng-template>
+
+    <!--Follow On-->
+    <span
+        *ngIf="
+            planData.endDate &&
+            (planData.type === 'TRIAL' || (planData.fullPrice && (planData.type === 'PROMO' || planData.type === 'PROMO_MCP' || planData.type === 'TRIAL_EXT')))
+        "
+        class="mt-2 text-gray small-copy"
+    >
+        {{
+            translateKeyPrefix + ".PROMO_INFO." + planData.type.toUpperCase()
+                | translate: { renewalPrice: planData.fullPrice | currency, startDate: planData.endDate | sxmUiDate: null:currentLanguage }
+        }}
+    </span>
+</ng-container>

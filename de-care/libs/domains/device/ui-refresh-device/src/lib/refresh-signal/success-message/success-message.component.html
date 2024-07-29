@@ -1,0 +1,35 @@
+<div>
+    <!--  Todo: Hide/Show success messages depending on if user is in the car or not  -->
+    <!--  In Car? Then upon Successfully sending the refresh signal for the radio Id, the following copy will be presented -->
+    <div id="success-message-in-car" *ngIf="userInCar; else userOutOfCarSuccessMessage">
+        <div class="flex align-middle align-justify refresh-sent-content" data-e2e="refreshSignalInCarSuccessMessage">
+            <h5>{{ "refreshDevice.SuccessMessageComponent.REFRESH_SENT_HEADLINE" | translate }}</h5>
+            <span class="success-checkmark-circle">
+                <mat-icon svgIcon="checkmark"></mat-icon>
+            </span>
+        </div>
+
+        <p>{{ "refreshDevice.SuccessMessageComponent.REFRESH_SENT_MESSAGE" | translate }}</p>
+        <p class="not-working-question">
+            <b>{{ "refreshDevice.SuccessMessageComponent.REFRESH_SENT_NOT_WORKING_QUESTION" | translate }}</b>
+        </p>
+        <p>
+            <a class="text-link" target="_blank" href="{{ 'refreshDevice.SuccessMessageComponent.REFRESH_SENT_NOT_WORKING_LINK_URL' | translate }}">
+                {{ "refreshDevice.SuccessMessageComponent.REFRESH_SENT_NOT_WORKING_LINK_TEXT" | translate }}
+            </a>
+        </p>
+    </div>
+
+    <!--    Out of car? Then upon Successfully sending the refresh instruction to the customer, the following copy will be presented-->
+    <ng-template #userOutOfCarSuccessMessage>
+        <div id="success-message-out-of-car" data-e2e="refreshSignalOutOfCarSuccessMessage">
+            <div class="flex align-middle align-justify refresh-sent-content">
+                <h5>{{ "refreshDevice.SuccessMessageComponent.TEXT_INSTRUCTIONS_SENT_HEADLINE" | translate }}</h5>
+                <span class="success-checkmark-circle">
+                    <mat-icon svgIcon="checkmark"></mat-icon>
+                </span>
+            </div>
+            <p>{{ "refreshDevice.SuccessMessageComponent.TEXT_INSTRUCTIONS_SENT_TEXT" | translate }}</p>
+        </div>
+    </ng-template>
+</div>

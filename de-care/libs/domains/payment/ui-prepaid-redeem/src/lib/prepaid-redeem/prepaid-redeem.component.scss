@@ -1,0 +1,77 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: block;
+}
+
+button {
+    .icon {
+        &.small {
+            height: 8px;
+            margin: 0 6px 1px 2px;
+            width: 8px;
+        }
+    }
+}
+
+.component--add-element-title {
+    @include font-size(14px);
+    color: $blue-secondary;
+    font-weight: calculate-font-weight("bold");
+    line-height: 22px;
+    margin: 24px 0 16px;
+}
+
+.add-element-content-container {
+    p {
+        @include font-size(14px);
+        margin-bottom: 14px;
+    }
+
+    .icon {
+        display: inline-block;
+        vertical-align: -5px;
+
+        use {
+            &.icon-checkmark-sm {
+                stroke: $green;
+            }
+        }
+
+        & + p {
+            display: inline-block;
+        }
+    }
+
+    .input-container {
+        position: relative;
+        margin-bottom: 16px;
+        label {
+            font-size: 14px;
+        }
+    }
+
+    .apply-btn {
+        margin-top: 0;
+    }
+
+    .giftcard-yy {
+        padding-left: 12px;
+    }
+    .giftcard-mm {
+        padding-right: 12px;
+    }
+
+    .invalid-feedback {
+        p {
+            margin-bottom: 0;
+        }
+    }
+}
+
+#prepaid-content {
+    display: none;
+    &.active {
+        display: block;
+    }
+}

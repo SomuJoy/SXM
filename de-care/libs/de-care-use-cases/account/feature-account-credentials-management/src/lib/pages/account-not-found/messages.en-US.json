@@ -1,0 +1,33 @@
+{
+    "HEADLINE": "We can't seem to find your account.",
+    "SUBTITLE": "Let's try using your Radio ID or Account Number to find your account.",
+    "BUTTON_TEXT": "CONTINUE",
+    "PLACEHOLDER_RADIO": "Enter Radio ID",
+    "PLACEHOLDER_TEXT": "Radio ID",
+    "PLACEHOLDER_ACC": "Enter Account Number",
+    "PLACEHOLDER_TEXT_ACC": "Account Number",
+    "RADIO_LINK_INSTRUCTIONS": "How do I find my Radio ID?",
+    "HELP_FINDING_RADIO_TITLE": "Radio ID Help",
+    "RADIO_LOOKUP_MARINE_AVIATION": "Device Help",
+    "RADIOID_ACCOUNT_NUMBER_LOOKUP": "Don't have a Radio ID (RID) or a Account Number?",
+    "RADIO_ID_OPTION_LABEL": "Enter Radio ID",
+    "RADIO_ID_INPUT_PLACEHOLDER": "Radio ID",
+    "CONTINUE_BUTTON": "Continue",
+    "ERROR": {
+        "RADIO_ID_INPUT_FORMAT": "Enter a valid Radio ID.",
+        "RADIO_ID_INPUT_REQUIRED": "A Radio ID is required.",
+        "ACCOUNT_INPUT_REQUIRED": "An Account Number is required",
+        "ACCOUNT_INPUT_FORMAT": "Enter a valid Account Number."
+    },
+    "SERVICE_ERROR_MESSAGES": {
+        "INVALID_RADIO_ID": "The number entered does not match our records. Please try again or chat with an agent.",
+        "SYSTEM_ERROR": "We’re sorry… something went wrong. We’re experiencing technical issues and are working on resolving it. Please try again."
+    },
+    "FORGOT_USERNAME_PAGE_TITLE": "Forgot Username | SiriusXM ",
+    "FORGOT_PASSWORD_PAGE_TITLE": "Reset Password | SiriusXM ",
+    "THIRD_PARTY_ERROR_MESSAGE": "Looks like this subscription is managed by a third-party provider.",
+    "THIRD_PARTY_SUB_ERROR_MESSAGE": "Subscriptions purchased through the SXM App or another retailer, must be managed directly with that provider.",
+    "THIRD_PARTY_LISTEN_NOW": "Log in to start listening.",
+    "LISTEN_NOW_LINK": "https://www.siriusxm.com/downloadstreaming"
+
+}

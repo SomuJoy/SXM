@@ -1,0 +1,15 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "options": ["CHANGE_PLAN", "CHANGE_TERM", "REFRESH_RADIO", "DOWNLOAD_MANUAL", "REPLACE_RADIO", "TRANSFER_SUBSCRIPTION", "CANCEL_SUBSCRIPTION"],
+        "cancelSubscriptionOptionInfo": {
+            "showViewOffer": true,
+            "showTransferRadio": true,
+            "showCancelOnline": true,
+            "showCancelViaChat": true,
+            "triggeredRuleId": "4"
+        }
+    }
+}

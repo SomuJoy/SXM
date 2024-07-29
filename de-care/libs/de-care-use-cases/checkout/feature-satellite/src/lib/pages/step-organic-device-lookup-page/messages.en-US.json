@@ -1,0 +1,13 @@
+{
+    "TITLE": "Find your radio",
+    "BODY": "Please enter your car info. Or, if you already have a SiriusXM account, you can ",
+    "SIGN_IN_LINK_TEXT": "sign in",
+    "TABS_ARIA_LABEL": "",
+    "TAB_TITLE_FLEPZ": "Account Info",
+    "TAB_TITLE_DEVICE_LOOKUP": "Car Info",
+    "TAB_TITLE_RADIO_INFO": "Radio Info",
+    "RADIO_LOOKUP_MODAL_TITLE": "Radio Lookup",
+    "DONT_SEE_RADIO": "Don't see your radio?",
+    "TRY_AGAIN_LINK": "Try again",
+    "TRY_AGAIN_TEXT": " with the information used to purchase your vehicle."
+}

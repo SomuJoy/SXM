@@ -1,0 +1,10 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.vertical-spacing {
+    margin-bottom: 24px;
+}
+
+hr {
+    @include hr;
+}

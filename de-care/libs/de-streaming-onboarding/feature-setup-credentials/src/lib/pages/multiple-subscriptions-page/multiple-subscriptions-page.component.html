@@ -1,0 +1,59 @@
+<div *ngIf="!isNostreaming">
+    <h4>{{ translateKeyPrefix + "HEADLINE" | translate }}</h4>
+</div>
+<div *ngIf="isNostreaming">
+    <h4>{{ translateKeyPrefix + "NO_MATCH_HEADLINE" | translate }}</h4>
+</div>
+<br />
+<div [innerHTML]="translateKeyPrefix + 'INSTRUCTIONS' | translate"></div>
+<br />
+<hr />
+<br />
+<ng-container *ngFor="let subscription of subscriptions$ | async">
+    <div class="row no-padding">
+        <div class="column small-8 align-left align-top no-padding">
+            <sxm-ui-subscription-summary-block [subscription]="subscription"></sxm-ui-subscription-summary-block>
+        </div>
+        <div class="column small-4 no-padding align-right align-top">
+            <a
+                *ngIf="subscription.eligibilityType === 'CREATE_LOGIN'"
+                routerLink="../credential-setup"
+                (click)="createLogin(subscription)"
+                class="enter-radio-id ctaLink"
+                sxmUiDataClickTrack="routing"
+            >
+                {{ translateKeyPrefix + "CTA_Link_LOGIN_TEXT" | translate }}
+            </a>
+            <a *ngIf="subscription.eligibilityType === 'LISTEN_NOW'" routerLink="" class="enter-radio-id ctaLink" (click)="onSignInClick()" sxmUiDataClickTrack="player">
+                {{ translateKeyPrefix + "CTA_Link_LISTEN_TEXT" | translate }}
+            </a>
+            <ng-container *ngIf="subscription.eligibilityType === 'FREE_PREVIEW'">
+                <p class="text-color-gray-dark cta-notice">{{ translateKeyPrefix + "CTA_FREE_PREVIEW_GREY" | translate }}</p>
+                <br />
+                <a routerLink="" class="enter-radio-id ctaLink" (click)="onPreviewClick()" sxmUiDataClickTrack="player">
+                    {{ translateKeyPrefix + "CTA_Link_FREE_TEXT" | translate }}
+                </a>
+            </ng-container>
+        </div>
+    </div>
+    <br />
+    <hr />
+    <br />
+</ng-container>
+
+<div>
+    <button class="button-bg" *ngIf="(this._totalPages$ | async) - 1 > this._currentPageIndex" (click)="loadMoreradios()" sxmUiDataClickTrack="ui">
+        <span class="button-cta">{{ translateKeyPrefix + "LOAD_RADIO_BUTTON_TEXT" | translate }}</span>
+    </button>
+</div>
+<br />
+<div>
+    <button class="button-bg" *ngIf="this._currentPageIndex >= 1" (click)="loadPreviousradios()" sxmUiDataClickTrack="ui">
+        <span class="button-cta">{{ translateKeyPrefix + "LOAD_PREVIOUS_RADIO_BUTTON_TEXT" | translate }}</span>
+    </button>
+</div>
+<br />
+<br />
+<a routerLink="../no-match" class="enter-radio-id" sxmUiDataClickTrack="modal">
+    {{ translateKeyPrefix + "DONT_SEE_ACCOUNT_TEXT" | translate }}
+</a>

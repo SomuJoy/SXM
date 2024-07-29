@@ -1,0 +1,142 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    display: block;
+}
+
+.payment-info-title {
+    margin: 16px 0;
+}
+
+.message {
+    margin-bottom: 16px;
+}
+
+.service-address-same {
+    margin-top: 8px;
+}
+
+.service-address-title {
+    margin-top: 24px;
+    margin-bottom: 10px;
+}
+
+.radio-item {
+    margin: 8px 0;
+
+    &:first-of-type {
+        margin-top: 16px;
+    }
+}
+
+.new-card-only {
+    margin: 14px 0 14px 6px;
+}
+
+.row {
+    padding: 0;
+
+    .column {
+        &:first-of-type {
+            padding-left: 0;
+        }
+
+        &:last-of-type {
+            padding-right: 0;
+        }
+    }
+}
+
+.input-container {
+    margin-bottom: 16px;
+    width: 100%;
+
+    label {
+        @include font-size(14px);
+        line-height: 22px;
+    }
+}
+
+.row sxm-ui-tooltip {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: auto !important;
+}
+
+.dropdown {
+    margin-bottom: 16px;
+    width: 100%;
+
+    .input-container {
+        margin-bottom: 0;
+    }
+}
+
+fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.cc-icon {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    display: none;
+}
+
+.cc-amex ~ .icon-amex,
+.cc-dci ~ .icon-dci,
+.cc-discover ~ .icon-discover,
+.cc-jcb ~ .icon-jcb,
+.cc-mc ~ .icon-mc,
+.cc-visa ~ .icon-visa,
+.cc-unionpay ~ .icon-unionpay {
+    display: block;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 16px;
+}
+
+button[type="submit"] {
+    margin-bottom: 16px;
+}
+
+.not-visible {
+    display: none;
+}
+
+.empty-invalid-feedback {
+    height: 43px;
+    @include bp(large) {
+        height: 25px;
+    }
+}
+
+.invalid-feedback p {
+    height: 34px;
+    @include bp(large) {
+        height: inherit;
+    }
+}
+
+hr {
+    @include hr;
+}
+
+.charge-agreement {
+    margin-top: 16px;
+    hr {
+        margin: 16px 0 8px;
+    }
+    @include bp(medium) {
+        margin-top: 40px;
+        hr {
+            display: none;
+        }
+    }
+}

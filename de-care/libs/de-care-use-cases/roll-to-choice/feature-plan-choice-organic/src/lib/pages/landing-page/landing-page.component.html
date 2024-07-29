@@ -1,0 +1,49 @@
+<ng-container *ngIf="offer$ | async as offer">
+    <div [class.authenticated]="authenticatedCustomer">
+        <hero-component
+            [headerState]="translateKey + '.HERO.TITLE' | translate: (heroOffer$ | async)"
+            [headerStateSubtitle]="translateKey + '.HERO.SUBTITLE' | translate: offer"
+            [alignLeftMediumUp]="true"
+            [heroTitleType]="heroTitleType"
+        ></hero-component>
+        <main class="background-offwhite">
+            <div class="content-container">
+                <div class="row align-center no-padding-small">
+                    <div class="column small-12 medium-10 background-white raised">
+                        <sxm-ui-follow-on-selection
+                            [isProactive]="true"
+                            (selected)="onSelectedPackage($event)"
+                            [planSelectionData]="followOnSelection$ | async"
+                            [showChoiceNotAvailableError]="showChoiceNotAvailableError$ | async"
+                            (packageIndexSelected)="selectedPackageIndex = $event"
+                        ></sxm-ui-follow-on-selection>
+
+                        <!-- TODO: add input for disabling plan selection UX to not show Continue button, etc -->
+                        <sxm-ui-plan-comparison-grid
+                            [isProactive]="true"
+                            [packageNames]="packageNames$ | async"
+                            [planComparisonGridParams]="planComparisonGridParams$ | async"
+                            [retailPrices]="retailPrices$ | async"
+                            [selectedPackageIndex]="selectedPackageIndex"
+                            [displayCallsToAction]="authenticatedCustomer"
+                            (continue)="onPlanComparisonContinue()"
+                            [questionsPhoneNumber]="translateKey + ((containsChoicePackages$ | async) ? '.CHOICE_QUESTIONS_TFN' : '.PROACTIVE_QUESTIONS_TFN') | translate"
+                        ></sxm-ui-plan-comparison-grid>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <find-your-account-card
+            *ngIf="!authenticatedCustomer"
+            data-e2e="rtcProactiveOrganicfindYourAccount"
+            intersectionObserver
+            [intersectionRootMargin]="'150px'"
+            (accountRadioSelected)="onAccountRadioSelected($event)"
+            (visibilityChange)="onFindYourAccountVisibilityChanged()"
+            [@showFindYourAccount]="isFindYourAccountVisible ? 'visible' : 'hidden'"
+            [class.animate-component]="isFindYourAccountVisible"
+            [questionsPhoneNumber]="translateKey + ((containsChoicePackages$ | async) ? '.CHOICE_QUESTIONS_TFN' : '.PROACTIVE_QUESTIONS_TFN') | translate"
+        ></find-your-account-card>
+        <offer-details [rtcDetails]="rtcOfferDetails$ | async" [details]="offerDetails$ | async" [copyOptions]="offerDetailsCopyOptions"></offer-details>
+    </div>
+</ng-container>

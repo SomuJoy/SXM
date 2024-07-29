@@ -1,0 +1,58 @@
+{
+    "deCareUseCasesTrialActivationRtpFeatureCreateAccountModule": {
+        "createAccountComponent": {
+            "STEP_NUMBER": "STEP 2 OF {{totalSteps}}",
+            "STEP_NUMBER_RENEWAL": "STEP 3 OF 4",
+            "HEADER": "You're eligible",
+            "HEADER_RENEWAL": "Confirm your renewal package",
+            "STEP_NUMBER_LEAD_OFFER": "STEP 3 OF 4",
+            "HEADER_LEAD_OFFER": "Confirm your Plan",
+            "SUB_HEADER_LEAD_OFFER": "You can cancel at anytime.",
+            "YMM": "Your <inject-content> is eligible for a great offer.",
+            "DEFAULT_CAR": "car",
+            "NOT_YOUR_CAR_LINK_TEXT": "Not your car?",
+            "FORM_HEADER": "Create your account",
+            "FORM_SUB_HEADER": "You'll get to review your order before subscribing. Remember, you can change or cancel anytime.",
+            "PICK_A_PLAN_FORM_SUB_HEADER": "You’ll be able to pick your plan and review your order before subscribing. Remember, you can change or cancel anytime.",
+            "YOUR_INFO": "Your Info",
+            "PAYMENT_INFO": "Payment Info",
+            "BILLING_ADDRESS_LABEL": "Billing Address (with Apt/Suite)",
+            "SERVICE_ADDRESS_LABEL": "Service Address (with Apt/Suite)",
+            "EMAIL_LABEL": "Email",
+            "CITY_LABEL": "City",
+            "STATE_LABEL": "State",
+            "ZIP_LABEL": "Zip Code",
+            "CC_NAME_LABEL": "Name On Card",
+            "CC_NUM_LABEL": "Card Number",
+            "CC_EXP_LABEL": "Expiration Date (MM/YY)",
+            "CC_CVV_LABEL": "CVV",
+            "SERVICE_ADDRESS_CHECKBOX_LABEL": "Service address is the same",
+            "BUTTON": "Continue",
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.com/privacy-policy"
+            },
+            "CONFIRM_YOUR_ADDRESS": "Please confirm your address",
+            "UNEXPECTED_ERROR": "An unexpected error occurred. Please try again.",
+            "INVALID_SERVICE_ADDRESS_ERROR": "According to the Postal Service records your service address is invalid or is missing important information. Please update the service address to continue.",
+            "ERROR": {
+                "ZIP_CODE": "Enter your zip code.",
+                "CITY": "Enter your city",
+                "STATE": "Select your state.",
+                "ADDRESS": "Enter a valid street address.",
+                "CC_NAME": "Enter your name as it appears on your card.",
+                "CC_EXP": "Enter a valid expiration date.",
+                "CC_NUM": "Enter a valid credit card number.",
+                "CVV": "Enter a valid security code.",
+                "CC_AUTH": "We were unable to authorize your credit card. Please update your payment information."
+            },
+            "TOOLTIP_MESSAGE_1": "For Visa and Mastercard, use the 3 digits on the back of your card.",
+            "TOOLTIP_MESSAGE_2": "For American Express, use the 4 digits on the front of your card.",
+            "QUESTIONS_TFN": "855-734-2658",
+            "HEADER_TEXT_RENEWAL_PLAN_SELECTION": "Select the package you want after your {{ leadOfferTerm }} month {{ leadOfferPackageName }} offer ends. You can cancel at anytime.",
+            "YMM_EXT_RTC": "Your <inject-content> is eligible for a great offer.",
+            "CHOICE_MODAL_HEADER": "SiriusXM Choice",
+            "BUTTON_RTC_NOT_CHOICE": "Review my order"
+        }
+    }
+}

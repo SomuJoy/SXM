@@ -1,0 +1,39 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": [
+        {
+            "closed": true,
+            "id": null,
+            "status": "Closed",
+            "plans": [],
+            "followonPlans": null,
+            "radioService": {
+                "last4DigitsOfRadioId": "2055",
+                "vehicleInfo": {
+                    "model": "Optima",
+                    "make": "Kia",
+                    "year": 2013
+                }
+            },
+            "streamingService": null
+        },
+        {
+            "closed": true,
+            "id": null,
+            "status": "Closed",
+            "plans": [],
+            "followonPlans": null,
+            "radioService": {
+                "last4DigitsOfRadioId": "00AP",
+                "vehicleInfo": {
+                    "model": "Mustang",
+                    "make": "Ford",
+                    "year": 2022
+                }
+            },
+            "streamingService": null
+        }
+    ]
+}

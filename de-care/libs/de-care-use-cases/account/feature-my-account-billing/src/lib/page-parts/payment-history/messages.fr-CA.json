@@ -1,0 +1,8 @@
+{
+    "COLUMN_HEADER_DATE": "Date",
+    "DATE_FORMAT": "d MMM y",
+    "COLUMN_HEADER_TRANSACTION": "Mode de paiement",
+    "COLUMN_HEADER_AMOUNT": "Montant",
+    "LOAD_MORE_BUTTON_LABEL": "AFFICHER PLUS",
+    "NO_DATA_MESSAGE": "Il n’y a aucun résultat pour la période sélectionnée."
+}

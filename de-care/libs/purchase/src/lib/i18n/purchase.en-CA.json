@@ -1,0 +1,15 @@
+{
+    "purchase": {
+        "purchaseComponent": {
+            "STEP": "STEP",
+            "OF": "OF",
+            "verifyDeviceStepLabel": "Verify your device"
+        },
+        "streamingOrganicPurchaseStepsComponent": {
+            "paymentInfoStepYourPlanFullTermPrice": "{{termLength}} {{monthString}} for {{price}}. Then {{retailPricePerMonth}}/mo. plus fees.",
+            "paymentInfoStepYourPlanPromoPricePerMonth": "{{termLength}} {{monthString}} for {{price}}/mo. Then {{retailPricePerMonth}}/mo. plus fees.",
+            "paymentInfoStepYourPlanPricePerMonth": "{{pricePerMonth}}/mo. plus fees.",
+            "STREAMING_LINK": "https://www.siriusxm.ca/trial/free/"
+        }
+    }
+}

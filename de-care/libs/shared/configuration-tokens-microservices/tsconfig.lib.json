@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../../../dist/out-tsc",
+        "declaration": true,
+        "types": []
+    },
+    "include": ["**/*.ts", "../configuration-tokens-nudetect/src/lib/nudetect-tokens.ts", "../configuration-tokens-locales/src/lib/locale-tokens.ts"],
+    "exclude": ["**/*.spec.ts"]
+}

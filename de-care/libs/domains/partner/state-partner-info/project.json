@@ -1,0 +1,31 @@
+{
+    "name": "domains-partner-state-partner-info",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/partner/state-partner-info/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/partner/state-partner-info/src/**/*.ts", "libs/domains/partner/state-partner-info/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/partner/state-partner-info/jest.config.js",
+                "tsConfig": "libs/domains/partner/state-partner-info/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/partner/state-partner-info/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

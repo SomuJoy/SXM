@@ -1,0 +1,25 @@
+{
+    "name": "shared-forms-util-cva-connector",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/shared/forms/util-cva-connector/src",
+    "projectType": "library",
+    "generators": {},
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/forms/util-cva-connector/src/**/*.ts", "libs/shared/forms/util-cva-connector/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/shared/forms/util-cva-connector/jest.config.js",
+                "tsConfig": "libs/shared/forms/util-cva-connector/tsconfig.spec.json",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": ["type:ui-util", "scope:shared-ui-util"]
+}

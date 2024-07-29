@@ -1,0 +1,72 @@
+<main>
+    <section class="grid-container header-section">
+        <header class="header-container">
+            <div class="button-container">
+                <button class="back-button" type="button" [attr.aria-label]="translateKeyPrefix + '.BACK_BUTTON_LABEL' | translate" (click)="onBack()">
+                    <span>
+                        <svg class="icon">
+                            <use xlink:href="#icon-back"></use>
+                        </svg>
+                        <span class="back-label">
+                            {{ translateKeyPrefix + ".BACK_BUTTON_LABEL" | translate }}
+                        </span>
+                    </span>
+                </button>
+            </div>
+            <h2 class="edit-header">
+                {{ translateKeyPrefix + ".HEADER" | translate }}
+            </h2>
+        </header>
+        <hr />
+    </section>
+    <section class="grid-container">
+        <div class="edit-billing-address-form-container">
+            <form [formGroup]="editBillingAddressForm" data-test="editBillingAddressForm" novalidate (submit)="editBillingAddressFormSubmit()">
+                <h6 class="address">{{ translateKeyPrefix + ".ADDRESS_TITLE" | translate }}</h6>
+                <p class="server-error" *ngIf="editBillingAddressServerError">{{ translateKeyPrefix + ".INVALID_BILLING_ADDRESS_ERROR" | translate }}</p>
+                <sxm-ui-address-form-fields formControlName="billingAddress" [submitted]="submitted" #editBillingAddress></sxm-ui-address-form-fields>
+                <button
+                    class="button primary full-width"
+                    type="submit"
+                    sxm-proceed-button
+                    [class.loading]="loading"
+                    [attr.aria-label]="translateKeyPrefix + '.SAVE_BUTTON' | translate"
+                    sxmUiDataClickTrack="ui"
+                    data-link-key="EditBillingAddressForm"
+                    data-test="saveEditBillingAddressForm"
+                >
+                    <ng-container *ngIf="!loading">{{ translateKeyPrefix + ".SAVE_BUTTON" | translate }}</ng-container>
+                    <span></span><span></span><span></span>
+                </button>
+            </form>
+            <button
+                class="full-width cancel-cta"
+                (click)="onCancel()"
+                sxmUiDataClickTrack="ui"
+                [attr.aria-label]="translateKeyPrefix + '.CANCEL_BUTTON' | translate"
+                data-link-key="EditBillingAddressForm"
+                data-test="cancelEditBillingAddressForm"
+            >
+                {{ translateKeyPrefix + ".CANCEL_BUTTON" | translate }}
+            </button>
+        </div>
+    </section>
+    <sxm-ui-modal
+        [closed]="true"
+        [ariaDescribedbyTextId]="editBillingAddressModalAriaDescribedbyTextId"
+        [title]="translateKeyPrefix + '.ACCOUNT_INFO_TITLE' | translate"
+        [titlePresent]="true"
+        (modalClosed)="onEditExistingAddress()"
+        data-test="editBillingAddressModal"
+        #editBillingAddressModal
+    >
+        <sxm-ui-verify-address
+            [ariaDescribedbyTextId]="editBillingAddressModalAriaDescribedbyTextId"
+            [data]="verifyAddressesDataViewModel$ | async"
+            (useAddress)="onAcceptCorrectedAddress($event)"
+            (editExisting)="onEditExistingAddress()"
+            data-test="verifyEditBillingAddress"
+        >
+        </sxm-ui-verify-address>
+    </sxm-ui-modal>
+</main>

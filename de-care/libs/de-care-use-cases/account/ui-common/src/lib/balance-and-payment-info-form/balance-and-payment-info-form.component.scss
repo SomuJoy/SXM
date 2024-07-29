@@ -1,0 +1,120 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-row-gap: 24px;
+    section {
+        padding: 0;
+        margin: 0 0 24px;
+        .section {
+            &--title {
+                margin-bottom: 0;
+            }
+            &--balance {
+                margin-top: -12px;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @include bp(medium) {
+        [data-presence-name] {
+            grid-column: 2 / span 6;
+        }
+        [data-presense-account-number] {
+            grid-column: 8 / span 4;
+            justify-content: end;
+        }
+    }
+
+    section#mainContent {
+        display: grid;
+        grid-template-columns: repeat(11, 1fr);
+        grid-row-gap: 24px;
+        @include bp(medium) {
+            justify-content: space-between;
+            flex-direction: row;
+        }
+        align-content: start;
+
+        h3 {
+            @include get-header-style(h6);
+            font-weight: calculate-font-weight("bold");
+            margin-bottom: 24px;
+            @include bp(medium) {
+                font-weight: calculate-font-weight("bold");
+            }
+            &.radio-buttons-title {
+                margin-bottom: 12px;
+            }
+        }
+        p.instructions {
+            font-size: calculate-rem(16px);
+        }
+
+        hr {
+            @include hr;
+            margin-top: 24px;
+        }
+        .credit-card-fields {
+            header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .credit-card-icons-list {
+                    list-style: none;
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 0;
+                    width: fit-content;
+                    gap: 4px;
+                    padding: 0;
+                    svg {
+                        width: 24px;
+                        height: 16px;
+                    }
+                }
+            }
+        }
+        button {
+            &.secondary {
+                background-color: transparent;
+                border: 0;
+                &::before {
+                    border: 0;
+                }
+            }
+        }
+
+        .critical-alert-icon-info {
+            margin: 8px 0 16px;
+        }
+
+        .invalid-feedback {
+            margin-top: 8px;
+            p {
+                font-size: calculate-rem(18px);
+                font-weight: calculate-font-weight("bold");
+            }
+        }
+    }
+
+    .section--balance {
+        grid-column: 1/12;
+        @include bp(medium) {
+            grid-row: 1;
+            grid-column: 8/12;
+        }
+    }
+
+    .section--payment-form {
+        grid-column: 1/12;
+        @include bp(medium) {
+            grid-row: 1;
+            grid-column: 1/6;
+        }
+    }
+}

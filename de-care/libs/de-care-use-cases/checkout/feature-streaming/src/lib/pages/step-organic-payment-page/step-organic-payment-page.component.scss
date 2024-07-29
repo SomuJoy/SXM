@@ -1,0 +1,44 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "../page.scss";
+
+:host {
+    @include page-host(1fr auto);
+    #mainContent {
+        row-gap: 24px;
+        sxm-ui-step-header {
+            ::ng-deep {
+                header {
+                    padding-bottom: 0;
+                }
+            }
+        }
+
+        .masked-username-label {
+            margin-bottom: 8px;
+            font-weight: 800;
+            color: #736e7d;
+        }
+    }
+    #upsellForm {
+        header {
+            font-weight: calculate-font-weight("bold");
+        }
+        section {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            gap: 8px;
+        }
+    }
+
+    sxm-ui-alert-pill.streaming-eligibility {
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        margin-bottom: 15px;
+        background: $vanilla;
+        @include bp(medium) {
+            margin-bottom: 20px;
+        }
+    }
+}

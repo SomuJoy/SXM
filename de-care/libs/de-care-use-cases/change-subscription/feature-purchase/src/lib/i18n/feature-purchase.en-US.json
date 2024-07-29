@@ -1,0 +1,99 @@
+{
+    "deCareUseCasesChangeSubscriptionFeaturePurchaseModule": {
+        "changeSubscriptionPurchasePageComponent": {
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "month",
+                    "other": "months"
+                }
+            },
+            "HERO": {
+                "DEFAULT": "Change your subscription",
+                "GET_AS_LITTLE": "Get SiriusXM for as little as {{price}} a month",
+                "MORE_OF": "Get {{termLength}} more {{monthsPlural}} of SiriusXM",
+                "START_LISTENING_TODAY": "Start listening today"
+            },
+            "STEP_PAGE_TITLES": {
+                "PICK_PACKAGE": "Pick your plan",
+                "PICK_TERM": "Pick your billing plan",
+                "INFOTAINMENT": "Pick an infotainment plan (optional)",
+                "INFOTAINMENT_NON_OPTIONAL": "Pick an infotainment plan",
+                "ENTER_PAYMENT_INFO": "Enter your payment information",
+                "REVIEW": "Review and complete your order"
+            },
+            "SKIPS": {
+                "BILLING_PLAN": "Keep my current plan and continue",
+                "INFOTAINMENT": "No thanks, continue to infotainment"
+            },
+            "SELECTED_TERM_ANNUAL": "Annual - {{amount}}/yr",
+            "SELECTED_TERM_MONTHLY": "Monthly - {{amount}}/mo",
+            "STEP_EDIT_LABEL": "Edit",
+            "SUBMIT_CHANGE_BUTTON": "Complete My Order",
+            "PACKAGE_CHANGE_CONFIRMATION": {
+                "TITLE": "Confirm package",
+                "DEFAULT_HEADER": "You will lose your promotional pricing if you continue.",
+                "DOWNGRADE_HEADER": "Are you sure you want to make this change?",
+                "LOSE_OF_FEATURES_HEADER": "By changing your plan, you will lose the following features:",
+                "LOSE_OF_FEATURES_HEADER_ANOTHER": "By making this change to another package you will lose the following features:",
+                "CONTINUE_BUTTON": "Accept & Continue",
+                "KEEP_MY_PROMO_LINK": "Keep my promotional pricing",
+                "KEEP_ALL_ACCESS_LINK": "Keep {{packageName}} and continue",
+                "SUBSCRIPTION_UPDATE": "Your subscription update will go into effect immediately once you complete your order."
+            },
+            "PAYMENT_INFO_INACTIVE": "{{cardType}} ending in {{cardNumber}}",
+            "INFOTAINMENT_STEP": {
+                "BODY_1": "Your vehicle has navigation, weather, and news services available that you can activate.",
+                "BODY_2": "Your subscription will start when your trial ends on {{endDate}}."
+            },
+            "PACKAGE_SELECTION_STEP": {
+                "DATA_ACCOUNT_ONLY_NO_PACKAGE_SELECTED": "No plan selected",
+                "CONTENT_CARD_FLAG": "Our Best Plan",
+                "CONTENT_CARD_HEADLINE1": "Switch to this plan",
+                "CONTENT_CARD_HEADLINE2": "Keep this plan",
+                "CONTENT_CARD_HEADLINE3": "Add this plan",
+                "CONTENT_CARD_HEADLINE1_ARIA": "Switch to this plan - {{packageName}}",
+                "CONTENT_CARD_HEADLINE2_ARIA": "Keep this plan - {{packageName}}",
+                "CONTENT_CARD_HEADLINE3_ARIA": "Add this plan - {{packageName}}",
+                "TRIAL_HEADER": "Your subscription will start when your trial ends on {{endDate}}."
+            },
+            "ERRORS": {
+                "BODY": "To modify your subscription and manage your account, please continue to sign in.",
+                "MANAGE_ACCOUNT_BUTTON": "Manage Account",
+                "ALREADY_UPGRADED": {
+                    "TITLE": "You've already upgraded your subscription."
+                },
+                "NON_ELEGIBLE": {
+                    "PILL": "Sorry, your radio no longer qualifies for this offer.",
+                    "TITLE": "Manage your subscription"
+                },
+                "NO_OFFER_SELECTION": {
+                    "TEXT": "Pick a plan below or ",
+                    "LINK": "continue with your current plan"
+                },
+                "PICK_A_PACKAGE": {
+                    "TEXT": "Pick a plan to continue. If you need more help with your subscription, you can ",
+                    "CHAT": "chat with an agent."
+                }
+            },
+            "LEGAL_COPY": "<p><strong>OFFER DETAILS:</strong> The subscription plan you choose will <b>automatically renew</b> and you will be charged according to your chosen payment method at the then-current rates for your selected plan.  Fees and taxes apply.  <b>Please see our Customer Agreement at</b> <a href='https://www.siriusxm.com/phx/customer-agreement?intcmp=OTHER_NA_www:Home_CustomerAgreement' target='_blank'>www.siriusxm.com</a> <b>for complete terms and how to cancel, which includes online methods or calling us at 1-866-635-2349.</b> All fees, content and features are subject to change. Channel lineup varies by package.</p>"
+        },
+        "confirmationPageComponent": {
+            "HERO": {
+                "TITLE": "Your subscription has been updated!"
+            },
+            "PRINT_LINK": {
+                "TEXT": "Print your order summary"
+            },
+            "BACK_BUTTON": {
+                "TEXT": "Back To My Account"
+            },
+            "IMPORTANT_INFO": {
+                "LEGAL_COPY": "Important information about your subscription:"
+            },
+            "STREAMING_PLAYER_LINK": {
+                "SATELLITE_OFFER": "?creative_id=NA_NA_PL-EM-home-home-home-CONVERSION-COMCONFIRM-OEM-OEM-20211207-DECOM&cp_7=OEM&cp_8=CONVERSION&cp_9=COMCONFIRM",
+                "STREAMING_OFFER": "?contentType=landing&channelName=accessnow&site_id=accessnow&creative_id=NA_NA_DL-COM-landing-landingpage-landingpage-STARTLISTENING-TRIALACTIVATIONRTP-NA-All-20210921-NA&cp_5=landingpage&cp_6=landingpage&cp_7=ALL&cp_8=STARTLISTENING&cp_9=TRIALACTIVATIONRTP&cp_10=COM"
+            }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "DomainsAccountUiRegisterMultiStepModule": {
+        "RegistrationCredentialsStepComponent": {
+            "FORM_HEADLINE_CREDENTIALS": "Créez votre nom d’utilisateur et votre mot de passe",
+            "FORM_INSTRUCTIONS_CREDENTIALS": "Ce sont les identifiants de connexion que vous utiliserez pour gérer votre compte en ligne, et aussi pour écouter sur l’application et en ligne.",
+            "USERNAME": {
+                "LABEL": "Nom d’utilisateur/courriel",
+                "ERRORS": {
+                    "REQUIRED": "Entrez votre nom d’utilisateur ou courriel.",
+                    "ALREADY_EXIST": "Ce nom d’utilisateur ou ce courriel est associé à un autre compte."
+                }
+            },
+            "PASSWORD": {
+                "LABEL": "Mot de passe",
+                "ERRORS": {
+                    "REQUIRED": "Entrez votre mot de passe.",
+                    "LENGTH": "Votre mot de passe doit contenir de {{min}} à {{max}} caractères.",
+                    "POLICY": "Votre mot de passe doit contenir au minimum un caractère appartenant à au moins 3 groupes différents, comme indiqué dans notre politique de mot de passe.",
+                    "RESERVED_WORDS": "Votre mot de passe ne peut pas contenir {{pluralWord}} {{reservedWords}}",
+                    "GENERIC": "Votre mot de passe ne répond pas à tous les critères.",
+                    "PII_DATA": "Le mot de passe ne peut pas inclure prénom, nom de famille ou adresse courriel."
+                }
+            },
+            "PLURAL_MAP": {
+                "WORD": {
+                    "=1": "le mot",
+                    "other": "les mots"
+                }
+            },
+            "LINK_TEXT": "Vous voulez vous connecter?",
+            "CONTINUE_BUTTON_TEXT": "CONTINUER",
+            "SYSTEM_ERROR": "Nous sommes désolés, Quelque chose n'a pas fonctionné. Nous rencontrons des problèmes techniques et travaillons à les résoudre. Veuillez réessayer."
+        },
+        "RegistrationSecurityQuestionsStepComponent": {
+            "FORM_HEADLINE_SECURITY_QUESTIONS": "Créez vos questions de sécurité",
+            "FORM_INSTRUCTIONS_SECURITY_QUESTIONS": "Veuillez choisir trois questions ci-dessous et y répondre. Cela nous permettra de vérifier votre identité si vous oubliez votre mot de passe.",
+            "COMPLETE_SETUP_BUTTON_TEXT": "TERMINER LA CONFIGURATION"
+        },
+        "RegistrationAddressStepComponent": {
+            "REGISTRATION_TRANSACTION_HEADLINE": "Nous avons trouvé votre véhicule.",
+            "REGISTRATION_TRANSACTION_DETAILS": "Maintenant, nous avons juste besoin des infos suivantes pour configurer votre abonnement. Vous pourrez ainsi commencer à écouter.",
+            "FORM_HEADLINE_SERVICE_ADDRESS": "Entrez l’adresse du service",
+            "CONFIRM_YOUR_ADDRESS": "Veuillez confirmer votre adresse de service",
+            "CONTINUE_BUTTON_TEXT": "CONTINUER",
+            "FIRST_NAME": "Prénom",
+            "LAST_NAME": "Nom"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+h5 {
+    margin: 0;
+}
+
+.refresh-sent-content {
+    margin-bottom: 10px;
+}
+
+p.not-working-question {
+    margin-bottom: 8px;
+}
+
+.success-checkmark-circle {
+    @include icon-coin-with-fill(40px, $green);
+}
+
+mat-icon {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2;
+    color: $white;
+}

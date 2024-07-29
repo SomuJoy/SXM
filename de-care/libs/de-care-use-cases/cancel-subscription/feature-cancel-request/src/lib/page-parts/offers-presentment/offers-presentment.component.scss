@@ -1,0 +1,72 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    background-color: $off-white;
+    section {
+        padding: 0;
+
+        .cards-container {
+            display: flex;
+            gap: 8px;
+            sxm-ui-package-card {
+                flex-basis: 0;
+                flex-grow: 1;
+                @include bp(small) {
+                    flex-grow: 0;
+                }
+            }
+        }
+        .current-plan-container {
+            margin: 0 0 16px;
+            @include bp(medium) {
+                margin: 16px 0;
+            }
+        }
+        .grid-link {
+            text-align: center;
+            white-space: nowrap;
+            padding: 16px 0;
+            p {
+                .optional-break {
+                    display: inline;
+                    @include bp(medium) {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .chat-container {
+            display: flex;
+            margin-top: 8px;
+            @include bp(medium) {
+                margin-top: 16px;
+            }
+            justify-content: center;
+            color: $blue-secondary;
+        }
+
+        button {
+            max-width: none;
+            width: 100%;
+            margin-top: 8px;
+            @include bp(medium) {
+                margin-top: 16px;
+            }
+            &.continue-to-cancel {
+                padding: 10px;
+                min-height: 44px;
+                height: 44px;
+            }
+            &.secondary {
+                outline: none;
+                background-color: transparent;
+                border: 0;
+                &::before {
+                    border: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "TITLE": "Votre abonnement a été mis à jour!",
+    "RADIO_INFO": {
+        "RADIO_ID_MASKED": "Code de radio: ****{{ lastFour }}"
+    },
+    "QUOTE": {
+        "PRINT_YOUR_ORDER": "Imprimez le sommaire de votre commande"
+    },
+    "SUBSCRIPTION_IMPORTANT_INFO": {
+        "TITLE": "Informations importantes concernant votre abonnement:",
+        "BODY": "Votre abonnement commence immédiatement à moins d'indications contraires. Si votre radio ne reçoit pas la programmation à laquelle vous avez droit, veuillez suivre les instructions d'activation ci-dessus. Pour votre commodité, tous les abonnements sont renouvelés automatiquement jusqu'à ce que vous les annuliez. Votre renouvellement sera facturé au tarif en vigueur à ce moment-là en utilisant le mode de paiement inscrit en dossier. Vous pouvez annuler votre abonnement en tout temps en appelant le Service à la clientèle au 1 833 838-7846. Votre abonnement est régi par l'Entente du client de SiriusXM, que vous pouvez <a href=\"http://www.siriusxm.ca/conditions\" target=\"_blank\">consulter en ligne</a>. Si vous souhaitez recevoir un exemplaire de l'Entente du client par la poste, vous pouvez appeler au 1 866 635-2349."
+    }
+}

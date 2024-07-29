@@ -1,0 +1,246 @@
+<ng-container *ngIf="vm$ | async as vm">
+    <ng-container *ngIf="(vm.offer || (showDefaultBehavior$ | async)) && (isFlepz || vm.account)">
+        <ng-container *ngIf="!vm.showOfferNotAvailable">
+            <sxm-ui-banner *ngIf="betterPricingAvailable$ | async">
+                <better-pricing [pricingInfo]="pricingInfo$ | async" data-e2e="checkout.betterPricing" data-test="BetterPricing"></better-pricing>
+            </sxm-ui-banner>
+
+            <div *ngIf="showDefaultBehavior$ | async" class="alert-pill-wrapper">
+                <div class="content-container">
+                    <div class="row no-padding-small align-center">
+                        <div class="column small-12 medium-8 align-left">
+                            <sxm-ui-alert-pill class="alert-icon-notification bold-text rounded-corners alert">
+                                {{ translateKey + ((getDefaultOfferBehaviorReason$ | async) === "EXPIRED" ? "ALERT_EXPIRED" : "ALERT_INVALID") | translate }}
+                            </sxm-ui-alert-pill>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="errorCode$ | async as errorCode" class="alert-pill-wrapper">
+                <div class="content-container">
+                    <div class="row no-padding-small align-center">
+                        <div class="column small-12 medium-8 align-left">
+                            <sxm-ui-alert-pill
+                                id="rflzErroPillMessage"
+                                class="streaming-eligibility black-alert-icon-notification rounded-corners"
+                                data-e2e="satelliteStreamingPurchasePage.notEligibleStreamingPlan.pill"
+                            >
+                                <p class="pill-text" [innerHTML]="'checkout.alertPillErrorCodes.' + errorCode | translate"></p>
+                            </sxm-ui-alert-pill>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- TODO: need a solution here so that an empty saleHeroCopy doesn't automatically fall back to legacy data.
+            In a scenario where we are in cms mode, but the service fails to return data, we don't want to show legacy info -->
+            <sxm-ui-hero
+                *ngIf="salesHeroCopyVM$ | async as heroData"
+                [heroData]="heroData"
+                data-e2e="satelliteStreamingPurchasePage.defaultOffer.hero"
+                [class.reduced-hero-padding]="showDefaultBehavior$ | async"
+                [class]="heroData.classes"
+                [class.extra-bottom-padding]="notEligibleForStreamingPlan$ | async"
+            ></sxm-ui-hero>
+
+            <ng-container *ngIf="showDefaultBehavior$ | async">
+                <main class="background-offwhite">
+                    <div class="content-container">
+                        <div class="row align-center">
+                            <div class="column medium-2 no-padding background-white"></div>
+                            <div class="column small-12 medium-6 background-white">
+                                <div class="sub-header">
+                                    <p [innerHTML]="translateKey + 'SUB_HEADER' | translate"></p>
+                                    <hr class="full-width" />
+                                </div>
+                            </div>
+                            <div class="column medium-2 no-padding background-white"></div>
+                        </div>
+                    </div>
+                </main>
+            </ng-container>
+            <!--TODO: The conditions to handle the format of the pill are depending on CMS content enabled and if is Canada. This is a temporary solution.-->
+            <div *ngIf="notEligibleForStreamingPlan$ | async" class="content-container" [class.pill-raised-container]="isCanada">
+                <div class="row no-padding-small align-center">
+                    <div class="column small-12 medium-8 align-left">
+                        <sxm-ui-alert-pill
+                            id="notEligibleForStreamingPlanAlertPill"
+                            class="streaming-eligibility black-alert-icon-notification rounded-corners"
+                            data-e2e="satelliteStreamingPurchasePage.notEligibleStreamingPlan.pill"
+                        >
+                            <p class="pill-text" [innerHTML]="translateKey + 'OFFER_FOR_NEW_SUBSCRIBERS' | translate"></p>
+                        </sxm-ui-alert-pill>
+                    </div>
+                </div>
+            </div>
+            <lead-offer-details
+                data-e2e="satelliteStreamingPurchasePage.defaultOffer.v1.offer-details"
+                *ngIf="!(showDefaultBehavior$ | async)"
+                [offerDescriptionData]="offerDescriptionCopyVM$ | async"
+                [isRTC]="isRTC$ | async"
+                [hideMarketingPromoCode]="hideMarketingPromoCode$ | async"
+                [offer]="vm.offer"
+                [isUpgradePromo]="isUpgradePromo$ | async"
+                [account]="vm.account"
+                [userNameFromToken]="userNameFromToken"
+                [marketingPromoCode]="marketingPromoCode$ | async"
+                [isStreaming]="isStreaming"
+                [selectedRenewalOfferPrice]="vm.selectedRewalOfferRetailPrice"
+                [followOnOfferPrice]="followOnOfferPrice$ | async"
+                [hidePlanGridInOfferCard]="isStreamingOrganicScenario"
+                [showPartialChannels]="isStreamingOrganicScenario"
+                [isLegacyMode]="false"
+                [isPickAPlan]="isPickAPlan$ | async"
+            ></lead-offer-details>
+
+            <div *ngIf="!isStudentFlow">
+                <main class="background-offwhite">
+                    <div *ngIf="{ value: displayOtherOffersLink$ | async } as displayOtherOffersLink" class="content-container">
+                        <div class="row align-center">
+                            <div class="column medium-2 no-padding background-white"></div>
+                            <div *ngIf="displayOtherOffersLink.value" class="column small-12 medium-6 background-white align-left">
+                                <strong class="link-container"
+                                    ><a class="text-link" (click)="navigateToOtherOffers()">{{ translateKey + "OTHER_PLANS" | translate }}</a></strong
+                                >
+                            </div>
+                            <div class="column medium-2 no-padding background-white"></div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+            <main class="background-offwhite">
+                <div *ngIf="dealAddonCopyVM$ | async as dealAddonData" class="content-container background-offwhite">
+                    <div class="row no-padding-small">
+                        <div class="column small-12 medium-10 offset-medium-1 background-white no-padding-medium">
+                            <div class="deal-addon-container mt-32">
+                                <sxm-ui-deal-addon-card *ngIf="!dealAddonData.displayDealsSeparately" [copyContent]="dealAddonData.deals"> </sxm-ui-deal-addon-card>
+                                <sxm-ui-deal-addon-card-separated *ngIf="dealAddonData.displayDealsSeparately" [copyContent]="dealAddonData.deals">
+                                </sxm-ui-deal-addon-card-separated>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <div *ngIf="vm.offerNotAvailableInfo?.offerNotAvailable">
+                <main class="background-offwhite">
+                    <div class="content-container">
+                        <div class="row align-center">
+                            <div class="column medium-2 no-padding background-white"></div>
+                            <div class="column small-12 medium-6 background-white">
+                                <p
+                                    class="legal-copy text-color-gray-dark text-left sub-header"
+                                    style="align-self: flex-start"
+                                    [innerHTML]="translateKey + 'SUB_HEADER_OFFER_NOT_AVAILABLE' | translate"
+                                ></p>
+                            </div>
+                            <div class="column medium-2 no-padding background-white"></div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+            <div *ngIf="errorCode$ | async as errorCode" class="message-container" [class.raised-row]="isCanada">
+                <main class="background-offwhite">
+                    <div class="content-container">
+                        <div class="row align-center">
+                            <div class="column medium-2 no-padding background-white"></div>
+                            <div class="column small-12 medium-6 background-white align-left">
+                                <p class="legal-copy text-color-gray-dark message-text">
+                                    <span>{{ translateKey + "FOR_HELP" | translate }} </span>
+                                    <span class="underlined-link"
+                                        ><chat-with-agent-link
+                                            data-link-key="error:eligibility"
+                                            [sxmUiDataClickTrack]="'chat'"
+                                            [chatLinkText]="translateKey + 'HELP_CHAT_LINK' | translate"
+                                            [queue]="'general'"
+                                        ></chat-with-agent-link
+                                    ></span>
+                                    <span
+                                        >{{
+                                            translateKey + "OR_CALL"
+                                                | translate: { assistancePhone: errorCode | i18nSelect: (translateKey + "ASSISTANCE_PHONE_MAP" | translate) }
+                                        }}.</span
+                                    >
+                                </p>
+                            </div>
+                            <div class="column medium-2 no-padding background-white"></div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+            <div *ngIf="notEligibleForStreamingPlan$ | async" class="message-container" data-e2e="satelliteStreamingPurchasePage.assistanceMessage">
+                <main class="background-offwhite">
+                    <div class="content-container">
+                        <div class="row align-center">
+                            <div class="column medium-2 no-padding background-white"></div>
+                            <div class="column small-12 medium-6 background-white align-left">
+                                <p class="legal-copy text-color-gray-dark message-text">
+                                    <span>{{ translateKey + "FURTHER_ASSISTANCE" | translate }} </span>
+                                    <span>
+                                        <chat-with-agent-link
+                                            [sxmUiDataClickTrack]="'chat'"
+                                            [chatLinkText]="translateKey + 'CHAT_LINK' | translate"
+                                            [queue]="'general'"
+                                            [inheritColor]="false"
+                                        ></chat-with-agent-link>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="column medium-2 no-padding background-white"></div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+            <ng-container *ngIf="isStreamingOrganicScenario; else nonStreamingPurchaseSteps">
+                <streaming-organic-purchase-steps
+                    (stepChange)="onStepChanged($event)"
+                    [streamingError]="streamingError"
+                    [offer]="offers$ | async"
+                    [selectedOffer]="vm.offer"
+                    [selectedOfferIsSelfPay]="!vm.offerIsSelfPay"
+                    [programCode]="programCode$ | async"
+                    [account]="vm.account"
+                    [isMCP]="vm.selectedOfferIsMCP"
+                    [useCmsContent]="true"
+                    [displayOfferNucaptcha]="nuCaptchaRequired$ | async"
+                ></streaming-organic-purchase-steps>
+            </ng-container>
+            <ng-template #nonStreamingPurchaseSteps>
+                <checkout-purchase
+                    (stepChange)="onStepChanged($event)"
+                    [streamingError]="streamingError"
+                    [isStreaming]="isStreaming"
+                    [isStudentFlow]="isStudentFlow"
+                    [reducedFields]="isStudentFlow && !isCanada"
+                    [isFlepz]="isFlepz"
+                    [offer]="offers$ | async"
+                    [programCode]="programCode$ | async"
+                    [account]="vm.account"
+                    [isMCP]="vm.selectedOfferIsMCP"
+                    [isTokenizedLink]="isTokenizedLink$ | async"
+                    [useCmsContent]="true"
+                    [displayOfferNucaptcha]="nuCaptchaRequired$ | async"
+                    [deviceLookupPrefillData]="deviceLookupPrefillDataViewModel$ | async"
+                ></checkout-purchase>
+            </ng-template>
+        </ng-container>
+    </ng-container>
+</ng-container>
+
+<sxm-ui-modal
+    #activeSubscriptionModal
+    *ngIf="activeSubscriptionFound$ | async as activeSubscriptionInfo"
+    [closed]="!activeSubscriptionModalOpen"
+    (modalClosed)="onActiveSubscriptionModalClose()"
+    [title]="translateKey + (isStreaming ? 'ACCOUNT_FOUND_MODAL_TITLE' : 'RADIO_LOOKUP_LABEL') | translate"
+    [titlePresent]="true"
+>
+    <active-subscription
+        [activeSubscriptionInfo]="activeSubscriptionInfo"
+        (loginRequested)="loginRequested()"
+        (lookupNewRadioRequested)="lookupNewRadioRequested()"
+    ></active-subscription>
+</sxm-ui-modal>

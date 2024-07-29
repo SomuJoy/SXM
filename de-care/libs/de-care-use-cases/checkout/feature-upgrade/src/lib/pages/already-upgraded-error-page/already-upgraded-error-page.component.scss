@@ -1,0 +1,38 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    height: 100%;
+    display: grid;
+    grid-auto-rows: auto 1fr auto;
+    justify-items: center;
+    background-color: $white;
+    grid-gap: 24px;
+
+    #mainContent {
+        grid-auto-rows: auto 1fr;
+    }
+
+    section {
+        padding: 0;
+    }
+
+    #heroSection {
+        width: 100%;
+    }
+
+    hr {
+        margin-bottom: 24px;
+        margin-top: 24px;
+    }
+
+    #your-plan-and-offer {
+        .your-plan {
+            padding-bottom: 24px;
+            &--header {
+                font-weight: bold;
+                margin-bottom: 4px;
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "../page.scss";
+
+$common-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
+
+:host {
+    @include page-host(auto 1fr auto);
+    #heroContent {
+        padding: 0;
+        background-color: $gray-medium;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        img {
+            width: 100%;
+            max-width: 440px;
+            height: auto;
+        }
+    }
+    section#mainContent {
+        display: block;
+        width: 100%;
+        padding: 32px 16px;
+    }
+    .shadow-helper {
+        box-shadow: $common-shadow;
+        sxm-ui-primary-package-card {
+            &::ng-deep {
+                .primary-package-card {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+    .offer-with-deal {
+        box-shadow: $common-shadow;
+        padding-top: 12px;
+        sxm-ui-package-card-basic,
+        sxm-ui-product-banner,
+        sxm-ui-features-list,
+        .post-trial-info {
+            padding: 0 16px;
+        }
+        display: grid;
+        row-gap: 30px;
+    }
+    hr {
+        @include hr;
+    }
+
+    #skeletonLoaderOfferCard {
+        display: grid;
+        row-gap: 32px;
+    }
+}

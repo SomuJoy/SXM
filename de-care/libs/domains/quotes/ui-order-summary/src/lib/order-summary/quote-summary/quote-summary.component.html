@@ -1,0 +1,167 @@
+<div class="order-summary" data-e2e="orderSummary">
+    <order-summary-current-quote
+        class="order-summary-container"
+        data-e2e="item.quoteType"
+        *ngIf="quotesMap.currentQuote"
+        [vm]="{
+            quoteVM: quotesMap.currentQuote,
+            isQuebec: (userSettingsService.isQuebec$ | async) || isQCProvince,
+            isCanada: isCanada,
+            currentLang: currentLang,
+            promoPrice: promoPrice,
+            tranlateFeesAndTaxes: tranlateFeesAndTaxes,
+            expandOrderSummaryDetails: expandOrderSummaryDetails,
+            isMCP: isMCP,
+            showUnusedCreditLine: showUnusedCreditLine,
+            showHeadlineSeeOfferDetails: showHeadlineSeeOfferDetails,
+            isClosedRadio: isClosedRadio,
+            isNewAccount: isNewAccount,
+            isStreamingFlow: isStreamingFlow,
+            isChangeSubscription: isChangeSubscription,
+            isDataOnlyTrial: isDataOnlyTrial,
+            isClosedStreaming: isClosedStreaming,
+            isCurrentSubscriptionTrial: isCurrentSubscriptionTrial,
+            currentSubscriptionEndDate: currentSubscriptionEndDate,
+            extraData: extraData
+        }"
+        [headlinePresent]="headlinePresent"
+        (chevronClicked)="chevronClicked($event)"
+        (viewToolTipClicked)="viewToolTipClicked($event)"
+    ></order-summary-current-quote>
+
+    <order-summary-future-quote
+        class="order-summary-container"
+        data-e2e="item.quoteType"
+        *ngIf="quotesMap.futureQuote"
+        [vm]="{
+            quoteVM: quotesMap.futureQuote,
+            isQuebec: (userSettingsService.isQuebec$ | async) || isQCProvince,
+            isStudentFlow: isStudentFlow,
+            isCanada: isCanada,
+            currentLang: currentLang,
+            promoPrice: promoPrice,
+            tranlateFeesAndTaxes: tranlateFeesAndTaxes,
+            expandOrderSummaryDetails: expandOrderSummaryDetails,
+            isMCP: isMCP,
+            showUnusedCreditLine: showUnusedCreditLine,
+            showHeadlineSeeOfferDetails: showHeadlineSeeOfferDetails,
+            isClosedRadio: isClosedRadio,
+            isNewAccount: isNewAccount,
+            isStreamingFlow: isStreamingFlow,
+            isChangeSubscription: isChangeSubscription,
+            isDataOnlyTrial: isDataOnlyTrial,
+            isClosedStreaming: isClosedStreaming,
+            isCurrentSubscriptionTrial: isCurrentSubscriptionTrial,
+            extraData: extraData
+        }"
+        (chevronClicked)="chevronClicked($event)"
+        (viewToolTipClicked)="viewToolTipClicked($event)"
+        [priceChangeMessagingType]="priceChangeMessagingType"
+        [priceChangeMessagingTypeFeatureFlag]="priceChangeMessagingTypeFeatureFlag"
+    ></order-summary-future-quote>
+
+    <order-summary-promo-renewal-quote
+        class="order-summary-container"
+        data-e2e="item.quoteType"
+        *ngIf="quotesMap.promoRenewalQuote"
+        [vm]="{
+            quoteVM: quotesMap.promoRenewalQuote,
+            isQuebec: (userSettingsService.isQuebec$ | async) || isQCProvince,
+            isCanada: isCanada,
+            currentLang: currentLang,
+            promoPrice: promoPrice,
+            tranlateFeesAndTaxes: tranlateFeesAndTaxes,
+            expandOrderSummaryDetails: expandOrderSummaryDetails,
+            isMCP: isMCP,
+            showUnusedCreditLine: showUnusedCreditLine,
+            showHeadlineSeeOfferDetails: showHeadlineSeeOfferDetails,
+            isClosedRadio: isClosedRadio,
+            isNewAccount: isNewAccount,
+            isStreamingFlow: isStreamingFlow,
+            isChangeSubscription: isChangeSubscription,
+            isDataOnlyTrial: isDataOnlyTrial,
+            isClosedStreaming: isClosedStreaming,
+            isCurrentSubscriptionTrial: isCurrentSubscriptionTrial,
+            extraData: extraData
+        }"
+        (chevronClicked)="chevronClicked($event)"
+        (viewToolTipClicked)="viewToolTipClicked($event)"
+    ></order-summary-promo-renewal-quote>
+
+    <order-summary-pro-rated-renewal-quote
+        class="order-summary-container"
+        data-e2e="item.quoteType"
+        *ngIf="quotesMap.proRatedRenewalQuote"
+        [vm]="{
+            quoteVM: quotesMap.proRatedRenewalQuote,
+            isQuebec: userSettingsService.isQuebec$ | async,
+            isStudentFlow: isStudentFlow,
+            isCanada: isCanada,
+            currentLang: currentLang,
+            promoPrice: promoPrice,
+            tranlateFeesAndTaxes: tranlateFeesAndTaxes,
+            expandOrderSummaryDetails: expandOrderSummaryDetails,
+            isMCP: isMCP,
+            showUnusedCreditLine: showUnusedCreditLine,
+            showHeadlineSeeOfferDetails: showHeadlineSeeOfferDetails,
+            isClosedRadio: isClosedRadio,
+            isNewAccount: isNewAccount,
+            isStreamingFlow: isStreamingFlow,
+            isChangeSubscription: isChangeSubscription,
+            isDataOnlyTrial: isDataOnlyTrial,
+            isClosedStreaming: isClosedStreaming,
+            isCurrentSubscriptionTrial: isCurrentSubscriptionTrial,
+            extraData: extraData
+        }"
+        (chevronClicked)="chevronClicked($event)"
+        (viewToolTipClicked)="viewToolTipClicked($event)"
+    ></order-summary-pro-rated-renewal-quote>
+
+    <order-summary-renewal-quote
+        class="order-summary-container"
+        data-e2e="item.quoteType"
+        *ngIf="quotesMap.renewalQuote"
+        [vm]="{
+            quoteVM: quotesMap.renewalQuote,
+            isQuebec: userSettingsService.isQuebec$ | async,
+            isStudentFlow: isStudentFlow,
+            isCanada: isCanada,
+            currentLang: currentLang,
+            promoPrice: promoPrice,
+            tranlateFeesAndTaxes: tranlateFeesAndTaxes,
+            expandOrderSummaryDetails: expandOrderSummaryDetails,
+            isMCP: isMCP,
+            showUnusedCreditLine: showUnusedCreditLine,
+            showHeadlineSeeOfferDetails: showHeadlineSeeOfferDetails,
+            isClosedRadio: isClosedRadio,
+            isNewAccount: isNewAccount,
+            isStreamingFlow: isStreamingFlow,
+            isChangeSubscription: isChangeSubscription,
+            isDataOnlyTrial: isDataOnlyTrial,
+            isClosedStreaming: isClosedStreaming,
+            isCurrentSubscriptionTrial: isCurrentSubscriptionTrial,
+            leadOfferHasEtfAmount: leadOfferHasEtfAmount,
+            extraData: extraData
+        }"
+        (chevronClicked)="chevronClicked($event)"
+        (viewToolTipClicked)="viewToolTipClicked($event)"
+        [priceChangeMessagingType]="priceChangeMessagingType"
+        [priceChangeMessagingTypeFeatureFlag]="priceChangeMessagingTypeFeatureFlag && !quotesMap.futureQuote"
+    ></order-summary-renewal-quote>
+
+    <div data-e2e="orderSummary.importantInfo" *ngIf="isStudentFlow" class="important-info-container">
+        <p
+            class="small-copy"
+            [innerHTML]="
+                'quotes.orderSummaryComponent.NOTES.IMPORTANT_NOTE_STUDENTS'
+                    | translate
+                        : {
+                              termlength: termLengthImportantNote,
+                              month: quotesArray[0].termLength | i18nPlural: ('quotes.orderSummaryComponent.ORDER_DETAILS.TERM_LENGTH.PLURAL_MAP.MONTHS_TERM' | translate),
+                              premierFullPrice: premierFullPrice | currency: 'USD':'symbol-narrow':undefined:currentLang,
+                              packageName: 'app.packageDescriptions.' + leadOfferPackageName + '.name' | translate | withoutPlatformNameStreaming: leadOfferPackageName
+                          }
+            "
+        ></p>
+    </div>
+</div>

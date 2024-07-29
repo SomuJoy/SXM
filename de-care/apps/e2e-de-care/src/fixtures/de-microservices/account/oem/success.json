@@ -1,0 +1,13 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {},
+        "marketingId": "2324",
+        "marketingAcctId": "1233",
+        "region": "US",
+        "accessToken": null,
+        "refreshToken": null
+    }
+}

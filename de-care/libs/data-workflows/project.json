@@ -1,0 +1,31 @@
+{
+    "name": "data-workflows",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/data-workflows/src",
+    "projectType": "library",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/data-workflows/src/**/*.ts", "libs/data-workflows/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/data-workflows/jest.config.js",
+                "tsConfig": "libs/data-workflows/tsconfig.spec.json",
+                "setupFile": "libs/data-workflows/src/test-setup.ts",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "styleext": "scss"
+        }
+    },
+    "tags": ["scope:legacy", "scope:deprecated"]
+}

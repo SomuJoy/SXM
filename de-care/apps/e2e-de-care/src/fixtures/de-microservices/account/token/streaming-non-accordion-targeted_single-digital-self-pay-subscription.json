@@ -1,0 +1,50 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "PRASADEW",
+            "accountProfile": { "accountRegistered": false },
+            "accountState": { "isInPreTrial": false },
+            "serviceAddress": { "state": "NY", "country": "US" },
+            "subscriptions": [
+                {
+                    "id": "10000209559",
+                    "plans": [
+                        {
+                            "code": "Essential Streaming - Monthly",
+                            "label": "Streaming Music & Entertainment - Monthly",
+                            "packageName": "SIR_IP_SA_ESNTL",
+                            "termLength": 1,
+                            "startDate": "2022-07-21T00:00:00-04:00",
+                            "endDate": null,
+                            "nextCycleOn": "2022-08-21T00:00:00-04:00",
+                            "marketType": "self-pay:standard",
+                            "type": "SELF_PAID",
+                            "capabilities": ["IPAUD"],
+                            "price": 7.99,
+                            "isBasePlan": true,
+                            "dataCapable": false
+                        }
+                    ],
+                    "followonPlans": [],
+                    "radioService": null,
+                    "streamingService": { "id": "10000211607", "maskedUserName": "sre******@siriusxm.com", "status": "Active", "randomCredentials": false },
+                    "status": "Active",
+                    "devicePromoCode": null,
+                    "isPrimary": true
+                }
+            ],
+            "billingSummary": { "creditCard": { "last4Digits": "1111", "type": "VISA", "status": "ACTIVE" }, "isPaymentTypeInvoice": false },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true,
+            "isAccountIdentifiedUsingFLEPZOrVIN": false
+        },
+        "maskedUserNameFromToken": null,
+        "marketingId": null,
+        "marketingAcctId": "0711",
+        "email": null,
+        "isUserNameInTokenSameAsAccount": false
+    }
+}

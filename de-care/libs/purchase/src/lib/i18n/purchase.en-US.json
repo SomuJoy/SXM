@@ -1,0 +1,98 @@
+{
+    "purchase": {
+        "purchaseComponent": {
+            "choiceGenreFormLabel": "Choose your genre",
+            "yourAccountLabel": "Enter your email",
+            "verifyDeviceStepLabel": "Let's verify car radio",
+            "paymentInfoStepLabel": "Your billing information",
+            "paymentInfoStepLabel_RTC": "Your subscription and billing information",
+            "packageUpsellStepLabel": "Choose plan upgrades",
+            "reviewAndCompleteStepLabel": "Review and complete your order",
+            "EDIT_BUTTON_LABEL": "Edit",
+            "RENEWAL_MODAL_TITLE": "Renewal Plan Options",
+            "PLAN_GRID_QUESTIONS_TFN": "855-734-2658",
+            "STEP": "STEP",
+            "OF": "OF"
+        },
+        "streamingOrganicPurchaseStepsComponent": {
+            "yourAccountLabel": "Create your account",
+            "paymentInfoStepLabel": "Set up your payment",
+            "paymentInfoStepLabel_RTC": "Your subscription and billing information",
+            "paymentInfoStepInstructions": "You'll get to review your order before we charge your card.",
+            "paymentInfoStepYourPlanTitle": "Your plan",
+            "paymentInfoStepYourPlanChannelsCount": "({{count}} Channels)",
+            "paymentInfoStepYourPlanFullTermPrice": "{{termLength}} {{monthString}} for {{price}}. Then {{retailPricePerMonth}}/mo.",
+            "paymentInfoStepYourPlanPromoPricePerMonth": "{{termLength}} {{monthString}} for {{price}}/mo. Then {{retailPricePerMonth}}/mo.",
+            "paymentInfoStepYourPlanPricePerMonth": "{{pricePerMonth}}/mo",
+            "paymentInfoStepInactiveCopy": "{{cardType}} ending in {{last4}}",
+            "packageUpsellStepLabel": "Choose plan upgrades",
+            "reviewAndCompleteStepLabel": "Review and complete your order",
+            "EDIT_BUTTON_LABEL": "Edit",
+            "RENEWAL_MODAL_TITLE": "Renewal Plan Options",
+            "STEP_TITLE_ACTIVE": "Step {{stepNumber}} of {{totalSteps}}",
+            "UPSELL_CONTINUE_BUTTON": "REVIEW MY ORDER",
+            "PLAN_GRID_QUESTIONS_TFN": "855-734-2658",
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "Month",
+                    "other": "Months"
+                }
+            },
+            "uiLoadingWithAlertMessageComponent": {
+                "pill": "That offer is for new subscribers, but here’s another option for you.",
+                "paragraph": "Finding another great plan for you."
+            },
+            "STREAMING_LINK": "https://www.siriusxm.com/trial-eligibility?programcode=SA3MO",
+            "LINK_TITLE": "Want a plan that includes satellite radio?",
+            "LINK_TEXT": "Get SiriusXM in your car + streaming"
+        },
+        "reviewOrderComponent": {
+            "COMPLETE_MY_ORDER_BUTTON": "Complete My Order",
+            "ACCEPT_AGREEMENT": "Please accept the above agreement.",
+            "ENTER_A_CAPTCHA_TO_FINISH": "Please enter CAPTCHA to finish."
+        },
+        "accountLookupStepComponent": {
+            "ACCOUNT_FOUND_MODAL_TITLE": "Your Account",
+            "VERIFY_MODAL_TITLE": "Verify",
+            "VERIFY_MODAL_HEADER_TITLE": "Verify your account",
+            "VERIFY_MODAL_HEADER_COPY": "We want to make sure it's really you before you create your username."
+        },
+        "AccountCredentialsAndLookupStepComponent": {
+            "ACCOUNT_FOUND_MODAL_TITLE": "Your Account",
+            "VERIFY_MODAL_TITLE": "Verify",
+            "VERIFY_MODAL_HEADER_TITLE": "Verify your account",
+            "VERIFY_MODAL_HEADER_COPY": "We want to make sure it's really you before we make changes to your account.",
+            "EMAIL_PLACEHOLDER": "Email",
+            "EMAIL_DESCRIPTION": "This will be your login to stream and manage your account.",
+            "EMAIL_INVALID_MSG": "Enter a valid email address.",
+            "EMAIL_IN_USE_ERROR_MSG": "Username/Email address already in use.",
+            "BUTTON_LABEL": "Continue",
+            "PASSWORD": {
+                "LABEL": "Password",
+                "ERRORS": {
+                    "REQUIRED": "Enter a password.",
+                    "LENGTH": "Your password must be {{ min }} to {{ max }} characters long.",
+                    "POLICY": "Your password must contain at least one character from at least 3 different groups, as explained in our password policy.",
+                    "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}",
+                    "GENERIC": "We're sorry, your new password does not comply with our policy. Please try again.",
+                    "PII_DATA": "Password cannot contain first name, last name or email address."
+                }
+            },
+            "PLURAL_MAP": {
+                "WORD": {
+                    "=1": "word",
+                    "other": "words"
+                }
+            }
+        },
+        "reviewSubscriptionOptions": {
+            "SectionTitle": "Subscription options",
+            "ONCE_TRIAL_ENDS": "Your 3-month promotion period ends on {{endDate}}, and your renewal subscription will then automatically begin. You'll get to review and confirm your order before subscribing and can change or cancel at anytime.",
+            "OPTIONS_LINK": "Change my renewal subscription",
+            "RENEWAL_SUBSCRIPTION": {
+                "HEADER": "Renewal subscription:",
+                "DETAILS": "{{renewalPackageName}}<br>${{renewalMonthlyPrice}}/mo"
+            }
+        }
+    }
+}

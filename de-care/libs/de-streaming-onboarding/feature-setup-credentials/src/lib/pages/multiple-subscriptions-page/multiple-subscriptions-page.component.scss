@@ -1,0 +1,41 @@
+@import "sxm.phoenix.imports";
+hr {
+    border: 1px solid $gray-light;
+}
+.enter-radio-id {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+}
+.button-cta {
+    height: 20px;
+    width: 228px;
+    color: #0000eb;
+    font-family: HCo Gotham !important;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 20px;
+    text-align: center;
+}
+.button-bg {
+    height: 56px;
+    width: 100%;
+    background-color: #e8eef8;
+    text-align: center;
+}
+.cta-notice {
+    text-align: right;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+}
+.top {
+    top: 60px;
+}
+.bottom {
+    bottom: 15px;
+}
+.right {
+    right: 4px;
+}

@@ -1,0 +1,68 @@
+<ng-container *ngrxLet="organicFollowOnOptionViewModel$ as model">
+    <section id="mainContent">
+        <header>
+            <sxm-ui-step-header-text-breadcrumb>
+                <ng-container breadcrumbText>
+                    {{ translateKeyPrefix + ".STEP_TEXT" | translate }}
+                </ng-container>
+                <ng-container title>{{
+                    translateKeyPrefix + ".TITLE"
+                        | translate
+                            : {
+                                  planName: model?.leadOfferPlanName
+                              }
+                }}</ng-container>
+            </sxm-ui-step-header-text-breadcrumb>
+            <p>
+                {{
+                    translateKeyPrefix + ".USERNAME"
+                        | translate
+                            : {
+                                  maskedUserName: model?.streamingServiceMaskedUsername
+                              }
+                }}
+            </p>
+        </header>
+        <form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+            <div class="radio-buttons">
+                <div class="invalid-feedback" *ngIf="displayFormError">
+                    <p>{{ translateKeyPrefix + ".ERROR" | translate }}</p>
+                </div>
+                <sxm-ui-radio-option-card-with-radio-select-form-field
+                    class="theme-transparent"
+                    formControlName="followon"
+                    data-test="addFollowon"
+                    [data]="{
+                        title:
+                            translateKeyPrefix + '.OPTIONS.PLANCODE.TITLE'
+                            | translate
+                                : {
+                                      price: model?.renewalPrice | sxmCurrency: (currentLang$ | async),
+                                      planName: model?.leadOfferPlanName
+                                  },
+                        description: translateKeyPrefix + '.OPTIONS.PLANCODE.DESCRIPTION' + (model?.displayFeesAndTaxes ? '' : '_NO_FEES_AND_TAXES') | translate,
+                        value: model.renewalPlanCode
+                    }"
+                >
+                </sxm-ui-radio-option-card-with-radio-select-form-field>
+                <sxm-ui-radio-option-card-with-radio-select-form-field
+                    class="theme-transparent"
+                    formControlName="followon"
+                    data-test="skipFollowon"
+                    [data]="{
+                        title: translateKeyPrefix + '.OPTIONS.SKIP.TITLE' | translate,
+                        description: translateKeyPrefix + '.OPTIONS.SKIP.DESCRIPTION' | translate,
+                        value: 'SKIP'
+                    }"
+                >
+                </sxm-ui-radio-option-card-with-radio-select-form-field>
+            </div>
+            <button type="submit" data-test="submitFollowOnOption" sxm-proceed-button sxmUiDataClickTrack="submit">
+                {{ translateKeyPrefix + ".CONTINUE_BUTTON_TEXT" + (followonValueSelected ? "_SETUP" : "") | translate }}
+            </button>
+        </form>
+    </section>
+    <section *ngIf="followonValueSelected" id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+        <div [innerHTML]="model?.legalCopy"></div>
+    </section>
+</ng-container>

@@ -1,0 +1,19 @@
+{
+    "TITLE": "Vous pensez nous quitter? Choisissez une option ci-dessous :",
+    "CANCEL_PRELINK": "Je veux ",
+    "CANCEL_LABEL": "voir d’autres excellentes offres ou annuler",
+    "CANCEL_POSTLINK": ".",
+    "CANCEL_NO_OFFER_PRELINK": "Je veux ",
+    "CANCEL_NO_OFFER_LABEL": "annuler en ligne",
+    "CANCEL_NO_OFFER_POSTLINK": ".",
+    "CHAT_CANCEL_PRELINK": "Je veux ",
+    "CHAT_CANCEL_LABEL": "voir d’autres excellentes offres ou clavarde avec un préposé pour annuler",
+    "CHAT_CANCEL_POSTLINK": ".",
+    "TRANSFER_PRELINK": "Je veux ",
+    "TRANSFER_LABEL": "transférer mon abonnement",
+    "TRANSFER_POSTLINK": " à une autre radio.",
+    "CHAT_PRELINK": "Je veux ",
+    "CHAT_LABEL": "clavarder avec un préposé",
+    "CHAT_POSTLINK": " au sujet de mes options ou pour annuler.",
+    "CALL": "Appelez-nous pour annuler au 1 888 539-7474."
+}

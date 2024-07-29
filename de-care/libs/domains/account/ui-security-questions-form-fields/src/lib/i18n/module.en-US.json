@@ -1,0 +1,13 @@
+{
+    "domainsAccountUiSecurityQuestionsFormFieldsModule": {
+        "securityQuestionsFormFieldsComponent": {
+            "QUESTION_PLACEHOLDER_TEXT": "Select security question ",
+            "ANSWER_PLACEHOLDER_TEXT": "Answer ",
+            "ERRORS": {
+                "QUESTION_REQUIRED": "Select security question.",
+                "ANSWER_REQUIRED": "Enter answer.",
+                "ANSWER_MIN_LENGTH": "Answer must be at least 3 characters long."
+            }
+        }
+    }
+}

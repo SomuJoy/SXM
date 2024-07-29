@@ -1,0 +1,49 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: block;
+}
+
+sxm-ui-follow-on-selection {
+    padding-top: 16px;
+    background-color: $white;
+}
+
+sxm-ui-plan-comparison-grid {
+    transition: all 0.45s ease-out;
+    transition-delay: 0.45s;
+
+    overflow: hidden;
+    height: 887px;
+    max-height: 887px;
+
+    @include bp(medium) {
+        height: 863px;
+        max-height: 863px;
+    }
+
+    @include bp(large) {
+        height: 760px;
+        max-height: 760px;
+    }
+}
+
+.authenticated {
+    sxm-ui-plan-comparison-grid {
+        overflow: visible;
+        height: auto;
+        max-height: 2000px;
+        padding-bottom: 30px;
+    }
+
+    find-your-account-card {
+        @include ie-styles {
+            display: none;
+        }
+    }
+}
+
+offer-details {
+    position: relative;
+    z-index: 2;
+}

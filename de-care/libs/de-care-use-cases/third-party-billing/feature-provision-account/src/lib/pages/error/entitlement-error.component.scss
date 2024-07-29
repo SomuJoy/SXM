@@ -1,0 +1,35 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+:host {
+    @include page-content-legacy-markup(1fr);
+    height: 100%;
+}
+
+.container {
+    align-items: flex-start;
+}
+
+.title {
+    padding-top: 24px;
+}
+
+.body {
+    padding-top: 16px;
+    padding: 16px 0 24px 0;
+}
+
+.icon-arrow {
+    .icon-dropdown-sm {
+        stroke: $gray-dark;
+    }
+    width: 18px;
+    height: 10px;
+    transform: rotate(90deg);
+    transform-origin: center;
+}
+
+.back-button {
+    color: $gray-dark;
+    font-size: 12px;
+    font-weight: 500;
+}

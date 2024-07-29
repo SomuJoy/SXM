@@ -1,0 +1,28 @@
+{
+    "PLAN_DESCRIPTION": "Forfait {{additionalPlanName}} {{termWord}}",
+    "PLAN_LINK_LABEL": "Découvrez ce qui est inclus",
+    "DROPDOWN_LABEL": "Modifier",
+    "FOLLOWON_DESCRIPTION_PROMO": "{{term}} mois de <strong>{{planName}}</strong> forfait {{additionalPlanName}} du {{startDate}} au {{endDate}}.",
+    "FOLLOWON_DESCRIPTION_SELFPAY_WITH_PROMO": "Le forfait {{termWord}} <strong>{{planName}}</strong> {{additionalPlanName}} commence le {{startDate}} lorsque votre offre se termine.",
+    "FOLLOWON_DESCRIPTION_SELFPAY": "Le forfait {{termWord}} <strong>{{planName}}</strong> {{additionalPlanName}} commence le {{startDate}} lorsque votre essai se termine.",
+    "TERM_MAP": {
+        "=0": "",
+        "=1": "mensuel",
+        "=3": "trimestriel",
+        "=6": "semi-annuel",
+        "=12": "annuel",
+        "=24": "2 ans",
+        "=36": "3 ans",
+        "other": "# mois"
+    },
+    "NAME_MAP": {
+        "family": "à rabais multiradio",
+        "lifetime": "à vie",
+        "special": " special pricing",
+        "demo": "démo",
+        "military": "Rabais militaire",
+        "employee": "pour les employés",
+        "other": ""
+    },
+    "ARIA_MODIFY_SUBSCRIPTION": "Modifier l'abonnement"
+}

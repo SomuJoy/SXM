@@ -1,0 +1,119 @@
+<rflz-error *ngIf="!hideErrorMessagePill" class="non-bold" [errorCode]="errorCode" [errorMsgData]="errorMsgData" [sweepstakesEligible]="sweepstakesEligible"></rflz-error>
+
+<h6 class="text-color-gray-dark step-header">{{ "identification.rflzFormComponent.STEP" | translate: { totalSteps: totalSteps } }}</h6>
+<p class="large-copy rflz-title">{{ "identification.rflzFormComponent.HEADER" | translate }}</p>
+
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+    <!--radio id / vin-->
+    <div class="top-link" *ngIf="licensePlateLookupEnabled">
+        <br />
+        <a class="text-link" (click)="licensePlateLookupModal.open()">{{ "identification.rflzFormComponent.LOOKUP_BY_LICENSE_PLATE_TEXT" | translate }}</a>
+    </div>
+
+    <div
+        class="input-container"
+        [class.invalid]="(form.get('radioId') | formControlInvalid: submitted) || (error3494Counter > 0 && form.get('radioId')?.dirty)"
+        [class.filled]="form.get('radioId').value"
+    >
+        <label for="radioId">{{ "identification.rflzFormComponent" + (nflOptInEnabled ? ".RADIO_ID_VIN_NFL" : ".RADIO_ID_VIN") | translate }}</label>
+        <input *ngIf="maskedRadioId; else notMaskedRadioIdInput" type="text" id="radioId" data-e2e="rflzForm.radioId" formControlName="radioId" appMaskedRadioId onFocus />
+        <ng-template #notMaskedRadioIdInput>
+            <input type="text" id="radioId" data-e2e="rflzForm.radioId" formControlName="radioId" appTrimmedRadioId onFocus />
+        </ng-template>
+
+        <div>
+            <svg class="icon icon-utility large" (click)="helpFindRadio.emit($event)">
+                <use class="icon-tool-tip" xlink:href="#icon-tool-tip"></use>
+            </svg>
+        </div>
+    </div>
+    <div *ngIf="(form.get('radioId') | formControlInvalid: submitted) || error3494Counter > 0" class="invalid-feedback">
+        <p>{{ "identification.rflzFormComponent.ERRORS.RADIO_ID" | translate }}</p>
+    </div>
+    <p *ngIf="presentation === presentationEnum.Default" class="instructions">
+        {{ "identification.rflzFormComponent.NO_RADIO" | translate }}
+        <a href="{{ 'identification.rflzFormComponent.GET_STREAMING.LINK_URL' | translate }}" class="text-link">
+            {{ "identification.rflzFormComponent.GET_STREAMING.LINK_TEXT" | translate }}
+        </a>
+    </p>
+    <!--first name-->
+    <div class="input-container" [class.invalid]="form.get('firstName') | formControlInvalid: submitted" [class.filled]="form.get('firstName').value">
+        <label for="firstName">{{ "identification.rflzFormComponent.FIRST_NAME" | translate }}</label>
+        <input type="text" id="firstName" data-e2e="rflzForm.firstName" formControlName="firstName" appTrimFormField onFocus />
+    </div>
+    <div *ngIf="form.get('firstName') | formControlInvalid: submitted" class="invalid-feedback">
+        <p>{{ "identification.rflzFormComponent.ERRORS.FIRST_NAME" | translate }}</p>
+    </div>
+
+    <!--last name-->
+    <div class="input-container" [class.invalid]="form.get('lastName') | formControlInvalid: submitted" [class.filled]="form.get('lastName').value">
+        <label for="lastName">{{ "identification.rflzFormComponent.LAST_NAME" | translate }}</label>
+        <input type="text" id="lastName" data-e2e="rflzForm.lastName" formControlName="lastName" appTrimFormField onFocus />
+    </div>
+    <div *ngIf="form.get('lastName') | formControlInvalid: submitted" class="invalid-feedback">
+        <p>{{ "identification.rflzFormComponent.ERRORS.LAST_NAME" | translate }}</p>
+    </div>
+
+    <!--zip code-->
+    <div class="input-container" [class.invalid]="form.get('zipCode') | formControlInvalid: submitted" [class.filled]="form.get('zipCode').value">
+        <label for="zipCode">{{ "identification.rflzFormComponent.ZIP_CODE" | translate }}</label>
+        <input type="text" appMaskZipCode [zipMaskIsCanada]="isCanada" data-e2e="rflzForm.zipCode" id="zipCode" formControlName="zipCode" onFocus />
+    </div>
+    <div *ngIf="form.get('zipCode') | formControlInvalid: submitted" class="invalid-feedback">
+        <p>{{ "identification.rflzFormComponent.ERRORS.ZIP_CODE" | translate }}</p>
+    </div>
+
+    <!--privacy policy-->
+    <br />
+
+    <a href="{{ 'identification.rflzFormComponent.PRIVACY_POLICY' + (nflOptInEnabled ? '.LINK_URL_NFL' : '.LINK_URL') | translate }}" target="blank" class="text-link">{{
+        "identification.rflzFormComponent.PRIVACY_POLICY.LINK_TEXT" | translate
+    }}</a>
+
+    <!--opt in (Only for NFL) - Optional-->
+    <sxm-ui-nfl-opt-in *ngIf="nflOptInEnabled" (submitVerifyAccountForm)="onVerifyAccountClick($event)"> </sxm-ui-nfl-opt-in>
+
+    <!--submit-->
+    <button class="button primary full-width" type="submit" data-e2e="rflzForm.submitButton" [class.loading]="loading" [disabled]="loading" qatag="RflzContinueButton">
+        <ng-container *ngIf="!loading">{{ "identification.rflzFormComponent" + (nflOptInEnabled ? ".NFL_BUTTON" : ".BUTTON") | translate }}</ng-container>
+        <span></span><span></span><span></span>
+    </button>
+</form>
+<sxm-ui-modal #licensePlateLookupModal="sxmUiModal" [titlePresent]="true" [ariaDescribedbyTextId]="licensePlateLookupModalAriaDescribedbyTextId" title="{{ 'elements.rflzWidgetComponent.RADIO_LOOKUP_LABEL' | translate }}">
+    <!-- NOTE: we might need to show messaging for (activeSubscriptionFound) instead of error here? -->
+    <lookup-license-plate
+        [ariaDescribedbyTextId]="licensePlateLookupModalAriaDescribedbyTextId"
+        (licensePlateError)="handleLicensePlateLookupError()"
+        (selectedVin)="handleSelectedLicensePlateVin($event)"
+        (activeSubscriptionFound)="handleLicensePlateLookupError()"
+        (noAccountFound)="handleSelectedLicensePlateVin($event)"
+    ></lookup-license-plate>
+</sxm-ui-modal>
+<sxm-ui-modal
+    #confirmVinModal="sxmUiModal"
+    [ariaDescribedbyTextId]="confirmVinModalAriaDescribedbyTextId"
+    [showBackButton]="true"
+    (backButton)="tryLicenseLookupAgain()"
+    [titlePresent]="true"
+    title="{{ 'identification.lookupRadioIdComponent.RADIO_LOOKUP_LABEL' | translate }}"
+>
+    <confirm-vin
+        *ngIf="confirmVinModalData"
+        [ariaDescribedbyTextId]="confirmVinModalAriaDescribedbyTextId"
+        [last4DigitsOfRadioId]="confirmVinModalData.last4DigitsOfRadioId"
+        [data]="confirmVinModalData"
+        (vinConfirmed)="onVinConfirmed()"
+        (tryAgainEvent)="tryLicenseLookupAgain()"
+    >
+    </confirm-vin>
+</sxm-ui-modal>
+<sxm-ui-modal
+    #vinErrorModal="sxmUiModal"
+    [ariaDescribedbyTextId]="vinErrorModalAriaDescribedbyTextId"
+    title="{{ 'identification.lookupRadioIdComponent.RADIO_LOOKUP_LABEL' | translate }}"
+    [titlePresent]="true"
+    [showBackButton]="true"
+    (backButton)="vinErrorModal.close(); licensePlateLookupModal.open()"
+>
+    <vin-error (radioIdSearchClick)="vinErrorModal.close()" [ariaDescribedbyTextId]="vinErrorModalAriaDescribedbyTextId"></vin-error>
+</sxm-ui-modal>

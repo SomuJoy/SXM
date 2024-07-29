@@ -1,0 +1,18 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "email": "VHWBLXSS.ILNZ@SIRIUSXM.COM",
+        "status": "SUCCESS",
+        "radioId": "00MB",
+        "subscriptionId": "10000212750",
+        "maskedStreamingUserName": "********KSNk",
+        "accountNumber": "10000215054",
+        "isEligibleForStreamingCredentialsOnly": false,
+        "isUserNameSameAsEmail": false,
+        "isEligibleForRegistration": true,
+        "isTwoFactorAuthNeeded": false,
+        "isOfferStreamingEligible": true
+    }
+}

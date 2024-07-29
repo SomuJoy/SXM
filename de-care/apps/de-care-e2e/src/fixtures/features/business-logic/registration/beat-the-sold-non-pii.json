@@ -1,0 +1,48 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "firstName": "JOHN",
+        "userName": null,
+        "accountProfile": { "accountRegistered": false },
+        "accountState": { "isInPreTrial": true },
+        "subscriptions": [
+            {
+                "id": "10000145847",
+                "plans": [
+                    {
+                        "dataCapable": false,
+                        "code": "Sponsored - OEM Trial - All Access - 12mo - 65.00",
+                        "packageName": "SIR_CAN_ALLACCESS",
+                        "termLength": 12,
+                        "startDate": "2021-08-16T00:00:00-04:00",
+                        "endDate": "2022-08-16T00:00:00-04:00",
+                        "nextCycleOn": null,
+                        "type": "TRIAL",
+                        "capabilities": ["AUD", "IPAUD"],
+                        "price": 0,
+                        "isBasePlan": true
+                    }
+                ],
+                "followonPlans": [],
+                "radioService": {
+                    "id": "10000145335",
+                    "last4DigitsOfRadioId": "0422",
+                    "devicePromoCode": "0185",
+                    "vehicleInfo": { "year": null, "make": null, "model": null },
+                    "is360LCapable": false
+                },
+                "streamingService": { "id": "10000143287", "maskedUserName": "ivx******@siriusxm.com", "status": "Active" },
+                "status": "Active",
+                "devicePromoCode": "0185",
+                "isPrimary": true
+            }
+        ],
+        "last4DigitsOfAccountNumber": "3543",
+        "hasEmailAddressOnFile": true,
+        "hasPhoneNumberOnFile": true,
+        "maskedPhoneNumber": null,
+        "hasDemoSubscription": false
+    }
+}

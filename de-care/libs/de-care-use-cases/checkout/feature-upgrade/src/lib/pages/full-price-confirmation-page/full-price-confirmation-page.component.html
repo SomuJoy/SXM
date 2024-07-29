@@ -1,0 +1,45 @@
+<ng-container *ngrxLet="confirmationViewModel$ as confirmationViewModel">
+    <section id="heroSection" deCarePageFullWidthContent="mainWideContent" class="no-print">
+        <img src="assets/img/tokenized-sales-hero-card-2.jpg" alt="tokenized sales hero card" />
+        <h1>{{ translateKeyPrefix + "TITLE" | translate }}</h1>
+    </section>
+    <div deCarePageMainContent id="mainContent">
+        <section id="radioInfo">
+            <p>{{ translateKeyPrefix + "RADIO_INFO.RADIO_ID_MASKED" | translate : { radioId: confirmationViewModel?.radioIdLastFour } }}</p>
+        </section>
+        <section id="quote">
+            <quote-summary *ngIf="confirmationViewModel.quoteViewModel" [quote]="confirmationViewModel.quoteViewModel"></quote-summary>
+            <a class="text-link no-print" (click)="onPrintClick()" [translate]="translateKeyPrefix + 'QUOTE.PRINT_YOUR_ORDER'" sxmUiDataClickTrack="print"></a>
+            <hr />
+        </section>
+
+        <section *ngIf="getSelectedPlanDealType$ | async">
+            <sxm-ui-deal-redemption-instructions *ngIf="getIsDealWithoutPartnerSiteSupportLink$ | async" [copyContent]="dealRedemptionInstructions$ | async">
+            </sxm-ui-deal-redemption-instructions>
+            <redeem-and-link-with-amazon *ngIf="getSelectedPlanDealIsAmazon$ | async" [subscriberInfo]="amazonDealViewModel$ | async"></redeem-and-link-with-amazon>
+            <hr />
+        </section>
+        <section>
+            <listen-now [infoForToken]="confirmationViewModel.listenNowViewModel"></listen-now>
+            <hr />
+        </section>
+        <section>
+            <refresh-signal *ngIf="confirmationViewModel.isRefreshAllowed" [radioId]="confirmationViewModel.radioIdLastFour"></refresh-signal>
+        </section>
+        <section>
+            <button type="button" sxm-proceed-button sxmUiDataClickTrack="exit" (click)="backToMyAccount()" [secondary]="true">
+                {{ translateKeyPrefix + "BACK_BUTTON.TEXT" | translate }}
+            </button>
+        </section>
+    </div>
+    <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+        <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+            <div>
+                <p>
+                    <strong>{{ translateKeyPrefix + "SUBSCRIPTION_IMPORTANT_INFO.TITLE" | translate }}</strong>
+                </p>
+                <p [innerHTML]="translateKeyPrefix + 'SUBSCRIPTION_IMPORTANT_INFO.BODY' | translate"></p>
+            </div>
+        </section>
+    </section>
+</ng-container>

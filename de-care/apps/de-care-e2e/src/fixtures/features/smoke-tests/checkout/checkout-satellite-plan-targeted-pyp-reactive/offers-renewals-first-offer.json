@@ -1,0 +1,47 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "offers": [
+            {
+                "planCode": "Mostly Music - 1mo - wActv",
+                "packageName": "SXM_SIR_AUD_PKG_MM",
+                "packageUpgrade": null,
+                "promoCode": null,
+                "termLength": 1,
+                "type": "SELF_PAY",
+                "marketType": "self-pay:standard",
+                "price": 12.99,
+                "pricePerMonth": 12.99,
+                "retailPrice": 12.99,
+                "packageUpgradePrice": null,
+                "msrpPrice": 12.99,
+                "processingFee": null,
+                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                "deal": null,
+                "priceChangeMessagingType": "",
+                "planEndDate": null,
+                "minimumFollowOnTerm": 0,
+                "order": null,
+                "bundledSavingPrice": null,
+                "bundleSubPackageNames": null,
+                "parentPackageName": "",
+                "fallbackReason": "",
+                "capability": [],
+                "mrdEligible": false,
+                "invoiceEligible": false,
+                "advantage": false,
+                "student": false,
+                "fallback": false,
+                "streaming": false,
+                "upgradeOffer": false,
+                "bestPackage": false,
+                "leadOffer": false,
+                "dataCapable": false,
+                "bundled": null
+            }
+        ],
+        "presentment": null
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "DeCareUseCasesCheckoutFeatureSatelliteModule": {
+        "PurchaseOrganicPageComponent": {
+            "STEP_PAGE_TITLES": {
+                "": ""
+            }
+        },
+        "PurchaseTargetedPageComponent": {
+            "STEP_PAGE_TITLES": {
+                "": ""
+            }
+        }
+    }
+}

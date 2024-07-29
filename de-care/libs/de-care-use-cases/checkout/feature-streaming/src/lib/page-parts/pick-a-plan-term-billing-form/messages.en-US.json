@@ -1,0 +1,15 @@
+{
+    "PLURAL_MAP": {
+        "TERM": {
+            "=1": "Monthly",
+            "=12": "Annual"
+        },
+        "PERIOD": {
+            "=1": "mo",
+            "=12": "yr"
+        }
+    },
+    "DESCRIPTION": "Pick Your billing Plan",
+    "PRICE": "{{price}}/{{period}}",
+    "OFFER_DETAILS": "Offer details below"
+}

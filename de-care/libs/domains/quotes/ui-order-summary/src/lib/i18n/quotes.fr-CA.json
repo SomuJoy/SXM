@@ -1,0 +1,191 @@
+{
+    "quotes": {
+        "orderSummaryComponent": {
+            "CURRENT_QUOTE": {
+                "HEADER": {
+                    "PROMO_PLAN": "À la fin de votre période d'essai, les frais uniques se rapportant à votre période de promotion s'éléveront à {{amount}} et devront être réglés le {{startDate}}",
+                    "ALL_ACCESS": "Les frais de mise à niveau de votre version d'essai doivent être acquittés aujourd'hui.",
+                    "PRORATED": "Le montant indiqué a été calculé au prorata pour correspondre à la date de facturation de votre compte."
+                },
+                "DUE": {
+                    "NO_UPGRADE": "Total dû maintenant"
+                }
+            },
+            "RENEWAL_QUOTE": {
+                "HEADER": {
+                    "NO_UPGRADE": {
+                        "NON_BALANCE": {
+                            "PRORATED": "À la fin de votre période de promotion, les frais uniques de {{amount}} devront être réglés le {{startDate}}. Ce montant a été calculé proportionnellement selon la date de facturation qui apparaît sur votre compte.",
+                            "NON_PRORATED": "Les frais récurrents estimés de votre abonnement de {{term}} seront de {{amount}} à compter du {{startDate}}.",
+                            "NON_PRORATED_WITH_CANCEL": "Les frais récurrents estimés de votre abonnement de {{term}} seront de {{amount}} à compter du {{startDate}}. N'oubliez pas que vous pouvez modifier ou annuler votre abonnement en tout temps.",
+                            "CANCEL_TEXT_STREAMING": "Rappelez-vous : vous pouvez ANNULER EN TOUT TEMPS."
+                        },
+                        "BALANCE": "À la fin de votre période d'essai, les frais uniques se rapportant à votre période de promotion s'éléveront à {{amount}} et devront être réglés le {{startDate}}"
+                    }
+                },
+                "DUE": {
+                    "NO_UPGRADE": "Total - Dû le {{startDate}}"
+                }
+            },
+            "FUTURE_QUOTE": {
+                "HEADER": {
+                    "NO_UPGRADE": {
+                        "NON_BALANCE": {
+                            "PRORATED": {
+                                "TRIAL": "À la fin de votre période d'essai, les frais uniques se rapportant à votre période de promotion s'éléveront à {{amount}} et devront être réglés le {{startDate}}",
+                                "CLOSED": "À la fin de votre période de promotion, les frais uniques de {{amount}} devront être réglés le {{startDate}}. Ce montant a été calculé proportionnellement selon la date de facturation qui apparaît sur votre compte."
+                            },
+                            "NON_PRORATED": "À la fin de votre période d'essai, les frais uniques se rapportant à votre période de promotion s'éléveront à {{amount}} et devront être réglés le {{startDate}}",
+                            "NON_PRORATED_FULL_PRICE": "À la fin de votre période d'essai, un montant de {{amount}} vous sera facturé le {{startDate}}."
+                        },
+                        "BALANCE": {
+                            "PRORATED": "À la fin de votre période de promotion, les frais uniques de {{amount}} devront être réglés le {{startDate}}. Ce montant a été calculé proportionnellement selon la date de facturation qui apparaît sur votre compte.",
+                            "NON_PRORATED": "Les frais récurrents estimés de votre abonnement de {{term}} seront de {{amount}} à compter du {{startDate}}. N'oubliez pas que vous pouvez modifier ou annuler votre abonnement en tout temps."
+                        }
+                    }
+                },
+                "DUE": {
+                    "NO_UPGRADE": "Total - Dû le {{startDate}}"
+                }
+            },
+            "PROMO_RENEWAL_QUOTE": {
+                "HEADER": {
+                    "NO_UPGRADE": {
+                        "MCP": {
+                            "NON_BALANCE": "Chargée à chaque mois de votre abonnement, la facture récurrente estimée pendant la période promotionnelle sera {{amount}} à partir de {{startDate}}. Notez bien que vous pouvez annuler à tout temps.",
+                            "BALANCE": {
+                                "PRORATED": "À la fin de votre période de promotion, les frais uniques de {{amount}} devront être réglés le {{startDate}}. Ce montant a été calculé proportionnellement selon la date de facturation qui apparaît sur votre compte.",
+                                "NON_PRORATED": "Les frais récurrents estimés de votre abonnement de mois seront de {{amount}} à compter du {{startDate}}. N'oubliez pas que vous pouvez modifier ou annuler votre abonnement en tout temps."
+                            }
+                        },
+                        "NON_MCP": {
+                            "NON_BALANCE": "À la fin de votre période d'essai, les frais uniques se rapportant à votre période de promotion s'éléveront à {{amount}} et devront être réglés le {{startDate}}",
+                            "BALANCE": {
+                                "PRORATED": "À la fin de votre période de promotion, les frais uniques de {{amount}} devront être réglés le {{startDate}}. Ce montant a été calculé proportionnellement selon la date de facturation qui apparaît sur votre compte.",
+                                "NON_PRORATED": "Les frais récurrents estimés de votre abonnement de {{term}} seront de {{amount}} à compter du {{startDate}}. N'oubliez pas que vous pouvez modifier ou annuler votre abonnement en tout temps."
+                            }
+                        }
+                    }
+                },
+                "DUE": {
+                    "NO_UPGRADE": "Total - Dû le {{startDate}}"
+                }
+            },
+            "PRORATED_RENEWAL_QUOTE": {
+                "HEADER": {
+                    "NO_UPGRADE": {
+                        "NON_BALANCE": {
+                            "PRORATED": "À la fin de votre période de promotion, les frais uniques de {{amount}} devront être réglés le {{startDate}}. Ce montant a été calculé proportionnellement selon la date de facturation qui apparaît sur votre compte.",
+                            "NON_PRORATED": "À la fin de votre période d'essai, les frais uniques se rapportant à votre période de promotion s'éléveront à {{amount}} et devront être réglés le {{startDate}}"
+                        },
+                        "BALANCE": "À la fin de votre période d'essai, les frais uniques se rapportant à votre période de promotion s'éléveront à {{amount}} et devront être réglés le {{startDate}}"
+                    }
+                },
+                "DUE": {
+                    "NO_UPGRADE": "Total - Dû le {{startDate}}"
+                }
+            },
+            "ORDER_DETAILS": {
+                "ACCORDION_CHEVRON": {
+                    "COLLAPSED_TEXT": "Détails",
+                    "EXPANDED_TEXT": "Détails",
+                    "ORDER_ARIA_COLLAPSED_TEXT": "Détails du commande",
+                    "ORDER_ARIA_EXPANDED_TEXT": "Fermer les détails du commande",
+                    "ARIA_COLLAPSED_TEXT": "{{packageName}} Frais et taxes: détails",
+                    "ARIA_EXPANDED_TEXT": "{{packageName}} Frais et taxes: fermer les détails",
+                    "ARIA_COLLAPSED_TEXT_TAXES_ONLY": "{{packageName}} Taxes: détails",
+                    "ARIA_EXPANDED_TEXT_TAXES_ONLY": "{{packageName}} Taxes: fermer détails"
+                },
+                "HAS_CREDIT": "Crédit antérieur",
+                "HEAD_LINE": "Récapitulatif de la commande",
+                "DESCRIPTION": "Voir les détails de l'offre ci-dessous",
+                "TOOLTIP": {
+                    "MUSIC_ROYALTY_FEE": "<p><strong>Redevances sur la musique et des frais administratifs (FRM):</strong></p><p><a class=\"text-color-blue-secondary\" href=\"https://www.siriusxm.ca/fr/a-propos-des-redevances-sur-la-musique-et-des-frais-administratifs-faq/\" target=\"_blank\">Voir la FAQ des FRM</a></p>"
+                },
+                "TERM_LENGTH": {
+                    "PLURAL_MAP": {
+                        "PLAN": {
+                            "=1": "Forfait mensuel",
+                            "=3": "",
+                            "=6": "",
+                            "=12": "",
+                            "other": "Forfait annuel"
+                        },
+                        "MONTHS": {
+                            "=1": "mois pour",
+                            "other": "mois pour"
+                        },
+                        "LENGTH": {
+                            "=1": "mensuels",
+                            "=3": "trimestriel",
+                            "=6": "semi-annuel",
+                            "=12": "annuel",
+                            "other": "{{termLength}} mois"
+                        },
+                        "MONTH_PLAN": {
+                            "=1": "Forfait mensuel",
+                            "=3": "Forfait trimestriel",
+                            "=6": "Forfait semi-annuel",
+                            "=12": "Forfait annuel",
+                            "other": "Forfait de {{termLength}} mois"
+                        },
+                        "MONTHS_TERM": {
+                            "=1": "mensuel",
+                            "other": "mensuel"
+                        }
+                    }
+                },
+                "TERM_MONTH_PLAN": "{{termLength}} forfait mensuel",
+                "MONTHS_FOR": "{{length}} {{pluralizedMonth}} {{price}}",
+                "MONTHS_FOR_MCP": "{{length}} {{pluralizedMonth}} {{price}}/mois",
+                "MRD_ELEGIBLE": "{{monthlyExpression}} avec rabais Multi-Radio",
+                "TRIAL_UPGRADE_FEE": "Frais de rehaussement d'essai",
+                "FEES_AND_TAXES": "Frais et taxes",
+                "FEES_AND_TAXES_QUEBEC": "Taxes",
+                "CREDIT_ON_ACCOUNT": "Crédit dans votre compte"
+            },
+            "PACKAGES": {
+                "empty": {
+                    "NAME": "Aucun service actif"
+                },
+                "PREVIOUS_BALANCE": {
+                    "NAME": "Solde précédent",
+                    "TOOLTIP": "Un solde précédent impayé présent sur votre compte doit être réglé avant que vous puissiez terminer votre transaction."
+                },
+                "CREDIT": {
+                    "NAME": "Crédit",
+                    "TOOLTIP": "Un crédit au prorata pour les services non utilisés dans votre ancien abonnement a été appliqué à votre compte. Il sera utilisé pour de futurs événements de facturation ou il pourra être remboursé sur demande.",
+                    "SUB_NAME": "Pour le service non utilisé"
+                },
+                "PREPAID": {
+                    "NAME": "Carte-Cadeau de Service Prépayé"
+                },
+                "login-account": {
+                    "NAME": "Abonnement actif"
+                }
+            },
+            "FEES_AND_TAXES_DESCRIPTIONS": {
+                "CANADIAN_MUSIC_ROYALTY_FEE": "Redevances sur la musique et des frais administratifs",
+                "MUSIC_ROYALTY_AND_ADMINISTRATIVE_FEE": "Redevances sur la musique et des frais administratifs",
+                "HARMONIZED_SALES_TAX_HST": "Taxe de vente harmonisée (TVH)",
+                "GOODS_AND_SERVICES_TAX_GST": "Taxe sur les produits et services (TPS)",
+                "QUEBEC_SALES_TAX_QST": "Taxe de vente du Québec (TVQ)",
+                "PROVINCIAL_SALES_TAX_PST": "Taxe de vente provinciale (TVP)",
+                "CANADIAN_PROCESSING_FEE": "Des frais de traitement",
+                "OTHER_TAX": "Autres taxes",
+                "ACTIVATION_FEES": "Frais d'activation"
+            },
+            "NOTES": {
+                "IMPORTANT_NOTE_STUDENTS": "<span class=\"bold-text\">Note importante :</span> SiriusXM exige que vous revérifiiez votre statut d’étudiant à l’approche de la fin de votre abonnement de {{termlength}} mois de manière à maintenir votre admissibilité à son tarif réduit {{packageName}}. <span class=\"bold-text\">Si votre statut d’étudiant ne peut être vérifié après {{termlength}} mois, le service sera automatiquement renouvelé ensuite tous les mois au forfait {{packageName}} au tarif courant à ce moment-là. (actuellement {{premierFullPrice}}/mois, frais et taxes en sus).</span>"
+            },
+            "STUDENTS_QUOTE": {
+                "FOOTER": {
+                    "STUDENTS_RTP_PLAN": "Quand votre abonnement d’essai prendra fin, le montant facturé récurrent estimé de votre abonnement pendant que vous êtes un étudiant vérifié sera de {{amount}} à compter du {{startDate}}. Rappelez-vous que vous pouvez annuler en tout temps.",
+                    "STUDENTS_MCP_PLAN": "Chargée à chaque mois de votre abonnement, la facture récurrente estimée pendant la période promotionnelle sera {{amount}} à partir du {{startDate}}. Notez bien que vous pouvez annuler à tout temps."
+                }
+            },
+            "GST": "Numéro de TPS de SiriusXM Canada : 857294342",
+            "QST": "Numéro de TVQ de SiriusXM Canada : 1208160032"
+        }
+    }
+}

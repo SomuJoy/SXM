@@ -1,0 +1,6 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": { "status": "SUCCESS", "passwordValidationResult": { "validationErrorKey": "", "validationErrorFailedWord": "", "isValid": true } }
+}

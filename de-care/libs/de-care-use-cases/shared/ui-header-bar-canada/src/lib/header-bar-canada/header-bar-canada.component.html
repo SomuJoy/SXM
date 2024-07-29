@@ -1,0 +1,58 @@
+<ng-container *ngIf="languageAndProvinceChangeVisible$ | async">
+    <div class="province-bar">
+        <div class="content-container header-bar">
+            <div class="row align-center">
+                <div class="column small-10 medium-8 align-left" data-e2e="headerProvinceSection">
+                    <p>
+                        {{ "DeCareUseCasesSharedUiHeaderBarModule.HeaderBarCanadaComponent.SELECT_PROVINCE_LABEL" | translate }}
+                        <button *ngIf="!(provinceSelectionDisabled$ | async); else provinceTextOnly" class="text-link" type="button" (click)="editButtonClicked()">
+                            <strong>{{ selectedProvinceLabel$ | async | titlecase }}</strong>
+                        </button>
+                        <ng-template #provinceTextOnly
+                            ><strong>{{ selectedProvinceLabel$ | async | titlecase }}</strong></ng-template
+                        >
+                    </p>
+                </div>
+                <div class="column small-2 medium-2 align-right">
+                    <button
+                        #languageButton
+                        *ngIf="languageAndProvinceChangeAllowed$ | async"
+                        [value]="'DeCareUseCasesSharedUiHeaderBarModule.HeaderBarCanadaComponent.SWITCH_LANGUAGE.VALUE' | translate"
+                        (click)="languageSelected.emit(languageButton.value)"
+                        type="button"
+                        class="text-link"
+                    >
+                        <strong>{{ "DeCareUseCasesSharedUiHeaderBarModule.HeaderBarCanadaComponent.SWITCH_LANGUAGE.LABEL" | translate }}</strong>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <sxm-ui-modal
+        [closed]="!locationToggleModalOpen"
+        [ariaDescribedbyTextId]="headerBarCanadaModalAriaDescribedbyTextId"
+        title="{{ 'DeCareUseCasesSharedUiHeaderBarModule.HeaderBarCanadaComponent.PROVINCE_SELECTOR_MODAL_TITLE' | translate }}"
+        [titlePresent]="true"
+        (modalClosed)="onModalClosed()"
+    >
+        <de-care-province-selector
+            #provinceSelector
+            [ariaDescribedbyTextId]="headerBarCanadaModalAriaDescribedbyTextId"
+            [selectedProvince]="selectedProvince"
+            [provinces]="provinces"
+            (userChangedProvince)="onUserChangedProvince($event)"
+            (ipLocationNotFound)="locationToggleModalOpen = true"
+        ></de-care-province-selector>
+    </sxm-ui-modal>
+</ng-container>
+
+<div class="content-container header-bar logo-bar">
+    <div class="row align-center">
+        <div class="column small-6 medium-5 align-left no-padding-medium">
+            <de-care-logo-link [imageSrc]="logoData.imageSrc" [link]="logoData.link" [altText]="logoData.altText"></de-care-logo-link>
+        </div>
+        <div class="column small-6 medium-5 align-right">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>

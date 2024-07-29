@@ -1,0 +1,36 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "offers": [
+            {
+                "planCode": "Mostly Music - 1mo - wActv|Promo $7.66 Off for 6mos",
+                "packageName": "SXM_SIR_CAN_MM",
+                "packageUpgrade": null,
+                "promoCode": "0283",
+                "termLength": 6,
+                "type": "PROMO_MCP",
+                "marketType": "self-pay:promo",
+                "price": 3.33,
+                "pricePerMonth": 3.33,
+                "retailPrice": 10.99,
+                "packageUpgradePrice": null,
+                "msrpPrice": 10.99,
+                "processingFee": null,
+                "supportedServices": ["ESN", "UNIVERSAL_LOGIN"],
+                "deal": null,
+                "priceChangeMessagingType": "",
+                "planEndDate": null,
+                "fallbackReason": null,
+                "minimumFollowOnTerm": 0,
+                "order": null,
+                "fallback": false,
+                "streaming": false,
+                "mrdEligible": false,
+                "upgradeOffer": false
+            }
+        ],
+        "presentment": null
+    }
+}

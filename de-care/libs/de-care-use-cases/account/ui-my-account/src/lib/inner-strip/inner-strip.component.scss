@@ -1,0 +1,9 @@
+@import "sxm.phoenix.imports";
+:host {
+    display: block;
+    background: $blue-ultra-light;
+    padding: 16px 20px;
+    @include bp(medium) {
+        padding: 16px 24px;
+    }
+}

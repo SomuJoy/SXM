@@ -1,0 +1,22 @@
+<article *ngFor="let plan of plans">
+    <p *ngIf="plan.isTrial">{{ translateKeyPrefix + "TRIAL" | translate: { name: plan.name } }}</p>
+    <p *ngIf="plan.isPromo">{{ translateKeyPrefix + "PROMO" | translate: { name: plan.name } }}</p>
+    <p *ngIf="plan.isClosed">{{ translateKeyPrefix + "NO_ACTIVE_SERVICE" | translate }}</p>
+    <p *ngIf="!plan.isTrial && !plan.isPromo">{{ plan.name }}</p>
+    <p *ngIf="plan?.nextCycleOn">
+        {{ translateKeyPrefix + "RENEWS" | translate }}
+        {{ plan.nextCycleOn | date: "MM/dd/yyyy" }}
+    </p>
+    <p *ngIf="plan?.startDate">
+        {{ translateKeyPrefix + "STARTS" | translate }}
+        {{ plan.startDate | date: "MM/dd/yyyy" }}
+    </p>
+    <p *ngIf="plan?.endDate">
+        {{ translateKeyPrefix + "ENDS" | translate }}
+        {{ plan.endDate | date: "MM/dd/yyyy" }}
+    </p>
+    <p *ngIf="plan?.closedDate">
+        {{ translateKeyPrefix + "CLOSED" | translate }}
+        {{ plan.closedDate | date: "MM/dd/yyyy" }}
+    </p>
+</article>

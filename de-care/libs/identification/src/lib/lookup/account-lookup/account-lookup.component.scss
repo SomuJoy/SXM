@@ -1,0 +1,19 @@
+:host {
+    display: block;
+
+    .input-container {
+        margin-bottom: 0;
+
+        &.invalid {
+            margin-bottom: 16px;
+        }
+    }
+
+    .invalid-feedback {
+        margin-bottom: 0;
+    }
+}
+
+.description {
+    margin-bottom: 20px;
+}

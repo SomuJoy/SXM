@@ -1,0 +1,28 @@
+{
+    "name": "domains-identity-state-registration-flepz-lookup",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/identity/state-registration-flepz-lookup/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/domains/identity/state-registration-flepz-lookup"],
+            "options": {
+                "jestConfig": "libs/domains/identity/state-registration-flepz-lookup/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/domains/identity/state-registration-flepz-lookup/src/**/*.ts",
+                    "libs/domains/identity/state-registration-flepz-lookup/src/**/*.html"
+                ]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

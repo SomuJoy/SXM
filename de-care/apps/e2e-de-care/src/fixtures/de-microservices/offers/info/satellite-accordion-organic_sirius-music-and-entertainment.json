@@ -1,0 +1,70 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "locales": [
+            {
+                "locale": "en_US",
+                "offerInfos": [
+                    {
+                        "planCode": "All Access - 1mo - wActv|Promo $4.99/mo All Access for 12mos - (WEB)",
+                        "salesHero": {
+                            "title": "Get SiriusXM for 12 months for $5 per month",
+                            "subTitle": "<strong>Plus a FREE 12-month upgrade to Platinum</strong>",
+                            "presentation": null
+                        },
+                        "offerDescription": {
+                            "priceAndTermDescTitle": "<span data-price=\"\">$5/mo for</span> <span data-duration=\"\">12 months</span>",
+                            "processingFeeDisclaimer": "Then $17.99/mo. See <strong>Offer Details</strong> below.",
+                            "packageName": "Sirius Music & Entertainment",
+                            "listeningOptions": ["Satellite", "Streaming"],
+                            "longDescription": null,
+                            "highlightsTitle": "<strong>Sirius Music & Entertainment</strong>&nbsp;<strong>Includes:</strong>",
+                            "highlightsText": [
+                                "<b>400+ channels, </b>including 155+ in your car, plus even more to stream on your devices",
+                                "<b>Ad-free music</b> for every genre & decade plus artist-created channels",
+                                "<b>Original talk,</b> podcasts, exclusive comedy & news from every angle",
+                                "<b>NFL play-by-play,</b> NASCAR®, plus the biggest names in sports talk",
+                                "<b>2 Howard Stern channels,</b> including video",
+                                "<b>SiriusXM video library</b> of in-studio shows & performances"
+                            ],
+                            "footer": null,
+                            "packageFeatures": [
+                                {
+                                    "packageName": "Sirius Music & Entertainment",
+                                    "features": []
+                                }
+                            ],
+                            "showToggleLabel": "Explore plan details",
+                            "hideToggleLabel": "Hide",
+                            "recapDescription": "<strong>Sirius Music & Entertainment (400+ Channels)</strong><br />\r\n<strong>Plus a FREE 12-month upgrade to Platinum</strong><br />\r\n12 Months for $4.99/mo. Then $17.99/mo.",
+                            "recapLongDescription": "<strong>Sirius Music & Entertainment (400+ Channels)</strong><br />\r\n<strong>Plus a FREE 12-month upgrade to Platinum</strong><br />\r\n12 Months for $4.99/mo. Then $17.99/mo. Fees &amp; taxes apply."
+                        },
+                        "deals": [
+                            {
+                                "name": "PREMIER",
+                                "header": "FREE UPGRADE",
+                                "deviceImage": null,
+                                "productImage": null,
+                                "title": "<p><strong>Get everything in Music &amp; Entertainment plus a free 12-month upgrade to Platinum, which gives you even more.</strong></p>\r\n",
+                                "description": "<ul>\r\n\t<li><strong>25 additional channels </strong>of music, talk and sports</li>\r\n\t<li><strong>NFL, MLB&reg;, NBA, and NCAA&reg; play-by-play</strong></li>\r\n\t<li><strong>2 Howard Stern channels,</strong> including video</li>\r\n\t<li><strong>Create Pandora stations</strong> based on artists</li>\r\n</ul>\r\n",
+                                "addonShowToggleText": "View more",
+                                "addonHideToggleText": "View less",
+                                "presentation": null
+                            }
+                        ],
+                        "addonHeaderOverride": null,
+                        "offerDetails": "<p><strong>OFFER DETAILS: </strong>Activate a new Music & Entertainment subscription Plan and pay $4.99 each month for your first 12 months, plus get free activation (a $15 savings). During your initial 12-month subscription term, your service will be upgraded (at no additional cost to you) and you will receive the channels and features available in our Platinum Plan. Savings based on monthly rate for the Platinum, currently $22.99/mo. Fees and taxes apply. A credit card is required on this offer.<br />\r\n<br />\r\n<strong>Your Music & Entertainment subscription plan will automatically renew thereafter every month and you will be charged according to your chosen payment method at then-current rates (currently $17.99/mo.). Please see our Customer Agreement at <a href=\"https://www.siriusxm.com/customeragreement\">www.siriusxm.com</a> for complete terms and how to cancel, which includes online methods or calling us at 1-866-635-2349.</strong><br />\r\n<br />\r\nAll fees, content and features are subject to change. This offer cannot be combined with any other and may be modified or terminated at any time. Offer good for new subscriptions only. Channel lineup varies by package. This offer is presented exclusively by SiriusXM and may not be republished without the consent of SiriusXM.</p>\r\n",
+                        "presentation": {
+                            "theme": "Theme2",
+                            "style": "Presentation1"
+                        },
+                        "numberOfBullets": null,
+                        "paymentInterstitialBullets": null
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,9 @@
+<h4>{{ translateKeyPrefix + "HEADLINE" | translate }}</h4>
+
+<br />
+
+<div [innerHTML]="translateKeyPrefix + 'INSTRUCTIONS' | translate"></div>
+
+<button type="button" sxm-proceed-button (click)="onSignIn()" sxmUiDataClickTrack="player">
+    {{ translateKeyPrefix + "BUTTON_TEXT" | translate }}
+</button>

@@ -1,0 +1,55 @@
+{
+    "deCareUseCasesAccountFeatureRegistration": {
+        "Shared": {},
+        "identificationPageComponent": {
+            "TITLE": "Register your account",
+            "INSTRUCTIONS": "<strong>Manage your subscriptions, payment methods and set up your streaming login — just a few things you can do when you register your SiriusXM Account.</strong>",
+            "HAVE_ACCOUNT": "Already have an account?",
+            "UNEXPECTED_ERROR": "We're sorry, something went wrong. Please try again.",
+            "SIGN_IN": "Sign In",
+            "CONTINUE_BUTTON": "Continue",
+            "CTA": {
+                "VANITY_URL": "https://care.siriusxm.ca"
+            }
+        },
+        "UiLookupByRadioIdOrAccountNumberComponent": {
+            "RADIO_UNBRANDED_ERROR_PREFIX": "This radio cannot currently be managed online. If you purchased your vehicle within the last seven days, this could be because we haven't yet received information about the sale. For immediate help, please ",
+            "CHAT_LINK_TEXT_MIDDLE": "chat with an agent",
+            "RADIO_UNBRANDED_ERROR_SUFFIX": " or call Customer Care at 1-866-635-0565.",
+            "ERROR_MESSAGE_ACCOUNT_DOES_NOT_MATCH": "The number entered does not match our records. Please try again or ",
+            "CHAT_LINK_TEXT": "chat with an agent.",
+            "ACCOUNT_CANNOT_BE_VERIFIED_ERROR_PREFIX": "There's a problem preventing registration of your account. Please ",
+            "ACCOUNT_CANNOT_BE_VERIFIED_ERROR_SUFFIX": " for help.",
+            "ACCOUNT_NUMBER_ERROR": "The number entered does not match our records. Please try again or ",
+            "RADIO_ID_INVALID": "The Radio ID you entered does not match our records. Please try again or "
+        },
+        "CNAComponent": {
+            "CNA_FORM": {
+                "STATE": "Province",
+                "ZIP": "Postal Code",
+                "ERROR": {
+                    "STATE": "Select your province.",
+                    "ZIP": "Enter a valid postal code."
+                }
+            }
+        },
+        "registrationCompletedPageComponent": {
+            "COMPLETED": {
+                "LISTEN_NOW_LINK": "https://player.siriusxm.ca",
+                "CTA": {
+                    "VANITY_URL": "https://care.siriusxm.ca"
+                }
+            },
+            "STREAMING_PLAYER_LINK": ""
+        },
+        "registerPageComponent": {
+            "STEP_SECURITY_QUESTIONS": {
+                "PRE_INSTRUCTIONS": "Thank you for verifying your account, {{firstName}}. ",
+                "INSTRUCTIONS": "Select three security questions below. These questions will help us verify your identity if you forget your password."
+            }
+        },
+        "HelpFindRadioIdModalComponent": {
+            "RADIO_SIRIUS_LINK": "https://www.siriusxm.ca/findradio"
+        }
+    }
+}

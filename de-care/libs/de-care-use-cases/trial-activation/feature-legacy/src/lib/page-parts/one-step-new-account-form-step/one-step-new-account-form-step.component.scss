@@ -1,0 +1,70 @@
+@import "sxm.phoenix.imports";
+
+$common-margin: 24px;
+
+.gray-text {
+    font-weight: 500;
+    color: $gray-dark;
+}
+
+.section-title {
+    margin: $common-margin 0 16px 0;
+}
+
+sxm-ui-dropdown {
+    margin-bottom: 8px;
+}
+
+sxm-ui-modal {
+    position: relative;
+    z-index: 101;
+}
+
+.checkbox-item {
+    margin: 16px 0 10px 0;
+
+    .invalid-feedback {
+        margin: 10px 0 0 30px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1.5;
+        text-align: left;
+    }
+}
+
+.privacy-policy-link {
+    margin-top: $common-margin;
+    display: inline-block;
+}
+
+post-activation-instructions {
+    margin-top: $common-margin;
+    display: inline-block;
+}
+
+form {
+    margin-bottom: $common-margin;
+}
+
+.column {
+    &.small-6 {
+        &:first-child {
+            padding-left: 0;
+            padding-right: 12px;
+        }
+    }
+
+    &.small-6 {
+        &:last-child {
+            padding-left: 12px;
+            padding-right: 0;
+        }
+    }
+}
+
+hr {
+    background-color: $gray-medium;
+    height: 1px;
+    margin: 32px 0 16px;
+    border: 0;
+}

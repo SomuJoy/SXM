@@ -1,0 +1,476 @@
+<div id="review-quote" *ngIf="upsellOffers" data-e2e="offerUpsell">
+    <ng-container *ngIf="upsellOffers.length > 1; else headerSingleUpsell">
+        <p class="text-above-upsell-options">{{ "offerUpsell.offerUpsellComponent.HEADER_MULTI_UPSELL" | translate }}</p>
+    </ng-container>
+    <ng-template #headerSingleUpsell>
+        <p class="text-above-upsell-options">{{ "offerUpsell.offerUpsellComponent.HEADER_SINGLE_UPSELL" | translate }}</p>
+    </ng-template>
+    <form [formGroup]="upsellForm" (ngSubmit)="continueUpsell()" novalidate>
+        <ng-container formArrayName="upsell" *ngFor="let offer of upsellOffers; let i = index">
+            <sxm-ui-content-card
+                data-e2e="offerUpsell.contentCard"
+                *ngIf="!offer.expired && offer.upsellType !== 'PackageAndTerm'"
+                [headlinePresent]="true"
+                [flagPresent]="offer.upsellType === 'Package' && !excludeBestPackageHeading"
+            >
+                <div htmlContentForFlag>
+                    <p class="small-copy text-uppercase" qatag="OurBestPackage">
+                        {{ "offerUpsell.offerUpsellComponent.FLAG_" + offer.flagType | translate }}
+                    </p>
+                </div>
+                <div htmlContentForHead>
+                    <div class="checkbox-item">
+                        <input [formControlName]="i" class="checkbox" type="checkbox" id="charge-agreement{{ i }}" attr.qatag="UpgradeOption{{ i }}Checkbox" />
+                        <label data-e2e="offerUpsell.contentCard.header" class="input-label" for="charge-agreement{{ i }}" attr.qatag="UpgradeOption{{ i }}Header">
+                            <p class="small-copy text-color-white">
+                                <ng-container *ngIf="offer.upsellType === 'Package'"
+                                    >{{
+                                        "offerUpsell.offerUpsellComponent.OFFER_NAME"
+                                            | translate
+                                                : {
+                                                      offerName:
+                                                          {
+                                                              packageName: offer.packageName,
+                                                              type: offer.type,
+                                                              isAdvantage: offer | translateIsAdvantageOffer
+                                                          } | translateOfferName
+                                                  }
+                                    }}
+                                </ng-container>
+                                <ng-container *ngIf="offer.upsellType === 'Term'">
+                                    <ng-container *ngIf="hideTermPriceDifference; else termPriceDifference">
+                                        <!--  -->
+                                        {{ "offerUpsell.offerUpsellComponent.OFFER_TERM_LENGTH" | translate: { offerTerm: offer.termLength } }}
+                                    </ng-container>
+                                    <ng-template #termPriceDifference>
+                                        {{ "offerUpsell.offerUpsellComponent.OFFER_TERM_SAVE" | translate: { offerTerm: offer.termLength } }}
+                                    </ng-template>
+                                </ng-container>
+                            </p>
+                        </label>
+                    </div>
+                </div>
+                <div htmlContentForBody>
+                    <div class="content-container">
+                        <div *ngIf="offer.deal" class="row no-padding">
+                            <div class="column small-12 no-padding align-left">
+                                <promo-deal data-e2e="offerUpsell.contentCard.promoDeal" [deal]="offer.deal" cardType="upsell" [showDetails]="offer.deal.type === 'AMZ_DOT'">
+                                    <ng-template #customDetails let-channels="channels">
+                                        <ng-container *ngTemplateOutlet="upsellDescription; context: { offer: offer, i: i }"></ng-container>
+                                        <ng-template #chevronContent>
+                                            <ng-container *ngTemplateOutlet="termChevronContent; context: { offer: offer, i: i }"></ng-container>
+                                            <hr />
+                                            <div *ngFor="let channel of channels">
+                                                <p [innerHTML]="channel.upsellTitle"></p>
+                                                <ul class="checkmark-list">
+                                                    <li *ngFor="let description of channel.descriptions" data-icon="checkmark-sm">
+                                                        <span [innerHTML]="description"></span>
+                                                        <div class="icon-checkmark-sm-wrapper">
+                                                            <svg class="icon icon-utility small">
+                                                                <use class="icon-checkmark-sm" xlink:href="#icon-checkmark-sm"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </ng-template>
+                                        <div class="row no-padding">
+                                            <ng-container *ngTemplateOutlet="detailsChevron; context: { offer: offer, i: i, template: chevronContent }"></ng-container>
+                                        </div>
+                                    </ng-template>
+                                </promo-deal>
+                            </div>
+                        </div>
+                        <!-- TODO: move handling MCP to the store instead of managing state in the template -->
+                        <ng-container *ngIf="!offer.deal || offer.deal.type !== 'AMZ_DOT'">
+                            <ng-container *ngTemplateOutlet="upsellDescription; context: { offer: offer, i: i }"></ng-container>
+                            <div class="row no-padding" *ngIf="offer.upsellType === 'Package' && !hidePlanGrid">
+                                <div class="column small-12 no-padding">
+                                    <plan-grid
+                                        [packageName]="upsellsSelected.package ? upsellOffers[0].packageName : offer.packageName"
+                                        attr.qatag="UpgradeOption{{ i }}Highlights"
+                                    ></plan-grid>
+                                </div>
+                            </div>
+                            <div class="row no-padding">
+                                <div class="column small-12 align-left no-padding">
+                                    <ng-template #chevronContent>
+                                        <ng-container *ngIf="offer.upsellType === 'Package'; else termChevronRenderer">
+                                            <div
+                                                class="column small-12 align-left no-padding"
+                                                *ngFor="let channel of packageDescriptionsViewModel[packageNameSelection ? packageNameSelection : offer.packageName].channels"
+                                            >
+                                                <p [innerHTML]="channel.title"></p>
+                                                <ul class="checkmark-list" attr.qatag="UpgradeOption{{ i }}Details">
+                                                    <li *ngFor="let description of channel.descriptions" data-icon="checkmark-sm">
+                                                        <span [innerHTML]="description"></span>
+                                                        <div class="icon-checkmark-sm-wrapper">
+                                                            <svg class="icon icon-utility small">
+                                                                <use class="icon-checkmark-sm" xlink:href="#icon-checkmark-sm"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <p
+                                                *ngIf="offer | translateIsAdvantageOffer"
+                                                [innerHtml]="
+                                                    { packageName: offer.packageName, type: offer.type, isAdvantage: offer | translateIsAdvantageOffer }
+                                                        | translateOfferPromoFooter
+                                                "
+                                            ></p>
+                                        </ng-container>
+                                        <ng-template #termChevronRenderer>
+                                            <ng-container *ngTemplateOutlet="termChevronContent; context: { offer: offer, i: i }"></ng-container>
+                                        </ng-template>
+                                    </ng-template>
+                                    <ng-container *ngTemplateOutlet="detailsChevron; context: { offer: offer, i: i, template: chevronContent }"></ng-container>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </sxm-ui-content-card>
+        </ng-container>
+        <button
+            [ngClass]="['button', 'primary', 'text-center', 'align-justify', 'full-width']"
+            [class.loading]="loading"
+            type="submit"
+            data-e2e="offerUpsell.continueButton"
+            qatag="UpgradeContinueButton"
+        >
+            <ng-container *ngIf="!loading">{{ continueButtonTextCopyOverride || "offerUpsell.offerUpsellComponent.BUTTON_TEXT" | translate }}</ng-container>
+            <span></span><span></span><span></span>
+        </button>
+    </form>
+</div>
+
+<ng-template #upsellDescription let-offer="offer" let-i="i">
+    <div class="row no-padding">
+        <div data-e2e="offerUpsell.contentCard.description" class="column small-12 no-padding align-left upsell-description">
+            <ng-container *ngIf="offer.upsellType === 'Package'">
+                <p attr.qatag="UpgradeOption{{ i }}Text">
+                    <ng-container *ngIf="hidePackagePriceDifference; else packagePriceDifference">
+                        <ng-container *ngIf="isStreaming && isPromoOrRTPNonZero; else defaultHidePackagePriceDifference">
+                            {{
+                                "offerUpsell.offerUpsellComponent.STREAMING_PACKAGE_RTP_PROMO_NON_ZERO"
+                                    | translate
+                                        : {
+                                              retailPrice: offer.retailPrice | currency: "USD":"symbol-narrow":"1.2-2":currentLang,
+                                              name: "app.packageDescriptions." + offer.packageName + ".name" | translate | withoutPlatformName: offer.packageName
+                                          }
+                            }}
+                        </ng-container>
+                        <ng-template #defaultHidePackagePriceDifference>
+                            {{ "offerUpsell.offerUpsellComponent.OFFER_TERM_SAVE" | translate: { offerTerm: offer.termLength } }}
+                        </ng-template>
+                    </ng-container>
+
+                    <ng-template #packagePriceDifference>
+                        {{
+                            "offerUpsell.offerUpsellComponent.ADDITIONAL_COST" +
+                                (offer.advantage ? "" : isStreaming ? "_STREAMING" : offer.isMostlyMusic ? "_MOSTLY_MUSIC" : "")
+                                | translate
+                                    : {
+                                          name: "app.packageDescriptions." + offer.packageName + ".name" | translate | withoutPlatformName: offer.packageName,
+                                          price: packageUpsellPrice | currency: "USD":"symbol-narrow":"1.2-2":currentLang
+                                      }
+                        }}
+                        <ng-container *ngIf="isCanada && (offer | translateIsAdvantageOffer)">
+                            {{ "offerUpsell.offerUpsellComponent.PER_MONTH_MCP" | translate }}
+                            <p>{{ "offerUpsell.offerUpsellComponent.PLUS_TAXES_AND_FEES" + (isQuebec ? "_QUEBEC" : "") + "_MCP" | translate }}</p>
+                        </ng-container>
+                        <ng-container *ngIf="isCanada && !(offer | translateIsAdvantageOffer)">
+                            {{ offer.type | mcpTranslateKey: { mcpCase: "offerUpsell.offerUpsellComponent.PER_MONTH_MCP", nonMCPCase: "" } | translate }}
+                            <ng-container *ngIf="isQuebec || (isCanada && offer.type === 'TRIAL_EXT'); else defaultTaxesAndFees">
+                                <p>
+                                    {{
+                                        offer.type
+                                            | mcpTranslateKey
+                                                : {
+                                                      prefix: "offerUpsell.offerUpsellComponent.PLUS_TAXES_AND_FEES_QUEBEC",
+                                                      mcpCase: "_MCP",
+                                                      nonMCPCase: ""
+                                                  }
+                                            | translate
+                                                : {
+                                                      price:
+                                                          ((selectedUpsellPlan?.upsellType === "Term" || selectedUpsellPlan?.upsellType === "PackageAndTerm") &&
+                                                          termPackageUpsell
+                                                              ? termPackageUpsell.price
+                                                              : offer.type === "TRIAL_EXT" && !isCanada
+                                                              ? offer.processingFee
+                                                              : offer.price
+                                                          ) | currency: "USD":"symbol-narrow":undefined:currentLang
+                                                  }
+                                    }}
+                                </p>
+                            </ng-container>
+                            <ng-template #defaultTaxesAndFees>
+                                <p>
+                                    {{
+                                        offer.type
+                                            | mcpTranslateKey
+                                                : {
+                                                      prefix: "offerUpsell.offerUpsellComponent.PLUS_TAXES_AND_FEES",
+                                                      mcpCase: "_MCP",
+                                                      nonMCPCase: ""
+                                                  }
+                                            | translate
+                                                : {
+                                                      price:
+                                                          (offer.type === "TRIAL_EXT" && !isCanada ? offer.processingFee : offer.price)
+                                                          | currency: "USD":"symbol-narrow":undefined:currentLang
+                                                  }
+                                    }}
+                                </p>
+                            </ng-template>
+                        </ng-container>
+                    </ng-template>
+                </p>
+                <p
+                    *ngIf="isCanada && (offer | translateIsAdvantageOffer)"
+                    class="legal-copy text-color-gray-dark text-advantage-upsell-price-details"
+                    [innerHTML]="
+                        'offerUpsell.offerUpsellComponent.SEE_OFFER_BELOW_ADVANTAGE' + (isQuebec ? '_QUEBEC' : '')
+                            | translate
+                                : {
+                                      price: offer.retailPrice | currency: 'USD':'symbol-narrow':offer.priceFormat:currentLang,
+                                      savingsAmount:
+                                          getOffersSavings(offer.retailPrice, offer.pricePerMonth) | currency: 'USD':'symbol-narrow':offer.savingsPriceFormat:currentLang
+                                  }
+                    "
+                ></p>
+            </ng-container>
+            <!-- isQuebec  -->
+            <p *ngIf="offer.upsellType === 'Term'">
+                <ng-container *ngIf="hideTermPriceDifference; else termPriceDifference">
+                    <p>
+                        {{ "offerUpsell.offerUpsellComponent.STREAMING_ADDITIONAL" | translate: { termUpsellAdditionalMonths: termUpsellAdditionalMonths } }}
+                    </p>
+                    <ng-container *ngIf="!offer.deal || offer.deal.type !== 'AMZ_DOT'">
+                        <ng-container *ngIf="isCanada && isQuebec; else defaultTaxesAndFees">
+                            <p>
+                                {{
+                                    offer.type
+                                        | mcpTranslateKey
+                                            : {
+                                                  prefix: "offerUpsell.offerUpsellComponent.PLUS_TAXES_AND_FEES_QUEBEC",
+                                                  mcpCase: "_MCP",
+                                                  nonMCPCase: ""
+                                              }
+                                        | translate: { price: offer.price | currency: "USD":"symbol-narrow":undefined:currentLang }
+                                }}
+                            </p>
+                        </ng-container>
+                        <ng-template #defaultTaxesAndFees>
+                            <ng-container *ngIf="isCanada">
+                                <p>
+                                    {{
+                                        offer.type
+                                            | mcpTranslateKey
+                                                : {
+                                                      prefix: "offerUpsell.offerUpsellComponent.PLUS_TAXES_AND_FEES",
+                                                      mcpCase: "_MCP",
+                                                      nonMCPCase: ""
+                                                  }
+                                            | translate: { price: offer.price | currency: "USD":"symbol-narrow":undefined:currentLang }
+                                    }}
+                                </p>
+                            </ng-container>
+                        </ng-template>
+                    </ng-container>
+                </ng-container>
+                <ng-template #termPriceDifference>
+                    <ng-container *ngIf="isCanada && isQuebec; else defaultTermUpsellMonths">
+                        {{
+                            "offerUpsell.offerUpsellComponent.TERM_UPSELL_MONTHS_QUEBEC"
+                                | translate
+                                    : {
+                                          desiredCurrency: termUpsellPrice | currency: "USD":"symbol-narrow":"1.2-2":currentLang,
+                                          offer: offer.termLength,
+                                          original: originalOffer.termLength,
+                                          addMoreMonths: offer.termLength - originalOffer.termLength
+                                      }
+                        }}
+                        <ng-container *ngIf="isCanada">
+                            {{
+                                offer.type
+                                    | mcpTranslateKey
+                                        : {
+                                              mcpCase: "offerUpsell.offerUpsellComponent.PER_MONTH_MCP",
+                                              nonMCPCase: ""
+                                          }
+                                    | translate
+                            }}
+                        </ng-container>
+                    </ng-container>
+                    <ng-template #defaultTermUpsellMonths>
+                        {{
+                            "offerUpsell.offerUpsellComponent.TERM_UPSELL_MONTHS"
+                                | translate
+                                    : {
+                                          desiredCurrency: termUpsellPrice | currency: "USD":"symbol-narrow":"1.2-2":currentLang,
+                                          offer: offer.termLength,
+                                          original: originalOffer.termLength,
+                                          addMoreMonths: offer.termLength - originalOffer.termLength
+                                      }
+                        }}
+                        <ng-container *ngIf="isCanada">
+                            {{
+                                offer.type
+                                    | mcpTranslateKey
+                                        : {
+                                              mcpCase: "offerUpsell.offerUpsellComponent.PER_MONTH_MCP",
+                                              nonMCPCase: ""
+                                          }
+                                    | translate
+                            }}
+                        </ng-container>
+                    </ng-template>
+                    <ng-container *ngIf="isCanada && isQuebec; else defaultTaxesAndFees">
+                        <p>
+                            {{
+                                offer.type
+                                    | mcpTranslateKey
+                                        : {
+                                              prefix: "offerUpsell.offerUpsellComponent.PLUS_TAXES_AND_FEES_QUEBEC",
+                                              mcpCase: "_MCP",
+                                              nonMCPCase: ""
+                                          }
+                                    | translate
+                                        : {
+                                              price: upsellsSelected.package
+                                                  ? (termPackageUpsell.price | currency: "USD":"symbol-narrow":undefined:currentLang)
+                                                  : (offer.price | currency: "USD":"symbol-narrow":undefined:currentLang)
+                                          }
+                            }}
+                        </p>
+                    </ng-container>
+                    <ng-template #defaultTaxesAndFees>
+                        <ng-container *ngIf="isCanada">
+                            <p>
+                                {{
+                                    offer.type
+                                        | mcpTranslateKey
+                                            : {
+                                                  prefix: "offerUpsell.offerUpsellComponent.PLUS_TAXES_AND_FEES",
+                                                  mcpCase: "_MCP",
+                                                  nonMCPCase: ""
+                                              }
+                                        | translate: { price: offer.price | currency: "USD":"symbol-narrow":undefined:currentLang }
+                                }}
+                            </p>
+                        </ng-container>
+                    </ng-template>
+                </ng-template>
+            </p>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #termChevronContent let-offer="offer" let-i="i">
+    <div class="column small-12 align-left no-padding" attr.qatag="UpgradeOption{{ i }}Details">
+        <ng-container *ngIf="upsellsSelected.package; else originalTermDetails">
+            <p>
+                <strong>
+                    {{
+                        offer.type
+                            | mcpTranslateKey
+                                : {
+                                      prefix: "offerUpsell.offerUpsellComponent.ORIGINAL_TERM_DETAILS",
+                                      mcpCase: "_MCP",
+                                      nonMCPCase: ""
+                                  }
+                            | translate
+                                : {
+                                      priceCheck: termPackageUpsell.price | currency: "USD":"symbol-narrow":undefined:currentLang,
+                                      upgradedSavings:
+                                          termPackageUpsell | priceDifference: packageUpsell:packageUpsell.type | currency: "USD":"symbol-narrow":"1.2-2":currentLang,
+                                      tpu: termPackageUpsell.termLength,
+                                      name: packageDescriptionsViewModel[termPackageUpsell.packageName].name
+                                  }
+                    }}
+                </strong>
+            </p>
+            <p>
+                {{
+                    (isCanada && isQuebec ? "offerUpsell.offerUpsellComponent.TERM_PRICE_DIFFERENCE_QUEBEC" : "offerUpsell.offerUpsellComponent.TERM_PRICE_DIFFERENCE")
+                        | translate
+                            : {
+                                  desiredCurrency: termPackageUpsell.retailPrice | currency: "USD":"symbol-narrow":undefined:currentLang,
+                                  term: termPackageUpsell.termLength,
+                                  packageUpsell: packageUpsell.termLength
+                              }
+                }}
+            </p>
+        </ng-container>
+        <ng-template #originalTermDetails>
+            <p class="original-term">
+                <strong>
+                    {{
+                        offer.type
+                            | mcpTranslateKey
+                                : {
+                                      prefix: "offerUpsell.offerUpsellComponent.ORIGINAL_TERM_DETAILS",
+                                      mcpCase: "_MCP",
+                                      nonMCPCase: ""
+                                  }
+                            | translate
+                                : {
+                                      tpu: offer.termLength,
+                                      upgradedSavings: offer | priceDifference: originalOffer:originalOffer.type | currency: "USD":"symbol-narrow":undefined:currentLang,
+                                      name: packageDescriptionsViewModel[offer.packageName].name,
+                                      priceCheck: offer.price | currency: "USD":"symbol-narrow":offer.priceFormat:currentLang
+                                  }
+                    }}
+                </strong>
+            </p>
+            <ng-container *ngIf="isCanada && isQuebec; else defaultOfferComparison">
+                <p>
+                    {{
+                        "offerUpsell.offerUpsellComponent.OFFER_COMPARISION_QUEBEC"
+                            | translate
+                                : {
+                                      originalOffer: originalOffer.termLength,
+                                      termLength: offer.termLength,
+                                      retailPrice: offer.retailPrice | currency: "USD":"symbol-narrow":undefined:currentLang
+                                  }
+                    }}
+                </p>
+            </ng-container>
+            <ng-template #defaultOfferComparison>
+                <p class="legal-copy text-color-gray-dark">
+                    {{
+                        "offerUpsell.offerUpsellComponent.OFFER_COMPARISION"
+                            | translate
+                                : {
+                                      originalOffer: originalOffer.termLength,
+                                      termLength: offer.termLength,
+                                      retailPrice: offer.retailPrice | currency: "USD":"symbol-narrow":undefined:currentLang
+                                  }
+                    }}
+                </p>
+            </ng-template>
+        </ng-template>
+    </div>
+</ng-template>
+
+<ng-template #detailsChevron let-offer="offer" let-i="i" let-template="template">
+    <sxm-ui-accordion-chevron
+        [collapsedText]="'offerUpsell.offerUpsellComponent.VIEW_DETAILS_COLLAPSED' | translate"
+        [expandedText]="'offerUpsell.offerUpsellComponent.VIEW_DETAILS_EXPANDED' | translate"
+        [aria]="{
+            expandedText: 'offerUpsell.offerUpsellComponent.ARIA_VIEW_DETAILS_COLLAPSED' | translate: { packageName: offer?.packageName },
+            collapsedText: 'offerUpsell.offerUpsellComponent.ARIA_VIEW_DETAILS_COLLAPSED' | translate: { packageName: offer?.packageName }
+        }"
+        [opened]="isStreaming"
+        (click)="viewDetails(offer.planCode)"
+        attr.qatag="UpgradeOption{{ i }}ViewLink"
+        data-track-click="Explore More"
+    >
+        <div class="row no-padding">
+            <ng-container *ngTemplateOutlet="template"></ng-container>
+        </div>
+    </sxm-ui-accordion-chevron>
+</ng-template>

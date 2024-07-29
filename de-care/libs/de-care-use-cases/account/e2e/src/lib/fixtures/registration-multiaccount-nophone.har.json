@@ -1,0 +1,446 @@
+[
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/identity/registration/flepz",
+            "postData": {
+                "firstName": "Paula",
+                "lastName": "Myo",
+                "phoneNumber": "8052222222",
+                "zipCode": "10020",
+                "email": "qmkogs.qrjj@siriusxm.com"
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Wed, 23 Sep 2020 01:36:53 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Transfer-Encoding",
+                    "value": "chunked"
+                },
+                {
+                    "name": "Connection",
+                    "value": "keep-alive"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "http://nv-2020.local.corp.siriusxm.com:4200"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": ": ALLOW-FROM https://www.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Security-Policy",
+                    "value": ": frame-ancestors https://*.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": [
+                        {
+                            "subscriptions": [
+                                {
+                                    "closed": false,
+                                    "id": null,
+                                    "status": "Active",
+                                    "plans": [
+                                        {
+                                            "code": "Sponsored - OEM Trial - ALL ACCESS - 12mo - 116.55",
+                                            "packageName": "SIR_AUD_ALLACCESS",
+                                            "termLength": "12",
+                                            "endDate": "2021-09-22T00:00:00-04:00",
+                                            "type": "TRIAL"
+                                        }
+                                    ],
+                                    "followonPlans": [],
+                                    "radioService": {
+                                        "last4DigitsOfRadioId": "5056",
+                                        "vehicleInfo": {
+                                            "model": null,
+                                            "make": null,
+                                            "year": null
+                                        }
+                                    },
+                                    "streamingService": {
+                                        "status": "Active",
+                                        "maskedUserName": "qhz******@siriusxm.com",
+                                        "randomCredentials": false
+                                    }
+                                }
+                            ],
+                            "last4DigitsOfAccountNumber": "4625"
+                        },
+                        {
+                            "subscriptions": [
+                                {
+                                    "closed": false,
+                                    "id": null,
+                                    "status": "Active",
+                                    "plans": [
+                                        {
+                                            "code": "Sponsored - OEM Trial - ALL ACCESS - 12mo - 116.55",
+                                            "packageName": "SIR_AUD_ALLACCESS",
+                                            "termLength": "12",
+                                            "endDate": "2021-09-22T00:00:00-04:00",
+                                            "type": "TRIAL"
+                                        }
+                                    ],
+                                    "followonPlans": [],
+                                    "radioService": {
+                                        "last4DigitsOfRadioId": "7910",
+                                        "vehicleInfo": {
+                                            "model": null,
+                                            "make": null,
+                                            "year": null
+                                        }
+                                    },
+                                    "streamingService": {
+                                        "status": "Active",
+                                        "maskedUserName": "qmk******@siriusxm.com",
+                                        "randomCredentials": false
+                                    }
+                                }
+                            ],
+                            "last4DigitsOfAccountNumber": "5000"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/account/registration/non-pii",
+            "postData": {
+                "accountNumber": "5000"
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Wed, 23 Sep 2020 01:36:57 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Transfer-Encoding",
+                    "value": "chunked"
+                },
+                {
+                    "name": "Connection",
+                    "value": "keep-alive"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "http://nv-2020.local.corp.siriusxm.com:4200"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": ": ALLOW-FROM https://www.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Security-Policy",
+                    "value": ": frame-ancestors https://*.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "firstName": "PAULA",
+                        "accountProfile": {
+                            "accountRegistered": false
+                        },
+                        "serviceAddress": {
+                            "state": "NY"
+                        },
+                        "subscriptions": [
+                            {
+                                "id": "10000192120",
+                                "plans": [
+                                    {
+                                        "dataCapable": false,
+                                        "code": "Sponsored - OEM Trial - ALL ACCESS - 12mo - 116.55",
+                                        "packageName": "SIR_AUD_ALLACCESS",
+                                        "termLength": 12,
+                                        "startDate": "2020-09-22T00:00:00-04:00",
+                                        "endDate": "2021-09-22T00:00:00-04:00",
+                                        "nextCycleOn": null,
+                                        "type": "TRIAL",
+                                        "capabilities": ["AUD", "IPAUD"]
+                                    }
+                                ],
+                                "followonPlans": [],
+                                "radioService": {
+                                    "id": "10000193144",
+                                    "last4DigitsOfRadioId": "7910",
+                                    "vehicleInfo": {
+                                        "year": null,
+                                        "make": null,
+                                        "model": null
+                                    },
+                                    "is360LCapable": false
+                                },
+                                "streamingService": {
+                                    "id": "10000194168",
+                                    "maskedUserName": "qmk******@siriusxm.com",
+                                    "status": "Active"
+                                },
+                                "status": "Active"
+                            }
+                        ],
+                        "billingSummary": {
+                            "creditCard": {
+                                "last4Digits": "1111",
+                                "type": "VISA",
+                                "status": "ACTIVE"
+                            }
+                        },
+                        "closedDevices": [],
+                        "hasEmailAddressOnFile": false,
+                        "isAccountIdentifiedUsingFLEPZOrVIN": false
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/account/auth-verify-options",
+            "postData": {
+                "accountNumber": "5000"
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Wed, 23 Sep 2020 01:36:57 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Transfer-Encoding",
+                    "value": "chunked"
+                },
+                {
+                    "name": "Connection",
+                    "value": "keep-alive"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "http://nv-2020.local.corp.siriusxm.com:4200"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": ": ALLOW-FROM https://www.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Security-Policy",
+                    "value": ": frame-ancestors https://*.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "maskedPhoneNumber": null,
+                        "canUsePhone": false,
+                        "canUseRadioId": true,
+                        "canUseAccountNumber": true
+                    }
+                }
+            }
+        }
+    }
+]

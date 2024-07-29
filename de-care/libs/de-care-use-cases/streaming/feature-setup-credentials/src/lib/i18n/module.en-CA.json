@@ -1,0 +1,74 @@
+{
+    "DeCareUseCasesStreamingFeatureSetupCredentialsModule": {
+        "Shared": {
+            "PLAYER_LINK": "https://smart.link/1kaauqc5kllnb?contentType=&channelName=&lang=NA&site_id=&creative_id=NA_NA_DL-EM--landingpage-landingpage-WELCOMESTREAMINGME-T1-NA-Email-20221013-NA&cp_5=landingpage&cp_6=landingpage&cp_7=EMAIL&cp_8=WELCOMESTREAMINGME&cp_9=T1&cp_10=EM"
+        },
+        "AccountNotFoundPageComponent": {
+            "SUBSCRIBE_URL": "https://www.siriusxm.ca/substreamonboarding",
+            "SUBTITLE": "We didn't find your subscription with the info you entered, but we can look again using your Radio ID, or VIN."
+        },
+        "CredentialSetupConfirmationPageComponent": {
+            "INSTRUCTIONS": "<p>Simply log in to the SXM with the username and password</p>",
+            "STREAMING_PLAYER_LINK": ""
+        },
+        "InactiveSubscriptionPageComponent": {
+            "REACTIVATE_URL": "http://www.siriusxm.ca/reactivateonboarding"
+        },
+        "IneligibleAudioWithNoStreamingCapabilityComponent": {
+            "UPGRADE_URL": "http://www.siriusxm.ca/upgradeonboarding"
+        },
+        "IneligibleExpiredAATrialComponent": {
+            "MESSAGE_WITH_PHONE_NUMBER": "<p>You can't reactivate your car subscription here (please contact SiriusXM to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>",
+            "MESSAGE_WITHOUT_PHONE_NUMBER": "<p>You can't reactivate your car subscription here (please contact SiriusXM to do so), but you can try out the SXM App for free, or subscribe to a streaming-only plan.</p>"
+        },
+        "IneligibleInsufficientPackageComponent": {
+            "UPGRADE_URL": "http://www.siriusxm.ca/upgradeonboarding"
+        },
+        "IneligibleMaxLifetimeTrialsComponent": {
+            "PREVIEW_BUTTON_TEXT": "STREAM IN THE APP"
+        },
+        "IneligibleTrialWithinLastTrailDateComponent": {
+            "PREVIEW_BUTTON_TEXT": "STREAM IN THE APP"
+        },
+        "IneligibleNoAudioComponent": {
+            "UPGRADE_URL": "http://www.siriusxm.ca/upgradeonboarding"
+        },
+        "IneligibleNonConsumerComponent": {
+            "PREVIEW_BUTTON_TEXT": "STREAM IN THE APP"
+        },
+        "IneligibleNonPayPageComponent": {
+            "WEB_FORM_URL": "https://www.siriusxm.ca/onlinepayment",
+            "INSTRUCTIONS": "<p>Don't miss everything SiriusXM has to offer. Please make a payment to continue listening.</p>"
+        },
+        "MultipleSubscriptionsPageComponent": {
+            "CTA": {
+                "UPGRADE_URL": "http://www.siriusxm.ca/upgradeonboarding",
+                "REACTIVATE_URL": "http://www.siriusxm.ca/reactivateonboarding",
+                "WEB_FORM_URL": "https://www.siriusxm.ca/onlinepayment"
+            }
+        },
+        "ActivateDevicePageComponent": {
+            "STEPS": {
+                "SIGN_IN": {
+                    "LINK_FORGOT_PASSWORD_URL": "https://mcare.siriusxm.ca/onboarding/?recoverlogin=true"
+                }
+            }
+        },
+        "FreeListenSetupPageComponent": {
+            "STEP_EMAIL_LOOKUP": {
+                "GET_SIRIUS_REDIRECT_LINK": "siriusxm.ca/substreamonboarding",
+                "RECOVER_CREDENTIALS_LINK": "streaming.siriusxm.com/?recoverlogin=true",
+                "ERRORS": {
+                    "INVALID_EMAIL_ERROR": "Enter a valid email address.",
+                    "INVALID_PHONE_ERROR": "Enter a valid phone number.",
+                    "INVALID_USERNAME_ERROR": "Enter a valid email address.",
+                    "INVALID_ZIPCODE_ERROR": "Enter a valid postal code.",
+                    "SYSTEM_ERROR": "We’re sorry… something went wrong. We’re experiencing technical issues and are working on resolving it. Please try again."
+                }
+            }
+        },
+        "ExistingCredentialsPageComponent": {
+            "STREAMING_PLAYER_LINK": ""
+        }
+    }
+}

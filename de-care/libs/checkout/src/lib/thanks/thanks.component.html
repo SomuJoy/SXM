@@ -1,0 +1,141 @@
+<hero-component [heroTitleType]="heroTitleType" [showImage]="true" [isMilitary]="isMilitary" class="no-print"></hero-component>
+<main class="background-offwhite">
+    <div id="order-confirmation" class="content-container">
+        <div class="row align-center no-padding-small">
+            <div class="column small-12 medium-2 background-white raised"></div>
+            <div class="column small-12 medium-6 background-white raised">
+                <div class="order-confirmation--container">
+                    <div *ngIf="radioId" class="row no-padding align-center">
+                        <div class="column small-12 no-padding">
+                            <div class="full-width">
+                                <personal-info [vehicleInfo]="vehicleInfo" [radioId]="radioId"></personal-info>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="maskedUsername && !radioId" class="row no-padding align-center">
+                        <div class="column small-12 no-padding">
+                            <div class="full-width">
+                                <personal-info [maskedUsername]="maskedUsername" [addHorizontalLine]="true" [isStreaming]="isStreaming"></personal-info>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row no-padding align-center">
+                        <div class="column small-12 no-padding">
+                            <div class="full-width" *ngIf="package && quotes$ | async as quotes">
+                                <feature-toggle-provider [features]="enableQuoteSummaryFeatureToggle$ | async">
+                                    <ng-container *featureToggle="'enableQuoteSummary'">
+                                        <quote-summary
+                                            [isNewAccount]="account.isNewAccount"
+                                            [isClosedRadio]="isClosedOrNoRadio"
+                                            [isStudentFlow]="isStudentFlow$ | async"
+                                            [expandOrderSummaryDetails]="orderSummaryDetailsShouldBeExpanded$ | async"
+                                            [showHeadlineSeeOfferDetails]="false"
+                                            [isDataOnlyTrial]="isDataOnlyTrial"
+                                            [leadOfferHasEtfAmount]="leadOfferHastEtfAmmount && isStreaming"
+                                            [quote]="quotes"
+                                            [isCurrentSubscriptionTrial]="isTrial"
+                                            [isStreamingFlow]="isStreaming"
+                                            [leadOfferPackageName]="package.packageName"
+                                            [extraData]="{ isFlepz: true }"
+                                        ></quote-summary>
+                                    </ng-container>
+
+                                    <ng-container *featureToggle="'!enableQuoteSummary'">
+                                        <order-summary
+                                            [isNewAccount]="account.isNewAccount"
+                                            [isClosedRadio]="isClosedOrNoRadio"
+                                            [isStudentFlow]="isStudentFlow$ | async"
+                                            [expandOrderSummaryDetails]="orderSummaryDetailsShouldBeExpanded$ | async"
+                                            [showHeadlineSeeOfferDetails]="false"
+                                            [isDataOnlyTrial]="isDataOnlyTrial"
+                                            [quote]="quotes$ | async"
+                                            [isCurrentSubscriptionTrial]="isTrial"
+                                            [isStreamingFlow]="isStreaming"
+                                        ></order-summary>
+                                    </ng-container>
+                                </feature-toggle-provider>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row no-padding align-center no-print">
+                        <div class="column small-12 no-padding">
+                            <div class="full-width">
+                                <a
+                                    class="text-link"
+                                    (click)="onPrintClick()"
+                                    translate="checkout.thanksComponent.PRINT_ORDER_SUMMARY_LINK_TEXT"
+                                    data-track-click="Print This Page"
+                                ></a>
+                                <hr />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="deal" class="row no-padding align-center deal">
+                        <div class="column small-12 no-padding">
+                            <claim-device
+                                [deal]="deal"
+                                [platform]="platform"
+                                [sessionId]="sessionId$ | async"
+                                [class.no-hr]="isOfferStreamingEligible"
+                                [state]="claimDeviceState"
+                                [termLength]="package.termLength"
+                                (amazonAuthResponse)="onAmazonAuthResponse($event)"
+                            ></claim-device>
+                            <hr *ngIf="!isOfferStreamingEligible" />
+                        </div>
+                    </div>
+                    <div *ngIf="isOfferStreamingEligible" class="row no-padding align-center no-print stream-now">
+                        <div class="column small-12 no-padding">
+                            <listen-now [infoForToken]="{ subscriptionId: subscriptionId$ | async }" [customLink]="streamingPlayerLink | translate"></listen-now>
+                            <hr />
+                        </div>
+                    </div>
+
+                    <div *ngIf="isEligibleForRegistration" class="row no-padding align-center no-print">
+                        <div class="column small-12 no-padding" [class.no-hr]="!radioId">
+                            <div class="full-width">
+                                <ui-register-widget
+                                    [credentialState]="registerCredentialState"
+                                    [account]="registerCompData"
+                                    [securityQuestions]="securityQuestions$ | async"
+                                    [registrationCompleted]="registrationCompleted"
+                                    [passwordError]="passwordError"
+                                    [needsTwoFactorAuth]="isTwoFactorAuthNeeded$ | async"
+                                    (register)="onRegisterAccount($event)"
+                                    (registerClicked)="onSubmit()"
+                                ></ui-register-widget>
+                                <hr *ngIf="radioId" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="radioId" class="row no-padding align-center no-print">
+                        <div class="column small-12 no-padding no-hr">
+                            <div class="full-width">
+                                <refresh-signal *ngIf="isRefreshAllowed$ | async" [radioId]="radioId"></refresh-signal>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column small-12 medium-2 background-white raised"></div>
+        </div>
+    </div>
+</main>
+<div class="background-offwhite">
+    <div class="content-container">
+        <div class="row align-center no-padding-small">
+            <div class="column small-12 medium-10 no-padding-medium">
+                <div class="important-info-container">
+                    <p class="legal-copy">
+                        <strong translate="checkout.thanksComponent.SUBSCRIPTION_IMPORTANT_INFO.TITLE"></strong>
+                    </p>
+                    <important-info></important-info>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<!-- // TODO: simplify markup to use de-care-page-main component when merged into code base -->
+<main de-care-page-main class="reset-paragraph-last-of-type-margin">
+    <h4>{{ translateKeyPrefix + ".HEADLINE" | translate }}</h4>
+    <br />
+    <p class="instructions">{{ translateKeyPrefix + ".SUB_HEADLINE" | translate }}</p>
+    <form [formGroup]="signInForm">
+        <div *ngIf="signInFormError$ | async" class="invalid-feedback">
+            <ng-container *ngIf="(signInFormErrorType$ | async) === 'INVALID_ACTIVATION_CODE'; else basicError">
+                <p>
+                    {{ translateKeyPrefix + ".FORM_ERROR_INVALID_ACTIVATION_CODE_PIECES.PART_1" | translate }}
+                </p>
+            </ng-container>
+            <ng-template #basicError>
+                <p>{{ signInFormErrorMessage$ | async }}</p>
+            </ng-template>
+        </div>
+        <sxm-ui-username-form-field
+            [labelText]="translateKeyPrefix + '.FORM_FIELD_USERNAME_LABEL' | translate"
+            formControlName="username"
+            data-e2e="Username"
+            data-test="signInUsernameField"
+        ></sxm-ui-username-form-field>
+        <sxm-ui-password-form-field formControlName="password" data-e2e="Password" data-test="signInPasswordField"> </sxm-ui-password-form-field>
+        <p>
+            <a target="_blank" (click)="navigateToCredentials()" class="text-link" sxmUiDataClickTrack="exit">
+                {{ translateKeyPrefix + ".LINK_FORGOT_PASSWORD_TEXT" | translate }}
+            </a>
+        </p>
+        <button
+            type="button"
+            (click)="onSignInSubmit()"
+            sxm-proceed-button
+            [loading]="signInFormProcessing$ | async"
+            sxmUiDataClickTrack="submit"
+            data-e2e="SignInSubmitButton"
+            data-test="signInSubmitFormButton"
+        >
+            {{ translateKeyPrefix + ".CONTINUE_BUTTON_TEXT" | translate }}
+        </button>
+    </form>
+    <div class="row align-center no-padding setup-streaming">
+        <div class="column small-12 no-padding">
+            <div class="recirculation--single">
+                <h5>{{ translateKeyPrefix + ".SETUP_STREAMING_HEADLINE" | translate }}</h5>
+                <a class="text-link" sxmUiDataClickTrack="download" routerLink="../../setup-credentials">
+                    {{ translateKeyPrefix + ".SETUP_STREAMING_LINK_TEXT" | translate }}
+                </a>
+            </div>
+        </div>
+    </div>
+</main>

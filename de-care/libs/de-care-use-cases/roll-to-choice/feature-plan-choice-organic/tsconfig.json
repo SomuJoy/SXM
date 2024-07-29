@@ -1,0 +1,7 @@
+{
+    "extends": "../../../../tsconfig.base.json",
+    "compilerOptions": {
+        "types": ["node", "jest"]
+    },
+    "include": ["**/*.ts", "../../../checkout/src/lib/rtc/rtc-landing-page/landing-page.component.e2e.ts"]
+}

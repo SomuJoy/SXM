@@ -1,0 +1,294 @@
+<main>
+    <ng-container *ngrxLet="subscriptionDetailsVM$ as detailsVM">
+        <ng-container *ngrxLet="modifySubscriptionOptions$ as modifyOptions">
+            <section>
+                <ng-container *ngIf="detailsVM.headerData as headerData">
+                    <!-- 'NICKNAME' | 'VEHICLE' | 'RADIO' | 'GENERIC' -->
+                    <ng-container [ngSwitch]="headerData.headerType">
+                        <ng-container *ngSwitchCase="'NICKNAME'">
+                            <sxm-ui-manage-subscription-header-with-nickname
+                                [data]="headerData"
+                                (back)="onBack()"
+                                (editNickname)="onEditNickname()"
+                                data-test="manageSubscriptionHeaderWithNickname"
+                            ></sxm-ui-manage-subscription-header-with-nickname>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'VEHICLE'">
+                            <sxm-ui-manage-subscription-header-with-ymm
+                                [data]="headerData"
+                                (back)="onBack()"
+                                (addNickname)="onEditNickname()"
+                                data-test="manageSubscriptionHeaderWithYmm"
+                            ></sxm-ui-manage-subscription-header-with-ymm>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'GENERIC'">
+                            <sxm-ui-manage-subscription-header
+                                [data]="headerData"
+                                (back)="onBack()"
+                                (addNickname)="onEditNickname()"
+                                data-test="manageSubscriptionHeader"
+                            ></sxm-ui-manage-subscription-header>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'RADIO'">
+                            <sxm-ui-manage-subscription-header-with-radio-id
+                                [data]="headerData"
+                                (back)="onBack()"
+                                (addNickname)="onEditNickname()"
+                                data-test="manageStreamingSubscriptionHeader"
+                            ></sxm-ui-manage-subscription-header-with-radio-id>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'STREAMING'">
+                            <sxm-ui-manage-streaming-subscription-header
+                                (back)="onBack()"
+                                data-test="manageStreamingSubscriptionHeader"
+                            ></sxm-ui-manage-streaming-subscription-header>
+                        </ng-container>
+                    </ng-container>
+                </ng-container>
+                <hr />
+            </section>
+            <section *ngIf="detailsVM?.marineData as marinePlanData" class="grid-container">
+                <header>
+                    <h3>{{ translateKeyPrefix + ".MARINE_TITLE" | translate }}</h3>
+                </header>
+                <div class="card-container subscription-card grid-half-medium grid-two-thirds-large">
+                    <sxm-ui-my-account-card class="offset-top-padding">
+                        <!-- 'SELFPAY' | 'TRIAL' | 'PROMO' -->
+                        <ng-container body [ngSwitch]="marinePlanData.planType">
+                            <ng-container *ngSwitchCase="'SELFPAY'">
+                                <sxm-ui-selfpay-subscription-details
+                                    [data]="marinePlanData"
+                                    [dropdownListData]="modifyOptions"
+                                    data-test="marineSelfPaySubscriptionDetails"
+                                ></sxm-ui-selfpay-subscription-details>
+                                <div *ngIf="marinePlanData?.hasStreaming">
+                                    <hr />
+                                    <sxm-ui-app-username-action
+                                        [username]="marinePlanData.username"
+                                        (editUsername)="
+                                            onEditOrCreateUsername({
+                                                subId: marinePlanData?.subscriptionId,
+                                                sameAsAccountUsername: marinePlanData?.isStreamingServiceSameAsAccountUsername,
+                                                redirectToPhx: marinePlanData?.redirectToPhx
+                                            })
+                                        "
+                                        data-test="marineAappUsernameAction"
+                                    ></sxm-ui-app-username-action>
+                                </div>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="'TRIAL'">
+                                <sxm-ui-trial-subscription-details
+                                    [data]="marinePlanData"
+                                    [dropdownListData]="modifyOptions"
+                                    data-test="marineTrialSubscriptionDetails"
+                                ></sxm-ui-trial-subscription-details>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="'PROMO'">
+                                <sxm-ui-promo-subscription-details
+                                    [data]="marinePlanData"
+                                    [dropdownListData]="modifyOptions"
+                                    data-test="marinePromoSubscriptionDetails"
+                                ></sxm-ui-promo-subscription-details>
+                            </ng-container>
+                            <ng-container *ngIf="marinePlanData?.priceChangeDetails?.showPriceChangeMessage">
+                                <sxm-ui-price-change-message
+                                    data-test="marinePriceChangeMessage"
+                                    [data]="{
+                                        date: translateKeyPrefix + '.PRICE_CHANGE_MESSAGE_DATE' | translate,
+                                        url: translateKeyPrefix + '.PRICE_CHANGE_MESSAGE_URL' | translate,
+                                        price: marinePlanData?.priceChangeDetails?.priceIncrease
+                                    }"
+                                >
+                                </sxm-ui-price-change-message>
+                            </ng-container>
+                        </ng-container>
+                    </sxm-ui-my-account-card>
+                </div>
+                <div *ngIf="detailsVM?.offerInfo as offerInfo" class="card-container subscription-card grid-half-medium grid-third-large">
+                    <my-account-offer-card class="sm-width" [data]="offerInfo" (offerCtaClicked)="onOfferCtaClicked($event)"></my-account-offer-card>
+                </div>
+            </section>
+            <section *ngIf="detailsVM?.aviationData as aviationPlanData" class="grid-container">
+                <header>
+                    <h3>{{ translateKeyPrefix + ".AVIATION_TITLE" | translate }}</h3>
+                </header>
+                <div class="card-container subscription-card grid-half-medium grid-two-thirds-large">
+                    <sxm-ui-my-account-card class="offset-top-padding">
+                        <!-- 'SELFPAY' | 'TRIAL' | 'PROMO' -->
+                        <ng-container body [ngSwitch]="aviationPlanData.planType">
+                            <ng-container *ngSwitchCase="'SELFPAY'">
+                                <sxm-ui-selfpay-subscription-details
+                                    [data]="aviationPlanData"
+                                    [dropdownListData]="modifyOptions"
+                                    data-test="aviationSelfPaySubscriptionDetails"
+                                ></sxm-ui-selfpay-subscription-details>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="'TRIAL'">
+                                <sxm-ui-trial-subscription-details
+                                    [data]="aviationPlanData"
+                                    [dropdownListData]="modifyOptions"
+                                    data-test="aviationTrialSubscriptionDetails"
+                                ></sxm-ui-trial-subscription-details>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="'PROMO'">
+                                <sxm-ui-promo-subscription-details
+                                    [data]="aviationPlanData"
+                                    [dropdownListData]="modifyOptions"
+                                    data-test="aviationPromoSubscriptionDetails"
+                                ></sxm-ui-promo-subscription-details>
+                            </ng-container>
+                            <ng-container *ngIf="aviationPlanData?.priceChangeDetails?.showPriceChangeMessage">
+                                <sxm-ui-price-change-message
+                                    data-test="aviationPriceChangeMessage"
+                                    [data]="{
+                                        date: translateKeyPrefix + '.PRICE_CHANGE_MESSAGE_DATE' | translate,
+                                        url: translateKeyPrefix + '.PRICE_CHANGE_MESSAGE_URL' | translate,
+                                        price: aviationPlanData?.priceChangeDetails?.priceIncrease
+                                    }"
+                                >
+                                </sxm-ui-price-change-message>
+                            </ng-container>
+                        </ng-container>
+                    </sxm-ui-my-account-card>
+                </div>
+                <div *ngIf="detailsVM?.offerInfo as offerInfo" class="card-container subscription-card grid-half-medium grid-third-large">
+                    <my-account-offer-card class="sm-width" [data]="offerInfo" (offerCtaClicked)="onOfferCtaClicked($event)"></my-account-offer-card>
+                </div>
+            </section>
+            <section *ngIf="detailsVM?.audioData as audioPlanData" class="grid-container">
+                <header>
+                    <h3 [class.mb-8]="!audioPlanData.hideAudioDescription">{{ translateKeyPrefix + ".AUDIO_TITLE" | translate }}</h3>
+                    <p *ngIf="!audioPlanData.hideAudioDescription" class="lead-in">{{ translateKeyPrefix + ".AUDIO_DESCRIPTION" | translate }}</p>
+                </header>
+                <div class="card-container subscription-card grid-half-medium grid-two-thirds-large">
+                    <sxm-ui-my-account-card class="offset-top-padding">
+                        <!-- 'SELFPAY' | 'TRIAL' | 'PROMO' -->
+                        <ng-container body [ngSwitch]="audioPlanData.planType">
+                            <ng-container *ngSwitchCase="'SELFPAY'">
+                                <sxm-ui-selfpay-subscription-details
+                                    [data]="audioPlanData"
+                                    [dropdownListData]="modifyOptions"
+                                    data-test="audioSelfpaySubscriptionDetails"
+                                ></sxm-ui-selfpay-subscription-details>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="'TRIAL'">
+                                <sxm-ui-trial-subscription-details
+                                    [data]="audioPlanData"
+                                    [dropdownListData]="modifyOptions"
+                                    data-test="audioTrialSubscriptionDetails"
+                                ></sxm-ui-trial-subscription-details>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="'PROMO'">
+                                <sxm-ui-promo-subscription-details
+                                    [data]="audioPlanData"
+                                    [dropdownListData]="modifyOptions"
+                                    data-test="audioPromoSubscriptionDetails"
+                                ></sxm-ui-promo-subscription-details>
+                            </ng-container>
+                            <ng-container *ngIf="audioPlanData?.priceChangeDetails?.showPriceChangeMessage">
+                                <sxm-ui-price-change-message
+                                    data-test="audioPriceChangeMessage"
+                                    [data]="{
+                                        date: translateKeyPrefix + '.PRICE_CHANGE_MESSAGE_DATE' | translate,
+                                        url: translateKeyPrefix + '.PRICE_CHANGE_MESSAGE_URL' | translate,
+                                        price: audioPlanData?.priceChangeDetails?.priceIncrease
+                                    }"
+                                >
+                                </sxm-ui-price-change-message>
+                            </ng-container>
+                            <ng-container *ngIf="audioPlanData?.hasStreaming">
+                                <hr />
+                                <sxm-ui-app-username-action
+                                    [username]="audioPlanData.username"
+                                    (editUsername)="
+                                        onEditOrCreateUsername({
+                                            subId: audioPlanData?.subscriptionId,
+                                            sameAsAccountUsername: audioPlanData?.isStreamingServiceSameAsAccountUsername,
+                                            redirectToPhx: audioPlanData?.redirectToPhx
+                                        })
+                                    "
+                                    data-test="audioPlanHasStreaming"
+                                ></sxm-ui-app-username-action>
+                            </ng-container>
+                        </ng-container>
+                        <div footer *ngIf="audioPlanData.isPvip" class="card-footer">
+                            <sxm-ui-pvip-subscription-includes data-test="audioPvipSubscriptionIncludes"></sxm-ui-pvip-subscription-includes>
+                        </div>
+                    </sxm-ui-my-account-card>
+                </div>
+                <div
+                    *ngIf="!detailsVM?.marineData && !detailsVM?.aviationData && detailsVM?.offerInfo as offerInfo"
+                    class="card-container subscription-card grid-half-medium grid-third-large"
+                >
+                    <my-account-offer-card class="sm-width" [data]="offerInfo" (offerCtaClicked)="onOfferCtaClicked($event)"></my-account-offer-card>
+                </div>
+            </section>
+            <section *ngIf="detailsVM?.infotainmentData as infotainmentPlanData" class="grid-container" data-test="infotainmentPlansSection">
+                <header>
+                    <h3 class="mb-8">{{ translateKeyPrefix + ".INFOTAINMENT_TITLE" | translate }}</h3>
+                    <p class="lead-in">{{ translateKeyPrefix + ".INFOTAINMENT_DESCRIPTION" | translate }}</p>
+                </header>
+                <div class="card-container subscription-card grid-half-medium grid-two-thirds-large">
+                    <sxm-ui-my-account-card class="offset-top-padding">
+                        <!-- 'SELFPAY' | 'TRIAL' | 'PROMO' -->
+                        <ng-container body [ngSwitch]="infotainmentPlanData.planType">
+                            <ng-container *ngSwitchCase="'SELFPAY'">
+                                <sxm-ui-selfpay-subscription-details
+                                    [data]="infotainmentPlanData"
+                                    [dropdownListData]="modifyOptions"
+                                    data-test="infotainmentSelfpaySubscriptionDetails"
+                                ></sxm-ui-selfpay-subscription-details>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="'TRIAL'">
+                                <sxm-ui-trial-subscription-details
+                                    [data]="infotainmentPlanData"
+                                    [dropdownListData]="modifyOptions"
+                                    data-test="infotainmentTrialSubscriptionDetails"
+                                ></sxm-ui-trial-subscription-details>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="'PROMO'">
+                                <sxm-ui-promo-subscription-details
+                                    [data]="infotainmentPlanData"
+                                    [dropdownListData]="modifyOptions"
+                                    data-test="infotainmentPromoSubscriptionDetails"
+                                ></sxm-ui-promo-subscription-details>
+                            </ng-container>
+                            <ng-container *ngIf="infotainmentPlanData?.priceChangeDetails?.showPriceChangeMessage">
+                                <sxm-ui-price-change-message
+                                    data-test="infotainmentPriceChangeMessage"
+                                    [data]="{
+                                        date: translateKeyPrefix + '.PRICE_CHANGE_MESSAGE_DATE' | translate,
+                                        url: translateKeyPrefix + '.PRICE_CHANGE_MESSAGE_URL' | translate,
+                                        price: infotainmentPlanData?.priceChangeDetails?.priceIncrease
+                                    }"
+                                >
+                                </sxm-ui-price-change-message>
+                            </ng-container>
+                        </ng-container>
+                    </sxm-ui-my-account-card>
+                </div>
+            </section>
+        </ng-container>
+    </ng-container>
+</main>
+<sxm-ui-modal
+    #EditNicknameFormModal
+    [ariaDescribedbyTextId]="addNicknameModalAriaDescribedbyTextId"
+    [closed]="true"
+    titlePresent="true"
+    [title]="translateKeyPrefix + '.EDIT_NICKNAME_MODAL_TITLE' | translate"
+    (modalClosed)="onEditNicknameModalClosed()"
+    data-test="editNicknameFormModal"
+>
+    <sxm-ui-add-nickname-form
+        #AddNicknameForm
+        [ariaDescribedbyTextId]="addNicknameModalAriaDescribedbyTextId"
+        [data]="editNicknameData"
+        [loading]="editNicknameLoading"
+        [error]="editNicknameError"
+        (cancel)="onEditNicknameModalClosed()"
+        (formCompleted)="onEditNicknameSubmit($event)"
+        data-test="addNicknameForm"
+    ></sxm-ui-add-nickname-form>
+</sxm-ui-modal>
+<router-outlet name="modal"></router-outlet>

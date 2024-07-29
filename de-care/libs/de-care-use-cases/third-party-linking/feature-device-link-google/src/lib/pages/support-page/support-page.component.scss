@@ -1,0 +1,46 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    @include page-content-legacy-markup(1fr);
+    height: 100%;
+}
+
+.header {
+    margin: 34px 0 15px;
+    width: 100%;
+}
+
+ul {
+    padding-left: 14px;
+
+    li {
+        margin-bottom: 8px;
+    }
+}
+
+h5 {
+    margin-bottom: 0;
+    max-width: 85%;
+    font-size: 27px;
+}
+
+.background-blue {
+    background-color: blue;
+}
+
+.text-white {
+    color: white;
+}
+
+.loading {
+    margin: 57px 0 30px;
+
+    span {
+        background: $white;
+    }
+}
+
+p {
+    font-size: 14px;
+}

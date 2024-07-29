@@ -1,0 +1,175 @@
+{
+    "identification": {
+        "accountIdInfoComponent": {
+            "LASTNAME_INPUT_LABEL": "Last Name",
+            "INVALID_LASTNAME_FEEDBACK": "Enter your last name.",
+            "PRIVACY_POLICY": {
+                "LINK_URL": "https://www.siriusxm.ca/privacy"
+            },
+            "ACCOUNT_TYPE_NOT_SUPPORTED": "Your account cannot be managed online. Please call  1-866-635-0565 if you need assistance with your account."
+        },
+        "activeSubscriptionComponent": {
+            "ZIPCODE": "Postal Code:",
+            "STREAMING": {
+                "URL": "https://www.siriusxm.ca/offer/stream-siriusxm-everywhere/",
+                "URL_QUEBEC": "https://care.siriusxm.ca/sirpromoplanselection_view.action?programCode=CATESSRTD1MOFREE&langpref=en"
+            }
+        },
+        "flepzFormComponent": {
+            "ERROR_PREFIX": "We're unable to confirm your account. Please verify the information you entered and try again. For more help, call <a href=\"tel:+1-833-838-7846\">1 833 838-7846</a> or ",
+            "ERROR_SUFFIX": ".",
+            "NO_RADIO_SUFFIX": " for more help.",
+            "NO_RADIO_PREFIX": "We couldn’t find your account. Please try re-entering your info, or ",
+            "NO_RADIO_TAB_LINK_PREFIX": "We couldn’t find your account. Please try re-entering your info or ",
+            "CHAT_LINK_TEXT": "chat with an agent",
+            "NO_RADIO_TAB_LINK_CHAT_LINK_TEXT": "Chat with an agent",
+            "PHONE_INVALID_PREFIX": "We're unable to confirm your account. Please verify the information you entered and try again. For more help, call <a href=\"tel:+1-833-838-7846\">1 833 838-7846</a> or ",
+            "PHONE_INVALID_SUFFIX": ".",
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.ca/privacy"
+            }
+        },
+        "helpFindingRadioComponent": {
+            "NEED_HELP_TEXT-1": "Tune your radio dial to channel 0 and your Radio ID should display. If that doesn’t work, try accessing the menu function on your radio (refer to your owner’s manual for specific instructions).",
+            "NEED_HELP_TEXT-2": "For some radios, you will need to press and hold the SAT or ESN button, or access your radio’s menu functions.",
+            "TEXT_LINK-0": "",
+            "TEXT_LINK-1": "Get help finding your radio",
+            "TEXT_LINK-1_URL": "https://www.siriusxm.ca/findradio",
+            "DONT_HAVE_RADIO": {
+                "LINK_URL": "https://www.siriusxm.ca/offer/stream-siriusxm-everywhere/"
+            }
+        },
+        "lookupRadioIdComponent": {
+            "PRIVACY_POLICY_URL": "https://www.siriusxm.ca/privacy",
+            "ACCOUNT_TYPE_NOT_SUPPORTED": "Your account cannot be managed online. Please call  1-866-635-0565 if you need assistance with your account."
+        },
+        "marketingPromoCodeComponent": {
+            "ADD_PROMO_LABEL": "Add a promo code",
+            "REMOVE_PROMO_LABEL": "Remove promo code",
+            "PROMO_CODE_PLACEHOLDER": "Promo code",
+            "APPLY_PROMO": "Apply",
+            "INVALID_PROMO": "Invalid Promo code",
+            "PROMO_CODE_APPLIED": "Code {{promoCode}} applied"
+        },
+        "verifyDeviceTabsComponent": {
+            "ENTER_INFO_OR_SIGNIN": "Please enter your Vehicle info. Or, if you already have a SiriusXM account, you can",
+            "TABS_HEADING_TEXT": {
+                "DEFAULT": "Verify your account using your info or vehicle info:"
+            },
+            "GRAY_TEXT": "Verify your account using your info or vehicle info:",
+            "CAR_INFO": "Vehicle Info",
+            "LOGIN_LINK": "https://care.siriusxm.ca/login_view.action?langpref=en",
+            "MANAGE_LINK": "https://care.siriusxm.ca/login_view.action?langpref=en",
+            "NO_RADIO_CAR_INFO_TAB_LINK_TEXT": "search using Vehicle Info",
+            "NO_RADIO_CAR_INFO_TAB_LINK_DESC": " (Radio ID or VIN). ",
+            "NO_RADIO_ACCOUNT_INFO_TAB_LINK_TEXT": "search using Account Info",
+            "NO_RADIO_ACCOUNT_INFO_TAB_LINK_DESC": " (Radio ID and Last Name). "
+        },
+        "lookupVinComponent": {
+            "PRIVACY_POLICY": {
+                "LINK_URL": "https://www.siriusxm.ca/privacy"
+            },
+            "ACCOUNT_TYPE_NOT_SUPPORTED": "Your account cannot be managed online. Please call  1-866-635-0565 if you need assistance with your account."
+        },
+        "DeviceHelpComponent": {
+            "TITLE": "Lookup your Marine or Aviation Device ID",
+            "MESSAGE": "<strong>There are a few places you can look to find your Device ID.</strong>",
+            "NOTE": "Note: Device IDs are 8 characters.",
+            "UNORDERED_LIST": {
+                "item-1": "For most devices, access your <strong>Diagnostics</strong> or <strong>Settings</strong> menu, and then look for your Device ID to be listed.",
+                "item-2": "You may also look on the bottom of the device or the packaging for the Device ID. In many cases, you may find <strong>it next to the serial number.</strong>",
+                "item-3": "If your device also has audio capability, you may be able to <strong>tune to channel 0</strong> and it will display your Device ID."
+            }
+        },
+        "ValidateUserRadioComponent": {
+            "TITLE": "Vehicle Info",
+            "MESSAGE": "To protect your account from unauthorized access, we need to match the information in our system.",
+            "TEXT-LINK": "For more information on how we use your information, view our",
+            "PRIVACY_POLICY_URL": "https://www.siriusxm.ca/privacy",
+            "PLEASE_CALL_LINK_TEXT": "1-833-838-7846",
+            "PLEASE_CALL_URL": "tel:+1-833-838-7846",
+            "POSTAL": "Postal Code",
+            "ENTER_POSTAL": "Enter your postal code."
+        },
+        "VinErrorComponent": {
+            "CONTINUE_MSG": "To continue, enter your Radio ID."
+        },
+        "subscriptionItemComponent": {
+            "CREATE_LOGIN": "<a href=\"\" target=\"_blank\" class=\"no-underline\">Create Login</a>",
+            "STREAMING_PLAYER_LINK": {
+                "STREAMING_RTP_OFFER": "",
+                "STREAMING_RTD_OFFER": "",
+                "SATELLITE_OFFER": ""
+            }
+        },
+        "validateLpzFormComponent": {
+            "PRIVACY_POLICY_URL": "https://www.siriusxm.ca/privacy",
+            "PLEASE_CALL_LINK_TEXT": "1-833-838-7846",
+            "PLEASE_CALL_URL": "tel:+1-833-838-7846",
+            "POSTAL": "Postal Code",
+            "ENTER_POSTAL": "Enter your postal code."
+        },
+        "rflzFormComponent": {
+            "GET_STREAMING": {
+                "LINK_URL": "https://www.siriusxm.ca/stream-siriusxm"
+            },
+            "ZIP_CODE": "Postal Code",
+            "PRIVACY_POLICY": {
+                "LINK_URL": "https://www.siriusxm.ca/privacy-policy",
+                "LINK_URL_NFL": "https://www.siriusxm.ca/privacy-policy?intcmp=MarketingLandingPage-Hero_NA_www:steelers-black-gold_PrivacyPolicy"
+            },
+            "ERRORS": {
+                "ZIP_CODE": "Enter a valid postal code."
+            }
+        },
+        "rflzErrorComponent": {
+            "ERRORS": {
+                "106_PREFIX": "Unfortunately, our systems are down please try again later. For help ",
+                "106_SUFFIX": " or call 1-866-635-0565.",
+                "107": "Looks like there’s already a paid subscription associated with this radio.",
+                "110": "Looks like you already have an active trial and your paid subscription will start once your trial is over.",
+                "114_PREFIX": "We're sorry for the inconvenience, but this radio can't be activated online. ",
+                "114_SUFFIX": ", or call us at 1-866-635-0565 and let us help.",
+                "REFRESH_RADIO_TEXT": "refreshing your radio",
+                "REFRESH_RADIO_LINK": "https://care.siriusxm.ca/retailrefresh_view.action?langpref=en",
+                "LOGIN_TEXT": "log in ",
+                "LOGIN_LINK": "https://care.siriusxm.ca/login_view.action",
+                "OR": ". Or, ",
+                "MANAGE_ACCOUNT": "to update/manage your account."
+            }
+        },
+        "yourInfoComponent": {
+            "ACCOUNT_TYPE_NOT_SUPPORTED": "Your account cannot be managed online. Please call  1-866-635-0565 if you need assistance with your account."
+        },
+        "zagFormComponent": {
+            "ZIP_CODE": "Postal Code",
+            "BIRTH_YEAR": "Birth Year",
+            "GENDER": "Gender",
+            "CONTINUE": "CONTINUE",
+            "GENDER_LIST": [
+                {
+                    "label": "Female",
+                    "key": "Female"
+                },
+                {
+                    "label": "Male",
+                    "key": "Male"
+                },
+                {
+                    "label": "Non-Binary",
+                    "key": "Non-Binary"
+                },
+                {
+                    "label": "Prefer not to say",
+                    "key": "Prefer not to say"
+                }
+            ],
+            "ERRORS": {
+                "ZIP_CODE": "Enter a valid postal code.",
+                "BIRTH_YEAR": "Select your birth year.",
+                "GENDER": "Select your gender."
+            }
+        }
+    }
+}

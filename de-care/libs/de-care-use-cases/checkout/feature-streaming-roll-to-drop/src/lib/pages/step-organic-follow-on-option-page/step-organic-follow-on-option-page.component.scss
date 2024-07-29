@@ -1,0 +1,42 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "../page.scss";
+
+:host {
+    @include page-host;
+    grid-auto-rows: 2fr 1fr;
+    .step-header {
+        @include step-header;
+    }
+
+    section {
+        display: grid;
+        grid-gap: 24px;
+
+        header {
+            display: grid;
+            grid-gap: 4px;
+        }
+    }
+
+    .theme-transparent {
+        padding: 30px;
+    }
+
+    form {
+        display: grid;
+        grid-gap: 24px;
+        .radio-buttons {
+            display: grid;
+            grid-gap: 12px;
+        }
+    }
+
+    button {
+        margin: 0;
+    }
+
+    .invalid-feedback {
+        margin: 0;
+    }
+}

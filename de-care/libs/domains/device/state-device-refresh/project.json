@@ -1,0 +1,27 @@
+{
+    "name": "domains-device-state-device-refresh",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/device/state-device-refresh/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/device/state-device-refresh/src/**/*.ts", "libs/domains/device/state-device-refresh/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/device/state-device-refresh/jest.config.js",
+                "tsConfig": "libs/domains/device/state-device-refresh/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/device/state-device-refresh/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {},
+    "tags": ["type:state", "scope:domain-state"]
+}

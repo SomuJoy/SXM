@@ -1,0 +1,62 @@
+<main class="background-offwhite">
+    <hero-component
+        [headerState]="'DeCareUseCasesTrialActivationFeatureSl2cModule.DeCareUseCasesTrialActivationSl2CConfirmationComponent.HERO_TEXT' | translate"
+        class="reduced-hero-padding"
+    >
+    </hero-component>
+
+    <div class="content-container">
+        <div class="row align-center">
+            <div class="column medium-2 no-padding background-white"></div>
+            <div class="column small-12 medium-6 align-left background-white">
+                <p
+                    data-e2e="sl2cConfirmation.trialExpiryNotice"
+                    style="padding-top: 28px"
+                    [innerHTML]="
+                        'DeCareUseCasesTrialActivationFeatureSl2cModule.DeCareUseCasesTrialActivationSl2CConfirmationComponent.TRIAL_WILL_EXPIRE'
+                            | translate: { trialEndDate: trialEndDate$ | async | date: (dateFormat$ | async):null:(locale$ | async) }
+                    "
+                ></p>
+                <hr />
+            </div>
+            <div class="column medium-2 no-padding background-white"></div>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="row align-center">
+            <div class="column medium-2 no-padding background-white"></div>
+            <div class="column small-12 medium-6 align-left background-white">
+                <refresh-signal [radioId]="radioId$ | async"> </refresh-signal>
+                <hr />
+            </div>
+            <div class="column medium-2 no-padding background-white"></div>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="row align-center">
+            <div class="column medium-2 no-padding background-white"></div>
+            <div class="column small-12 medium-6 align-left background-white">
+                <sxm-ui-ready-to-explore-wrapper
+                    [headerText]="'DeCareUseCasesTrialActivationFeatureSl2cModule.DeCareUseCasesTrialActivationSl2CConfirmationComponent.READY_TO_EXPLORE_HEADER' | translate"
+                    [listOfLinks]="'DeCareUseCasesTrialActivationFeatureSl2cModule.DeCareUseCasesTrialActivationSl2CConfirmationComponent.READY_TO_EXPLORE_LINKS' | translate"
+                    [displayFooter]="false"
+                    [streamingLinkUrl]="
+                        'DeCareUseCasesTrialActivationFeatureSl2cModule.DeCareUseCasesTrialActivationSl2CConfirmationComponent.STREAMING_PLAYER_LINK' | translate
+                    "
+                    [subscriptionID]="subscriptionID$ | async"
+                >
+                </sxm-ui-ready-to-explore-wrapper>
+            </div>
+            <div class="column medium-2 no-padding background-white"></div>
+        </div>
+    </div>
+</main>
+<div class="background-offwhite">
+    <div class="content-container">
+        <div class="row align-center no-padding-small">
+            <div class="column small-12 medium-10 align-left">
+                <trial-activation-important-info [isQuebec]="isQuebec$ | async"> </trial-activation-important-info>
+            </div>
+        </div>
+    </div>
+</div>

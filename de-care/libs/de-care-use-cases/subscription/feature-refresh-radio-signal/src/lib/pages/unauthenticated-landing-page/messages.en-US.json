@@ -1,0 +1,53 @@
+{
+    "TITLE": "Send a refresh signal",
+    "SUB_TITLE": "Are you near your car?",
+    "YES_TEXT": "Yes",
+    "NO_TEXT": "No",
+    "YES_POINT_ONE": "Turn on your car radio and set it to Satellite.",
+    "YES_POINT_TWO": "Make sure the radio has a clear view to the sky (not blocked by a garage, large trees, or buildings). Please Note: The refresh can take up to 15 minutes.",
+    "YES_POINT_THREE": "Enter your Radio ID, VIN, or phone number.",
+    "TEXT_FIELD_PLACEHOLDER": "Radio ID, VIN, or Phone Number",
+    "YES_BUTTON_TEXT": "SEND REFRESH SIGNAL",
+    "FIND_RADIO_ID_HYPERLINK": "Don't have a Radio ID (RID) or an Account Number?",
+    "NO_INSTRUCTIONS": "That's okay!  We'll text you instructions so you can complete the signal refresh once you're near your radio.",
+    "MOBILE_FORM_PLACEHOLDER": "Mobile Phone Number",
+    "CUSTOMER_AGREEMENT_CHECKBOX_TEXT": "I agree to receive a one-time message and certify this is my mobile number. Message and data rates may apply. SMS Terms and Conditions can be viewed at <a href=\"https://www.siriusxm.com/sms\">siriusxm.com/sms.</a>",
+    "NO_BUTTON_TEXT": "SEND INSTRUCTIONS",
+    "RADIOID_ACCOUNT_NUMBER_LOOKUP": "Don't have a Radio ID (RID) or an Account Number?",
+    "HELP_FINDING_RADIO_TITLE": "Radio ID Help",
+    "RADIO_LOOKUP_MARINE_AVIATION": "Device Help",
+    "ERROR": {
+        "RADIO_ID_INPUT_REQUIRED": "Enter a valid phone number, Radio ID or VIN.",
+        "RADIO_ID_INPUT_FORMAT": "Enter a valid phone number, Radio ID or VIN.",
+        "MOBILE_REQUIRED": "Enter a valid mobile phone number.",
+        "MESSAGE_AGREE_TO_TEXT_MESSAGE": "Please confirm that you have read and agree to the Terms and Conditions and Privacy Policy."
+    },
+    "NO_POINT_ONE": "Text the word \"Refresh\" to 77917.",
+    "NO_POINT_TWO": "We’ll send you a one-time text with a link to start the refresh radio process.",
+    "NO_POINT_THREE": "Once you’re near your radio, follow instructions in the text message to complete the signal refresh. ",
+    "NO_FOOTER": "I agree to receive a one-time text message and certify this is my mobile number. Message and data rates may apply. View our ",
+    "SMS_TERM_CONDITION": "<a target=\"_blank\" href=\"https://www.siriusxm.com/sms\">SMS Terms and Conditions</a>",
+    "AND": "and",
+    "PRIVACY_POLICY": "<a target=\"_blank\" href=\"https://www.siriusxm.com/privacy-policy\">Privacy Policy.</a>",
+    "SUCCESS_MESSAGE": "Refresh signal sent successfully.",
+    "NO_ACTIVE_SUBSCRIPTION_ONE": "It looks like you don't have a current subscription for SiriusXM on your car radio. To listen, please ",
+    "REACTIVATE_TEXT": "subscribe.",
+    "NO_ACTIVE_SUBSCRIPTION_TWO": "",
+    "NON_PAY_ERROR": "Your account balance is past due. Please refer to your subscription billing, and make a payment to continue listening.",
+    "MAKE_A_PAYMENT": "Make a Payment",
+    "MAKE_PAYMENT_URL": "http://siriusxm.com/onlinepayment",
+    "NO_DEVICE_FOUND": "We can't seem to find your account with what you provided. You can reenter the info or try another account authentication listed.",
+    "REACTIVATE_LINK": "https://www.siriusxm.com/plans",
+    "MULTIPLE_RADIO_ID_ERROR": "Looks like there are multiple radios associated with your phone number. Please enter the Radio ID of the specific radio you’d like to refresh. If that doesn’t work, call us at 1-888-601-6271 and we’ll help you.",
+    "PRIVACY_POLICY_LINK": "https://www.siriusxm.com/privacy-policy",
+    "SYSTEM_ERROR": {
+        "PART1": "There was an issue sending your refresh signal. Please ",
+        "CHAT_TEXT": "chat with a representative",
+        "PART2": " to resolve this issue."
+    },
+    "INVALID_VIRTUAL_RADIO_ID": {
+        "PART1": "Looks like your radio doesn't require a refresh signal. You can call 844-543-2965 or ",
+        "CHAT_TEXT": "chat with an agent",
+        "PART2": " to learn more."
+    }
+}

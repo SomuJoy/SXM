@@ -1,0 +1,12 @@
+{
+    "ENTER_INFO_TITLE": "Please enter the requested information.",
+    "DETAILS_PROTECTED": "This is a protected form and your information will go to the agent.",
+    "SUBMIT_BUTTON": "SUBMIT",
+    "PRIVACY_POLICY_LINK_TEXT": "SiriusXM Privacy Policy",
+    "PRIVACY_POLICY_LINK_URL": "https://www.siriusxm.com/privacy-policy",
+    "FIX_ERRORS": "Please fix the {{errorCounter}} {{pluralizedValue}} below.",
+    "PLURAL_MAP": {
+        "=1": "error",
+        "other": "errors"
+    }
+}

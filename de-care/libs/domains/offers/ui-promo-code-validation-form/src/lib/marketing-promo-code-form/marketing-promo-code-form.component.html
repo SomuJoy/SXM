@@ -1,0 +1,67 @@
+<button
+    id="promocode-btn"
+    class="component--add-element-title"
+    [class.active]="formExpand"
+    data-add-element-trigger
+    data-e2e="marketingPromoCode.promoLabel"
+    data-open="add-element-promocode"
+    data-icon="add,remove"
+    tabindex="0"
+    (click)="togglePromoCode()"
+>
+    <ng-container *ngIf="!redeemSuccess && !(loading$ | async); else removeIcon">
+        <span class="button-text">{{ translateKey + "ADD_PROMO_LABEL" | translate }}</span>
+        <div class="icon-add-wrapper" *ngIf="!formExpand">
+            <svg class="icon icon-utility small">
+                <use class="icon-expand" xlink:href="#icon-expand"></use>
+            </svg>
+        </div>
+        <div class="icon-remove-wrapper" *ngIf="formExpand">
+            <svg class="icon icon-utility small">
+                <use class="icon-collapse" xlink:href="#icon-collapse"></use>
+            </svg>
+        </div>
+    </ng-container>
+    <ng-template #removeIcon>
+        <div>
+            <span class="button-text">{{ translateKey + "REMOVE_PROMO_LABEL" | translate }}</span>
+            <div class="icon-remove-wrapper">
+                <svg class="icon icon-utility small">
+                    <use class="icon-remove" xlink:href="#icon-remove"></use>
+                </svg>
+            </div>
+        </div>
+    </ng-template>
+</button>
+<div [class.active]="formExpand" class="marketing-promocode-form-content">
+    <div class="add-element-content-container">
+        <div *ngIf="redeemSuccess">
+            <svg *ngIf="redeemSuccess" class="icon icon-utility large">
+                <use class="icon-checkmark-sm" xlink:href="#icon-checkmark-sm"></use>
+            </svg>
+            <p>
+                <strong>{{ translateKey + "PROMO_CODE_APPLIED" | translate: { promoCode: promoCode } }}</strong>
+            </p>
+        </div>
+        <div class="input-container" *ngIf="!redeemSuccess" [class.filled]="promoCode" [class.invalid]="redeemSuccess === null && promoCode">
+            <label [for]="promoCodeId">{{ translateKey + "PROMO_CODE_PLACEHOLDER" | translate }}</label>
+            <input
+                type="text"
+                [id]="promoCodeId"
+                data-e2e="marketingPromoCode.promoCodeTextField"
+                qatag="PromoCodeTextfield"
+                #promocode
+                onFocus
+                [(ngModel)]="promoCode"
+                (blur)="promoCodeBlur()"
+                (input)="promoCodeChange()"
+            />
+            <button type="button" class="apply-btn" sxm-proceed-button [loading]="loading$ | async" [fullWidth]="false" [secondary]="true" (click)="submitPromoCode()">
+                {{ translateKey + "APPLY_PROMO" | translate }}
+            </button>
+        </div>
+        <div *ngIf="!redeemSuccess && redeemError" class="invalid-feedback">
+            <p>{{ translateKey + "INVALID_PROMO" | translate }}</p>
+        </div>
+    </div>
+</div>

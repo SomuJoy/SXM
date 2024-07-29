@@ -1,0 +1,44 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "JOHN",
+            "accountProfile": { "accountRegistered": false },
+            "serviceAddress": { "state": "NY" },
+            "subscriptions": [
+                {
+                    "id": "10000190201",
+                    "plans": [
+                        {
+                            "dataCapable": false,
+                            "code": "OEM Trial - All Access - 3mo - 0.00 - (Used Car - 3PL NOUV Online)",
+                            "packageName": "SIR_AUD_ALLACCESS",
+                            "termLength": 3,
+                            "startDate": "2020-08-05T00:00:00-04:00",
+                            "endDate": "2020-11-05T00:00:00-05:00",
+                            "nextCycleOn": null,
+                            "type": "TRIAL",
+                            "capabilities": ["AUD", "IPAUD"]
+                        }
+                    ],
+                    "followonPlans": [],
+                    "radioService": {
+                        "id": "10000189177",
+                        "last4DigitsOfRadioId": "2200",
+                        "vehicleInfo": { "year": null, "make": null, "model": null },
+                        "is360LCapable": false
+                    },
+                    "streamingService": { "id": "10000187897", "maskedUserName": "********CQkU", "status": "Active" },
+                    "status": "Active"
+                }
+            ],
+            "billingSummary": { "creditCard": null },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true
+        },
+        "marketingId": "990005192200",
+        "marketingAcctId": "8281"
+    }
+}

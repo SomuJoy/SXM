@@ -1,0 +1,43 @@
+<section id="mainContent">
+    <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+        <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+        <ng-container body>
+            <p data-test="bodyTitle" *ngIf="postTrialViewModel$ | async as postTrialViewModel; else default">
+                {{
+                    translateKeyPrefix + ".BODY.POST_TRIAL"
+                        | translate
+                            : {
+                                  futureCharge: postTrialViewModel.futureCharge | sxmCurrency: (translationsForComponentService.currentLang$ | async),
+                                  dueDate: postTrialViewModel.startDate | sxmDate: (translationsForComponentService.currentLang$ | async)
+                              }
+                }}
+            </p>
+            <ng-template #default>
+                <p data-test="bodyTitle">
+                    {{ translateKeyPrefix + ".BODY.CONFIRM_YOUR_PLAN" | translate }}
+                    <br />
+                    {{ translateKeyPrefix + ".BODY.REMEMBER_YOU_CAN_CANCEL" | translate }}
+                </p>
+                <sub *ngIf="getSelectedPlanMrdEligible$ | async">{{ translateKeyPrefix + ".BODY_SUBTEXT" | translate }}</sub>
+            </ng-template>
+        </ng-container>
+    </sxm-ui-step-header>
+    <sxm-ui-plan-recap-card *ngIf="planRecapCardViewModel$ | async as planRecapCardViewModel" [data]="planRecapCardViewModel"></sxm-ui-plan-recap-card>
+    <de-care-review-quote-and-approve-form
+        *ngIf="quoteViewModel$ | async as quoteViewModel"
+        [quoteViewModel]="quoteViewModel"
+        [shouldIncludeNuCaptcha]="displayNuCaptcha$ | async"
+        [continueButtonTextOverride]="translateKeyPrefix + '.CONTINUE_BUTTON_TEXT' | translate"
+        [useQuotesAlternateHeader]="true"
+        [legacySettings]="{ isStreamingFlow: true, isNewAccount: true }"
+        (formCompleted)="submitForm()"
+        [isQuebecProvince]="isQuebecProvince$ | async"
+        [useRateVersionOfTextCopy]="isQuebecProvince$ | async"
+        [showUnusedCreditLine]="true"
+        class="renewal-quote-alt-header-1"
+        [class.hide-future-quote-heading]="isRtpOrStepUpPlan$ | async"
+    ></de-care-review-quote-and-approve-form>
+</section>
+<section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+    <div [innerHTML]="getSelectedOfferOfferInfoLegalCopy$ | async"></div>
+</section>

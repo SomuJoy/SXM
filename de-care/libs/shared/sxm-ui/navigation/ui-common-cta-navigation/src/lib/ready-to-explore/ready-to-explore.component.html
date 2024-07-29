@@ -1,0 +1,16 @@
+<h5>{{ translateKeyPrefix + ".HEADING_TEXT" | translate }}</h5>
+<section>
+    <a class="text-link" target="_blank" [href]="translateKeyPrefix + '.LINKS.PROGRAM_SCHEDULES.LINK_URL' | translate">{{
+        translateKeyPrefix + ".LINKS.PROGRAM_SCHEDULES.LINK_TEXT" | translate
+    }}</a>
+    <a class="text-link" target="_blank" [href]="translateKeyPrefix + '.LINKS.SPORTS_SCHEDULES.LINK_URL' | translate">{{
+        translateKeyPrefix + ".LINKS.SPORTS_SCHEDULES.LINK_TEXT" | translate
+    }}</a>
+    <ng-content select="[listenNowLink]"></ng-content>
+    <p class="before-you-go">
+        {{ translateKeyPrefix + ".BEFORE_YOU_GO.INTRO_TEXT" | translate }}
+        <a class="text-link" target="_blank" [href]="translateKeyPrefix + '.BEFORE_YOU_GO.LINK.LINK_URL' | translate">{{
+            translateKeyPrefix + ".BEFORE_YOU_GO.LINK.LINK_TEXT" | translate
+        }}</a>
+    </p>
+</section>

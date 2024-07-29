@@ -1,0 +1,63 @@
+{
+    "DomainsAccountUiSubscriptionStreamingModule": {
+        "CredentialsFoundSignInComponent": {
+            "HEADLINE": "Bonne nouvelle. Vous avez déjà un identifiant pour écouter sur l’appli SXM.",
+            "INSTRUCTIONS": "Connectez-vous simplement à l’appli SXM avec votre nom d’utilisateur et votre mot de passe.",
+            "BUTTON_TEXT": "CONNEXION",
+            "FORGOT_TEXT": "Vous avez oublié votre nom d’utilisateur ou votre mot de passe?"
+        },
+        "SetupSubscriptionCredentialsFormComponent": {
+            "HEADLINE": "Votre compte",
+            "SUBTITLE": "Configurez votre connexion pour commencer à écouter dans l'application et en ligne.",
+            "SUB_HEADLINE": "Créez un nom d’utilisateur et un mot de passe",
+            "INSTRUCTIONS": "Ce sont les identifiants de connexion que vous utiliserez pour gérer votre compte en ligne ainsi que pour écouter dans l'application et en ligne.",
+            "CONTINUE_BUTTON_TEXT": "Continuer",
+            "LINK_TEXT": "Vous voulez vous connecter?",
+            "SYSTEM_ERROR": "Nous sommes désolés. Quelque chose n’a pas fonctionné. Nous faisons face à des problèmes techniques. Veuillez essayer de nouveau.",
+            "USERNAME": {
+                "LABEL": "Nom d’utilisateur/Courriel",
+                "ERRORS": {
+                    "REQUIRED": "Entrez un nom d’utilisateur ou un courriel valide.",
+                    "ALREADY_EXIST": "Ce nom d’utilisateur ou ce courriel est associé à un autre compte.",
+                    "INVALID_FIRSTNAME": "First name is invalid",
+                    "INVALID_EMAIL": "Invalid email address provided"
+                }
+            },
+            "EMAIL": {
+                "LABEL": "Email",
+                "ERRORS": {
+                    "REQUIRED": "Enter a valid email.",
+                    "ALREADY_EXIST": "That email is associated with another account."
+                }
+            },
+            "PASSWORD": {
+                "LABEL": "Mot de passe",
+                "ERRORS": {
+                    "REQUIRED": "Entrez un mot de passe valide.",
+                    "LENGTH": "Votre mot de passe doit contenir de {{min}} à {{max}} caractères.",
+                    "POLICY": "Votre mot de passe doit contenir au minimum un caractère appartenant à au moins 3 groupes différents, comme indiqué dans notre politique de mot de passe.",
+                    "RESERVED_WORDS": "Votre mot de passe ne peut pas contenir {{pluralWord}} {{reservedWords}}",
+                    "GENERIC": "Votre mot de passe ne répond pas à tous les critères.",
+                    "PII_DATA": "Le mot de passe ne peut pas inclure prénom, nom de famille ou adresse courriel."
+                }
+            },
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "mois",
+                    "other": "mois"
+                }
+            },
+            "CONFIRM_EMAIL_UPDATE_MODAL_HEADER": "Votre abonnement",
+            "CONFIRM_EMAIL_UPDATE_MODAL_TITLE": "Mise à jour du compte",
+            "CONFIRM_EMAIL_UPDATE_MODAL_SUBTITLE": "Le courriel que vous avez entré est différent de celui qui figure actuellement dans votre compte. Voulez-vous remplacer votre courriel actuel?",
+            "CONFIRM_EMAIL_UPDATE_MODAL_FROM_EMAIL": "REMPLACER",
+            "CONFIRM_EMAIL_UPDATE_MODAL_TO_EMAIL": "PAR",
+            "CONFIRM_EMAIL_UPDATE_MODAL_BUTTON_TEXT": "Mettre à jour le courriel",
+            "CONFIRM_EMAIL_UPDATE_MODAL_LINK_TEXT": "CONTINUER SANS MISE À JOUR",
+            "EMAIL_UPDATE_MODAL_SUBTITLE": "Votre compte sera mis à jour avec l’adresse courriel que vous avez fournie.",
+            "EMAIL_UPDATE_MODAL_BUTTON_TEXT": "METTRE À JOUR LE COURRIEL",
+            "EMAIL_UPDATE_MODAL_LINK_TEXT": "CONTINUER SANS MISE À JOUR",
+            "EMAIL_UPDATE_MSG": "Votre compte sera mis à jour avec l’adresse courriel que vous avez fournie."
+        }
+    }
+}

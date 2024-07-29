@@ -1,0 +1,323 @@
+<div class="row no-padding animate-block">
+    <ng-container *ngIf="!isAccountInfoScenario && !excludeInstructionsText">
+        <p>
+            {{ "identification.verifyDeviceTabsComponent.ENTER_INFO_OR_SIGNIN" | translate }}
+            <button class="text-link" (click)="useYourLoginInfo($event)" [innerHTML]="'identification.verifyDeviceTabsComponent.partial_info_A' | translate"></button>
+        </p>
+    </ng-container>
+
+    <p class="gray-text" *ngIf="showHeadingText">
+        {{ "identification.verifyDeviceTabsComponent.TABS_HEADING_TEXT." + tabsHeadingTextKey | translate }}
+    </p>
+    <div class="column small-12 medium-12 no-padding">
+        <sxm-ui-tabs ariaLabel="Packages" [hideNav]="hideTabNav" (tabSelected)="onTabSelected($event)" data-test="verifyDeviceTabs.tabs" data-e2e="verifyDeviceTabs.tabs">
+            <sxm-ui-tab-panel *ngIf="tabs['radio-info'] as tabInfo" [tabInfo]="tabInfo" [tabTitle]="'identification.verifyDeviceTabsComponent.RADIO_INFO' | translate">
+                <account-id-info
+                    [translationOverrides]="buttonTranslationOverrides"
+                    [lastNameBasedLookup]="isCanadaMode || activeLastNameField"
+                    [radioIdInput]="radioIdFromUrl"
+                    (accountInfoFound)="goToYourInfo($event)"
+                    (activeSubscriptionFound)="onActiveSubscriptionFound($event)"
+                    (accountVerificationRequired)="onSelectedAccount($event.account); validateUserInfo($event.radio)"
+                    (deviceHelp)="onDeviceHelp()"
+                    (licensePlateHelp)="onLicensePlateHelp()"
+                ></account-id-info>
+            </sxm-ui-tab-panel>
+            <sxm-ui-tab-panel
+                data-e2e="yourInfoTabPanel"
+                *ngIf="tabs['account-info'] as tabInfo"
+                [tabInfo]="tabInfo"
+                [tabTitle]="'identification.verifyDeviceTabsComponent.ACCOUNT_INFO' | translate"
+            >
+                <flepz-form
+                    [flepzError]="flepzError"
+                    [translationOverrides]="buttonTranslationOverrides"
+                    [errorMsgAlternativeLookupLinkData]="errorMsgAlternativeLookupLinkData$ | async"
+                    (dontSeeYourRadio)="openModal(VerifyDeviceModals.RadioLookupOptionsModal)"
+                    (selectedFlepzInfo)="onSelectedFlepzInfo($event)"
+                    (switchAlternativeLookup)="onSwitchAlternativeLookup()"
+                    [prefilledAccountData]="prefilledAccountData"
+                    [isProspectTrial]="isProspectTrial"
+                    data-e2e="verifyDeviceTabs.flepzForm"
+                    [nflOptInEnabled]="nflOptInEnabled"
+                >
+                    <ng-container *ngIf="!nflOptInEnabled">
+                        <ng-container *ngTemplateOutlet="marketingPromoCode"></ng-container>
+                    </ng-container>
+                </flepz-form>
+            </sxm-ui-tab-panel>
+            <sxm-ui-tab-panel
+                data-e2e="carInfoTabPanel"
+                *ngIf="tabs['car-info'] as tabInfo"
+                [tabInfo]="tabInfo"
+                [tabTitle]="'identification.verifyDeviceTabsComponent.CAR_INFO' | translate"
+            >
+                <radio-lookup-options
+                    [translationOverrides]="buttonTranslationOverrides"
+                    (isNFLOptIn)="isNFLOptInClick($event)"
+                    (sentValue)="onRadioLookupSentValue($event)"
+                    [nflOptInEnabled]="nflOptInEnabled"
+                >
+                    <ng-container *ngTemplateOutlet="marketingPromoCode"></ng-container>
+                </radio-lookup-options>
+            </sxm-ui-tab-panel>
+            <sxm-ui-tab-panel *ngIf="tabs['vin-info'] as tabInfo" [tabInfo]="tabInfo" [tabTitle]="'identification.verifyDeviceTabsComponent.VIN_INFO' | translate">
+                <lookup-vin
+                    class="in-tab"
+                    [prefilledVin]="prefilledVin"
+                    (selectedData)="onSelectedLookupVinData($event)"
+                    (vinError)="openModal(VerifyDeviceModals.VinErrorModal)"
+                    (noAccountFound)="onNoAccountFound($event)"
+                >
+                    <ng-container *ngTemplateOutlet="marketingPromoCode"></ng-container>
+                </lookup-vin>
+            </sxm-ui-tab-panel>
+            <sxm-ui-tab-panel *ngIf="tabs['radio-id-info'] as tabInfo" [tabInfo]="tabInfo" [tabTitle]="'identification.verifyDeviceTabsComponent.RADIO_ID_INFO' | translate">
+                <lookup-radio-id
+                    class="in-tab"
+                    [prefilledRadioId]="prefilledRadioId"
+                    [showSearchByLicensePlateLink]="true"
+                    (selectedData)="onSelectedLookupRadioIdData($event)"
+                    (noAccountFound)="onNoAccountFound($event)"
+                    (deviceHelp)="onDeviceHelp()"
+                    (licensePlateHelp)="onLicensePlateHelp()"
+                >
+                    <ng-container *ngTemplateOutlet="marketingPromoCode"></ng-container>
+                </lookup-radio-id>
+            </sxm-ui-tab-panel>
+        </sxm-ui-tabs>
+        <ng-template #marketingPromoCode>
+            <marketing-promo-code
+                (marketingPromoRedeemed)="populateMarketingPromoCodeRedeemed($event)"
+                (marketingPromoCodeRemoved)="onMarketingPromoCodeRemoved()"
+                [marketingPromoFormInfo]="marketingPromoRedeemedInfo"
+                [isProgramCodeValid]="!isOfferNotAvailable"
+                [isCanadaMode]="isCanadaMode && showMarketingPromoCode"
+            ></marketing-promo-code>
+        </ng-template>
+    </div>
+</div>
+
+<!-- Modals for radio options, they placed here because radio button could be a modal as well -->
+<sxm-ui-modal
+    #radioModal
+    [titlePresent]="true"
+    [ariaDescribedbyTextId]="lookupRadioIdModalAriaDescribedbyTextId"
+    title="{{ 'identification.lookupRadioIdComponent.RADIO_LOOKUP_LABEL' | translate }}"
+    (modalClosed)="resetAuthenticationType()"
+>
+    <lookup-radio-id
+        [prefilledRadioId]="prefilledRadioId"
+        [ariaDescribedbyTextId]="lookupRadioIdModalAriaDescribedbyTextId"
+        [showSearchByLicensePlateLink]="true"
+        (selectedData)="onSelectedLookupRadioIdData($event)"
+        (noAccountFound)="onNoAccountFound($event)"
+        (deviceHelp)="onDeviceHelp()"
+        (licensePlateHelp)="onLicensePlateHelp()"
+        [isNFLOptInChecked]="isNFLOptInChecked"
+    >
+    </lookup-radio-id>
+</sxm-ui-modal>
+
+<sxm-ui-modal
+    #vinModal
+    [titlePresent]="true"
+    [ariaDescribedbyTextId]="lookupVinModalAriaDescribedbyTextId"
+    title="{{ 'identification.lookupRadioIdComponent.RADIO_LOOKUP_LABEL' | translate }}"
+    (modalClosed)="resetAuthenticationType()"
+>
+    <lookup-vin
+        [prefilledVin]="prefilledVin"
+        [ariaDescribedbyTextId]="lookupVinModalAriaDescribedbyTextId"
+        (selectedData)="onSelectedLookupVinData($event)"
+        (vinError)="openModal(VerifyDeviceModals.VinErrorModal); closeModal(VerifyDeviceModals.VinModal)"
+        (noAccountFound)="onNoAccountFound($event)"
+        [isNFLOptInChecked]="isNFLOptInChecked"
+    >
+    </lookup-vin>
+</sxm-ui-modal>
+
+<sxm-ui-modal
+    #licensePlateModal
+    [titlePresent]="true"
+    title="{{ 'identification.lookupRadioIdComponent.RADIO_LOOKUP_LABEL' | translate }}"
+    [ariaDescribedbyTextId]="lookupLicensePlateModalAriaDescribedbyTextId"
+    (modalClosed)="resetAuthenticationType()"
+>
+    <lookup-license-plate
+        [ariaDescribedbyTextId]="lookupLicensePlateModalAriaDescribedbyTextId"
+        (licensePlateError)="openModal(VerifyDeviceModals.VinErrorModal); closeModal(VerifyDeviceModals.LicensePlateModal)"
+        (selectedVin)="onSelectedLicensePlateVin($event)"
+        (noAccountFound)="onNoAccountFound($event)"
+        [isNFLOptInChecked]="isNFLOptInChecked"
+    >
+    </lookup-license-plate>
+</sxm-ui-modal>
+
+<sxm-ui-modal
+    #confirmVinModal
+    [ariaDescribedbyTextId]="confirmVinModalAriaDescribedbyTextId"
+    [showBackButton]="true"
+    (backButton)="onTryLicenseLookupAgain()"
+    [titlePresent]="true"
+    title="{{ 'identification.lookupRadioIdComponent.RADIO_LOOKUP_LABEL' | translate }}"
+>
+    <confirm-vin
+        *ngIf="confirmVinModalData"
+        [data]="confirmVinModalData"
+        [ariaDescribedbyTextId]="confirmVinModalAriaDescribedbyTextId"
+        (vinConfirmed)="openModal(VerifyDeviceModals.ValidateInfoModal); closeModal(VerifyDeviceModals.ConfirmVinModal)"
+        (tryAgainEvent)="onTryLicenseLookupAgain()"
+    >
+    </confirm-vin>
+</sxm-ui-modal>
+
+<sxm-ui-modal
+    #deviceHelpModal
+    [showBackButton]="true"
+    [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"
+    (backButton)="modalHistoryBack()"
+    [titlePresent]="true"
+    title="{{ 'identification.lookupRadioIdComponent.DEVICE_HELP' | translate }}"
+>
+    <sxm-ui-device-help [isCanadaMode]="isCanadaMode" [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"></sxm-ui-device-help>
+</sxm-ui-modal>
+
+<sxm-ui-modal
+    #validateInfoModal
+    [ariaDescribedbyTextId]="validateUserRadioModalAriaDescribedbyTextId"
+    [showBackButton]="!tabs['vin-info'] && !tabs['radio-id-info']"
+    (backButton)="modalHistoryBack(); onValidateUserModalClose()"
+    (modalClosed)="onValidateUserModalClose()"
+    [titlePresent]="true"
+    title="{{ 'identification.lookupRadioIdComponent.RADIO_LOOKUP_LABEL' | translate }}"
+>
+    <validate-user-radio
+        #validateUserContent
+        [ariaDescribedbyTextId]="validateUserRadioModalAriaDescribedbyTextId"
+        *ngIf="radioToValidate?.last4DigitsOfRadioId"
+        [last4DigitsOfRadioId]="radioToValidate.last4DigitsOfRadioId"
+        [isRadioClosed]="radioToValidateIsClosed"
+        [prefilledLastName]="prefilledAccountData?.lastName"
+        (validUserInfo)="onValidUserInfo(true, $event)"
+        (invalidUserInfo)="onInvalidUserInfo($event)"
+        (editInfo)="!tabs['vin-info'] && !tabs['radio-id-info'] ? modalHistoryBack() : validateInfoModal.close(); onValidateUserModalClose()"
+    >
+    </validate-user-radio>
+</sxm-ui-modal>
+
+<sxm-ui-modal
+    #radioNoMatchModal
+    [ariaDescribedbyTextId]="radioNoMatchModalAriaDescribedbyTextId"
+    [showBackButton]="true"
+    (backButton)="modalHistoryBack()"
+    [titlePresent]="true"
+    title="{{ 'identification.lookupRadioIdComponent.RADIO_LOOKUP_LABEL' | translate }}"
+>
+    <radio-no-match
+        *ngIf="radioToValidate?.last4DigitsOfRadioId"
+        [ariaDescribedbyTextId]="radioNoMatchModalAriaDescribedbyTextId"
+        [vehicleInfo]="selectedVehicleInfo"
+        [last4DigitsOfRadioId]="radioToValidate.last4DigitsOfRadioId"
+        [userVerifyData]="userVerifyData"
+        (editInfo)="modalHistoryBack()"
+        (createNewAccount)="this.closeModal(VerifyDeviceModals.RadioNoMatchModal); createNewAccount()"
+    ></radio-no-match>
+</sxm-ui-modal>
+
+<!-- flepz modals -->
+<sxm-ui-modal
+    #radioLookupOptionsModal
+    [titlePresent]="true"
+    title="{{ 'identification.lookupRadioIdComponent.RADIO_LOOKUP_LABEL' | translate }}"
+    [showBackButton]="true"
+    (backButton)="modalHistoryBack()"
+>
+    <h5>{{ "identification.verifyDeviceTabsComponent.SHARED_MODAL_TITLE" | translate }}</h5>
+    <radio-lookup-options (sentValue)="closeModal(VerifyDeviceModals.RadioLookupOptionsModal); onRadioLookupSentValue($event)"> </radio-lookup-options>
+</sxm-ui-modal>
+
+<sxm-ui-modal #loginModal title="{{ 'identification.verifyDeviceTabsComponent.TITLE' | translate }}" [titlePresent]="true">
+    <h5>{{ "identification.verifyDeviceTabsComponent.SIGN_IN_TITLE" | translate }}</h5>
+    <login-form
+        (fetchedAccountNumber)="onLoginFetchedAccountNumber($event)"
+        (loginError)="onLoginError()"
+        [isLoading]="signInIsLoading"
+        [hasKeepSignedInOption]="false"
+    ></login-form>
+</sxm-ui-modal>
+
+<!-- Modal errors -->
+<sxm-ui-modal
+    #vinErrorModal
+    title="{{ 'identification.lookupRadioIdComponent.RADIO_LOOKUP_LABEL' | translate }}"
+    [ariaDescribedbyTextId]="vinErrorModalAriaDescribedbyTextId"
+    [titlePresent]="true"
+    [showBackButton]="!tabs['vin-info']"
+    (backButton)="modalHistoryBack()"
+>
+    <vin-error
+        (radioIdSearchClick)="closeModal(VerifyDeviceModals.VinErrorModal); openModal(VerifyDeviceModals.RadioModal)"
+        [ariaDescribedbyTextId]="vinErrorModalAriaDescribedbyTextId"
+    >
+    </vin-error>
+</sxm-ui-modal>
+<sxm-ui-modal
+    #activeSubscriptionModal
+    title="{{ 'identification.lookupRadioIdComponent.RADIO_LOOKUP_LABEL' | translate }}"
+    [titlePresent]="true"
+    (modalClosed)="onActiveSubscriptionModalClose()"
+>
+    <active-subscription
+        data-test="ActiveSubscriptionFoundModalContent"
+        [activeSubscriptionInfo]="activeSubscriptionInfo"
+        (loginRequested)="onLoginRequested()"
+        (manageAccountRequested)="onManageAccountRequested()"
+        (lookupNewRadioRequested)="onLookupNewRadioRequested()"
+        (editAccountInfoRequested)="closeActiveSubscriptionModal()"
+    ></active-subscription>
+</sxm-ui-modal>
+
+<!-- device tabs modals-->
+<sxm-ui-modal #yourInfoModal [titlePresent]="true" title="{{ modalTitle | translate }}">
+    <your-info
+        #yourInfoComponent
+        *ngIf="subscriptions || closedRadios"
+        [isAccount]="isYourInfoAccount"
+        [subscriptions]="subscriptions"
+        [closedRadios]="closedRadios"
+        [accountInfo]="accountInfo"
+        (dontSeeYourRadio)="onDontSeeYourRadio()"
+        (editYourInfo)="closeModal(VerifyDeviceModals.YourInfoModal)"
+        (selectedAccount)="onSelectedAccount($event)"
+        (selectedRadio)="onSelectedRadio($event, true)"
+    ></your-info>
+</sxm-ui-modal>
+
+<sxm-ui-modal
+    #platformChangeModal
+    title="{{ 'identification.lookupRadioIdComponent.RADIO_LOOKUP_LABEL' | translate }}"
+    [titlePresent]="true"
+    (modalClosed)="modalHistoryBack()"
+>
+    <different-platform
+        *ngIf="platformChangeInfo"
+        [platformChangeInfo]="platformChangeInfo"
+        (accepted)="platformChangeAccepted($event)"
+        (loaded)="platformChangeModalContentLoaded.emit()"
+    >
+    </different-platform>
+</sxm-ui-modal>
+
+<sxm-ui-modal
+    #platformUpgradeOptionModal
+    title="{{
+        'identification.PlatformUpgradeOptionComponent.MODAL_TITLE' | translate: { packageName: 'app.packageDescriptions.' + upsellDetails?.packageName + '.name' | translate }
+    }}"
+    [titlePresent]="true"
+    [showBackButton]="true"
+    (backButton)="modalHistoryBack()"
+    (modalClosed)="closeAllModals()"
+>
+    <app-platform-upgrade-option *ngIf="upsellDetails" [planDetails]="upsellDetails" (buyNow)="buyNow()" (keepSelect)="keepSelect()"></app-platform-upgrade-option>
+</sxm-ui-modal>

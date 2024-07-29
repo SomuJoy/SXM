@@ -1,0 +1,27 @@
+{
+    "name": "domains-account-ui-login",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/domains/account/ui-login/src",
+    "projectType": "library",
+    "generators": {},
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/account/ui-login/src/**/*.ts", "libs/domains/account/ui-login/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/account/ui-login/jest.config.js",
+                "tsConfig": "libs/domains/account/ui-login/tsconfig.spec.json",
+                "setupFile": "libs/domains/account/ui-login/src/test-setup.ts",
+                "configPath": "./jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": ["type:ui", "scope:domain-ui"]
+}

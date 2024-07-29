@@ -1,0 +1,33 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    width: 100%;
+}
+
+.plan-grid {
+    @include bp(medium) {
+        margin: 20px 0 16px;
+    }
+
+    flex-wrap: nowrap;
+    margin: 20px 0;
+
+    .grid-item {
+        .icon {
+            height: 64px;
+            width: 64px;
+
+            use {
+                stroke: $purple;
+                fill: $purple;
+            }
+        }
+
+        .label {
+            color: $gray-dark;
+            font-size: 12px;
+            font-weight: calculate-font-weight("book");
+            text-align: center;
+        }
+    }
+}

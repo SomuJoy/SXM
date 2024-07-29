@@ -1,0 +1,24 @@
+<form [formGroup]="form">
+    <div *ngIf="form.get('planCode').invalid && form.get('planCode').touched" class="invalid-feedback">
+        <p>{{ translateKeyPrefix + ".ERROR_REQUIRED" | translate }}</p>
+    </div>
+    <sxm-ui-radio-option-form-field
+        *ngFor="let plan of plans"
+        [value]="plan.planCode"
+        [label]="
+            (plan.termLength
+                | i18nPlural: (translateKeyPrefix + '.TERM_MAP' | translate)
+                | updatePriceAndTerm
+                    : {
+                          price: plan.price | currency: 'USD':'symbol-narrow':undefined:(translationsForComponentService.currentLang$ | async),
+                          termLength: plan.termLength.toString()
+                      }) +
+            (includePlusFees ? (translateKeyPrefix + '.PLUS_FEES' | translate) : '') +
+            (currentPlanTermLength === plan.termLength ? (translateKeyPrefix + '.CURRENT' | translate) : '')
+        "
+        formControlName="planCode"
+    ></sxm-ui-radio-option-form-field>
+    <button sxm-proceed-button type="submit" sxmUiDataClickTrack="submit" (click)="submitForm()">
+        {{ continueButtonTextOverride || translateKeyPrefix + ".BUTTON_TEXT" | translate }}
+    </button>
+</form>

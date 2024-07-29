@@ -1,0 +1,130 @@
+@import "sxm.phoenix.imports";
+
+$common-spacing: 16px;
+
+.sub-header {
+    color: $gray-dark;
+    padding: 20px 0 0 0;
+    width: 100%;
+
+    p {
+        @include font-size(12px);
+    }
+
+    hr {
+        margin: 16px 0 0 0;
+        background-color: $gray-medium;
+        border: 0;
+        height: 1px;
+        margin: 12px 0 16px 0;
+        width: 100%;
+    }
+}
+
+::ng-deep {
+    .sub-header {
+        a.text-link {
+            font-size: inherit;
+            border: none;
+            text-decoration: underline;
+        }
+    }
+}
+
+.alert-pill-wrapper {
+    background: $blue;
+    padding: 15px 4px 0;
+
+    @include bp(medium) {
+        padding: 15px 0 0;
+    }
+
+    .alert {
+        background: $vanilla;
+    }
+}
+
+sxm-ui-alert-pill {
+    width: 100%;
+}
+.deal-addon-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    sxm-ui-deal-addon-card {
+        display: block;
+        width: 100%;
+        @include bp(medium) {
+            width: 1.05 * 60%; //to match primary package card width
+        }
+    }
+    sxm-ui-deal-addon-card-separated {
+        display: block;
+        width: 100%;
+        @include bp(medium) {
+            width: 1.05 * 60%; //to match primary package card width
+        }
+    }
+}
+
+:host {
+    .content-container > .row > .column {
+        @include ie-styles {
+            > .deal-addon-container {
+                > sxm-ui-deal-addon-card {
+                    @include bp(medium) {
+                        width: 60%;
+                    }
+                }
+                > sxm-ui-deal-addon-card-separated {
+                    @include bp(medium) {
+                        width: 60%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+sxm-ui-alert-pill.streaming-eligibility {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    margin-bottom: 15px;
+    background: $vanilla;
+    @include bp(medium) {
+        margin-bottom: 20px;
+    }
+}
+
+.message-text {
+    position: relative;
+    top: 8px;
+    margin-top: 8px;
+    margin-right: 48px;
+    margin-bottom: 8px;
+}
+
+.underlined-link {
+    text-decoration: underline;
+}
+
+.raised-row {
+    margin-top: -24px;
+}
+
+.no-radio {
+    margin: $common-spacing 0 20px 0;
+
+    p {
+        color: $gray-dark;
+        font-size: 12px;
+        a {
+            color: inherit;
+        }
+    }
+}
+
+.link-container {
+    padding-top: 16px;
+}

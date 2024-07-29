@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>SXM Elements</title>
+        <base href="/" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <style>
+            body {
+                min-height: 100vh;
+                box-sizing: border-box;
+                padding-top: 1vh;
+                font-weight: 300;
+                line-height: 1.5;
+                margin: 0 auto;
+            }
+
+            sxm-rflz-widget {
+                display: block;
+                max-width: 400px;
+                margin: auto;
+            }
+
+            sxm-flepz-widget {
+                display: block;
+                width: 100%;
+                margin: auto;
+            }
+
+            sxm-streaming-flepz-widget {
+                display: block;
+                max-width: 400px;
+                margin: auto;
+            }
+
+            sxm-zag-widget {
+                display: block;
+                max-width: 400px;
+                margin: auto;
+            }
+
+            .el-tabs {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0 1rem;
+            }
+
+            .el-tabs .el-index-label {
+                order: initial;
+                width: 100%;
+                margin-right: 0;
+                margin-top: 0.2rem;
+                padding: 1rem 2rem;
+                cursor: pointer;
+                color: #a8a8a8;
+                border-bottom: 2px solid #ffffff;
+                font-weight: bold;
+                transition: all ease 0.3s;
+            }
+
+            .el-tabs .el-index-label:hover {
+                background-color: #296ed7;
+                color: #ffffff;
+            }
+
+            .el-tabs .el-tab {
+                order: initial;
+                flex-grow: 1;
+                width: 100%;
+                display: none;
+                padding: 1rem;
+            }
+
+            .el-tabs input[type="radio"] {
+                display: none;
+            }
+
+            .el-tabs input[type="radio"]:checked + .el-index-label {
+                color: #333333;
+                border-bottom: 2px solid #296ed7;
+            }
+
+            .el-tabs input[type="radio"]:checked + .el-index-label:hover {
+                background-color: transparent;
+            }
+
+            .el-tabs input[type="radio"]:checked + .el-index-label + .el-tab {
+                display: block;
+                border-bottom: 1px solid #d3d3d3;
+            }
+
+            .promo-code-validation {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            .promo-code-validation sxm-promo-code-validation-widget {
+                flex-grow: 1;
+            }
+
+            @media (min-width: 768px) {
+                body {
+                    padding-top: 5vh;
+                }
+
+                sxm-flepz-widget {
+                    width: 50%;
+                }
+
+                .el-tabs .el-index-label {
+                    order: 1;
+                    margin-right: 0.2rem;
+                    width: auto;
+                }
+
+                .el-tabs .el-tab {
+                    order: 99;
+                }
+            }
+        </style>
+        <script src="assets/elements.settings.js"></script>
+        <script src="assets/settings.js"></script>
+        <script src="assets/sxm.min.js"></script>
+        <script src="//assets.adobedtm.com/launch-EN58fe6dd75d494580a6eda5b3c1a0b9a4-development.min.js"></script>
+    </head>
+
+    <body>
+        <div class="el-tabs">
+            <input type="radio" name="el-tabs" id="flepz-default" checked="checked" />
+            <label class="el-index-label" data-e2e="elements.tab.flepzDefault.US" for="flepz-default">Device Lookup - Default (US Only)</label>
+            <div class="el-tab">
+                <sxm-flepz-widget
+                    extra-params="programcode=6FOR60AA"
+                    translation-overrides="{ 'CAR_INFO': {'en-US': 'Ride Info', 'en-CA': 'Automobile Info', 'fr-CA': 'something french'}, 'YOUR_INFO': { 'en-US': 'My Info'  }, 'BUTTON': { 'en-US': 'Get started'}}"
+                >
+                </sxm-flepz-widget>
+            </div>
+
+            <input type="radio" name="el-tabs" id="flepz-only" />
+            <label class="el-index-label" data-e2e="elements.tab.flepzYourInfo" for="flepz-only">Device Lookup - FLEPZ (no tab nav)</label>
+            <div class="el-tab">
+                <sxm-flepz-widget tabs-to-show="account-info" hide-tab-nav="true"></sxm-flepz-widget>
+            </div>
+
+            <input type="radio" name="el-tabs" id="car-info-only" />
+            <label class="el-index-label" data-e2e="elements.tab.flepzCarInfo" for="car-info-only">Device Lookup - Car Info</label>
+            <div class="el-tab">
+                <sxm-flepz-widget tabs-to-show="car-info"></sxm-flepz-widget>
+            </div>
+
+            <input type="radio" name="el-tabs" id="account-info-only" />
+            <label class="el-index-label" data-e2e="elements.tab.flepzAccountInfo" for="account-info-only">Device Lookup - FLEPZ (tab named Account Info)</label>
+            <div class="el-tab">
+                <sxm-flepz-widget tabs-to-show="account-info" translation-overrides="{ 'BUTTON': { 'en-US': 'Get started'}}"></sxm-flepz-widget>
+            </div>
+
+            <input type="radio" name="el-tabs" id="custom-order" />
+            <label class="el-index-label" data-e2e="elements.tab.flepzAll" for="custom-order">Device Lookup - Car Info/FLEPZ</label>
+            <div class="el-tab">
+                <sxm-flepz-widget tabs-to-show="car-info,account-info"></sxm-flepz-widget>
+            </div>
+
+            <input type="radio" name="el-tabs" id="rflz-widget" />
+            <label class="el-index-label" data-e2e="elements.tab.rflz" for="rflz-widget">RFLZ</label>
+            <div class="el-tab">
+                <sxm-rflz-widget></sxm-rflz-widget>
+            </div>
+
+            <input type="radio" name="el-tabs" id="rflz-widget-no-license-plate-lookup" />
+            <label class="el-index-label" data-e2e="elements.tab.rflz-no-license-plate-lookup" for="rflz-widget-no-license-plate-lookup">RFLZ (no license plate)</label>
+            <div class="el-tab">
+                <sxm-rflz-widget disable-license-plate-lookup="true"></sxm-rflz-widget>
+            </div>
+
+            <input type="radio" name="el-tabs" id="promo-code-validation-widget" />
+            <label class="el-index-label" data-e2e="elements.tab.promo-code-validation" for="promo-code-validation-widget">Promo Code Validation</label>
+            <div class="el-tab promo-code-validation">
+                <div class="promo-code-validation">
+                    <sxm-promo-code-validation-widget is-streaming="true"></sxm-promo-code-validation-widget>
+                </div>
+            </div>
+
+            <input type="radio" name="el-tabs" id="streaming-flepz-default" />
+            <label class="el-index-label" data-e2e="elements.tab.streamingFlepzDefault.US" for="streaming-flepz-default">Streaming FLEPZ - Default (US Only)</label>
+            <div class="el-tab">
+                <sxm-streaming-flepz-widget></sxm-streaming-flepz-widget>
+            </div>
+
+            <input type="radio" name="el-tabs" id="nfl-rflz-opt-in" />
+            <label class="el-index-label" data-e2e="elements.tab.rflz" for="nfl-rflz-opt-in">NFL - RFLZ with opt-in</label>
+            <div class="el-tab">
+                <sxm-rflz-widget enable-nfl-opt-in="true"></sxm-rflz-widget>
+            </div>
+
+            <input type="radio" name="el-tabs" id="flepz-flepz.nfl" checked="checked" />
+            <label class="el-index-label" data-e2e="elements.tab.flepz.nfl" for="flepz-flepz.nfl">NFL- FLEPZ with opt-in</label>
+            <div class="el-tab">
+                <sxm-flepz-widget enable-nfl-opt-in="true" tabs-to-show="account-info" hide-tab-nav="true"> </sxm-flepz-widget>
+            </div>
+
+            <input type="radio" name="el-tabs" id="car-info-only.nfl" />
+            <label class="el-index-label" data-e2e="elements.tab.flepzCarInfo.nfl" for="car-info-only.nfl">NFL - Car Info with opt-in</label>
+            <div class="el-tab">
+                <sxm-flepz-widget tabs-to-show="car-info" enable-nfl-opt-in="true"></sxm-flepz-widget>
+            </div>
+
+            <input type="radio" name="el-tabs" id="zag-fast" />
+            <label class="el-index-label" data-test="elements.tab.zagInfo.fast" for="zag-fast">ZAG - FAST</label>
+            <div class="el-tab">
+                <sxm-zag-widget></sxm-zag-widget>
+            </div>
+
+            <input type="radio" name="el-tabs" id="player-link" />
+            <label class="el-index-label" data-test="elements.tab.playerLink" for="player-link">Player Link</label>
+            <div class="el-tab">
+                <a
+                    disable-credentials-check="true"
+                    is="sxm-player-link"
+                    target=""
+                    href="https://sxm.smart.link/xqr7izp4r?creative_id=NA_NA_PL-COM-home-home-home-SXMCOM-NAVIGATION-NA-COM-20210813-NA"
+                >
+                    <span>Listen on the SXM App [Onboarding]</span>
+                </a>
+                <br />
+                <a is="sxm-player-link" target="" href="https://sxm.smart.link/xqr7izp4r?creative_id=NA_NA_PL-COM-home-home-home-SXMCOM-NAVIGATION-NA-COM-20210813-NA">
+                    <span>Listen on the SXM App</span>
+                </a>
+                <br />
+                <a
+                    is="sxm-player-link"
+                    href="https://sxm.smart.link/cnrri3exq?cp_6=MUSIC&cp_7=COM&cp_8=SXMCOM&site_id=SiriusXMHits1&creative_id=NA_NA_DL-COM-live-SiriusXMHits1-MUSIC-SXMCOM-PLAYINGMODULE-NA-COM-20200429-NA"
+                    target="_blank"
+                >
+                    SiriusXM Hits 1 [new window]
+                </a>
+                <br />
+                <a
+                    is="sxm-player-link"
+                    href="https://sxm.smart.link/cnrri3exq?cp_6=SPORTS&cp_7=COM&cp_8=SXMCOM&site_id=ESPNRadio&creative_id=NA_NA_DL-COM-live-ESPNRadio-SPORTS-SXMCOM-PLAYINGMODULE-NA-COM-20200429-NA&cp_0=&cp_1=www:channels&cp_2=CG_NA_www:channels_ListentoESPNRadio"
+                    target="_blank"
+                >
+                    ESPN ((RADIO)) [new window]
+                </a>
+            </div>
+        </div>
+    </body>
+</html>

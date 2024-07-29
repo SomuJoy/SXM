@@ -1,0 +1,24 @@
+<header>
+    <button
+        (click)="closed.emit()"
+        sxmUiDataClickTrack="ui"
+        data-link-key="Global Nav"
+        data-link-name="close panel"
+        [attr.aria-label]="translateKeyPrefix + '.ARIA_CLOSE_LABEL' | translate"
+    >
+        <span class="x-shape"></span>
+    </button>
+    <p>{{ translateKeyPrefix + ".WELCOME" | translate }}</p>
+    <h5>{{ data?.firstName }}</h5>
+</header>
+<div class="nav-content">
+    <div class="nav-item" (click)="logout.emit()">
+        <span class="nav-link sign-out">
+            {{ translateKeyPrefix + ".SIGN_OUT" | translate }}
+        </span>
+    </div>
+</div>
+<div class="cta-container">
+    <p class="app-cta-header">{{ translateKeyPrefix + ".APPS_LOGO_HEADER" | translate }}</p>
+    <sxm-ui-mobile-app-cta [showIOS]="platform === 'web' || platform === 'ios'" [showAndroid]="platform === 'web' || platform === 'android'"></sxm-ui-mobile-app-cta>
+</div>

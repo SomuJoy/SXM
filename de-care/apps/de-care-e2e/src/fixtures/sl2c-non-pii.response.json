@@ -1,0 +1,58 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "PAULA",
+            "accountProfile": {
+                "accountRegistered": false
+            },
+            "serviceAddress": {
+                "state": "NY"
+            },
+            "subscriptions": [
+                {
+                    "id": "10000194759",
+                    "plans": [
+                        {
+                            "dataCapable": false,
+                            "code": "OEM Trial - All Access - 3mo - 0.00 - (Used Car - SLSA)",
+                            "packageName": "SIR_AUD_ALLACCESS",
+                            "termLength": 3,
+                            "startDate": "2020-07-29T00:00:00-04:00",
+                            "endDate": "2020-11-01T00:00:00-04:00",
+                            "nextCycleOn": null,
+                            "type": "TRIAL",
+                            "capabilities": ["AUD", "IPAUD"]
+                        }
+                    ],
+                    "followonPlans": [],
+                    "radioService": {
+                        "id": "10000192199",
+                        "last4DigitsOfRadioId": "4810",
+                        "vehicleInfo": {
+                            "year": null,
+                            "make": null,
+                            "model": null
+                        },
+                        "is360LCapable": false
+                    },
+                    "streamingService": {
+                        "id": "10000193223",
+                        "maskedUserName": "********BpII",
+                        "status": "Active"
+                    },
+                    "status": "Active"
+                }
+            ],
+            "billingSummary": {
+                "creditCard": null
+            },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true
+        },
+        "marketingId": "990003234810",
+        "marketingAcctId": "2839"
+    }
+}

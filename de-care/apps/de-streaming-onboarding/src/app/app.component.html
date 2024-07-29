@@ -1,0 +1,18 @@
+<header
+    *ngIf="!(hideHeader$ | async)"
+    sxm-ui-page-header-basic
+    class="dark-theme"
+    [languageChangeEnabled]="languageSelectionEnabled$ | async"
+    (languageSelected)="changeLanguage($event)"
+></header>
+<main class="background-offwhite">
+    <div class="content-container">
+        <div class="row no-padding-small">
+            <div class="column small-12 medium-10 offset-medium-1 align-top background-white no-padding-small">
+                <div class="main-content">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

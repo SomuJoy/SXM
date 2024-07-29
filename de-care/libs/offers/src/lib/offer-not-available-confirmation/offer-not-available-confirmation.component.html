@@ -1,0 +1,29 @@
+<hero-component [headerState]="'offers.offerNotAvailableConfirmationComponent.' + offerNotAvailableReason | translate" class="reduced-hero-padding"></hero-component>
+<main class="background-white main-content">
+    <div class="content-container">
+        <div class="row no-padding-small align-center">
+            <div class="column small-12 medium-2 no-padding background-white"></div>
+            <div class="column small-12 medium-6 no-padding-medium background-white">
+                <div class="content-wrapper">
+                    <ng-container *ngIf="offerNotAvailableReason | fallbackOfferIsMwbMcp; else notMWB">
+                        <p class="text-left">
+                            {{ "offers.offerNotAvailableConfirmationComponent.MWB_MCP_UNAVAILABLE_HELP_PREFIX" | translate }}
+                            <chat-with-agent-link
+                                [chatLinkText]="'offers.offerNotAvailableConfirmationComponent.CHAT_LINK_TEXT' | translate"
+                                [queue]="'general'"
+                            ></chat-with-agent-link
+                            >{{ "offers.offerNotAvailableConfirmationComponent.MWB_MCP_UNAVAILABLE_HELP_SUFFIX" | translate }}
+                        </p>
+                    </ng-container>
+                    <ng-template #notMWB>
+                        <p class="text-left" [innerHTML]="'offers.offerNotAvailableConfirmationComponent.HELP' | translate | safeHtml"></p>
+                    </ng-template>
+                    <button class="button primary text-center align-justify full-width" (click)="continueRequested.emit()">
+                        {{ "offers.offerNotAvailableConfirmationComponent.SEE_OFFERS" | translate }}
+                    </button>
+                </div>
+            </div>
+            <div class="column small-12 medium-2 no-padding background-white"></div>
+        </div>
+    </div>
+</main>

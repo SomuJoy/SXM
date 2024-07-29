@@ -1,0 +1,164 @@
+<de-care-vip-layout>
+    <ng-container>
+        <ng-container *ngIf="offer$ | async as offer">
+            <sxm-ui-hero *ngIf="heroData$ | async as heroData" [heroData]="heroData" [class]="heroData.classes"></sxm-ui-hero>
+
+            <lead-offer-details
+                chevronClickTrackingText="Explore Plan Details"
+                [offerDescriptionData]="getOfferDescription$ | async"
+                [isLegacyMode]="false"
+            ></lead-offer-details>
+
+            <main de-care-page-main>
+                <div class="no-radio">
+                    <p>
+                        {{ translateKeyPrefix + "NO_RADIO.TEXT" | translate }}
+                        <a data-track-click="Get the SXM App" class="alt-text-link" target="_blank" href="{{ translateKeyPrefix + 'NO_RADIO.LINK_URL' | translate }}">{{
+                            translateKeyPrefix + "NO_RADIO.LINK_TEXT" | translate
+                        }}</a>
+                    </p>
+                </div>
+
+                <sxm-ui-accordion-stepper #stepper>
+                    <sxm-ui-accordion-step
+                        [editButtonLabel]="translateKeyPrefix + 'STEP_PAGE_TITLES.VERIFY_YOUR_DEVICE.EDIT' | translate"
+                        [label]="translateKeyPrefix + 'STEP_PAGE_TITLES.VERIFY_YOUR_DEVICE.ACTIVE' | translate"
+                        (editClicked)="onEditLookupStep()"
+                    >
+                        <account-lookup-step (continue)="onAccountLookupContinue()" [data]="accountLookupStepData$ | async"></account-lookup-step>
+                        <ng-template #inactiveContent>
+                            <div class="devices-for-vip" *ngIf="selectedDevicesViewModel$ | async as selectedDevices">
+                                <p>
+                                    {{
+                                        selectedDevices.firstDevice.vehicle
+                                            | vehicleInfoTranslate
+                                                : {
+                                                      defaultText: translateKeyPrefix + "RADIO" | translate: { radioId: selectedDevices.firstDevice.radioId },
+                                                      isFrench: currentLangIsFrench$ | async
+                                                  }
+                                    }}
+                                </p>
+                            </div>
+                        </ng-template>
+                    </sxm-ui-accordion-step>
+
+                    <sxm-ui-accordion-step
+                        [editButtonLabel]="translateKeyPrefix + 'STEP_PAGE_TITLES.YOUR_RADIOS.EDIT' | translate"
+                        [label]="translateKeyPrefix + 'STEP_PAGE_TITLES.YOUR_RADIOS.ACTIVE' | translate"
+                        (active)="onFirstStepFormActive()"
+                    >
+                        <de-care-first-step-form (continue)="onFirstStepContinue($event)" [data]="firstStepData$ | async"> </de-care-first-step-form>
+                        <ng-template #inactiveContent>
+                            <div class="devices-for-vip" *ngIf="selectedDevicesViewModel$ | async as selectedDevices">
+                                <ng-container *ngIf="selectedDevices.secondDevice; else streamingDescription">
+                                    <p>
+                                        {{
+                                            selectedDevices.secondDevice.vehicle
+                                                | vehicleInfoTranslate
+                                                    : {
+                                                          defaultText: translateKeyPrefix + "RADIO" | translate: { radioId: selectedDevices.secondDevice.radioId },
+                                                          isFrench: currentLangIsFrench$ | async
+                                                      }
+                                        }}
+                                    </p>
+                                </ng-container>
+
+                                <ng-template #streamingDescription>
+                                    <ng-container *ngIf="selectedDevices.selectedStreamingAccount">
+                                        <p>
+                                            {{
+                                                selectedDevices.selectedStreamingAccount.maskedUserName
+                                                    ? selectedDevices.selectedStreamingAccount.maskedUserName
+                                                    : selectedDevices.selectedStreamingAccount.userName
+                                            }}
+                                        </p>
+                                    </ng-container>
+                                </ng-template>
+                            </div>
+                        </ng-template>
+                    </sxm-ui-accordion-step>
+
+                    <sxm-ui-accordion-step
+                        [editButtonLabel]="translateKeyPrefix + 'STEP_PAGE_TITLES.BILLING_INFORMATION.EDIT' | translate"
+                        [label]="translateKeyPrefix + 'STEP_PAGE_TITLES.BILLING_INFORMATION.ACTIVE' | translate"
+                    >
+                        <p class="text-color-grey-dark mb-8" *ngIf="!showPaymentOptions">
+                            {{ translateKeyPrefix + "CC_NOTE" | translate }}
+                        </p>
+                        <billing-info-form
+                            *ngIf="selectAccount$ | async as accountData"
+                            [accountData]="accountData"
+                            isClosedRadio="false"
+                            [hidePaymentOptions]="!showPaymentOptions"
+                            (paymentFormCompleted)="onPaymentFormComplete($event)"
+                            [loading]="reviewDataLoadIsProcessing$ | async"
+                            [serviceError]="serviceError"
+                        ></billing-info-form>
+                        <ng-template #inactiveContent>
+                            <ng-container *ngIf="paymentInfoInactiveStep$ | async as paymentInfoInactiveStep">
+                                {{
+                                    translateKeyPrefix + "PAYMENT_INFO_INACTIVE"
+                                        | translate: { cardType: paymentInfoInactiveStep.cardType, cardNumber: paymentInfoInactiveStep.lastFourDigitsOfCard }
+                                }}
+                            </ng-container>
+                        </ng-template>
+                    </sxm-ui-accordion-step>
+
+                    <sxm-ui-accordion-step [label]="translateKeyPrefix + 'STEP_PAGE_TITLES.REVIEW_ORDER.ACTIVE' | translate">
+                        <div class="step-container">
+                            <de-care-review-step-header
+                                [isFrench]="currentLangIsFrench$ | async"
+                                [viewModel]="reviewHeaderViewModelData$ | async"
+                            ></de-care-review-step-header>
+
+                            <quote-summary
+                                *ngIf="orderSummaryData$ | async as orderSummaryData"
+                                [showUnusedCreditLine]="true"
+                                [giftCardUsed]="false"
+                                [isNewAccount]="false"
+                                [isClosedRadio]="false"
+                                [isChangeSubscription]="true"
+                                [quote]="orderSummaryData.quotes"
+                                [extraData]="orderSummaryExtraData$ | async"
+                            ></quote-summary>
+
+                            <form (submit)="onConfirmReviewAndSubmit($event)">
+                                <charge-agreement-with-validation
+                                    [details]="{ isPlatinumVip: true }"
+                                    [submitted]="submitted"
+                                    (checkChange)="agreementAccepted = $event"
+                                ></charge-agreement-with-validation>
+                                <ng-container *ngIf="displayNucaptcha$ | async">
+                                    <hr />
+                                    <strong>{{ translateKeyPrefix + "ENTER_A_CAPTCHA_TO_FINISH" | translate }}</strong>
+                                    <sxm-ui-nucaptcha
+                                        #nuCaptcha
+                                        [(ngModel)]="captchaAnswer"
+                                        [submitted]="submitted"
+                                        [captchaAnswerWrong]="captchaAnswerWrong"
+                                        (gotCaptcha)="gotCaptcha()"
+                                        name="captchaAnswer"
+                                    ></sxm-ui-nucaptcha>
+                                </ng-container>
+                                <button
+                                    [ngClass]="{ 'complete-order-button-captcha': displayNucaptcha$ | async }"
+                                    sxm-proceed-button
+                                    type="submit"
+                                    [loading]="completeOrderStatusIsProcesssing$ | async"
+                                    data-e2e="UpgradeVIPOrganic.ConfirmReviewAndSubmitButton"
+                                    data-test="UpgradeVIPOrganic.ConfirmReviewAndSubmitButton"
+                                >
+                                    {{ translateKeyPrefix + "COMPLETE_ORDER_BUTTON" | translate }}
+                                </button>
+                                <div class="creditCopyDescription">
+                                    <p>{{ translateKeyPrefix + "RECEIVE_A_CREDIT_DESCRIPTION" | translate }}</p>
+                                </div>
+                            </form>
+                        </div>
+                    </sxm-ui-accordion-step>
+                </sxm-ui-accordion-stepper>
+            </main>
+            <sxm-ui-legal-copy [legalCopy]="offerDetails$ | async"></sxm-ui-legal-copy>
+        </ng-container>
+    </ng-container>
+</de-care-vip-layout>

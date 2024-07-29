@@ -1,0 +1,19 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "billItems": [
+            {
+                "eventType": "Payment",
+                "dateTime": "12/16/2022",
+                "billNumber": "",
+                "serviceFor": "",
+                "description": "Credit Card Payment",
+                "amount": -349.92,
+                "radioId": "",
+                "sXIRLogin": ""
+            }
+        ]
+    }
+}

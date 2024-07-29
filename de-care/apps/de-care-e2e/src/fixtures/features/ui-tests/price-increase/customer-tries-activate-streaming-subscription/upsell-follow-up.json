@@ -1,0 +1,46 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "offers": [
+            {
+                "upsellType": "Package",
+                "planCode": "Streaming - 1mo - 13.00",
+                "packageName": "SIR_CAN_IP_SA",
+                "packageUpgrade": null,
+                "promoCode": "STANDARD_RETAIL",
+                "termLength": 1,
+                "type": "SELF_PAY",
+                "marketType": "self-pay:standard",
+                "price": 10.99,
+                "pricePerMonth": 10.99,
+                "retailPrice": 10.99,
+                "packageUpgradePrice": null,
+                "msrpPrice": 10.99,
+                "processingFee": null,
+                "supportedServices": ["SIR", "UNIVERSAL_LOGIN"],
+                "deal": null,
+                "priceChangeMessagingType": "",
+                "planEndDate": null,
+                "minimumFollowOnTerm": 0,
+                "order": null,
+                "bundledSavingPrice": null,
+                "bundleSubPackageNames": null,
+                "parentPackageName": "",
+                "fallbackReason": "",
+                "mrdEligible": false,
+                "invoiceEligible": false,
+                "advantage": false,
+                "student": false,
+                "fallback": false,
+                "streaming": false,
+                "upgradeOffer": false,
+                "bestPackage": true,
+                "dataCapable": false,
+                "bundled": null
+            }
+        ],
+        "presentment": null
+    }
+}

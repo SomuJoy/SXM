@@ -1,0 +1,7 @@
+{
+    "stepDefinitions": ["[filepath].{js,ts}", "[filepart]/common-steps/**/*.{js,ts}"],
+    "messages": {
+        "enabled": true,
+        "output": "../../dist/cypress/apps/e2e-de-streaming-onboarding/results/cucumber.ndjson"
+    }
+}

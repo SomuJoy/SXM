@@ -1,0 +1,11 @@
+{
+    "status": "FAILURE",
+    "httpStatusCode": 400,
+    "httpStatus": "BAD_REQUEST",
+    "error": {
+        "errorStackTrace": "AccountNumber: null | RadioId: null | x-forwarded-for: null | URL: /services/device/validate | Exception: DeviceServiceException#null | StackTrace: DeviceValidationServiceClient.java:79 | ErrorType: null | ErrorMessage: ERROR : [errorCode : INVALID_DEVICE_ID, errorPropKey : error.code.device.service.invalid.radioId, errorType : CHECKED, errorLevel : FIELD, statusCode : 400 BAD_REQUEST, errorMessage : Device ID not found | , sourceErrorCode : 11-03-DEV-1070] | FullStackTrace: ",
+        "logId": "2ff00215-3975-4d09-a890-8aead5d3a651",
+        "failedTransactionId": "OAC-2ff00215-3975-4d09-a890-8aead5d3a651-2abeef7bef6c01ac-2abeef7bef6c01ac-5524046605861200701594310",
+        "fieldErrors": [{ "errorCode": "INVALID_DEVICE_ID", "errorPropKey": "error.code.device.service.invalid", "errorType": "BUSINESS", "fieldName": "radioId" }]
+    }
+}

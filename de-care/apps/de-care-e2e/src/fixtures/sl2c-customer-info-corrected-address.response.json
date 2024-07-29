@@ -1,0 +1,18 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "valid": true,
+        "emailValidation": null,
+        "usernameValidation": null,
+        "billingAddressValidation": null,
+        "serviceAddressValidation": {
+            "confidenceLevel": "InteractionRequired",
+            "correctedAddress": [{ "addressLine1": "135 Liberty St", "addressLine2": "Lib", "city": "TORONTO", "state": "ON", "zip": "M6K 1A7" }],
+            "resultCode": "SUCCESS",
+            "validationStatus": "VALID"
+        },
+        "ccValidation": null
+    }
+}

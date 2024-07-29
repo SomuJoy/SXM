@@ -1,0 +1,25 @@
+{
+    "name": "de-care-use-cases-account-state-account-login",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care-use-cases/account/state-account-login/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/de-care-use-cases/account/state-account-login"],
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/account/state-account-login/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/de-care-use-cases/account/state-account-login/src/**/*.ts", "libs/de-care-use-cases/account/state-account-login/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:state", "scope:de-care-use-case-feature-state"]
+}

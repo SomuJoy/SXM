@@ -1,0 +1,38 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": [
+        {
+            "closed": false,
+            "id": null,
+            "status": "Active",
+            "plans": [
+                {
+                    "planCode": "Select - 1mo - wActv",
+                    "label": "Select - 1mo - wActv",
+                    "packageName": "1_SIR_AUD_EVT",
+                    "termLength": 1,
+                    "startDate": "2022-08-09T00:00:00-04:00",
+                    "endDate": null,
+                    "nextCycleOn": "2022-09-09T00:00:00-04:00",
+                    "marketType": "self-pay:standard",
+                    "type": "SELF_PAID",
+                    "capabilities": ["AUD", "IPAUD"],
+                    "price": 17.99,
+                    "isBasePlan": true,
+                    "dataCapable": false
+                }
+            ],
+            "followonPlans": null,
+            "radioService": {
+                "id": "10000205187",
+                "last4DigitsOfRadioId": "000K",
+                "devicePromoCode": "1113",
+                "vehicleInfo": { "year": null, "make": null, "model": null },
+                "is360LCapable": false
+            },
+            "streamingService": null
+        }
+    ]
+}

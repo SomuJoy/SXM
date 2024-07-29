@@ -1,0 +1,116 @@
+<main de-care-page-main>
+    <sxm-ui-alert-pill *ngIf="isThirdPartyError" style="background-color: #fff9d5" class="alert-icon-notification straight-corners">
+        <p class="pill-text">
+            <span class="error-paragraph bottom-padding">{{ translateKeyPrefix + ".THIRD_PARTY_ERROR_MESSAGE" | translate }}</span>
+            <span class="error-paragraph bottom-padding">{{ translateKeyPrefix + ".THIRD_PARTY_SUB_ERROR_MESSAGE" | translate }}</span>
+            <span class="error-paragraph"><a class="text-link" [href]="translateKeyPrefix + '.LISTEN_NOW_LINK' | translate" target="_blank">{{ translateKeyPrefix + ".THIRD_PARTY_LISTEN_NOW" | translate }}</a></span>
+        </p>
+    </sxm-ui-alert-pill>
+    <br />
+    <h4>{{ translateKeyPrefix + ".HEADLINE" | translate }}</h4>
+    <br />
+    <p>{{ translateKeyPrefix + ".SUBTITLE" | translate }}</p>
+    <br />
+    <form [formGroup]="form">
+        <div *ngIf="showSystemError" class="invalid-feedback">
+            <p>{{ translateKeyPrefix + ".SERVICE_ERROR_MESSAGES.SYSTEM_ERROR" | translate }}</p>
+        </div>
+        <sxm-ui-radio-option-form-field
+            formControlName="lookupType"
+            [label]="translateKeyPrefix + '.RADIO_ID_OPTION_LABEL' | translate"
+            value="radioId"
+            data-e2e="radioIdLookupTypeOption"
+        ></sxm-ui-radio-option-form-field>
+        <div [class.hidden]="form.get('lookupType').value !== 'radioId'" class="option-fields">
+            <sxm-ui-text-form-field
+                formControlName="radioId"
+                [labelText]="translateKeyPrefix + '.RADIO_ID_INPUT_PLACEHOLDER' | translate"
+                data-e2e="radioIdInput"
+                [dataTest]="'radioId'"
+                [errorMsg]="
+                    form.get('radioId').hasError('required')
+                        ? (translateKeyPrefix + '.ERROR.RADIO_ID_INPUT_REQUIRED' | translate)
+                        : form.get('radioId').errors
+                        ? (translateKeyPrefix + '.ERROR.RADIO_ID_INPUT_FORMAT' | translate)
+                        : ''
+                "
+            ></sxm-ui-text-form-field>
+            <div *ngIf="showRadioIdError" class="invalid-feedback">
+                <p>{{ translateKeyPrefix + ".SERVICE_ERROR_MESSAGES.INVALID_RADIO_ID" | translate }}</p>
+            </div>
+            <ng-container *ngTemplateOutlet="privacyPolicyLink"></ng-container>
+        </div>
+
+        <sxm-ui-radio-option-form-field
+            formControlName="lookupType"
+            [label]="translateKeyPrefix + '.PLACEHOLDER_ACC' | translate"
+            value="accountNumber"
+            data-e2e="accountNumberLookupTypeOption"
+        ></sxm-ui-radio-option-form-field>
+        <div [class.hidden]="form.get('lookupType').value !== 'accountNumber'" class="option-fields">
+            <sxm-ui-text-form-field
+                formControlName="accountNumber"
+                [labelText]="translateKeyPrefix + '.PLACEHOLDER_TEXT_ACC' | translate"
+                data-e2e="accountNumberInput"
+                [errorMsg]="
+                    form.get('accountNumber').hasError('required')
+                        ? (translateKeyPrefix + '.ERROR.ACCOUNT_INPUT_REQUIRED' | translate)
+                        : form.get('accountNumber').errors
+                        ? (translateKeyPrefix + '.ERROR.ACCOUNT_INPUT_FORMAT' | translate)
+                        : ''
+                "
+            ></sxm-ui-text-form-field>
+            <div *ngIf="showAccountError" class="invalid-feedback">
+                <p>{{ translateKeyPrefix + ".SERVICE_ERROR_MESSAGES.INVALID_RADIO_ID" | translate }}</p>
+            </div>
+            <ng-container *ngTemplateOutlet="privacyPolicyLink"></ng-container>
+        </div>
+        <button
+            type="button"
+            [loading]="loading$ | async"
+            data-link-name="CONTINUE"
+            sxm-proceed-button
+            sxmUiDataClickTrack="submit"
+            data-e2e="CreateCredentialsFormSubmitButton"
+            data-test="CreateCredentialsFormSubmitButton"
+            (click)="onSubmit()"
+        >
+            {{ translateKeyPrefix + ".BUTTON_TEXT" | translate }}
+        </button>
+        <ng-template #privacyPolicyLink>
+            <p>
+                <privacy-policy></privacy-policy>
+            </p>
+        </ng-template>
+    </form>
+    <br />
+    <p>
+        <a data-link-name="Don't have a Radio ID (RID) or a Account Number" sxmUiDataClickTrack="modal" class="text-link" (click)="openFindradioIdModal()">{{
+            translateKeyPrefix + ".RADIOID_ACCOUNT_NUMBER_LOOKUP" | translate
+        }}</a>
+    </p>
+
+    <sxm-ui-modal
+        #helpFindingRadioModal
+        title="{{ translateKeyPrefix + '.HELP_FINDING_RADIO_TITLE' | translate }}"
+        [titlePresent]="true"
+        [showBackButton]="true"
+        (backButton)="helpFindingRadioModal.close(); handleModalClosed()"
+        (modalClosed)="helpFindingRadioModal.close(); handleModalClosed()"
+        data-e2e="helpFindingRadioIdModal"
+    >
+        <sxm-ui-help-finding-radio-and-account (deviceHelp)="helpFindingRadioModal.close(); marineAviationModal.open()"> </sxm-ui-help-finding-radio-and-account>
+    </sxm-ui-modal>
+    <sxm-ui-modal
+        #marineAviationModal
+        [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"
+        [titlePresent]="true"
+        title="{{ translateKeyPrefix + '.RADIO_LOOKUP_MARINE_AVIATION' | translate }}"
+        [showBackButton]="true"
+        (backButton)="marineAviationModal.close(); openFindradioIdModal()"
+        (modalClosed)="openFindradioIdModal()"
+        data-e2e="helpFindingMarineAviationRadioIdModal"
+    >
+        <sxm-ui-device-help [ariaDescribedbyTextId]="deviceHelpModalAriaDescribedbyTextId"></sxm-ui-device-help>
+    </sxm-ui-modal>
+</main>

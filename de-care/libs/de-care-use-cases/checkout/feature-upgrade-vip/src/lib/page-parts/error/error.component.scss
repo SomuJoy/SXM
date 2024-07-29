@@ -1,0 +1,19 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    height: 100%;
+    display: block;
+    background: $white;
+}
+
+.error-message-padding {
+    padding-top: 24px;
+}
+
+.fluid-text-align {
+    align-self: flex-start;
+
+    @include bp(medium) {
+        align-self: center;
+    }
+}

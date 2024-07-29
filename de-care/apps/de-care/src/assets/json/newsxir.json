@@ -1,0 +1,115 @@
+{
+    "id": "newsxir",
+
+    "defaultRedirects": {
+        "defaultUrl": "/newsxir/package",
+        "authRegister": "/newsxir/account/register",
+        "firstPaymentCompUrl": "/newsxir/pages/checkout/interstitial",
+        "error500Url": "newsxir/issue"
+    },
+
+    "authRequiredModules": [
+        {
+            "moduleName": "checkout"
+        }
+    ],
+
+    "appRoutes": [
+        {
+            "moduleName": "package",
+            "sortOrder": 1,
+            "desc": "Package (lazy loaded module)",
+            "isAuthRequired": false,
+            "moduleGeo": {
+                "previous": null,
+                "next": "account"
+            },
+            "components": [
+                {
+                    "componentName": "package",
+                    "sortOrder": "1",
+                    "componentRoute": "/newsxir/package",
+                    "isAuthRequired": false,
+                    "redirects": {
+                        "next": "/newsxir/account/register",
+                        "previous": null
+                    }
+                }
+            ]
+        },
+        {
+            "moduleName": "account",
+            "sortOrder": 2,
+            "desc": "Account (lazy loaded module)",
+            "isAuthRequired": false,
+            "moduleGeo": {
+                "previous": "package",
+                "next": "checkout"
+            },
+            "components": [
+                {
+                    "componentName": "register",
+                    "sortOrder": 1,
+                    "componentRoute": "/newsxir/account/register",
+                    "isAuthRequired": false,
+                    "redirects": {
+                        "next": "/newsxir/pages/checkout/interstitial",
+                        "previous": "/newsxir/package"
+                    }
+                }
+            ]
+        },
+        {
+            "moduleName": "checkout",
+            "sortOrder": 3,
+            "desc": "Checkout (lazy loaded module)",
+            "isAuthRequired": true,
+            "moduleGeo": {
+                "previous": "account",
+                "next": null
+            },
+            "components": [
+                {
+                    "componentName": "interstitial",
+                    "sortOrder": 1,
+                    "componentRoute": "/newsxir/pages/checkout/interstitial",
+                    "isAuthRequired": true,
+                    "redirects": {
+                        "next": "/newsxir/pages/checkout/payment",
+                        "previous": "/newsxir/package"
+                    }
+                },
+                {
+                    "componentName": "payment",
+                    "sortOrder": 2,
+                    "componentRoute": "/newsxir/pages/checkout/payment",
+                    "isAuthRequired": true,
+                    "redirects": {
+                        "next": "/newsxir/pages/checkout/review",
+                        "previous": "/newsxir/pages/checkout/interstitial"
+                    }
+                },
+                {
+                    "componentName": "review",
+                    "sortOrder": 3,
+                    "isAuthRequired": true,
+                    "componentRoute": "/newsxir/pages/checkout/review",
+                    "redirects": {
+                        "next": "/newsxir/pages/checkout/thanks",
+                        "previous": "/newsxir/pages/checkout/payment"
+                    }
+                },
+                {
+                    "componentName": "thanks",
+                    "sortOrder": 4,
+                    "componentRoute": "/newsxir/pages/checkout/thanks",
+                    "isAuthRequired": true,
+                    "redirects": {
+                        "next": null,
+                        "previous": "/newsxir/package"
+                    }
+                }
+            ]
+        }
+    ]
+}

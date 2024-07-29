@@ -1,0 +1,22 @@
+<div class="flex align-justify">
+    <ul class="checkmark-list-with-subdescription no-padding no-margin">
+        <li>
+            <p>
+                <strong>{{
+                    device?.vehicle
+                        | vehicleInfoTranslate
+                            : {
+                                  defaultText: translateKeyPrefix + "RADIO" | translate: { radioId: device?.radioId },
+                                  isFrench: isFrench
+                              }
+                }}</strong>
+            </p>
+            <p>{{ maskedUserName }}</p>
+        </li>
+    </ul>
+    <streaming-player-link
+        [infoForToken]="{ subscriptionId }"
+        [customLink]="translateKeyPrefix + 'STREAMING_PLAYER_LINK' | translate"
+        class="listen-btn"
+    ></streaming-player-link>
+</div>

@@ -1,0 +1,10 @@
+<main de-care-page-main *ngIf="subscription$ | async; let subscription">
+    <h4>{{ translateKeyPrefix + "HEADLINE" | translate }}</h4>
+    <br />
+    <div [innerHTML]="translateKeyPrefix + 'INSTRUCTIONS' | translate"></div>
+    <br />
+    <sxm-ui-subscription-summary-block [subscription]="subscription"></sxm-ui-subscription-summary-block>
+    <button type="submit" sxm-proceed-button sxmUiDataClickTrack="player" (click)="onUpgradeClick(subscription, translateKeyPrefix + 'UPGRADE_URL')">
+        {{ translateKeyPrefix + "PREVIEW_BUTTON_TEXT" | translate }}
+    </button>
+</main>

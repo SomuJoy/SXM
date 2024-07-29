@@ -1,0 +1,9 @@
+{
+    "TOKEN_EXPIRY_OR_INVALID_ERROR_MESSAGE": "Nous sommes désolés, votre demande de réinitialisation de mot de passe a expiré. Veuillez réessayer.",
+    "FORGOT_TEXT": "Nom d'utilisateur oublié",
+    "FORGOT_PASSWORD_PAGE_TITLE": "Réinitialiser mon mot de passe | SiriusXM ",
+    "THIRD_PARTY_ERROR_MESSAGE": "Il semble que cet abonnement soit géré par un fournisseur tiers.",
+    "THIRD_PARTY_SUB_ERROR_MESSAGE": "Les abonnements achetés à travers l’Appli SXM, ou un autre détaillant, doivent être gérés directement auprès de ce fournisseur.",
+    "THIRD_PARTY_LISTEN_NOW": "Connectez-vous pour commencer à écouter.",
+    "LISTEN_NOW_LINK": "https://siriusxm.ca/allerecouter"
+}

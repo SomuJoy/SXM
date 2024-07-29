@@ -1,0 +1,80 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    .recirculation--single {
+        position: relative;
+        &:before {
+            left: 0;
+            transform: none;
+            width: 100%;
+        }
+    }
+}
+.error-hero {
+    color: $white;
+    position: relative;
+    text-align: center;
+    padding: 40px 0 84px;
+    @include bp(medium) {
+        padding: 64px 0 88px;
+    }
+    &-background {
+        // This background element is here in preparation for when cms will be enabled for this flow and the lead-offer-details will no longer apply a negative margin on the package card
+        // TODO: In cms mode change 'bottom' to a negative value to bring the hero background behind and below the top of the package card, creating the overlap
+        position: absolute;
+        background-color: $purple;
+        width: 100%;
+        height: auto;
+        top: 0;
+        bottom: 0;
+    }
+    h2 {
+        margin-bottom: 12px;
+    }
+}
+.stack {
+    display: block;
+    @include bp(medium) {
+        display: inline-block;
+    }
+}
+
+.main-content {
+    width: 100%;
+    @include bp(medium) {
+        width: 60%;
+    }
+    button,
+    sxm-ui-ready-to-explore-wrapper {
+        margin-bottom: 40px;
+        @include bp(medium) {
+            margin-bottom: 48px;
+        }
+    }
+}
+
+.recirculation--single {
+    position: relative;
+    margin-bottom: 64px;
+    chat-with-agent-link {
+        color: $blue-secondary;
+    }
+    .stack {
+        margin-bottom: 8px;
+        @include bp(medium) {
+            margin-bottom: 0;
+            &.has-chat {
+                &:first-child {
+                    &:after {
+                        content: "";
+                        display: inline-block;
+                        border: 1px solid $gray-medium;
+                        width: 0;
+                        height: 12px;
+                        margin: 0 8px;
+                    }
+                }
+            }
+        }
+    }
+}

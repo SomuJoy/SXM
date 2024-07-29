@@ -1,0 +1,54 @@
+@startuml Trial activation RTP data flow
+
+participant rflz
+participant "RTP Step2" as step2
+participant "RTP Step3" as step3
+participant "RTP Confirmation" as confirmation
+participant Microservices as m
+
+activate rflz
+  rflz -> m: /trial/used-car-eligibility-check
+  m -> rflz
+
+  rflz --> step2: redirect
+deactivate rflz
+
+step2 -> m: /account/non-pii (session)
+m -> step2
+
+step2 -> m: /account/customer-info (offer details)
+m -> step2
+
+step2 -> m: /offers/customer (pre-fill)
+m -> step2
+
+activate step2
+
+  group Form validation
+    step2 -> m: /validate/customer-info (billing address)
+    m -> step2
+
+    step2 -> m: /validate/customer-info (service address)
+    m -> step2
+
+    step2 -> m: /validate/customer-info (credit card)
+    m -> step2
+
+  end
+
+  step2 --> step3: redirect
+
+deactivate step2
+
+step3 -> m: /services/quote/quote
+m -> step3
+
+activate step3
+  step3 -> m: /purchase/new-account
+  m -> step3
+
+  step3 --> confirmation: redirect
+
+deactivate step3
+
+@enduml

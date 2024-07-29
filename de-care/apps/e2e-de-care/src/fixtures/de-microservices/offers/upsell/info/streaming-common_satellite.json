@@ -1,0 +1,17 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "locales": [
+            {
+                "locale": "en_US",
+                "upsellOfferInfo": {
+                    "packageUpsellOfferInfo": null,
+                    "termUpsellOfferInfo": null,
+                    "packageAndTermUpsellOfferInfo": null
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,78 @@
+{
+    "BILLING_TITLE": "Facturation",
+    "SUBSCRIPTIONS_TITLE": "Abonnements",
+    "DASHBOARD_TITLE": "Dashboard",
+    "FAQ_TITLE": "Foire aux questions",
+    "TRENDING_TITLE": "Tendances",
+    "BILLING_LINK_LABEL": "Accédez à la Facturation",
+    "SUBSCRIPTIONS_LINK_LABEL": "Voir tout",
+    "FAQ_LINK_LABEL": "Visitez le centre d’aide",
+    "BILLING_LINK_ARIA": "View your billing history",
+    "FAQ_URL": "{{dotComUrl}}/fr/aide/?intcmp=NA_NA_CAhelp_execute.action?tab=myhelpsupport_MKTG_na",
+    "RADIO_REMOVED": "Radio supprimée avec succès.",
+    "EDIT_CREATE_USERNAME_USER_CREDENTIALS_URL": "{{oacUrl}}/updateusercredentials_view.action?subscriptionNumber={{subscriptionId}}&langpref=fr",
+    "EDIT_CREATE_USERNAME_INTERNET_CREDENTIALS_URL": "{{oacUrl}}/updateinternetcredentials_view.action?subscriptionNumber={{subscriptionId}}&langpref=fr",
+    "CAR_STREAMING_URL": "{{oacUrl}}/accountconsolidation_view.action?allowPHXRedirectAfterRadioEntry=true&langpref=fr#/verifyradio",
+    "SELF_PAY_FAQ": [
+        {
+            "COPY": "Que dois-je faire pour modifier ou annuler mon abonnement?",
+            "LINK": "/aactpcancelfr"
+        },
+        {
+            "COPY": "Est-ce que je peux obtenir un rabais en combinant des comptes?",
+            "LINK": "/aactpacfr"
+        },
+        {
+            "COPY": "Pourquoi ma radio ne fonctionne-t-elle pas correctement?",
+            "LINK": "/acctprefreshfr"
+        },
+        {
+            "COPY": "Comment faire pour transférer ou ajouter une radio à mon compte?",
+            "LINK": "/aactptransferfr"
+        }
+    ],
+    "TRIAL_ONLY_FAQ": [
+        {
+            "COPY": "Comment dois-je activer mon essai de SiriusXM?",
+            "LINK": "/acctpactivatefr"
+        },
+        {
+            "COPY": "Est-ce que je peux obtenir un rabais en combinant des comptes?",
+            "LINK": "/aactpacfr"
+        },
+        {
+            "COPY": "Quelles chaînes font partie de mon forfait?",
+            "LINK": "/acctpchlineupfr"
+        },
+        {
+            "COPY": "Pourquoi ma radio ne fonctionne-t-elle pas correctement?",
+            "LINK": "/acctprefreshfr"
+        }
+    ],
+    "TRIAL_SELF_PAY_FAQ": [
+        {
+            "COPY": "Que dois-je faire pour modifier ou annuler mon abonnement?",
+            "LINK": "/aactpcancelfr"
+        },
+        {
+            "COPY": "Est-ce que je peux obtenir un rabais en combinant des comptes?",
+            "LINK": "/aactpacfr"
+        },
+        {
+            "COPY": "Comment dois-je activer mon essai de SiriusXM?",
+            "LINK": "/acctpactivatefr"
+        },
+        {
+            "COPY": "Pourquoi ma radio ne fonctionne-t-elle pas correctement?",
+            "LINK": "/acctprefreshfr"
+        },
+        {
+            "COPY": "Quelles chaînes font partie de mon forfait?",
+            "LINK": "/acctpchlineupfr"
+        },
+        {
+            "COPY": "Comment faire pour transférer ou ajouter une radio à mon compte?",
+            "LINK": "/aactptransferfr"
+        }
+    ]
+}

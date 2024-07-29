@@ -1,0 +1,33 @@
+<ng-container>
+    <form [formGroup]="lookupForm" sxmUiForceUpdateFormFieldOnEnterKey (ngSubmit)="onContinue()" #ngForm="ngForm">
+        <div class="row no-padding">
+            <div class="column small-12 no-padding align-left">
+                <p class="description">{{ "identification.accountLookupComponent.EMAIL_DESCRIPTION" | translate }}</p>
+                <div
+                    class="input-container"
+                    [class.invalid]="ngForm.dirty && (lookupForm.controls.email.errors || serviceErrors)"
+                    [class.filled]="lookupForm.controls.email.value"
+                >
+                    <label for="email">{{ "identification.accountLookupComponent.EMAIL_PLACEHOLDER" | translate }}</label>
+                    <input type="text" appTrimFormField formControlName="email" id="email" onFocus required maxlength="250" data-e2e="accountLookup.emailField" />
+                </div>
+                <div *ngIf="ngForm.dirty && (lookupForm.controls.email.errors || serviceErrors)" class="invalid-feedback">
+                    <p>{{ "identification.accountLookupComponent.EMAIL_INVALID_MSG" | translate }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row no-padding">
+            <div class="column small-12 no-padding">
+                <button
+                    [ngClass]="['button', 'primary', 'align-center', 'text-center', 'text-uppercase', 'align-justify', 'full-width']"
+                    [class.loading]="isLoading"
+                    [disabled]="isLoading"
+                    data-e2e="accountLookup.lookupButton"
+                >
+                    <ng-container *ngIf="!isLoading">{{ "identification.accountLookupComponent.BUTTON_LABEL" | translate }}</ng-container>
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </form>
+</ng-container>

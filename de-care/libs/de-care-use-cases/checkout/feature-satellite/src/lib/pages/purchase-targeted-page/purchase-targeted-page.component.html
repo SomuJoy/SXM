@@ -1,0 +1,177 @@
+<section id="hero" *ngrxLet="heroViewModel$ as heroViewModel" deCarePageFullWidthContent="mainWideContent" [style.display]="heroViewModel ? 'block' : 'none'">
+    <h1 [innerHTML]="heroViewModel?.title"></h1>
+</section>
+<div deCarePageMainContent id="mainContent">
+    <section id="offerCard" *ngIf="primaryPackageCardViewModel$ | async as primaryPackageCardViewModel; else planRecapSection">
+        <article id="radioInfo" *ngrxLet="radioInfoViewModel$ as radioInfo">
+            <div>
+                <p data-test="DeviceDetailsRadioInfo">
+                    <ng-container
+                        *ngIf="
+                            radioInfo.vehicleInfo
+                                | vehicleInfoTranslate
+                                    : {
+                                          defaultText: '',
+                                          isFrench: false
+                                      } as vehicleInfo
+                        "
+                    >
+                        {{
+                            translateKeyPrefix + "RADIO_INFO.VEHICLE"
+                                | translate
+                                    : {
+                                          vehicleInfo: vehicleInfo
+                                      }
+                        }}
+                        <br />
+                    </ng-container>
+                    {{ translateKeyPrefix + "RADIO_INFO.RADIO_ID_MASKED" | translate: { lastFour: radioInfo.radioIdLastFour } }}
+                </p>
+            </div>
+            <hr />
+        </article>
+        <sxm-ui-primary-package-card
+            [class.theme-non-retail]="primaryPackageCardViewModel?.theme === 'Theme2'"
+            [class.presentation-no-icons-single-detail-visible]="primaryPackageCardViewModel?.presentation === 'Presentation3'"
+            [packageData]="primaryPackageCardViewModel"
+        ></sxm-ui-primary-package-card>
+    </section>
+    <ng-template #planRecapSection>
+        <section id="planRecap">
+            <sxm-ui-plan-recap-card
+                *ngIf="stepper.selectedIndex === 0 && planRecapCardViewModel$ | async as planRecapCardViewModel"
+                [data]="planRecapCardViewModel"
+            ></sxm-ui-plan-recap-card>
+        </section>
+    </ng-template>
+    <section id="mainContent">
+        <sxm-ui-stepper-accordion #stepper>
+            <sxm-ui-step-accordion
+                (active)="onBillingInformationStepActive()"
+                [label]="translateKeyPrefix + 'STEPS.PAYMENT_INFO.TITLE' | translate"
+                (editClicked)="onEditBillingInformationClick()"
+            >
+                <ng-template #activeHeader>
+                    <sxm-ui-stepper-progress-breadcrumb
+                        [currentStepNumber]="stepper.selectedIndex + 1"
+                        [numberOfSteps]="stepper.steps?.length"
+                    ></sxm-ui-stepper-progress-breadcrumb>
+                    <p class="step-title">
+                        {{ translateKeyPrefix + "STEPS.PAYMENT_INFO.TITLE" | translate }}
+                    </p>
+                </ng-template>
+                <section *ngrxLet="accountSummary$ as accountSummary">
+                    <ng-container *ngIf="accountSummary.accountIsTrial; else nonTrial">
+                        <p id="inTrialInfoText">
+                            {{
+                                translateKeyPrefix + "STEPS.PAYMENT_INFO.INSTRUCTIONS_IN_TRIAL"
+                                    | translate
+                                        : {
+                                              termLength: accountSummary.termLength,
+                                              trialEndDate: accountSummary.currentPlanEndDate | sxmDate: (currentLang$ | async)
+                                          }
+                            }}
+                        </p></ng-container
+                    >
+                    <ng-template #nonTrial
+                        ><p id="postTrialInfoText">{{ translateKeyPrefix + "STEPS.PAYMENT_INFO.INSTRUCTIONS_POST_TRIAL" | translate }}</p></ng-template
+                    >
+                </section>
+
+                <ng-container *ngIf="changeSelectedOfferLinkAvailable$ | async">
+                    <section id="yourPlanSection" *ngIf="selectedPlanSummary$ | async as selectedPlanSummary">
+                        <p class="your-plan--header">{{ translateKeyPrefix + "STEPS.PAYMENT_INFO.YOUR_PLAN" | translate }}</p>
+                        <p>
+                            {{ selectedPlanSummary.offerDescription?.platformPlan }}<br />
+                            {{
+                                translateKeyPrefix + "STEPS.PAYMENT_INFO.TERM_AND_PRICE" + (selectedPlanSummary.totalPrice === 0 ? "_FREE" : "")
+                                    | translate
+                                        : {
+                                              termLength: selectedPlanSummary.termLength,
+                                              monthString:
+                                                  selectedPlanSummary.termLength | i18nPlural: (translateKeyPrefix + "STEPS.PAYMENT_INFO.PLURAL_MAP.MONTH" | translate),
+                                              fullPrice: selectedPlanSummary.totalPrice | sxmCurrency: (currentLang$ | async),
+                                              retailPrice: selectedPlanSummary.retailPrice | sxmCurrency: (currentLang$ | async)
+                                          }
+                            }}<br />
+                            <button class="your-plan--change text-link" id="changeLeadOfferButton" (click)="openOfferGrid()" sxmUiDataClickTrack="modal">
+                                {{ translateKeyPrefix + "STEPS.PAYMENT_INFO.CHANGE_SELECTED_OFFER_LINK_COPY" | translate }}
+                            </button>
+                            <sxm-ui-modal
+                                #offerSelectionModal
+                                [title]="translateKeyPrefix + 'STEPS.PAYMENT_INFO.OFFER_SELECTION_MODAL.TITLE_BAR' | translate"
+                                [titlePresent]="true"
+                                (modalClosed)="onOfferGridClosed()"
+                            >
+                                <sxm-ui-offer-grid-form
+                                    #offerGridForm
+                                    *ngrxLet="changeSelectedOfferViewModel$ as changeSelectedOfferViewModel"
+                                    [offers]="changeSelectedOfferViewModel"
+                                    (submitted)="setSelectedPlanCode($event)"
+                                >
+                                    <div headerInstructions>
+                                        <p>{{ translateKeyPrefix + "PLAN_GRID.HEADER_INSTRUCTIONS.MAIN_COPY" | translate }}</p>
+                                        <p>{{ translateKeyPrefix + "PLAN_GRID.HEADER_INSTRUCTIONS.SEE_OFFER_DETAILS" | translate }}</p>
+                                    </div>
+                                </sxm-ui-offer-grid-form>
+                            </sxm-ui-modal>
+                        </p>
+                    </section>
+                </ng-container>
+
+                <de-care-payment-info-form [options]="paymentMethodOptionsViewModel$ | async" (formCompleted)="onPaymentInfoCollected($event)"></de-care-payment-info-form>
+
+                <ng-template #inactiveContent>{{
+                    translateKeyPrefix + "STEPS.PAYMENT_INFO.SELECTED_PAYMENT_METHOD_SUMMARY" | translate: (selectedPaymentMethodSummaryViewModel$ | async)
+                }}</ng-template>
+            </sxm-ui-step-accordion>
+
+            <sxm-ui-step-accordion
+                *ngIf="hasUpsellOffers$ | async"
+                (active)="onUpsellStepActive()"
+                [label]="translateKeyPrefix + 'STEPS.UPSELL.TITLE' | translate"
+                (editClicked)="onEditUpsellClick()"
+            >
+                <ng-template #activeHeader>
+                    <sxm-ui-stepper-progress-breadcrumb
+                        [currentStepNumber]="stepper.selectedIndex + 1"
+                        [numberOfSteps]="stepper.steps?.length"
+                    ></sxm-ui-stepper-progress-breadcrumb>
+                    <p class="step-title">
+                        {{ translateKeyPrefix + "STEPS.UPSELL.TITLE" | translate }}
+                    </p>
+                </ng-template>
+                <section>
+                    <p>{{ translateKeyPrefix + "STEPS.UPSELL.INSTRUCTIONS" | translate }}</p>
+                    <form data-test="UpsellForm" novalidate (submit)="onUpsellContinue()">
+                        <button sxm-proceed-button id="upsellContinue" type="submit">
+                            {{ translateKeyPrefix + "STEPS.UPSELL.CONTINUE_BUTTON_TEXT" | translate }}
+                        </button>
+                    </form>
+                </section>
+            </sxm-ui-step-accordion>
+
+            <sxm-ui-step-accordion [label]="translateKeyPrefix + 'STEPS.REVIEW.TITLE' | translate" (active)="onReviewStepActive()">
+                <ng-template #activeHeader>
+                    <sxm-ui-stepper-progress-breadcrumb
+                        [currentStepNumber]="stepper.selectedIndex + 1"
+                        [numberOfSteps]="stepper.steps?.length"
+                    ></sxm-ui-stepper-progress-breadcrumb>
+                    <p class="step-title">
+                        {{ translateKeyPrefix + "STEPS.REVIEW.TITLE" | translate }}
+                    </p>
+                </ng-template>
+                <de-care-review-quote-and-approve-form
+                    *ngIf="quoteViewModel$ | async as quoteViewModel"
+                    [quoteViewModel]="quoteViewModel"
+                    [shouldIncludeNuCaptcha]="displayNuCaptcha$ | async"
+                    [continueButtonTextOverride]="translateKeyPrefix + 'STEPS.REVIEW.CONTINUE_BUTTON_TEXT' | translate"
+                    (formCompleted)="submitTransaction()"
+                ></de-care-review-quote-and-approve-form>
+            </sxm-ui-step-accordion>
+        </sxm-ui-stepper-accordion>
+    </section>
+</div>
+<section id="legalCopySection" deCarePageFullWidthContent>
+    <div *ngrxLet="legalCopy$ as legalCopy" [innerHTML]="legalCopy"></div>
+</section>

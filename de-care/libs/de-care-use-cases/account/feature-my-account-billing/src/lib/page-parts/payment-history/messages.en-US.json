@@ -1,0 +1,8 @@
+{
+    "COLUMN_HEADER_DATE": "Date",
+    "DATE_FORMAT": "M/dd/yy",
+    "COLUMN_HEADER_TRANSACTION": "Payment Method",
+    "COLUMN_HEADER_AMOUNT": "Amount",
+    "LOAD_MORE_BUTTON_LABEL": "LOAD MORE",
+    "NO_DATA_MESSAGE": "There are no results within the selected date range."
+}

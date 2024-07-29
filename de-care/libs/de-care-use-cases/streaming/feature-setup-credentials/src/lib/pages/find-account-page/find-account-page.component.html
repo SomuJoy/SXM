@@ -1,0 +1,16 @@
+<main de-care-page-main>
+    <ng-container *ngIf="freeListen$ | async">
+        <h4>{{ translateKeyPrefix + "EXPIRED_PROMO_CODE_HEADLINE" | translate }}</h4>
+        <br />
+        <p>{{ translateKeyPrefix + "EXPIRED_PROMO_CODE_INSTRUCTIONS" | translate }}</p>
+    </ng-container>
+    <streaming-flepz-lookup
+        (signInRequested)="onSignInRequested()"
+        (lookupCompleted)="onLookupCompleted($event)"
+        [isInvalidEmailErrors]="isInvalidEmailError"
+        [isInvalidFirstNameErrors]="isInvalidFirstNameError"
+        [hideHeadlineAndInstructions]="freeListen$ | async"
+    >
+        <privacy-policy privacyPolicy></privacy-policy>
+    </streaming-flepz-lookup>
+</main>

@@ -1,0 +1,31 @@
+{
+    "name": "de-care-shared-environment",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care/shared/environment/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/de-care/shared/environment/src/**/*.ts", "libs/de-care/shared/environment/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/de-care/shared/environment/jest.config.js",
+                "tsConfig": "libs/de-care/shared/environment/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/de-care/shared/environment/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:util", "scope:de-care"]
+}

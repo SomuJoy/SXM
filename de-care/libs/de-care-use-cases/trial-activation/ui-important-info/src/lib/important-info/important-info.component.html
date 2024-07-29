@@ -1,0 +1,4 @@
+<p class="padding-top">
+    <strong [innerHTML]="translateKeyPrefix + '.IMPORTANT_INFO_TITLE' | translate"></strong>
+</p>
+<p class="legal-copy" innerHtml="{{ (isQuebec ? translateKeyPrefix + '.INFO_QUEBEC' : translateKeyPrefix + '.INFO') | translate }}"></p>

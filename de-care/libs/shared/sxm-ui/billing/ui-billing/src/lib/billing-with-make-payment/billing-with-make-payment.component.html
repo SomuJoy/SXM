@@ -1,0 +1,38 @@
+<sxm-ui-billing-header
+    *ngIf="data?.isPastDue"
+    [title]="translateKeyPrefix + '.YOUR_PAYMENT_IS_PAST_DUE' | translate"
+    [warning]="showWarning ? (translateKeyPrefix + (data?.showReactivateWarning ? '.MAKE_PAYMENT_TO_REACTIVATE' : '.PLEASE_VERIFY') | translate) : null"
+></sxm-ui-billing-header>
+
+<ng-container *ngIf="!data?.isPastDue">
+    <sxm-ui-billing-header
+        *ngIf="data?.daysDue === 0"
+        [title]="translateKeyPrefix + '.YOUR_PAYMENT_IS_DUE_TODAY' | translate"
+        [warning]="showWarning ? (translateKeyPrefix + '.PLEASE_VERIFY' | translate) : null"
+    ></sxm-ui-billing-header>
+
+    <sxm-ui-billing-header
+        *ngIf="data?.daysDue === null"
+        [title]="translateKeyPrefix + '.YOUR_PAYMENT_IS_DUE_NO_DATE' | translate"
+        [warning]="showWarning ? (translateKeyPrefix + '.PLEASE_VERIFY' | translate) : null"
+    ></sxm-ui-billing-header>
+
+    <sxm-ui-billing-header
+        *ngIf="data?.daysDue > 0"
+        [title]="
+            translateKeyPrefix + '.YOUR_PAYMENT_IS_DUE_IN'
+                | translate
+                    : {
+                          daysDue: data?.daysDue,
+                          daysPlural: data?.daysDue | i18nPlural: (translateKeyPrefix + '.PLURAL_MAP.DAYS' | translate)
+                      }
+        "
+        [warning]="showWarning ? (translateKeyPrefix + '.PLEASE_VERIFY' | translate) : null"
+    ></sxm-ui-billing-header>
+</ng-container>
+
+<sxm-ui-billing-amount-and-date [data]="data"></sxm-ui-billing-amount-and-date>
+
+<button sxm-proceed-button class="btn btn-primary" sxmUiDataClickTrack="routing" data-link-name="PayNowButton" data-link-key="Billing summary" (click)="makePayment.emit()">
+    {{ translateKeyPrefix + ".MAKE_A_PAYMENT" | translate }}
+</button>

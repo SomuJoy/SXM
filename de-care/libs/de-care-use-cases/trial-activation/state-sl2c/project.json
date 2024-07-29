@@ -1,0 +1,31 @@
+{
+    "name": "de-care-use-cases-trial-activation-state-sl2c",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care-use-cases/trial-activation/state-sl2c/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/de-care-use-cases/trial-activation/state-sl2c/src/**/*.ts", "libs/de-care-use-cases/trial-activation/state-sl2c/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/trial-activation/state-sl2c/jest.config.js",
+                "tsConfig": "libs/de-care-use-cases/trial-activation/state-sl2c/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/de-care-use-cases/trial-activation/state-sl2c/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:state", "scope:de-care"]
+}

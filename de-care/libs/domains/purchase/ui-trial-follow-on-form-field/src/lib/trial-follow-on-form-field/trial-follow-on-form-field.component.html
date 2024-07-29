@@ -1,0 +1,50 @@
+<div class="trial-follow-on-form-field-content-card">
+    <div class="trial-follow-on-form-field-content-card-head">
+        <div class="trial-follow-on-form-field-content-container">
+            <div class="row no-padding">
+                <div class="column small-12 align-left">
+                    <div htmlContentForHead>
+                        <div class="checkbox-item follow-on-option">
+                            <input
+                                [(ngModel)]="value"
+                                [name]="uniqueId"
+                                class="checkbox"
+                                type="checkbox"
+                                id="{{ uniqueId }}"
+                                attr.qatag="followOnOption"
+                                data-e2e="trialFollowOnFormField.followOnCheckBox"
+                            />
+                            <label data-e2e="trialFollowOn.contentCard.label" class="input-label" for="{{ uniqueId }}" attr.qatag="followOnOption">
+                                <p class="small-copy text-color-white">
+                                    {{
+                                        translateKey + ".LABEL"
+                                            | translate
+                                                : {
+                                                      followOnPackageName: "app.packageDescriptions." + followOnData?.packageName + ".name" | translate | removeSiriusXmPrefix,
+                                                      followOnPricePerMonth: followOnData?.pricePerMonth | currency: "USD":"symbol-narrow":undefined:(currentLang$ | async)
+                                                  }
+                                    }}
+                                </p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="trial-follow-on-form-field-content-card-body">
+        <div>
+            <div class="followon-option-body">
+                <div class="trial-follow-on-form-field-content-container">
+                    <div class="row no-padding">
+                        <div class="column small-12 align-left no-padding" data-e2e="trialFollowon.contentCard.copy">
+                            <p class="large-copy">
+                                {{ translateKey + ".COPY" | translate }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+{
+    "checkout": {
+        "thanksComponent": {
+            "PRINT_ORDER_SUMMARY_LINK_TEXT": "Print your order summary",
+            "SUBSCRIPTION_IMPORTANT_INFO": {
+                "TITLE": "Important information about your subscription:",
+                "BODY": "Your subscription starts immediately unless indicated otherwise. If your radio is not receiving the programming you are entitled to, please follow the activation instructions above. For your convenience, all subscriptions automatically renew until canceled. Your renewal will be billed at the then-current rate using the payment method on file. You can cancel your subscription at any time by calling Listener Care at <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>. Your subscription is governed by the SiriusXM Customer Agreement, which can be <a href=\"https://www.siriusxm.com/customeragreement?desktop=yes\" target=\"_blank\">viewed online</a>. If you would like to receive a copy of the Customer Agreement by mail, you can call <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>."
+            },
+            "STREAMING_PLAYER_LINK": {
+                "STREAMING_RTP_OFFER": "?contentType=landing&channelName=accessnow&site_id=accessnow&creative_id=NA_NA_DL-COM-landing-landingpage-landingpage-STARTLISTENING-TRIALACTIVATIONRTP-NA-All-20210921-NA&cp_5=landingpage&cp_6=landingpage&cp_7=ALL&cp_8=STARTLISTENING&cp_9=TRIALACTIVATIONRTP&cp_10=COM",
+                "SATELLITE_OFFER": "?creative_id=NA_NA_PL-EM-home-home-home-CONVERSION-COMCONFIRM-OEM-OEM-20211207-DECOM&cp_7=OEM&cp_8=CONVERSION&cp_9=COMCONFIRM"
+            }
+        },
+        "studentVerificationFlow": {
+            "HERO_COPY": "Unlock your student-only offer"
+        },
+        "rflzLandingPageComponent": {
+            "HERO": {
+                "TITLE": "Get {{termLength}} more months FREE",
+                "SUBTITLE": "Fees and taxes apply. <br /> See <strong>Offer Details</strong> below. Change or cancel anytime."
+            },
+            "CHOICE_QUESTIONS_TFN": "855-749-1635",
+            "REACTIVE_QUESTIONS_TFN": "855-734-2658",
+            "PROACTIVE_QUESTIONS_TFN": "855-734-2663"
+        },
+        "satelliteStreamingPurchasePageComponent": {
+            "ALERT_EXPIRED": "Sorry, it looks like this offer has already expired.",
+            "ALERT_INVALID": "Sorry, we are having issues fulfilling this request.",
+            "SUB_HEADER": "For further assistance please call us at 1-866-336-9967 or <a id=\"chat-247-Link-body1\" class=\"text-link\">chat with an agent</a>.",
+            "SUB_HEADER_OFFER_NOT_AVAILABLE": "For assistance with the previous offer, please call us at 1-866-336-9967.",
+            "DEFAULT_OFFER_HERO": "Let's find another great offer for you",
+            "RADIO_LOOKUP_LABEL": "Radio Lookup",
+            "ACCOUNT_FOUND_MODAL_TITLE": "Your Account",
+            "LOGIN_LINK": "https://care.siriusxm.com/login_view.action",
+            "OFFER_FOR_NEW_SUBSCRIBERS": "That offer is for new subscribers, but here’s another option for you.",
+            "FURTHER_ASSISTANCE": "For further assistance please call us at 1-866-336-9967 or ",
+            "CHAT_LINK": "chat with an agent.",
+            "FOR_HELP": "For help ",
+            "HELP_CHAT_LINK": "chat with an agent",
+            "OR_CALL": " or call {{assistancePhone}}",
+            "ASSISTANCE_PHONE_MAP": {
+                "109": "1-844-765-1475",
+                "112": "1-844-765-1477",
+                "113": "1-844-840-6032",
+                "other": "1-855-241-5969"
+            },
+            "NO_RADIO": {
+                "NO_RADIO_TEXT": "No radio?",
+                "LINK_URL": "https://siriusxm.com/PHXstreaminglink",
+                "LINK_TEXT": "Get the SXM App"
+            },
+            "OTHER_PLANS": "Change Plan"
+        },
+        "leadOfferPlanSelectionPageComponent": {
+            "HERO": {
+                "TITLE": "Select any plan and get your first {{termLength}} {{pluralizedMonth}} for ${{price}}",
+                "SUBTITLE": "${{processingFee}} processing fee plus taxes apply. <br /> See <strong>Offer Details</strong> below. Change or cancel anytime.",
+                "TITLE_PROMO_MCP": "Choose from one of these great offers",
+                "SUBTITLE_PROMO_MCP": "<br /> See <strong>Offer Details</strong> below."
+            },
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "month",
+                    "other": "months"
+                }
+            }
+        },
+        "ineligibleErrorPageComponent": {
+            "LOADER_SUBTEXT": "Finding another great plan for you.",
+            "3494": "Unfortunately, we can’t find your radio. However, you can stream on the SXM App with a Platinum subscription.",
+            "103": "Unfortunately, your radio is not equipped for satellite service. However, you can stream on the SXM App with a Platinum subscription.",
+            "5035": "Unfortunately, the radio you entered is not capable of receiving audio. However, you can stream on the SXM App with a Platinum subscription.",
+            "101": "Unfortunately, a trial subscription is not eligible for this radio. However, you can start enjoying SiriusXM with this great subscription offer.",
+            "109": "Looks like you currently have an active trial. You can add a subscription, so you won’t miss a beat when your trial ends.",
+            "111": "Looks like you currently have a 3-month active trial. You can add a subscription, so you won’t miss a beat when your trial ends.",
+            "112": "Unfortunately, your trial recently ended and your radio is ineligible for a trial subscription. However, you can start enjoying SiriusXM with this great subscription offer.",
+            "113": "Unfortunately, your trial or paid subscription recently ended and your radio is ineligible for a trial subscription. However, you can start enjoying SiriusXM with this great subscription offer."
+        },
+
+        "alertPillErrorCodes": {
+            "3494": "Unfortunately, we can’t find your radio. However, you can stream on the SXM App with a Platinum subscription.",
+            "103": "Unfortunately, your radio is not equipped for satellite service. However, you can stream on the SXM App with a Platinum subscription.",
+            "5035": "Unfortunately, the radio you entered is not capable of receiving audio. However, you can stream on the SXM App with a Platinum subscription.",
+            "101": "Unfortunately, a trial subscription is not eligible for this radio. However, you can start enjoying SiriusXM with this great subscription offer.",
+            "109": "Looks like you currently have an active trial. You can add a subscription, so you won’t miss a beat when your trial ends.",
+            "111": "Looks like you currently have a 3-month active trial. You can add a subscription, so you won’t miss a beat when your trial ends.",
+            "112": "Unfortunately, your trial recently ended and your radio is ineligible for a trial subscription. However, you can start enjoying SiriusXM with this great subscription offer.",
+            "113": "Unfortunately, your trial or paid subscription recently ended and your radio is ineligible for a trial subscription. However, you can start enjoying SiriusXM with this great subscription offer.",
+            "UpgradeVIPFallback": "Unfortunately, your trial or paid subscription recently ended and your radio is ineligible for a Platinum VIP subscription. However, you can start enjoying SiriusXM with this great subscription offer."
+        }
+    }
+}

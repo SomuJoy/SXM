@@ -1,0 +1,86 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "quote": {
+            "currentQuote": null,
+            "futureQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "0.21",
+                "totalTaxesAndFeesAmount": "0.21",
+                "totalAmount": "1.21",
+                "discountAmount": "0.00",
+                "pricePerMonth": "0.33",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "0.21" }],
+                "taxes": [],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Promo - Mostly Music - 3mo - 1.00 - (PyP)",
+                        "packageName": "SXM_SIR_AUD_PKG_MM",
+                        "termLength": 3,
+                        "priceAmount": "1.00",
+                        "taxAmount": "0.00",
+                        "feeAmount": "0.21",
+                        "totalTaxesAndFeesAmount": "0.21",
+                        "taxes": [],
+                        "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "0.21" }],
+                        "startDate": "2022-03-01",
+                        "endDate": "2022-06-01",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "PROMO",
+                        "dealType": "",
+                        "isStudent": false,
+                        "isAdvantage": false
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            },
+            "proRatedRenewalQuote": null,
+            "promoRenewalQuote": null,
+            "renewalQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "2.78",
+                "totalTaxesAndFeesAmount": "2.78",
+                "totalAmount": "15.77",
+                "discountAmount": "0.00",
+                "pricePerMonth": "12.99",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "2.78" }],
+                "taxes": [],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Mostly Music - 1mo - wActv",
+                        "packageName": "SXM_SIR_AUD_PKG_MM",
+                        "termLength": 1,
+                        "priceAmount": "12.99",
+                        "taxAmount": "0.00",
+                        "feeAmount": "2.78",
+                        "totalTaxesAndFeesAmount": "2.78",
+                        "taxes": [],
+                        "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "2.78" }],
+                        "startDate": "2022-06-01",
+                        "endDate": "2022-07-01",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "SELF_PAY",
+                        "dealType": "",
+                        "isStudent": false,
+                        "isAdvantage": false
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            }
+        }
+    }
+}

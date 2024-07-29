@@ -1,0 +1,105 @@
+{
+    "id": "newesn",
+
+    "defaultRedirects": {
+        "defaultUrl": "/package",
+        "authRegister": "/account/register",
+        "firstPaymentCompUrl": "/pages/checkout/payment",
+        "error500Url": "/issue"
+    },
+
+    "authRequiredModules": [
+        {
+            "moduleName": "checkout"
+        }
+    ],
+
+    "appRoutes": [
+        {
+            "moduleName": "package",
+            "sortOrder": 1,
+            "desc": "Package (lazy loaded module)",
+            "isAuthRequired": false,
+            "moduleGeo": {
+                "previous": null,
+                "next": "account"
+            },
+            "components": [
+                {
+                    "componentName": "package",
+                    "sortOrder": "1",
+                    "componentRoute": "/package",
+                    "isAuthRequired": false,
+                    "redirects": {
+                        "next": "/account/register",
+                        "previous": null
+                    }
+                }
+            ]
+        },
+        {
+            "moduleName": "account",
+            "sortOrder": 2,
+            "desc": "Account (lazy loaded module)",
+            "isAuthRequired": false,
+            "moduleGeo": {
+                "previous": "package",
+                "next": "checkout"
+            },
+            "components": [
+                {
+                    "componentName": "register",
+                    "sortOrder": 1,
+                    "componentRoute": "/account/register",
+                    "isAuthRequired": false,
+                    "redirects": {
+                        "next": "/pages/checkout/payment",
+                        "previous": "/package"
+                    }
+                }
+            ]
+        },
+        {
+            "moduleName": "checkout",
+            "sortOrder": 3,
+            "desc": "Checkout (lazy loaded module)",
+            "isAuthRequired": true,
+            "moduleGeo": {
+                "previous": "account",
+                "next": null
+            },
+            "components": [
+                {
+                    "componentName": "payment",
+                    "sortOrder": 1,
+                    "componentRoute": "/pages/checkout/payment",
+                    "isAuthRequired": true,
+                    "redirects": {
+                        "next": "/pages/checkout/review",
+                        "previous": "/account/register"
+                    }
+                },
+                {
+                    "componentName": "review",
+                    "sortOrder": 2,
+                    "isAuthRequired": true,
+                    "componentRoute": "/pages/checkout/review",
+                    "redirects": {
+                        "next": "/pages/checkout/thanks",
+                        "previous": "/pages/checkout/payment"
+                    }
+                },
+                {
+                    "componentName": "thanks",
+                    "sortOrder": 3,
+                    "componentRoute": "/pages/checkout/thanks",
+                    "isAuthRequired": true,
+                    "redirects": {
+                        "next": null,
+                        "previous": "/package"
+                    }
+                }
+            ]
+        }
+    ]
+}

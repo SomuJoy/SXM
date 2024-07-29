@@ -1,0 +1,32 @@
+{
+    "DomainsIdentityUiDeviceLookupModule": {
+        "DeviceLookupIdOptionsFormComponent": {
+            "RADIO_ID_OPTION_LABEL": "Entrez le code de radio",
+            "RADIO_ID_INPUT_PLACEHOLDER": "Code de radio",
+            "RADIO_ID_INPUT_TOOLTIP": "Votre code de radio comprend 8 ou 12 caractères.",
+            "RADIO_LINK_INSTRUCTIONS": "Comment puis-je trouver mon code de radio?",
+            "HELP_FINDING_RADIO_TITLE": "Aide pour code de radio",
+            "RADIO_LOOKUP_MARINE_AVIATION": "Aide relative à l'appareil",
+            "VIN_OPTION_LABEL": "Entrez le VIN",
+            "VIN_OPTION_ARIA_LABEL": "NIV (numéro d’identification du véhicule)",
+            "VIN_INPUT_PLACEHOLDER": "VIN",
+            "LICENSE_PLATE_OPTION_LABEL": "Entrez la plaque d'immatriculation",
+            "LICENSE_PLATE_INPUT_PLACEHOLDER": "Plaque d'immatriculation",
+            "CONTINUE_BUTTON": "Continuer",
+            "ERROR": {
+                "RADIO_ID_INPUT_FORMAT": "Entrez un code de radio valide.",
+                "RADIO_ID_INPUT_REQUIRED": "Un code radio est requis.",
+                "VIN_INPUT_FORMAT": "Entrez un VIN valide.",
+                "VIN_INPUT_REQUIRED": "Un VIN est requis.",
+                "LICENSE_PLATE_INPUT_FORMAT": "Entrez une plaque d'immatriculation valide.",
+                "LICENSE_PLATE_INPUT_REQUIRED": "Une plaque d'immatriculation est requise."
+            },
+            "SERVICE_ERROR_MESSAGES": {
+                "VIN_NOT_FOUND": "Le numéro entré ne correspond pas à nos dossiers. Veuillez essayer de nouveau.",
+                "LICENSE_PLATE_NOT_FOUND": "Le numéro entré ne correspond pas à nos dossiers. Veuillez essayer de nouveau.",
+                "INVALID_RADIO_ID": "Le numéro entré ne correspond pas à nos dossiers. Veuillez essayer de nouveau.",
+                "SYSTEM_ERROR": "Nous sommes désolés, Quelque chose n'a pas fonctionné. Nous rencontrons des problèmes techniques et travaillons à les résoudre. Veuillez réessayer."
+            }
+        }
+    }
+}

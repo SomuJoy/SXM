@@ -1,0 +1,100 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "quote": {
+            "currentQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "6.41",
+                "totalTaxesAndFeesAmount": "6.41",
+                "totalAmount": "36.35",
+                "discountAmount": "0.00",
+                "pricePerMonth": "4.99",
+                "currentBalance": "36.35",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "0.00",
+                "fees": [
+                    {
+                        "description": "U.S. Music Royalty Fee",
+                        "amount": "6.41"
+                    }
+                ],
+                "taxes": [],
+                "details": [
+                    {
+                        "planCode": "Promo - Select - 6mo - 29.94 (4.99FOR6) - WBFB",
+                        "packageName": "SXM_SIR_AUD_EVT",
+                        "termLength": 6,
+                        "priceAmount": "29.94",
+                        "taxAmount": "0.00",
+                        "feeAmount": "6.41",
+                        "totalTaxesAndFeesAmount": "6.41",
+                        "taxes": [],
+                        "fees": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "amount": "6.41"
+                            }
+                        ],
+                        "startDate": "2020-08-28",
+                        "endDate": "2021-02-28",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "PROMO",
+                        "dealType": ""
+                    }
+                ],
+                "isUpgraded": false,
+                "isProrated": false
+            },
+            "futureQuote": null,
+            "proRatedRenewalQuote": null,
+            "promoRenewalQuote": null,
+            "renewalQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "3.64",
+                "totalTaxesAndFeesAmount": "3.64",
+                "totalAmount": "20.63",
+                "discountAmount": "0.00",
+                "pricePerMonth": "16.99",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [
+                    {
+                        "description": "U.S. Music Royalty Fee",
+                        "amount": "3.64"
+                    }
+                ],
+                "taxes": [],
+                "details": [
+                    {
+                        "planCode": "Select - 1mo - wActv",
+                        "packageName": "SXM_SIR_AUD_EVT",
+                        "termLength": 1,
+                        "priceAmount": "16.99",
+                        "taxAmount": "0.00",
+                        "feeAmount": "3.64",
+                        "totalTaxesAndFeesAmount": "3.64",
+                        "taxes": [],
+                        "fees": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "amount": "3.64"
+                            }
+                        ],
+                        "startDate": "2021-02-28",
+                        "endDate": "2021-03-28",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "SELF_PAY",
+                        "dealType": ""
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            }
+        }
+    }
+}

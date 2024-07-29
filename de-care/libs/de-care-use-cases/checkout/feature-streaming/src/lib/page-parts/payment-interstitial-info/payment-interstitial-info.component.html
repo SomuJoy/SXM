@@ -1,0 +1,8 @@
+<ul>
+    <li *ngFor="let benefit of translateKeyPrefix + '.BENEFITS' | translate">
+        <svg class="icon icon-utility">
+            <use class="icon-checkmark-sm" xlink:href="#icon-checkmark-sm"></use>
+        </svg>
+        {{ benefit }}
+    </li>
+</ul>

@@ -1,0 +1,101 @@
+[
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/offers/promocode/validate",
+            "postData": {
+                "marketingPromoCode": "SXM-QPNKDVYAJ5",
+                "streaming": "true"
+            }
+        },
+        "response": {
+            "status": 400,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Wed, 23 Dec 2020 21:33:10 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Transfer-Encoding",
+                    "value": "chunked"
+                },
+                {
+                    "name": "Connection",
+                    "value": "keep-alive"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "http://lpp7dj6mh2.corp.siriusxm.com:4205"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "FAILURE",
+                    "httpStatusCode": 400,
+                    "httpStatus": "BAD_REQUEST",
+                    "error": {
+                        "errorStackTrace": "AccountNumber: null | RadioId: null | x-forwarded-for: null | URL: /services/offers/promocode/validate | Exception: PromoCodeValidationServiceException#null | StackTrace: PromoCodeValidationServiceClient.java:63 | ErrorType: null | ErrorMessage: ERROR : [errorCode : null, errorPropKey : error.code.promo.code.service.already.redeemed, errorType : CHECKED, errorLevel : FIELD, statusCode : 400 BAD_REQUEST, errorMessage : Single use promotion code already redeemed in system | , sourceErrorCode : 11-03-SUBSC-5097] | FullStackTrace: ",
+                        "fieldErrors": [
+                            {
+                                "errorPropKey": "error.code.promo.code.service.already",
+                                "errorType": "BUSINESS",
+                                "fieldName": "redeemed"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    }
+]

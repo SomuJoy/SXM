@@ -1,0 +1,37 @@
+<div id="lookup-vin">
+    <h5>{{ "identification.lookupVinComponent.TITLE" | translate }}</h5>
+
+    <p [id]="ariaDescribedbyTextId">{{ "identification.lookupVinComponent.GETTING_STARTED" | translate }}</p>
+
+    <div class="input-container" [class.invalid]="submitted && vinModel.errors">
+        <label for="{{ uniqueId }}">{{ "identification.lookupVinComponent.LOOKUP_ERROR_LABEL" | translate }}</label>
+        <input
+            #vinModel="ngModel"
+            type="text"
+            id="{{ uniqueId }}"
+            qatag="LookUpVINTextField"
+            data-test="LookUpVINTextField"
+            maxlength="17"
+            appTrimFormField
+            [(ngModel)]="vin"
+            [ngModelOptions]="{ standalone: true }"
+            onFocus
+        />
+    </div>
+    <div *ngIf="submitted && vinModel.errors" class="invalid-feedback">
+        <p>{{ "identification.lookupVinComponent.INVALID_FEEDBACK" | translate }}</p>
+    </div>
+    <div *ngIf="accountNotSupportedError" class="invalid-feedback">
+        <p>{{ "identification.lookupVinComponent.ACCOUNT_TYPE_NOT_SUPPORTED" | translate }}</p>
+    </div>
+    <ng-content></ng-content>
+    <div class="privacy-policy">
+        <a href="{{ 'identification.lookupVinComponent.PRIVACY_POLICY.LINK_URL' | translate }}" target="blank" class="text-link">{{
+            "identification.lookupVinComponent.PRIVACY_POLICY.LINK_TEXT" | translate
+        }}</a>
+    </div>
+    <button class="button primary full-width" data-test="identification.lookupVinComponent.CONTINUE" [class.loading]="loading" (click)="sendVin()">
+        <ng-container *ngIf="!loading">{{ "identification.lookupVinComponent.CONTINUE" | translate }}</ng-container>
+        <span></span><span></span><span></span>
+    </button>
+</div>

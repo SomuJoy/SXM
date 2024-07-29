@@ -1,0 +1,4 @@
+{
+    "CUSTOMER_GREETING": "Bonjour, {{customerName}}",
+    "ACCOUNT_NUMBER": "Compte: {{accountNumber}}"
+}

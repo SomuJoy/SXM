@@ -1,0 +1,15 @@
+{
+    "CUSTOMER_GREETING": "Hi, {{customerName}}",
+    "ACCOUNT_NUMBER": "Account: {{accountNumber}}",
+    "TITLE": "Submit your payment",
+    "UPDATE_PAYMENT_TITLE": "Update my payment information",
+    "UPDATE_PAYMENT_NO_CURRENT_BALANCE": "You currently have no balance due. ",
+    "UPDATE_PAYMENT_SUBHEADER": "By updating your payment information you will be going paperless and your credit card will be used for all future payments.",
+    "CURRENT_BALANCE_INSTRUCTIONS": "To avoid service interruption, make an online payment now and it will post to your account immediately.",
+    "UPDATE_PAYMENT_BUTTON": "UPDATE PAYMENT",
+    "NEXT_PAYMENT_INSTRUCTIONS": "You currently have no balance due. Save time by paying your next bill in advance.",
+    "SUSPENDED_NOTICE": "Your account has subscription(s) that are suspended because your account is past due.",
+    "SUSPENDED_INSTRUCTIONS": "Paying your total amount due will reactivate your subscription(s).",
+    "SUSPENDED_RADIOS_ALERT": "Your account has subscription(s) that are suspended because your account is past due.",
+    "BACK_BUTTON": "BACK"
+}

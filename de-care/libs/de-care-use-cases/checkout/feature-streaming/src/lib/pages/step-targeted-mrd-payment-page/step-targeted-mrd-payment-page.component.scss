@@ -1,0 +1,10 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "../page.scss";
+
+:host {
+    @include page-host;
+    sxm-ui-plan-recap-card {
+        margin-bottom: 15px;
+    }
+}

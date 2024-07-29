@@ -1,0 +1,12 @@
+{
+    "TITLE": "Configurez votre paiement",
+    "BODY": {
+        "CANCEL_ANYTIME": "Annulez en tout temps.",
+        "POST_TRIAL_DEFAULT": "Vous ne serez pas facturé avant la fin de votre abonnement d’essai. N’oubliez pas que vous pouvez modifier ou annuler votre abonnement à tout moment.",
+        "POST_TRIAL_PLAN_STARTS_AFTER_PROMO": "Annulez en tout temps. Le forfait débute après la fin de votre promo actuelle le {{trialEndDate}}"
+    },
+    "CONTINUE_BUTTON_TEXT": "Revoir Ma Commande",
+    "INELIGIBLE_LOADING_ALERT": "Cette offre est réservée aux nouveaux abonnés, mais voici une autre option pour vous.",
+    "INELIGIBLE_LOADING_BODY": "Trouver un autre bon plan pour vous.",
+    "EMAIL/USERNAME": "Adresse courriel/Nom d’utilisateur:"
+}

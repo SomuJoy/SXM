@@ -1,0 +1,58 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "firstName": "SANCHO",
+        "userName": "sanchopanza@siriusxm.com",
+        "accountProfile": { "accountRegistered": false },
+        "accountState": { "isInPreTrial": false },
+        "subscriptions": [
+            {
+                "id": "10000243681",
+                "plans": [
+                    {
+                        "code": "Promo - Essential Streaming - 3mo - 0.99",
+                        "packageName": "SIR_IP_SA_ESNTL",
+                        "termLength": 3,
+                        "startDate": "2022-01-04T00:00:00-05:00",
+                        "endDate": "2022-04-04T00:00:00-04:00",
+                        "nextCycleOn": null,
+                        "marketType": "self-pay:promo",
+                        "type": "PROMO",
+                        "capabilities": ["IPAUD"],
+                        "price": 0.99,
+                        "isBasePlan": true,
+                        "dataCapable": false
+                    }
+                ],
+                "followonPlans": [
+                    {
+                        "code": "Essential Streaming - Monthly",
+                        "packageName": "SIR_IP_SA_ESNTL",
+                        "termLength": 1,
+                        "startDate": "2022-04-04T00:00:00-04:00",
+                        "endDate": null,
+                        "nextCycleOn": null,
+                        "marketType": "self-pay:standard",
+                        "type": "SELF_PAID",
+                        "capabilities": ["IPAUD"],
+                        "price": 7.99,
+                        "isBasePlan": true,
+                        "dataCapable": false
+                    }
+                ],
+                "radioService": null,
+                "streamingService": { "id": "10000242657", "maskedUserName": "san******@siriusxm.com", "status": "Active", "randomCredentials": false },
+                "status": "Active",
+                "devicePromoCode": null,
+                "isPrimary": true
+            }
+        ],
+        "last4DigitsOfAccountNumber": "1377",
+        "hasEmailAddressOnFile": true,
+        "hasPhoneNumberOnFile": true,
+        "maskedPhoneNumber": "xxx-xxx-4444",
+        "hasDemoSubscription": false
+    }
+}

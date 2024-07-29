@@ -1,0 +1,23 @@
+{
+    "USERNAME_TITLE": "Username",
+    "USERNAME_INSTRUCTIONS": "Must be an email address or 6-20 character username.",
+    "USERNAME_FIELD_LABEL": "Email/Username",
+    "PASSWORD_TITLE": "Password",
+    "PASSWORD_FIELD_NEW_LABEL": "New Password",
+    "SAVE_BUTTON": "SAVE",
+    "CANCEL_BUTTON": "CANCEL",
+    "ERRORS": {
+        "REQUIRED": "Enter a new password.",
+        "LENGTH": "Your password must be {{ min }} to {{ max }} characters long.",
+        "POLICY": "Your password must contain at least one character from at least 3 different groups, as explained in our password policy.",
+        "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}",
+        "GENERIC": "We're sorry, your new password does not comply with our policy. Please try again.",
+        "SYSTEM_ERROR": "We’re sorry… something went wrong. We’re experiencing technical issues and are working on resolving it. Please try again."
+    },
+    "PLURAL_MAP": {
+        "WORD": {
+            "=1": "word",
+            "other": "words"
+        }
+    }
+}

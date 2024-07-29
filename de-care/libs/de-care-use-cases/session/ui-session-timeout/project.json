@@ -1,0 +1,25 @@
+{
+    "name": "de-care-use-cases-session-ui-session-timeout",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/de-care-use-cases/session/ui-session-timeout/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/de-care-use-cases/session/ui-session-timeout"],
+            "options": {
+                "jestConfig": "libs/de-care-use-cases/session/ui-session-timeout/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/de-care-use-cases/session/ui-session-timeout/src/**/*.ts", "libs/de-care-use-cases/session/ui-session-timeout/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:ui", "scope:de-care-use-case-shared-ui"]
+}

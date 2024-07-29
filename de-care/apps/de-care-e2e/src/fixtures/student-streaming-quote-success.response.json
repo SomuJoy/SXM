@@ -1,0 +1,107 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "quote": {
+            "currentQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "0.09",
+                "totalTaxesAndFeesAmount": "0.09",
+                "totalAmount": "1.09",
+                "discountAmount": "0.00",
+                "pricePerMonth": "0.17",
+                "currentBalance": "1.09",
+                "previousBalance": "0.00",
+                "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "0.09" }],
+                "taxes": [],
+                "details": [
+                    {
+                        "planCode": "Trial - Student Premier Streaming - 6mo - $1.00",
+                        "packageName": "SIR_IP_SA",
+                        "termLength": 6,
+                        "priceAmount": "1.00",
+                        "taxAmount": "0.00",
+                        "feeAmount": "0.09",
+                        "totalTaxesAndFeesAmount": "0.09",
+                        "taxes": [],
+                        "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "0.09" }],
+                        "startDate": "2020-05-18",
+                        "endDate": "2020-11-18",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "student": true
+                    }
+                ],
+                "isUpgraded": false,
+                "isProrated": false
+            },
+            "futureQuote": null,
+            "proRatedRenewalQuote": null,
+            "promoRenewalQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "0.35",
+                "totalTaxesAndFeesAmount": "0.35",
+                "totalAmount": "4.35",
+                "discountAmount": "-9.00",
+                "pricePerMonth": "4.00",
+                "currentBalance": "",
+                "previousBalance": "",
+                "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "0.35" }],
+                "taxes": [],
+                "details": [
+                    {
+                        "planCode": "Premier Streaming - Monthly|Promo Student $4.00/mo PS for 12mos",
+                        "packageName": "SIR_IP_SA",
+                        "termLength": 12,
+                        "priceAmount": "4.00",
+                        "taxAmount": "0.00",
+                        "feeAmount": "0.35",
+                        "totalTaxesAndFeesAmount": "0.35",
+                        "taxes": [],
+                        "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "0.35" }],
+                        "startDate": "2020-11-18",
+                        "endDate": "2020-12-18",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "student": true
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            },
+            "renewalQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "1.14",
+                "totalTaxesAndFeesAmount": "1.14",
+                "totalAmount": "14.14",
+                "discountAmount": "0.00",
+                "pricePerMonth": "13.00",
+                "currentBalance": "",
+                "previousBalance": "",
+                "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "1.14" }],
+                "taxes": [],
+                "details": [
+                    {
+                        "planCode": "Premier Streaming - Monthly",
+                        "packageName": "SIR_IP_SA",
+                        "termLength": 1,
+                        "priceAmount": "13.00",
+                        "taxAmount": "0.00",
+                        "feeAmount": "1.14",
+                        "totalTaxesAndFeesAmount": "1.14",
+                        "taxes": [],
+                        "fees": [{ "description": "U.S. Music Royalty Fee", "amount": "1.14" }],
+                        "startDate": "2021-11-18",
+                        "endDate": "2021-12-18",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "student": false
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            }
+        }
+    }
+}

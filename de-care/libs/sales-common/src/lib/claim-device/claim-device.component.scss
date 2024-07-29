@@ -1,0 +1,39 @@
+:host {
+    width: 100%;
+}
+
+.promo-image {
+    align-self: center;
+    height: auto;
+    margin-left: auto;
+    width: auto;
+    max-width: 150px;
+}
+
+.recirculation {
+    &--single {
+        padding: 0 16px 12px;
+
+        &::before {
+            width: 100%;
+        }
+
+        .promo-image {
+            margin: 0 auto;
+            padding: 16px 0;
+        }
+    }
+
+    &--description {
+        margin-top: 16px;
+        text-align: left;
+    }
+
+    &--description-with-disclaimer {
+        margin-top: 8px;
+    }
+}
+
+.checkmark-circle {
+    margin-top: -24px;
+}

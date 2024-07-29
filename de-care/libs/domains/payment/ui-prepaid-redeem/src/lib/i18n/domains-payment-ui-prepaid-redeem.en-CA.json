@@ -1,0 +1,10 @@
+{
+    "domainsPaymentUiPrepaidRedeemModule": {
+        "prepaidRedeemComponent": {
+            "ADD_CARD": "Add a SiriusXM Prepaid Service Card (optional)",
+            "REDEEM_LABEL": "Redeem a prepaid service gift card",
+            "REMOVE_LABEL": "Remove the prepaid service gift card",
+            "CARD_APPLIED": "Your prepaid service gift card was applied."
+        }
+    }
+}

@@ -1,0 +1,111 @@
+<header>
+    <button
+        (click)="closed.emit()"
+        sxmUiDataClickTrack="ui"
+        data-link-key="Global Nav"
+        data-link-name="close panel"
+        [attr.aria-label]="translateKeyPrefix + '.ARIA_CLOSE_LABEL' | translate"
+    >
+        <span class="x-shape"></span>
+    </button>
+    <p class="no-margin">{{ translateKeyPrefix + ".NAME_PROMPT" | translate }}</p>
+    <h5 class="no-margin">{{ data?.firstName }}</h5>
+</header>
+<div class="alerts-container">
+    <div *ngIf="data?.alerts?.length === 0; else alertsContainer" class="empty">
+        <sxm-ui-account-alert-with-no-link-checkmark-icon
+            [data]="{ copyContent: translateKeyPrefix + '.NO_ALERTS' | translate }"
+        ></sxm-ui-account-alert-with-no-link-checkmark-icon>
+    </div>
+    <ng-template #alertsContainer>
+        <ng-container *ngFor="let alert of data?.alerts; let i = index">
+            <div class="alert-box">
+                <ng-container
+                    *ngTemplateOutlet="
+                        alertTemplate;
+                        context: {
+                            data: {
+                                copyContent: alert | copyContentTranslationKey : { translateKeyPrefix, nextBillingPaymentDate: data?.nextBillingPaymentDate  }
+                                                      | translate : { nextBillingPaymentDate: (data?.nextBillingPaymentDate | sxmUiDate),
+                                                        priceChangeDate: (data?.priceChangeDate | sxmUiDate: 'longDate'),
+                                                                  convertTrialEndDate: (data?.convertTrialEndDate | sxmUiDate), favoriteChannel: alert?.favoriteChannel },
+                                urlLinkLabel: alert | linkLabelTranslationKey :{ translateKeyPrefix } | translate,
+                                linkKey: translateKeyPrefix + '.' + alert.type + '.LINK_KEY' | translate,
+                                linkName: alert | linkNameTranslationKey: { translateKeyPrefix } | translate,
+                                alertType: alert.type
+                            }
+                        }
+                    "
+                ></ng-container>
+                <ng-template #alertTemplate let-alertData="data">
+                    <ng-container [ngSwitch]="alert.type">
+                        <ng-container *ngSwitchCase="'PAYMENT'">
+                            <sxm-ui-account-alert-with-link-critical-icon
+                                [data]="alertData"
+                                data-test="accountAlertCriticalIcon"
+                                (alertLinkClicked)="alertLinkClicked.emit($event)"
+                            ></sxm-ui-account-alert-with-link-critical-icon>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'PAYMENT_REMINDER'">
+                            <sxm-ui-account-alert-with-link-warning-icon
+                                [data]="alertData"
+                                (alertLinkClicked)="alertLinkClicked.emit($event)"
+                            ></sxm-ui-account-alert-with-link-warning-icon>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'UPGRADE'">
+                            <sxm-ui-account-alert-with-link-no-icon
+                                [data]="alertData"
+                                (alertLinkClicked)="alertLinkClicked.emit($event)"
+                                class="highlight-link"
+                            ></sxm-ui-account-alert-with-link-no-icon>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'SC_AC'">
+                            <sxm-ui-account-alert-with-link-no-icon
+                                [data]="alertData"
+                                (alertLinkClicked)="alertLinkClicked.emit($event)"
+                            ></sxm-ui-account-alert-with-link-no-icon>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'DEVICES'">
+                            <sxm-ui-account-alert-with-link-no-icon [data]="alertData" (alertLinkClicked)="alertLinkClicked.emit($event)">
+                            </sxm-ui-account-alert-with-link-no-icon>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'CREDENTIALS'">
+                            <sxm-ui-account-alert-with-link-no-icon *ngIf="alert?.accountRegistered" [data]="alertData" (alertLinkClicked)="alertLinkClicked.emit($event)">
+                            </sxm-ui-account-alert-with-link-no-icon>
+                            <sxm-ui-account-alert-with-link-warning-icon
+                                *ngIf="!alert?.accountRegistered && data?.identificationState === 'IDENTIFIED'"
+                                [data]="alertData"
+                                (alertLinkClicked)="alertLinkClicked.emit($event)"
+                            >
+                            </sxm-ui-account-alert-with-link-warning-icon>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'CONTENT'">
+                            <sxm-ui-account-alert-with-link-no-icon [data]="alertData" (alertLinkClicked)="alertLinkClicked.emit($event)">
+                            </sxm-ui-account-alert-with-link-no-icon>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'REACTIVATE'">
+                            <sxm-ui-account-alert-with-link-no-icon [data]="alertData" (alertLinkClicked)="alertLinkClicked.emit($event)" class="highlight-link">
+                            </sxm-ui-account-alert-with-link-no-icon>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'CONVERT'">
+                            <sxm-ui-account-alert-with-link-warning-icon
+                                [ngClass]="{ 'critical-icon': !(alert?.noOfDaysLeftInTrial > 31) }"
+                                [data]="alertData"
+                                (alertLinkClicked)="alertLinkClicked.emit($event)"
+                            >
+                            </sxm-ui-account-alert-with-link-warning-icon>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'PRICE_MSG'">
+                            <sxm-ui-account-alert-with-link-no-icon
+                                [data]="alertData"
+                                (alertLinkClicked)="alertLinkClicked.emit($event)"
+                            ></sxm-ui-account-alert-with-link-no-icon>
+                        </ng-container>
+                        <!-- TODO: add other alert types that will be used in future phases -->
+                    </ng-container>
+                </ng-template>
+            </div>
+            <hr *ngIf="data?.alerts?.length - 1 !== i" />
+        </ng-container>
+    </ng-template>
+</div>

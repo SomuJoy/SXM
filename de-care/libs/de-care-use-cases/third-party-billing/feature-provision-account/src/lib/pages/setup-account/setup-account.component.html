@@ -1,0 +1,45 @@
+<main class="background-offwhite">
+    <div class="content-container">
+        <div class="row align-center no-padding-small">
+            <div class="column small-12 medium-2 background-white raised"></div>
+            <div class="column small-12 medium-6 background-white raised">
+                <sxm-ui-stepper #stepper>
+                    <sxm-ui-step (active)="setupAccountActive()" id="step1">
+                        <form class="setup-account-form" [formGroup]="loginForm" data-e2e="provisionAccountSetupForm">
+                            <h4>{{ translateKeyPrefix + ".SETUP_YOUR_LOGIN" | translate }}</h4>
+                            <p>
+                                {{ translateKeyPrefix + ".SETUP_YOUR_LOGIN_BODY.SUBTITLE" | translate }}
+                            </p>
+                            <login-form-fields [formInfo]="loginFormInfo" [submitted]="loginFormSubmitted"> </login-form-fields>
+                            <privacy-policy [customLink]="translateKeyPrefix + '.PRIVACY_LINK' | translate"> </privacy-policy>
+                            <button
+                                (click)="onLoginInfoContinue()"
+                                [loading]="activationIsLoading$ | async"
+                                sxm-proceed-button
+                                type="submit"
+                                qatag="ThirdPartyBillingSetupYourLoginContiue"
+                            >
+                                {{ translateKeyPrefix + ".CONTINUE_BUTTON" | translate }}
+                            </button>
+                        </form>
+                        <span
+                            [innerHTML]="
+                                translateKeyPrefix + '.SETUP_YOUR_LOGIN_SUBTITLE' | translate: { resellerName: resellerName$ | async, resellerURL: resellerURL$ | async }
+                            "
+                        ></span>
+                    </sxm-ui-step>
+                    <sxm-ui-step (active)="confirmationStepActive()">
+                        <div data-e2e="provisionAccountConfirmationStep">
+                            <h4>{{ translateKeyPrefix + ".ALL_IS_SET" | translate }}</h4>
+                            <div
+                                [innerHTML]="translateKeyPrefix + '.LISTENING_INFO' | translate: { resellerName: resellerName$ | async, resellerURL: resellerURL$ | async }"
+                            ></div>
+                            <listen-button [listenNowCustomLink]="translateKeyPrefix + '.STREAMING_PLAYER_LINK' | translate" [fullWidth]="true"></listen-button>
+                        </div>
+                    </sxm-ui-step>
+                </sxm-ui-stepper>
+            </div>
+            <div class="column small-12 medium-2 background-white raised"></div>
+        </div>
+    </div>
+</main>

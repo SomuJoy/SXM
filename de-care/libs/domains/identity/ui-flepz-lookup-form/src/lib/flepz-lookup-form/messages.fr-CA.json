@@ -1,0 +1,6 @@
+{
+    "CONTINUE_BUTTON_TEXT": "Continuer",
+    "INVALID_ZIP_FROM_LOOKUP_ERROR": "Entrez un code postal valide.",
+    "EMAIL_INVALID_MSG": "Entrez une adresse courriel valide.",
+    "EMAIL_IN_USE_ERROR_MSG": "Le nom d’utilisateur ou le courriel est déjà utilisé."
+}

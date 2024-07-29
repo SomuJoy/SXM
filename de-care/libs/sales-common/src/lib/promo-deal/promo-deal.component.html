@@ -1,0 +1,104 @@
+<div *ngIf="packageUpgradeInfo" class="row flex flex-wrap no-padding">
+    <div class="column small-12 align-left no-padding">
+        <p *ngIf="!packageUpgradeOnly" class="no-margin bold">{{ upgradeTitle }}</p>
+        <p *ngIf="packageUpgradeOnly" class="no-margin bold">
+            {{
+                i18nKey + "PROMO_UPGRADE_WITHOUT_DEAL.UPGRADE_TITLE"
+                    | translate
+                        : {
+                              offer: "app.packageDescriptions." + packageUpgradeInfo.packageName + ".name" | translate | withoutPlatformName: packageUpgradeInfo.packageName,
+                              offerUpgradeTerm: packageUpgradeInfo.termLength,
+                              offerUpgrade:
+                                  "app.packageDescriptions." + packageUpgradeInfo.packageUpgrade + ".name" | translate | withoutPlatformName: packageUpgradeInfo.packageUpgrade
+                          }
+            }}
+        </p>
+        <ul
+            class="checkmark-list"
+            *ngFor="let channel of 'app.packageDescriptions.' + packageUpgradeInfo.packageUpgrade | translate | getDiffExcludedChannels: packageUpgradeInfo.packageName"
+        >
+            <li *ngFor="let description of channel.descriptions" data-icon="checkmark-sm">
+                <span [innerHTML]="description"></span>
+                <div class="icon-checkmark-sm-wrapper">
+                    <svg class="icon icon-utility small">
+                        <use class="icon-checkmark-sm" xlink:href="#icon-checkmark-sm"></use>
+                    </svg>
+                </div>
+            </li>
+        </ul>
+        <hr *ngIf="!packageUpgradeOnly" />
+    </div>
+</div>
+<div *ngIf="!packageUpgradeOnly" class="row flex flex-wrap no-padding promo-offer">
+    <div class="column align-left no-padding small-8 large-9">
+        <ng-container *ngIf="titleImageSrc; else titleText">
+            <img [src]="titleImageSrc" class="promo-title-image" />
+        </ng-container>
+    </div>
+    <div class="column no-padding small-4 large-3">
+        <div>
+            <img [src]="i18nKey + deal.type + '.DEAL_IMAGE.SRC' | translate" class="promo-image" [class.hulu-image]="isHulu" data-e2e="promoDealRightImage" />
+        </div>
+    </div>
+</div>
+<ng-container *ngIf="titleImageSrc">
+    <div class="row flex flex-wrap no-padding promo-title">
+        <div class="column align-left no-padding small-12">
+            <ng-container *ngTemplateOutlet="titleText"></ng-container>
+        </div>
+    </div>
+</ng-container>
+<ng-template #titleText>
+    <h5 [class.mb-4]="!!dealSubtitle" [innerHTML]="dealTitle"></h5>
+    <p *ngIf="!!dealSubtitle" class="promo-subtitle" [innerHTML]="dealSubtitle"></p>
+</ng-template>
+<ng-container *ngIf="isHulu">
+    <div class="row flex flex-wrap no-padding promo-offer">
+        <p class="hulu-promo-description" data-e2e="huluPromoDescription">
+            {{ dealDescription }}
+        </p>
+        <p [innerHTML]="i18nKey + 'HULU.PROMO_DETAIL' | translate"></p>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="showDetails">
+    <ng-container *ngIf="customDetailsContent; else details">
+        <ng-container *ngTemplateOutlet="customDetailsContent; context: { channels: channels }"></ng-container>
+    </ng-container>
+</ng-container>
+
+<ng-template #details>
+    <div *ngIf="showDetails && !packageUpgradeOnly" class="row flex flex-wrap no-padding">
+        <div class="column small-12 align-left no-padding" data-e2e="promoDealAccordionContainer">
+            <sxm-ui-accordion-chevron
+                [expandedText]="i18nKey + 'details.expandedText' | translate"
+                [collapsedText]="i18nKey + 'details.collapsedText' | translate"
+                [opened]="isHulu || isAmazonDot ? false : true"
+            >
+                <div>
+                    <ul *ngIf="!!channels?.length" class="checkmark-list" data-e2e="promoDealChannelDescriptions">
+                        <li *ngFor="let item of channels[0].descriptions" data-icon="checkmark-sm">
+                            <span [innerHTML]="item"></span>
+                            <div class="icon-checkmark-sm-wrapper">
+                                <svg class="icon icon-utility small">
+                                    <use class="icon-checkmark-sm" xlink:href="#icon-checkmark-sm"></use>
+                                </svg>
+                            </div>
+                        </li>
+                    </ul>
+                    <ng-container *ngIf="isHulu">
+                        <div class="hulu-promo-info">
+                            <p class="hulu-bottom--header" data-e2e="huluBottomHeader">
+                                <b>
+                                    {{ i18nKey + deal.type + ".BOTTOM_SECTION.HEADER" | translate }}
+                                </b>
+                            </p>
+
+                            <p class="hulu-bottom--content" data-e2e="huluBottomContent">{{ i18nKey + deal.type + ".BOTTOM_SECTION.CONTENT" | translate: dealOfferData }}</p>
+                        </div>
+                    </ng-container>
+                </div>
+            </sxm-ui-accordion-chevron>
+        </div>
+    </div>
+</ng-template>

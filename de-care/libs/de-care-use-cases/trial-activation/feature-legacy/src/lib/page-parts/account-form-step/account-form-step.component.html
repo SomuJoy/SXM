@@ -1,0 +1,23 @@
+<form [formGroup]="accountForm" (ngSubmit)="sendForm()" novalidate>
+    <p class="gray-text section-title">{{ "trialActivation.accountFormStepComponent.LOGIN_INFO" | translate }}</p>
+    <login-info [formInfo]="{ email: username, parentForm: accountForm, passwordControlName: passwordControlName }" [submitted]="submitted"></login-info>
+    <div *ngIf="isCanada" class="checkbox-item display-flex">
+        <input class="checkbox" [formControl]="agreement" type="checkbox" id="{{ contestMessageId }}" onFocus />
+        <label class="input-label" for="{{ contestMessageId }}">
+            <p class="small-copy text-color-grey-dark">
+                {{ "trialActivation.oneStepNewAccountFormStepComponent.AGREEMENT_TEXT" | translate }}
+            </p>
+        </label>
+        <div *ngIf="isCanada && submitted && !agreementAccepted" class="invalid-feedback">
+            <p>{{ "trialActivation.oneStepNewAccountFormStepComponent.ACCEPT_AGREEMENT" | translate }}</p>
+        </div>
+    </div>
+    <a class="text-link privacy-policy-link" href="{{ 'trialActivation.accountFormStepComponent.PRIVACY_POLICY.LINK_URL' | translate }}" target="_blank">
+        {{ "trialActivation.accountFormStepComponent.PRIVACY_POLICY.LINK_TEXT" | translate }}
+    </a>
+    <button class="button primary align-center text-center text-uppercase align-justify full-width" [class.loading]="isLoading" [disabled]="isLoading" type="submit">
+        <ng-container *ngIf="!isLoading">{{ "trialActivation.accountFormStepComponent.BUTTON_TEXT" | translate }} </ng-container>
+        <span></span><span></span><span></span>
+    </button>
+    <post-activation-instructions *ngIf="includeActivationInstructions$ | async"></post-activation-instructions>
+</form>

@@ -1,0 +1,27 @@
+<h5>{{ "identification.yourSubscriptionsComponent.HEADER_TITLE" | translate }}</h5>
+
+<ng-container *ngIf="subscriptions && subscriptions.currentSubscriptions && subscriptions.currentSubscriptions.length > 0">
+    <h6>{{ "identification.yourSubscriptionsComponent.HEADER_INCLUDED" | translate }}</h6>
+    <p class="header-body" [id]="ariaDescribedbyTextId">{{ "identification.yourSubscriptionsComponent.SUB_HEADER_INCLUDED" | translate }}</p>
+
+    <div class="subscriptions">
+        <subscription-item
+            *ngFor="let subscription of subscriptions.currentSubscriptions"
+            [subscription]="subscription"
+            (actionClicked)="actionClicked.emit($event)"
+        ></subscription-item>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="subscriptions && subscriptions.offeredSubscriptions && subscriptions.offeredSubscriptions.length > 0">
+    <h6>{{ "identification.yourSubscriptionsComponent.HEADER_TRIAL" | translate }}</h6>
+    <p class="header-body" [id]="ariaDescribedbyTextId">{{ "identification.yourSubscriptionsComponent.SUB_HEADER_TRIAL" | translate }}</p>
+
+    <div class="subscriptions">
+        <subscription-item
+            *ngFor="let subscription of subscriptions.offeredSubscriptions"
+            [subscription]="subscription"
+            (actionClicked)="actionClicked.emit($event)"
+        ></subscription-item>
+    </div>
+</ng-container>

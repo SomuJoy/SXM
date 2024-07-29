@@ -1,0 +1,56 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "locales": [
+            {
+                "locale": "en_US",
+                "offerInfos": [
+                    {
+                        "planCode": "Promo - Streaming - 12mo - 99.00 - wETF (6mo25) - AMZ DOT - G4",
+                        "salesHero": { "title": "Get a FREE Amazon Echo Dot with a SiriusXM subscription", "subTitle": null, "presentation": null },
+                        "offerDescription": {
+                            "priceAndTermDescTitle": "<span data-duration=\"\">12 months</span> for <span data-price=\"\">$99</span>",
+                            "processingFeeDisclaimer": "Billed up front. Then $10.99/mo. Cancel online anytime. See <strong>Offer Details</strong> below.",
+                            "packageName": "SiriusXM Streaming Platinum",
+                            "listeningOptions": ["Streaming", "Pandora"],
+                            "longDescription": null,
+                            "highlightsTitle": null,
+                            "highlightsText": [
+                                "<b>425+ channels</b> to stream on your devices with the SXM App. If you want to listen in your car, you'll need your phone",
+                                "<b>Ad-free music</b> for every genre & decade plus artist-created channels",
+                                "<b>Original talk,</b> podcasts, exclusive comedy & news from every angle",
+                                "<b>NFL, MLB®, NBA, NHL®, and NCAA® play-by-play,</b> NASCAR®, plus the biggest names in sports talk",
+                                "<b>2 Howard Stern channels,</b> including video",
+                                "<b>Create Pandora stations</b> based on artists",
+                                "<b>SiriusXM video library</b> of in-studio shows & performances"
+                            ],
+                            "footer": "<strong id=\"docs-internal-guid-84d0c726-7fff-f9ef-892d-454117196eca\">The ultimate in entertainment. </strong>Expertly curated ad-free music, Pandora stations, sports play-by-play, celebrity-hosted talk, Howard Stern &amp; more.&nbsp;<a href=\"http://siriusxm.com/channels?package=SIR_IP_SA\">View Channel Lineup</a>",
+                            "packageFeatures": [{ "packageName": "SiriusXM Streaming Platinum", "features": [] }],
+                            "showToggleLabel": "Explore plan details",
+                            "hideToggleLabel": "Hide"
+                        },
+                        "deals": [
+                            {
+                                "name": "ANNUAL_DOT",
+                                "header": "+ FREE AMAZON ECHO DOT",
+                                "deviceImage": "http://cms-author.corp.siriusxm.com/content/dam/sxm-com/devices/amazon/amz-dot-gen4-transparent-bg.png",
+                                "productImage": null,
+                                "title": "<strong>Receive an Echo Dot (4th generation) on us.</strong>",
+                                "description": "<ul>\r\n\t<li>Enjoy SiriusXM in your home with Alexa.</li>\r\n\t<li>Tune to channels using your voice.</li>\r\n</ul>\r\n",
+                                "addonShowToggleText": "View more",
+                                "addonHideToggleText": "View less",
+                                "presentation": "Presentation2"
+                            }
+                        ],
+                        "addonHeaderOverride": null,
+                        "offerDetails": "<p><strong>OFFER DETAILS:</strong> Activate a new SiriusXM Streaming Platinum subscription plan and pay $99.00 upfront for your first 12 months, plus get a free Echo Dot (4th gen), while supplies last. Fees and taxes apply. A credit card is required on this offer. If you cancel or terminate your subscription during the first 6 months, you will be charged a $25.00 EARLY TERMINATION FEE. Your SiriusXM service will renew every month thereafter and you will be charged according to your chosen payment method at then-current rates (currently $10.99/month). <strong>Please see our <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\">Customer Agreement</a> at www.siriusxm.com for complete terms and how to cancel, which includes online methods or calling us at 1-866-635-2349. </strong>All fees, content and features are subject to change. This offer cannot be combined with any other and may be modified or terminated at any time. <strong>Limit 1 free Echo Dot regardless of promotion or number of subscriptions purchased.</strong> Offer for new subscribers only. This offer cannot be reproduced, transferred or sold. Offer cannot be combined with other discounts or promotions (i.e. no promos stacking). SiriusXM reserves the right to verify all claims. Actual or suspected abuse or fraudulent manipulation of the offer may result in service termination and forfeiture of gift item(s). Fraudulent requests may result in prosecution. The Echo Dot will be redeemed by using a coupon code provided by SiriusXM to be used on Amazon.com. Offer only applies only to Echo Dot (4th Gen) products sold and fulfilled by Amazon.com or Amazon.com Services LLC (look for &quot;sold by Amazon.com&quot; or &quot;sold by Amazon.com Services LLC&quot; on the product detail page). Check amazon.com for current delivery timing, which may take longer than 30 days. Please allow up to two weeks for redemption instructions, which will be provided by SiriusXM upon validation and verification of compliance with this offer. This offer is presented exclusively by SiriusXM and may not be republished without the consent of SiriusXM.<br />\r\n<br />\r\nAmazon, Echo, Alexa, and all related logos are trademarks of Amazon.com, Inc. or its affiliates.</p>\r\n",
+                        "presentation": { "theme": "Theme2", "style": "Presentation5" },
+                        "numberOfBullets": null
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,475 @@
+<ng-container *ngIf="!isRTC">
+    <p qatag="WontBeChargedText" *ngIf="!(isClosedRadio || accountData.isNewAccount || accountData.account.subscriptions.length < 1); else nonTrial">
+        {{ translateKeyPrefix + ".ENJOYING_YOUR_TRIAL" | translate }}
+    </p>
+    <ng-template #nonTrial>
+        <p class="message">
+            {{ translateKeyPrefix + ".REVIEW_BEFORE" | translate }}
+        </p>
+    </ng-template>
+</ng-container>
+
+<p *ngIf="!accountData.hasEmailAddressOnFile" class="text-color-grey-dark payment-info-title" qatag="YourInfoSubheader">
+    <strong>{{ translateKeyPrefix + ".ACCOUNT_INFO" | translate }}</strong>
+</p>
+
+<form [formGroup]="paymentForm" data-e2e="paymentForm" novalidate>
+    <div class="row" *ngIf="!(accountData.hasEmailAddressOnFile || accountData.isNewAccount)">
+        <div class="column small-12">
+            <div class="input-container" [class.invalid]="f.email | formControlInvalid: paymentFormSubmitted">
+                <label for="email">{{ translateKeyPrefix + ".EMAIL.LABEL" | translate }}</label>
+                <input type="text" id="email" formControlName="email" qatag="emailTextfield" data-e2e="paymentForm.emailTextfield" onFocus required />
+            </div>
+            <div *ngIf="f.email | formControlInvalid: paymentFormSubmitted" class="invalid-feedback">
+                <ng-container *ngIf="f['email'].hasError('usernameInUse'); else emailError">
+                    <p>{{ translateKeyPrefix + ".EMAIL.ALREADY_IN_USE_ERROR" | translate }}</p>
+                </ng-container>
+                <ng-template #emailError>
+                    <p>{{ translateKeyPrefix + ".EMAIL.INVALID_ERROR" | translate }}</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+
+    <ng-container *ngIf="accountData.isNewAccount">
+        <sxm-ui-flepz-form-fields
+            formControlName="flep"
+            [emailEVSValidation]="true"
+            [submitted]="submitted"
+            [includeZip]="false"
+            [includeEmail]="!isStreaming"
+            [prefilledAccountData]="customerName"
+            #flep
+        ></sxm-ui-flepz-form-fields>
+    </ng-container>
+
+    <p class="text-color-grey-dark payment-info-title" qatag="PaymentInfoSubheader">
+        <strong>{{ translateKeyPrefix + ".PAYMENT_INFO_SUBHEADER" | translate }}</strong>
+    </p>
+
+    <span *ngIf="cardOnFileInvalid" class="invalid-feedback">
+        <p>{{ translateKeyPrefix + ".CC_SELECT.ERROR_EXPIRED" | translate }}</p>
+    </span>
+    <span *ngIf="selectionErrorMessage" class="invalid-feedback">
+        <p>{{ translateKeyPrefix + ".CC_SELECT.ERROR_CHOOSE_OPTION" | translate }}</p>
+    </span>
+    <span *ngIf="serviceError === true" class="invalid-feedback">
+        <p>{{ translateKeyPrefix + ".AUTH_ERROR" | translate }}</p>
+    </span>
+
+    <ng-container *ngIf="showPaymentOptions">
+        <div *ngIf="useInvoiceOnAccount" class="radio-item">
+            <input
+                type="radio"
+                class="radio"
+                id="invoice"
+                name="ccGroup"
+                [checked]="selectedPayment === 'invoice'"
+                data-e2e="paymentInfo.useInvoice"
+                qatag="UseInvoiceRadioButton"
+                data-track-click="Payment use invoice"
+                (click)="selectionClick('invoice')"
+            />
+            <label class="input-label" for="invoice" qatag="UseExistingCardText"
+                >{{ translateKeyPrefix + ".INVOICE_SELECT.INVOICE" | translate }}<br /><span class="small-copy text-color-gray-dark" qatag="NoteInvoiceFee">{{
+                    translateKeyPrefix + ".INVOICE_SELECT.INVOICE_NOTE" | translate
+                }}</span></label
+            >
+        </div>
+        <div *ngIf="this.creditCardInfo" class="radio-item">
+            <input
+                type="radio"
+                class="radio"
+                id="savedCC"
+                name="ccGroup"
+                [checked]="selectedPayment === 'existingCC'"
+                data-e2e="paymentInfo.useExistingCard"
+                qatag="UserExistingCardRadioButton"
+                data-track-click="Payment use existing card"
+                (click)="selectionClick('existingCC')"
+            />
+            <label class="input-label" for="savedCC" qatag="UseExistingCardText">{{ translateKeyPrefix + ".CC_SELECT.SAVED_CARD" | translate: creditCardInfo }}</label>
+        </div>
+        <div class="radio-item">
+            <input
+                type="radio"
+                class="radio"
+                id="newCC"
+                name="ccGroup"
+                [checked]="selectedPayment === 'newCC'"
+                qatag="EnterNewCardRadioButton"
+                data-track-click="Payment new credit card"
+                (click)="selectionClick('newCC')"
+            />
+            <label class="input-label" for="newCC" qatag="EnterNewCardText">
+                <ng-container *ngIf="useInvoiceOnAccount; else newCCPromptDefault">
+                    {{ translateKeyPrefix + ".CC_SELECT.NEW_CC_PROMPT_W_INVOICE" | translate }}
+                </ng-container>
+                <ng-template #newCCPromptDefault>
+                    {{ translateKeyPrefix + ".CC_SELECT.NEW_CC_PROMPT" | translate }}
+                </ng-template>
+                <br /><span *ngIf="this.creditCardInfo" class="small-copy text-color-gray-dark" qatag="NoteThisWillReplaceText">{{
+                    translateKeyPrefix + ".CC_SELECT.NEW_CC_NOTE" | translate
+                }}</span></label
+            >
+        </div>
+    </ng-container>
+    <div *ngIf="cardOnFileInvalid" class="new-card-only">
+        <p qatag="EnterNewCardText">
+            {{ translateKeyPrefix + ".CC_SELECT.NEW_CC_PROMPT" | translate }}<br />
+            <span class="small-copy" qatag="NoteThisWillReplaceText">{{ translateKeyPrefix + ".CC_SELECT.NEW_CC_NOTE" | translate }}</span>
+        </p>
+    </div>
+
+    <div [class.not-visible]="!showForm" id="new-cc-form">
+        <div *ngIf="customerValidateError === true" class="invalid-feedback">
+            <p>{{ translateKeyPrefix + ".UNEXPECTED_ERROR" | translate }}</p>
+        </div>
+        <div *ngIf="ccError === true" class="invalid-feedback">
+            <p>{{ translateKeyPrefix + ".NEW_CC.UNAUTHORIZED_ERROR" | translate }}</p>
+        </div>
+        <div>
+            <invalid-address-message *ngIf="showInvalidBillingAddressError"></invalid-address-message>
+            <sxm-ui-address-form-fields formControlName="billingAddress" [submitted]="submitted" #billingAddress> </sxm-ui-address-form-fields>
+            <div class="row">
+                <div class="column small-12">
+                    <div class="input-container" [class.invalid]="controlIsInvalid(f['ccName'])" [class.filled]="f['ccName'].value">
+                        <label for="cc-name">{{ translateKeyPrefix + ".NEW_CC.CC_NAME" | translate }}</label>
+                        <input
+                            type="text"
+                            id="cc-name"
+                            name="cc-name"
+                            formControlName="ccName"
+                            minlength="2"
+                            maxlength="100"
+                            data-e2e="CCNameOnCardTextfield"
+                            qatag="CCNameOnCardTextfield"
+                            onFocus
+                            required
+                            autocomplete="cc-name"
+                        />
+                    </div>
+                    <div *ngIf="controlIsInvalid(f['ccName'])" class="invalid-feedback">
+                        <ng-container *ngIf="f['ccName'].hasError('cvvExclusion'); else ccNameError">
+                            <p>{{ translateKeyPrefix + ".ERROR_CVV_FOUND" | translate }}</p>
+                        </ng-container>
+                        <ng-template #ccNameError>
+                            <p>{{ translateKeyPrefix + ".NEW_CC.ERROR_CC_NAME" | translate }}</p>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="maskedVisible === false" class="row">
+                <div class="column small-12">
+                    <div class="input-container" [class.invalid]="controlIsInvalid(f['ccNum'])">
+                        <label for="cc-number">{{ translateKeyPrefix + ".NEW_CC.CC_NUM" | translate }}</label>
+                        <input
+                            type="text"
+                            id="cc-number"
+                            name="cc-number"
+                            formControlName="ccNum"
+                            maxlength="19"
+                            data-e2e="CCCardNumberTextfield"
+                            qatag="CCCardNumberTextfield"
+                            onFocus
+                            [sxmCreditCardType]="{ cardNumber: f['ccNum'].value }"
+                            (cardEntryEvent)="checkGiftCardHandler($event)"
+                            required
+                            #ccNumRef
+                            autocomplete="cc-number"
+                        />
+                        <svg class="icon icon-content cc-icon icon-amex">
+                            <use class="" xlink:href="#icon-cc-amex"></use>
+                        </svg>
+                        <svg class="icon icon-content cc-icon icon-dci">
+                            <use class="" xlink:href="#icon-cc-dci"></use>
+                        </svg>
+                        <svg class="icon icon-content cc-icon icon-discover">
+                            <use class="" xlink:href="#icon-cc-discover"></use>
+                        </svg>
+                        <svg class="icon icon-content cc-icon icon-jcb">
+                            <use class="" xlink:href="#icon-cc-jcb"></use>
+                        </svg>
+                        <svg class="icon icon-content cc-icon icon-mc">
+                            <use class="" xlink:href="#icon-cc-mc"></use>
+                        </svg>
+                        <svg class="icon icon-content cc-icon icon-visa">
+                            <use class="" xlink:href="#icon-cc-visa"></use>
+                        </svg>
+                        <svg class="icon icon-content cc-icon icon-unionpay">
+                            <use class="" xlink:href="#icon-cc-unionpay"></use>
+                        </svg>
+                    </div>
+                    <div *ngIf="isGiftCardEntered" class="invalid-feedback">
+                        <p>{{ translateKeyPrefix + ".NEW_CC.ERROR_CC_NUM_FOUND_GC" | translate }}</p>
+                    </div>
+                    <div *ngIf="!isGiftCardEntered && controlIsInvalid(f['ccNum'])" class="invalid-feedback">
+                        <p>{{ translateKeyPrefix + ".NEW_CC.ERROR_CC_NUM" | translate }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="maskedVisible === true" class="row">
+                <div class="column small-12">
+                    <div class="input-container">
+                        <label for="cc-number">{{ translateKeyPrefix + ".NEW_CC.CC_NUM" | translate }}</label>
+                        <input
+                            type="text"
+                            class="ccNumMaskedInput"
+                            id="cc-number"
+                            name="cc-number"
+                            data-test="CCCardNumberTextfieldMasked"
+                            data-e2e="CCCardNumberTextfieldMasked"
+                            qatag="CCCardNumberTextfieldMasked"
+                            [value]="maskedNum"
+                            [sxmCreditCardType]="{ cardNumber: f['ccNum'].value }"
+                            (focus)="clearInput()"
+                            onFocus
+                            autocomplete="cc-number"
+                        />
+                        <svg class="icon icon-content cc-icon icon-amex">
+                            <use class="" xlink:href="#icon-cc-amex"></use>
+                        </svg>
+                        <svg class="icon icon-content cc-icon icon-dci">
+                            <use class="" xlink:href="#icon-cc-dci"></use>
+                        </svg>
+                        <svg class="icon icon-content cc-icon icon-discover">
+                            <use class="" xlink:href="#icon-cc-discover"></use>
+                        </svg>
+                        <svg class="icon icon-content cc-icon icon-jcb">
+                            <use class="" xlink:href="#icon-cc-jcb"></use>
+                        </svg>
+                        <svg class="icon icon-content cc-icon icon-mc">
+                            <use class="" xlink:href="#icon-cc-mc"></use>
+                        </svg>
+                        <svg class="icon icon-content cc-icon icon-visa">
+                            <use class="" xlink:href="#icon-cc-visa"></use>
+                        </svg>
+                        <svg class="icon icon-content cc-icon icon-unionpay">
+                            <use class="" xlink:href="#icon-cc-unionpay"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <ng-container *ngIf="settingsService.isCVVEnabled; else expirationDateFormInputTemplate">
+                    <div class="column small-6">
+                        <ng-template [ngTemplateOutlet]="expirationDateControlTemplate"></ng-template>
+                        <!-- This part is required to allocate empty space in case CVV has input error but Expiration Date has not -->
+                        <div
+                            *ngIf="controlIsInvalid(f['ccCVV']) && !(controlIsInvalid(f['ccExpDate']) || paymentForm.hasError('invalidDate'))"
+                            class="empty-invalid-feedback"
+                        ></div>
+                    </div>
+                    <div class="column small-6 no-padding">
+                        <div class="input-container" [class.invalid]="controlIsInvalid(f['ccCVV'])" [class.filled]="f['ccCVV'].value">
+                            <label for="cc-csc">{{ translateKeyPrefix + ".NEW_CC.CC_CVV" | translate }}</label>
+                            <input
+                                type="password"
+                                formControlName="ccCVV"
+                                id="cc-csc"
+                                name="cc-csc"
+                                minlength="3"
+                                maxlength="4"
+                                data-e2e="ccCVV"
+                                qatag="ccCVV"
+                                onFocus
+                                required
+                                #cvvInput
+                                autocomplete="cc-csc"
+                            />
+                        </div>
+                        <sxm-ui-tooltip>
+                            <p>{{ translateKeyPrefix + ".CC_SELECT.TOOLTIP_MESSAGE_1" | translate }}</p>
+                            <p>{{ translateKeyPrefix + ".CC_SELECT.TOOLTIP_MESSAGE_2" | translate }}</p>
+                        </sxm-ui-tooltip>
+                        <div *ngIf="controlIsInvalid(f['ccCVV'])" class="invalid-feedback">
+                            <p>{{ translateKeyPrefix + ".NEW_CC.ERROR_CC_CVV" | translate }}</p>
+                        </div>
+                        <!-- This part is required to allocate empty space in case Expiration Date has input error but CVV has not -->
+                        <div
+                            *ngIf="!controlIsInvalid(f['ccCVV']) && (controlIsInvalid(f['ccExpDate']) || paymentForm.hasError('invalidDate'))"
+                            class="empty-invalid-feedback"
+                        ></div>
+                    </div>
+                </ng-container>
+                <ng-template #expirationDateFormInputTemplate>
+                    <div class="column small-12">
+                        <ng-template [ngTemplateOutlet]="expirationDateControlTemplate"></ng-template>
+                    </div>
+                </ng-template>
+                <ng-template #expirationDateControlTemplate>
+                    <div class="input-container" [class.invalid]="controlIsInvalid(f['ccExpDate']) || paymentForm.hasError('invalidDate')">
+                        <label for="cc-exp">{{
+                            (settingsService.isCVVEnabled ? translateKeyPrefix + ".NEW_CC.CC_EXP_DATE_INLINE" : translateKeyPrefix + ".NEW_CC.CC_EXP_DATE") | translate
+                        }}</label>
+                        <input
+                            appMaskExpirationDate
+                            type="text"
+                            id="cc-exp"
+                            name="cc-exp"
+                            formControlName="ccExpDate"
+                            minlength="5"
+                            maxlength="5"
+                            data-e2e="ccExpDateOnCardTextfield"
+                            qatag="ccExpDateOnCardTextfield"
+                            onFocus
+                            required
+                            autocomplete="cc-exp"
+                        />
+                    </div>
+                    <div *ngIf="controlIsInvalid(f['ccExpDate']) || paymentForm.hasError('invalidDate')" class="invalid-feedback">
+                        <p>{{ translateKeyPrefix + ".NEW_CC.ERROR_CC_EXP_INVALID" | translate }}</p>
+                    </div>
+                </ng-template>
+            </div>
+            <ng-container *ngIf="accountData.isNewAccount">
+                <div class="checkbox-item service-address-same">
+                    <input
+                        [checked]="!showServiceAddressForm"
+                        (change)="onServiceAddressIsSameClick($event.target.checked)"
+                        class="checkbox"
+                        type="checkbox"
+                        id="serviceAddressSame"
+                        attr.qatag="serviceAddressSame"
+                    />
+                    <label class="input-label" for="serviceAddressSame" attr.qatag="serviceAddressSame">{{
+                        translateKeyPrefix + ".ADDRESS.SERVICE_ADDRESS_LABEL" | translate
+                    }}</label>
+                </div>
+                <div [class.not-visible]="!showServiceAddressForm">
+                    <p class="text-color-grey-dark service-address-title" qatag="ServiceAddressSubheader">
+                        <strong>{{ translateKeyPrefix + ".ADDRESS.SERVICE_ADDRESS" | translate }}</strong>
+                    </p>
+                    <invalid-address-message *ngIf="showInvalidServiceAddressError" addressType="Service"></invalid-address-message>
+                    <sxm-ui-address-form-fields formControlName="serviceAddress" [submitted]="submitted" #serviceAddress></sxm-ui-address-form-fields>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</form>
+
+<ng-container *ngIf="avsWorkflowState$ | async as avsWorkflowState">
+    <sxm-ui-modal [closed]="false" *ngIf="avsWorkflowState.currentWorkflow === 'BILLING_ADDRESS_MODAL'" data-e2e="paymentInfo.billingAddressModal" [ariaDescribedbyTextId]="paymentInvoiceBillingAddressModalAriaDescribedbyTextId">
+        <verify-address
+            [ariaDescribedbyTextId]="paymentInvoiceBillingAddressModalAriaDescribedbyTextId"
+            [data]="{
+                headingText: translateKeyPrefix + '.ADDRESS.CONFIRM_YOUR_BILLING_ADDRESS' | translate,
+                correctedAddresses: avsWorkflowState.correctedAddresses,
+                currentAddress: avsWorkflowState.currentAddress,
+                addressCorrectionAction: avsWorkflowState.addressCorrectionAction
+            }"
+            (editAddress)="onAcceptCorrectedAddress($event, avsWorkflowState.validated, avsWorkflowState.currentWorkflow)"
+            (editExisting)="onEditExistingAddress(avsWorkflowState.currentWorkflow)"
+        ></verify-address>
+    </sxm-ui-modal>
+    <sxm-ui-modal [closed]="false" *ngIf="avsWorkflowState.currentWorkflow === 'SERVICE_ADDRESS_MODAL'" [ariaDescribedbyTextId]="paymentInvoiceServiceAddressModalAriaDescribedbyTextId">
+        <verify-address
+            [ariaDescribedbyTextId]="paymentInvoiceServiceAddressModalAriaDescribedbyTextId"
+            [data]="{
+                headingText: translateKeyPrefix + '.ADDRESS.CONFIRM_YOUR_SERVICE_ADDRESS' | translate,
+                correctedAddresses: avsWorkflowState.correctedAddresses,
+                currentAddress: avsWorkflowState.currentAddress,
+                addressCorrectionAction: avsWorkflowState.addressCorrectionAction
+            }"
+            (editAddress)="onAcceptCorrectedAddress($event, avsWorkflowState.validated, avsWorkflowState.currentWorkflow)"
+            (editExisting)="onEditExistingAddress(avsWorkflowState.currentWorkflow)"
+        ></verify-address>
+    </sxm-ui-modal>
+</ng-container>
+<prepaid-redeem-ui *ngIf="isGiftCardAllowed" #prepaidRedeemRef qatag="RedeemPrepaidCardLink"></prepaid-redeem-ui>
+<form *ngIf="displayLoginInfoForm && isStreaming" [formGroup]="loginInfoForm">
+    <p class="text-color-grey-dark payment-info-title" qatag="PaymentInfoSubheader">
+        <strong>{{ translateKeyPrefix + ".LOGIN_INFO_SUBHEADER" | translate }}</strong>
+    </p>
+    <p *ngIf="settingsService.isCanadaMode" class="message">
+        {{ translateKeyPrefix + ".CREATE_LOGIN" | translate }}
+    </p>
+    <div class="row no-padding">
+        <div class="column small-12 no-padding">
+            <div class="input-container" [class.invalid]="emailControlInvalid(loginInfoForm.get('email'))" [class.filled]="loginInfoForm.get('email').value">
+                <label for="{{ emailElementId }}">{{ translateKeyPrefix + ".EMAIL.LABEL" | translate }}</label>
+                <input
+                    type="email"
+                    appTrimFormField
+                    formControlName="email"
+                    id="{{ emailElementId }}"
+                    data-e2e="CreateLoginEmailTextfield"
+                    qatag="FlepzEmailTextfield"
+                    onFocus
+                    maxlength="250"
+                />
+            </div>
+            <div *ngIf="emailControlInvalid(loginInfoForm.controls.email)" class="invalid-feedback">
+                <ng-container *ngIf="loginInfoForm.controls.email?.hasError('cvvExclusion'); else userNameError">
+                    <p>{{ translateKeyPrefix + ".EMAIL.CVV_EXCLUDE" | translate }}</p>
+                </ng-container>
+                <ng-template #userNameError>
+                    <ng-container *ngIf="loginInfoForm.controls.email?.hasError('usernameInUse'); else emailError">
+                        <p>{{ translateKeyPrefix + ".EMAIL.ALREADY_IN_USE_ERROR" | translate }}</p>
+                    </ng-container>
+                </ng-template>
+                <ng-template #emailError>
+                    <p>{{ translateKeyPrefix + ".EMAIL.INVALID_ERROR" | translate }}</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+    <sxm-ui-password-strength
+        formControlName="password"
+        [labelText]="translateKeyPrefix + '.PASSWORD.LABEL' | translate"
+        id="{{ passwordElementId }}"
+        [reservedWords]="reservedWords"
+        [alwaysDisplayPasswordHint]="alwaysDisplayPasswordHint"
+        [class.invalid]="loginInfoForm.controls.password | formControlInvalid: paymentFormSubmitted"
+        #passwordComponentRef
+    ></sxm-ui-password-strength>
+    <div *ngIf="loginInfoForm.controls.password | formControlInvalid: paymentFormSubmitted" class="invalid-feedback">
+        <p *ngIf="loginInfoForm.controls.password.hasError('required')">
+            {{ translateKeyPrefix + ".PASSWORD.ERRORS.REQUIRED" | translate }}
+        </p>
+        <p *ngIf="loginInfoForm.controls.password.hasError('length')">
+            {{ translateKeyPrefix + ".PASSWORD.ERRORS.LENGTH" | translate: loginInfoForm.controls.password.errors.length }}
+        </p>
+        <p *ngIf="loginInfoForm.controls.password.hasError('policy')">
+            {{ translateKeyPrefix + ".PASSWORD.ERRORS.POLICY" | translate }}
+        </p>
+        <p *ngIf="loginInfoForm.controls.password.hasError('generic')">
+            {{ translateKeyPrefix + ".PASSWORD.ERRORS.GENERIC" | translate }}
+        </p>
+        <p *ngIf="loginInfoForm.controls.password.errors?.reservedWords as reservedWordsError">
+            {{
+                translateKeyPrefix + ".PASSWORD.ERRORS.RESERVED_WORDS"
+                    | translate
+                        : {
+                              pluralWord: reservedWordsError.words.length | i18nPlural: (translateKeyPrefix + ".PLURAL_MAP.WORD" | translate),
+                              reservedWords: reservedWordsError.words.join(", ")
+                          }
+            }}
+        </p>
+    </div>
+</form>
+<a class="text-link" href="{{ translateKeyPrefix + '.PRIVACY_POLICY.LINK_URL' | translate }}" target="_blank" data-track-click="Privacy Policy">{{
+    translateKeyPrefix + ".PRIVACY_POLICY.LINK_TEXT" | translate
+}}</a>
+<div class="row align-center">
+    <button
+        class="button primary full-width text-center align-justify"
+        data-e2e="PaymentConfirmationButton"
+        qatag="PaymentConfirmation"
+        [class.loading]="loading"
+        [disabled]="loading"
+        type="submit"
+        (click)="paymentFormContinue()"
+        (mouseenter)="mouseEnterOnContinueButton()"
+        (mouseleave)="mouseLeaveOnContinueButton()"
+        loading-button-trigger
+        data-track-click="Payment Continue"
+        #paymentFormContinueRef
+    >
+        <ng-container *ngIf="!loading">
+            {{ translateKeyPrefix + ".CONTINUE_BUTTON" | translate }}
+        </ng-container>
+        <span></span><span></span><span></span>
+    </button>
+</div>

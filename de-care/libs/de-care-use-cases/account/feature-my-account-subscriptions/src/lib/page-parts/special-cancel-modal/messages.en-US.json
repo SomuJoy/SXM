@@ -1,0 +1,10 @@
+{
+    "TITLE": "Account Alert",
+    "ACCOUNT_PAST_DUE": "Your account is past due.",
+    "TO_PROCEED": "To proceed, you have two options:",
+    "CHAT_WITH_AGENT": "Chat with an agent",
+    "HELP_CANCEL": " who can help you cancel your subscription.",
+    "PAY_THE_BALANCE": "Pay the balance",
+    "DUE_ON_YOUR_ACCOUNT": " due on your account. Then resume cancelling your plan online.",
+    "UP_ON_CANCELLATION": "Upon cancellation, we will automatically refund you for any prepaid service."
+}

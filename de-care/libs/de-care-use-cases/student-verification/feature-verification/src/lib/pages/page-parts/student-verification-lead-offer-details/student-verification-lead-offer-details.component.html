@@ -1,0 +1,25 @@
+<main
+    class="high-level-info background-offwhite"
+    [ngClass]="{
+        'theme-non-retail': offerDescriptionData?.theme === 'Theme2',
+        'presentation-no-icons-single-detail-visible': offerDescriptionData?.presentation === 'Presentation3',
+        'presentation-visible-details': offerDescriptionData?.presentation === 'Presentation4'
+    }"
+>
+    <!-- zone 2 start -->
+    <section class="no-padding-bottom no-padding-top">
+        <!-- package summary : begin -->
+        <div class="content-container">
+            <div class="row align-center no-padding-small">
+                <!-- TODO: refactor this column nest to use offsets once the legacy package card is removed below (ie. CMS data is exclusively used)-->
+                <div class="column small-12 medium-2 no-padding background-white"></div>
+                <div class="column small-12 medium-6 no-padding-medium background-white">
+                    <div class="hero-sales--plan-card background-white" [class.box-shadow]="isLegacyMode" [class.legacy-package-card]="!offerDescriptionData">
+                        <sxm-ui-primary-package-card [chevronClickTrackingText]="chevronClickTrackingText" [packageData]="offerDescriptionData"></sxm-ui-primary-package-card>
+                    </div>
+                </div>
+                <div class="column small-12 medium-2 no-padding background-white"></div>
+            </div>
+        </div>
+    </section>
+</main>

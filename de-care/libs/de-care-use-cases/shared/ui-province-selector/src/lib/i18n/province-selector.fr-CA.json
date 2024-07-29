@@ -1,0 +1,9 @@
+{
+    "DeCareUseCasesSharedUiProvinceSelectorModule": {
+        "ProvinceSelectorComponent": {
+            "HEADER_TITLE": "Confirmez votre province",
+            "PRICING_VARY": "La tarification peut varier selon la province.",
+            "SUBMIT_BUTTON": "Sauvegarder les paramètres"
+        }
+    }
+}

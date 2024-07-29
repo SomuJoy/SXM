@@ -1,0 +1,47 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "offers": [
+            {
+                "planCode": "Select Add-on - 1mo|Promo $0/mo Select Upgrade for 3mos - Monthly",
+                "packageName": "SIR_CAN_EVT_ADDON",
+                "packageUpgrade": null,
+                "promoCode": "MAEUPGRADE",
+                "termLength": 3,
+                "type": "UPGRADE",
+                "marketType": "self-pay:promo",
+                "price": 0,
+                "pricePerMonth": 0.0,
+                "retailPrice": 0.0,
+                "packageUpgradePrice": null,
+                "msrpPrice": 0.0,
+                "processingFee": null,
+                "supportedServices": ["ESN", "UNIVERSAL_LOGIN"],
+                "deal": null,
+                "priceChangeMessagingType": "",
+                "planEndDate": null,
+                "minimumFollowOnTerm": 0,
+                "order": null,
+                "bundledSavingPrice": null,
+                "bundleSubPackageNames": null,
+                "parentPackageName": "",
+                "fallbackReason": "",
+                "capability": ["AUD", "IPAUD"],
+                "mrdEligible": false,
+                "invoiceEligible": false,
+                "advantage": false,
+                "student": false,
+                "fallback": false,
+                "streaming": false,
+                "upgradeOffer": false,
+                "bestPackage": false,
+                "leadOffer": false,
+                "dataCapable": false,
+                "bundled": null
+            }
+        ],
+        "presentment": null
+    }
+}

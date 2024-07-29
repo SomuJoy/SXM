@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "lib": ["es5", "dom"],
+        "types": ["cypress", "node"],
+        "target": "es5",
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "downlevelIteration": true,
+        "resolveJsonModule": true,
+        "paths": {
+            "@de-care/shared/e2e": ["../../libs/shared/e2e/src/index-triage.ts"]
+        }
+    },
+    "files": [],
+    "include": ["src/**/*.ts", "src/**/*.js"],
+    "references": [
+        {
+            "path": "./tsconfig.e2e.json"
+        }
+    ]
+}

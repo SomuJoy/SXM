@@ -1,0 +1,10 @@
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    @include page-content-legacy-markup(1fr);
+    height: 100%;
+}
+
+h5 {
+    margin-top: 34px;
+}

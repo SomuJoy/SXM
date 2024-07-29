@@ -1,0 +1,116 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "libs/sxm-assets/scss/ui_reset.scss";
+
+:host {
+    font-family: $font-standard;
+
+    .grid-container {
+        display: grid;
+        width: 100%;
+        margin-bottom: 8px;
+        grid-template-columns: 1fr 40px;
+        grid-template-rows: auto;
+        column-gap: 50px;
+        align-items: center;
+
+        .nickname-info {
+            @include get-header-style(h4);
+            color: $black;
+            margin-bottom: 4px;
+        }
+
+        .edit-radio-nickname {
+            color: $blue-secondary;
+            border: 0;
+            @include font-size(12px);
+            @include underline(default);
+        }
+
+        .icon-division {
+            justify-self: center;
+            display: inline-flex;
+
+            svg.icon {
+                margin-bottom: 0;
+                @include icon-size(40px);
+                align-self: start;
+
+                use {
+                    stroke: $black;
+                }
+            }
+        }
+
+        .show-mobile-medium-up {
+            display: none;
+
+            @include bp(mobile-medium) {
+                display: block;
+            }
+        }
+    }
+
+    .button-container {
+        padding: 0;
+        text-align: left;
+        width: 100%;
+        margin-bottom: 4px;
+        @include bp(medium) {
+            margin-bottom: 12px;
+        }
+
+        .back-button {
+            padding: 0;
+            color: $black;
+            @include font-size(12px);
+            font-weight: calculate-font-weight("bold");
+            letter-spacing: 1px;
+            border: none;
+
+            div {
+                align-items: center;
+                display: flex;
+            }
+
+            .back-label {
+                padding-left: 4px;
+            }
+
+            svg {
+                height: 26px;
+                width: 26px;
+
+                use {
+                    stroke: $blue-secondary;
+                    stroke-width: 2;
+                }
+            }
+        }
+    }
+}
+
+.tool-tip-grid {
+    display: inline-grid;
+    grid-template-columns: min-content 24px;
+    align-items: center;
+    column-gap: 4px;
+    p {
+        white-space: nowrap;
+    }
+    sxm-ui-tooltip {
+        ::ng-deep {
+            @include font-size(12px);
+            p {
+                margin-bottom: 12px;
+            }
+            ul {
+                margin: 0;
+                padding-left: 20px;
+                li {
+                    margin-bottom: 4px;
+                }
+            }
+        }
+    }
+}

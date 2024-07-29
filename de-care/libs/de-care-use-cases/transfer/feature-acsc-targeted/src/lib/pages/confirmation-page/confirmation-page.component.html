@@ -1,0 +1,122 @@
+<main class="background-offwhite" *ngIf="confirmationData$ | async as confirmationData">
+    <div class="content-container">
+        <div class="row align-center no-padding-small">
+            <div class="column medium-2 no-padding background-white raised"></div>
+            <div class="column small-12 medium-6 background-white no-padding-small raised">
+                <div class="confirmation-content background-white">
+                    <svg class="icon large checkmark-circle">
+                        <use class="icon-check-mark-flex-stroke" xlink:href="#icon-check-mark-flex-stroke"></use>
+                    </svg>
+                    <h4 data-e2e="confirmationHeadline">{{ translateKeyPrefix + "HEADLINE" | translate }}</h4>
+                    <p class="vertical-spacing" data-e2e="confirmationEmail">
+                        {{ translateKeyPrefix + "CONFIRMATION_EMAIL" | translate: { email: confirmationData.registerData.account.email } }}<br />
+                        <a class="text-link no-print" (click)="onPrintClick()" data-track-click="Print summary" data-e2e="confirmationPrintSummary">{{
+                            translateKeyPrefix + "PRINT_LINK_LABEL" | translate
+                        }}</a>
+                    </p>
+                    <div class="vehicle-subscription-information vertical-spacing">
+                        <div class="vertical-spacing">
+                            <sxm-ui-vehicle-with-subscription-info
+                                [data]="subscriptionData$ | async"
+                                [eyebrow]="translateKeyPrefix + 'SUBSCRIPTION_EYEBROW' | translate"
+                                [displayPackageNameAsTitle]="true"
+                                data-e2e="newSubscriptionInfo"
+                            ></sxm-ui-vehicle-with-subscription-info>
+                        </div>
+                        <ng-container *ngIf="getIsModeServiceContinuity$ | async">
+                            <sxm-ui-accordion-chevron
+                                [collapsedText]="translateKeyPrefix + 'VIEW_DETAILS_COLLAPSED' | translate"
+                                [expandedText]="translateKeyPrefix + 'VIEW_DETAILS_EXPANDED' | translate"
+                                class="vertical-spacing highlight-label"
+                                data-track-click="SC Review Show details"
+                            >
+                                <div class="vertical-spacing">
+                                    <sxm-ui-vehicle-with-subscription-info
+                                        [data]="transferFromData$ | async"
+                                        [eyebrow]="translateKeyPrefix + 'TRANSFER_EYEBROW' | translate"
+                                        [footer]="(getRemoveOldRadioId$ | async) ? (translateKeyPrefix + 'CAR_REMOVED' | translate) : null"
+                                        data-e2e="transferSubscriptionInfo"
+                                    ></sxm-ui-vehicle-with-subscription-info>
+                                </div>
+                            </sxm-ui-accordion-chevron>
+                        </ng-container>
+                    </div>
+                    <hr class="vertical-spacing" />
+
+                    <feature-toggle-provider [features]="enableQuoteSummaryFeatureToggle$ | async">
+                        <ng-container *featureToggle="'enableQuoteSummary'">
+                            <quote-summary
+                                [showUnusedCreditLine]="true"
+                                [giftCardUsed]="false"
+                                [isNewAccount]="false"
+                                [isClosedRadio]="confirmationData.isClosedRadio"
+                                [isChangeSubscription]="true"
+                                [isCurrentSubscriptionTrial]="confirmationData.planIsTrial"
+                                [quote]="confirmationData.quotes"
+                                data-e2e="quoteSummary"
+                                [extraData]="{
+                                    isAcsc: true
+                                }"
+                            ></quote-summary>
+                        </ng-container>
+
+                        <ng-container *featureToggle="'!enableQuoteSummary'">
+                            <order-summary
+                                [showUnusedCreditLine]="true"
+                                [giftCardUsed]="false"
+                                [isNewAccount]="false"
+                                [isClosedRadio]="confirmationData.isClosedRadio"
+                                [isChangeSubscription]="true"
+                                [isCurrentSubscriptionTrial]="confirmationData.planIsTrial"
+                                [quote]="confirmationData.quotes"
+                            ></order-summary>
+                        </ng-container>
+                    </feature-toggle-provider>
+                    <div class="vertical-spacing no-print">
+                        <listen-now
+                            [infoForToken]="{ subscriptionId: confirmationData.selectedSubscriptionIDForSAL }"
+                            [customLink]="translateKeyPrefix + 'STREAMING_PLAYER_LINK' | translate"
+                            data-e2e="listenNow"
+                        ></listen-now>
+                    </div>
+                    <div *ngIf="confirmationData.isEligibleForRegistration" class="vertical-spacing no-print">
+                        <register-your-account
+                            [credentialState]="registerCredentialState"
+                            [account]="confirmationData.registerData?.account"
+                            [securityQuestions]="confirmationData.registerData?.securityQuestions"
+                            [registrationCompleted]="registrationCompleted"
+                            [passwordError]="passwordError"
+                            (register)="onRegisterAccount($event)"
+                            data-e2e="registerAccount"
+                        ></register-your-account>
+                    </div>
+                    <sxm-ui-ready-to-explore-wrapper
+                        [headerText]="translateKeyPrefix + 'READY_TO_EXPLORE' | translate"
+                        [listOfLinks]="translateKeyPrefix + 'READY_TO_EXPLORE_LINKS' | translate"
+                        [streamingLinkText]="translateKeyPrefix + 'STREAMING_LINK_TEXT' | translate"
+                        [streamingLinkUrl]="translateKeyPrefix + 'STREAMING_PLAYER_LINK' | translate"
+                        [subscriptionID]="confirmationData.selectedSubscriptionIDForSAL"
+                        class="no-print"
+                        data-e2e="readyToExplore"
+                    ></sxm-ui-ready-to-explore-wrapper>
+                    <button *ngIf="getIsLoggedIn$ | async" type="button" data-e2e="acscConfirmation.goToMyAccountCallToAction" sxm-proceed-button (click)="onGoToMyAccount()">
+                        {{ translateKeyPrefix + "GO_TO_MY_ACCOUNT_BUTTON" | translate }}
+                    </button>
+                </div>
+            </div>
+            <div class="column medium-2 no-padding background-white"></div>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="row align-center">
+            <div class="column small-12 medium-10 no-padding-medium">
+                <div class="important-info-container">
+                    <p class="legal-copy" data-e2e="confirmation-important-info">
+                        <strong>{{ translateKeyPrefix + "LEGAL_COPY_TITLE" | translate }}</strong>
+                    </p>
+                    <p class="legal-copy" [innerHTML]="translateKeyPrefix + 'LEGAL_COPY' | translate"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

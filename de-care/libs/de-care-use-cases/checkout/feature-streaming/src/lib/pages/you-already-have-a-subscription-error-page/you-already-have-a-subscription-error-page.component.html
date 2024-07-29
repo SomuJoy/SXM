@@ -1,0 +1,12 @@
+<section id="header">
+    <h2>{{ translateKeyPrefix + ".ALREADY_HAVE_A_SUBSCRIPTION" | translate }}</h2>
+</section>
+<section id="help">
+    <div class="box">
+        <strong class="body">{{ translateKeyPrefix + ".BODY" | translate }}</strong>
+        <p *ngrxLet="currentUserViewModel$ as userInfo">
+            {{ userInfo?.maskedUserNameFromToken }}
+        </p>
+        <a class="button primary button-link full-width" [href]="translateKeyPrefix + '.LINK' | translate">{{ translateKeyPrefix + ".LOG_INTO_ACCOUNT" | translate }}</a>
+    </div>
+</section>

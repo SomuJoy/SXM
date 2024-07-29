@@ -1,0 +1,25 @@
+<sxm-ui-billing-header
+    [title]="
+        translateKeyPrefix +
+            (data?.daysDue === 0 ? '.YOUR_AUTOMATED_PAYMENT_WILL_BE_CHARGED_TODAY' : data?.daysDue === null ? '.YOUR_AUTOMATED_PAYMENT_WILL_BE_CHARGED_NO_DATE' : '.HEADER')
+            | translate
+                : {
+                      daysDue: data?.daysDue,
+                      daysPlural: data?.daysDue | i18nPlural: (translateKeyPrefix + '.PLURAL_MAP.DAYS' | translate)
+                  }
+    "
+></sxm-ui-billing-header>
+
+<div class="billing-amount-and-date">
+    <sxm-ui-billing-amount-and-date [data]="data"></sxm-ui-billing-amount-and-date>
+</div>
+
+<button
+    *ngIf="allowPaymentUpdate"
+    sxm-proceed-button
+    class="btn btn-primary btn-make-payment"
+    sxmUiDataClickTrack="exit"
+    data-link-key="BillingWithAutomatedPayment"
+    (click)="makePayment.emit()"
+    [innerHTML]="translateKeyPrefix + '.UPDATE_PAYMENT' | translate"
+></button>

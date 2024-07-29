@@ -1,0 +1,73 @@
+<main de-care-page-main>
+    <h1 class="mb-24">{{ translateKeyPrefix + "TITLE" | translate }}</h1>
+    <div class="mb-24">
+        <sxm-ui-vehicle-with-subscription-info
+            [data]="transferFromData$ | async"
+            [eyebrow]="translateKeyPrefix + 'TRANSFER_EYEBROW' | translate"
+            data-e2e="transferSubscriptionInfo"
+        ></sxm-ui-vehicle-with-subscription-info>
+    </div>
+    <div class="mb-24">
+        <sxm-ui-accordion-chevron
+            [collapsedText]="translateKeyPrefix + 'VIEW_DETAILS_COLLAPSED' | translate"
+            [expandedText]="translateKeyPrefix + 'VIEW_DETAILS_EXPANDED' | translate"
+            class="mb-24 highlight-label"
+            data-track-click="Swap flow show or hide details"
+        >
+            <div class="mb-24">
+                <sxm-ui-vehicle-with-subscription-info
+                    [data]="newRadioInfo$ | async"
+                    [eyebrow]="translateKeyPrefix + 'NEW_RADIO_EYEBROW' | translate"
+                    data-e2e="newRadioSubscriptionInfo"
+                ></sxm-ui-vehicle-with-subscription-info>
+            </div>
+            <div *ngIf="showPlatformChange$ | async">
+                <sxm-ui-platform-change-message [data]="platformChangeData$ | async" class="mb-24"></sxm-ui-platform-change-message>
+            </div>
+        </sxm-ui-accordion-chevron>
+    </div>
+    <hr class="mb-24" />
+    <ng-container *ngIf="showQuoteAndPayment$ | async; else justContinueButton">
+        <div class="mb-24">
+            <ng-container *ngIf="quoteData$ | async as quoteData">
+                <!-- TODO: consider making this block with the content cards into a component -->
+                <sxm-ui-content-card [headlinePresent]="true" data-e2e="quoteSummary">
+                    <div htmlContentForHead>
+                        <p class="large-copy bold">{{ translateKeyPrefix + "QUOTE_SUMMARY.CARD_HEAD" | translate }}</p>
+                    </div>
+                    <div htmlContentForBody>
+                        <sxm-ui-quote-summary [quoteData]="quoteData"></sxm-ui-quote-summary>
+                    </div>
+                </sxm-ui-content-card>
+                <sxm-ui-content-card
+                    *ngIf="quoteData.currentCharges.creditRemainingOnAccount as creditOnAccount"
+                    [headlinePresent]="false"
+                    data-e2e="quoteSummaryCreditRemainingOnAccount"
+                >
+                    <div htmlContentForBody>
+                        <sxm-ui-standalone-line-item [lineItem]="creditOnAccount"></sxm-ui-standalone-line-item>
+                    </div>
+                </sxm-ui-content-card>
+                <ul *ngIf="showGST$ | async" class="undecorated-list">
+                    <li data-e2e="quoteGST">{{ translateKeyPrefix + "GST" | translate }}</li>
+                    <li data-e2e="quoteQST" *ngIf="showQST$ | async">{{ translateKeyPrefix + "QST" | translate }}</li>
+                </ul>
+            </ng-container>
+        </div>
+        <billing-info-form
+            *ngIf="selectAccount$ | async as accountData"
+            [accountData]="accountData"
+            (paymentFormCompleted)="onPaymentFormComplete($event)"
+            [hasChargeAgreement]="true"
+            [isPrepaidAllowed]="false"
+            [loading]="submitTransactionAsProcessing$ | async"
+            [formButtonTextCopy]="translateKeyPrefix + 'COMPLETE_MY_ORDER' | translate"
+            [serviceError]="serviceError"
+        ></billing-info-form>
+    </ng-container>
+    <ng-template #justContinueButton>
+        <button sxm-proceed-button [loading]="submitTransactionAsProcessing$ | async" data-e2e="swapCompleteOrderButton" (click)="onSubmitTransaction()">
+            {{ translateKeyPrefix + "COMPLETE_MY_ORDER" | translate }}
+        </button>
+    </ng-template>
+</main>

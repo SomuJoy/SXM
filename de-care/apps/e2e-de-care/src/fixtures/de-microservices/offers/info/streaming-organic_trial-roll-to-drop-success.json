@@ -1,0 +1,51 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "locales": [
+            {
+                "locale": "en_US",
+                "offerInfos": [
+                    {
+                        "planCode": "Trial - Premier Streaming - 3mo - $0.00 - (RTD)",
+                        "salesHero": { "title": "Start streaming today", "subTitle": null, "presentation": null },
+                        "offerDescription": {
+                            "priceAndTermDescTitle": "<span data-duration=\"\">3 months Free</span>",
+                            "processingFeeDisclaimer": "New subscribers only. Cancel online anytime. See <strong>Offer Details</strong> below.",
+                            "packageName": "SiriusXM Streaming Platinum",
+                            "listeningOptions": ["Streaming", "Pandora"],
+                            "longDescription": null,
+                            "highlightsTitle": null,
+                            "highlightsText": [
+                                "<b>Ad-free music</b> for every genre & decade plus artist-created channels",
+                                "<b>Original talk,</b> exclusive comedy, news from every angle",
+                                "<b>NFL, MLB®, NBA, NHL®, and NCAA® play-by-play,</b> NASCAR®, plus the biggest names in sports talk",
+                                "<b>2 Howard Stern channels,</b> including video",
+                                "<b>Create Pandora stations</b> based on artists",
+                                "<b>SiriusXM video library</b> of in-studio shows & performances",
+                                "<b>Popular podcast series SXM originals,</b> plus access to Stitcher Premium"
+                            ],
+                            "footer": "<strong id=\"docs-internal-guid-84d0c726-7fff-f9ef-892d-454117196eca\">The ultimate in entertainment. </strong>Expertly curated ad-free music, Pandora stations, sports play-by-play, celebrity-hosted talk, Howard Stern &amp; more.&nbsp;<a href=\"http://siriusxm.com/channels?package=SIR_IP_SA\">View Channel Lineup</a>",
+                            "packageFeatures": [{ "packageName": "SiriusXM Streaming Platinum", "features": [] }],
+                            "showToggleLabel": "Explore plan details",
+                            "hideToggleLabel": "Hide",
+                            "recapDescription": "<strong>SiriusXM Streaming Platinum (425+ Channels)</strong><br />\r\n3 Months for Free.",
+                            "recapLongDescription": "<strong>SiriusXM Streaming Platinum (425+ Channels)</strong><br />\r\n3 Months for Free."
+                        },
+                        "deals": null,
+                        "addonHeaderOverride": null,
+                        "offerDetails": "<p><strong>OFFER DETAILS: </strong>Your SiriusXM service will automatically stop at the end of the stated trial subscription term unless you decide to subscribe. If you decide to continue service, the paid subscription plan you choose will automatically renew and you will be charged the rate in effect at that time according to your chosen payment method. Fees and taxes apply. <strong>Please see our <a href=\"https://www.siriusxm.com/customeragreement\" target=\"_blank\">Customer Agreement</a> and <a href=\"http://siriusxm.com/privacy-policy\" target=\"_blank\">Privacy Policy</a> at www.siriusxm.com for complete terms and how to cancel, which includes online methods or calling us at 1-866-635-2349.</strong> By registering for a trial subscription, SiriusXM may contact you at the registration information provided with special offers from time to time. You may always change your contact preferences with us. All fees, content and features are subject to change. This offer cannot be combined with any other and may be modified or terminated at any time. Offer available to new subscribers providing valid contact information. Channel lineup varies by plan.</p>\r\n",
+                        "presentation": { "theme": "Theme2", "style": "Presentation3" },
+                        "numberOfBullets": null,
+                        "paymentInterstitialBullets": [
+                            "Cancel online anytime",
+                            "Ad-free music plus original talk, news, comedy, and sports",
+                            "Stream the SXM App on your devices and listen in your car with your phone"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

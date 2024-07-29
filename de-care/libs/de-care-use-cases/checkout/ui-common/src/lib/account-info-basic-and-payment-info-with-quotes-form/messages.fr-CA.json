@@ -1,0 +1,10 @@
+{
+    "BILLING_DETAILS_TITLE": "Détails de la facturation",
+    "PAYMENT_DETAILS_TITLE": "Infos de paiement",
+    "CONFIRM_YOUR_ADDRESS": "Veuillez confirmer votre adresse",
+    "CONTINUE_BUTTON_TEXT": "Revoir Ma Commande",
+    "PROVIDE_PAYMENT_INFO": "Fournir des informations de paiement pour calculer les frais et les taxes",
+    "CREDIT_CARD_PROCESSING_ERROR": "Nous sommes dans l'impossibilité d'autoriser votre carte de crédit. Veuillez mettre à jour vos renseignements de paiement.",
+    "UNEXPECTED_ERROR": "Une erreur inattendue est apparue. Veuillez réessayer.",
+    "ENTER_A_CAPTCHA_TO_FINISH": "Veuillez entrer le CAPTCHA pour terminer"
+}

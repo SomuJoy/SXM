@@ -1,0 +1,163 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    height: auto;
+    width: 100%;
+    padding: 24px;
+    color: $white;
+    text-align: center;
+    background: linear-gradient(90deg, rgb(0, 33, 54), rgba(255, 0, 255, 0) 100%), linear-gradient(215deg, rgba(35, 54, 155, 1), rgba(255, 255, 255, 0) 100%),
+        linear-gradient(315deg, rgb(203, 57, 52), rgba(255, 0, 255, 0) 100%), linear-gradient(90deg, rgb(2, 79, 127), rgba(255, 0, 0, 0) 90%);
+    @include bp(mobile-medium) {
+        padding: 32px;
+    }
+    ::ng-deep {
+        a {
+            color: $white;
+            @include underline(default);
+            @include bp(mobile-medium) {
+                @include underline(2px);
+            }
+            &[href^="tel:"] {
+                @include bp(medium) {
+                    @include underline(none);
+                }
+            }
+        }
+    }
+    h4 {
+        @include get-header-style(h5);
+        margin-bottom: 12px;
+        @include bp(medium) {
+            margin-bottom: 8px;
+        }
+    }
+    .subtitle {
+        @include font-size(12px);
+        @include bp(mobile-medium) {
+            @include font-size(14px);
+        }
+        @include bp(medium) {
+            width: 288px;
+        }
+    }
+    button {
+        height: auto;
+        width: auto;
+        min-width: 204px;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        color: $white;
+        letter-spacing: 1.7px;
+        @include short-button;
+        border: 2px solid $white;
+        padding: 10px 20px;
+        font-weight: calculate-font-weight("bold");
+        text-transform: uppercase;
+
+        @include bp(medium) {
+            min-width: 300px;
+        }
+
+        // styles to overwrite sxm-proceed-button base styles
+        // TODO: may want to add a theme to the button component to handle all this, but need more state examples from UX
+        background: transparent;
+        margin-top: 0;
+        &:hover,
+        &:focus {
+            background: $white;
+            color: $black;
+            ::ng-deep {
+                span {
+                    background: $black;
+                }
+            }
+        }
+        &:before {
+            border: 0;
+        }
+        ::ng-deep {
+            span {
+                background: $white;
+            }
+        }
+    }
+}
+
+:host-context(.sm-width) {
+    :host {
+        @include bp(large) {
+            padding: 24px;
+        }
+        .subtitle {
+            @include bp(large) {
+                width: auto;
+            }
+        }
+        button {
+            @include bp(large) {
+                min-width: 204px;
+            }
+        }
+    }
+}
+
+:host-context(.lg-width) {
+    h4 {
+        @include bp(large) {
+            @include get-header-style(h4);
+            width: 408px;
+        }
+    }
+    .subtitle {
+        @include bp(large) {
+            width: 338px;
+        }
+    }
+    button {
+        @include bp(large) {
+            min-width: 300px;
+        }
+    }
+}
+
+:host-context(.full-width) {
+    :host {
+        @include bp(medium) {
+            grid-template-columns: 1fr max-content;
+            grid-column-gap: 24px;
+            grid-row-gap: 0;
+            justify-items: left;
+            @include bp(medium) {
+                grid-column-gap: 40px;
+            }
+            @include bp(large) {
+                grid-column-gap: 80px;
+            }
+            h4,
+            p {
+                text-align: left;
+                grid-column: 1;
+            }
+            h4 {
+                margin-bottom: 4px;
+            }
+            .subtitle {
+                margin-bottom: 8px;
+                @include bp(medium) {
+                    width: auto;
+                }
+            }
+            button {
+                grid-column: 2;
+                grid-row: 1 / 4;
+                justify-self: center;
+            }
+        }
+    }
+}

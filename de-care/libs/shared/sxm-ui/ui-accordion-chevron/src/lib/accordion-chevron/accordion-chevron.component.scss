@@ -1,0 +1,85 @@
+@import "sxm.phoenix.imports";
+
+.accordion-content-wrapper {
+    overflow: hidden;
+    &.hidden {
+        display: none;
+    }
+    &.opened-full {
+        overflow: visible;
+    }
+}
+
+.accordion-content-container {
+    .checkmark-list {
+        margin: 0 0 12px;
+
+        li {
+            margin: 0 0 2px;
+        }
+    }
+}
+
+.component--accordion-title {
+    height: 22px;
+    padding: 0 16px 0 0;
+    @include font-size(14px);
+}
+
+@media print {
+    .component--accordion-title {
+        display: none;
+    }
+    .accordion-content-wrapper {
+        display: block !important;
+        visibility: visible !important;
+        height: auto !important;
+    }
+}
+
+.explore--button-container {
+    padding: 16px 24px;
+    background-color: #f1f5fd;
+}
+
+.accordion-content-wrapper {
+    .accordion-content-container {
+        padding: 0;
+    }
+}
+
+mat-icon[svgIcon="dropdown-arrow-small"] {
+    position: absolute;
+    right: 0px;
+    top: 1px;
+    width: 10px;
+    color: #000;
+    &.flipped {
+        transform: rotate(180deg);
+        top: -1px;
+    }
+}
+
+// Themes
+sxm-ui-accordion-chevron {
+    &.hidden-chevron {
+        .button-container {
+            display: none;
+        }
+    }
+    &.within-grid {
+        .button-container {
+            padding: 16px 0;
+        }
+    }
+    &.highlight-label {
+        .component--accordion-title {
+            color: $blue-secondary;
+        }
+    }
+    &.vertical-spacing {
+        .button-container {
+            margin-top: 8px;
+        }
+    }
+}

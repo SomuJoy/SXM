@@ -1,0 +1,81 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "JOHN",
+            "accountProfile": {
+                "accountRegistered": false
+            },
+            "accountState": {
+                "isInPreTrial": false
+            },
+            "serviceAddress": {
+                "state": "NY",
+                "country": "US"
+            },
+            "subscriptions": [
+                {
+                    "id": "10000215964",
+                    "plans": [
+                        {
+                            "code": "OEM Trial - ALL ACCESS - 3mo - 0.00",
+                            "label": "OEM Trial - Platinum - 3mo - 0.00",
+                            "packageName": "SIR_AUD_ALLACCESS",
+                            "termLength": 3,
+                            "startDate": "2023-03-16T00:00:00-04:00",
+                            "endDate": "2023-06-16T00:00:00-04:00",
+                            "nextCycleOn": null,
+                            "marketType": "trial:new-car",
+                            "type": "TRIAL",
+                            "capabilities": ["AUD", "IPAUD"],
+                            "price": 0,
+                            "isBasePlan": true,
+                            "dataCapable": false
+                        }
+                    ],
+                    "followonPlans": [],
+                    "radioService": {
+                        "id": "10000212060",
+                        "last4DigitsOfRadioId": "6920",
+                        "devicePromoCode": "1113",
+                        "vehicleInfo": {
+                            "year": null,
+                            "make": null,
+                            "model": null
+                        },
+                        "is360LCapable": false
+                    },
+                    "streamingService": {
+                        "id": "10000214108",
+                        "maskedUserName": "cdq******@siriusxm.com",
+                        "status": "Active",
+                        "randomCredentials": false
+                    },
+                    "status": "Active",
+                    "devicePromoCode": "FALSE",
+                    "isPrimary": true,
+                    "nickname": null,
+                    "hasDuplicateVehicleInfo": null
+                }
+            ],
+            "billingSummary": {
+                "creditCard": {
+                    "last4Digits": "1111",
+                    "type": "VISA",
+                    "status": "ACTIVE"
+                },
+                "isAccountInCollection": false,
+                "isPaymentTypeInvoice": false
+            },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true,
+            "maskedEmail": null,
+            "isAccountIdentifiedUsingFLEPZOrVIN": false,
+            "isEmailinTokenSameAsEmailOnFile": false
+        },
+        "marketingId": "990003406920",
+        "marketingAcctId": "3660"
+    }
+}

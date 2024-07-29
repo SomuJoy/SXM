@@ -1,0 +1,54 @@
+<section id="mainContent">
+    <sxm-ui-alert-pill *ngIf="(offerViewModel$ | async)?.isFallbackOffer" class="streaming-eligibility black-alert-icon-notification rounded-corners">
+        <p class="pill-text" [innerHTML]="translateKeyPrefix + '.INELIGIBLE_LOADING_ALERT' | translate"></p>
+    </sxm-ui-alert-pill>
+    <sxm-ui-step-header [currentStepNumber]="2" [numberOfSteps]="2">
+        <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+        <ng-container body>
+            <p>{{ translateKeyPrefix + ".CANCEL_ANYTIME" | translate }}</p>
+        </ng-container>
+    </sxm-ui-step-header>
+    <sxm-ui-plan-recap-card *ngIf="planRecapCardViewModel$ | async as planRecapCardViewModel" [data]="planRecapCardViewModel"></sxm-ui-plan-recap-card>
+    <ng-container [ngSwitch]="paymentInfoFormVersion">
+        <de-care-account-info-and-payment-info-with-quotes-form
+            *ngSwitchCase="'FULL'"
+            [country]="countrySettings.countryCode"
+            [initialState]="paymentFormInitialState$ | async"
+            (zipCodeAddressCollected)="onZipCodeCollected($event)"
+            [quoteViewModel]="quoteViewModel$ | async"
+            [shouldIncludeNuCaptcha]="displayNuCaptcha$ | async"
+            [continueButtonTextOverride]="translateKeyPrefix + '.CONTINUE_BUTTON_TEXT' | translate"
+            [useQuotesAlternateHeader]="true"
+            [legacySettings]="{ isStreamingFlow: true, isNewAccount: true }"
+            (formCompleted)="submitTransaction($event)"
+            [isQuebecProvince]="isQuebecProvince$ | async"
+            [useRateVersionOfTextCopy]="isQuebecProvince$ | async"
+            class="renewal-quote-alt-header-1"
+        ></de-care-account-info-and-payment-info-with-quotes-form>
+        <de-care-account-info-basic-and-payment-info-with-quotes-form
+            *ngSwitchDefault
+            [country]="countrySettings.countryCode"
+            [initialState]="paymentFormInitialState$ | async"
+            (zipCodeAddressCollected)="onZipCodeCollected($event)"
+            [quoteViewModel]="quoteViewModel$ | async"
+            [shouldIncludeNuCaptcha]="displayNuCaptcha$ | async"
+            [continueButtonTextOverride]="translateKeyPrefix + '.CONTINUE_BUTTON_TEXT' | translate"
+            [useQuotesAlternateHeader]="true"
+            [legacySettings]="{ isStreamingFlow: true, isNewAccount: true }"
+            (formCompleted)="submitTransaction($event)"
+            [isQuebecProvince]="isQuebecProvince$ | async"
+            [useRateVersionOfTextCopy]="isQuebecProvince$ | async"
+            class="renewal-quote-alt-header-1"
+        ></de-care-account-info-basic-and-payment-info-with-quotes-form>
+    </ng-container>
+    <sxm-ui-loading-with-alert-message
+        *ngIf="displayIneligibleLoader$ | async"
+        [isLoading]="true"
+        [pillMessage]="translateKeyPrefix + '.INELIGIBLE_LOADING_ALERT' | translate"
+        [paragraph]="translateKeyPrefix + '.INELIGIBLE_LOADING_BODY' | translate"
+        (loadingCompleted)="onLoadingWithAlertMessageComplete($event)"
+    ></sxm-ui-loading-with-alert-message>
+</section>
+<section *ngIf="(offerViewModel$ | async)?.legalCopy as legalCopy" id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+    <div [innerHTML]="legalCopy"></div>
+</section>

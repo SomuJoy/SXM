@@ -1,0 +1,20 @@
+<div data-e2e="promoCodeValidationContainer">
+    <form [formGroup]="promoCodeValidationFormGroup">
+        <div class="input-container" [class.invalid]="this.displayErrorKey$ | async">
+            <label data-e2e="sxmUITextFormFieldLabel" for="promoCodeValidationInput">{{ translateKey + "LABEL_TEXT" | translate }}</label>
+            <input id="promoCodeValidationInput" type="text" formControlName="promoCode" onFocus appTrimFormField data-e2e="promoCodeValidationInput" />
+        </div>
+        <div *ngIf="this.displayErrorKey$ | async as errorKey" class="invalid-feedback" data-e2e="promoCodeValidationError">
+            <p>
+                {{ translateKey + "ERRORS." + errorKey + "_TEXT" | translate
+                }}<a *ngIf="errorKey !== 'DEFAULT'" data-track-click="view other offers" href="{{ otherOffersUrl }}">{{
+                    translateKey + "ERRORS." + errorKey + "_LINK_TEXT" | translate
+                }}</a
+                >.
+            </p>
+        </div>
+        <button data-e2e="promoCodeValidationContinueButton" [loading]="loading$ | async" (click)="onContinueClick()" type="submit" sxm-proceed-button>
+            {{ translateKey + "CONTINUE_BUTTON" | translate }}
+        </button>
+    </form>
+</div>

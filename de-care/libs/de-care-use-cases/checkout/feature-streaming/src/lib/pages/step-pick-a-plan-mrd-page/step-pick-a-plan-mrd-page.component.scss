@@ -1,0 +1,22 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "../page.scss";
+
+:host {
+    @include page-host(1fr auto);
+    sxm-ui-alert-pill {
+        // TODO: check for the right color.
+        background-color: #fff8d5;
+        margin-bottom: 15px;
+    }
+    #mainContent {
+        sub {
+            color: $gray-dark;
+            font-size: 12px;
+        }
+    }
+
+    sxm-ui-step-header {
+        margin-bottom: 10px;
+    }
+}

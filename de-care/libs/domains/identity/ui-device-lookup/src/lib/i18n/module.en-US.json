@@ -1,0 +1,32 @@
+{
+    "DomainsIdentityUiDeviceLookupModule": {
+        "DeviceLookupIdOptionsFormComponent": {
+            "RADIO_ID_OPTION_LABEL": "Enter Radio ID",
+            "RADIO_ID_INPUT_PLACEHOLDER": "Radio ID",
+            "RADIO_ID_INPUT_TOOLTIP": "Your Radio ID will be either 8 or 12 characters.",
+            "RADIO_LINK_INSTRUCTIONS": "How do I find my Radio ID?",
+            "HELP_FINDING_RADIO_TITLE": "Radio ID Help",
+            "RADIO_LOOKUP_MARINE_AVIATION": "Device Help",
+            "VIN_OPTION_LABEL": "Enter VIN",
+            "VIN_OPTION_ARIA_LABEL": "VIN (Vehicle Identification Number)",
+            "VIN_INPUT_PLACEHOLDER": "VIN",
+            "LICENSE_PLATE_OPTION_LABEL": "Enter License Plate",
+            "LICENSE_PLATE_INPUT_PLACEHOLDER": "License Plate",
+            "CONTINUE_BUTTON": "Continue",
+            "ERROR": {
+                "RADIO_ID_INPUT_FORMAT": "Enter a valid Radio ID.",
+                "RADIO_ID_INPUT_REQUIRED": "A Radio ID is required.",
+                "VIN_INPUT_FORMAT": "Enter a valid VIN.",
+                "VIN_INPUT_REQUIRED": "A VIN is required.",
+                "LICENSE_PLATE_INPUT_FORMAT": "Enter a valid license plate.",
+                "LICENSE_PLATE_INPUT_REQUIRED": "A license plate is required."
+            },
+            "SERVICE_ERROR_MESSAGES": {
+                "VIN_NOT_FOUND": "The number entered does not match our records. Please try again.",
+                "LICENSE_PLATE_NOT_FOUND": "The number entered does not match our records. Please try again.",
+                "INVALID_RADIO_ID": "The number entered does not match our records. Please try again.",
+                "SYSTEM_ERROR": "We’re sorry… something went wrong. We’re experiencing technical issues and are working on resolving it. Please try again."
+            }
+        }
+    }
+}

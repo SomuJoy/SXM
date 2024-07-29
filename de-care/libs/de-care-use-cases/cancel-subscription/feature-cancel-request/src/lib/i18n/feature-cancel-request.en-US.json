@@ -1,0 +1,82 @@
+{
+    "deCareUseCasesCancelSubscriptionFeatureCancelRequest": {
+        "cancelSubscriptionPageComponent": {
+            "HERO": {
+                "CANCEL_STEP_REASON": "Before you go...",
+                "CANCEL_STEP_OFFERS": "One last option to consider...",
+                "CANCEL_STEP_SUMMARY": "Review and confirm you want to cancel this plan.",
+                "CANCEL_STEP_CONFIRMATION": "Your plan has been cancelled.",
+                "CANCEL_STEP_CONFIRMATION_LATER": "Your subscription will be cancelled",
+                "ACCEPT_OFFER_FLOW": "Change your subscription",
+                "NEW_OFFERS_SECTION": {
+                    "HEADER_OFFERS": "Stay and select one of these great offers.",
+                    "HEADER_ONE_OFFER": "Stay and select this great offer."
+                }
+            },
+            "CONTINUE_TO_OFFERS": "Continue to offers",
+            "NO_OFFERS_OPTIONS": {
+                "HEADING": "You still have other subscription options.",
+                "INSTRUCTIONS": "For more help and support, you can chat with an agent to discuss your options or cancel."
+            },
+            "CLAIM_SELF_PAY": "You can change your subscription to another great plan.",
+            "CLAIM_SAVE": "You can change your subscription to one of these great offers and save up to {{savings}}%. ",
+            "OFFER_INSTRUCTIONS": "You’ll be able to choose a billing plan for your offer on the next step. Switch your subscription or cancel below.",
+            "NO_OFFER_SELECTED_ERROR": "Select an offer below",
+            "CONTINUE_TO_CANCEL": "No, I want to cancel",
+            "CHAT_WITH_AGENT": "Chat with an agent",
+            "NO_THANKS_CHAT_WITH_AGENT": "No thanks, chat with an agent to cancel",
+            "CANCEL_SUBSCRIPTION_LABEL": "FINISH CANCELLATION",
+            "GO_BACK_TO_OFFERS": "Go back to view offers",
+            "BACK_BUTTON": {
+                "TEXT": "Back To My Account"
+            },
+            "CHAT_CLOSED": "Chat is now closed. Please come back between 8am-{{chatHourClosed}} EST to chat to cancel.",
+            "OFFER_GRID_CURRENT_PLAN": "Current Plan",
+            "OFFER_GRID_RENEWAL_PLAN": "CURRENT RENEWAL PLAN",
+            "OFFER_GRID_HEADER": "Wait, before you go, take another look at what you have plus more great options.",
+            "OFFER_GRID_HEADER_FOR_TRIAL_WITH_FOLLOWON": "Consider staying and choose from one of the great options below.",
+            "OFFER_GRID_CONTINUE_EXISTING": "Keep subscription",
+            "OFFER_GRID_CONTINUE_NEW": "Switch subscription",
+            "CHOICE_MODAL_HEADER": "SiriusXM Choose & Save",
+            "OFFER_CONTENT_CARD_FLAG": "Our Best Plan",
+            "OFFER_CONTENT_CARD_HEADLINE1": "Switch to this plan",
+            "OFFER_CONTENT_CARD_HEADLINE2": "Keep this plan",
+            "OFFER_CONTINUE": "Switch subscription",
+            "CANCEL_REASONS": [
+                { "KEY": "EXPENSIVE", "TEXT": "My subscription is too expensive", "ONLY_STR": false },
+                { "KEY": "NO_LISTENTING_OPTIONS", "TEXT": "I can't find what I want to listen to", "ONLY_STR": false },
+                { "KEY": "DONT_LISTEN", "TEXT": "I don't listen enough", "ONLY_STR": false },
+                { "KEY": "TECHNICAL_ISSUES", "TEXT": "I'm experiencing technical issues", "ONLY_STR": false },
+                { "KEY": "OTHER", "TEXT": "I have other reasons", "ONLY_STR": false },
+                { "KEY": "NO_SATELLITE_RADIO", "TEXT": "I thought I could listen with my car’s built-in satellite radio", "ONLY_STR": true },
+                { "KEY": "OTHER_STREAMING_SVCS", "TEXT": "I have other streaming services I prefer", "ONLY_STR": true }
+            ],
+            "WHERE_TO_LISTEN": "Where to listen",
+            "LISTEN_2_CAR_TOOLTIP": "Listen in up to 2 cars and on the SXM App.",
+            "BOTH_APP_AND_1_CAR": "1 Car + <span class='text-nowrap'>SXM App</span>",
+            "BOTH_APP_AND_2_CAR": "2 Cars + <span class='text-nowrap'>SXM App</span>",
+            "SPECIAL_VIP_PARAGRAPH_BOLD_NOTE": "<b>Note:</b> By changing your plan you will lose the perks linked to your VIP plan including Apple Music, discovery+, Stitcher Premium, nugs.net, and other exclusives.",
+            "SPECIAL_VIP_PARAGRAPH": "Note: By changing your plan you will lose the perks linked to your VIP plan including Apple Music, discovery+, Stitcher Premium, nugs.net, and other exclusives.",
+            "INSTRUCTIONS_PRO_RATED": "Upon confirming your cancellation, your subscription will be canceled immediately. You will receive a prorated credit back to your original payment method.",
+            "CC_REFUNDS": "Credit card refunds are typically processed in 3&#8211;5 business days and check refunds are typically processed in 7&#8211;10 business days."
+        },
+        "acceptOfferConfirmationPageComponent": {
+            "HERO": {
+                "TITLE": "Your subscription has been updated!"
+            },
+            "PRINT_LINK": {
+                "TEXT": "Print your order summary"
+            },
+            "BACK_BUTTON": {
+                "TEXT": "Back To My Account"
+            },
+            "IMPORTANT_INFO": {
+                "LEGAL_COPY": "Important information about your subscription:"
+            },
+            "STREAMING_PLAYER_LINK": {
+                "SATELLITE_OFFER": "?creative_id=NA_NA_PL-EM-home-home-home-CONVERSION-COMCONFIRM-OEM-OEM-20211207-DECOM&cp_7=OEM&cp_8=CONVERSION&cp_9=COMCONFIRM",
+                "STREAMING_OFFER": "?contentType=landing&channelName=accessnow&site_id=accessnow&creative_id=NA_NA_DL-COM-landing-landingpage-landingpage-STARTLISTENING-TRIALACTIVATIONRTP-NA-All-20210921-NA&cp_5=landingpage&cp_6=landingpage&cp_7=ALL&cp_8=STARTLISTENING&cp_9=TRIALACTIVATIONRTP&cp_10=COM"
+            }
+        }
+    }
+}

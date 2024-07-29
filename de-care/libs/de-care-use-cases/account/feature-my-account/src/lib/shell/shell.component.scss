@@ -1,0 +1,280 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/legacy-global-input.scss";
+
+::ng-deep {
+    @include legacy-global-input;
+}
+:host {
+    display: grid;
+    grid-template-rows: auto auto auto 1fr auto;
+    min-height: 100%;
+    background: $off-white;
+    header {
+        position: relative;
+        box-shadow: 0 2px 15px -4px rgba(0, 0, 0, 0.15);
+        z-index: 10;
+        background: $white;
+    }
+    footer {
+        width: 100%;
+        padding: 0 16px;
+        @include bp(large) {
+            max-width: 1024px;
+            justify-self: center;
+            padding: 0 56px;
+        }
+    }
+    section {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        max-width: 1024px;
+        &[data-price-change] {
+            display: grid;
+            justify-items: center;
+            padding: 13px 18px;
+            background: #e5f9ff;
+            max-width: none;
+            @include bp(medium) {
+                padding: 11px 16px;
+            }
+        }
+    }
+    [data-logo-bar] {
+        display: grid;
+        justify-items: center;
+        background: $black;
+        section {
+            padding: 0 16px;
+            height: 56px;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            align-content: center;
+            @include bp(small) {
+                height: 72px;
+                grid-template-columns: repeat(12, 1fr);
+            }
+            @include bp(large) {
+                padding: 0 56px;
+            }
+            nav {
+                position: relative;
+                a {
+                    svg {
+                        height: 20px;
+                        max-width: 104px;
+                        @include bp(small) {
+                            height: 32px;
+                            max-width: 148px;
+                        }
+                        use {
+                            color: $white;
+                            fill: $white;
+                        }
+                    }
+                }
+            }
+            aside {
+                grid-column: 11 / span 2;
+                display: flex;
+                justify-content: flex-end;
+                grid-column-gap: 16px;
+                align-items: center;
+                --panel-margin: 14px;
+                button {
+                    color: $white;
+                    font-weight: calculate-font-weight("bold");
+                }
+                @include bp(small) {
+                    --panel-margin: 22px;
+                    position: relative;
+                }
+                sxm-ui-nav-dropdown {
+                    z-index: 1;
+                }
+            }
+        }
+    }
+    [data-nav-with-user-presence] {
+        display: grid;
+        justify-items: center;
+        section {
+            padding: 12px 16px 0 16px;
+            display: grid;
+            width: 100vw;
+            @include bp(medium) {
+                width: 100%;
+            }
+            [data-presence-name] {
+                grid-row: 1;
+                grid-column: 1;
+                justify-content: flex-start;
+                font-weight: calculate-font-weight("bold");
+                font-size: calculate-rem(12px);
+            }
+            [data-presense-account-number] {
+                grid-row: 1;
+                grid-column: 2;
+                display: flex;
+                justify-content: flex-end;
+                font-size: calculate-rem(12px);
+            }
+            > hr {
+                grid-row: 2;
+                grid-column: 1 / span 2;
+                width: 100%;
+                @include hr;
+            }
+            > nav {
+                grid-row: 3;
+                grid-column: 1 / span 2;
+                display: grid;
+                grid-column-gap: 24px;
+                overflow: scroll;
+                -ms-overflow-style: none; /* IE and Edge */
+                scrollbar-width: none; /* Firefox */
+                justify-content: flex-start;
+                > a {
+                    grid-row: 1;
+                    width: fit-content;
+                    font-size: calculate-rem(16px);
+                    font-weight: calculate-font-weight("bold");
+                    line-height: 1.5;
+                    padding-bottom: 12px;
+                    position: relative;
+                    text-decoration: none;
+                    text-decoration-color: black;
+                    color: black;
+                    white-space: nowrap;
+                    &:active,
+                    &:visited,
+                    &:hover {
+                        color: black;
+                    }
+                    &::before {
+                        background: $blue-secondary;
+                        content: "";
+                        width: 100%;
+                        height: 4px;
+                        bottom: 0;
+                        left: 0;
+                        position: absolute;
+                        opacity: 0;
+                    }
+                    &.active {
+                        pointer-events: none;
+                        &::before {
+                            opacity: 1;
+                        }
+                    }
+                    &:hover {
+                        &::before {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+            > nav::-webkit-scrollbar {
+                display: none;
+            }
+            @include bp(medium) {
+                [data-presence-name] {
+                    grid-row: 1;
+                    grid-column: 2;
+                    display: flex;
+                    justify-content: flex-end;
+                }
+                [data-presense-account-number] {
+                    grid-row: 2;
+                    grid-column: 2;
+                    display: flex;
+                    justify-content: flex-end;
+                }
+                > hr {
+                    display: none;
+                }
+                > nav {
+                    grid-row: 2;
+                    grid-column: 1;
+                    overflow: auto;
+                }
+            }
+            @include bp(large) {
+                padding: 12px 56px 0 56px;
+            }
+        }
+    }
+    .toaster {
+        position: relative;
+        sxm-ui-toast-notification {
+            top: 24px;
+            z-index: 20;
+        }
+    }
+    sxm-ui-hover-dropdown {
+        grid-row: 1;
+        --content-left: 0;
+        --content-width: 100%;
+        @include bp(small) {
+            --content-left: auto;
+            --content-width: auto;
+        }
+        .nav-label {
+            position: relative;
+            font-size: calculate-rem(16px);
+            font-weight: calculate-font-weight("bold");
+            line-height: 1.5;
+            padding-bottom: 12px;
+            &::before {
+                content: "";
+                background: $blue-secondary;
+                width: 100%;
+                height: 4px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                opacity: 0;
+            }
+        }
+        &:hover,
+        &.active {
+            .nav-label {
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+        // TODO: this support check can be removed when firefox supports :has()
+        @supports selector(:has(a.active)) {
+            &:has(a.active) {
+                .nav-label {
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        ul[role="menu"] {
+            list-style: none;
+            background: $white;
+            box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.1);
+            padding: 12px 24px;
+            margin: 0;
+            li {
+                line-height: 20px;
+                a.sub-nav {
+                    display: inline-block;
+                    @include font-size(14px);
+                    font-weight: calculate-font-weight("bold");
+                    color: $black;
+                    text-decoration: none;
+                    width: 100%;
+                    padding: 12px 0;
+                    &::before {
+                        content: none;
+                    }
+                }
+            }
+        }
+    }
+}

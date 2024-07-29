@@ -1,0 +1,12 @@
+{
+    "ui-price-increase-message": {
+        "priceIncreaseMessage": {
+            "MSRP": "<strong>Important Notice</strong>: The renewal pricing below reflects a <a href='https://www.siriusxm.com/mar2023rates' class='external-link' rel='nofollow' target='_blank'>monthly rate increase</a> effective March 14, 2023.",
+            "MSRP_MILITARY": "<strong>Important Notice</strong>: The renewal pricing below reflects a <a href='https://siriusxm.com/march2023rates/military25' class='external-link' rel='nofollow' target='_blank'>monthly rate increase</a> effective March 14, 2023.",
+            "MRD": "<strong>Important Notice</strong>: The renewal pricing below reflects a <a href='https://www.siriusxm.com/mar2023rates' class='external-link' rel='nofollow' target='_blank'>monthly rate increase</a> effective March 14, 2023.",
+            "MRD_MILITARY": "<strong>Important Notice</strong>: The renewal pricing below reflects a <a href='https://siriusxm.com/march2023rates/military25' class='external-link' rel='nofollow' target='_blank'>monthly rate increase</a> effective March 14, 2023.",
+            "MRF": "",
+            "MRD_MRF": ""
+        }
+    }
+}

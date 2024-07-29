@@ -1,0 +1,94 @@
+{
+    "trialActivation": {
+        "accountFormStepComponent": {
+            "AGREEMENT_TEXT": "I consent to receiving marketing communications by email, mail and phone once trial is activated.",
+            "ACCEPT_AGREEMENT": "Please accept the above agreement.",
+            "BUTTON_TEXT": "ACTIVATE MY TRIAL"
+        },
+        "newAccountFormStepComponent": {
+            "STATE": {
+                "LABEL": "Province",
+                "ERRORS": {
+                    "REQUIRED": "Enter your Province."
+                }
+            },
+            "ZIP_CODE": {
+                "LABEL": "Postal Code",
+                "ERRORS": {
+                    "REQUIRED": "Enter a valid Postal code."
+                }
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.ca/privacy"
+            },
+            "AGREEMENT_TEXT": "I consent to receiving marketing communications by email, mail and phone once trial is activated.",
+            "ACCEPT_AGREEMENT": "Please accept the above agreement.",
+            "BUTTON_TEXT": "ACTIVATE MY TRIAL"
+        },
+        "oneStepNewAccountFormStepComponent": {
+            "STATE": {
+                "LABEL": "Province",
+                "ERRORS": {
+                    "REQUIRED": "Enter your Province."
+                }
+            },
+            "ZIP_CODE": {
+                "LABEL": "Postal Code",
+                "ERRORS": {
+                    "REQUIRED": "Enter a valid Postal code."
+                }
+            },
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "http://www.siriusxm.ca/privacy"
+            },
+            "AGREEMENT_TEXT": "I consent to receiving marketing communications by email, mail and phone once trial is activated.",
+            "ACCEPT_AGREEMENT": "Please accept the above agreement.",
+            "BUTTON_TEXT": "ACTIVATE MY TRIAL"
+        },
+        "oneStepActivationFlowComponent": {
+            "STEP_PAGE_TITLES": {
+                "NOT_YOUR_CAR_MESSAGE": "Not your vehicle?",
+                "DEFAULT_VEHICLE": "vehicle"
+            }
+        },
+        "offerDetailsComponent": {
+            "BODY": "Available only on eligible, inactive factory-equipped satellite radios. Your {{offerName}} service will automatically stop at the end of your existing {{length}} {{pluralizedMonth}} subscription unless you decide to purchase another subscription. See our <a href=\"https://www.siriusxm.ca/terms\" target=\"_blank\">Customer Agreement</a> and <a href=\"https://www.siriusxm.ca/privacy\" target=\"_blank\">Privacy Policy</a> for complete terms. All fees and programming are subject to change.",
+            "BODY_QUEBEC": "Available only on eligible, inactive factory-equipped satellite radios. Your {{offerName}} service will automatically stop at the end of your existing {{length}} {{pluralizedMonth}} subscription unless you decide to purchase another subscription. See our <a href=\"https://www.siriusxm.ca/terms\" target=\"_blank\">Customer Agreement</a> and <a href=\"https://www.siriusxm.ca/privacy\" target=\"_blank\">Privacy Policy</a> for complete terms. Programming is subject to change."
+        },
+        "readyToExploreComponent": {
+            "beforeYouGo": {
+                "link": {
+                    "LINK_TEXT": "check out great offers",
+                    "LINK_URL": "https://www.siriusxm.ca/plans"
+                }
+            }
+        },
+        "postActivationInstructionsComponent": {
+            "TEXT": ""
+        },
+        "oneStepActivationConfirmationComponent": {
+            "STREAMING_PLAYER_LINK": ""
+        },
+        "serviceLaneOneClickConfirmationComponent": {
+            "STREAMING_PLAYER_LINK": ""
+        },
+        "DefaultErrorPageComponent": {
+            "HELP": {
+                "TFN": "1-866-635-0565"
+            }
+        },
+        "AlreadyHasSubscriptionErrorPageComponent": {
+            "HELP": {
+                "LOGIN_URL": "https://care.siriusxm.ca/login_view.action",
+                "TFN": "1-866-635-0565"
+            }
+        },
+        "IsNotEligibleErrorPageComponent": {
+            "HELP": {
+                "TFN": "1-866-635-0565"
+            }
+        }
+    }
+}

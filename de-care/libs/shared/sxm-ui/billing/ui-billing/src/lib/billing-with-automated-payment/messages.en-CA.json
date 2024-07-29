@@ -1,0 +1,12 @@
+{
+    "HEADER": "Your auto payment is scheduled in {{daysDue}} {{daysPlural}}.",
+    "YOUR_AUTOMATED_PAYMENT_WILL_BE_CHARGED_TODAY": "Your auto payment will process today.",
+    "YOUR_AUTOMATED_PAYMENT_WILL_BE_CHARGED_NO_DATE": "Your automated payment will process soon.",
+    "UPDATE_PAYMENT": "Update Payment<span> Method</span>",
+    "PLURAL_MAP": {
+        "DAYS": {
+            "=1": "day",
+            "other": "days"
+        }
+    }
+}

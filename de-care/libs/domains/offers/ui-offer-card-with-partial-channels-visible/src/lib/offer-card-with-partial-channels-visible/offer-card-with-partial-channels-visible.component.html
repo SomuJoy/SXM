@@ -1,0 +1,39 @@
+<div class="offer-card--container">
+    <offer-description
+        [selectedRenewalOfferPrice]="selectedRenewalOfferPrice"
+        [isRTC]="isRTC"
+        [offerInfo]="offerInfo"
+        [excludePriceAndTermDisplay]="excludePriceAndTermDisplay"
+    >
+    </offer-description>
+    <plan-grid *ngIf="!hidePlanGrid" [packageName]="offerInfo.packageName"></plan-grid>
+    <div *ngIf="visibleChannels" class="visible-channels">
+        <plan-description-channels [channels]="visibleChannels"></plan-description-channels>
+        <ng-container *ngIf="!overChannelLimit">
+            <ng-container *ngTemplateOutlet="descriptionFooter"></ng-container>
+        </ng-container>
+    </div>
+</div>
+
+<sxm-ui-accordion-chevron
+    [isInnerAccordion]="true"
+    [collapsedText]="translationKeyPrefix + 'VIEW_DETAILS_COLLAPSED' | translate"
+    [expandedText]="translationKeyPrefix + 'VIEW_DETAILS_EXPANDED' | translate"
+    [aria]="{
+        expandedText: translationKeyPrefix + 'ARIA_VIEW_DETAILS_EXPANDED' | translate: { packageName: offerInfo?.packageName },
+        collapsedText: translationKeyPrefix + 'ARIA_VIEW_DETAILS_COLLAPSED' | translate: { packageName: offerInfo?.packageName }
+    }"
+    [opened]="opened"
+    (click)="trackEvent($event)"
+    qatag="ViewMoreLink"
+    data-track-click="Explore More"
+    *ngIf="packageDescription && overChannelLimit"
+>
+    <plan-description-channels [channels]="accordionChannels" [excludeTitle]="true"></plan-description-channels>
+    <ng-container *ngTemplateOutlet="descriptionFooter"></ng-container>
+</sxm-ui-accordion-chevron>
+
+<ng-template #descriptionFooter>
+    <p *ngIf="packageDescription.description" [innerHtml]="packageDescription.description || ''"></p>
+    <p *ngIf="!offerInfo.isUpgradePromo" data-e2e="offerCardWithPartialChannelsVisible.packageDescriptionFooter" [innerHtml]="packageDescription.footer"></p>
+</ng-template>

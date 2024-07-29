@@ -1,0 +1,12 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "../page.scss";
+
+:host {
+    @include page-host(1fr auto);
+    section#mainContent {
+        display: block;
+        width: 100%;
+        padding: 32px 16px;
+    }
+}

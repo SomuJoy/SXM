@@ -1,0 +1,111 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": [
+        {
+            "subscriptions": [
+                {
+                    "hasOACCredentials": false,
+                    "status": "Active",
+                    "eligibilityType": "FREE_PREVIEW",
+                    "radioService": { "last4DigitsOfRadioId": "2B89", "vehicleInfo": { "model": null, "make": null, "year": null }, "maskedRadioId": "****2B89" },
+                    "plans": [
+                        {
+                            "code": "Promo - Select - 6mo - 29.94 - (4.99FOR6)",
+                            "packageName": "3_SIR_AUD_PKG_NS",
+                            "termLength": "6",
+                            "endDate": "2021-11-19T00:00:00-05:00",
+                            "type": "PROMO",
+                            "marketType": "self-pay:promo",
+                            "capabilities": []
+                        }
+                    ],
+                    "email": "MARYKATE@TESTER.COM",
+                    "inEligibleReasonCode": null,
+                    "eligibleService": "SXIR_STANDALONE"
+                }
+            ],
+            "last4DigitsOfAccountNumber": "4763",
+            "maskedAccountNumber": "**********4763"
+        },
+        {
+            "subscriptions": [
+                {
+                    "hasOACCredentials": false,
+                    "status": "Active",
+                    "eligibilityType": "FREE_PREVIEW",
+                    "radioService": { "last4DigitsOfRadioId": "YD48", "vehicleInfo": { "model": "Optima", "make": "Kia", "year": 2013 }, "maskedRadioId": "****YD48" },
+                    "plans": [
+                        {
+                            "code": "OEM Trial - Select - 6mo - 0.00",
+                            "packageName": "SIR_AUD_PKG_NS",
+                            "termLength": "6",
+                            "endDate": "2021-11-19T00:00:00-05:00",
+                            "type": "TRIAL",
+                            "marketType": "trial:new-car",
+                            "capabilities": []
+                        }
+                    ],
+                    "email": "MARYKATE@TESTER.COM",
+                    "inEligibleReasonCode": "insufficientpackage",
+                    "eligibleService": null
+                }
+            ],
+            "last4DigitsOfAccountNumber": "5713",
+            "maskedAccountNumber": "**********5713"
+        },
+        {
+            "subscriptions": [
+                {
+                    "hasOACCredentials": false,
+                    "status": "Active",
+                    "eligibilityType": "FREE_PREVIEW",
+                    "radioService": { "last4DigitsOfRadioId": "4321", "vehicleInfo": { "model": "Tacoma", "make": "Toyota", "year": 2013 }, "maskedRadioId": "****4321" },
+                    "plans": [
+                        {
+                            "code": "OEM Trial - Select - 6mo - 0.00",
+                            "packageName": "SIR_AUD_PKG_NS",
+                            "termLength": "6",
+                            "endDate": "2021-11-19T00:00:00-05:00",
+                            "type": "TRIAL",
+                            "marketType": "trial:new-car",
+                            "capabilities": []
+                        }
+                    ],
+                    "email": "MARYKATE@TESTER.COM",
+                    "inEligibleReasonCode": "insufficientpackage",
+                    "eligibleService": null
+                }
+            ],
+            "last4DigitsOfAccountNumber": "3333",
+            "maskedAccountNumber": "**********3333"
+        },
+        {
+            "subscriptions": [
+                {
+                    "hasOACCredentials": false,
+                    "status": "Active",
+                    "eligibilityType": "FREE_PREVIEW",
+                    "radioService": { "last4DigitsOfRadioId": "9876", "vehicleInfo": { "model": "Fusion", "make": "Ford", "year": 2013 }, "maskedRadioId": "****9876" },
+                    "plans": [
+                        {
+                            "code": "OEM Trial - Select - 6mo - 0.00",
+                            "packageName": "SIR_AUD_PKG_NS",
+                            "termLength": "6",
+                            "endDate": "2021-11-19T00:00:00-05:00",
+                            "type": "TRIAL",
+                            "marketType": "trial:new-car",
+                            "capabilities": []
+                        }
+                    ],
+                    "email": "MARYKATE@TESTER.COM",
+                    "inEligibleReasonCode": "insufficientpackage",
+                    "eligibleService": null
+                }
+            ],
+            "last4DigitsOfAccountNumber": "4444",
+            "maskedAccountNumber": "**********4444"
+        }
+    ]
+}

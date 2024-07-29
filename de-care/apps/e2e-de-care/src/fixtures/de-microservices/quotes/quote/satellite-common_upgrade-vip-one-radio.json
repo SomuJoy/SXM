@@ -1,0 +1,106 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "quote": {
+            "currentQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "7.49",
+                "totalTaxesAndFeesAmount": "7.49",
+                "totalAmount": "-52.14",
+                "discountAmount": "0.00",
+                "pricePerMonth": "34.99",
+                "currentBalance": "-52.14",
+                "consolidatedCreditAmount": "-94.62",
+                "previousBalance": "0.00",
+                "fees": [
+                    {
+                        "description": "U.S. Music Royalty Fee",
+                        "amount": "7.49"
+                    }
+                ],
+                "taxes": [],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Platinum VIP - 1mo",
+                        "packageName": "SIR_AUD_VIP",
+                        "termLength": 1,
+                        "priceAmount": "34.99",
+                        "taxAmount": "0.00",
+                        "feeAmount": "7.49",
+                        "totalTaxesAndFeesAmount": "7.49",
+                        "taxes": [],
+                        "fees": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "amount": "7.49"
+                            }
+                        ],
+                        "startDate": "2021-11-03",
+                        "endDate": "2021-12-03",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "SELF_PAY",
+                        "dealType": "",
+                        "isAdvantage": false,
+                        "isStudent": false
+                    }
+                ],
+                "isUpgraded": false,
+                "isProrated": false
+            },
+            "futureQuote": null,
+            "proRatedRenewalQuote": null,
+            "promoRenewalQuote": null,
+            "renewalQuote": {
+                "totalTaxAmount": "0.00",
+                "totalFeesAmount": "7.49",
+                "totalTaxesAndFeesAmount": "7.49",
+                "totalAmount": "42.48",
+                "discountAmount": "0.00",
+                "pricePerMonth": "34.99",
+                "currentBalance": "",
+                "consolidatedCreditAmount": "",
+                "previousBalance": "",
+                "fees": [
+                    {
+                        "description": "U.S. Music Royalty Fee",
+                        "amount": "7.49"
+                    }
+                ],
+                "taxes": [],
+                "packageUpgradeFees": [],
+                "details": [
+                    {
+                        "planCode": "Platinum VIP - 1mo",
+                        "packageName": "SIR_AUD_VIP",
+                        "termLength": 1,
+                        "priceAmount": "34.99",
+                        "taxAmount": "0.00",
+                        "feeAmount": "7.49",
+                        "totalTaxesAndFeesAmount": "7.49",
+                        "taxes": [],
+                        "fees": [
+                            {
+                                "description": "U.S. Music Royalty Fee",
+                                "amount": "7.49"
+                            }
+                        ],
+                        "startDate": "2021-12-03",
+                        "endDate": "2022-01-03",
+                        "isMrdEligible": false,
+                        "balanceType": null,
+                        "type": "SELF_PAY",
+                        "dealType": "",
+                        "isAdvantage": false,
+                        "isStudent": false
+                    }
+                ],
+                "isUpgraded": null,
+                "isProrated": false
+            }
+        }
+    }
+}

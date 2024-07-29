@@ -1,0 +1,6 @@
+<de-care-vip-layout [class.remove-border]="errorCode$ | async">
+    <ng-container *ngIf="errorCode$ | async as errorCode">
+        {{ errorCode.errorCode }}
+        <de-care-error [errorCode]="errorCode"></de-care-error>
+    </ng-container>
+</de-care-vip-layout>

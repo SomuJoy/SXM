@@ -1,0 +1,31 @@
+<h4>{{ translateKeyPrefix + ".TITLE" | translate }}</h4>
+<p class="reason-instruction" [id]="ariaDescribedbyTextId">{{ translateKeyPrefix + ".INSTRUCTIONS" | translate }}</p>
+<form id="reason-selector" [formGroup]="reasonSelectorForm" (ngSubmit)="submitSelectedReason($event)" class="reason-form">
+    <div *ngIf="removeInactiveRadioServerError" class="invalid-feedback server-error">
+        <p>{{ translateKeyPrefix + ".SERVER_ERROR" | translate }}</p>
+    </div>
+    <sxm-ui-dropdown
+        #reasonsDropdown
+        [qatag]="'reasonSelectorDropDown'"
+        class="dropdown"
+        tabindex="0"
+        [passedValue]="translateKeyPrefix + '.REASONS_LIST' | translate"
+        key="key"
+        text="label"
+        [filterSelected]="true"
+        labelText="{{ translateKeyPrefix + '.SELECT_REASON_DROPDOWN' | translate }}"
+        formControlName="reason"
+        [class.invalid]="
+            (reasonSelectorForm.controls.reason.invalid && reasonSelectorForm.controls.reason.touched) || (reasonSelectorForm.controls.reason.invalid && submitted)
+        "
+        data-e2e="proviceSelectorDropDown"
+        [showErrorMsg]="selectionErrorMessage"
+        errorMsg="{{ translateKeyPrefix + '.ERROR_REQUIRED' | translate }}"
+    ></sxm-ui-dropdown>
+    <button data-e2e="reasonRemoveButton" class="button primary full-width" type="submit" sxm-proceed-button [loading]="loading" data-test="reasonForRemoveButton">
+        {{ translateKeyPrefix + ".REMOVE_BUTTON" | translate }}
+    </button>
+</form>
+<button data-e2e="reasonCancelButton" class="full-width cancel-cta" (click)="onCancel()" data-test="reasonForCancelButton">
+    {{ translateKeyPrefix + ".CANCEL_BUTTON" | translate }}
+</button>

@@ -1,0 +1,15 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 201,
+    "httpStatus": "CREATED",
+    "data": {
+        "email": "JOHNSMITH@SIRIUSXM.COM",
+        "status": "SUCCESS",
+        "radioId": "004H",
+        "subscriptionId": "10000198377",
+        "accountNumber": "10000196457",
+        "isEligibleForRegistration": true,
+        "isUserNameSameAsEmail": true,
+        "isOfferStreamingEligible": true
+    }
+}

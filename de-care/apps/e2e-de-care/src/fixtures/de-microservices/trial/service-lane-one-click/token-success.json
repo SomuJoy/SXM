@@ -1,0 +1,15 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "email": "GGLTHF.WWSM@SIRIUSXM.COM",
+        "status": "SUCCESS",
+        "radioId": "2200",
+        "subscriptionId": "10000190201",
+        "accountNumber": null,
+        "isUserNameSameAsEmail": false,
+        "isEligibleForRegistration": true,
+        "isOfferStreamingEligible": true
+    }
+}

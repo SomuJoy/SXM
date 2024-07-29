@@ -1,0 +1,10 @@
+{
+    "status": "FAILURE",
+    "httpStatusCode": 400,
+    "httpStatus": "BAD_REQUEST",
+    "error": {
+        "errorStackTrace": "AccountNumber:  | RadioId: GC21000K | x-forwarded-for: [10.130.98.65] | URL: /services/account/non-pii | Exception: AccountServiceException#null | StackTrace: NonPIIAccountHandler.java:193 | ErrorType: null | ErrorMessage: ERROR : [errorCode : DEVICE_NOT_IN_USE, errorPropKey : error.account.service.device.not.in.use.radioId, errorType : CHECKED, errorLevel : FIELD, statusCode : 400 BAD_REQUEST, errorMessage : null | , sourceErrorCode : null] | FullStackTrace: ",
+        "logId": "ff600d34-ac89-40d8-8ea1-d6d20e9076e7",
+        "fieldErrors": [{ "errorCode": "DEVICE_NOT_IN_USE", "errorPropKey": "error.account.service.device.not.in.use", "errorType": "BUSINESS", "fieldName": "radioId" }]
+    }
+}

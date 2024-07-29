@@ -1,0 +1,32 @@
+<div *ngFor="let radioButton of radioButtons" class="radio-item">
+    <!-- TODO: consider just using template refs to get a hold of the selected value and use in button click instead of dependency on Angular FormsModule -->
+    <ng-container *ngIf="radioButton.displayButton">
+        <input
+            class="radio"
+            type="radio"
+            [value]="radioButton.value"
+            name="radioLookupGroup-{{ groupId }}"
+            id="{{ radioButton.id }}"
+            [attr.data-test]="radioButton.qatag"
+            [attr.qatag]="radioButton.qatag"
+            [(ngModel)]="selectedOption"
+        />
+        <label class="input-label" [attr.aria-label]="radioButton.ariaLabel | translate" for="{{ radioButton.id }}">{{ radioButton.text | translate }}</label>
+    </ng-container>
+</div>
+<ng-content></ng-content>
+<!-- opt in (Only for NFL) - Optional-->
+<sxm-ui-nfl-opt-in *ngIf="nflOptInEnabled" (submitVerifyAccountForm)="onVerifyAccountClick($event)"> </sxm-ui-nfl-opt-in>
+<div class="row align-center no-padding">
+    <div class="column small-12 medium-12 no-padding">
+        <button
+            class="button primary full-width"
+            (click)="displayModal()"
+            qatag="CarInfoContinueButton"
+            data-test="radioLookupOptions.carInfoContinueButton"
+            data-e2e="radioLookupOptions.carInfoContinueButton"
+        >
+            {{ "identification.CarInfoTab.BUTTON" | translate }}
+        </button>
+    </div>
+</div>

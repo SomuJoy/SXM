@@ -1,0 +1,31 @@
+{
+    "name": "domains-offers-state-offers",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/domains/offers/state-offers/src",
+    "projectType": "library",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/offers/state-offers/src/**/*.ts", "libs/domains/offers/state-offers/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/offers/state-offers/jest.config.js",
+                "tsConfig": "libs/domains/offers/state-offers/tsconfig.spec.json",
+                "setupFile": "libs/domains/offers/state-offers/src/test-setup.ts",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "styleext": "scss"
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

@@ -1,0 +1,64 @@
+{
+    "DomainsSubscriptionsUiPlayerAppIntegrationModule": {
+        "StreamingPlayerLinkComponent": {
+            "LISTEN_NOW_LINK_TEXT": "START LISTENING",
+            "LISTEN_NOW_LINK": "https://www.siriusxm.com/downloadstreaming"
+        },
+        "ListenNowComponent": {
+            "HEADLINE": "Stream now",
+            "LINK_TEXT": "Start Listening",
+            "SUB_HEADLINE": "You're ready to listen on your phone, computer, smart TV, speakers, and more with the SXM App."
+        },
+        "ListenNowWithIconComponent": {
+            "HEADLINE": "Stream now",
+            "LINK_TEXT": "Start Listening",
+            "SUB_HEADLINE": "You're ready to listen on your phone, computer, smart TV, speakers, and more with the SXM App."
+        },
+        "ListenNowWithGenreSelectionComponent": {
+            "HEADLINE": "Stream the SXM App",
+            "LINK_TEXT": "Start Listening",
+            "SUB_HEADLINE": "Choose a category and start listening.",
+            "GENRES": [
+                {
+                    "TEXT": "Pop",
+                    "URL": "?contentType=live&site_id=SiriusXMHits1&creative_id=NA_NA_DL-OTH-live-SiriusXMHits1-Music-POP-JAN22CONFRIMPGTEST-NA-All-20220127-NA&cp_5=SiriusXMHits1&cp_6=Music&cp_7=ALL&cp_8=POP&cp_9=JAN22CONFRIMPGTEST&cp_10=OTH"
+                },
+                {
+                    "TEXT": "Country",
+                    "URL": "?contentType=live&site_id=TheHighway&creative_id=NA_NA_DL-OTH-live-TheHighway-Music-COUNTRY-JAN22CONFRIMPGTEST-NA-All-20220127-NA&cp_5=TheHighway&cp_6=Music&cp_7=ALL&cp_8=COUNTRY&cp_9=JAN22CONFRIMPGTEST&cp_10=OTH"
+                },
+                {
+                    "TEXT": "Hip Hop/R&amp;B",
+                    "URL": "?contentType=live&channelName=Shade45&site_id=Shade45&creative_id=NA_NA_DL-OTH-live-Shade45-Music-HIPHOPRB-JAN22CONFRIMPGTEST-NA-All-20220127-NA&cp_5=Shade45&cp_6=Music&cp_7=ALL&cp_8=HIPHOPRB&cp_9=JAN22CONFRIMPGTEST&cp_10=OTH"
+                },
+                {
+                    "TEXT": "Rock",
+                    "URL": "?contentType=live&channelName=ClassicRewind&site_id=ClassicRewind&creative_id=NA_NA_DL-OTH-live-ClassicRewind-Music-ROCK-JAN22CONFRIMPGTEST-NA-All-20220127-NA&cp_5=ClassicRewind&cp_6=Music&cp_7=ALL&cp_8=ROCK&cp_9=JAN22CONFRIMPGTEST&cp_10=OTH"
+                },
+                {
+                    "TEXT": "Howard Stern",
+                    "URL": "?contentType=show&channelName=872f3487-26d2-af2e-787f-6bf016663ab9&site_id=872f3487-26d2-af2e-787f-6bf016663ab9&creative_id=NA_NA_DL-OTH-show-Howard100-Music-HOWARDINTERVIEWS-JAN22CONFRIMPGTEST-NA-All-20220127-NA&cp_5=Howard100&cp_6=Music&cp_7=ALL&cp_8=HOWARDINTERVIEWS&cp_9=JAN22CONFRIMPGTEST&cp_10=OTH"
+                },
+                {
+                    "TEXT": "Explore All",
+                    "URL": "?contentType=live&channelName=home&site_id=home&creative_id=NA_NA_DL-OTH-live-home-home-APPHOME-JAN22CONFRIMPGTEST-NA-All-20220127-NA&cp_5=home&cp_6=home&cp_7=ALL&cp_8=APPHOME&cp_9=JAN22CONFRIMPGTEST&cp_10=OTH"
+                }
+            ]
+        },
+        "CredentialRecoveryHandshakeComponent": {
+            "BACK_TO": {
+                "ALEXA": "https://alexa-fed.siriusxm.com/as/authorization.oauth2?pfidpadapterid=ad..amzusaepa&client_id=Amazon&response_type=code",
+                "GOOGLE": "https://ghome-login.siriusxm.com/authorization.oauth2?response_type=code&client_id=Google",
+                "STITCHER": "https://token.prod.idm.siriusxm.com/auth/realms/SXM-Prod/protocol/openid-connect/auth?client_id=Stitcher&response_type=code&scope=openid&response_type=code",
+                "NUGS": "https://token.prod.idm.siriusxm.com/auth/realms/SXM-PROD/protocol/openid-connect/auth?client_id=Nugs&response_type=code",
+                "EVERESTPLAYER": "https://www.siriusxm.com/downloadstreaming",
+                "PLAYER": "https://www.siriusxm.com/downloadstreaming",
+                "STREAMING": "https://www.siriusxm.com/downloadstreaming",
+                "ORGANIC": "https://www.siriusxm.com/downloadstreaming",
+                "OAC": "http://siriusxm.com/accountlogin?langpref=en",
+                "SCLOGIN": "https://care.siriusxm.com/transfer/radio/login?intcmp=SXMSimpleHero_NA_www:new-car-transfer-service_LoginOnline",
+                "PROFILEPORTAL": "https://portal.siriusxm.com/"
+            }
+        }
+    }
+}

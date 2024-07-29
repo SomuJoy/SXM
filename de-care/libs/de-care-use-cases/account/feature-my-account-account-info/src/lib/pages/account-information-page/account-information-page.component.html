@@ -1,0 +1,96 @@
+<ng-container *ngrxLet="accountInformationVM$ as vm">
+    <main>
+        <section>
+            <header>
+                <h2>{{ translateKeyPrefix + ".CONTACT_AND_PAYMENT_INFO_TITLE" | translate }}</h2>
+                <p class="lead-in">
+                    <span>{{ translateKeyPrefix + ".CONTACT_DESCRIPTION_PRELINK" | translate }}</span
+                    ><a
+                        routerLink="/account/manage/billing"
+                        routerLinkActive="active"
+                        sxmUiDataClickTrack="routing"
+                        data-link-key="AccountInfoPage"
+                        data-test="billingLinkInDescription"
+                        [attr.aria-label]="translateKeyPrefix + '.CONTACT_DESCRIPTION_ARIA' | translate"
+                    >
+                        {{ translateKeyPrefix + ".CONTACT_DESCRIPTION_LABEL" | translate }}</a
+                    ><span>{{ translateKeyPrefix + ".CONTACT_DESCRIPTION_POSTLINK" | translate }}</span>
+                </p>
+            </header>
+            <div>
+                <sxm-ui-my-account-card class="offset-top-padding">
+                    <ng-container body>
+                        <div class="card-content">
+                            <sxm-ui-contact-info-action [data]="vm?.contactInfo" (editContactInfo)="onEditContactInfo()"></sxm-ui-contact-info-action>
+                            <hr />
+                            <sxm-ui-payment-method-action
+                                [paymentMethod]="
+                                    vm?.paymentMethod?.type === 'creditCard' ? vm?.paymentMethod : { type: (translateKeyPrefix + '.PAYMENT_METHOD_INVOICE' | translate) }
+                                "
+                                (editPaymentMethod)="onEditPaymentMethod({ accountNo: vm?.accountNumber })"
+                            ></sxm-ui-payment-method-action>
+                            <hr />
+                            <sxm-ui-billing-address-action [address]="vm?.billingAddress" (editBillingAddress)="onEditBillingAddress()"></sxm-ui-billing-address-action>
+                            <ng-container *ngIf="vm?.eBill?.showOption && vm?.eBill?.hasEBill">
+                                <hr />
+                                <sxm-ui-ebill-actions [email]="vm?.contactInfo?.email" [dropdownListData]="eBillDropdownOptions$ | async"></sxm-ui-ebill-actions>
+                            </ng-container>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="vm?.eBill?.showOption && !vm?.eBill?.hasEBill" footer>
+                        <my-account-inner-strip>
+                            <sxm-ui-ebill-signup-single-action (signUpEBill)="onSignUpEBill()"></sxm-ui-ebill-signup-single-action>
+                        </my-account-inner-strip>
+                    </ng-container>
+                </sxm-ui-my-account-card>
+            </div>
+        </section>
+        <section>
+            <header>
+                <h2>{{ translateKeyPrefix + ".ACCOUNT_LOGIN_TITLE" | translate }}</h2>
+                <p>
+                    <span>{{ translateKeyPrefix + ".ACCOUNT_LOGIN_DESCRIPTION_PRELINK" | translate }}</span>
+                    <a
+                        sxmUiDataClickTrack="routing"
+                        data-link-key="AccountInfoPage"
+                        data-test="subscriptionLinkInDescription"
+                        routerLink="/account/manage/subscriptions"
+                        [attr.aria-label]="translateKeyPrefix + '.ACCOUNT_LOGIN_DESCRIPTION_ARIA' | translate"
+                    >
+                        {{ translateKeyPrefix + ".ACCOUNT_LOGIN_DESCRIPTION_LABEL" | translate }}
+                    </a>
+                    <span>{{ translateKeyPrefix + ".ACCOUNT_LOGIN_DESCRIPTION_POSTLINK" | translate }}</span>
+                </p>
+            </header>
+            <sxm-ui-my-account-card class="offset-top-padding">
+                <ng-container body>
+                    <sxm-ui-account-login-action [username]="vm?.username" (editAccountLogin)="onEditAccountLogin()"></sxm-ui-account-login-action>
+                </ng-container>
+                <ng-container *ngIf="vm?.planName" footer>
+                    <my-account-inner-strip>
+                        <p class="lead-in">{{ translateKeyPrefix + ".ACCOUNT_LOGIN_NOTE" | translate: { planName: vm.planName } }}</p>
+                    </my-account-inner-strip>
+                </ng-container>
+            </sxm-ui-my-account-card>
+        </section>
+    </main>
+    <router-outlet name="modal"></router-outlet>
+    <sxm-ui-modal
+        #BillingEbillSignUpModal
+        [ariaDescribedbyTextId]="accountInformationModalAriaDescribedbyTextId"
+        [closed]="true"
+        [title]="translateKeyPrefix + '.BILLING_EBILL_MODAL_TITLE' | translate"
+        [titlePresent]="true"
+        (modalClosed)="closeEbillSignupModal()"
+    >
+        <sxm-ui-billing-ebill-sign-up
+            #BillingEbillSignUp
+            [email]="vm?.contactInfo?.email"
+            [ariaDescribedbyTextId]="accountInformationModalAriaDescribedbyTextId"
+            [loading]="billingEbillSignUpLoading$ | async"
+            [signUpEBillServerError]="signUpEBillServerError"
+            (signUpEmailId)="onSignUpEmailId($event)"
+            (signupCancel)="closeEbillSignupModal()"
+        ></sxm-ui-billing-ebill-sign-up>
+    </sxm-ui-modal>
+</ng-container>

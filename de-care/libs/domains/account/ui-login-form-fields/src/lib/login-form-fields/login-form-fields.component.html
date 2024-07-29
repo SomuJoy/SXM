@@ -1,0 +1,93 @@
+<div [formGroup]="parentForm">
+    <p class="gray-text" *ngIf="headerText" [innerHTML]="headerText"></p>
+    <div class="invalid-feedback" *ngIf="systemError">
+        <p>{{ "domainsAccountUiLoginFormFieldsModule.loginFormFieldsComponent.UNEXPECTED_ERROR" | translate }}</p>
+    </div>
+    <p *ngIf="!canEditEmail; else emailField">
+        <ng-container *ngIf="!!email">
+            <strong
+                >{{
+                    (useUsername
+                        ? "domainsAccountUiLoginFormFieldsModule.loginFormFieldsComponent.USERNAME.LABEL"
+                        : "domainsAccountUiLoginFormFieldsModule.loginFormFieldsComponent.EMAIL.LABEL"
+                    ) | translate
+                }}:</strong
+            >
+            <br />
+            {{ email }}
+            <input type="hidden" [formControlName]="emailControlName" />
+        </ng-container>
+    </p>
+    <ng-template #emailField>
+        <div class="input-container" [class.invalid]="parentForm.get(emailControlName) | formControlInvalid: submitted" [class.filled]="!!emailControlName">
+            <label for="username">{{
+                (useUsername
+                    ? "domainsAccountUiLoginFormFieldsModule.loginFormFieldsComponent.USERNAME.LABEL"
+                    : "domainsAccountUiLoginFormFieldsModule.loginFormFieldsComponent.EMAIL.LABEL"
+                ) | translate
+            }}</label>
+            <input id="username" data-test="usernameFormField" type="text" [formControlName]="emailControlName" onFocus />
+            <sxm-ui-tooltip *ngIf="useUsername">
+                {{ "domainsAccountUiLoginFormFieldsModule.loginFormFieldsComponent.USERNAME.ERROR" | translate }}
+            </sxm-ui-tooltip>
+        </div>
+        <div class="invalid-feedback" *ngIf="parentForm.get(emailControlName) | formControlInvalid: submitted">
+            <p *ngIf="parentForm.get(emailControlName).errors && parentForm.get(emailControlName).errors.usernameInUse; else genericEmailError">
+                {{
+                    (useUsername
+                        ? "domainsAccountUiLoginFormFieldsModule.loginFormFieldsComponent.USERNAME.IN_USE_ERROR"
+                        : "domainsAccountUiLoginFormFieldsModule.loginFormFieldsComponent.EMAIL.IN_USE_ERROR"
+                    ) | translate
+                }}
+            </p>
+            <ng-template #genericEmailError>
+                <p *ngIf="parentForm.get(emailControlName).errors">
+                    {{
+                        (useUsername
+                            ? "domainsAccountUiLoginFormFieldsModule.loginFormFieldsComponent.USERNAME.ERROR"
+                            : "domainsAccountUiLoginFormFieldsModule.loginFormFieldsComponent.EMAIL.ERROR"
+                        ) | translate
+                    }}
+                </p>
+            </ng-template>
+        </div>
+    </ng-template>
+
+    <sxm-ui-password-strength
+        [formControlName]="passwordControlName"
+        [labelText]="'domainsAccountUiLoginFormFieldsModule.loginFormFieldsComponent.PASSWORD.LABEL' | translate"
+        [id]="passwordElId"
+        [alwaysDisplayPasswordHint]="false"
+        [class.invalid]="parentForm.controls[passwordControlName] | formControlInvalid: submitted"
+        #passwordControl
+    >
+    </sxm-ui-password-strength>
+    <div *ngIf="parentForm.controls[passwordControlName] | formControlInvalid: submitted" class="invalid-feedback">
+        <p *ngIf="parentForm.controls[passwordControlName].hasError('required')">
+            {{ "domainsAccountUiLoginFormFieldsModule.loginFormFieldsComponent.PASSWORD.ERRORS.REQUIRED" | translate }}
+        </p>
+        <p *ngIf="parentForm.controls[passwordControlName].hasError('length')">
+            {{ "domainsAccountUiLoginFormFieldsModule.loginFormFieldsComponent.PASSWORD.ERRORS.LENGTH" | translate: parentForm.controls[passwordControlName].errors.length }}
+        </p>
+        <p *ngIf="parentForm.controls[passwordControlName].hasError('policy')">
+            {{ "domainsAccountUiLoginFormFieldsModule.loginFormFieldsComponent.PASSWORD.ERRORS.POLICY" | translate }}
+        </p>
+        <p *ngIf="parentForm.controls[passwordControlName].hasError('generic')">
+            {{ "domainsAccountUiLoginFormFieldsModule.loginFormFieldsComponent.PASSWORD.ERRORS.GENERIC" | translate }}
+        </p>
+        <p *ngIf="parentForm.controls[passwordControlName].hasError('piiData')">
+            {{ "domainsAccountUiLoginFormFieldsModule.loginFormFieldsComponent.PASSWORD.ERRORS.PII_DATA" | translate }}
+        </p>
+        <p *ngIf="parentForm.controls[passwordControlName].errors?.reservedWords as reservedWordsError">
+            {{
+                "domainsAccountUiLoginFormFieldsModule.loginFormFieldsComponent.PASSWORD.ERRORS.RESERVED_WORDS"
+                    | translate
+                        : {
+                              pluralWord:
+                                  reservedWordsError.words.length | i18nPlural: ("domainsAccountUiLoginFormFieldsModule.loginFormFieldsComponent.PLURAL_MAP.WORD" | translate),
+                              reservedWords: reservedWordsError.words.join(", ")
+                          }
+            }}
+        </p>
+    </div>
+</div>

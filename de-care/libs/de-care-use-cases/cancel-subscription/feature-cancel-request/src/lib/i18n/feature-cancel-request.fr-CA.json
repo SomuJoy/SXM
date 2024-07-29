@@ -1,0 +1,69 @@
+{
+    "deCareUseCasesCancelSubscriptionFeatureCancelRequest": {
+        "cancelSubscriptionPageComponent": {
+            "HERO": {
+                "CANCEL_STEP_REASON": "Avant que vous partiez...",
+                "CANCEL_STEP_OFFERS": "Une dernière option à considérer...",
+                "CANCEL_STEP_SUMMARY": "Vérifiez et confirmez que vous souhaitez annuler ce forfait.",
+                "CANCEL_STEP_CONFIRMATION": "Votre forfait a été annulé.",
+                "CANCEL_STEP_CONFIRMATION_LATER": "Votre abonnement sera annulé.",
+                "ACCEPT_OFFER_FLOW": "Modifiez votre abonnement"
+            },
+            "NO_OFFERS_OPTIONS": {
+                "HEADING": "Vous avez encore d'autres options d'abonnement.",
+                "INSTRUCTIONS": "Pour obtenir plus d'aide et d'appui, vous pouvez clavarder avec un préposé pour discuter de vos options ou pour annuler."
+            },
+            "CLAIM_SELF_PAY": "Vous pouvez changer votre abonnement, opter pour l’une de ces excellentes forfaits.",
+            "CLAIM_SAVE": "Vous pouvez changer votre abonnement, opter pour l’une de ces excellentes offres et économiser jusqu’à {{savings}}%. ",
+            "OFFER_INSTRUCTIONS": "Vous pourrez choisir un forfait de facturation pour votre offre lors de la prochaine étape. Changez votre abonnement ou annulez ci-dessous.",
+            "NO_OFFER_SELECTED_ERROR": "Sélectionnez une offre ci-dessous",
+            "CONTINUE_TO_CANCEL": "NON, JE VEUX ANNULER",
+            "OFFER_GRID_CURRENT_PLAN": "FORFAIT ACTUEL",
+            "OFFER_GRID_RENEWAL_PLAN": "FORFAIT À RENOUVELER",
+            "OFFER_GRID_CONTINUE_EXISTING": "CONSERVER L’ABONNEMENT",
+            "OFFER_GRID_CONTINUE_NEW": "CHANGER D’ABONNEMENT",
+            "CHAT_WITH_AGENT": "Clavarde avec un préposé",
+            "CALL_US": "Pour obtenir plus d'aide et d'appui, vous pouvez communiquer avec nous au <a href=\"tel:+1-888-539-7474\">1 888 539-7474</a> afin de discuter de vos options.",
+            "CANCEL_SUBSCRIPTION_LABEL": "TERMINER L’ANNULATION",
+            "GO_BACK_TO_OFFERS": "Retour à la page des offres",
+            "BACK_BUTTON": {
+                "TEXT": "RETOUR À MON COMPTE"
+            },
+            "OFFER_CONTENT_CARD_FLAG": "Notre Meilleur Forfait",
+            "OFFER_CONTENT_CARD_HEADLINE1": "Passer à ce forfait",
+            "OFFER_CONTENT_CARD_HEADLINE2": "Garder ce forfait",
+            "OFFER_CONTINUE": "CHANGER D’ABONNEMENT",
+            "OFFER_GRID_HEADER": "Minute, avant de quitter, jetez un autre coup d’œil à ce que vous avez, en plus d’autres super options.",
+            "OFFER_GRID_HEADER_FOR_TRIAL_WITH_FOLLOWON": "Considérez rester avec nous et choisissez l'une des excellentes options ci-dessous.",
+            "CANCEL_REASONS": [
+                { "KEY": "EXPENSIVE", "TEXT": "Mon abonnement est trop onéreux", "ONLY_STR": false },
+                { "KEY": "NO_LISTENTING_OPTIONS", "TEXT": "Je n’arrive pas à trouver ce que je veux écouter", "ONLY_STR": false },
+                { "KEY": "DONT_LISTEN", "TEXT": "Je n’écoute pas assez", "ONLY_STR": false },
+                { "KEY": "TECHNICAL_ISSUES", "TEXT": "J’ai des problèmes techniques", "ONLY_STR": false },
+                { "KEY": "OTHER", "TEXT": "J’ai d’autres raisons", "ONLY_STR": false },
+                { "KEY": "NO_SATELLITE_RADIO", "TEXT": "Je pensais pouvoir écouter avec la radio satellite intégrée de ma voiture", "ONLY_STR": true },
+                { "KEY": "OTHER_STREAMING_SVCS", "TEXT": "J’ai d’autres services de diffusion en continu que je préfère", "ONLY_STR": true }
+            ],
+            "INSTRUCTIONS_PRO_RATED": "Dès que vous aurez confirmé votre annulation, votre abonnement sera annulé. Vous recevrez un crédit au prorata sur votre mode de paiement initial.",
+            "CC_REFUNDS": "Les remboursements par carte de crédit sont traités habituellement en 3 à 5 jours ouvrables et les remboursements par chèque en 7 à 10 jours ouvrables."
+        },
+        "acceptOfferConfirmationPageComponent": {
+            "HERO": {
+                "TITLE": "Votre abonnement a été mis à jour!"
+            },
+            "PRINT_LINK": {
+                "TEXT": "Imprimez le sommaire de votre commande"
+            },
+            "BACK_BUTTON": {
+                "TEXT": "RETOUR À MON COMPTE"
+            },
+            "IMPORTANT_INFO": {
+                "LEGAL_COPY": "Renseignements importants au sujet de votre abonnement:"
+            },
+            "STREAMING_PLAYER_LINK": {
+                "SATELLITE_OFFER": "",
+                "STREAMING_OFFER": ""
+            }
+        }
+    }
+}

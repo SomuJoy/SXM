@@ -1,0 +1,546 @@
+[
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/utility/card-bin-ranges",
+            "postData": {
+                "cardBinType": "-1"
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": [
+                        {
+                            "name": "Ck",
+                            "type": "9",
+                            "priority": 1,
+                            "regex": ""
+                        },
+                        {
+                            "name": "Sa",
+                            "type": "10",
+                            "priority": 1,
+                            "regex": ""
+                        },
+                        {
+                            "name": "VS_BH_TEST_ONLY",
+                            "type": "8",
+                            "priority": 2,
+                            "regex": "^4436135021[0-9]{6}$"
+                        },
+                        {
+                            "name": "VS",
+                            "type": "3",
+                            "priority": 3,
+                            "regex": "^4[0-9]{12}$|^4[0-9]{15}$"
+                        },
+                        {
+                            "name": "MC",
+                            "type": "2",
+                            "priority": 4,
+                            "regex": "^5[1-5][0-9]{14}$|^222[1-9][0-9]{12}$|^22[3-9][0-9]{13}$|^2[3-6][0-9]{14}$|^27[01][0-9]{13}$|^2720[0-9]{12}$"
+                        },
+                        {
+                            "name": "AM",
+                            "type": "1",
+                            "priority": 5,
+                            "regex": "^37[0-9]{13}$|^34[0-9]{13}$"
+                        },
+                        {
+                            "name": "CU",
+                            "type": "7",
+                            "priority": 6,
+                            "regex": "^81[0-6][0-9]{13}$|^817[0-1][0-9]{12}$|^621094[0-9]{10}$|^62[4-6][0-9]{13}$|^628[2-8][0-9]{12}$|^62292[6-9][0-9]{10}$|^6229[3-9][0-9]{11}$|^623[0-6][0-9]{12}$|^6237[0-8][0-9]{11}$|^62379[0-6][0-9]{10}$"
+                        },
+                        {
+                            "name": "DI",
+                            "type": "4",
+                            "priority": 7,
+                            "regex": "^60110[0-9]{11}$|^6011[2-4][0-9]{11}$|^601174[0-9]{10}$|^60117[7-9][0-9]{10}$|^60118[6-9][0-9]{10}$|^60119[0-9]{11}$|^62212[6-9][0-9]{10}$|^6221[3-9][0-9]{11}$|^622[2-8][0-9]{12}$|^6229[01][0-9]{11}$|^62292[0-5][0-9]{10}$|^64[4-9][0-9]{13}$|^65[0-9]{14}$"
+                        },
+                        {
+                            "name": "DD",
+                            "type": "6",
+                            "priority": 8,
+                            "regex": "^30[0-5][0-9]{11}$|^3095[0-9]{10}$|^36[0-9]{12}$|^3[8-9][0-9]{12}$"
+                        },
+                        {
+                            "name": "JC",
+                            "type": "5",
+                            "priority": 9,
+                            "regex": "^3528[0-9]{12}$|^3529[0-9]{12}$|^3530[0-9]{12}$|^3531[0-9]{12}$|^3532[0-9]{12}$|^3533[0-9]{12}$|^3534[0-9]{12}$|^3535[0-9]{12}$|^3536[0-9]{12}$|^3537[0-9]{12}$|^3538[0-9]{12}$|^3539[0-9]{12}$|^3540[0-9]{12}$|^3541[0-9]{12}$|^3542[0-9]{12}$|^3543[0-9]{12}$|^3544[0-9]{12}$|^3545[0-9]{12}$|^3546[0-9]{12}$|^3547[0-9]{12}$|^3548[0-9]{12}$|^3549[0-9]{12}$|^3550[0-9]{12}$|^3551[0-9]{12}$|^3552[0-9]{12}$|^3553[0-9]{12}$|^3554[0-9]{12}$|^3555[0-9]{12}$|^3556[0-9]{12}$|^3557[0-9]{12}$|^3558[0-9]{12}$|^3559[0-9]{12}$|^3560[0-9]{12}$|^3561[0-9]{12}$|^3562[0-9]{12}$|^3563[0-9]{12}$|^3564[0-9]{12}$|^3565[0-9]{12}$|^3566[0-9]{12}$|^3567[0-9]{12}$|^3568[0-9]{12}$|^3569[0-9]{12}$|^3570[0-9]{12}$|^3571[0-9]{12}$|^3572[0-9]{12}$|^3573[0-9]{12}$|^3574[0-9]{12}$|^3575[0-9]{12}$|^3576[0-9]{12}$|^3577[0-9]{12}$|^3578[0-9]{12}$|^3579[0-9]{12}$|^3580[0-9]{12}$|^3581[0-9]{12}$|^3582[0-9]{12}$|^3583[0-9]{12}$|^3584[0-9]{12}$|^3585[0-9]{12}$|^3586[0-9]{12}$|^3587[0-9]{12}$|^3588[0-9]{12}$|^3589[0-9]{12}$"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/account/oem",
+            "postData": ""
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "nonPIIAccount": {
+                            "firstName": "PAULA",
+                            "accountProfile": {
+                                "accountRegistered": true
+                            },
+                            "serviceAddress": {
+                                "state": "NY"
+                            },
+                            "subscriptions": [],
+                            "billingSummary": {
+                                "creditCard": {
+                                    "last4Digits": "1111",
+                                    "type": "VISA",
+                                    "status": "ACTIVE"
+                                }
+                            },
+                            "closedDevices": [
+                                {
+                                    "last4DigitsOfRadioId": "00AY",
+                                    "closedDate": "2020-08-28T15:46:43-04:00",
+                                    "vehicleInfo": {
+                                        "year": null,
+                                        "make": null,
+                                        "model": null
+                                    },
+                                    "subscription": {
+                                        "id": "10000219709",
+                                        "plans": [
+                                            {
+                                                "dataCapable": false,
+                                                "code": "OEM Trial - Select - 6mo - 0.00",
+                                                "packageName": "SIR_AUD_EVT",
+                                                "termLength": 6,
+                                                "startDate": null,
+                                                "endDate": null,
+                                                "nextCycleOn": null,
+                                                "type": "TRIAL",
+                                                "capabilities": []
+                                            },
+                                            {
+                                                "dataCapable": false,
+                                                "code": "Video - 1mo",
+                                                "packageName": "SIR_IP_VID",
+                                                "termLength": 1,
+                                                "startDate": null,
+                                                "endDate": null,
+                                                "nextCycleOn": null,
+                                                "type": "SELF_PAY",
+                                                "capabilities": []
+                                            }
+                                        ],
+                                        "followonPlans": null,
+                                        "radioService": null,
+                                        "streamingService": null,
+                                        "status": "Closed"
+                                    }
+                                }
+                            ],
+                            "hasEmailAddressOnFile": true
+                        },
+                        "marketingId": "X65100AY",
+                        "marketingAcctId": "8077"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/offers/customer",
+            "postData": {
+                "programCode": null,
+                "radioId": "00AY"
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "offers": [
+                            {
+                                "planCode": "Promo - Select - 6mo - 29.94 (4.99FOR6) - WBFB",
+                                "packageName": "SXM_SIR_AUD_EVT",
+                                "packageUpgrade": null,
+                                "promoCode": "WBFBOEM",
+                                "termLength": 6,
+                                "type": "PROMO",
+                                "marketType": "self-pay:promo",
+                                "price": 29.94,
+                                "pricePerMonth": 4.99,
+                                "retailPrice": 16.99,
+                                "packageUpgradePrice": null,
+                                "msrpPrice": 16.99,
+                                "processingFee": null,
+                                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                                "deal": null,
+                                "priceChangeMessagingType": "",
+                                "planEndDate": null,
+                                "fallbackReason": "NONE",
+                                "minimumFollowOnTerm": 1,
+                                "order": null,
+                                "streaming": false,
+                                "mrdEligible": false,
+                                "fallback": true,
+                                "upgradeOffer": false
+                            }
+                        ],
+                        "presentment": null
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/offers/info",
+            "postData": {
+                "planCodes": [
+                    {
+                        "leadOfferPlanCode": "Promo - Select - 6mo - 29.94 (4.99FOR6) - WBFB"
+                    }
+                ],
+                "locales": ["en_US"]
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "locales": [
+                            {
+                                "locale": "en_US",
+                                "offerInfos": [
+                                    {
+                                        "planCode": "Promo - Select - 6mo - 29.94 (4.99FOR6) - WBFB",
+                                        "type": "PROMO",
+                                        "salesHero": {
+                                            "title": "CMS mock test: Keep the music going for as little as $5 a month",
+                                            "subTitle": null,
+                                            "presentation": {
+                                                "style": null,
+                                                "theme": "Theme2"
+                                            }
+                                        },
+                                        "offerDescription": {
+                                            "packageName": "SiriusXM Select",
+                                            "priceAndTermDescTitle": "CMS mock test: <span class=\"offer-price text-color-raspberry\">6 months</span><span class=\"standard-copy bold\"> for </span><span class=\"offer-price text-color-raspberry\">$4.99</span><span class=\"standard-copy\">/mo</span>",
+                                            "processingFeeDisclaimer": "CMS mock test: Then $16.99/mo. See <strong>Offer Details</strong> below.",
+                                            "channels": [
+                                                {
+                                                    "title": "<b>SiriusXM Select Includes:</b>",
+                                                    "descriptions": [
+                                                        "325+ channels in your car, on your phone, at home, and online",
+                                                        "Every MLB<span>&reg;</span> and NBA game. NHL<span>&reg;</span>, NCAA<span>&reg;</span> and PGA TOUR<span>&reg;</span> coverage",
+                                                        "Ad-free music and Xtra channels to stream for every mood and activity",
+                                                        "News, entertainment, comedy, and sports",
+                                                        "Thousands of shows and videos available on demand"
+                                                    ]
+                                                }
+                                            ],
+                                            "footer": "Listen & watch your favorites in all your favorite places—in your car, on your phone, or at home."
+                                        },
+                                        "dealInfos": null,
+                                        "offerDetails": [
+                                            "<strong>CMS mock test: OFFER DETAILS:</strong>  Activate a {shortPackageName} subscription and pay $29.94 for your first 6 months, a savings of 70% off the current monthly rate of $16.99, plus get free activation (an additional $15 savings). <strong>A credit card is required on this offer. Fees and taxes apply. Service will automatically renew thereafter every month and you will be charged at then-current rates. Please see our <a href='https://www.siriusxm.com/customeragreement' target='_blank' title=' at siriusxm.com/agreements'>Customer Agreement</a> for complete terms and how to cancel, which includes calling us at <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>.</strong> All fees, content and features are subject to change. This offer cannot be combined with any other and may be modified or terminated at any time."
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/quotes/quote",
+            "postData": {
+                "planCodes": ["Promo - Select - 6mo - 29.94 (4.99FOR6) - WBFB"],
+                "radioId": "00AY"
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "quote": {
+                            "currentQuote": {
+                                "totalTaxAmount": "0.00",
+                                "totalFeesAmount": "6.41",
+                                "totalTaxesAndFeesAmount": "6.41",
+                                "totalAmount": "36.35",
+                                "discountAmount": "0.00",
+                                "pricePerMonth": "4.99",
+                                "currentBalance": "36.35",
+                                "consolidatedCreditAmount": "",
+                                "previousBalance": "0.00",
+                                "fees": [
+                                    {
+                                        "description": "U.S. Music Royalty Fee",
+                                        "amount": "6.41"
+                                    }
+                                ],
+                                "taxes": [],
+                                "details": [
+                                    {
+                                        "planCode": "Promo - Select - 6mo - 29.94 (4.99FOR6) - WBFB",
+                                        "packageName": "SXM_SIR_AUD_EVT",
+                                        "termLength": 6,
+                                        "priceAmount": "29.94",
+                                        "taxAmount": "0.00",
+                                        "feeAmount": "6.41",
+                                        "totalTaxesAndFeesAmount": "6.41",
+                                        "taxes": [],
+                                        "fees": [
+                                            {
+                                                "description": "U.S. Music Royalty Fee",
+                                                "amount": "6.41"
+                                            }
+                                        ],
+                                        "startDate": "2020-08-28",
+                                        "endDate": "2021-02-28",
+                                        "isMrdEligible": false,
+                                        "balanceType": null,
+                                        "type": "PROMO",
+                                        "dealType": ""
+                                    }
+                                ],
+                                "isUpgraded": false,
+                                "isProrated": false
+                            },
+                            "futureQuote": null,
+                            "proRatedRenewalQuote": null,
+                            "promoRenewalQuote": null,
+                            "renewalQuote": {
+                                "totalTaxAmount": "0.00",
+                                "totalFeesAmount": "3.64",
+                                "totalTaxesAndFeesAmount": "3.64",
+                                "totalAmount": "20.63",
+                                "discountAmount": "0.00",
+                                "pricePerMonth": "16.99",
+                                "currentBalance": "",
+                                "consolidatedCreditAmount": "",
+                                "previousBalance": "",
+                                "fees": [
+                                    {
+                                        "description": "U.S. Music Royalty Fee",
+                                        "amount": "3.64"
+                                    }
+                                ],
+                                "taxes": [],
+                                "details": [
+                                    {
+                                        "planCode": "Select - 1mo - wActv",
+                                        "packageName": "SXM_SIR_AUD_EVT",
+                                        "termLength": 1,
+                                        "priceAmount": "16.99",
+                                        "taxAmount": "0.00",
+                                        "feeAmount": "3.64",
+                                        "totalTaxesAndFeesAmount": "3.64",
+                                        "taxes": [],
+                                        "fees": [
+                                            {
+                                                "description": "U.S. Music Royalty Fee",
+                                                "amount": "3.64"
+                                            }
+                                        ],
+                                        "startDate": "2021-02-28",
+                                        "endDate": "2021-03-28",
+                                        "isMrdEligible": false,
+                                        "balanceType": null,
+                                        "type": "SELF_PAY",
+                                        "dealType": ""
+                                    }
+                                ],
+                                "isUpgraded": null,
+                                "isProrated": false
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/validate/customer-info",
+            "postData": {
+                "creditCard": {
+                    "creditCardNumber": "4111111111111111"
+                }
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "valid": true,
+                        "emailValidation": null,
+                        "usernameValidation": null,
+                        "billingAddressValidation": null,
+                        "serviceAddressValidation": null,
+                        "ccValidation": {
+                            "valid": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/validate/customer-info",
+            "postData": {
+                "billingAddress": {
+                    "addressLine1": "101 SOME AVE",
+                    "addressLine2": "",
+                    "city": "New York",
+                    "state": "NY",
+                    "zip": "10020"
+                }
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "valid": true,
+                        "emailValidation": null,
+                        "usernameValidation": null,
+                        "billingAddressValidation": {
+                            "confidenceLevel": "None",
+                            "correctedAddress": [
+                                {
+                                    "addressLine1": " ",
+                                    "addressLine2": " ",
+                                    "city": " ",
+                                    "state": " ",
+                                    "zip": " "
+                                }
+                            ],
+                            "resultCode": "SUCCESS",
+                            "validationStatus": "NOT_VALID"
+                        },
+                        "serviceAddressValidation": null,
+                        "ccValidation": null
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/purchase/add-subscription",
+            "postData": {
+                "radioId": "00AY",
+                "paymentInfo": {
+                    "useCardOnfile": false,
+                    "cardInfo": {
+                        "nameOnCard": "Paula Myo",
+                        "cardNumber": "4111111111111111",
+                        "expiryMonth": 5,
+                        "expiryYear": 2027,
+                        "securityCode": null
+                    },
+                    "paymentType": "creditCard"
+                },
+                "billingAddress": {
+                    "email": null,
+                    "streetAddress": "101 SOME AVE",
+                    "addressType": "person",
+                    "postalCode": "10020",
+                    "city": "New York",
+                    "state": "NY",
+                    "country": "US",
+                    "avsvalidated": false
+                },
+                "marketingPromoCode": null,
+                "plans": [
+                    {
+                        "planCode": "Promo - Select - 6mo - 29.94 (4.99FOR6) - WBFB"
+                    }
+                ]
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "email": "GQCCWT.LDRX@SIRIUSXM.COM",
+                        "status": "SUCCESS",
+                        "radioId": "00AY",
+                        "subscriptionId": "10000216265",
+                        "accountNumber": "10000218077",
+                        "isOfferStreamingEligible": true,
+                        "isUserNameSameAsEmail": true,
+                        "isEligibleForRegistration": false
+                    }
+                }
+            }
+        }
+    }
+]

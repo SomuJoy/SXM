@@ -1,0 +1,378 @@
+[
+    {
+        "request": {
+            "method": "GET",
+            "url": "/services/utility/env-info",
+            "postData": ""
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Fri, 29 Jan 2021 17:02:31 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Transfer-Encoding",
+                    "value": "chunked"
+                },
+                {
+                    "name": "Connection",
+                    "value": "keep-alive"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": ": ALLOW-FROM https://www.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Security-Policy",
+                    "value": ": frame-ancestors https://*.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "mode": "test",
+                        "country": "us",
+                        "buildInfo": {
+                            "tag": "project/CARE_RELEASE_0060000",
+                            "smsDependency": "",
+                            "smsUser": "web1",
+                            "smsHost": "10.98.144.117:25401",
+                            "pvtTime": "2021-07-02 01:42:56.0"
+                        },
+                        "sessionInfo": {
+                            "id": "f24e5155-4686-49ee-8fe0-aea680051be3",
+                            "idleTimeout": "20",
+                            "absoluteTimeout": "Fri Jan 29 12:19:44 EST 2021"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/account/token",
+            "postData": {
+                "token": "ebe1b59a-b9df-43d6-b7c7-87a73f9ce297",
+                "tokenType": "SALES_AUDIO",
+                "student": false
+            }
+        },
+        "response": {
+            "status": 200,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Fri, 29 Jan 2021 17:02:32 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Transfer-Encoding",
+                    "value": "chunked"
+                },
+                {
+                    "name": "Connection",
+                    "value": "keep-alive"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Accept-Encoding"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://dex-dev.corp.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": ": ALLOW-FROM https://www.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Security-Policy",
+                    "value": ": frame-ancestors https://*.siriusxm.ca"
+                },
+                {
+                    "name": "Content-Encoding",
+                    "value": "gzip"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "SUCCESS",
+                    "httpStatusCode": 200,
+                    "httpStatus": "OK",
+                    "data": {
+                        "nonPIIAccount": {
+                            "firstName": "JOHN",
+                            "accountProfile": {
+                                "accountRegistered": false
+                            },
+                            "serviceAddress": {
+                                "state": "NY"
+                            },
+                            "subscriptions": [
+                                {
+                                    "id": "10000207584",
+                                    "plans": [
+                                        {
+                                            "dataCapable": false,
+                                            "code": "Promo - Select - 6mo - 29.94 - (4.99FOR6) - 1X",
+                                            "packageName": "1_SIR_AUD_EVT",
+                                            "termLength": 6,
+                                            "startDate": "2021-01-28T00:00:00-05:00",
+                                            "endDate": "2021-07-28T00:00:00-04:00",
+                                            "nextCycleOn": null,
+                                            "type": "PROMO",
+                                            "capabilities": ["IPAUD", "AUD"],
+                                            "price": 29.94,
+                                            "isBasePlan": true
+                                        }
+                                    ],
+                                    "followonPlans": [
+                                        {
+                                            "dataCapable": false,
+                                            "code": "Select - 1mo - wActv",
+                                            "packageName": "1_SIR_AUD_EVT",
+                                            "termLength": 1,
+                                            "startDate": null,
+                                            "endDate": null,
+                                            "nextCycleOn": null,
+                                            "type": "SELF_PAID",
+                                            "capabilities": [],
+                                            "price": 16.99,
+                                            "isBasePlan": true
+                                        }
+                                    ],
+                                    "radioService": {
+                                        "id": "10000204256",
+                                        "last4DigitsOfRadioId": "00CP",
+                                        "vehicleInfo": {
+                                            "year": null,
+                                            "make": null,
+                                            "model": null
+                                        },
+                                        "is360LCapable": false
+                                    },
+                                    "streamingService": {
+                                        "id": "10000206304",
+                                        "maskedUserName": "joh******@siriusxm.com",
+                                        "status": "Active"
+                                    },
+                                    "status": "Active",
+                                    "devicePromoCode": "WBGA"
+                                }
+                            ],
+                            "billingSummary": {
+                                "creditCard": {
+                                    "last4Digits": "1111",
+                                    "type": "VISA",
+                                    "status": "ACTIVE"
+                                }
+                            },
+                            "closedDevices": [],
+                            "hasEmailAddressOnFile": true,
+                            "isAccountIdentifiedUsingFLEPZOrVIN": false
+                        },
+                        "maskedUserNameFromToken": null,
+                        "marketingId": "QQT000CP",
+                        "marketingAcctId": "5664",
+                        "isUserNameInTokenSameAsAccount": false
+                    }
+                }
+            }
+        }
+    },
+    {
+        "request": {
+            "method": "POST",
+            "url": "/services/offers/customer/change",
+            "postData": {
+                "subscriptionId": 10000207584,
+                "task": "upgradeaapr"
+            }
+        },
+        "response": {
+            "status": 412,
+            "statusText": "",
+            "headers": [
+                {
+                    "name": "Server",
+                    "value": "nginx/1.12.2"
+                },
+                {
+                    "name": "Date",
+                    "value": "Fri, 29 Jan 2021 17:02:32 GMT"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json;charset=UTF-8"
+                },
+                {
+                    "name": "Transfer-Encoding",
+                    "value": "chunked"
+                },
+                {
+                    "name": "Connection",
+                    "value": "keep-alive"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Origin"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Method"
+                },
+                {
+                    "name": "Vary",
+                    "value": "Access-Control-Request-Headers"
+                },
+                {
+                    "name": "Access-Control-Allow-Origin",
+                    "value": "https://dex-dev.corp.siriusxm.com"
+                },
+                {
+                    "name": "Access-Control-Allow-Credentials",
+                    "value": "true"
+                },
+                {
+                    "name": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "name": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "name": "Cache-Control",
+                    "value": "no-cache, no-store, max-age=0, must-revalidate"
+                },
+                {
+                    "name": "Pragma",
+                    "value": "no-cache"
+                },
+                {
+                    "name": "Expires",
+                    "value": "0"
+                },
+                {
+                    "name": "X-Frame-Options",
+                    "value": "DENY"
+                }
+            ],
+            "cookies": [],
+            "content": {
+                "mimeType": "application/json",
+                "text": {
+                    "status": "FAILURE",
+                    "httpStatusCode": 412,
+                    "httpStatus": "PRECONDITION_FAILED",
+                    "error": {
+                        "errorCode": "PROMO_PLAN_NOT_ELIGIBLE_FOR_UPGRADE",
+                        "errorPropKey": "offer.service.promo.plan.not.eligible.for.upgrade",
+                        "errorType": "BUSINESS",
+                        "errorStackTrace": "AccountNumber: 10000205664 | RadioId: QQT000CP | x-forwarded-for: null | URL: /services/offers/customer/change | Exception: OfferServiceException#null | StackTrace: OfferServiceImpl.java:91 | ErrorType: BUSINESS | ErrorMessage: ERROR : [errorCode : PROMO_PLAN_NOT_ELIGIBLE_FOR_UPGRADE, errorPropKey : offer.service.promo.plan.not.eligible.for.upgrade, errorType : CHECKED, errorLevel : ACTION, statusCode : 412 PRECONDITION_FAILED, errorMessage : Promo Plan not eligible for upgrade | , sourceErrorCode : null] | FullStackTrace: "
+                    }
+                }
+            }
+        }
+    }
+]

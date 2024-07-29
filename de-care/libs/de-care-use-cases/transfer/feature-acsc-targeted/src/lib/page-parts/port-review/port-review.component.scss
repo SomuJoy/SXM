@@ -1,0 +1,10 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+h1 {
+    @include get-header-style(h4);
+}
+
+.undecorated-list {
+    @include list-reset;
+}

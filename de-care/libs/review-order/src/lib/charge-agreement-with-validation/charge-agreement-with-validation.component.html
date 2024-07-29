@@ -1,0 +1,4 @@
+<charge-agreement [details]="details" [checked]="agreementAccepted" (checkChange)="agreementAccepted = $event; checkChange.emit(agreementAccepted)"></charge-agreement>
+<div *ngIf="submitted && !agreementAccepted" class="invalid-feedback">
+    <p>{{ translateKeyPrefix + ".ACCEPT_AGREEMENT" | translate }}</p>
+</div>

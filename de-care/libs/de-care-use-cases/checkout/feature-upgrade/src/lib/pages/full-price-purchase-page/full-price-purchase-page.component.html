@@ -1,0 +1,100 @@
+<section id="heroSection" *ngIf="heroViewModel$ | async as heroData">
+    <sxm-ui-hero [heroData]="heroData"></sxm-ui-hero>
+</section>
+<div deCarePageMainContent id="mainContent" *ngrxLet="currentLang$ as currentLang">
+    <section id="your-plan-and-offer" *ngIf="selectedDeviceSubscriptionViewModel$ | async as selectedDeviceSubscriptionViewModel">
+        <article class="your-plan">
+            <p class="your-plan--header">{{ translateKeyPrefix + "CURRENT_PLAN.TITLE" | translate }}</p>
+            <p *ngFor="let plan of selectedDeviceSubscriptionViewModel">
+                {{
+                    translateKeyPrefix + "CURRENT_PLAN.NAME_AND_PRICE" + (plan.isAnnual ? "_ANNUAL" : "")
+                        | translate: { name: plan.name, price: plan.price | currency: "USD":"symbol-narrow":undefined:currentLang }
+                }}
+            </p>
+        </article>
+    </section>
+    <section id="purchaseStepsSection">
+        <sxm-ui-stepper-accordion #stepper>
+            <sxm-ui-step-accordion
+                (active)="onUpgradedPlanInformationStepActive()"
+                [label]="translateKeyPrefix + 'STEPS.UPGRADED_PLAN_INFO.TITLE' | translate"
+                (editClicked)="onUpgradedPlanInformationClick()"
+            >
+                <sxm-ui-primary-package-card
+                    *ngIf="offerDescriptionCopy$ | async as offerDescriptionData"
+                    [chevronClickTrackingText]="chevronClickTrackingText"
+                    [packageData]="offerDescriptionData"
+                ></sxm-ui-primary-package-card>
+
+                <sxm-ui-deal-addon-card *ngIf="dealAddonCopy$ | async as dealAddonData" [copyContent]="dealAddonData"></sxm-ui-deal-addon-card>
+                <button sxm-proceed-button type="submit" sxmUiDataClickTrack="submit" (click)="submitUpgradedPlanInfo()" class="primary button full-width">
+                    {{ translateKeyPrefix + "STEPS.UPGRADED_PLAN_INFO.CONTINUE_BUTTON_TEXT" | translate }}
+                </button>
+                <ng-template #inactiveContent>
+                    <span
+                        *ngIf="selectedPlanPackageName$ | async as selectedPlanPackageName"
+                        [innerHTML]="
+                            translateKeyPrefix + 'STEPS.UPGRADED_PLAN_INFO.SELECTED_PLAN_INFO'
+                                | translate: { selectedPlan: 'app.packageDescriptions.' + selectedPlanPackageName + '.name' | translate }
+                        "
+                    ></span>
+                    <span *ngIf="selectedPlanDealType$ | async as deal" [innerHTML]="translateKeyPrefix + 'STEPS.UPGRADED_PLAN_INFO.DEAL_INFO_' + deal | translate"></span>
+                </ng-template>
+            </sxm-ui-step-accordion>
+
+            <sxm-ui-step-accordion
+                (active)="onPickYourBillingPlanStepActive()"
+                [label]="translateKeyPrefix + 'STEPS.PICK_YOUR_BILLING_PLAN.TITLE' | translate"
+                (editClicked)="onPickYourBillingPlanClick()"
+            >
+                <sxm-ui-select-plan-by-term-form
+                    [plans]="plans$ | async"
+                    [currentPlanTermLength]="selectedPlanTermLength$ | async"
+                    (selectedPlanCode)="onSelectedPlan($event)"
+                ></sxm-ui-select-plan-by-term-form>
+
+                <ng-template #inactiveContent>
+                    <span
+                        *ngIf="selectedPlan$ | async as plan"
+                        [innerHTML]="
+                            (plan.termLength
+                                | i18nPlural: (translateKeyPrefix + 'TERM_MAP' | translate)
+                                | updatePriceAndTerm
+                                    : { price: plan.price | currency: 'USD':'symbol-narrow':undefined:(currentLang$ | async), termLength: plan.termLength.toString() }) +
+                            (includePlusFees ? (translateKeyPrefix + 'PLUS_FEES' | translate) : '')
+                        "
+                    >
+                    </span>
+                </ng-template>
+            </sxm-ui-step-accordion>
+            <sxm-ui-step-accordion
+                (active)="onEnterYourPaymentInfoStepActive()"
+                [label]="translateKeyPrefix + 'STEPS.PAYMENT_INFO.TITLE' | translate"
+                (editClicked)="onEnterYourPaymentInfoClick()"
+            >
+                <p class="billing-info-text">{{ translateKeyPrefix + "STEPS.PAYMENT_INFO.REMEMBER_TEXT" | translate }}</p>
+                <de-care-payment-info-form
+                    [options]="paymentMethodOptionsViewModel$ | async"
+                    [continueButtonTextOverride]="translateKeyPrefix + 'STEPS.PAYMENT_INFO.CONTINUE_BUTTON_TEXT' | translate"
+                    (formCompleted)="onPaymentInfoCollected($event)"
+                ></de-care-payment-info-form>
+                <ng-template #inactiveContent>
+                    {{ translateKeyPrefix + "STEPS.PAYMENT_INFO.SELECTED_PAYMENT_METHOD_SUMMARY" | translate: (selectedPaymentMethodSummaryViewModel$ | async) }}</ng-template
+                >
+            </sxm-ui-step-accordion>
+            <sxm-ui-step-accordion (active)="onReviewStepActive()" [label]="translateKeyPrefix + 'STEPS.REVIEW.TITLE' | translate">
+                <de-care-review-quote-and-approve-form
+                    *ngIf="quoteViewModel$ | async as quoteViewModel"
+                    [quoteViewModel]="quoteViewModel"
+                    [shouldIncludeNuCaptcha]="displayNuCaptcha$ | async"
+                    [continueButtonTextOverride]="translateKeyPrefix + 'STEPS.REVIEW.CONTINUE_BUTTON_TEXT' | translate"
+                    [showUnusedCreditLine]="true"
+                    (formCompleted)="submitTransaction()"
+                ></de-care-review-quote-and-approve-form>
+            </sxm-ui-step-accordion>
+        </sxm-ui-stepper-accordion>
+    </section>
+</div>
+<section id="legalCopySection" deCarePageFullWidthContent>
+    <div *ngrxLet="legalCopyViewModel$ as legalCopy" [innerHTML]="legalCopy"></div>
+</section>

@@ -1,0 +1,16 @@
+{
+    "DomainsSubscriptionsUiRedeemAndLinkWithAmazonModule": {
+        "RedeemAndLinkWithAmazonComponent": {
+            "DEAL_REDEMPTION_INSTRUCTIONS": {
+                "image": {
+                    "src": "assets/img/device-echodot-gen4.png"
+                },
+                "TITLE": "<h5><b>Activez SiriusXM sur tous vos appareils Alexa maintenant!</b></h5><p>Commencez en utilisant des commandes vocales comme « Alexa, joue Hits 1 sur SiriusXM ».</p>",
+                "DESCRIPTION": [
+                    "Vous recevrez des instructions par courriel pour utiliser votre appareil Amazon gratuit. Votre Echo Dot est expédié directement par Amazon et la livraison est soumise à la disponibilité des stocks Amazon. Les périodes de forte demande peuvent entraîner des retards, alors profitez-en dès aujourd'hui."
+                ]
+            },
+            "CTA_BUTTON_LABEL": "LIEN À AMAZON"
+        }
+    }
+}

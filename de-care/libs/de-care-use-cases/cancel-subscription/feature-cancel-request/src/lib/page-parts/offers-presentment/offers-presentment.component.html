@@ -1,0 +1,36 @@
+<section data-test="SideToSideOffersPage">
+    <div class="current-plan-container">
+        <sxm-ui-your-current-plan [headerText]="translateKeyPrefix + '.CURRENT_PLAN' | translate" [planData]="currentPlan"></sxm-ui-your-current-plan>
+    </div>
+    <div *ngIf="onePlanToShow; else twoPlansToShow">
+        <sxm-ui-package-card class="wide-package-card" [packageData]="packageData"></sxm-ui-package-card>
+    </div>
+    <ng-template #twoPlansToShow>
+        <div class="cards-container">
+            <ng-container *ngFor="let package of packageData">
+                <sxm-ui-package-card [packageData]="package" (packageSelected)="onPackageSelected($event)"></sxm-ui-package-card>
+            </ng-container>
+        </div>
+    </ng-template>
+    <div class="grid-link">
+        <p>
+            {{ translateKeyPrefix + ".LEARN_MORE" | translate }}
+            <span data-test="PlanComparisonGridLink" class="text-link" (click)="onNavigateToGrid()">{{
+                translateKeyPrefix + (onePlanToShow ? ".VIEW_FEATURES" : ".COMPARE_OFFERS") | translate
+            }}</span>
+        </p>
+    </div>
+    <sxm-ui-sticky-buttons-container>
+        <button *ngIf="enableContinueButton; else chatButtonTemplate" class="button primary continue-to-cancel" (click)="onContinueToCancel()">
+            {{ translateKeyPrefix + ".CONTINUE_CANCEL_BUTTON" | translate }}
+        </button>
+        <ng-template #chatButtonTemplate>
+            <chat-with-agent-button [chatLinkText]="translateKeyPrefix + '.CHAT_WITH_US_BUTTON' | translate" [queue]="'cancelOnline'"></chat-with-agent-button>
+        </ng-template>
+        <button class="button secondary" (click)="onBackToMyAccount()">{{ translateKeyPrefix + ".BACK_TO_MY_ACCOUNT_BUTTON" | translate }}</button>
+    </sxm-ui-sticky-buttons-container>
+
+    <div *ngIf="enableContinueButton" class="chat-container">
+        <chat-with-agent-link sxmUiDataClickTrack="chat" [chatLinkText]="translateKeyPrefix + '.CHAT_WITH_AGENT' | translate" [queue]="'cancelOnline'"></chat-with-agent-link>
+    </div>
+</section>

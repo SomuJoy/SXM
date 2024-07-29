@@ -1,0 +1,25 @@
+{
+    "TITLE": "Create your account",
+    "EMAIL_INVALID_MSG": "Enter a valid email address.",
+    "EMAIL_IN_USE_ERROR_MSG": "Username/Email address already in use.",
+    "SYSTEM_ERROR": "Sorry, we are having issues fulfilling this request. Please try again.",
+    "CONTINUE_BUTTON_TEXT": "Continue",
+    "SUBSCRIPTIONS_FOUND_MODAL_TITLE": "Your Account",
+    "SUBSCRIPTIONS_FOUND_MODAL_HEADLINE": "We found subscription(s) that matched the info you gave us.",
+    "CUSTOMER_HAS_STREAMING": {
+        "SUB_TITLE": "Included with subscription",
+        "INSTRUCTIONS": "Good news! Streaming on your home and mobile devices with the SXM App is already included at no additional cost.",
+        "CTA_LINK_TEXT": "Listen"
+    },
+    "CUSTOMER_HAS_TRIAL": {
+        "SUB_TITLE": "Trial subscriptions",
+        "INSTRUCTIONS": "Add a subscription when your trial ends.",
+        "CTA_LINK_TEXT": "Subscribe"
+    },
+    "VERIFY": "Verify",
+    "ACCOUNT_VERIFY": "Verify your account",
+    "VERIFY_PARAGRAPH": "We want to make sure it's really you before we make changes to your account.",
+    "STREAMING_PLAYER_LINK": "",
+    "INELIGIBLE_LOADING_ALERT": "That offer is for new subscribers, but here’s another option for you.",
+    "INELIGIBLE_LOADING_BODY": "Finding another great plan for you."
+}

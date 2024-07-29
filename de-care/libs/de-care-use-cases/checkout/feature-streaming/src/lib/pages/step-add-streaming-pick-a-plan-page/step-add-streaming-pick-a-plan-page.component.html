@@ -1,0 +1,43 @@
+<ng-container *ngIf="offerLoad$ | async as offerLoad">
+    <section id="mainContent">
+        <sxm-ui-loading-with-alert-message
+            *ngIf="displayIneligibleLoader$ | async"
+            [isLoading]="true"
+            [pillMessage]="translateKeyPrefix + '.INELIGIBLE_LOADING_ALERT' | translate"
+            [paragraph]="translateKeyPrefix + '.INELIGIBLE_LOADING_BODY' | translate"
+        ></sxm-ui-loading-with-alert-message>
+        <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+            <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+            <ng-container body *ngIf="offerLoad.value && (selectedOfferIsMrd$ | async)">
+                <p>{{ translateKeyPrefix + ".BODY.FAMILY_DISCOUNT_ELIGIBLE" | translate }}</p>
+                <sub>{{ translateKeyPrefix + ".BODY.FAMILY_DISCOUNT_ELIGIBLE_SUB_TEXT" | translate }}</sub>
+            </ng-container>
+        </sxm-ui-step-header>
+        <ng-container *ngIf="offerLoad.pending || offerLoad.error">
+            <article id="skeletonLoaderOfferCard">
+                <div class="shadow-helper">
+                    <sxm-ui-multi-package-card-selection-skeleton-loader></sxm-ui-multi-package-card-selection-skeleton-loader>
+                </div>
+                <sxm-ui-button-cta-skeleton-loader></sxm-ui-button-cta-skeleton-loader>
+            </article>
+        </ng-container>
+        <ng-container *ngIf="offerLoad.value">
+            <multi-offer-selection-form
+                *ngIf="multiOfferSelectionData$ | async as offerOptions"
+                [offerOptions]="offerOptions"
+                [allowContinueWithoutSelection]="false"
+                [preSelectedPlanCode]="getSelectedPlanCode$ | async"
+                (submitted)="submitForm($event)"
+                (selected)="selectedPlan($event)"
+            >
+            </multi-offer-selection-form>
+            <!-- TODO: add sxmUiDataClickTrack="routing" for submit button -->
+        </ng-container>
+    </section>
+    <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+        <div *ngIf="offerLoad.value" [innerHTML]="getSelectedOfferOfferInfoLegalCopy$ | async"></div>
+        <div *ngIf="offerLoad.pending">
+            <sxm-ui-skeleton-loader-text-copy></sxm-ui-skeleton-loader-text-copy>
+        </div>
+    </section>
+</ng-container>

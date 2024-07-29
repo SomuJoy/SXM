@@ -1,0 +1,12 @@
+{
+    "FALLBACK_MESSAGES": {
+        "DEFAULT": {
+            "ALERT": "Sorry, this offer is not currently available.",
+            "BODY": "Let's find another great offer for you!"
+        },
+        "EXPIRED": {
+            "ALERT": "Sorry, it looks like this offer has already expired.",
+            "BODY": "Let's find another great offer for you!"
+        }
+    }
+}

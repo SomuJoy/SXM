@@ -1,0 +1,14 @@
+<span data-presence-name *ngIf="name">{{ translateKeyPrefix + ".CUSTOMER_GREETING" | translate: { customerName: name } }}</span>
+<span data-presense-account-number *ngIf="accountNumber">{{ translateKeyPrefix + ".ACCOUNT_NUMBER" | translate: { accountNumber: accountNumber } }}</span>
+<hr />
+<nav role="tablist">
+    <a
+        role="tab"
+        *ngFor="let link of links; let i = index"
+        [href]="link.url"
+        [attr.title]="link.altText"
+        [class.active]="i.toString() === activeLinkIndex?.toString()"
+        [attr.aria-selected]="i.toString() === activeLinkIndex?.toString()"
+        >{{ link.text }}</a
+    >
+</nav>

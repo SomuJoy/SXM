@@ -1,0 +1,6 @@
+@import "libs/sxm-assets/scss/mixins.scss";
+
+hr {
+    @include hr;
+    margin: 1.5rem 0 0.75rem;
+}

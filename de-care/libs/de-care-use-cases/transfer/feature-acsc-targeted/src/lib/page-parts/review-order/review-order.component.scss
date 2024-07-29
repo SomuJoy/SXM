@@ -1,0 +1,29 @@
+@import "sxm.phoenix.imports";
+
+.vertical-spacing {
+    margin-bottom: 24px;
+}
+
+h4 {
+    margin-bottom: 16px;
+}
+
+hr {
+    background-color: $gray-medium;
+    border: 0;
+    height: 1px;
+}
+
+button[type="submit"] {
+    margin-bottom: 16px;
+    @include bp(medium) {
+        margin-top: 48px;
+    }
+}
+
+.agreement {
+    .invalid-feedback {
+        padding-left: 30px;
+        margin-top: 12px;
+    }
+}

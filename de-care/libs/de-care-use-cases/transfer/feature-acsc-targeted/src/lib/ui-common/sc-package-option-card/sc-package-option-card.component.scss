@@ -1,0 +1,116 @@
+@import "sxm.phoenix.imports";
+.radio-item {
+    display: flex;
+    align-items: center;
+
+    label {
+        color: $white;
+    }
+}
+
+.platform-change {
+    display: flex;
+    background-color: $vanilla;
+    padding: 12px;
+    & > .icon {
+        margin-right: 8px;
+        flex-shrink: 0;
+        flex-grow: 0;
+
+        svg {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    ul {
+        padding: 0;
+        li {
+            display: flex;
+            align-items: center;
+            line-height: 22px;
+
+            &:not(:last-child) {
+                margin-bottom: 4px;
+            }
+
+            svg {
+                height: 16px;
+                width: 16px;
+                padding: 0;
+                margin-right: 4px;
+                use {
+                    stroke-width: 1.5;
+                    stroke: $black;
+                }
+            }
+        }
+    }
+}
+
+.body {
+    padding: 16px 16px 4px;
+    .price-definition {
+        margin-bottom: 6px;
+        .large-copy {
+            font-weight: calculate-font-weight("bold");
+            color: $black;
+            margin-bottom: 0;
+        }
+        p {
+            line-height: 18px;
+            color: $gray-charcoal;
+        }
+    }
+
+    p {
+        line-height: 22px;
+    }
+}
+
+.descriptions {
+    padding: 0 16px 2px;
+    ul {
+        padding: 0;
+        li {
+            list-style: none;
+            display: grid;
+            display: -ms-grid;
+            grid-template-columns: 20px 1fr;
+            -ms-grid-columns: 20px 1fr;
+            line-height: 22px;
+            &:not(:last-child) {
+                margin-bottom: 4px;
+            }
+
+            & > div {
+                -ms-grid-column: 1;
+                -ms-grid-column-span: 1;
+            }
+
+            & > span {
+                display: inline-block;
+                -ms-grid-column: 2;
+                -ms-grid-column-span: 1;
+            }
+
+            svg {
+                use {
+                    stroke: $blue-secondary;
+                    stroke-width: 2px;
+                }
+            }
+        }
+    }
+}
+
+sxm-ui-tooltip {
+    position: absolute;
+    ::ng-deep {
+        svg {
+            use.icon-tool-tip {
+                color: transparent;
+            }
+        }
+    }
+}

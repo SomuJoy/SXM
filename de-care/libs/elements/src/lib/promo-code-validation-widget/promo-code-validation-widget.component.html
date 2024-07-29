@@ -1,0 +1,12 @@
+<h5>{{ translateKey + "TITLE" | translate }}</h5>
+<promo-code-validation
+    #promoCodeValidation
+    [isStreaming]="isStreaming"
+    [otherOffersUrl]="otherOffersUrl"
+    (invalidPromoCode)="onInValidPromoCode($event)"
+    (validPromoCode)="onValidPromoCode($event)"
+></promo-code-validation>
+<p>
+    <b>{{ translateKey + "NEED_HELP" | translate }}</b
+    >&nbsp;<span data-track-click="PC TFN link" [innerHTML]="translateKey + 'CALL_US' | translate"></span>
+</p>

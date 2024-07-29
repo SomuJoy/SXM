@@ -1,0 +1,39 @@
+{
+    "TITLE": "Send a refresh signal",
+    "SUB_TITLE": "Are you near your car?",
+    "YES_TEXT": "Yes",
+    "NO_TEXT": "No",
+    "YES_POINT_ONE": "Turn on your car radio and set it to Satellite.",
+    "YES_POINT_TWO": "Make sure the radio has a clear view to the sky (not blocked by a garage, large trees, or buildings). Please Note: The refresh can take up to 15 minutes.",
+    "YES_BUTTON_TEXT": "SEND REFRESH SIGNAL",
+    "FIND_RADIO_ID_HYPERLINK": "Don't have a Radio ID (RID) or an Account Number?",
+    "NO_INSTRUCTIONS": "That's ok! We'll text you instructions so you can complete the signal refresh once you're near your radio.",
+    "NO_POINT_ONE": "Text the word \"Refresh\" to 77917.",
+    "NO_POINT_TWO": "We’ll send you a text with a link to start the refresh radio process.",
+    "NO_POINT_THREE": "Once you’re near your radio, follow instructions in the text message to complete the signal refresh. ",
+    "NO_FOOTER": "Message and data rates may apply.  View our SMS Terms and Conditions and Privacy Policy.",
+    "MOBILE_FORM_PLACEHOLDER": "Mobile Phone Number",
+    "CUSTOMER_AGREEMENT_CHECKBOX_TEXT": "I agree to receive a one-time text message and certify this is my mobile number. Message and data rates may apply. View our <a target=\"_blank\" href=\"https://www.siriusxm.com/sms\"> SMS Terms and Conditions</a> and <a target=\"_blank\" href=\"https://www.siriusxm.com/privacy-policy\"> Privacy Policy</a>.",
+    "NO_BUTTON_TEXT": "SEND INSTRUCTIONS",
+    "ERROR": {
+        "MOBILE_REQUIRED": "Enter a valid phone number",
+        "MESSAGE_AGREE_TO_TEXT_MESSAGE": "Please confirm that you have read and agree to the Terms and Conditions and Privacy Policy."
+    },
+    "SUCCESS_MESSAGE": "Refresh signal sent successfully.",
+    "NO_ACTIVE_SUBSCRIPTION_ONE": "It looks like you don't have a current subscription for SiriusXM on your car radio. To listen, please ",
+    "REACTIVATE_TEXT": "subscribe.",
+    "NO_ACTIVE_SUBSCRIPTION_TWO": "",
+    "NON_PAY_ERROR": "Your account balance is past due. Please refer to your subscription billing, and make a payment to continue listening.",
+    "MAKE_A_PAYMENT": "Make a Payment",
+    "REACTIVATE_LINK": "https://www.siriusxm.com/plans",
+    "SYSTEM_ERROR": {
+        "PART1": "There was an issue sending your refresh signal. Please ",
+        "CHAT_TEXT": "chat with a representative",
+        "PART2": " to resolve this issue."
+    },
+    "INVALID_VIRTUAL_RADIO_ID": {
+        "PART1": "Looks like your radio doesn't require a refresh signal. You can call 844-543-2965 or ",
+        "CHAT_TEXT": "chat with an agent",
+        "PART2": " to learn more."
+    }
+}

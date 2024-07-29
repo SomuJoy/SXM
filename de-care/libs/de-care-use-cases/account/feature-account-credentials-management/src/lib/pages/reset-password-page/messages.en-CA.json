@@ -1,0 +1,23 @@
+{
+    "LABEL_TEXT": "Password",
+    "BUTTON_TEXT": "CONTINUE",
+    "TITLE": "Reset your password",
+    "SUB_TITLE": "Thank you for verifying your account. Please enter your new password.",
+    "SYSTEM_ERROR": "We’re sorry, something went wrong. Please try again.",
+    "UPDATE_FAIL_ERROR": "We’re sorry, something went wrong with this attempt. Please try again.",
+    "ERRORS": {
+        "REQUIRED": "Enter a password.",
+        "LENGTH": "Your password must be {{ min }} to {{ max }} characters long.",
+        "POLICY": "Your password must contain at least one character from at least 3 different groups, as explained in our password policy.",
+        "RESERVED_WORDS": "Your password cannot include the {{pluralWord}} {{reservedWords}}",
+        "GENERIC": "We're sorry, your new password does not comply with our policy. Please try again.",
+        "PII_DATA": "Password cannot contain first name, last name or email address."
+    },
+    "PLURAL_MAP": {
+        "WORD": {
+            "=1": "word",
+            "other": "words"
+        }
+    },
+    "FORGOT_PASSWORD_PAGE_TITLE": "Reset Password | SiriusXM "
+}

@@ -1,0 +1,25 @@
+<main de-care-page-main>
+    <h1>{{ translateKeyPrefix + "TITLE" | translate }}</h1>
+    <!--// TODO: add vehicle to transfer from content here -->
+    <hr />
+    <p>
+        <strong>
+            {{ translateKeyPrefix + "INSTRUCTIONS" | translate }}
+        </strong>
+    </p>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <sxm-ui-text-form-field
+            controlId="device-id"
+            formControlName="deviceId"
+            labelText="{{ translateKeyPrefix + 'INPUT_LABEL' | translate }}"
+            errorMsg="{{ translateKeyPrefix + 'ERROR_INVALID_DEVICE_ID' | translate }}"
+        ></sxm-ui-text-form-field>
+        <button class="text-link" type="button" (click)="helpFindingRadioModal.open()">
+            {{ translateKeyPrefix + "FIND_RADIO" | translate }}
+        </button>
+        <button type="submit" sxm-proceed-button [loading]="processing$ | async">
+            {{ translateKeyPrefix + "CONTINUE_BUTTON" | translate }}
+        </button>
+    </form>
+    <sxm-ui-help-finding-radio-modal #helpFindingRadioModal></sxm-ui-help-finding-radio-modal>
+</main>

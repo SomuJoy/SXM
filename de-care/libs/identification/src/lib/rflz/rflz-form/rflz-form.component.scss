@@ -1,0 +1,49 @@
+@import "sxm.phoenix.imports";
+:host {
+    .instructions {
+        margin-bottom: 30px;
+    }
+    button {
+        margin-top: 30px;
+    }
+    .input-container input {
+        width: auto;
+    }
+    .icon.icon-utility.large {
+        cursor: pointer;
+        height: 26px;
+        width: 26px;
+        padding: 3px;
+        position: relative;
+        float: right;
+        right: 12px;
+        top: -37px;
+    }
+
+    .step-header {
+        @include bp(medium) {
+            @include font-size(14px);
+        }
+    }
+
+    .rflz-title {
+        font-weight: calculate-font-weight("bold");
+        margin-bottom: 16px;
+    }
+
+    .top-link {
+        margin-top: -16px;
+        margin-bottom: 16px;
+    }
+
+    .optIn-checkbox {
+        z-index: 0;
+    }
+}
+sxm-ui-checkbox-with-label-form-field::ng-deep {
+    span {
+        label {
+            display: initial;
+        }
+    }
+}

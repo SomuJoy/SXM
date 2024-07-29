@@ -1,0 +1,71 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "ELON",
+            "accountProfile": { "accountRegistered": false },
+            "accountState": { "isInPreTrial": false },
+            "serviceAddress": { "state": "NY", "country": "USA" },
+            "subscriptions": [],
+            "billingSummary": { "creditCard": { "last4Digits": "1111", "type": "VISA", "status": "ACTIVE" }, "isPaymentTypeInvoice": false },
+            "closedDevices": [
+                {
+                    "last4DigitsOfRadioId": "6902",
+                    "closedDate": "2022-08-15T17:08:13-04:00",
+                    "vehicleInfo": { "year": null, "make": null, "model": null },
+                    "subscription": {
+                        "id": "10000224199",
+                        "plans": [
+                            {
+                                "code": "Sponsored - OEM Trial - ALL ACCESS - 12mo - 116.55",
+                                "label": null,
+                                "packageName": "SIR_AUD_ALLACCESS",
+                                "termLength": 12,
+                                "startDate": null,
+                                "endDate": null,
+                                "nextCycleOn": null,
+                                "marketType": "trial:new-car",
+                                "type": "TRIAL",
+                                "capabilities": ["AUD", "IPAUD"],
+                                "price": null,
+                                "isBasePlan": false,
+                                "dataCapable": false
+                            },
+                            {
+                                "code": "Video - 1mo",
+                                "label": null,
+                                "packageName": "SIR_IP_VID",
+                                "termLength": 1,
+                                "startDate": null,
+                                "endDate": null,
+                                "nextCycleOn": null,
+                                "marketType": "self-pay:standard",
+                                "type": "SELF_PAY",
+                                "capabilities": ["IPVID"],
+                                "price": null,
+                                "isBasePlan": false,
+                                "dataCapable": false
+                            }
+                        ],
+                        "followonPlans": null,
+                        "radioService": null,
+                        "streamingService": null,
+                        "status": "Closed",
+                        "devicePromoCode": "1012",
+                        "isPrimary": true
+                    },
+                    "isRemovedFromAccount": false
+                }
+            ],
+            "hasEmailAddressOnFile": true,
+            "isAccountIdentifiedUsingFLEPZOrVIN": false
+        },
+        "maskedUserNameFromToken": null,
+        "marketingId": "990003226902",
+        "marketingAcctId": null,
+        "email": null,
+        "isUserNameInTokenSameAsAccount": false
+    }
+}

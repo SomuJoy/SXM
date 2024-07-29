@@ -1,0 +1,11 @@
+{
+    "ACTIVE": "Actif",
+    "ACTIVE_DESCRIPTION": "La plupart des abonnements offrent l’écoute en continu sur l’Appli SXM et en ligne.",
+    "INACTIVE": "Inactif",
+    "ADD_ANOTHER_SUBSCRIPTION": "Ajouter un autre abonnement",
+    "SUBSCRIPTIONS_TITLE": "Abonnements",
+    "RADIO_REMOVED": "Radio supprimée avec succès.",
+    "EDIT_CREATE_USERNAME_USER_CREDENTIALS_URL": "{{oacUrl}}/updateusercredentials_view.action?subscriptionNumber={{subscriptionId}}&langpref=fr",
+    "EDIT_CREATE_USERNAME_INTERNET_CREDENTIALS_URL": "{{oacUrl}}/updateinternetcredentials_view.action?subscriptionNumber={{subscriptionId}}&langpref=fr",
+    "CAR_STREAMING_FIND_SUBSCRIPTION_URL": "{{oacUrl}}/accountconsolidation_view.action?allowPHXRedirectAfterRadioEntry=true&langpref=fr#/verifyradio"
+}

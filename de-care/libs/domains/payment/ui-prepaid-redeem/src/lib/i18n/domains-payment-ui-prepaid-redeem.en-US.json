@@ -1,0 +1,19 @@
+{
+    "domainsPaymentUiPrepaidRedeemModule": {
+        "prepaidRedeemComponent": {
+            "REDEEM_LABEL": "Redeem prepaid or gift card",
+            "ADD_CARD": "Add a Gift Card, Prepaid Service Card or Digital Service PIN (optional)",
+            "PIN_NUMBER": "Card Number or PIN",
+            "APPLY": "Apply",
+            "REMOVE_LABEL": "Remove a prepaid or gift card",
+            "CARD_APPLIED": "Your prepaid or gift card was applied",
+            "ERROR_VALID_PIN": "Enter a valid card number or PIN.",
+            "GC_CVV": "CVV",
+            "GC_EXP_Y": "Exp (YYYY)",
+            "GC_EXP_M": "Exp (MM)",
+            "ERROR_VALID_MONTH": "Select your expiration month.",
+            "ERROR_VALID_YEAR": "Select your expiration year.",
+            "ERROR_VALID_CVV": "Enter a valid cvv"
+        }
+    }
+}

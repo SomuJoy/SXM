@@ -1,0 +1,8 @@
+{
+    "SharedSxmUiFormsUiFirstNameFormFieldModule": {
+        "SxmUiFirstNameFormFieldComponent": {
+            "PLACEHOLDER": "Prénom",
+            "ERROR_REQUIRED": "Entrez votre prénom."
+        }
+    }
+}

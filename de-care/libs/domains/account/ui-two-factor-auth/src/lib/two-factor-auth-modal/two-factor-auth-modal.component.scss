@@ -1,0 +1,26 @@
+@import "sxm.phoenix.imports";
+
+p {
+    // TODO: There is a global style that causes havoc because it sets the final P tag to have no bottom margin.
+    //       We should fix this (maybe at the global Angular app styling level)
+    &:last-of-type {
+        margin-bottom: 12px;
+    }
+}
+
+h5 {
+    // TODO: get all these from sxm SCSS mixin
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+hr {
+    // TODO: get all these from sxm SCSS mixin
+    border: 0;
+    border-top: 1px solid $gray-medium;
+    margin: 24px 0 32px 0;
+}
+
+security-code-verification-form {
+    margin-top: 24px;
+}

@@ -1,0 +1,31 @@
+{
+    "name": "domains-commerce-state-offer-presentment",
+    "$schema": "../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/commerce/state-offer-presentment/src",
+    "prefix": "de-care",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+            "options": {
+                "jestConfig": "libs/domains/commerce/state-offer-presentment/jest.config.ts",
+                "passWithNoTests": true
+            },
+            "configurations": {
+                "ci": {
+                    "ci": true,
+                    "codeCoverage": true
+                }
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["libs/domains/commerce/state-offer-presentment/**/*.ts", "libs/domains/commerce/state-offer-presentment/**/*.html"]
+            }
+        }
+    },
+    "tags": ["type:state", "scope:domain-state"]
+}

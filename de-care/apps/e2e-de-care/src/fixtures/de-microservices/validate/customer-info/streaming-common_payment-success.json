@@ -1,0 +1,34 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "emailValidation": {
+            "email": "asdsdasd@siriusxm.com",
+            "suggestedEmail": null,
+            "message": null,
+            "resultCode": "SUCCESS",
+            "errorCode": null,
+            "errorMessage": null,
+            "responseCode": null,
+            "verificationStatus": "VALID",
+            "verificationMessage": null,
+            "valid": true
+        },
+        "usernameValidation": null,
+        "billingAddressValidation": {
+            "validationStatus": "VALID",
+            "confidenceLevel": "Verified",
+            "correctedAddress": [{ "zip": "12345", "city": "Schenectady", "addressLine1": " ", "addressLine2": " ", "state": "NY" }],
+            "resultCode": "SUCCESS"
+        },
+        "serviceAddressValidation": {
+            "validationStatus": "VALID",
+            "confidenceLevel": "Verified",
+            "correctedAddress": [{ "zip": "12345", "city": "Schenectady", "addressLine1": " ", "addressLine2": " ", "state": "NY" }],
+            "resultCode": "SUCCESS"
+        },
+        "ccValidation": { "valid": true, "prePaidBin": false },
+        "valid": true
+    }
+}

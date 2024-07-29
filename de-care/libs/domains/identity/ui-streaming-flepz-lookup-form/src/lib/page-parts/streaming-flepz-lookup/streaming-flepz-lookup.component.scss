@@ -1,0 +1,9 @@
+@import "libs/sxm-assets/scss/mixins.scss";
+
+h4 {
+    margin-bottom: 18px;
+}
+hr {
+    @include hr;
+    margin: 1.5rem 0 0.75rem;
+}

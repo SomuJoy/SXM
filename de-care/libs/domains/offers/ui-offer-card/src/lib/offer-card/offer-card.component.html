@@ -1,0 +1,38 @@
+<div class="offer-card--container">
+    <offer-description
+        [selectedRenewalOfferPrice]="selectedRenewalOfferPrice"
+        [isRTC]="isRTC"
+        [offerInfo]="offerInfo"
+        [excludePriceAndTermDisplay]="excludePriceAndTermDisplay"
+        [offerShortDescription]="offerInfo.dataCapable ? packageDescription.description : null"
+        [offerSubDescription]="offerInfo.dataCapable ? packageDescription.subDescription : null"
+    >
+    </offer-description>
+    <!-- If offerInfo has a parentPackageName, use that to determine the plan grid icons -->
+    <plan-grid *ngIf="!hidePlanGrid" [packageName]="offerInfo.parentPackageName || offerInfo.packageName"></plan-grid>
+</div>
+
+<sxm-ui-accordion-chevron
+    [isInnerAccordion]="true"
+    [collapsedText]="translationKeyPrefix + 'VIEW_DETAILS_COLLAPSED' | translate"
+    [expandedText]="translationKeyPrefix + 'VIEW_DETAILS_EXPANDED' | translate"
+    [aria]="{
+        expandedText: translationKeyPrefix + 'ARIA_VIEW_DETAILS_EXPANDED' | translate: { packageName: offerInfo?.parentPackageName || offerInfo?.packageName },
+        collapsedText: translationKeyPrefix + 'ARIA_VIEW_DETAILS_COLLAPSED' | translate: { packageName: offerInfo?.parentPackageName || offerInfo?.packageName }
+    }"
+    [opened]="opened"
+    (click)="trackEvent($event)"
+    qatag="ViewMoreLink"
+    data-track-click="Explore More"
+    *ngIf="packageDescription"
+>
+    <ng-container *ngIf="offerInfo.dataCapable; else channelsDescriptions">
+        <plan-feature-channels [channels]="packageDescription.channels"></plan-feature-channels>
+    </ng-container>
+    <ng-template #channelsDescriptions>
+        <plan-description-channels [channels]="packageDescription.channels"></plan-description-channels>
+        <p [innerHtml]="packageDescription.description || ''"></p>
+    </ng-template>
+    <!-- coverDescriptionFollowOnPrice will also hide the footer in the offer-card. This is a temporary solution. -->
+    <p *ngIf="!offerInfo.isUpgradePromo" data-e2e="offerCard.packageDescriptionFooter" [innerHtml]="packageDescription.footer"></p>
+</sxm-ui-accordion-chevron>

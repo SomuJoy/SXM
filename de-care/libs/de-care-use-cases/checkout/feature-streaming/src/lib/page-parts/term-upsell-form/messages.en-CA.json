@@ -1,0 +1,9 @@
+{
+    "PLURAL_MAP": {
+        "MONTH": {
+            "=1": "month",
+            "other": "months"
+        }
+    },
+    "UPSELL_OPTION_DESCRIPTION_FREE": "Free"
+}

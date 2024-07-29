@@ -1,0 +1,5 @@
+<h4>{{ translateKeyPrefix + ".TITLE" | translate }}</h4>
+<p class="add-second-radio-instruction" [id]="ariaDescribedbyTextId">{{ translateKeyPrefix + ".INSTRUCTIONS" | translate }}</p>
+<button class="button primary full-width" (click)="addSecondRadio.emit(pvipSubId)" data-test="addSecondRdioButton" sxm-proceed-button>
+    {{ translateKeyPrefix + ".ADD_SECOND_RADIO_BUTTON" | translate }}
+</button>

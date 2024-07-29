@@ -1,0 +1,239 @@
+{
+    "DeCareUseCasesStreamingFeatureSetupCredentialsModule": {
+        "Shared": {
+            "PLAYER_LINK": "https://smart.link/1kaauqc5kllnb?contentType=&channelName=&lang=NA&site_id=&creative_id=NA_NA_DL-EM--landingpage-landingpage-WELCOMESTREAMINGME-T1-NA-Email-20221013-NA&cp_5=landingpage&cp_6=landingpage&cp_7=EMAIL&cp_8=WELCOMESTREAMINGME&cp_9=T1&cp_10=EM&langpref=fr",
+            "PAGE_TITLE": "Set Up Your SXM App Login",
+            "APP_TITLE": "Abonnez-vous à SiriusXM"
+        },
+        "FindAccountPageComponent": {
+            "EXPIRED_PROMO_CODE_HEADLINE": "Désolé, la période d’écoute gratuite est expirée.",
+            "EXPIRED_PROMO_CODE_INSTRUCTIONS": "Pour écouter sur l’Appli SXM, entrez vos informations afin que nous puissions voir si vous avez déjà un compte ou un abonnement d’essai SiriusXM."
+        },
+        "AccountNotFoundPageComponent": {
+            "HEADLINE": "Essayons autre chose.",
+            "SUBTITLE": "Nous n’avons pas trouvé votre abonnement avec l’information que vous avez entrée, mais nous pouvons réessayer avec votre code de radio ou votre NIV.",
+            "RADIO_LOOKUP_INSTRUCTIONS": {
+                "PREFIX": "",
+                "RADIO_LOOKUP_LINK": "",
+                "SUFFIX": ""
+            },
+            "INSTRUCTIONS": "Si vous n’avez pas de radio d’auto SiriusXM, ou que seule la diffusion en continu vous intéresse, vous pouvez vous abonner maintenant. Nous avons un forfait parfait selon ce qui vous plaît.",
+            "BUTTON_TEXT": "ABONNEZ-VOUS",
+            "SUBSCRIBE_URL": "https://www.siriusxm.ca/substreamonboarding?langpref=fr"
+        },
+        "MultipleSubscriptionsPageComponent": {
+            "HEADLINE_SETS": {
+                "WITH_STREAMING": {
+                    "HEADLINE": "Nous avons trouvé au moins un abonnement incluant de l’écoute en continu sur l’Appli SXM.",
+                    "INSTRUCTIONS": "Choisissez-en un pour commencer à écouter."
+                },
+                "INACTIVE": {
+                    "HEADLINE": "Les abonnements que nous avons trouvés sont inactifs.",
+                    "INSTRUCTIONS": "Pour écouter sur la radio d’auto et sur l’Appli SXM, vous devrez vous procurer un abonnement. Si vous ne voulez pas réactiver votre abonnement, vous pouvez aussi faire l’essai gratuit de l’Appli SXM ou vous abonner à un forfait d’écoute en continu."
+                },
+                "UPGRADE": {
+                    "HEADLINE": "Les abonnements que nous avons trouvés sont inactifs ou ne comprennent pas l’écoute en continu.",
+                    "INSTRUCTIONS": "Pour écouter sur la radio d’auto et sur l’Appli SXM, vous devrez réactiver votre abonnement ou vous procurer un abonnement."
+                },
+                "WITHOUT_STREAMING": {
+                    "HEADLINE": "Les abonnements que nous avons trouvés ne comprennent pas l’écoute en continu.",
+                    "INSTRUCTIONS": "Pour écouter sur la radio d’auto et sur l’Appli SXM, vous devrez surclasser votre abonnement."
+                }
+            },
+            "OTHER_ACCOUNTS_HEADLINE": "Autres comptes",
+            "OTHER_ACCOUNTS_INSTRUCTIONS": "Vous avez d’autres comptes qui peuvent être surclassés ou réactivés afin de profiter de l’écoute en continu.",
+            "CTA": {
+                "LISTEN_NOW": "ÉCOUTEZ MAINTENANT",
+                "CREATE_LOGIN": "CRÉEZ UN IDENTIFIANT",
+                "REACTIVATE": "RÉACTIVER",
+                "UPGRADE": "REHAUSSER",
+                "MAKE_PAYMENT": "FAIRE UN PAIEMENT",
+                "UPGRADE_URL": "http://www.siriusxm.ca/upgradeonboarding?langpref=fr",
+                "REACTIVATE_URL": "http://www.siriusxm.ca/reactivateonboarding?langpref=fr",
+                "WEB_FORM_URL": "https://www.siriusxm.ca/payerenligne?langpref=fr"
+            },
+            "LOAD_RADIO_BUTTON_TEXT": "AFFICHER PLUS DE RADIOS",
+            "DONT_SEE_ACCOUNT_TEXT": "Vous ne voyez pas votre compte?"
+        },
+        "CredentialSetupConfirmationPageComponent": {
+            "HEADLINE": "Tout est prêt pour vous permettre d’écouter.",
+            "INSTRUCTIONS": "<p>Utilisez votre nom d’utilisateur et votre mot de passe pour vous connecter à l’application et commencer à écouter.</p>",
+            "BUTTON_TEXT": "Écoutez maintenant",
+            "CONTINUE_BUTTON_TEXT": "CONTINUER",
+            "STREAMING_PLAYER_LINK": "",
+            "BACK_TO_SIGN_IN_BUTTON_TEXT": "RETOUR À LA PAGE DE CONNEXION"
+        },
+        "InactiveSubscriptionPageComponent": {
+            "HEADLINE": "Cet abonnement est inactif.",
+            "INSTRUCTIONS": "Vous devrez acheter un abonnement pour écouter en ligne ou sur l’appli. Commencez par réactiver votre compte ci-dessous.",
+            "PREVIEW_BUTTON_TEXT": "RÉACTIVER",
+            "DONT_SEE_ACCOUNT_TEXT": "Vous ne voyez pas votre compte?",
+            "REACTIVATE_URL": "http://www.siriusxm.ca/reactivateonboarding?langpref=fr"
+        },
+        "IneligibleAudioWithNoStreamingCapabilityComponent": {
+            "HEADLINE": "Nous avons trouvé votre abonnement, mais il ne comprend pas la diffusion en continu.",
+            "INSTRUCTIONS": "Vous aurez besoin de le rehausser avant de pouvoir diffuser en continu.",
+            "PREVIEW_BUTTON_TEXT": "REHAUSSER",
+            "UPGRADE_URL": "http://www.siriusxm.ca/upgradeonboarding?langpref=fr"
+        },
+        "IneligibleExpiredAATrialComponent": {
+            "HEADLINE": "Votre essai SiriusXM est expiré",
+            "MESSAGE_WITH_PHONE_NUMBER": "Vous ne pouvez pas réactiver votre abonnement d’auto ici (veuillez contacter SiriusXM pour le faire), mais vous pouvez essayer gratuitement l’application SiriusXM ou vous abonner à un forfait de diffusion en continu uniquement.",
+            "MESSAGE_WITHOUT_PHONE_NUMBER": "Vous ne pouvez pas réactiver votre abonnement d’auto ici (veuillez contacter SiriusXM pour le faire), mais vous pouvez essayer gratuitement l’application SiriusXM ou vous abonner à un forfait de diffusion en continu uniquement.",
+            "PREVIEW_BUTTON_TEXT": "Abonnez-vous à l’application SXM"
+        },
+        "IneligibleInsufficientPackageComponent": {
+            "HEADLINE": "Vous pouvez explorer la prévisualisation gratuite. Ou abonnez-vous à SiriusXM et connectez-vous pour écouter sur l’application et en ligne.",
+            "INSTRUCTIONS": "",
+            "PREVIEW_BUTTON_TEXT": "REHAUSSER",
+            "UPGRADE_URL": "http://www.siriusxm.ca/upgradeonboarding?langpref=fr"
+        },
+        "IneligibleMaxLifetimeTrialsComponent": {
+            "HEADLINE": "Votre essai SiriusXM est expiré",
+            "INSTRUCTIONS": "<p>Vous pouvez prévisualiser notre contenu. Ou, abonnez-vous à SiriusXM et connectez-vous pour écouter sur l'application et en ligne.</p>",
+            "PREVIEW_BUTTON_TEXT": "Diffusez en continu dans l’application"
+        },
+        "IneligibleTrialWithinLastTrailDateComponent": {
+            "HEADLINE": "Votre essai SiriusXM est expiré",
+            "INSTRUCTIONS": "<p>Vous pouvez prévisualiser notre contenu. Ou, abonnez-vous à SiriusXM et connectez-vous pour écouter sur l'application et en ligne.</p>",
+            "PREVIEW_BUTTON_TEXT": "Diffusez en continu dans l’application"
+        },
+        "IneligibleNoAudioComponent": {
+            "HEADLINE": "Nous avons trouvé votre abonnement, mais il ne comprend pas la diffusion en continu.",
+            "INSTRUCTIONS": "Vous aurez besoin de le rehausser avant de pouvoir diffuser en continu.",
+            "PREVIEW_BUTTON_TEXT": "REHAUSSER",
+            "UPGRADE_URL": "http://www.siriusxm.ca/upgradeonboarding?langpref=fr"
+        },
+        "IneligibleNonConsumerComponent": {
+            "HEADLINE": "Votre essai SiriusXM est expiré",
+            "INSTRUCTIONS": "<p>Vous pouvez prévisualiser notre contenu. Ou, abonnez-vous à SiriusXM et connectez-vous pour écouter sur l'application et en ligne.</p>",
+            "PREVIEW_BUTTON_TEXT": "Diffusez en continu dans l’application"
+        },
+        "IneligibleNonPayPageComponent": {
+            "HEADLINE": "Votre abonnement est échu.",
+            "INSTRUCTIONS": "Ne manquez rien de tout ce que SiriusXM a à offrir. Veuillez faire un paiement pour continuer à écouter",
+            "PREVIEW_BUTTON_TEXT": "FAIRE UN PAIEMENT",
+            "WEB_FORM_URL": "https://www.siriusxm.ca/payerenligne?langpref=fr",
+            "DONT_SEE_ACCOUNT_TEXT": "Vous ne voyez pas votre compte?"
+        },
+        "FreeListenSetupPageComponent": {
+            "STEP_EMAIL_LOOKUP": {
+                "TITLE": "Écoutez maintenant gratuitement pendant {{numberOfDays}}",
+                "INSTRUCTIONS": "Vous n’êtes qu’à quelques étapes de vous connecter gratuitement à SiriusXM jusqu’au {{endDateText}}. Tout d’abord, nous avons besoin de votre courriel pour configurer votre abonnement.",
+                "ALREADY_HAVE_LOGIN": "Vous avez déjà un identifiant pour diffuser en continu?",
+                "SIGN_IN_LINK_TEXT": "CONNEXION",
+                "EMAIL_ERROR_GENERAL": "Un courriel est requis",
+                "CONTINUE_BUTTON_TEXT": "CONTINUER",
+                "MODAL_TITLE": "Essai inadmissible",
+                "INELIGIBLE_TITLE": "Vous n’êtes pas admissible à un essai",
+                "INELIGIBLE_INSTRUCTIONS": "Nous sommes désolés, mais vous n’êtes pas admissible à un autre essai de SiriusXM en ce moment. Cependant, nous avons des offres spéciales sur des abonnements qui pourraient vous intéresser.",
+                "EXISTING_ACCOUNT_TITLE": "Vous avez déjà un compte SiriusXM",
+                "EXISTING_ACCOUNT_INSTRUCTIONS": "Vous pouvez récupérer vos identifiants ou vous connecter à votre compte.",
+                "GET_SIRIUS_LINK_TEXT": "OBTENIR SIRIUSXM",
+                "CLOSE_LINK_TEXT": "FERMER",
+                "RECOVER_CREDENTIALS_LINK_TEXT": "RÉCUPÉRER LES IDENTIFIANTS",
+                "GET_SIRIUS_REDIRECT_LINK": "siriusxm.ca/substreamonboarding",
+                "RECOVER_CREDENTIALS_LINK": "streaming.siriusxm.com/?recoverlogin=true",
+                "ERRORS": {
+                    "INVALID_EMAIL_ERROR": "Entrez une adresse courriel valide.",
+                    "INVALID_PHONE_ERROR": "Entrez un numéro de téléphone valide.",
+                    "INVALID_USERNAME_ERROR": "Entrez une adresse courriel valide.",
+                    "INVALID_ZIPCODE_ERROR": "Entrez un code postal valide.",
+                    "SYSTEM_ERROR": "Nous sommes désolés. Quelque chose n’a pas fonctionné. Nous faisons face à des problèmes techniques. Veuillez essayer de nouveau."
+                }
+            },
+            "STEP_ACTIVATION": {
+                "TITLE": "Nous y sommes Presque. Voici votre nouveau nom d’utilisateur.",
+                "USERNAME_TITLE": "NOM D’UTILISATEUR",
+                "END_ON_TEXT": "Votre abonnement de diffusion en continu gratuit prendra automatiquement fin le {{endDateText}}.",
+                "AGREEMENT_INSTRUCTIONS": "En continuant, vous acceptez que cet abonnement soit régi par notre ",
+                "AGREEMENT_LINK_URL": "",
+                "AGREEMENT_LINK_TEXT": "Entente du client.",
+                "AGREEMENT_CONSENT_PART_1": "En vous abonnant, vous acceptez que SiriusXM puisse vous contacter pour vous proposer des offres spéciales. Veuillez consulter notre ",
+                "AGREEMENT_CONSENT_PART_2": " pour en savoir davantage sur la façon dont SiriusXM collecte et traite vos renseignements personnels. Vous pouvez gérer vos préférences de contact via votre compte en ligne.",
+                "CONTINUE_BUTTON_TEXT": "CONTINUER"
+            },
+            "PLURAL_DAYS_MAP": {
+                "=1": "1 jour",
+                "other": "# jours"
+            }
+        },
+        "CreatePasswordPageComponent": {
+            "TITLE": "Créez votre mot de passe",
+            "INSTRUCTIONS": "Entrez le nouveau mot de passe pour votre compte.",
+            "CONTINUE_BUTTON_TEXT": "CONTINUER",
+            "PASSWORD": {
+                "LABEL": "Mot de passe",
+                "ERRORS": {
+                    "REQUIRED": "Entrez un mot de passe valide.",
+                    "LENGTH": "Votre mot de passe doit contenir de {{min}} à {{max}} caractères.",
+                    "POLICY": "Votre mot de passe doit contenir au minimum un caractère appartenant à au moins 3 groupes différents, comme indiqué dans notre politique de mot de passe.",
+                    "RESERVED_WORDS": "Votre mot de passe ne peut pas contenir {{pluralWord}} {{reservedWords}}",
+                    "GENERIC": "Votre mot de passe ne répond pas à tous les critères.",
+                    "PII_DATA": "Le mot de passe ne peut pas inclure prénom, nom de famille ou adresse courriel."
+                }
+            },
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "mois",
+                    "other": "mois"
+                }
+            },
+            "ERRORS": {
+                "SYSTEM_ERROR": "Nous sommes désolés. Quelque chose n’a pas fonctionné. Nous faisons face à des problèmes techniques. Veuillez essayer de nouveau.",
+                "INVALID_PASSWORD_RESET_TOKEN_ERROR": "Mot de passe invalide. Veuillez réessayer.",
+                "EXPIRED_PASSWORD_RESET_TOKEN_ERROR": "Mot de passe expiré. Veuillez réessayer."
+            }
+        },
+        "FreeListenConfirmationPageComponent": {
+            "TITLE": "Nous vous avons envoyé un courriel.",
+            "INSTRUCTIONS": "<p>Recherchez un courriel de notre part pour finir de configurer votre compte. Si vous ne voyez pas ce courriel sous peu, vérifiez votre dossier « Courrier indésirable ».</p><p>Une fois que vous aurez configuré votre compte, vous pourrez écouter SiriusXM en ligne, sur l’appli et au moyen d’appareils connectés.</p>",
+            "CONTINUE_BUTTON_TEXT": "FERMER"
+        },
+        "CreatePasswordConfirmationPageComponent": {
+            "TITLE": "Nous avons mis à jour votre mot de passe.",
+            "INSTRUCTIONS": "Vous pouvez maintenant commencer à écouter en ligne ou par l’appli.",
+            "LISTEN_NOW_BUTTON_TEXT": "ÉCOUTER MAINTENANT"
+        },
+        "ActivateDevicePageComponent": {
+            "STEPS": {
+                "ACTIVATION_CODE": {
+                    "HEADLINE": "Activez votre appareil",
+                    "INSTRUCTIONS": "Entrez le code activation affiché à l’écran de votre appareil.",
+                    "FORM_FIELD_ACTIVATION_CODE_LABEL": "Code d’activation",
+                    "FORM_FIELD_ACTIVATION_CODE_ERROR_REQUIRED": "Un code d'activation est requis.",
+                    "FORM_ERROR_INVALID_ACTIVATION_CODE": "Votre code de sécurité est incorrect ou a expiré.",
+                    "FORM_ERROR_SYSTEM": "Nous sommes désolés, un problème est survenu. Veuillez réessayer.",
+                    "CONTINUE_BUTTON_TEXT": "CONTINUER"
+                },
+                "SIGN_IN": {
+                    "HEADLINE": "Connectez-vous ensuite à votre compte pour terminer l’activation de votre appareils.",
+                    "INSTRUCTIONS": "Utilisez votre compte SiriusXM ou vos données de connexion à l’Appli SXM.",
+                    "FORM_ERROR_INVALID_ACTIVATION_CODE_PIECES": {
+                        "PART_1": "Votre code d’activation a expiré. Veuillez ",
+                        "LINK_TEXT": "revenir en arrière",
+                        "PART_2": " et essayer de nouveau."
+                    },
+                    "FORM_ERROR_INVALID_CREDENTIALS": "Mauvais nom d'utilisateur ou mot de passe. Veuillez réessayer.",
+                    "FORM_ERROR_SYSTEM": "Nous sommes désolés, un problème est survenu. Veuillez réessayer.",
+                    "LINK_FORGOT_PASSWORD_TEXT": "Vous avez oublié votre nom d’utilisateur ou votre mot de passe?",
+                    "LINK_FORGOT_PASSWORD_URL": "https://mcare.siriusxm.ca/onboarding/?recoverlogin=true&langpref=fr",
+                    "CONTINUE_BUTTON_TEXT": "CONNEXION",
+                    "SETUP_STREAMING_HEADLINE": "Vous n’avez pas de compte? Pas de problème!",
+                    "SETUP_STREAMING_LINK_TEXT": "Configurez votre connexion pour une écoute en continu",
+                    "FORM_FIELD_USERNAME_LABEL": "Nom d’utilisateur"
+                }
+            }
+        },
+        "ActivatedDeviceCompletedPageComponent": {
+            "HEADLINE": "Tout est prêt!",
+            "INSTRUCTIONS": "Vous pouvez maintenant profiter de SiriusXM sur votre appareil.",
+            "HEADLINE_SONOS": "Tout est en ordre.",
+            "INSTRUCTIONS_SONOS": "Vous pouvez maintenant profiter de SiriusXM sur votre Sonos. Retournez sur l’Appli Sonos pour terminer la configuration et commencer à écouter."
+        },
+        "ExistingCredentialsPageComponent": {
+            "BUTTON_TEXT": "Écoutez maintenant",
+            "STREAMING_PLAYER_LINK": ""
+        }
+    }
+}

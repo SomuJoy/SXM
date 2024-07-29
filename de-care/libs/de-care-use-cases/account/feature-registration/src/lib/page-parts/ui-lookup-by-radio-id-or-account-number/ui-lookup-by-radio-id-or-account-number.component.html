@@ -1,0 +1,61 @@
+<form *ngIf="form" [formGroup]="form" (ngSubmit)="handleLookupSubmission()">
+    <sxm-ui-radio-option-form-field
+        [formControl]="form.verifyType"
+        label="{{ translateKeyPrefix + '.RADIO_ID_LABEL' | translate }}"
+        value="radioId"
+    ></sxm-ui-radio-option-form-field>
+    <div class="additional-data" *ngIf="form.verifyType.value === 'radioId'">
+        <sxm-ui-text-form-field
+            controlId="radio-id-verify"
+            [formControl]="form.identifier"
+            dataFieldType="radioId"
+            labelText="{{ translateKeyPrefix + '.RADIO_ID_PLACEHOLDER' | translate }}"
+            errorMsg="{{ translateKeyPrefix + '.ERROR_MESSAGE_RADIO_ID' | translate }}"
+        >
+        </sxm-ui-text-form-field>
+
+        <sxm-ui-tooltip [ngClass]="{ 'tool-tip-error': form.verifyType.value === 'radioId' && form.identifier.invalid && form.identifier.touched }">
+            {{ translateKeyPrefix + ".TOOLTIP" | translate }}
+        </sxm-ui-tooltip>
+
+        <de-care-ui-lookup-by-radio-id-or-account-number-errors [controlInvalid]="form.identifier.invalid"></de-care-ui-lookup-by-radio-id-or-account-number-errors>
+
+        <div class="extra-bottom-padding">
+            <a class="text-link" (click)="openUiLookupModals()">{{ translateKeyPrefix + ".RADIO_LABEL" | translate }}</a>
+        </div>
+        <div class="extra-bottom-padding">
+            <privacy-policy></privacy-policy>
+        </div>
+    </div>
+
+    <sxm-ui-radio-option-form-field
+        [formControl]="form.verifyType"
+        label="{{ translateKeyPrefix + '.ACCOUNT_NUMBER_LABEL' | translate }}"
+        value="accountNumber"
+    ></sxm-ui-radio-option-form-field>
+    <div class="additional-data" *ngIf="form.verifyType.value === 'accountNumber'">
+        <sxm-ui-text-form-field
+            controlId="account-number-verify"
+            [formControl]="form.identifier"
+            labelText="{{ translateKeyPrefix + '.ACCOUNT_NUMBER_PLACEHOLDER' | translate }}"
+            errorMsg="{{ translateKeyPrefix + '.ERROR_MESSAGE_ACCOUNT_NUMBER' | translate }}"
+        ></sxm-ui-text-form-field>
+
+        <de-care-ui-lookup-by-radio-id-or-account-number-errors [controlInvalid]="form.identifier.invalid"></de-care-ui-lookup-by-radio-id-or-account-number-errors>
+
+        <div class="extra-bottom-padding">
+            <privacy-policy></privacy-policy>
+        </div>
+    </div>
+
+    <button type="submit" sxm-proceed-button [loading]="lookupIsLoading$ | async" data-e2e="LookupByRadioOrAccountContinueButton">
+        {{ translateKeyPrefix + ".CONTINUE_BUTTON" | translate }}
+    </button>
+</form>
+
+<de-care-ui-lookup-by-radio-id-or-account-number-modal
+    [open]="openHelpFindRadioIdModal"
+    (closed)="openHelpFindRadioIdModal = false"
+></de-care-ui-lookup-by-radio-id-or-account-number-modal>
+
+<two-factor-auth-modal #twoFactorAuthModal (verifyCompleted)="verifyCompleted()" (verifyOptionsModalClosed)="verifyOptionsClosedIncomplete()"></two-factor-auth-modal>

@@ -1,0 +1,63 @@
+<ng-container *ngrxLet="infoToMakePaymentViewModel$ as infoToMakePaymentViewModel">
+    <div class="main">
+        <div class="submission-page-container">
+            <button class="back-button" (click)="backToMyAccount()">
+                <svg class="icon icon-utility icon-previous">
+                    <use class="icon-check-mark-flex-stroke" xlink:href="#icon-back"></use>
+                </svg>
+                {{ translateKeyPrefix + ".BACK_BUTTON" | translate }}
+            </button>
+            <section class="submission-page-container--userInfo">
+                <div data-presence-name *ngIf="infoToMakePaymentViewModel?.accountPresence?.customerName">
+                    {{ translateKeyPrefix + ".CUSTOMER_GREETING" | translate: { customerName: (infoToMakePaymentViewModel?.accountPresence?.customerName | titlecase) } }}
+                </div>
+                <div data-presense-account-number *ngIf="infoToMakePaymentViewModel?.accountPresence?.accountNumber">
+                    {{ translateKeyPrefix + ".ACCOUNT_NUMBER" | translate: { accountNumber: infoToMakePaymentViewModel?.accountPresence?.accountNumber } }}
+                </div>
+            </section>
+            <section class="submission-page-container--detail">
+                <ng-container *ngIf="infoToMakePaymentViewModel?.isUpdatePaymentMethodOnly; else submissionPageTitle">
+                    <h1 data-test="update-payment-header" *ngIf="infoToMakePaymentViewModel?.isUpdatePaymentMethodOnly">
+                        {{ translateKeyPrefix + ".UPDATE_PAYMENT_TITLE" | translate }}
+                    </h1>
+                    <div class="submission-page-container--updatePaymentSubHeader" *ngIf="infoToMakePaymentViewModel?.isUpdatePaymentMethodOnly">
+                        <span *ngIf="!infoToMakePaymentViewModel?.amounts?.currentBalanceDue">{{
+                            translateKeyPrefix + ".UPDATE_PAYMENT_NO_CURRENT_BALANCE" | translate
+                        }}</span>
+                        {{ translateKeyPrefix + ".UPDATE_PAYMENT_SUBHEADER" | translate }}
+                    </div>
+                </ng-container>
+                <ng-template #submissionPageTitle>
+                    <h1 *ngIf="!infoToMakePaymentViewModel?.isUpdatePaymentMethodOnly">{{ translateKeyPrefix + ".TITLE" | translate }}</h1>
+                </ng-template>
+            </section>
+            <section class="submission-page-container--alertInfo" *ngIf="!infoToMakePaymentViewModel?.isUpdatePaymentMethodOnly">
+                <sxm-ui-alert-pill
+                    *ngIf="infoToMakePaymentViewModel.accountHasSuspendedSubscriptions"
+                    class="critical-alert-icon-info straight-corners no-shadow"
+                    warningMessage
+                >
+                    <p>{{ translateKeyPrefix + ".SUSPENDED_RADIOS_ALERT" | translate }}</p>
+                </sxm-ui-alert-pill>
+                <p *ngIf="infoToMakePaymentViewModel.hasCurrentBalanceDue" class="instructions">{{ translateKeyPrefix + ".CURRENT_BALANCE_INSTRUCTIONS" | translate }}</p>
+                <p *ngIf="infoToMakePaymentViewModel.hasNoCurrentBalanceDue" class="instructions">{{ translateKeyPrefix + ".NEXT_PAYMENT_INSTRUCTIONS" | translate }}</p>
+                <p *ngIf="infoToMakePaymentViewModel.accountHasSuspendedSubscriptions" class="instructions">
+                    {{ translateKeyPrefix + ".SUSPENDED_INSTRUCTIONS" | translate }}
+                </p>
+            </section>
+            <hr class="submission-page-container--divider1" />
+
+            <section class="submission-page-container--payment-form">
+                <de-care-balance-and-payment-info-form
+                    [isUpdatePaymentMethodOnly]="infoToMakePaymentViewModel.isUpdatePaymentMethodOnly"
+                    [country]="countrySettings.countryCode"
+                    [balanceDataValues]="infoToMakePaymentViewModel.amounts"
+                    [canSelectAmountToPay]="infoToMakePaymentViewModel.canSelectAmountToPay"
+                    [canSelectPaymentFrequency]="infoToMakePaymentViewModel.canSelectPaymentFrequency && !infoToMakePaymentViewModel.isUpdatePaymentMethodOnly"
+                    [withoutFees]="infoToMakePaymentViewModel.withoutFees"
+                    (formCompleted)="processPaymentForm($event)"
+                ></de-care-balance-and-payment-info-form>
+            </section>
+        </div>
+    </div>
+</ng-container>

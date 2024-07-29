@@ -1,0 +1,6 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": { "firstName": "test", "lastName": "casethree", "email": "testaccount3@siriusxm.com", "zipCode": null, "phoneNumber": null }
+}

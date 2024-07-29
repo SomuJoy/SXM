@@ -1,0 +1,23 @@
+<sxm-ui-modal [closed]="false" titlePresent="true" [title]="translateKeyPrefix + '.TITLE' | translate" (modalClosed)="onClosed()" data-test="cancelBauHybridLinksModal">
+    <h4>{{ translateKeyPrefix + ".ACCOUNT_PAST_DUE" | translate }}</h4>
+    <p>{{ translateKeyPrefix + ".TO_PROCEED" | translate }}</p>
+    <ol>
+        <li>
+            <ng-container *ngIf="cancelByPhone === false; else chatNotAllowed">
+                <chat-with-agent-link class="chat-link-text" [chatLinkText]="translateKeyPrefix + '.CHAT_WITH_AGENT' | translate"></chat-with-agent-link>
+                <span>{{ translateKeyPrefix + ".HELP_CANCEL" | translate }}</span>
+            </ng-container>
+        </li>
+        <li>
+            <a (click)="navigateToMakeAPayment()"> {{ translateKeyPrefix + ".PAY_THE_BALANCE" | translate }} </a>
+            <span>{{ translateKeyPrefix + ".DUE_ON_YOUR_ACCOUNT" | translate }}</span>
+        </li>
+    </ol>
+    <p class="subtext">
+        {{ translateKeyPrefix + ".UP_ON_CANCELLATION" | translate }}
+    </p>
+</sxm-ui-modal>
+
+<ng-template #chatNotAllowed>
+    <span [innerHTML]="translateKeyPrefix + '.CHAT_WITH_AGENT' | translate"></span>
+</ng-template>

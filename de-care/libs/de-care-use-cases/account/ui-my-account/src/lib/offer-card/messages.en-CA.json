@@ -1,0 +1,184 @@
+{
+    "OFFER_DESTINATIONS": {
+        "CHECKOUT": {
+            "ROUTER_LINK": "subscribe/checkout",
+            "URL": "",
+            "QUERY_PARAMS": [
+                {
+                    "KEY": "programCode",
+                    "VALUE": "{{programCode}}"
+                }
+            ]
+        },
+        "CHECKOUT_TARGETED": {
+            "ROUTER_LINK": "subscribe/checkout",
+            "URL": "",
+            "QUERY_PARAMS": [
+                {
+                    "KEY": "programCode",
+                    "VALUE": "{{programCode}}"
+                },
+                {
+                    "KEY": "radioId",
+                    "VALUE": "{{radioId}}"
+                },
+                {
+                    "KEY": "act",
+                    "VALUE": "{{last4DigitsOfAccountNumber}}"
+                }
+            ]
+        },
+        "CHANGE": {
+            "ROUTER_LINK": "subscription/change",
+            "URL": "",
+            "QUERY_PARAMS": [
+                {
+                    "KEY": "subscriptionId",
+                    "VALUE": "{{subscriptionId}}"
+                }
+            ]
+        },
+        "SHOP": {
+            "ROUTER_LINK": "",
+            "URL": "https://www.siriusxm.ca/shopfreeradio"
+        },
+        "ADD_PVIP_RADIO": {
+            "ROUTER_LINK": "subscribe/upgrade-vip/add-second-radio",
+            "URL": "",
+            "QUERY_PARAMS": [
+                {
+                    "KEY": "subscriptionId",
+                    "VALUE": "{{subscriptionId}}"
+                }
+            ]
+        },
+        "ACTIVATE": {
+            "ROUTER_LINK": "subscribe/checkout/purchase/satellite/add-radio-router/activate-radio-init",
+            "URL": "",
+            "STATE": [
+                {
+                    "KEY": "radioId",
+                    "VALUE": "{{radioId}}"
+                }
+            ]
+        },
+        "ACTIVATE_TRIAL": {
+            "ROUTER_LINK": "",
+            "URL": "{{oacUrl}}/newradioinformation_initialView.action?searchMode=rid_search&langpref=en"
+        }
+    },
+    "OFFER_PROFILES": {
+        "TRIAL_FOLLOWON": {
+            "TITLE": "Get a free radio.",
+            "SUBTITLE": "Listen at home, in your office or in another vehicle.",
+            "LEGAL_COPY": "Additional minimum subscription, credit card and shipping required. See Offer Details.",
+            "LABEL": "free radio"
+        },
+        "PROMO_ME_LESS_12": {
+            "TITLE": "Get a free radio.",
+            "SUBTITLE": "Listen at home, in your office or in another vehicle.",
+            "LEGAL_COPY": "Additional minimum subscription, credit card and shipping required. See Offer Details.",
+            "LABEL": "free radio"
+        },
+        "PROMO_ME_12_MORE": {
+            "TITLE": "Get a free radio.",
+            "SUBTITLE": "Listen at home, in your office or in another vehicle.",
+            "LEGAL_COPY": "Additional minimum subscription, credit card and shipping required. See Offer Details.",
+            "LABEL": "free radio"
+        },
+        "SELFPAY_ME": {
+            "TITLE": "Get all live sports, Pandora stations, every channel, and more",
+            "SUBTITLE": "when you upgrade {{ device }} to Platinum plan.",
+            "LEGAL_COPY": "See Offer Details.",
+            "LABEL": "get platinum",
+            "DEVICE_MAP": {
+                "YMM": "your {{ identifier }}",
+                "NICKNAME": "{{ identifier }}",
+                "DEFAULT": "your subscription"
+            }
+        },
+        "PROMO_FP_PLATINUM": {
+            "TITLE": "Get a free radio.",
+            "SUBTITLE": "Listen at home, in your office or in another vehicle.",
+            "LEGAL_COPY": "Additional minimum subscription, credit card and shipping required. See Offer Details.",
+            "LABEL": "free radio"
+        },
+        "PVIP_NO_2ND_RADIO": {
+            "TITLE": "Want to add a second radio to your Platinum VIP plan?",
+            "SUBTITLE": "Remember, you get service in 2 cars plus 2 streaming logins.",
+            "LEGAL_COPY": "No additional charge.",
+            "LABEL": "Add second radio"
+        },
+        "SELFPAY_MS": {
+            "TITLE": "Get 200 more channels, thousands of shows and videos on-demand",
+            "SUBTITLE": "when you upgrade to the Music & Entertainment plan.",
+            "LEGAL_COPY": "See Offer Details.",
+            "LABEL": "subscribe"
+        },
+        "PROMO_MS": {
+            "TITLE": "Get 200 more channels, thousands of shows and videos on-demand",
+            "SUBTITLE": "when you upgrade to the Music & Entertainment plan.",
+            "LEGAL_COPY": "See Offer Details.",
+            "LABEL": "subscribe"
+        },
+        "SELFPAY_NST": {
+            "TITLE": "Get 200 more channels, thousands of shows and videos on-demand",
+            "SUBTITLE": "when you upgrade to the Music & Entertainment plan.",
+            "LEGAL_COPY": "See Offer Details.",
+            "LABEL": "subscribe"
+        },
+        "SELFPAY_STREAMING_PLATINUM": {
+            "TITLE": "Get a free radio.",
+            "SUBTITLE": "Listen at home, in your office or in another vehicle.",
+            "LEGAL_COPY": "Additional minimum subscription, credit card and shipping required. See Offer Details.",
+            "LABEL": "get a free radio"
+        },
+        "SELFPAY_STREAMING_ME": {
+            "TITLE": "Get a free radio.",
+            "SUBTITLE": "Listen at home, in your office or in another vehicle.",
+            "LEGAL_COPY": "Additional minimum subscription, credit card and shipping required. See Offer Details.",
+            "LABEL": "get a free radio"
+        },
+        "EMPLOYEE": {
+            "TITLE": "Get a free radio.",
+            "SUBTITLE": "Listen at home, in your office or in another vehicle.",
+            "LEGAL_COPY": "Additional minimum subscription, credit card and shipping required. See Offer Details.",
+            "LABEL": "get a free radio"
+        },
+        "DEMO": {
+            "TITLE": "Start your complimentary SiriusXM trial",
+            "SUBTITLE": "Experience every channel SiriusXM has to offer, inside and outside the car.",
+            "LEGAL_COPY": "See Offer Details.",
+            "LABEL": "Activate trial",
+            "DESTINATION": "ACTIVATE_TRIAL"
+        },
+        "INACTIVE": {
+            "TITLE": "Activate {{ device }}",
+            "SUBTITLE": "Missing SiriusXM? We’ve got a great plan for you.",
+            "LEGAL_COPY": "",
+            "LABEL": "activate radio",
+            "DEVICE_MAP": {
+                "YMM": "the radio in your {{ identifier }}",
+                "NICKNAME": "the radio in {{ identifier }}",
+                "DEFAULT": "your radio"
+            }
+        },
+        "DEFAULT_PLATINUM": {
+            "TITLE": "Get all live sports, Pandora stations, every channel, and more",
+            "SUBTITLE": "when you upgrade {{ device }} to Platinum plan.",
+            "LEGAL_COPY": "See Offer Details.",
+            "LABEL": "get platinum",
+            "DEVICE_MAP": {
+                "YMM": "your {{ identifier }}",
+                "NICKNAME": "{{ identifier }}",
+                "DEFAULT": "your subscription"
+            }
+        },
+        "DEFAULT_FREE_RADIO": {
+            "TITLE": "Get a free radio.",
+            "SUBTITLE": "Listen at home, in your office or in another vehicle.",
+            "LEGAL_COPY": "Additional minimum subscription, credit card and shipping required. See Offer Details.",
+            "LABEL": "free radio"
+        }
+    }
+}

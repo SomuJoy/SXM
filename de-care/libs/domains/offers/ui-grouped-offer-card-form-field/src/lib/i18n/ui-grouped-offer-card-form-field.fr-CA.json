@@ -1,0 +1,13 @@
+{
+    "uiGroupedOfferCardFormField": {
+        "uiGroupedOfferCardFormFieldComponent": {
+            "VIEW_DETAILS_COLLAPSED": "Découvrez les détails du forfait",
+            "VIEW_DETAILS_EXPANDED": "Masquer",
+            "ARIA_VIEW_DETAILS_COLLAPSED": "Découvrez les détails du forfait - {{packageName}}",
+            "ARIA_VIEW_DETAILS_EXPANDED": "Masquer les détails du forfait - {{packageName}}",
+            "CONTENT_CARD_FLAG": "Notre Meilleur Forfait",
+            "CONTENT_CARD_HEADLINE1": "Passer à ce forfait",
+            "CONTENT_CARD_HEADLINE2": "Garder ce forfait"
+        }
+    }
+}

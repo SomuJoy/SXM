@@ -1,0 +1,19 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "email": "DXHLBF.DJIJ@SIRIUSXM.COM",
+        "status": "SUCCESS",
+        "radioId": "8055",
+        "subscriptionId": "10000240938",
+        "maskedStreamingUserName": "dxh******@siriusxm.com",
+        "accountNumber": "10000240909",
+        "maskedPhoneNumber": null,
+        "isEligibleForRegistration": true,
+        "isOfferStreamingEligible": true,
+        "isEligibleForStreamingCredentialsOnly": false,
+        "isUserNameSameAsEmail": true,
+        "isTwoFactorAuthNeeded": false
+    }
+}

@@ -1,0 +1,23 @@
+@import "sxm.phoenix.imports";
+
+.deal-addon-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    sxm-ui-deal-addon-card {
+        display: block;
+        width: 100%;
+        margin-top: 32px;
+        @include bp(medium) {
+            width: 1.05 * 60%; //to match primary package card width
+        }
+    }
+    sxm-ui-deal-addon-card-separated {
+        display: block;
+        width: 100%;
+        margin-top: 32px;
+        @include bp(medium) {
+            width: 1.05 * 60%; //to match primary package card width
+        }
+    }
+}

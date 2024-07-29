@@ -1,0 +1,12 @@
+{
+    "ADD_TITLE": "Ajoutez un pseudo d’abonnement",
+    "EDIT_TITLE": "Mettez à jour votre pseudo",
+    "DESCRIPTION": "Distinguez facilement vos abonnements en ajoutant un pseudo personnalisé.",
+    "RADIO_ID": "Numéro NSE/code de radio: {{radioId}}",
+    "NICKNAME": "Pseudo (par exemple, La voiture de Jim)",
+    "ERROR_MESSAGE_NICKNAME": "Veuillez entrer un surnom valide contenant jusqu'à 15 caractères. Seuls les lettres, chiffres, tirets et apostrophes sont autorisés.",
+    "ERROR_MESSAGE": "Une erreur inattendue est apparue. Veuillez réessayer.",
+    "UPDATE_BUTTON": "Mettez à jour votre pseudo",
+    "ADD_BUTTON": "AJOUTEZ UN PSEUDO",
+    "CANCEL_BUTTON": "ANNULEZ"
+}

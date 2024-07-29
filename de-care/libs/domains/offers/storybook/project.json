@@ -1,0 +1,27 @@
+{
+    "name": "domains-offers-storybook",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/offers/storybook/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/domains/offers/storybook/src/**/*.ts", "libs/domains/offers/storybook/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/offers/storybook/jest.config.js",
+                "tsConfig": "libs/domains/offers/storybook/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/offers/storybook/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {},
+    "tags": ["scope:legacy", "scope:deprecated"]
+}

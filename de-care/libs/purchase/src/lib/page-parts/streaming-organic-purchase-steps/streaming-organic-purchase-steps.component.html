@@ -1,0 +1,252 @@
+<ng-template #paymentInfoTemplate let-step="step">
+    <p>{{ "purchase.streamingOrganicPurchaseStepsComponent.paymentInfoStepInstructions" | translate }}</p>
+    <p class="your-plan-info">
+        <strong class="text-color-grey-dark">{{ "purchase.streamingOrganicPurchaseStepsComponent.paymentInfoStepYourPlanTitle" | translate }}</strong>
+        <br />
+        <strong class="small-copy">
+            {{ "app.packageDescriptions." + selectedOffer.packageName + ".name" | translate }}
+            {{
+                "purchase.streamingOrganicPurchaseStepsComponent.paymentInfoStepYourPlanChannelsCount"
+                    | translate
+                        : {
+                              count: ("app.packageDescriptions." + selectedOffer.packageName + ".channels" | translate)[0].count
+                          }
+            }}
+        </strong>
+        <br />
+        <span class="small-copy">
+            {{
+                selectedOfferIsSelfPay
+                    ? ("purchase.streamingOrganicPurchaseStepsComponent.paymentInfoStepYourPlanPricePerMonth"
+                      | translate
+                          : {
+                                pricePerMonth: selectedOffer.pricePerMonth | currency: "USD":"symbol-narrow":"1.0-2":currentLang
+                            })
+                    : ("purchase.streamingOrganicPurchaseStepsComponent." + (isMCP ? "paymentInfoStepYourPlanPromoPricePerMonth" : "paymentInfoStepYourPlanFullTermPrice")
+                      | translate
+                          : {
+                                termLength: selectedOffer.termLength,
+                                monthString: selectedOffer.termLength | i18nPlural: ("purchase.streamingOrganicPurchaseStepsComponent.PLURAL_MAP.MONTH" | translate),
+                                price: selectedOffer.price | currency: "USD":"symbol-narrow":"1.0-2":currentLang,
+                                retailPricePerMonth:
+                                    selectedOffer.retailPrice | currency: "USD":"symbol-narrow":determinePriceDecimalFormat(selectedOffer.retailPrice):currentLang
+                            })
+            }}
+        </span>
+    </p>
+    <ng-container
+        [ngTemplateOutlet]="paymentInfoHelperTemplate"
+        [ngTemplateOutletContext]="{
+            rtcData: rtcData$ | async
+        }"
+    ></ng-container>
+    <ng-template #paymentInfoHelperTemplate let-rtcData="rtcData">
+        <ng-container *ngIf="rtcData">
+            <review-subscription-options
+                class="purchase-subscription-options"
+                [renewalPlan]="rtcData.reviewSubscriptionOptions"
+                (optionsModalRequested)="onOptionsModalRequested()"
+            ></review-subscription-options>
+            <sxm-ui-modal
+                #followOnSelectionModal
+                [titlePresent]="true"
+                [title]="'purchase.streamingOrganicPurchaseStepsComponent.RENEWAL_MODAL_TITLE' | translate"
+                (modalClosed)="followOnSelectionModalClosed()"
+                class="modal--full-view modal--content-grid"
+            >
+                <follow-on-selection
+                    #followOnSelectionComp
+                    class="fixed--reactive-rtc"
+                    (selected)="onSelectedFollowOn($event)"
+                    (packageIndexSelected)="handleSelectedFollowOnIndex($event)"
+                    [planSelectionData]="rtcData.renewalPlanSelectionData"
+                ></follow-on-selection>
+                <plan-comparison-grid
+                    id="rtc-reactive-plan-grid"
+                    (continue)="onFollowOnContinue()"
+                    [packageNames]="rtcData.renewalPackageNames"
+                    [selectedPackageIndex]="selectedFollowOnIndex"
+                    [planComparisonGridParams]="rtcData.planComparisonGridParams"
+                    [retailPrices]="rtcData.retailPrices"
+                    [questionsPhoneNumber]="'purchase.streamingOrganicPurchaseStepsComponent.PLAN_GRID_QUESTIONS_TFN' | translate"
+                ></plan-comparison-grid>
+            </sxm-ui-modal>
+        </ng-container>
+        <payment-info-streaming-organic
+            data-e2e="purchase.paymentInfoStreamingOrganicComponent"
+            *ngIf="account"
+            [accountData]="{ account: account, isNewAccount: account.isNewAccount, hasEmailAddressOnFile: account.hasEmailAddressOnFile }"
+            [ccError]="ccError"
+            [serviceError]="serviceError$ | async"
+            [loading]="loading"
+            [isOfferIncludesDevice]="isOfferIncludesDevice"
+            [isStreaming]="true"
+            [isCanadaMode]="isCanadaMode"
+            [reducedFields]="!isCanadaMode"
+            [isClosedRadio]="isClosedRadio"
+            [userClickedSubscribe]="userClickedSubscribe"
+            [isPlatformChanged]="platformIsChanged$ | async"
+            [customerName]="customerName$ | async"
+            [isRTC]="!!rtcData"
+            (paymentFormCompleted)="onPaymentFormCompleted($event)"
+            (clearForms)="onClearForms()"
+            (useCardOnFileSelected)="onUseCardOnFileSelected($event)"
+            (submitPaymentForm)="onPaymentFormSubmitted($event)"
+            (ccIsValid)="onCCIsValid()"
+        >
+        </payment-info-streaming-organic>
+    </ng-template>
+</ng-template>
+<ng-template #paymentInfoTemplateInactive let-step="step" let-formStep="formStep">
+    <p *ngIf="formStep > step && selectedPaymentCardSummaryInfo$ | async as cardInfo">
+        {{ "purchase.streamingOrganicPurchaseStepsComponent.paymentInfoStepInactiveCopy" | translate: { cardType: cardInfo.cardType, last4: cardInfo.cardNumberLast4Digits } }}
+    </p>
+</ng-template>
+
+<ng-template #upgradesTemplate let-step="step">
+    <ng-container *ngIf="useCmsContent; else legacyUpsellsForm">
+        <de-care-streaming-upsells-form
+            *ngIf="upsellOffersVM$ | async as upsellOffersVM"
+            [submissionProcessing]="loading"
+            [upsellPlanCodeOptions]="upsellOffersVM.upsellPlanCodeOptions"
+            [upsellCopy]="upsellOffersVM.upsellCopy"
+            (planCodeSelected)="selectUpsellOrClear($event)"
+            (planCodeBeingConsidered)="swapOfferInfoBasedOnUpsellBeingConsidered($event)"
+        ></de-care-streaming-upsells-form>
+    </ng-container>
+    <ng-template #legacyUpsellsForm>
+        <offer-upsell
+            [isFlepz]="true"
+            [stepNumber]="step"
+            [upgrades]="upgrades"
+            [loading]="loading"
+            [excludeBestPackageHeading]="true"
+            [hidePlanGrid]="true"
+            [continueButtonTextCopyOverride]="'purchase.streamingOrganicPurchaseStepsComponent.UPSELL_CONTINUE_BUTTON' | translate"
+            (selectedPlanCodeEligibility)="onSelectedPlanCodeEligibilityFromNonCMSUpsell($event)"
+        ></offer-upsell>
+    </ng-template>
+</ng-template>
+
+<ng-template #reviewTemplate let-displayed="displayed">
+    <app-review-order
+        data-e2e="purchase.reviewOrderComponent"
+        *ngIf="reviewObject"
+        [selectedRenewalPlanCode]="selectedRenewalPlanCode$ | async"
+        [isStreaming]="true"
+        [reviewObject]="reviewObject"
+        [isMCP]="isMCP"
+        [displayed]="displayed"
+        [details]="offerDetails$ | async"
+        [followOnOfferPlanCode]="followOnOfferPlanCode$ | async"
+        [displayNuCaptcha]="displayOfferNucaptcha"
+    ></app-review-order>
+</ng-template>
+
+<ng-template #accountLookupStepTemplate let-isActive="displayed">
+    <account-credentials-and-lookup-step
+        [email]="attemptedEmail"
+        [passwordInvalidError]="passwordInvalidError$ | async"
+        [passwordContainsPiiDataError]="passwordContainsPiiDataError$ | async"
+        [closeVerifyAccountModal]="closeVerifyAccountModal$ | async"
+        [currentLang]="currentLang"
+        [isActive]="isActive"
+        [streaming]="true"
+        (stepComplete)="handleAccountLookupStepComplete($event)"
+        (subscribeLinkClicked)="handleSubscribeLinkClicked($event)"
+    ></account-credentials-and-lookup-step>
+</ng-template>
+
+<ng-template #accountLookupStepTemplateInactive let-step="step">
+    <your-device-info *ngIf="yourDeviceInfo" [data]="yourDeviceInfo"></your-device-info>
+</ng-template>
+
+<main class="background-offwhite">
+    <div class="content-container">
+        <div class="row align-center no-padding-small">
+            <div class="column medium-2 no-padding background-white"></div>
+            <div class="column small-12 medium-6 no-padding-small background-white">
+                <div class="trial-accordion-container background-white">
+                    <div
+                        *ngFor="let step of purchaseSteps; index as i"
+                        data-e2e="purchaseAccordionItem"
+                        class="accordion-item"
+                        [ngClass]="{ active: formStep === i + 1 }"
+                        id="{{ step.id }}-step"
+                        #stepElements
+                    >
+                        <div class="accordion-item-title flex align-justify" [attr.qatag]="step.qatag">
+                            <p *ngIf="formStep === i + 1" class="component--accordion-title step-header">
+                                {{ "purchase.streamingOrganicPurchaseStepsComponent.STEP_TITLE_ACTIVE" | translate: { stepNumber: i + 1, totalSteps: purchaseSteps.length } }}
+                            </p>
+                        </div>
+
+                        <div class="accordion-item-title flex align-justify" [attr.qatag]="step.qatag">
+                            <div
+                                id="{{ step.id }}-trigger"
+                                data-e2e="purchaseAccordionItemTitle"
+                                class="component--accordion-title text-left"
+                                [ngClass]="{ active: formStep === i + 1, visited: formStep > i + 1 }"
+                                data-accordion-trigger
+                                [attr.data-open]="step.id"
+                                data-group="flow-steps"
+                            >
+                                {{ step.titleKey | translate }}
+                            </div>
+                            <button
+                                *ngIf="formStep > i + 1 && customerIsEligibleForFirstOffer$ | async"
+                                (click)="handleEditClick(i + 1)"
+                                class="edit-btn text-link-secondary"
+                                data-e2e="streamingOrganicPurchaseStepEditButton"
+                                [attr.aria-expanded]="formStep === i + 1"
+                            >
+                                {{ "purchase.streamingOrganicPurchaseStepsComponent.EDIT_BUTTON_LABEL" | translate }}
+                            </button>
+                        </div>
+                        <div
+                            *ngIf="step.templates.active"
+                            data-e2e="purchaseAccordionItemContent"
+                            class="component--accordion-content"
+                            [ngClass]="{ active: formStep === i + 1 }"
+                            id="{{ step.id }}"
+                        >
+                            <div class="accordion-content-container no-padding">
+                                <ng-container
+                                    [ngTemplateOutletContext]="{ step: i + 1, displayed: formStep === i + 1 }"
+                                    [ngTemplateOutlet]="step.templates.active"
+                                ></ng-container>
+                            </div>
+                        </div>
+                        <div
+                            *ngIf="step.templates.inactive"
+                            class="component--accordion-content"
+                            data-e2e="purchaseAccordionContent"
+                            id="{{ step.id }}-inactive"
+                            [ngClass]="{ active: !(formStep === i + 1) }"
+                        >
+                            <div class="accordion-content-container no-padding">
+                                <ng-container [ngTemplateOutletContext]="{ step: i + 1, formStep: formStep }" [ngTemplateOutlet]="step.templates.inactive"></ng-container>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column medium-2 no-padding background-white"></div>
+        </div>
+    </div>
+</main>
+
+<ng-container *ngIf="useCmsContent; else legacyOfferDetails">
+    <sxm-ui-legal-copy [legalCopy]="legalCopyVM$ | async" data-e2e="purchasePage.streamingOrganicOffer.legalCopy"></sxm-ui-legal-copy>
+</ng-container>
+<ng-template #legacyOfferDetails>
+    <offer-details [rtcDetails]="RTCOfferDetails$ | async" [details]="offerDetails$ | async" [copyOptions]="offerDetailsCopyOptions"></offer-details>
+</ng-template>
+
+<sxm-ui-loading-with-alert-message
+    *ngIf="displayIneligibleLoader$ | async"
+    [isLoading]="true"
+    [pillMessage]="'purchase.streamingOrganicPurchaseStepsComponent.uiLoadingWithAlertMessageComponent.pill' | translate"
+    [paragraph]="'purchase.streamingOrganicPurchaseStepsComponent.uiLoadingWithAlertMessageComponent.paragraph' | translate"
+    (loadingCompleted)="onLoadingWithAlertMessageComplete($event)"
+></sxm-ui-loading-with-alert-message>

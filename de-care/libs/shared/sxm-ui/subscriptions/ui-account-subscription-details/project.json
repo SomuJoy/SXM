@@ -1,0 +1,28 @@
+{
+    "name": "shared-sxm-ui-subscriptions-ui-account-subscription-details",
+    "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/sxm-ui/subscriptions/ui-account-subscription-details/src",
+    "prefix": "sxm-ui",
+    "targets": {
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/shared/sxm-ui/subscriptions/ui-account-subscription-details"],
+            "options": {
+                "jestConfig": "libs/shared/sxm-ui/subscriptions/ui-account-subscription-details/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/shared/sxm-ui/subscriptions/ui-account-subscription-details/src/**/*.ts",
+                    "libs/shared/sxm-ui/subscriptions/ui-account-subscription-details/src/**/*.html"
+                ]
+            },
+            "outputs": ["{options.outputFile}"]
+        }
+    },
+    "tags": ["type:ui", "scope:shared-ui"]
+}

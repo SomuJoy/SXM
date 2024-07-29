@@ -1,0 +1,59 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+@mixin main-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-row-gap: 20px;
+    grid-column-gap: 16px;
+    @include bp(medium) {
+        grid-template-columns: repeat(12, 1fr);
+        grid-column-gap: 24px;
+    }
+}
+
+main {
+    @include main-grid;
+    max-width: 1024px;
+    grid-row-gap: 48px;
+    padding: 40px 16px;
+    margin: 0 auto;
+    @include bp(medium) {
+        padding: 48px 16px;
+    }
+    @include bp(large) {
+        grid-row-gap: 56px;
+        padding: 48px 0;
+    }
+    section {
+        grid-column: span 6;
+        display: grid;
+        gap: 20px;
+        padding: 0;
+        width: 100%;
+        @include bp(small) {
+            grid-column: span 5;
+        }
+        @include bp(medium) {
+            grid-column: span 8;
+        }
+        @include bp(large) {
+            padding: 0 56px;
+        }
+        .card-content {
+            display: grid;
+            gap: 8px;
+        }
+    }
+}
+
+h2 {
+    @include get-header-style(h5);
+    margin-bottom: 8px;
+}
+
+hr {
+    @include hr($gray-light);
+    width: 100%;
+    margin: 8px 0 0;
+}

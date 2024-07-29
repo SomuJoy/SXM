@@ -1,0 +1,18 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "emailValidation": null,
+        "usernameValidation": null,
+        "billingAddressValidation": null,
+        "serviceAddressValidation": {
+            "confidenceLevel": "Verified",
+            "correctedAddress": [{ "addressLine1": "1 River Rd", "addressLine2": " ", "city": "Schenectady", "state": "NY", "zip": "12345-6000" }],
+            "resultCode": "SUCCESS",
+            "validationStatus": "VALID"
+        },
+        "ccValidation": null,
+        "valid": true
+    }
+}

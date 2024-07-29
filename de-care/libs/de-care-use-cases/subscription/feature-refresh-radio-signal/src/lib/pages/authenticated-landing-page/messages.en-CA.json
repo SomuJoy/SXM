@@ -1,0 +1,36 @@
+{
+    "TITLE": "Resend my Satellite Radio Signal",
+    "SUB_TITLE": "Are you near your car or radio?",
+    "YES_TEXT": "Yes",
+    "NO_TEXT": "No",
+    "YES_POINT_ONE": "Turn on your radio and set it to Satellite.",
+    "YES_POINT_TWO": "Make sure the radio has a clear view to the sky (not blocked by a garage, large trees, or buildings). Please Note: The refresh can take up to 15 minutes.",
+    "YES_BUTTON_TEXT": "RESEND SATELLITE SIGNAL",
+    "FIND_RADIO_ID_HYPERLINK": "Don't have a Radio ID (RID) or an Account Number?",
+    "NO_INSTRUCTIONS": "We’ll text you instructions so you can resend your satellite radio signal once you’re near your radio.",
+    "MOBILE_FORM_PLACEHOLDER": "Mobile Phone Number",
+    "CUSTOMER_AGREEMENT_CHECKBOX_TEXT": "I agree to receive a one-time text message and certify this is my mobile number. Message and data rates may apply. View our <a target=\"_blank\" href=\"https://www.siriusxm.ca/sms\"> SMS Terms and Conditions</a> and <a target=\"_blank\" href=\"https://www.siriusxm.ca/privacy\"> Privacy Policy</a>.",
+    "NO_BUTTON_TEXT": "SEND INSTRUCTIONS",
+    "ERROR": {
+        "MOBILE_REQUIRED": "Enter a valid phone number.",
+        "MESSAGE_AGREE_TO_TEXT_MESSAGE": "Please confirm that you have read and agree to the Terms and Conditions and Privacy Policy."
+    },
+    "SUCCESS_MESSAGE": "Satellite signal sent successfully.",
+    "NO_ACTIVE_SUBSCRIPTION_ONE": "It looks like you don't have a current subscription for SiriusXM on your car or radio. To listen, please ",
+    "REACTIVATE_TEXT": "subscribe.",
+    "NO_ACTIVE_SUBSCRIPTION_TWO": "",
+    "NON_PAY_ERROR": "Your account balance is past due. Please login to your account and ",
+    "MAKE_A_PAYMENT": "make a payment",
+    "TO_CONTINUE_LISTENING": " to continue listening.",
+    "REACTIVATE_LINK": "https://siriusxm.ca/refreshreactivate",
+    "SYSTEM_ERROR": {
+        "PART1": "There was an issue resending your satellite radio signal. Please ",
+        "CHAT_TEXT": "chat with a representative",
+        "PART2": " for assistance."
+    },
+    "INVALID_VIRTUAL_RADIO_ID": {
+        "PART1": "It looks like your radio doesn’t require a satellite radio signal to be resent. You can call 1-888-539-7474 or ",
+        "CHAT_TEXT": "chat with an agent",
+        "PART2": " to learn more."
+    }
+}

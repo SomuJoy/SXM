@@ -1,0 +1,534 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "libs/sxm-assets/scss/ui_reset.scss";
+@import "components/buttons";
+
+:host {
+    font-family: $font-standard;
+    color: $black;
+    white-space: normal;
+}
+
+form {
+    margin-bottom: 16px;
+
+    button {
+        margin: 16px 0 40px;
+
+        @include bp(medium) {
+            margin: 16px 0 24px;
+        }
+
+        &.mt-8 {
+            margin-top: 8px;
+        }
+    }
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+p.no-margin {
+    margin: 0;
+}
+
+.checkbox-item {
+    label {
+        display: inline-block;
+    }
+
+    sxm-ui-tooltip {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 4px;
+    }
+}
+
+// styles pulled from UI framework
+@keyframes onAutoFillStart {
+    from {
+        font-size: inherit;
+    }
+
+    to {
+        font-size: initial;
+    }
+}
+
+@keyframes onAutoFillCancel {
+    from {
+        font-size: inherit;
+    }
+
+    to {
+        font-size: initial;
+    }
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: calculate-rem(10px);
+    line-height: 1.57;
+    @include font-size(14px);
+    font-weight: calculate-font-weight("book");
+
+    @include bp(medium) {
+        margin-bottom: calculate-rem(12px);
+    }
+}
+
+.invalid-feedback {
+    margin: -8px 0 16px;
+    padding: 0;
+    width: 100%;
+
+    &.mt-0 {
+        margin: 0 0 16px;
+    }
+
+    p {
+        color: $red;
+        @include font-size(12px);
+        font-weight: calculate-font-weight("bold");
+        line-height: 1.5;
+        text-align: left;
+    }
+}
+
+.input-container {
+    color: $red;
+    border: 1px solid $gray-dark;
+    box-sizing: border-box;
+    height: 56px;
+    margin-bottom: 16px;
+    position: relative;
+    width: 100%;
+
+    &.invalid {
+        border: 1px solid $red;
+
+        &.active {
+            input {
+                border-left: 4px solid $red;
+            }
+        }
+    }
+
+    &.filled {
+        box-shadow: none;
+
+        label,
+        label.is-autofilled {
+            transform: translateY(4px) scale(0.75);
+        }
+
+        input {
+            border-left: 0;
+            padding-left: 15px;
+        }
+    }
+
+    &.active {
+        label {
+            transform: translate(0, 4px) scale(0.75);
+        }
+
+        input {
+            border-left: 4px solid $blue-secondary;
+        }
+    }
+
+    &.mb-8 {
+        margin-bottom: 8px;
+    }
+
+    label {
+        color: $gray-dark;
+        @include font-size(14px);
+        font-weight: calculate-font-weight("book");
+        line-height: 20px;
+        position: absolute;
+        transform-origin: top left;
+        margin-left: 14px;
+        transition: 0.1s ease-in-out;
+    }
+
+    input {
+        border: 0;
+        font-family: inherit;
+        @include font-size(14px);
+        height: 100%;
+        outline: 0;
+        padding: 24px 0 16px 10px;
+        width: 100%;
+
+        // sass-lint:disable no-vendor-prefixes
+        &:-webkit-autofill {
+            animation-name: onAutoFillStart;
+            transition: background-color 50000s ease-in-out 0s;
+        }
+
+        &:not(:-webkit-autofill) {
+            animation-name: onAutoFillCancel;
+        }
+
+        &.is-autofilled {
+            border-left: 4px solid $blue-secondary;
+        }
+    }
+}
+
+%radio-check-focus {
+    box-shadow: 0 0 5px $focus-blue-trans;
+    outline: 2px solid $focus-blue-trans;
+    outline-offset: 0.5px;
+}
+
+%radio-check-inputs {
+    position: relative;
+
+    input {
+        z-index: 50;
+
+        &[type="checkbox"],
+        &[type="radio"] {
+            //input cannot be display:none so it can remain tabbable.
+            //this will hide it behind the pseudo element icon
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 10px;
+            height: 10px;
+            opacity: 0.0001;
+        }
+
+        &:focus + label {
+            &::before {
+                @extend %radio-check-focus;
+            }
+        }
+    }
+
+    label {
+        @include font-size(14px);
+        position: relative;
+        padding: 12px 0 12px 30px;
+        line-height: 22px;
+        cursor: pointer;
+        z-index: 100;
+    }
+}
+
+.checkbox-item {
+    @extend %radio-check-inputs;
+    position: relative;
+    margin-top: 8px;
+    margin-bottom: 0;
+
+    .checkbox {
+        position: relative;
+
+        &:checked + label::before {
+            content: "";
+            background: $blue-secondary;
+            border-color: $blue-secondary;
+        }
+
+        &:checked + label::after {
+            content: "";
+            // Unencrypted version
+            //background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 10"><path d="M.685 4.991l3.382 3.382 7.248-7.247" stroke-width="2" fill="none" stroke="rgb(255,255,255)"/></svg>') no-repeat;
+            // Encrypted for IE
+            background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMiAxMCI+PHBhdGggZD0iTS42ODUgNC45OTFsMy4zODIgMy4zODIgNy4yNDgtNy4yNDciIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2IoMjU1LDI1NSwyNTUpIi8+PC9zdmc+")
+                no-repeat;
+            background-size: contain;
+            position: absolute;
+            top: 15px;
+            left: 2px;
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    label {
+        &::before {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: 0;
+            background: $white;
+            display: block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid $gray-dark;
+        }
+    }
+
+    &.invalid {
+        label {
+            &::before {
+                border: 2px solid $red;
+            }
+        }
+    }
+}
+
+button {
+    @include button;
+
+    &.loading {
+        ::ng-deep span {
+            height: 4px;
+            width: 4px;
+            margin: auto 6px;
+            background: $white;
+            display: inline-block;
+            border-radius: 4px;
+            animation: load 1.4s infinite;
+
+            @for $i from 1 through 3 {
+                &:nth-child(#{$i}) {
+                    animation-delay: 0.2s * $i;
+                }
+            }
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            ::ng-deep span {
+                background: $blue;
+            }
+        }
+
+        @keyframes load {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(2);
+            }
+        }
+    }
+}
+
+p {
+    ::ng-deep {
+        a {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 2px;
+            padding: 12px 0;
+            color: $blue-secondary;
+
+            @include bp(medium) {
+                padding: 0;
+            }
+        }
+    }
+}
+
+sxm-ui-tooltip {
+    ::ng-deep {
+        $tool-tip-shadow: rgba(0, 0, 0, 0.1);
+        font-family: $font-standard;
+
+        .component {
+            &--tool-tip {
+                position: relative;
+
+                &-button {
+                    display: block;
+                    position: relative;
+                    background: transparent;
+                    border: none;
+                    height: auto;
+                    width: auto;
+                    padding: 12px 3px;
+                    margin: 0;
+                    line-height: 1;
+                    font-family: $font-standard;
+                    @include font-size(13px);
+                    font-weight: map-deep-get($fonts-weight, $font-standard, regular);
+                    cursor: pointer;
+
+                    .icon {
+                        width: 24px;
+                        height: 24px;
+
+                        &-tool-tip {
+                            color: $white;
+                            stroke: $gray-dark;
+                            fill: $gray-dark;
+
+                            &.active {
+                                color: $gray-dark;
+                                stroke: $white;
+                                fill: $white;
+                            }
+                        }
+                    }
+
+                    .icon-tool-tip-wrapper {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                    }
+                }
+
+                &-content {
+                    display: block;
+                    background: $white;
+                    position: absolute;
+                    top: -40px;
+                    right: 48px;
+                    min-width: 216px;
+                    padding: 16px;
+                    box-shadow: 0 0 10px 5px $tool-tip-shadow;
+                    z-index: 20;
+                    visibility: hidden;
+
+                    &.active {
+                        visibility: visible;
+                    }
+
+                    p {
+                        @include font-size(12px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.spritesheet {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+$pill-color: #fff9d5;
+
+sxm-ui-alert-pill {
+    position: relative;
+    top: 0px;
+    background: $pill-color;
+    margin-bottom: 23px;
+}
+
+.pill-text {
+    color: $black;
+    font-size: 16px;
+}
+
+.paragraph {
+    position: absolute;
+    top: 40%;
+    padding: 56px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.animate-block {
+    animation-name: fadeInslideUp;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+
+    &.fade {
+        animation-delay: 1s;
+        animation-name: fadeIn;
+    }
+}
+
+@keyframes fadeInslideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+$errorRedHighContrast: #ff8080;
+$blueHighContrast: #2e6cd0;
+:host-context(.login-form-theme-dark) {
+    color: #c4c4cd;
+    ::ng-deep {
+        color: #c4c4cd;
+        sxm-ui-tooltip .component--tool-tip-button .icon-tool-tip {
+            color: #c4c4cd;
+            stroke: #39395a;
+            fill: #39395a;
+        }
+        input[type="text"],
+        input[type="password"] {
+            background-color: #39395a;
+            color: white;
+        }
+        .checkbox-item label::before {
+            background-color: transparent;
+        }
+        .checkbox-item .checkbox:checked + label {
+            &::before {
+                background: $blueHighContrast;
+                border-color: $blueHighContrast;
+            }
+        }
+        .input-container {
+            border-color: #39395a;
+            &.invalid {
+                border-color: $errorRedHighContrast;
+                &.active input {
+                    border-left: 4px solid $errorRedHighContrast;
+                }
+            }
+            &.active input {
+                border-left: 4px solid $blueHighContrast;
+            }
+        }
+        .invalid-feedback p {
+            color: $errorRedHighContrast;
+        }
+        .button.primary {
+            &::before {
+                border-color: $blueHighContrast;
+            }
+            &:hover {
+                &::before {
+                    border-color: white;
+                }
+            }
+        }
+        button[data-link-name="Sign In"] {
+            background: $blueHighContrast;
+            &:focus {
+                color: white;
+            }
+            &:hover {
+                background: white;
+                color: $blueHighContrast;
+            }
+        }
+        a {
+            color: #54a4f8;
+        }
+    }
+}

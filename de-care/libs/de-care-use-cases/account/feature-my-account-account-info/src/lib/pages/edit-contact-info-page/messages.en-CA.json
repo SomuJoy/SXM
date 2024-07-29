@@ -1,0 +1,14 @@
+{
+    "ACCOUNT_INFO_TITLE": "Account Info",
+    "BACK_BUTTON_LABEL": "BACK",
+    "HEADER": "Edit contact info",
+    "HEADER_DESCRIPTION": "In accordance with SiriusXM <a href='https://www.siriusxm.ca/privacy' target='_blank'>Privacy Policy</a>, we may use the information you provide to contact you.",
+    "CONTACT_INFO_UPDATE_SUCCESS_MESAGE": "Contact info successfully updated.",
+    "CONTACT_INFO_TITLE": "Contact info",
+    "SERVICE_ADDRESS_TITLE": "Address",
+    "BILLING_ADDRESS_CHECKBOX_LABEL": "Billing address is the same",
+    "INVALID_SERVICE_ADDRESS_ERROR": "According to the Postal Service records your service address is invalid or is missing important information. Please update the service address to continue.",
+    "SAVE_BUTTON": "SAVE",
+    "CANCEL_BUTTON": "CANCEL",
+    "CONFIRM_YOUR_ADDRESS": "Please confirm your address"
+}

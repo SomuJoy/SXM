@@ -1,0 +1,26 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "emailValidation": null,
+        "usernameValidation": null,
+        "billingAddressValidation": null,
+        "serviceAddressValidation": {
+            "correctedAddress": [
+                {
+                    "zip": "12345",
+                    "city": "Schenectady",
+                    "addressLine1": " ",
+                    "addressLine2": " ",
+                    "state": "NY"
+                }
+            ],
+            "confidenceLevel": "Verified",
+            "validationStatus": "VALID",
+            "resultCode": "SUCCESS"
+        },
+        "ccValidation": null,
+        "valid": true
+    }
+}

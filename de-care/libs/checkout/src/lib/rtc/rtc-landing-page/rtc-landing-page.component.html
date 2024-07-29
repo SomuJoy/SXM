@@ -1,0 +1,35 @@
+<ng-container *ngIf="planSelectionData$ | async as planSelectionData">
+    <hero-component
+        [headerState]="'checkout.rflzLandingPageComponent.HERO.TITLE' | translate: leadOffer"
+        [headerStateSubtitle]="'checkout.rflzLandingPageComponent.HERO.SUBTITLE' | translate: leadOffer"
+        [alignLeftMediumUp]="true"
+        [heroTitleType]="heroTitleType"
+    ></hero-component>
+    <div class="content-container">
+        <div class="row align-center no-padding-small">
+            <div class="column small-12 medium-10 background-white raised">
+                <sxm-ui-follow-on-selection
+                    [isProactive]="true"
+                    [showPlatformName]="false"
+                    [planSelectionData]="planSelectionData.followOnPlanSelectionData"
+                    [showChoiceNotAvailableError]="showChoiceNotAvailableError$ | async"
+                    [selectedPackageIndex]="selectedPackageIndex"
+                    (selected)="rtcLandingPageService.selectRenewalOffer(accountNumber, $event)"
+                    (packageIndexSelected)="handleSelectedPackageIndex($event)"
+                    class="stick-to-top"
+                ></sxm-ui-follow-on-selection>
+                <plan-comparison-grid
+                    [isProactive]="true"
+                    [packageNames]="packageNames"
+                    [planComparisonGridParams]="planSelectionData.planComparisonGridParams"
+                    [retailPrices]="retailPrices"
+                    [selectedPackageIndex]="selectedPackageIndex"
+                    (continue)="rtcLandingPageService.continueFlow(accountNumber, radioId, programCode)"
+                    (packageIndexSelected)="handleSelectedPackageIndex($event)"
+                    [questionsPhoneNumber]="'checkout.rflzLandingPageComponent' + (containsChoicePackages ? '.CHOICE_QUESTIONS_TFN' : '.PROACTIVE_QUESTIONS_TFN') | translate"
+                ></plan-comparison-grid>
+            </div>
+        </div>
+    </div>
+    <offer-details [rtcDetails]="rtcOfferDetails" [details]="offerDetails" [copyOptions]="offerDetailsCopyOptions"></offer-details>
+</ng-container>

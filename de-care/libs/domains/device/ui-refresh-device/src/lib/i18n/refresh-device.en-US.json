@@ -1,0 +1,40 @@
+{
+    "refreshDevice": {
+        "RefreshDeviceComponent": {
+            "TITLE": "Before you can start listening, you'll need to send an activation signal to your radio",
+            "LINK": "Activate Your Radio",
+            "HREF": "retailrefresh_view.action#/refreshradio"
+        },
+        "ActivateRadioComponent": {
+            "HEADLINE": "Before you can listen in your car, you'll need to activate your radio.",
+            "ARE_YOU_IN_CAR_QUESTION": "Are you in your car?",
+            "YES_TAB_LABEL": "Yes",
+            "NO_TAB_LABEL": "No",
+            "IN_A_CAR_ARIAL_LABEL": "In A Car Toggle",
+            "IN_CAR_STEP_1": "Set your car radio to Satellite and listen for audio.",
+            "IN_CAR_STEP_2": "Make sure the radio has a clear view to the sky (not blocked by a garage, large trees, or buildings).",
+            "IN_CAR_BUTTON_TEXT": "Send Refresh Signal",
+            "OUTSIDE_CAR_INSTRUCTIONS": "We'll text you instructions so you can complete the signal refresh once you're in front of your radio.",
+            "OUTSIDE_CAR_STEP_LEGAL_TEXT": "I agree to receive a one-time text message and certify this is my mobile number. Message and data rates may apply. SMS Terms and Conditions can be viewed at siriusxm.com/sms.",
+            "OUTSIDE_CAR_BUTTON_TEXT": "Text Instructions",
+            "INPUT_ERROR_INVALID_NUMBER": "Enter a valid phone number.",
+            "CHECKBOX_ERROR_MUST_ACCEPT_AGREEMENT": "You must accept the agreement below.",
+            "PHONE_NUMBER_LABEL": "Mobile Phone Number"
+        },
+        "SuccessMessageComponent": {
+            "REFRESH_SENT_HEADLINE": "Refresh request sent!",
+            "REFRESH_SENT_MESSAGE": "Within five minutes after sending the refresh signal, tune to channel 2 on your radio. If you can hear programing, your refresh completed successfully.",
+            "REFRESH_SENT_NOT_WORKING_QUESTION": "Not working?",
+            "REFRESH_SENT_NOT_WORKING_LINK_TEXT": "Go to help center",
+            "REFRESH_SENT_NOT_WORKING_LINK_URL": "https://listenercare.siriusxm.com/",
+            "TEXT_INSTRUCTIONS_SENT_HEADLINE": "Instruction sent!",
+            "TEXT_INSTRUCTIONS_SENT_TEXT": "Once you're in front of your radio you'll be able to view the activation instruction on your phone."
+        },
+        "ErrorMessageComponent": {
+            "REFRESH_FAIL_GENERIC": "We are unable to refresh your radio online. Please call 1-888-601-6271 for help.",
+            "REFRESH_FAIL_MAXIMUM_LIMIT": "Oops. The number of activation signals allowed within a 24 hour period has been exceeded. ",
+            "REFRESH_FAIL_MULTIPLE_REQUESTS": "We sent a signal recently. This feature will be inaccessible for the next 15 minutes because an activation signal has recently been sent.",
+            "TEXT_FAIL_SERVICE_NOT_AVAILABLE": "We apologize, but text messaging is temporarily unavailable. Please call 1-888-601-6271 for help."
+        }
+    }
+}

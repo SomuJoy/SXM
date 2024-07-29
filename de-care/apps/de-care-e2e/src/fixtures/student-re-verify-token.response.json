@@ -1,0 +1,39 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "test",
+            "accountProfile": { "accountRegistered": false },
+            "serviceAddress": { "state": "NJ" },
+            "subscriptions": [
+                {
+                    "id": "10000193636",
+                    "plans": [
+                        {
+                            "code": "Premier Streaming - Monthly",
+                            "packageName": "SIR_IP_SA",
+                            "termLength": 1,
+                            "startDate": "2024-05-08T00:00:00-04:00",
+                            "endDate": null,
+                            "nextCycleOn": "2027-04-08T00:00:00-04:00",
+                            "type": "SELF_PAID"
+                        }
+                    ],
+                    "followonPlans": [],
+                    "radioService": null,
+                    "streamingService": { "maskedUserName": "tes******@siriusxm.com", "id": "10000192612", "status": "Active" },
+                    "status": "Active"
+                }
+            ],
+            "billingSummary": { "creditCard": { "last4Digits": "1111", "type": "VISA", "status": "ACTIVE" } },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true
+        },
+        "maskedUserNameFromToken": "tes******@siriusxm.com",
+        "marketingId": null,
+        "marketingAcctId": "1908",
+        "isUserNameInTokenSameAsAccount": true
+    }
+}

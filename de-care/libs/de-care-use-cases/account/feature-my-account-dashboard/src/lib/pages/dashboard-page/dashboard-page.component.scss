@@ -1,0 +1,196 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+@mixin main-grid {
+    grid-template-columns: repeat(6, 1fr);
+    grid-row-gap: 20px;
+    grid-column-gap: 24px;
+    @include bp(medium) {
+        grid-template-columns: repeat(12, 1fr);
+    }
+}
+
+main {
+    padding: 40px 16px;
+    @include bp(medium) {
+        padding: 48px 16px;
+    }
+    @include bp(large) {
+        padding: 48px 0;
+    }
+    section.grid-container,
+    .grid-container {
+        display: grid;
+        @include main-grid;
+        justify-items: start;
+        padding: 0;
+        margin: 0 0 48px;
+        width: 100%;
+        max-width: 1024px;
+        @include bp(medium) {
+            margin: 0 auto 56px;
+        }
+        @include bp(large) {
+            padding: 0 56px;
+        }
+        header {
+            width: 100%;
+            grid-column: span 6;
+            grid-row: 1;
+            @include main-grid;
+            @include bp(medium) {
+                display: grid;
+                grid-column: span 12;
+            }
+            .section-header {
+                display: grid;
+                grid-template-columns: 1fr;
+                align-items: center;
+                &.col-2 {
+                    @include bp(mobile-medium) {
+                        grid-template-columns: 1fr 1fr;
+                    }
+                }
+                h2 {
+                    @include get-header-style(h5);
+                    margin-bottom: 4px;
+                    @include bp(mobile-medium) {
+                        margin-bottom: 0;
+                    }
+                }
+                .section-cta {
+                    white-space: nowrap;
+                    @include bp(mobile-medium) {
+                        justify-self: end;
+                    }
+                }
+            }
+        }
+        .card-container {
+            width: 100%;
+            sxm-ui-my-account-card,
+            sxm-ui-account-help-faq-card,
+            my-account-offer-card {
+                height: 100%;
+            }
+        }
+
+        /* common grid classes */
+        .grid-full {
+            grid-column: span 6;
+            @include bp(medium) {
+                grid-column: span 12;
+            }
+        }
+        .grid-two-thirds {
+            grid-column: span 4;
+            @include bp(medium) {
+                grid-column: span 8;
+            }
+        }
+        .grid-half {
+            grid-column: span 3;
+            @include bp(medium) {
+                grid-column: span 6;
+            }
+        }
+        .grid-third {
+            grid-column: span 2;
+            @include bp(medium) {
+                grid-column: span 4;
+            }
+        }
+        .grid-full-medium {
+            @include bp(medium) {
+                grid-column: span 12;
+            }
+        }
+        .grid-two-thirds-medium {
+            @include bp(medium) {
+                grid-column: span 8;
+            }
+        }
+        .grid-half-medium {
+            @include bp(medium) {
+                grid-column: span 6;
+            }
+        }
+        .grid-third-medium {
+            @include bp(medium) {
+                grid-column: span 4;
+            }
+        }
+        .grid-full-large {
+            @include bp(large) {
+                grid-column: span 12;
+            }
+        }
+        .grid-two-thirds-large {
+            @include bp(large) {
+                grid-column: span 8;
+            }
+        }
+        .grid-half-large {
+            @include bp(large) {
+                grid-column: span 6;
+            }
+        }
+        .grid-third-large {
+            @include bp(large) {
+                grid-column: span 4;
+            }
+        }
+        .scroll-container {
+            padding: 0 16px 0 0; //  offsetting the 16px from the width overflow
+            grid-template-columns: repeat(3, 288px);
+            overflow-x: scroll;
+            width: calc(100% + 16px);
+            margin: -12px 0 0; //offsetting the 12px padding in the card-container that allows shadows to show in a scroll container
+            @include bp(medium) {
+                grid-template-columns: repeat(12, 1fr);
+                overflow-x: unset;
+                margin-top: 0;
+                padding: 0;
+                width: 100%;
+            }
+            .card-container {
+                padding: 12px 0 20px;
+                grid-column: span 1;
+                @include bp(medium) {
+                    grid-column: span 6;
+                    padding: 0;
+                }
+                @include bp(large) {
+                    grid-column: span 4;
+                }
+            }
+        }
+    }
+}
+
+.card-container {
+    grid-column: span 6;
+    &.subscription-card {
+        sxm-ui-my-account-card {
+            @include bp(medium) {
+                min-height: 338px;
+            }
+        }
+        &.grid-full {
+            &-medium {
+                sxm-ui-my-account-card {
+                    @include bp(medium) {
+                        min-height: 0;
+                    }
+                }
+            }
+            &-large {
+                sxm-ui-my-account-card {
+                    @include bp(large) {
+                        min-height: 0;
+                    }
+                }
+            }
+        }
+    }
+}

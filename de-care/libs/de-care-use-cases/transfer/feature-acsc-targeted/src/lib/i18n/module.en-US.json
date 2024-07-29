@@ -1,0 +1,394 @@
+{
+    "DeCareUseCasesTransferFeatureACSCTargetedModule": {
+        "AddRadioPageComponent": {
+            "BACK_BUTTON": "Back"
+        },
+        "SelectTransferMethodComponent": {
+            "HEADLINE": "{{ customerFirstName }}, we'll add your new {{ vehicleMake }} to your account.",
+            "HEADLINE_NO_CAR_PRESENT": "{{ customerFirstName }}, we'll add your new car to your account.",
+            "LINK_TEXT_ENTER_RADIO_ID": "<a class='text-link' data-track-click='Not your car' href='https://care.siriusxm.com/login_view.action?task=sc'>Not your car? Enter your radio ID.</a>",
+            "LINK_TEXT_ENTER_RADIO_ID_LOGGED_IN": "Not your car? Enter your radio ID.",
+            "TRANSFER_QUESTION": "Do you want to transfer a current subscription to your new {{ vehicleMake }}?",
+            "TRANSFER_DETAILS": "Don't worry, deciding now won't change or end your {{ planName }} trial.",
+            "TRANSFER_OPTION_NO": "No",
+            "TRANSFER_OPTION_NO_SUBTEXT": "Just add my new {{ vehicleMake }} to my account.",
+            "TRANSFER_OPTION_YES": "Yes",
+            "TRANSFER_OPTION_YES_SUBTEXT": "Transfer a current subscription to my new {{ vehicleMake }}.",
+            "NEW_SUBSCRIPTION_INSTRUCTIONS": "Okay. On the next screen, you can set up a new subscription for this car.",
+            "AC_ONLY_SUB_HEADER": "Once you've added your new car you can set up a new subscription that will begin when your trial ends.",
+            "TRANSFER_SUBSCRIPTION_HEADLINE_ONE_DEVICE": "Your old car's subscription will transfer when your trial ends.",
+            "TRANSFER_SUBSCRIPTION_HEADLINE_MULTIPLE_DEVICES": "Choose the subscription below that you want transferred when your trial ends.",
+            "TRANSFER_SUBSCRIPTION_HEADLINE_ONE_DEVICE_IMMEDIATELY": "Your old car's subscription will transfer immediately.",
+            "TRANSFER_SUBSCRIPTION_HEADLINE_MULTIPLE_DEVICES_IMMEDIATELY": "Choose the subscription below that you want to transfer.",
+            "TRANSFER_SUBSCRIPTION_DETAILS": "Any unused service will carry over to your new car subscription.",
+            "LINK_TEXT_DONT_SEE_CAR": "Don't see your car listed here?",
+            "BUTTON_TEXT_ADD_VEHICLE": "ADD NEW {{ vehicleMake }}",
+            "BUTTON_TEXT_CONTINUE": "CONTINUE",
+            "NEW_CAR": "New Car",
+            "RADIO_ID": "Radio ID",
+            "RADIO_ID_WITH_ID": "Radio ID: {{radioId}}",
+            "CURRENT_PLAN_ENDS": "{{planName}} Ends: {{data}}",
+            "CAR": "car",
+            "SELECTION_ERROR": "Pick a subscription below to transfer.",
+            "DATA_PLAN_WARNING": "Transferring your subscription from this vehicle will automatically cancel your infotainment data services. Once deactivated, access to these services will require a new subscription."
+        },
+        "ChooseSubscriptionComponent": {
+            "NEW_CAR": "New Car",
+            "CHANGE_SUBSCRIPTION": "Choose Subscription",
+            "PACKAGE_SELECT_HEADLINE": "Which plan do you want when your {{packageName}} trial ends?",
+            "PACKAGE_SELECT_HEADLINE_IMMEDIATELY": "Which plan do you want in your new car?",
+            "PACKAGE_SELECT_DETAILS": "You can change or cancel your subscription at any time without missing a moment of your trial. Your new subscription won't start until {{startDate}}.",
+            "PACKAGE_SELECT_DETAILS_IMMEDIATELY": "You can change or cancel your subscription at any time.",
+            "COMPARE_PACKAGES": "Compare Plans",
+            "EXPANDED_TEXT": "See less",
+            "COLLAPSED_TEXT": "Explore plan details",
+            "DO_NOT_SEE_PLAN": "Don’t see the plan, you’re looking for?",
+            "CHAT_WITH_AN_AGENT": "Chat with an agent",
+            "CALL": " or call <a href=\"tel:1-866-635-2493\">1-866-635-2493</a>",
+            "BACK": "BACK",
+            "CONTINUE": "CONTINUE",
+            "KEEP_SELECT": "KEEP {{ packageName }}",
+            "SELECTION_ERROR": "Pick a plan below."
+        },
+        "ChoosePaymentMethodComponent": {
+            "HEADLINE": "Choose your payment method.",
+            "HEADLINE_ENTER_INFO": "Enter your payment information.",
+            "SUBSCRIPTION_EYEBROW": "Subscription",
+            "TRANSFER_EYEBROW": "Transfer Service from",
+            "CAR_REMOVED": "This car will be removed from your account.",
+            "VIEW_DETAILS_COLLAPSED": "Show details",
+            "VIEW_DETAILS_EXPANDED": "Hide details"
+        },
+        "ReviewOrderComponent": {
+            "HEADLINE": "You’re almost done. Review and complete your order.",
+            "REVIEW_SUBSCRIPTION_BEGINS": "Remember, your new subscription won't begin until your current {{ planName }} trial subscription ends.",
+            "SUBSCRIPTION_EYEBROW": "Subscription",
+            "TRANSFER_EYEBROW": "Transfer Service from",
+            "CAR_REMOVED": "This car will be removed from your account.",
+            "VIEW_DETAILS_COLLAPSED": "Show details",
+            "VIEW_DETAILS_EXPANDED": "Hide details",
+            "COMPLETE_MY_ORDER": "Complete My Order",
+            "ACCEPT_AGREEMENT": "Please accept the above agreement."
+        },
+        "ConfirmationPageComponent": {
+            "HEADLINE": "Thanks for completing your order.",
+            "CONFIRMATION_EMAIL": "A confirmation email will be sent to {{ email }}.",
+            "PRINT_LINK_LABEL": "Print your order summary",
+            "SUBSCRIPTION_EYEBROW": "Subscription",
+            "TRANSFER_EYEBROW": "Transfer Service from",
+            "CAR_REMOVED": "This car will be removed from your account.",
+            "VIEW_DETAILS_COLLAPSED": "Show details",
+            "VIEW_DETAILS_EXPANDED": "Hide details",
+            "READY_TO_EXPLORE": "Ready to Explore?",
+            "LEGAL_COPY_TITLE": "Important information about your subscription:",
+            "LEGAL_COPY": "Your subscription starts immediately unless indicated otherwise. If your radio is not receiving the programming you are entitled to, please follow the activation instructions above. For your convenience, all subscriptions automatically renew until canceled. Your renewal will be billed at the then-current rate using the payment method on file. You can cancel your subscription at any time by calling Listener Care at <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>. Your subscription is governed by the SiriusXM Customer Agreement, which can be <a href=\"https://www.siriusxm.com/customeragreement?desktop=yes\" target=\"_blank\">viewed online</a>. If you would like to receive a copy of the Customer Agreement by mail, you can call <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>.",
+            "READY_TO_EXPLORE_LINKS": [
+                "<a data-track-click='Channel Guide' class='text-link' href='https://www.siriusxm.com/programschedules?intcmp=GN_HEADER_NEW_WhatsOn_FindaShoworChannel_ProgramSchedules' target='_blank'>View Program Schedules</a>",
+                "<a data-track-click='Live Sports Schedule' class='text-link' href='https://www.siriusxm.com/livesports?intcmp=GN_HEADER_NEW_WhatsOn_FindaShoworChannel_SiriusXMLiveSportsSchedule' target='_blank'>Live Sports Schedules</a>"
+            ],
+            "STREAMING_LINK_TEXT": "Start Listening on the SXM App",
+            "STREAMING_PLAYER_LINK": "?creative_id=NA_NA_PL-EM-home-home-home-CONVERSION-COMCONFIRM-OEM-OEM-20211207-DECOM&cp_7=OEM&cp_8=CONVERSION&cp_9=COMCONFIRM",
+            "GO_TO_MY_ACCOUNT_BUTTON": "Go to my account"
+        },
+        "GenericErrorComponent": {
+            "SORRY": "We’re Sorry",
+            "TITLE": "This transaction can't be completed online.",
+            "RECIRC_TITLE": "Don't worry, we can help you.",
+            "CHAT_LINK": "Chat with an agent",
+            "CALL": "or call <a href=\"tel:855-227-6738\">855-227-6738</a>"
+        },
+        "AlreadyConsolidatedWithFollowonComponent": {
+            "HERO_TITLE": "You’re all set.",
+            "HERO_SUBTITLE": "We added your new car to your account. Enjoy the music.",
+            "CONTENT_TITLE": "Listen to SiriusXM on the Go",
+            "CONTENT_COPY": "All SiriusXM plans include the ability stream with the app. So, you can tap into all kinds of music, plus sports, news, and talk where and when you choose.",
+            "LISTEN_LINK": "Set up your listening credentials.",
+            "LISTEN_URL": "https://www.siriusxm.com/ways-to-listen?intcmp=FullNav_NA_www:Home_WaystoListen",
+            "CONTENT_IMAGE_URL": "assets/img/ACSC_consolidated_content.png",
+            "RECIRC_TITLE": "Need additional help?",
+            "SUPPORT_CENTER": "Visit our Support Center",
+            "SUPPORT_CENTER_URL": "https://listenercare.siriusxm.com/",
+            "CHAT_LINK": "Chat with an agent",
+            "CALL": ""
+        },
+        "AlreadyConsolidatedWithoutFollowonComponent": {
+            "HERO_TITLE": "We already added your new car to your account, but wait…",
+            "HERO_SUBTITLE": "If you subscribe now, you won’t miss a beat when your trial ends.",
+            "GET_OFFER": "Get {{offer}}",
+            "READY_TO_EXPLORE_HEADER": "Ready to Explore?",
+            "READY_TO_EXPLORE_LINKS": ["<a data-track-click='Manage My Account' class='text-link' href='https://care.siriusxm.com' target='_blank'>Manage my Account</a>"],
+            "STREAMING_LINK_TEXT": "Listen Online",
+            "RECIRC_TITLE": "Need additional help?",
+            "SUPPORT_CENTER": "Visit our Support Center",
+            "SUPPORT_CENTER_URL": "https://listenercare.siriusxm.com/",
+            "CHAT_LINK": "Chat with an agent",
+            "CALL": " or call <a href=\"tel:855-227-6738\">855-227-6738</a>",
+            "STREAMING_PLAYER_LINK": "?creative_id=NA_NA_PL-EM-home-home-home-CONVERSION-COMCONFIRM-OEM-OEM-20211207-DECOM&cp_7=OEM&cp_8=CONVERSION&cp_9=COMCONFIRM"
+        },
+        "RadioLookupPageComponent": {
+            "SUBTITLE": "Let’s Get started",
+            "TITLE": "Tell us about your new car",
+            "INPUT_LABEL": "Radio ID or VIN",
+            "CTA_BUTTON": "Find my Radio",
+            "FIND_RADIO": "How do I find my Radio ID?",
+            "ERROR_INVALID_RADIO": "Enter a valid Radio ID.",
+            "ALERT": {
+                "NOT_FOUND": "The Radio ID you entered does not match our records. Please try again or chat with an agent.",
+                "CLOSED": "It looks like this radio doesn't have a trial subscription. Please see <a href=\"https://care.siriusxm.com/myaccount_execute.action\" class=\"text-link\"s>My Subscriptions</a> where you can click the \"add radio\" button, or choose \"replace another radio with this one\" from the dropdown.",
+                "SAME_ACCOUNT": "The Radio ID you entered is already on this account.",
+                "OTHER_ERROR": "We're sorry. This transaction can't be completed online.  Don't worry, we can help you. Chat with an agent or call 855-227-6738."
+            },
+            "HELP_FINDING_RADIO_MODAL_TITLE": "Radio Lookup",
+            "HELP_FINDING_RADIO_P1": "Tune your radio dial to channel 0 and the radio ID should display.",
+            "RADIO_LOOKUP_MARINE_AVIATION_MODAL_TITLE": "Device Help"
+        },
+        "LoginPageComponent": {
+            "TITLE": "Sign in to your existing SiriusXM account",
+            "SIGN_IN_TITLE": "Already Registered? Sign In.",
+            "REGISTER_TITLE": "Not Registered? No Problem.",
+            "REGISTRATION_ITEM_1": "Registration is fast and easy. Have the Radio ID or VIN of your old car handy. ",
+            "REGISTRATION_ITEM_2": "Once you’ve registered, you’ll need the Radio ID or VIN of your new car to transfer your service or add a new radio.",
+            "REGISTER_BUTTON": "Start Registration",
+            "ACCOUNT_HELP": "Need help with your account?",
+            "CHAT_LINK": "Chat with an Agent Now"
+        },
+        "SwapRadioLookupPageComponent": {
+            "TRANSFER_EYEBROW": "Transfer Service from",
+            "TITLE": "Let's transfer your subscription to a different radio.",
+            "FORM_TITLE": "Tell us about your new radio.",
+            "INPUT_LABEL": "Radio ID or VIN",
+            "ERROR_INVALID_RADIO": "Enter a valid Radio ID.",
+            "ERROR_INVALID_VIN": "Enter a valid VIN.",
+            "ERROR_NOT_FOUND_VIN": "We're sorry, but according to our system, the vehicle you entered isn't equipped with a satellite radio. Try entering your Radio ID instead.",
+            "CTA_BUTTON": "Find my Radio",
+            "FIND_RADIO": "How do I find my Radio ID?",
+            "HELP_FINDING_RADIO_MODAL_TITLE": "Radio Lookup",
+            "HELP_FINDING_RADIO_P1": "Tune your radio dial to channel 0 and the radio ID should display.",
+            "RADIO_LOOKUP_MARINE_AVIATION_MODAL_TITLE": "Device Help",
+            "ERRORS": {
+                "CHAT_LINK": "chat with an agent",
+                "NOT_CAPABLE_PT1": "We’re sorry, but the radio you wish to transfer service to does not support certain features included in your current subscription plan. For assistance, please ",
+                "NOT_CAPABLE_PT2": " or call 855-227-6738 to speak with a Listener Care agent.",
+                "LIFETIME_PT1": "Your radio is eligible for a prepaid, lifetime subscription. We are unable to process this online. Please ",
+                "LIFETIME_PT2": " to activate your radio.",
+                "OTHER_PT1": "We’re sorry, but we are either unable to complete this transaction online or your subscription plan is ineligible to transfer. For assistance, please ",
+                "OTHER_PT2": " or call 855-227-6738 to speak with a Listener Care agent.",
+                "SAME_ACCOUNT": "The Radio ID you entered is already on this account."
+            }
+        },
+        "SwapRadioPageComponent": {
+            "TITLE": "Let's transfer your subscription to a different radio.",
+            "TRANSFER_EYEBROW": "Transfer Service from",
+            "NEW_RADIO_EYEBROW": "New Radio",
+            "VIEW_DETAILS_COLLAPSED": "Show details",
+            "VIEW_DETAILS_EXPANDED": "Hide details",
+            "COMPLETE_MY_ORDER": "Complete My Order",
+            "QUOTE_SUMMARY": {
+                "CARD_HEAD": "Order Summary",
+                "PREVIOUS_BALANCE": {
+                    "LABEL": "Previous Balance",
+                    "TOOLTIP": "You have a previously unpaid balance on your account and this balance must be satisfied before you can complete your transaction."
+                },
+                "PREVIOUS_CREDIT": "Previous Credit",
+                "CREDIT_REMAINING_ON_ACCOUNT": "Credit on Account",
+                "TAXES_AND_FEES": {
+                    "SWAP_FEE": "Replacement Fee",
+                    "STATE_TAX": "State Tax"
+                }
+            }
+        },
+        "UI_COMMON": {
+            "EXPANDED_TEXT": "Hide",
+            "COLLAPSED_TEXT": "Explore plan details",
+            "SEE_OFFER_DETAILS": "See <strong>Offer Details</strong> below.",
+            "THEN_PRICE_PER_MONTH": "Then {{amount}}/mo.",
+            "PRICE_PER_MONTH": "{{amount}}/mo",
+            "PLURAL_MONTH_MAP": {
+                "=1": "1 month",
+                "other": "# months"
+            }
+        },
+        "SCPackageOptionCard": {
+            "TITLE": {
+                "SAME_AS_OLD_CAR_PACKAGE": "Keep the {{planName}} plan from my {{make}}",
+                "OFFER_IS_ALL_ACCESS": "Continue with {{planName}} in my {{make}}",
+                "DEFAULT": "Subscribe to {{planName}} in my {{make}}",
+                "SAME_AS_OLD_CAR_PACKAGE_SAME_MAKE": "Keep {{planName}} from my {{year}} {{model}}",
+                "OFFER_IS_ALL_ACCESS_SAME_MAKE": "Continue with {{planName}} in my {{year}} {{model}}",
+                "DEFAULT_SAME_MAKE": "Subscribe to {{planName}} in my {{year}} {{model}}",
+                "BASIC": "{{fullPlanName}} Plan"
+            },
+            "BODY": {
+                "PROMO_OFFER_HEADER": "{{termLength}} for {{amount}}/mo",
+                "PLATFORM_CHANGE_MESSAGE_INTRO": "This plan will include the same channels you had in your old car except:",
+                "PLATFORM_CHANGE_MESSAGE_TOOLTIP": "The channels you get depend on your radio's technology. Some channels may not play on another radio model.",
+                "TOTAL_PRICE_OFFER_HEADER": "{{termLength}} for {{amount}}",
+                "RETAIL_PRICE_PLANS_AND_SELF_PAY_ALL_ACCESS_FF-ALL_ACCESS": "Enjoy all the channels included in your {{planName}} trial. ",
+                "RETAIL_PRICE_PLANS_AND_SELF_PAY_ALL_ACCESS_FF-SELECT": "Enjoy a wide variety of music, sports talk, comedy, news, and more.",
+                "RETAIL_PRICE_PLANS_AND_SELF_PAY_SELECT-ALL_ACCESS": "For only {{amount}} more per month, upgrade the subscription from your old car and enjoy all the channels included in your {{planName}} trial.",
+                "RETAIL_PRICE_PLANS_AND_SELF_PAY_SELECT-SELECT": "After your trial ends, you'll get all the same channels you loved in your old car.",
+                "RETAIL_PRICE_PLANS_AND_SELF_PAY_SELECT_FF-ALL_ACCESS": "For only {{amount}} more per month, upgrade the subscription from your old car and enjoy all the channels included in your {{planName}} trial.",
+                "RETAIL_PRICE_PLANS_AND_SELF_PAY_SELECT_FF-SELECT": "Enjoy a wide variety of music, sports talk, comedy, news, and more.",
+                "RETAIL_PRICE_PLANS_AND_SELF_PAY_MOSTLY_MUSIC-SELECT": "For only {{amount}} more per month, upgrade the subscription from your old car and enjoy even more of the variety you want.",
+                "RETAIL_PRICE_PLANS_AND_SELF_PAY_MOSTLY_MUSIC-MOSTLY_MUSIC": "After your trial ends, you'll get all the same channels you loved in your old car.",
+                "ALL_ACCESS_AND_SELECT_PROMOS_AND_SELF_PAY_ALL_ACCESS-ALL_ACCESS": "Enjoy all the channels included in your {{planName}} trial.",
+                "ALL_ACCESS_AND_SELECT_PROMOS_AND_SELF_PAY_NOT_ALL_ACCESS-ALL_ACCESS": "Upgrade the subscription from your old car and enjoy all the channels included in your {{planName}} trial.",
+                "ALL_ACCESS_AND_SELECT_PROMOS_AND_SELF_PAY_ALL_ACCESS-SELECT": "Enjoy a wide variety of music, sports talk, comedy, news, and more.",
+                "PLATFORM_CHANGE_SCENARIO-ALL_ACCESS": "Enjoy all the channels from your {{planName}} trial, including the channels you had in your old car.",
+                "SELECT_PROMO_AND_MOSTLY_MUSIC_RETAIL_PRICE-SELECT": "Upgrade the subscription from your old car and enjoy even more of the variety you want.",
+                "SELECT_PROMO_AND_MOSTLY_MUSIC_RETAIL_PRICE-MOSTLY_MUSIC": "After your trial ends, you'll get all the same channels you loved in your old car.",
+                "FALLBACK_ALL_ACCESS": "Enjoy all the channels included in your {{planName}} trial.",
+                "FALLBACK_SELECT": "Enjoy a wide variety of music, sports talk, comedy, news, and more.",
+                "FALLBACK_MOSTLY_MUSIC": "After your trial ends, you'll get all the same channels you loved in your old car.",
+                "BASIC": "Subscribe to the {{planName}} plan for {{pricePerMonth}}/mo.",
+                "BASIC_PROMO": "Subscribe to the {{planName}} plan and get your first {{termLength}} months for {{pricePerMonth}}/mo."
+            }
+        },
+        "ACPackageOptionCard": {
+            "HEADER": "{{planName}} Plan",
+            "ALL_ACCESS_PROMO": "Keep the <strong>{{planName}} plan</strong> you're enjoying with your trial and get your first {{termLength}} months for <strong>{{promoAmount}}/mo.</strong>",
+            "SELECT_PROMO_WHEN_COMPARED_TO_AA_PROMO": "Subscribe to the <strong>{{planName}} plan</strong> and get your first {{termLength}} months for <strong>{{promoAmount}}/mo.</strong>",
+            "SELECT_PROMO_WHEN_COMPARED_TO_MOSTLY_MUSIC": "Subscribe to the <strong>{{planName}} plan</strong> and enjoy a wide variety of music, sports, and talk entertainment. Get your first {{termLength}} months for <strong>{{promoAmount}}/mo.</strong>",
+            "ALL_ACCESS_RETAIL_PRICE": "Keep the <strong>{{planName}} plan</strong> you're enjoying with your trial for <strong>{{amount}}/mo.</strong>",
+            "SELECT_RETAIL_PRICE_WHEN_COMPARED_TO_ALL_ACCESS": "Subscribe to the <strong>{{planName}} plan</strong> for <strong>{{amount}}/mo.</strong>",
+            "SELECT_RETAIL_PRICE_WHEN_COMPARED_TO_MOSTLY_MUSIC": "Subscribe to the <strong>{{planName}} plan</strong> for <strong>{{amount}}/mo.</strong> and enjoy a wide variety of music, sports, and talk entertainment.",
+            "MOSTLY_MUSIC_RETAIL_PRICE": "Subscribe to the <strong>{{planName}} plan</strong> for <strong>{{amount}}/mo.</strong>",
+            "MOSTLY_MUSIC_PROMO": "Subscribe to the <strong>{{planName}} plan</strong> and get your first {{termLength}} months for <strong>{{promoAmount}}/mo.</strong>",
+            "TRIAL_EXT_ALL_ACCESS": "Keep the <strong>{{planName}} plan</strong> you're enjoying with your trial and get your first {{termLength}} months for <strong>{{totalAmount}}/mo.</strong>",
+            "FREE_TRIAL_EXT_ALL_ACCESS": "Keep the <strong>{{planName}} plan</strong> you're enjoying with your trial and get your first {{termLength}} months for <strong>{{processingFee}}.</strong>",
+            "TRIAL_EXT_SELECT": "Subscribe to the <strong>{{planName}} plan</strong> and get your first {{termLength}} months for <strong>{{totalAmount}}.</strong>",
+            "FREE_TRIAL_EXT_SELECT": "Subscribe to the <strong>{{planName}} plan</strong> and get your first {{termLength}} months for <strong>{{processingFee}}.</strong>",
+            "BASIC": "Subscribe to the {{planName}} plan for {{pricePerMonth}}/mo.",
+            "BASIC_PROMO": "Subscribe to the {{planName}} plan and get your first {{termLength}} months for {{pricePerMonth}}/mo."
+        },
+        "RetainInvoiceBillingChargeAgreement": {
+            "en": {
+                "AGREEMENT_TEXT": "Please invoice me for the amount due now and recurring charges as outlined above, including a $2 invoice fee where permitted by law. By clicking “Complete My Order,” I agree that my services will <strong>AUTOMATICALLY RENEW and will be billed at then-current rates as the time of each renewal, plus fees and taxes, until I cancel</strong>. I agree to the SiriusXM <a target='_blank' href='https://www.siriusxm.com/customeragreement'>Customer Agreement</a> and <a target='_blank' href='https://www.siriusxm.com/privacy-policy'>Privacy Policy</a>, including, receiving account notifications at the email address provided, the refund policy and how to cancel, which includes online methods or calling SiriusXM at <a href=\"tel:1-866-635-2349\">1-866-635-2349.</a>",
+                "LANGUAGE_CHANGE_COPY": "En Español",
+                "LANGUAGE_LINK": "es"
+            },
+            "es": {
+                "AGREEMENT_TEXT": "Por favor de cobrar la cantidad que se debe ahora y los cargos recurrentes según descrita arriba, incluyendo la tarifa de factura de $2. Cuando presiono “Completar mi Orden”, yo acepto que mis servicios serán <strong>RENOVADO AUTOMATICAMENTE y que serán facturados a las tarifas actuales en el momento de cada renovación, más cargos e impuestos, hasta que yo cancele</strong>. Yo estoy de acuerdo con el <a target='_blank' href='https://www.siriusxm.com/customeragreement#enespanol'>Acuerdo de Cliente</a> y <a target='_blank' href='https://www.siriusxm.com/privacy-policy#enespanol'>Politica de Privacidad</a> de SiriusXM, incluyendo recibiendo notificaciones de la cuenta al correo electrónico provisto, la política de reembolso y de cancelación, que incluye métodos en línea o llamando a SiriusXM al <a href=\"tel:1-866-635-2349\">1-866-635-2349</a>.",
+                "LANGUAGE_CHANGE_COPY": "In English",
+                "LANGUAGE_LINK": "en"
+            }
+        },
+        "SxmUiPlatformChangeMessageComponent": {
+            "PLATFORM_CHANGE_MESSAGE_INTRO": "This plan will include the same channels you had in your old car except:",
+            "PLATFORM_CHANGE_MESSAGE_TOOLTIP": "The channels you get depend on your radio's technology. Some channels may not play on another radio model."
+        },
+        "SwapConfirmationPageComponent": {
+            "HEADLINE": "Thanks for completing your order.",
+            "CONFIRMATION_EMAIL": "A confirmation email will be sent to {{ email }}.",
+            "PRINT_LINK_LABEL": "Print your order summary",
+            "TRANSFER_EYEBROW": "Transfer Service from",
+            "NEW_RADIO_EYEBROW": "New Radio",
+            "VIEW_DETAILS_COLLAPSED": "Show details",
+            "VIEW_DETAILS_EXPANDED": "Hide details",
+            "QUOTE_SUMMARY": {
+                "CARD_HEAD": "Order Summary",
+                "PREVIOUS_BALANCE": {
+                    "LABEL": "Previous Balance",
+                    "TOOLTIP": "You have a previously unpaid balance on your account and this balance must be satisfied before you can complete your transaction."
+                },
+                "PREVIOUS_CREDIT": "Previous Credit",
+                "CREDIT_REMAINING_ON_ACCOUNT": "Credit on Account",
+                "TAXES_AND_FEES": {
+                    "SWAP_FEE": "Replacement Fee",
+                    "STATE_TAX": "State Tax"
+                }
+            },
+            "BACK_TO_MY_ACCOUNT_BUTTON": "Back to my account",
+            "LEGAL_COPY_TITLE": "Important information about your subscription:",
+            "LEGAL_COPY": "Your subscription starts immediately unless indicated otherwise. If your radio is not receiving the programming you are entitled to, please follow the activation instructions above. For your convenience, all subscriptions automatically renew until canceled. Your renewal will be billed at the then-current rate using the payment method on file. You can cancel your subscription at any time by calling Listener Care at <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>. Your subscription is governed by the SiriusXM Customer Agreement, which can be <a href=\"https://www.siriusxm.com/customeragreement?desktop=yes\" target=\"_blank\">viewed online</a>. If you would like to receive a copy of the Customer Agreement by mail, you can call <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>."
+        },
+        "PortRadioPageComponent": {
+            "BACK_BUTTON": "Back"
+        },
+        "PortPaymentComponent": {
+            "HEADLINE": "Enter your payment information.",
+            "SUBSCRIPTION_DETAILS": {
+                "EYEBROW": "Subscription After Trial",
+                "RADIO_ID": "Radio ID: ",
+                "DATE": "Subscription Resumes: "
+            },
+            "CTA_BUTTON": "Continue"
+        },
+        "PortReviewComponent": {
+            "HEADLINE": "Review and complete your transfer.",
+            "CAR_DETAILS_TITLE": "Car Details",
+            "SUBSCRIPTION_DETAILS_TITLE": "Subscription Details",
+            "PAYMENT_DETAILS_TITLE": "Payment Details",
+            "CTA_BUTTON": "Complete transfer",
+            "QUOTE_SUMMARY": {
+                "CURRENT_LABEL": "Due Today",
+                "PRORATED_TOOLTIP": "The length and the amount due for this billing period have been adjusted to match your billing date.",
+                "FUTURE_DUE_LABEL": "Payment due ",
+                "FUTURE_DUE_LABEL_PRORATED": "One-time prorated payment due ",
+                "PRORATED": "Prorated",
+                "PROMOTION": "Promotion",
+                "RENEWAL_DUE_LABEL": "Recurring {{term}} payments starting {{date}}",
+                "TERM_MAP": {
+                    "=1": "monthly",
+                    "=3": "quarterly",
+                    "=6": "semiannual",
+                    "=12": "annual",
+                    "=24": "2-Year",
+                    "=36": "3-Year",
+                    "other": "#-month"
+                }
+            },
+            "PLATFORM_CHANGE_MESSAGE": "For additional plan options, please call <a href=\"tel:866-635-2493\">866-635-2493</a> or chat with an agent below."
+        },
+        "PortConfirmationPageComponent": {
+            "HEADLINE": "Your subscription was transferred.",
+            "CONFIRMATION_EMAIL": "A confirmation email will be sent to {{ email }}.",
+            "PRINT_LINK_LABEL": "Print your confirmation",
+            "CAR_DETAILS_TITLE": "Car Details",
+            "SUBSCRIPTION_DETAILS_TITLE": "Subscription Details",
+            "PAYMENT_DETAILS_TITLE": "Payment Details",
+            "QUOTE_SUMMARY": {
+                "CURRENT_LABEL": "Due Today",
+                "PRORATED_TOOLTIP": "The length and the amount due for this billing period have been adjusted to match your billing date.",
+                "FUTURE_DUE_LABEL": "Payment due ",
+                "FUTURE_DUE_LABEL_PRORATED": "One-time prorated payment due ",
+                "PRORATED": "Prorated",
+                "PROMOTION": "Promotion",
+                "RENEWAL_DUE_LABEL": "Recurring {{term}} payments starting {{date}}",
+                "TERM_MAP": {
+                    "=1": "monthly",
+                    "=3": "quarterly",
+                    "=6": "semiannual",
+                    "=12": "annual",
+                    "=24": "2-Year",
+                    "=36": "3-Year",
+                    "other": "#-month"
+                }
+            },
+            "READY_TO_EXPLORE": "Ready to Explore?",
+            "LEGAL_COPY_TITLE": "Important information about your subscription:",
+            "LEGAL_COPY": "Your subscription starts immediately unless indicated otherwise. If your radio is not receiving the programming you are entitled to, please follow the activation instructions above. For your convenience, all subscriptions automatically renew until canceled. Your renewal will be billed at the then-current rate using the payment method on file. You can cancel your subscription at any time by calling Listener Care at <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>. Your subscription is governed by the SiriusXM Customer Agreement, which can be <a href=\"https://www.siriusxm.com/customeragreement?desktop=yes\" target=\"_blank\">viewed online</a>. If you would like to receive a copy of the Customer Agreement by mail, you can call <a href=\"tel:+1-866-635-2349\">1-866-635-2349</a>.",
+            "READY_TO_EXPLORE_LINKS": [
+                "<a data-track-click='Channel Guide' class='text-link' href='https://www.siriusxm.com/programschedules?intcmp=GN_HEADER_NEW_WhatsOn_FindaShoworChannel_ProgramSchedules' target='_blank'>View Program Schedules</a>",
+                "<a data-track-click='Live Sports Schedule' class='text-link' href='https://www.siriusxm.com/livesports?intcmp=GN_HEADER_NEW_WhatsOn_FindaShoworChannel_SiriusXMLiveSportsSchedule' target='_blank'>Live Sports Schedules</a>"
+            ],
+            "STREAMING_LINK_TEXT": "Start Listening on the SXM App",
+            "STREAMING_PLAYER_LINK": "?creative_id=NA_NA_PL-EM-home-home-home-CONVERSION-COMCONFIRM-OEM-OEM-20211207-DECOM&cp_7=OEM&cp_8=CONVERSION&cp_9=COMCONFIRM",
+            "GO_TO_MY_ACCOUNT_BUTTON": "GO TO MY ACCOUNT"
+        },
+        "SxmUiDetailBlocks": {
+            "EYEBROW_CAR_0": "Transfer From",
+            "EYEBROW_CAR_1": "Transfer To",
+            "RADIO_ID": "Radio ID: ",
+            "FOOTER_SERVICE_OFF": "Service will turn off today.",
+            "FOOTER_NO_SERVICE": "",
+            "FOOTER_SERVICE_OFF_REMOVE": "Service will turn off today and this car will be removed from your account. ",
+            "FOOTER_SERVICE_REMOVE": "This car will be removed from your account.",
+            "FOOTER_REMAINING_DAYS": "We'll carry over any remaining days that you already paid for. Your next billing date is reflected below.",
+            "EYEBROW_SUBSCRIPTION_0": "Trial Subscription",
+            "EYEBROW_SUBSCRIPTION_1": "Subscription After Trial",
+            "TRIAL_ENDS": "Trial Ends: ",
+            "SUBSCRIPTION_RESUMES": "Subscription Resumes: "
+        }
+    }
+}

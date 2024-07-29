@@ -1,0 +1,31 @@
+<sxm-ui-loading-with-alert-message
+    *ngIf="displayIneligibleLoader$ | async"
+    [isLoading]="true"
+    [pillMessage]="translateKeyPrefix + '.INELIGIBLE_LOADING_ALERT' | translate"
+    [paragraph]="translateKeyPrefix + '.INELIGIBLE_LOADING_BODY' | translate"
+></sxm-ui-loading-with-alert-message>
+<section id="mainContent">
+    <sxm-ui-step-header [currentStepNumber]="pageStepRouteConfiguration.currentStepNumber" [numberOfSteps]="pageStepRouteConfiguration.totalNumberOfSteps">
+        <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+        <ng-container body *ngIf="mrdEligible">
+            <p>{{ translateKeyPrefix + ".BODY.FAMILY_DISCOUNT_ELIGIBLE" | translate }}</p>
+            <sub>{{ translateKeyPrefix + ".BODY.FAMILY_DISCOUNT_ELIGIBLE_SUB_TEXT" | translate }}</sub>
+        </ng-container>
+    </sxm-ui-step-header>
+    <sxm-ui-alert-pill *ngIf="!mrdEligible" class="alert-icon-notification straight-corners no-shadow">
+        <p [innerHTML]="translateKeyPrefix + '.INELIGIBLE_LOADING_ALERT' | translate"></p>
+    </sxm-ui-alert-pill>
+    <multi-offer-selection-form
+        *ngIf="multiOfferSelectionData$ | async as offerOptions"
+        [offerOptions]="offerOptions"
+        [allowContinueWithoutSelection]="false"
+        [preSelectedPlanCode]="getSelectedPlanCode$ | async"
+        (submitted)="submitForm($event)"
+        (selected)="selectedPlan($event)"
+    >
+    </multi-offer-selection-form>
+    <!-- TODO: add sxmUiDataClickTrack="routing" for submit button -->
+</section>
+<section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+    <div [innerHTML]="getSelectedOfferOfferInfoLegalCopy$ | async"></div>
+</section>

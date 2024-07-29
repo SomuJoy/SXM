@@ -1,0 +1,30 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    section {
+        padding: 0;
+    }
+    form {
+        > section {
+            > header {
+                > p {
+                    @include deep-gray-subheader;
+                    margin-top: 0px;
+                }
+            }
+
+            &.billing-field-set {
+                margin-bottom: 8px;
+            }
+
+            .billing-radio-options {
+                margin-bottom: 12px;
+            }
+        }
+
+        prepaid-redeem-ui {
+            margin-bottom: 32px;
+        }
+    }
+}

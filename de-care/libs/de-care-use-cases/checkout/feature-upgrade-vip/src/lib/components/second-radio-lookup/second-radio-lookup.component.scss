@@ -1,0 +1,37 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.description {
+    margin-bottom: 24px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid $gray-medium;
+}
+:host {
+    display: block;
+
+    .choose-second-radio {
+        margin-top: 24px;
+    }
+
+    .confirm-radio-modal-container {
+        p {
+            margin: 0;
+        }
+        h5 {
+            margin-bottom: 24px;
+        }
+    }
+
+    .not-eligible-radio-modal-container {
+        p {
+            margin: 0;
+        }
+        h5 {
+            margin-bottom: 12px;
+        }
+    }
+
+    sxm-ui-accordion-chevron::ng-deep .button-container {
+        margin-top: 16px;
+    }
+}

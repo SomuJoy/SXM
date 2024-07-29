@@ -1,0 +1,14 @@
+{
+    "TITLE": "Vérifiez l'admissibilité de votre appareil",
+    "DEVICE_ID_FIELD_PLACEHOLDER": "Code de radio/NIV",
+    "DEVICE_ID_ERROR": "Entrez un code de radio ou un NIV valide.",
+    "DEVICE_NOT_ELIGIBLE": "Device is not eligible.",
+    "UNEXPECTED_ERROR": "Une erreur inattendue est apparue. Veuillez réessayer.",
+    "BUTTON": "Vérifier mon admissibilité",
+    "RADIO_HELP_TOOLTIP_TITLE_LABEL": "Click for help with Radio ID / VIN",
+    "NO_RADIO": "Pas de radio?",
+    "GET_STREAMING": {
+        "LINK_URL": "https://www.siriusxm.ca/fr/offre/diffusez-siriusxm-partout/",
+        "LINK_TEXT": "Écoutez SiriusXM hors de la voiture"
+    }
+}

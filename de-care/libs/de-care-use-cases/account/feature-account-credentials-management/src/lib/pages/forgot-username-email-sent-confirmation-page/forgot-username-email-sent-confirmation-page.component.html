@@ -1,0 +1,32 @@
+<main de-care-page-main>
+    <br />
+    <h4>{{ translateKeyPrefix + ".TITLE" | translate }}</h4>
+    <br />
+    <p>
+        {{
+            translateKeyPrefix + ".SUB_TITLE_TEXT"
+                | translate
+                    : {
+                          maskedEmail: maskedEmail$ | async
+                      }
+        }}
+    </p>
+
+    <credential-recovery-handshake
+        *ngIf="(isSonosFlow$ | async) === false && !ishowOrganic"
+        [customLinkText]="translateKeyPrefix + '.BUTTON_TEXT' | translate"
+        [srcValue]="srcValue$ | async"
+        [paramValue]="paramValue$ | async"
+        [customLinkClasses]="['button secondary full-width']"
+    ></credential-recovery-handshake>
+
+    <button *ngIf="isSonosFlow$ | async" class="button secondary full-width" (click)="navigateToSonos()">
+        {{ translateKeyPrefix + ".BUTTON_TEXT" | translate }}
+    </button>
+
+    <button *ngIf="ishowOrganic" class="button secondary full-width" (click)="navigateToAccountLogin()">
+        {{ translateKeyPrefix + ".BUTTON_TEXT" | translate }}
+    </button>
+
+    <br />
+</main>

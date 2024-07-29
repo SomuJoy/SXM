@@ -1,0 +1,53 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+.grid-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto;
+    column-gap: 16px;
+    align-items: center;
+    > div {
+        margin-top: 12px;
+    }
+    .span-2 {
+        grid-column: span 2;
+    }
+    .label-column {
+        grid-column: 1 / 2;
+        &:first-letter {
+            text-transform: uppercase;
+        }
+    }
+    .link-column {
+        margin-bottom: 3px;
+    }
+    .right-align {
+        justify-self: end;
+        max-width: 100%;
+    }
+    .center-horz-align {
+        justify-self: center;
+        max-width: 100%;
+    }
+    .top-align {
+        align-self: start;
+    }
+    .text-link-secondary {
+        @include text-link-secondary;
+        border: none;
+    }
+    sxm-ui-dropdown-navigation-list {
+        ::ng-deep {
+            button {
+                span {
+                    line-height: 22px;
+                }
+            }
+            ul {
+                z-index: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,125 @@
+<main de-care-page-main>
+    <sxm-ui-dot-progress-bar-stepper [staticStepData]="{ step: 1, subStep: 2 }">
+        <sxm-ui-dot-progress-bar-step>
+            <sxm-ui-stepper #subStepper>
+                <sxm-ui-step></sxm-ui-step>
+                <sxm-ui-step>
+                    <h4>{{ translateKey + ".TITLE" | translate }}</h4>
+                    <p>{{ translateKey + ".DESCRIPTION" | translate }}</p>
+
+                    <hr />
+
+                    <h5>{{ translateKey + ".CNA_FORM.TITLE" | translate }}</h5>
+
+                    <form *ngIf="form" [formGroup]="form" (ngSubmit)="validate()">
+                        <sxm-ui-text-form-field
+                            controlId="first-name"
+                            [formControl]="form.firstName"
+                            [labelText]="translateKey + '.CNA_FORM.FIRST_NAME' | translate"
+                            [errorMsg]="translateKey + '.CNA_FORM.ERROR.FIRST_NAME' | translate"
+                        ></sxm-ui-text-form-field>
+
+                        <sxm-ui-text-form-field
+                            controlId="last-name"
+                            [formControl]="form.lastName"
+                            [labelText]="translateKey + '.CNA_FORM.LAST_NAME' | translate"
+                            [errorMsg]="translateKey + '.CNA_FORM.ERROR.LAST_NAME' | translate"
+                        ></sxm-ui-text-form-field>
+
+                        <sxm-ui-email-form-field
+                            controlId="email"
+                            [formControl]="form.email"
+                            [labelText]="translateKey + '.CNA_FORM.EMAIL' | translate"
+                            [errorMsg]="translateKey + '.CNA_FORM.ERROR.EMAIL' | translate"
+                        ></sxm-ui-email-form-field>
+
+                        <sxm-ui-text-form-field
+                            controlId="address-line-1"
+                            [formControl]="form.addressLine1"
+                            [labelText]="translateKey + '.CNA_FORM.ADDRESS' | translate"
+                            [errorMsg]="translateKey + '.CNA_FORM.ERROR.ADDRESS' | translate"
+                        ></sxm-ui-text-form-field>
+
+                        <sxm-ui-text-form-field
+                            controlId="city"
+                            [formControl]="form.city"
+                            [labelText]="translateKey + '.CNA_FORM.CITY' | translate"
+                            [errorMsg]="translateKey + '.CNA_FORM.ERROR.CITY' | translate"
+                        ></sxm-ui-text-form-field>
+
+                        <div class="row no-padding">
+                            <div class="column small-6 align-top align-left thin-padding">
+                                <sxm-ui-dropdown
+                                    class="dropdown"
+                                    [formControl]="form.state"
+                                    [labelText]="translateKey + '.CNA_FORM.STATE' | translate"
+                                    [passedValue]="'app.areas' | translate"
+                                    key="key"
+                                    text="key"
+                                    name="region"
+                                    [errorMsg]="translateKey + '.CNA_FORM.ERROR.STATE' | translate"
+                                    tabindex="0"
+                                    autocomplete="region"
+                                    [class.invalid]="form.state.invalid && form.state.touched"
+                                ></sxm-ui-dropdown>
+                            </div>
+                            <div class="column small-6 align-right align-top thin-padding" *ngIf="{ isCanada: isCanada$ | async } as language">
+                                <div class="input-container" [class.invalid]="form.zip.invalid && form.zip.touched" [class.filled]="form.zip.value">
+                                    <label for="zip">{{ translateKey + ".CNA_FORM.ZIP" | translate }}</label>
+                                    <input
+                                        id="zip"
+                                        type="text"
+                                        appMaskZipCode
+                                        [zipMaskIsCanada]="language.isCanada"
+                                        [minlength]="language.isCanada ? 6 : 5"
+                                        [maxlength]="language.isCanada ? 7 : 10"
+                                        [formControl]="form.zip"
+                                        onFocus
+                                        autocomplete="postal-code"
+                                        data-e2e="CNAPageZipCodeFormField"
+                                    />
+                                </div>
+                                <div *ngIf="form.zip.invalid && form.zip.touched" class="invalid-feedback">
+                                    <p>{{ translateKey + ".CNA_FORM.ERROR.ZIP" | translate }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-container" [class.invalid]="form.phone.invalid && form.phone.touched">
+                            <label data-e2e="sxmUIPhoneNumber.label" for="phone">{{ translateKey + ".CNA_FORM.PHONE" | translate }}</label>
+                            <input id="phone" type="tel" [formControl]="form.phone" data-e2e="sxmUIPhoneNumber" appMaskPhoneNumber [optional]="true" onFocus />
+                        </div>
+                        <div *ngIf="form.phone.invalid && form.phone.touched" class="invalid-feedback">
+                            <p>{{ translateKey + ".CNA_FORM.ERROR.PHONE" | translate }}</p>
+                        </div>
+
+                        <div class="extra-bottom-padding">
+                            <privacy-policy></privacy-policy>
+                        </div>
+
+                        <button type="submit" sxm-proceed-button [loading]="cnaIsLoading$ | async" data-e2e="CNAFormContinueButton">
+                            {{ translateKey + ".CONTINUE_BUTTON" | translate }}
+                        </button>
+                    </form>
+                </sxm-ui-step>
+            </sxm-ui-stepper>
+        </sxm-ui-dot-progress-bar-step>
+        <!-- TODO: Temporary use of dummy stepper. Registration flow need to be refactored.-->
+        <sxm-ui-dot-progress-bar-step> </sxm-ui-dot-progress-bar-step>
+        <sxm-ui-dot-progress-bar-step> </sxm-ui-dot-progress-bar-step>
+    </sxm-ui-dot-progress-bar-stepper>
+</main>
+
+<sxm-ui-modal [closed]="false" (modalClosed)="addressValidationModal.close()" *ngIf="formValidationError$ | async as avsInfo" #addressValidationModal  [ariaDescribedbyTextId]="cnaPageModalAriaDescribedbyTextId">
+    <customer-verify-address
+        [ariaDescribedbyTextId]="cnaPageModalAriaDescribedbyTextId"
+        [data]="{
+            headingText: translateKey + '.CNA_FORM.CONFIRM_YOUR_ADDRESS' | translate,
+            correctedAddresses: avsInfo.correctedAddresses,
+            currentAddress: form.value,
+            addressCorrectionAction: avsInfo.addressCorrectionAction
+        }"
+        (editAddress)="submit()"
+        (editExisting)="addressValidationModal.close(); closeAddressValidationModel()"
+    ></customer-verify-address>
+</sxm-ui-modal>

@@ -1,0 +1,14 @@
+<main class="background-offwhite">
+    <div class="content-container">
+        <div class="row align-center no-padding-small">
+            <div class="column small-12 medium-2 background-white raised"></div>
+            <div class="column small-12 medium-6 background-white raised container">
+                <h4 class="title">{{ translateKeyPrefix + ".TITLE" | translate }}</h4>
+                <div class="body" [innerHTML]="translateKeyPrefix + '.BODY' | translate: { resellerName: resellerName$ | async, resellerURL: resellerURL$ | async }"></div>
+                <listen-button [listenNowCustomLink]="translateKeyPrefix + '.STREAMING_PLAYER_LINK' | translate" [fullWidth]="true"></listen-button>
+                <span [innerHTML]="translateKeyPrefix + '.FORGOTUSERNAMEPASSWORD' | translate"> </span>
+            </div>
+            <div class="column small-12 medium-2 background-white raised"></div>
+        </div>
+    </div>
+</main>

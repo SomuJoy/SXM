@@ -1,0 +1,49 @@
+<ng-container *ngIf="!controlInvalid">
+    <ng-container *ngIf="!(includeChatWithAgentLink$ | async) && (lookupErrors$ | async) as lookupErrors">
+        <div *ngIf="lookupErrors.noAccountFoundForAccountNumber" class="invalid-feedback">
+            <p [innerHTML]="translateKeyPrefix + '.ACCOUNT_NUMBER_ERROR' | translate">Invalid</p>
+        </div>
+
+        <div *ngIf="lookupErrors.demoAccountFoundAndRadioIsNotBrandedWithTrial" class="invalid-feedback">
+            <p [innerHTML]="translateKeyPrefix + '.RADIO_UNBRANDED_ERROR' | translate">Invalid</p>
+        </div>
+        <div *ngIf="lookupErrors.accountFoundCannotBeVerified" class="invalid-feedback">
+            <p [innerHTML]="translateKeyPrefix + '.ERROR_ACCOUNT_CANNOT_BE_VERIFIED' | translate">Invalid</p>
+        </div>
+        <div *ngIf="lookupErrors.radioIDInvalid" class="invalid-feedback">
+            <p [innerHTML]="translateKeyPrefix + '.RADIO_ID_INVALID' | translate">Invalid</p>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="(includeChatWithAgentLink$ | async) && (lookupErrors$ | async) as lookupErrors">
+        <div *ngIf="lookupErrors.noAccountFoundForAccountNumber" class="invalid-feedback">
+            <p>
+                {{ translateKeyPrefix + ".ACCOUNT_NUMBER_ERROR" | translate }}
+                <chat-with-agent-link [chatLinkText]="translateKeyPrefix + '.CHAT_LINK_TEXT' | translate"></chat-with-agent-link>
+            </p>
+        </div>
+
+        <div *ngIf="lookupErrors.demoAccountFoundAndRadioIsNotBrandedWithTrial" class="invalid-feedback">
+            <p>
+                {{ translateKeyPrefix + ".RADIO_UNBRANDED_ERROR_PREFIX" | translate }}
+                <chat-with-agent-link [chatLinkText]="translateKeyPrefix + '.CHAT_LINK_TEXT_MIDDLE' | translate"></chat-with-agent-link>
+                {{ translateKeyPrefix + ".RADIO_UNBRANDED_ERROR_SUFFIX" | translate }}
+            </p>
+        </div>
+
+        <div *ngIf="lookupErrors.radioIDInvalid" class="invalid-feedback">
+            <p>
+                {{ translateKeyPrefix + ".RADIO_ID_INVALID" | translate }}
+                <chat-with-agent-link [chatLinkText]="translateKeyPrefix + '.CHAT_LINK_TEXT' | translate"></chat-with-agent-link>
+            </p>
+        </div>
+
+        <div *ngIf="lookupErrors.accountFoundCannotBeVerified" class="invalid-feedback">
+            <p>
+                {{ translateKeyPrefix + ".ACCOUNT_CANNOT_BE_VERIFIED_ERROR_PREFIX" | translate }}
+                <chat-with-agent-link [chatLinkText]="translateKeyPrefix + '.CHAT_LINK_TEXT_MIDDLE' | translate"></chat-with-agent-link>
+                {{ translateKeyPrefix + ".ACCOUNT_CANNOT_BE_VERIFIED_ERROR_SUFFIX" | translate }}
+            </p>
+        </div>
+    </ng-container>
+</ng-container>

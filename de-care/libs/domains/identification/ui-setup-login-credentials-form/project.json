@@ -1,0 +1,34 @@
+{
+    "name": "domains-identification-ui-setup-login-credentials-form",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/domains/identification/ui-setup-login-credentials-form/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "libs/domains/identification/ui-setup-login-credentials-form/src/**/*.ts",
+                    "libs/domains/identification/ui-setup-login-credentials-form/src/**/*.html"
+                ]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/domains/identification/ui-setup-login-credentials-form/jest.config.js",
+                "tsConfig": "libs/domains/identification/ui-setup-login-credentials-form/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/domains/identification/ui-setup-login-credentials-form/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:ui", "scope:domain-ui"]
+}

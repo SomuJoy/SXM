@@ -1,0 +1,11 @@
+<div>
+    <h5>{{ translateKeyPrefix + ".TITLE" | translate }}</h5>
+    <p [innerHTML]="translateKeyPrefix + '.MESSAGE' | translate"></p>
+    <p>{{ translateKeyPrefix + ".NOTE" | translate }}</p>
+    <ul>
+        <li [innerHTML]="translateKeyPrefix + '.UNORDERED_LIST.item-1' | translate"></li>
+        <li [innerHTML]="translateKeyPrefix + '.UNORDERED_LIST.item-2' | translate"></li>
+        <li [innerHTML]="translateKeyPrefix + '.UNORDERED_LIST.item-3' | translate"></li>
+        <li [innerHTML]="translateKeyPrefix + '.UNORDERED_LIST.item-4' | translate"></li>
+    </ul>
+</div>

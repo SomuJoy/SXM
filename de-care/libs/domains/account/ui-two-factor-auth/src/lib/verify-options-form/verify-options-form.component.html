@@ -1,0 +1,123 @@
+<form *ngIf="this.form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <p *ngIf="form.controls.verifyType.invalid && form.controls.verifyType.touched" class="error">{{ translateKeyPrefix + ".ERROR_MESSAGE_REQUIRED" | translate }}</p>
+    <sxm-ui-radio-option-form-field
+        data-e2e="verifyOptionsForm.email"
+        *ngIf="!!options?.maskedEmail"
+        formControlName="verifyType"
+        label="{{ translateKeyPrefix + '.EMAIL_LABEL' | translate: { maskedEmail: options.maskedEmail } }}"
+        value="email"
+    ></sxm-ui-radio-option-form-field>
+    <sxm-ui-radio-option-form-field
+        data-e2e="verifyOptionsForm.phoneNumber.label"
+        *ngIf="options?.canUsePhone"
+        formControlName="verifyType"
+        label="{{ translateKeyPrefix + '.PHONE_NUMBER_LABEL' | translate: { maskedPhoneNumber: options.maskedPhoneNumber } }}"
+        value="text"
+    ></sxm-ui-radio-option-form-field>
+    <div class="additional-data" *ngIf="form.get('verifyType').value === 'text' && options?.canUsePhone">
+        <sxm-ui-phone-number-form-field
+            controlId="twofa-verify-phone"
+            data-e2e="verifyOptionsForm.phoneNumber.field"
+            formControlName="text"
+            labelText="{{ translateKeyPrefix + '.CONFIRM_PHONE_NUMBER_PLACEHOLDER' | translate }}"
+            errorMsg="{{ translateKeyPrefix + '.ERROR_MESSAGE_PHONE_NUMBER' | translate }}"
+        ></sxm-ui-phone-number-form-field>
+        <div *ngIf="!phoneMatchesAccount && form.controls.text.valid" class="invalid-feedback">
+            <p>{{ translateKeyPrefix + ".ERROR_MESSAGE_PHONE_DOES_NOT_MATCH" | translate }}</p>
+        </div>
+        <div *ngIf="getPhoneVerificationRequestCodeLimitExceeded$ | async" class="invalid-feedback">
+            <p>{{ translateKeyPrefix + ".MAX_RESEND_ATTEMPTS_EXCEEDED" | translate }}</p>
+        </div>
+        <sxm-ui-checkbox-with-label-form-field data-e2e="verifyOptionsForm.phoneNumber.acceptTerms" formControlName="agreeToTextMessage">
+            <p>
+                <span [innerHTML]="translateKeyPrefix + '.AGREE_TO_TEXT_MESSAGE_LABEL' | translate"></span>
+                <privacy-policy></privacy-policy>.
+            </p>
+            <div *ngIf="submitted && form.get('agreeToTextMessage').errors" class="invalid-feedback">
+                <p>{{ translateKeyPrefix + ".ERROR_MESSAGE_AGREE_TO_TEXT_MESSAGE" | translate }}</p>
+            </div>
+        </sxm-ui-checkbox-with-label-form-field>
+    </div>
+    <sxm-ui-radio-option-form-field
+        data-e2e="verifyOptionsForm.radioId.label"
+        *ngIf="options?.canUseRadioId"
+        formControlName="verifyType"
+        label="{{ translateKeyPrefix + '.RADIO_ID_LABEL' | translate }}"
+        value="radioId"
+    ></sxm-ui-radio-option-form-field>
+    <div class="additional-data" *ngIf="form.get('verifyType').value === 'radioId'">
+        <sxm-ui-text-form-field
+            controlId="twofa-verify-radio-id"
+            data-test="verifyOptionsForm.radioId.field"
+            data-e2e="verifyOptionsForm.radioId.field"
+            formControlName="radioId"
+            dataFieldType="radioId"
+            labelText="{{ translateKeyPrefix + '.RADIO_ID_PLACEHOLDER' | translate }}"
+            errorMsg="{{ translateKeyPrefix + '.ERROR_MESSAGE_RADIO_ID' | translate }}"
+        ></sxm-ui-text-form-field>
+
+        <sxm-ui-tooltip [ngClass]="{ 'tool-tip-error': form.get('verifyType').value === 'radioId' && form.get('radioId').invalid && form.get('radioId').touched }">
+            {{ translateKeyPrefix + ".RADIO_ID_TOOLTIP" | translate }}
+        </sxm-ui-tooltip>
+
+        <div *ngIf="radioIDInvalid && !form.controls.radioId.invalid" class="invalid-feedback">
+            <p *ngIf="!showChatWithAgentLink" [innerHTML]="translateKeyPrefix + '.INVALID_RADIO_ID' | translate">Invalid</p>
+            <p *ngIf="showChatWithAgentLink">
+                {{ translateKeyPrefix + ".INVALID_RADIO_ID" | translate }}
+                <chat-with-agent-link [chatLinkText]="translateKeyPrefix + '.CHAT_WITH_AGENT' | translate" queue="generalAgents"></chat-with-agent-link>
+            </p>
+        </div>
+
+        <div class="extra-bottom-padding">
+            <a class="text-link" (click)="helpFindRadioClicked.emit()">{{ translateKeyPrefix + ".RADIO_LINK_INSTRUCTIONS" | translate }}</a>
+        </div>
+
+        <div class="extra-bottom-padding">
+            <privacy-policy></privacy-policy>
+        </div>
+    </div>
+    <sxm-ui-radio-option-form-field
+        data-e2e="verifyOptionsForm.accountNumber.label"
+        *ngIf="options?.canUseAccountNumber"
+        formControlName="verifyType"
+        label="{{ translateKeyPrefix + '.ACCOUNT_NUMBER_LABEL' | translate }}"
+        value="accountNumber"
+    ></sxm-ui-radio-option-form-field>
+    <div class="additional-data" *ngIf="form.get('verifyType').value === 'accountNumber'">
+        <sxm-ui-text-form-field
+            controlId="twofa-verify-account-number"
+            data-e2e="verifyOptionsForm.accountNumber.field"
+            formControlName="accountNumber"
+            labelText="{{ translateKeyPrefix + '.ACCOUNT_NUMBER_PLACEHOLDER' | translate }}"
+            errorMsg="{{ translateKeyPrefix + '.ERROR_MESSAGE_ACCOUNT_NUMBER' | translate }}"
+        ></sxm-ui-text-form-field>
+        <div *ngIf="accountIsInvalid && form.controls.accountNumber.valid" class="invalid-feedback">
+            <p *ngIf="!showChatWithAgentLink" [innerHTML]="translateKeyPrefix + '.ERROR_MESSAGE_ACCOUNT_DOES_NOT_MATCH' | translate">Invalid</p>
+            <p *ngIf="showChatWithAgentLink">
+                {{ translateKeyPrefix + ".INVALID_ACCOUNT_NUMBER" | translate }}
+                <chat-with-agent-link [chatLinkText]="translateKeyPrefix + '.CHAT_WITH_AGENT' | translate"></chat-with-agent-link>
+            </p>
+        </div>
+        <div class="extra-bottom-padding">
+            <privacy-policy></privacy-policy>
+        </div>
+    </div>
+    <!-- <p *ngIf="showChatWithAgentLink" class="chat-with-agent">
+        {{ translateKeyPrefix + ".CHAT_WITH_AGENT_PREFIX_TEXT" | translate }}
+        <chat-with-agent-link [chatLinkText]="translateKeyPrefix + '.CHAT_LINK_TEXT' | translate" queue="generalAgents" class="text-link"></chat-with-agent-link>
+        {{ translateKeyPrefix + ".CHAT_WITH_AGENT_SUFFIX_TEXT" | translate }}
+    </p> -->
+    <p *ngIf="showChatWithAgentLink" class="chat-with-agent">
+        <a class="text-link" href="{{ translateKeyPrefix + '.CHAT_LINC' | translate }}" target="_blank">{{
+            translateKeyPrefix + ".CHAT_WITH_AGENT_PREFIX_TEXT" | translate
+        }}</a>
+        {{ translateKeyPrefix + ".CHAT_WITH_AGENT_SUFFIX_TEXT" | translate }}
+    </p>
+    <p *ngIf="!showChatWithAgentLink">
+        {{ translateKeyPrefix + ".CHAT_WITH_AGENT_PREFIX_TEXT" | translate }}
+        <span [innerHTML]="translateKeyPrefix + '.CHAT_WITH_AGENT_SUFFIX_TEXT' | translate"></span>
+    </p>
+    <button data-test="verifyOptionsForm.continueButton" data-e2e="verifyOptionsForm.continueButton" type="submit" sxm-proceed-button [loading]="processing">
+        {{ translateKeyPrefix + ".CONTINUE_BUTTON" | translate }}
+    </button>
+</form>

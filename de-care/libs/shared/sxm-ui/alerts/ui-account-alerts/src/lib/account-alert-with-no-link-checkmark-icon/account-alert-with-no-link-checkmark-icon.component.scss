@@ -1,0 +1,30 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+@import "libs/sxm-assets/scss/ui_reset.scss";
+
+:host {
+    font-family: $font-standard;
+
+    .grid-container {
+        display: grid;
+        width: 100%;
+        grid-template-rows: auto;
+        column-gap: 16px;
+        align-items: center;
+        text-align: center;
+
+        .payment-alert-message {
+            color: $black;
+            @include font-size(20px);
+            font-weight: calculate-font-weight("black");
+            letter-spacing: 0;
+            line-height: 24px;
+        }
+
+        svg {
+            stroke: $purple;
+            height: 16px;
+            width: 19px;
+        }
+    }
+}

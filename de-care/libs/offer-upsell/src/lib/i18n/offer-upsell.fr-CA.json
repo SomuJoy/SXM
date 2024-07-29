@@ -1,0 +1,53 @@
+{
+    "offerUpsell": {
+        "offerUpsellComponent": {
+            "HEADER_SINGLE_UPSELL": "(Optionnel)",
+            "HEADER_MULTI_UPSELL": "(Optionnel : Vous pouvez en choisir un ou les deux)",
+            "FLAG_DEFAULT": "NOTRE MEILLEUR FORFAIT",
+            "FLAG_ALTERNATE": "REHAUSSEZ VOTRE FORFAIT ET OBTENEZ PLUS",
+            "OFFER_NAME": "Passer à {{offerName}}",
+            "OFFER_TERM_LENGTH": "Commencez par {{ offerTerm }} mois",
+            "OFFER_TERM_SAVE": "Obtenez {{ offerTerm }} mois et économisez",
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "mois",
+                    "other": "mois"
+                }
+            },
+            "STREAMING_PACKAGE_RTP_PROMO_NON_ZERO": "Rehaussez votre forfait à En continu {{ name }} pour le même excellent prix, ensuite {{ retailPrice }}/mois.",
+            "ADDITIONAL_COST": "Ajoutez les stations de premier choix plus la diffusion en continu pour {{ price }}*",
+            "ADDITIONAL_COST_STREAMING": "Rehaussez votre forfait à En continu {{ name }} pour un montant supplémentaire de {{ price }} par mois.",
+            "ADDITIONAL_COST_MOSTLY_MUSIC": "Obtenez plus de stations musicales pour {{ price }} de plus par mois.",
+            "STREAMING_ADDITIONAL": "Bloquez votre tarif pour {{ termUpsellAdditionalMonths }} mois de plus.",
+            "STREAMING_ADDITIONAL_TAXES": "* Plus frais et taxes, basé sur un prépaiement de {{ packageTotalPrice }}",
+            "STREAMING_ADDITIONAL_TAXES_QUEBEC": "* Plus taxes, basé sur un prépaiement de {{ packageTotalPrice }}",
+            "TERM_UPSELL_MONTHS_QUEBEC": "Ajoutez {{addMoreMonths}} mois de plus pour {{ desiredCurrency }}**",
+            "TERM_UPSELL_MONTHS": "Ajoutez {{addMoreMonths}} mois de plus pour {{ desiredCurrency }}",
+            "TERM_PRICE_DIFFERENCE_QUEBEC": "Comparé à l'offre de {{ packageUpsell }} mois après {{ term }} mois. Basé sur un tarif ordinaire de {{ desiredCurrency}}/mois. Voir les détails de l'offre.",
+            "TERM_PRICE_DIFFERENCE_TAXES": "** Plus frais et taxes, basé sur un prépaiement de {{ packageTotalPrice }}",
+            "TERM_PRICE_DIFFERENCE_TAXES_QUEBEC": "** Plus taxes, basé sur un prépaiement de {{ packageTotalPrice }}",
+            "UPGRADE_OPTION_DETAILS": "En comparaison à l'offre de 6 mois après 12 mois. Basé sur un tarif ordinaire de {{ retailPrice }} $/mois. Des frais et des taxes s'appliquent. Voir les détails de l'offre.",
+            "UPGRADE_OPTION_DETAILS_COMPARE": "Comparé à l'offre de {{ packageUpsell.termLength }} mois après {{ termPackageUpsell.termLength }} mois. Basé sur un tarif ordinaire de {{ termPackageUpsell.retailPrice}}/mois. Des frais et des taxes s'appliquent. Voir les détails de l'offre.",
+            "UPGRADE_OPTION_DETAILS_COMPARE_QUEBEC": "Comparé à l'offre de {{ packageUpsell.termLength }} mois après {{ termPackageUpsell.termLength }} mois. Basé sur un tarif ordinaire de {{ termPackageUpsell.retailPrice}}/mois. Voir les détails de l'offre.",
+            "ORIGINAL_TERM_DETAILS": "Obtenez {{ tpu }} mois de {{ name }}  pour {{ priceCheck }}. Vous économiserez {{ upgradedSavings }}",
+            "ORIGINAL_TERM_DETAILS_MCP": "Obtenez {{ tpu }} mois de {{ name }}  pour {{ priceCheck }} par mois. Vous économiserez {{ upgradedSavings }}",
+            "ORIGINAL_TERM_DETAILS_COMPARE": "En comparaison à l'offre de {{ originalOffer.termLength }} mois après {{ offer.termLength }} mois. Basé sur un tarif ordinaire de {{ offer.retailPrice }} $/mois. Des frais et des taxes s'appliquent. Voir les détails de l'offre.",
+            "ORIGINAL_TERM_DETAILS_COMPARE_QUEBEC": "En comparaison à l'offre de {{ originalOffer.termLength }} mois après {{ offer.termLength }} mois. Basé sur un tarif ordinaire de {{ offer.retailPrice }} $/mois. Des taxes s'appliquent. Voir les détails de l'offre.",
+            "OFFER_COMPARISION": "Comparé à l'offre de {{ originalOffer }} mois après {{ termLength }} mois. Basé sur un tarif ordinaire de {{ retailPrice }}/mois. Des frais et des taxes s'appliquent. Voir les détails de l'offre.",
+            "OFFER_COMPARISION_QUEBEC": "Comparé à l'offre de  {{ originalOffer }} mois après {{ termLength }} mois. Basé sur un tarif ordinaire de {{ retailPrice }}/mois. Voir les détails de l'offre.",
+            "PLUS_TAXES_AND_FEES_QUEBEC": "* Plus taxes, basé sur un prépaiement de {{ price }}.",
+            "PLUS_TAXES_AND_FEES_QUEBEC_MCP": "*Plus taxes",
+            "PLUS_TAXES_AND_FEES": "* Plus frais et taxes, basé sur un prépaiement de {{ price }}.",
+            "PLUS_TAXES_AND_FEES_MCP": "*Plus frais et taxes",
+            "PER_MONTH_MCP": " par mois.",
+            "VIEW_DETAILS_COLLAPSED": "Découvrez les détails du forfait",
+            "VIEW_DETAILS_EXPANDED": "Masquer",
+            "ARIA_VIEW_DETAILS_COLLAPSED": "Découvrez les détails du forfait - {{packageName}}",
+            "ARIA_VIEW_DETAILS_EXPANDED": "Masquer les détails du forfait - {{packageName}}",
+            "BUTTON_TEXT": "Continuer",
+            "BUTTON_REVIEW": "REVOIR MA COMMANDE",
+            "SEE_OFFER_BELOW_ADVANTAGE": "Ordinairement <strike>{{ price }}/mois</strike>, frais en sus. Économisez {{ savingsAmount }}/mois tant que vous choisissez de garder votre abonnement. Voir <strong>les détails de l’offre</strong> ci-dessous.",
+            "SEE_OFFER_BELOW_ADVANTAGE_QUEBEC": "Ordinairement <strike>{{ price }}/mois</strike>. Économisez {{ savingsAmount }}/mois tant que vous choisissez de garder votre abonnement. Voir <strong>les détails de l’offre</strong> ci-dessous."
+        }
+    }
+}

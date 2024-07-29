@@ -1,0 +1,15 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 100%;
+    background-color: $off-white;
+}
+
+.sxm-limited-nav {
+    z-index: 10;
+    position: relative;
+    background: rgba(0, 0, 0, 0.8);
+}

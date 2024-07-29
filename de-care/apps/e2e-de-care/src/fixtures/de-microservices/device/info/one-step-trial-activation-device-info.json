@@ -1,0 +1,17 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "deviceInformation": {
+            "radioId": "990005206901",
+            "deviceStatus": "ESN not in use",
+            "primaryBrandId": "11901",
+            "primaryDealerId": "0",
+            "secondaryBrandId": "11901",
+            "secondaryDealerId": "0",
+            "vehicle": { "vin": null, "year": null, "make": null, "model": null },
+            "service": null
+        }
+    }
+}

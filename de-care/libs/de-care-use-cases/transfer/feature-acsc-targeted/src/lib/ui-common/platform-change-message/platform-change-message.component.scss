@@ -1,0 +1,52 @@
+@import "sxm.phoenix.imports";
+:host {
+    display: flex;
+    background-color: $vanilla;
+    padding: 12px;
+    & > .icon {
+        margin-right: 8px;
+        flex-shrink: 0;
+        flex-grow: 0;
+
+        svg {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    ul {
+        margin: 8px 0 0;
+        padding: 0;
+        li {
+            display: flex;
+            align-items: center;
+            line-height: 22px;
+
+            &:not(:last-child) {
+                margin-bottom: 4px;
+            }
+
+            svg {
+                height: 16px;
+                width: 16px;
+                padding: 0;
+                margin-right: 4px;
+                use {
+                    stroke-width: 1.5;
+                    stroke: $black;
+                }
+            }
+        }
+    }
+}
+
+sxm-ui-tooltip {
+    position: absolute;
+    ::ng-deep {
+        svg {
+            use.icon-tool-tip {
+                color: transparent;
+            }
+        }
+    }
+}

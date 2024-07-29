@@ -1,0 +1,40 @@
+{
+    "CUSTOMER_GREETING": "Hi, {{customerName}}",
+    "ACCOUNT_NUMBER": "Account: {{accountNumber}}",
+    "USER_BUTTON_ARIA": "Manage my account",
+    "SXM_URL_LINK": "https://www.siriusxm.ca",
+    "SXM_URL_ARIA_LABEL": "SiriusXM.ca link",
+    "ALERTS_BUTTON_ARIA": "Account Alerts",
+    "PAYMENT": {
+        "LINK_URL": "{{oacUrl}}/makepayment_view.action",
+        "LINK_ROUTER_LOGGEDIN": "/account/pay/make-payment?langpref=en"
+    },
+    "PAYMENT_REMINDER": {
+        "LINK_URL": "{{oacUrl}}/makeccpaymentlogin_view.action?isflepzview=true#/ccpaymentflepz",
+        "LINK_ROUTER_LOGGEDIN": "/account/pay/make-payment?langpref=en"
+    },
+    "SC_AC": {
+        "LINK_ROUTER": "/transfer/radio/login"
+    },
+    "CONVERT": {
+        "LINK_ROUTER": "/subscribe/checkout?radioid=**{{radioId}}&programcode=TRIALEXT&isIdentifiedUser=true"
+    },
+    "UPGRADE": {
+        "LINK_ROUTER_LOGGEDIN": "/subscription/change?subscriptionId={{subscriptionId}}",
+        "LINK_ROUTER": "/account/login?task=upgrade&esn={{radioId}}"
+    },
+    "DEVICES": {
+        "LINK_URL": "https://www.siriusxm.com/ways-to-listen?intcmp=GlobalNav_NA_www:Home_WaystoListen"
+    },
+    "CONTENT": {
+        "LINK_URL": "https://player.siriusxm.com/"
+    },
+    "CREDENTIALS": {
+        "LINK_ROUTER": "/onboarding/setup-credentials",
+        "LINK_ROUTER_NO_REGISTRATION": "/account/registration",
+        "LINK_URL_LOGGEDIN": "{{oacUrl}}/updateinternetcredentials_view.action?subscriptionNumber={{subscriptionId}}"
+    },
+    "REACTIVATE": {
+        "LINK_ROUTER": "/subscribe/checkout/purchase/satellite/add-radio-router/activate-radio-init"
+    }
+}

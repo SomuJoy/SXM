@@ -1,0 +1,19 @@
+{
+    "refreshDevice": {
+        "RefreshDeviceComponent": {
+            "HREF": "retailrefresh_view.action?langpref=en#/refreshradio"
+        },
+        "ActivateRadioComponent": {
+            "OUTSIDE_CAR_STEP_LEGAL_TEXT": "I agree to receive a one-time text message and certify this is my mobile number. Message and data rates may apply. SMS terms and Conditions may be viewed at <a href=\"https://www.siriusxm.ca/sms\" target=\"_blank\">https://www.siriusxm.ca/sms</a>. See our <a href=\"https://www.siriusxm.ca/privacy-policy\" target=\"_blank\">Privacy Policy</a>."
+        },
+        "SuccessMessageComponent": {
+            "REFRESH_SENT_NOT_WORKING_LINK_URL": "https://www.siriusxm.ca/help/"
+        },
+        "ErrorMessageComponent": {
+            "REFRESH_FAIL_GENERIC": "We are unable to refresh your radio online. Please call 1 866-635-0565 for help.",
+            "REFRESH_FAIL_MAXIMUM_LIMIT": "Oops. The number of activation signals allowed within a 24 hour period has been exceeded. ",
+            "REFRESH_FAIL_MULTIPLE_REQUESTS": "We sent a signal recently. This feature will be inaccessible for the next 15 minutes because an activation signal has recently been sent.",
+            "TEXT_FAIL_SERVICE_NOT_AVAILABLE": "We apologize, but text messaging is not available at this time. If you still aren't hearing content through your radio, you can send another refresh signal later."
+        }
+    }
+}

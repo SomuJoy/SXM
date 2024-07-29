@@ -1,0 +1,81 @@
+<div id="account-info-form">
+    <form [formGroup]="accountInfoForm">
+        <div class="input-container" [class.invalid]="controlIsInvalid(accountInfoForm.controls.radioId)" [class.filled]="accountInfoForm.controls.radioId.value">
+            <label for="{{ uniqueIdRadio }}">{{ "identification.accountIdInfoComponent.RADIO_INPUT_LABEL" | translate }}</label>
+            <input
+                type="text"
+                formControlName="radioId"
+                id="{{ uniqueIdRadio }}"
+                qatag="AccountInfoRadioIdTextfield"
+                data-e2e="accountInfoRadioId"
+                apRadioIdFormField
+                onFocus
+            />
+        </div>
+        <div *ngIf="controlIsInvalid(accountInfoForm.controls.radioId)" class="invalid-feedback">
+            <p>{{ "identification.accountIdInfoComponent.INVALID_RADIO_FEEDBACK" | translate }}</p>
+        </div>
+        <div *ngIf="accountNotSupportedError" class="invalid-feedback">
+            <p>{{ "identification.accountIdInfoComponent.ACCOUNT_TYPE_NOT_SUPPORTED" | translate }}</p>
+        </div>
+
+        <ng-container *ngIf="accountInfoForm.controls.accountNumber">
+            <div
+                class="input-container"
+                [class.invalid]="controlIsInvalid(accountInfoForm.controls.accountNumber)"
+                [class.filled]="accountInfoForm.controls.accountNumber.value"
+            >
+                <label for="{{ uniqueIdAct }}">{{ "identification.accountIdInfoComponent.ACCOUNT_INPUT_LABEL" | translate }}</label>
+                <input
+                    type="text"
+                    formControlName="accountNumber"
+                    id="{{ uniqueIdAct }}"
+                    qatag="AccountInfoAccountNumberTextfield"
+                    data-e2e="accountInfoAccountNumber"
+                    appTrimFormField
+                    onFocus
+                />
+            </div>
+            <div *ngIf="controlIsInvalid(accountInfoForm.controls.accountNumber)" class="invalid-feedback">
+                <p>{{ "identification.accountIdInfoComponent.INVALID_ACCOUNT_FEEDBACK" | translate }}</p>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="accountInfoForm.controls.lastName">
+            <div class="input-container" [class.invalid]="controlIsInvalid(accountInfoForm.controls.lastName)" [class.filled]="accountInfoForm.controls.lastName.value">
+                <label for="{{ uniqueIdLast }}">{{ "identification.accountIdInfoComponent.LASTNAME_INPUT_LABEL" | translate }}</label>
+                <input type="text" formControlName="lastName" id="{{ uniqueIdLast }}" qatag="AccountInfoLastNameTextfield" maxlength="50" appTrimFormField onFocus />
+            </div>
+            <div *ngIf="controlIsInvalid(accountInfoForm.controls.lastName)" class="invalid-feedback">
+                <p>{{ "identification.accountIdInfoComponent.INVALID_LASTNAME_FEEDBACK" | translate }}</p>
+            </div>
+        </ng-container>
+    </form>
+</div>
+<div class="privacy-policy">
+    <a href="{{ 'identification.accountIdInfoComponent.PRIVACY_POLICY.LINK_URL' | translate }}" target="_blank" class="text-link">
+        {{ "identification.accountIdInfoComponent.PRIVACY_POLICY.LINK_TEXT" | translate }}
+    </a>
+</div>
+<div class="row align-center no-padding">
+    <div class="column small-12 medium-12 no-padding">
+        <button
+            data-e2e="accountInfoContinueButton"
+            class="button primary full-width"
+            [class.loading]="loading"
+            [disabled]="loading"
+            (click)="doAccountSearch()"
+            qatag="AccountInfoContinueButton"
+        >
+            <ng-container *ngIf="!loading">{{ "identification.accountIdInfoComponent.BUTTON" | translate }}</ng-container>
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</div>
+<sxm-ui-show-hide
+    class="find-my-radio-help"
+    [collapsedText]="'identification.accountIdInfoComponent.RADIO_ID_HELP_LABEL' | translate"
+    [expandedText]="'identification.accountIdInfoComponent.RADIO_ID_HELP_LABEL' | translate"
+>
+    <sxm-ui-help-finding-radio [showSearchByLicensePlateLink]="true" (deviceHelp)="deviceHelp.emit()" (licensePlateHelp)="licensePlateHelp.emit()"></sxm-ui-help-finding-radio>
+</sxm-ui-show-hide>

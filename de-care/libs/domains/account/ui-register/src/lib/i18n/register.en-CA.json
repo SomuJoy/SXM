@@ -1,0 +1,14 @@
+{
+    "register": {
+        "RegisterYourAccountComponent": {
+            "PRIVACY_POLICY": {
+                "LINK_TEXT": "Privacy Policy",
+                "LINK_URL": "https://www.siriusxm.ca/privacy"
+            },
+            "TRIAL_ACTIVATION": {
+                "REG_HEADER": "Register your account",
+                "HEADER": "Register your account for {{email}} to be able to manage your subscriptions and stream online."
+            }
+        }
+    }
+}

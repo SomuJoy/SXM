@@ -1,0 +1,10 @@
+{
+    "TITLE": "Alerte de compte",
+    "ACCOUNT_PAST_DUE": "Votre compte est en souffrance.",
+    "TO_PROCEED": "Pour continuer, vous avez deux choix :",
+    "CHAT_WITH_AGENT": "Appeler le service à la clientèle au <strong>1-888-539-7474</strong> et un de nos agents pourra vous aider à annuler votre abonnement.",
+    "PAY_THE_BALANCE": "Payer le solde",
+    "HELP_CANCEL": "",
+    "DUE_ON_YOUR_ACCOUNT": " dû sur votre compte. Vous pourrez ensuite continuer avec l’annulation de votre forfait en ligne.",
+    "UP_ON_CANCELLATION": "Au moment de l’annulation, nous vous rembourserons automatiquement tout service prépayé."
+}

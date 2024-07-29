@@ -1,0 +1,22 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": [
+        { "id": 100, "question": "Favorite pet's name" },
+        { "id": 101, "question": "Favorite place to visit" },
+        { "id": 102, "question": "First phone number" },
+        { "id": 103, "question": "Favorite sports team" },
+        { "id": 104, "question": "Favorite beverage" },
+        { "id": 105, "question": "Favorite movie" },
+        { "id": 106, "question": "First car make" },
+        { "id": 107, "question": "Favorite childhood friend" },
+        { "id": 108, "question": "First employer" },
+        { "id": 109, "question": "Favorite school" },
+        { "id": 110, "question": "First concert" },
+        { "id": 111, "question": "First music purchase" },
+        { "id": 112, "question": "Favorite place to live" },
+        { "id": 113, "question": "Favorite band/artist" },
+        { "id": 114, "question": "Favorite music genre" }
+    ]
+}

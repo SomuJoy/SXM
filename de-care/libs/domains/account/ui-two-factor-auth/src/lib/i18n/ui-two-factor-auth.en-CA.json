@@ -1,0 +1,16 @@
+{
+    "domainsAccountUiTwoFactorAuth": {
+        "verifyOptionsFormComponent": {
+            "PRIVACY_POLICY_LINK": " https://www.siriusxm.ca/privacy-policy/",
+            "CHAT_LINK_TEXT": "Chat with an agent",
+            "CHAT_WITH_AGENT_SUFFIX_TEXT": " if you need assistance.",
+            "INVALID_RADIO_ID": "The Radio ID you entered does not match our records. Please try again or ",
+            "INVALID_ACCOUNT_NUMBER": "The number entered does not match the account number on your account. Please try again or ",
+            "CHAT_WITH_AGENT": "chat with an agent.",
+            "AGREE_TO_TEXT_MESSAGE_LABEL": "I agree to receive a one-time text message and certify this is my mobile number. Message and data rates may apply. View our <a href=\"https://www.siriusxm.ca/sms/\" class=\"text-link\" target=\"_blank\">SMS Terms and Conditions</a> and ",
+            "ERROR_MESSAGE_PHONE_NUMBER": "Enter a valid phone number.",
+            "CHAT_WITH_AGENT_PREFIX_TEXT": "Chat with an agent",
+            "CHAT_LINC": "https://www.siriusxm.ca/contactus"
+        }
+    }
+}

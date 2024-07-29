@@ -1,0 +1,17 @@
+@import "sxm.phoenix.imports";
+
+:host {
+    display: grid;
+    grid-template-rows: 1fr max-content;
+    background: $white;
+    box-shadow: $active-shadow;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+        box-shadow: $hover-shadow;
+    }
+
+    .inner-padding {
+        padding: 24px 24px 24px 24px;
+    }
+}

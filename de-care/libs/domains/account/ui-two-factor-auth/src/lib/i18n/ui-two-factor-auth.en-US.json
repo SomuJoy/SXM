@@ -1,0 +1,60 @@
+{
+    "domainsAccountUiTwoFactorAuth": {
+        "verifyOptionsFormComponent": {
+            "EMAIL_LABEL": "Email me: {{maskedEmail}}",
+            "PHONE_NUMBER_LABEL": "Text me: {{maskedPhoneNumber}}",
+            "CONFIRM_PHONE_NUMBER_PLACEHOLDER": "Verify your phone number",
+            "AGREE_TO_TEXT_MESSAGE_LABEL": "I agree to receive a one-time text message and certify this is my mobile number. Message and data rates may apply. View our <a href=\"https://www.siriusxm.com/sms\" class=\"text-link\" target=\"_blank\">SMS Terms and Conditions</a> and <a href=\"https://www.siriusxm.com/privacy-policy\" class=\"text-link\" target=\"_blank\">Privacy Policy</a>.",
+            "RADIO_ID_LABEL": "Enter Radio ID",
+            "RADIO_ID_PLACEHOLDER": "Radio ID",
+            "RADIO_LINK_INSTRUCTIONS": "How do I find my Radio ID?",
+            "ACCOUNT_NUMBER_LABEL": "Enter Account Number",
+            "ACCOUNT_NUMBER_PLACEHOLDER": "Account Number",
+            "ERROR_MESSAGE_REQUIRED": "Please select a verification method.",
+            "ERROR_MESSAGE_PHONE_NUMBER": "A phone number is required.",
+            "ERROR_MESSAGE_PHONE_DOES_NOT_MATCH": "The number entered does not match the phone number on your account.",
+            "ERROR_MESSAGE_AGREE_TO_TEXT_MESSAGE": "Please confirm that you have read and agree to the Terms and Conditions and Privacy Policy.",
+            "ERROR_MESSAGE_RADIO_ID": "Enter a valid Radio ID.",
+            "INVALID_RADIO_ID": "The Radio ID you entered does not match our records. Please try again or chat with an agent.",
+            "ERROR_MESSAGE_ACCOUNT_NUMBER": "Enter a valid Account Number.",
+            "ERROR_MESSAGE_ACCOUNT_DOES_NOT_MATCH": "The number entered does not match the account number on your account. Please try again or chat with an agent.",
+            "CONTINUE_BUTTON": "Continue",
+            "RADIO_ID_TOOLTIP": "Your Radio ID will be either 8 or 12 digits.",
+            "PRIVACY_POLICY_LINK": "https://www.siriusxm.com/phx/privacy-policy",
+            "PRIVACY_POLICY_LABEL": "Privacy Policy",
+            "CHAT_WITH_AGENT_PREFIX_TEXT": "",
+            "CHAT_WITH_AGENT": "Chat with an agent",
+            "CHAT_WITH_AGENT_SUFFIX_TEXT": "",
+            "MAX_RESEND_ATTEMPTS_EXCEEDED": "You have requested a new code too many times."
+        },
+        "securityCodeVerificationFormComponent": {
+            "CODE_LABEL": "Security Code",
+            "RESEND_CODE": "Resend Code",
+            "CHAT": "Chat with an Agent",
+            "CONTINUE_BUTTON": "Continue",
+            "ERROR_MESSAGE_REQUIRED": "A security code is required.",
+            "MAX_RESEND_ATTEMPTS_EXCEEDED": "You have requested a new code too many times."
+        },
+        "twoFactorAuthModalComponent": {
+            "MODAL_TITLE": "Verify account",
+            "VERIFY_OPTIONS_HEADING": "Verify your account",
+            "VERIFY_OPTIONS_INSTRUCTIONS": "We need to verify you are the owner of this account. How would you like to verify?",
+            "SECURITY_CODE_VERIFICATION_HEADING": "Verify your account",
+            "SECURITY_CODE_VERIFICATION_INSTRUCTIONS": "Enter the code sent to {{ deliverySource }}.",
+            "SECURITY_CODE_ERROR_MESSAGE_INVALID": "Your security code is either incorrect or has expired.",
+            "SECURITY_CODE_ERROR_MESSAGE_LIMIT": "You have tried too many times. You can use the link below to send a new code.",
+            "RESEND_CODE_LINK_TEXT": {
+                "PHONE": "Resend Code",
+                "EMAIL": "Resend Email"
+            },
+            "RESEND_CODE_ALERT": {
+                "EMAIL": "A new code has been sent to your email.",
+                "PHONE": "A new code has been sent to your phone."
+            },
+            "HELP_FINDING_RADIO_TITLE": "Radio ID Help",
+            "HELP_FINDING_RADIO_PARAGRAPH_1": "Tune your radio dial to channel 0 and the radio ID should display.",
+            "RADIO_LOOKUP_MARINE_AVIATION": "Device Help",
+            "SECURITY_CODE_RESENT_TO_PHONE": "A new code has been sent to your phone"
+        }
+    }
+}

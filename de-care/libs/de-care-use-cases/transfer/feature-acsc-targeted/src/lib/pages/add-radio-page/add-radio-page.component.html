@@ -1,0 +1,52 @@
+<div>
+    <main de-care-page-main data-scroll="scroll-top">
+        <sxm-ui-stepper #stepper>
+            <sxm-ui-step id="step1" (active)="onFirstStepActive()" data-e2e="step1">
+                <sxm-ui-stepper #subStepper>
+                    <sxm-ui-step id="step1-1" (active)="onSelectTransferMethodStepActive()" data-e2e="step1-1">
+                        <de-care-select-transfer-method
+                            [isLoggedIn]="isLoggedIn$ | async"
+                            (toPaymentPage)="nextAndScrollUp()"
+                            (toPackageSelectionPage)="subStepperNextAndScrollUp()"
+                            (toRadioLookupPage)="goToRadioLookupPage()"
+                            (toPortRadioPage)="goToPortRadioPage()"
+                        >
+                        </de-care-select-transfer-method>
+                    </sxm-ui-step>
+                    <sxm-ui-step id="step1-2" (active)="onChooseSubscriptionStepActive()" data-e2e="step1-2">
+                        <de-care-choose-subscription
+                            (toSelectTransferMethodPage)="subStepperPreviousAndScrollUp()"
+                            (toPaymentPage)="nextAndScrollUp()"
+                        ></de-care-choose-subscription>
+                    </sxm-ui-step>
+                </sxm-ui-stepper>
+            </sxm-ui-step>
+            <sxm-ui-step id="step2" (active)="onChoosePaymentStepActive()" data-e2e="step2">
+                <de-care-choose-payment-method (paymentFormCompleted)="onPaymentFormComplete($event)" [ccError]="ccError"></de-care-choose-payment-method>
+                <div *ngIf="showPaymentBackButton" class="back-button">
+                    <button class="text-link no-underline" (click)="previousAndScrollUp()" data-track-click="Payment back button" data-e2e="paymentBackButton">
+                        {{ translateKeyPrefix + "BACK_BUTTON" | translate }}
+                    </button>
+                </div>
+            </sxm-ui-step>
+            <sxm-ui-step id="step3" (active)="onReviewOrderStepActive()" data-e2e="step2">
+                <ng-container *ngrxLet="displayPriceChangeMessage$ as displayPriceChangeMessage">
+                    <de-care-review-order
+                        [priceChangeMessagingType]="displayPriceChangeMessage?.priceChangeMessagingType"
+                        [priceChangeMessagingTypeFeatureFlag]="displayPriceChangeMessage?.priceChangeMessagingTypeFeatureFlag"
+                        (submitTransactionComplete)="onSubmitTransactionComplete()"
+                        (submitTransactionCompleteWithCCError)="onSubmitTransactionCompleteWithCCError()"
+                    ></de-care-review-order>
+                    <div class="back-button">
+                        <button (click)="previousAndScrollUp()" data-track-click="Payment back button" data-e2e="reviewBackButton">
+                            {{ translateKeyPrefix + "BACK_BUTTON" | translate }}
+                        </button>
+                    </div>
+                </ng-container>
+            </sxm-ui-step>
+        </sxm-ui-stepper>
+    </main>
+    <ng-container *ngIf="stepper?.selectedIndex > 0 || subStepper?.selectedIndex > 0">
+        <offer-details [isACSC]="true" [details]="{ offerType: 'SELF_PAY' }"></offer-details>
+    </ng-container>
+</div>

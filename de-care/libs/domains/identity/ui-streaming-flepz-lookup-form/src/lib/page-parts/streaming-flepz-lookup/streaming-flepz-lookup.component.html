@@ -1,0 +1,14 @@
+<ng-container *ngIf="!hideHeadlineAndInstructions">
+    <h4>{{ translateKeyPrefix + "HEADLINE" | translate }}</h4>
+    <p>{{ translateKeyPrefix + "INSTRUCTIONS" | translate }}</p>
+</ng-container>
+
+<hr />
+<streaming-flepz-lookup-form
+    (signInRequested)="signInRequested.emit()"
+    (flepzDataReadyToProcess)="onFormSubmitted($event)"
+    [isInvalidEmailErrorsToForm]="isInvalidEmailErrors"
+    [isInvalidFirstNameErrorsToForm]="isInvalidFirstNameErrors"
+>
+    <ng-content select="[privacyPolicy]" privacyPolicy></ng-content>
+</streaming-flepz-lookup-form>

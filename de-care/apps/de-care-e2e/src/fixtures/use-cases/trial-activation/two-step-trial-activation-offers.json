@@ -1,0 +1,36 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "offers": [
+            {
+                "planCode": "Trial - All Access - 3mo - $0.00 - GOOGLE - (WEB)",
+                "packageName": "SXM_SIR_AUD_ALLACCESS",
+                "packageUpgrade": null,
+                "promoCode": "AA3MOTRIALGGLE",
+                "termLength": 3,
+                "type": "TRIAL_GGLE",
+                "marketType": "trial:used-car",
+                "price": 0,
+                "pricePerMonth": 0.0,
+                "retailPrice": 21.99,
+                "packageUpgradePrice": null,
+                "msrpPrice": 21.99,
+                "processingFee": null,
+                "supportedServices": ["SIR", "UNIVERSAL_LOGIN", "ESN"],
+                "deal": null,
+                "priceChangeMessagingType": "",
+                "planEndDate": null,
+                "fallbackReason": null,
+                "minimumFollowOnTerm": 0,
+                "order": null,
+                "streaming": false,
+                "mrdEligible": false,
+                "fallback": false,
+                "upgradeOffer": false
+            }
+        ],
+        "presentment": null
+    }
+}

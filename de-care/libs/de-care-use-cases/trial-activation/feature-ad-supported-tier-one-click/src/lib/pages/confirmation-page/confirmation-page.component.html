@@ -1,0 +1,48 @@
+<main data-e2e="confirmationPage" data-test="ConfirmationPage" class="background-offwhite" *ngIf="confirmationPageParams$ | async as confirmationPageParams">
+    <hero-component class="no-offer-description" [headerState]="translateKeyPrefix + '.HEADER.TITLE' | translate" [alignLeftMediumUp]="true"> </hero-component>
+    <div class="content-container">
+        <div class="row align-center no-padding-small">
+            <div class="column small-12 medium-2 background-white raised"></div>
+            <div class="column small-12 medium-6 background-white raised no-padding">
+                <div class="confirmation-page-container">
+                    <div class="now-active full-width">
+                        {{ translateKeyPrefix + ".NOW_ACTIVE" | translate }}
+                        <hr />
+                    </div>
+                    <div class="refresh-signal full-width">
+                        <refresh-signal [radioId]="confirmationPageParams.radioId"></refresh-signal>
+                        <hr />
+                    </div>
+                    <div class="ready-to-explore full-width">
+                        <h5>{{ translateKeyPrefix + ".READY_TO_EXPLORE.TITLE" | translate }}</h5>
+                        <a
+                            data-track-click="View Channel Lineup"
+                            class="text-link"
+                            href="{{ translateKeyPrefix + '.READY_TO_EXPLORE.CHANNEL_LINEUP.LINK_URL' | translate }}"
+                            target="_blank"
+                            >{{ translateKeyPrefix + ".READY_TO_EXPLORE.CHANNEL_LINEUP.LINK_TEXT" | translate }}</a
+                        >
+                        <p class="before-you-go">
+                            <a
+                                data-track-click="Check out great offers"
+                                class="text-link"
+                                href="{{ translateKeyPrefix + '.READY_TO_EXPLORE.BEFORE_YOU_GO.LINK_URL' | translate }}"
+                                target="_blank"
+                                >{{ translateKeyPrefix + ".READY_TO_EXPLORE.BEFORE_YOU_GO.LINK_TEXT" | translate }}</a
+                            >
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="column small-12 medium-2 background-white raised"></div>
+        </div>
+        <div class="row align-center no-padding-small">
+            <div class="important-information small-12 medium-10 column no-padding-medium align-left">
+                <p>
+                    <b>{{ translateKeyPrefix + ".IMPORTANT_INFORMATION.TITLE" | translate }}</b>
+                </p>
+                <p [innerHTML]="translateKeyPrefix + '.IMPORTANT_INFORMATION.BODY' | translate"></p>
+            </div>
+        </div>
+    </div>
+</main>

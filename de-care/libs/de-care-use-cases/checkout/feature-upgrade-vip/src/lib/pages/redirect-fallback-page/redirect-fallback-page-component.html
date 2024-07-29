@@ -1,0 +1,7 @@
+<sxm-ui-loading-with-alert-message
+    *ngIf="(errorCode$ | async) as errorCode"
+    [isLoading]="true"
+    [pillMessage]="'DeCareUseCasesCheckoutFeatureUpgradeVipModule.uiLoadingWithAlertMessageComponent.' + errorCode + '.pill' | translate"
+    [paragraph]="'DeCareUseCasesCheckoutFeatureUpgradeVipModule.uiLoadingWithAlertMessageComponent.' + errorCode + '.paragraph' | translate"
+    (loadingCompleted)="onLoadingWithAlertMessageComplete($event)"
+></sxm-ui-loading-with-alert-message>

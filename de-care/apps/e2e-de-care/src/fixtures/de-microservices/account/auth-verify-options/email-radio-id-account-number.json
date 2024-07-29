@@ -1,0 +1,1 @@
+{ "status": "SUCCESS", "httpStatusCode": 200, "httpStatus": "OK", "data": { "canUsePhone": false, "canUseEmail": true, "canUseRadioId": true, "canUseAccountNumber": true } }

@@ -1,0 +1,47 @@
+<ng-container *ngrxLet="confirmationViewModel$ as confirmationViewModel">
+    <section id="heroImage" deCarePageFullWidthContent="mainWideContent" class="no-print">
+        <h1>{{ translateKeyPrefix + "TITLE" | translate }}</h1>
+        <img src="assets/img/tokenized-sales-hero-card-2.jpg" alt="tokenized sales hero card" />
+    </section>
+    <main deCarePageMainContent>
+        <section id="radioInfo">
+            <p>{{ translateKeyPrefix + "RADIO_INFO.RADIO_ID_MASKED" | translate : { lastFour: confirmationViewModel?.radioIdLastFour } }}</p>
+        </section>
+        <section id="quote">
+            <quote-summary
+                *ngIf="confirmationViewModel.quoteViewModel"
+                [isClosedRadio]="isClosedRadio$ | async"
+                [quote]="confirmationViewModel.quoteViewModel"
+            ></quote-summary>
+            <a class="text-link no-print" (click)="onPrintClick()" [translate]="translateKeyPrefix + 'QUOTE.PRINT_YOUR_ORDER'" sxmUiDataClickTrack="print"></a>
+        </section>
+        <hr />
+        <section>
+            <listen-now></listen-now>
+        </section>
+        <hr />
+        <section>
+            <refresh-signal *ngIf="confirmationViewModel.isRefreshAllowed" [radioId]="confirmationViewModel?.radioIdLastFour"></refresh-signal>
+        </section>
+        <hr />
+        <section id="register" class="no-print">
+            <register-your-account
+                *ngIf="confirmationViewModel.registrationViewModel"
+                [securityQuestions]="confirmationViewModel.registrationViewModel.securityQuestions"
+                [account]="confirmationViewModel.registrationViewModel.accountInfo"
+                [credentialState]="registerCredentialsState"
+                (register)="onRegisterAccount($event)"
+                [registrationCompleted]="registrationCompleted$ | async"
+            ></register-your-account>
+        </section>
+    </main>
+
+    <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+        <div>
+            <p>
+                <strong>{{ translateKeyPrefix + "SUBSCRIPTION_IMPORTANT_INFO.TITLE" | translate }}</strong>
+            </p>
+            <p [innerHTML]="translateKeyPrefix + 'SUBSCRIPTION_IMPORTANT_INFO.BODY' | translate"></p>
+        </div>
+    </section>
+</ng-container>

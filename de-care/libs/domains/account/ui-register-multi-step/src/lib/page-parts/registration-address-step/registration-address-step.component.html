@@ -1,0 +1,38 @@
+<h4>{{ translateKeyPrefix + "REGISTRATION_TRANSACTION_HEADLINE" | translate }}</h4>
+<br />
+<p>{{ translateKeyPrefix + "REGISTRATION_TRANSACTION_DETAILS" | translate }}</p>
+<br />
+<hr />
+<br />
+<h5>{{ translateKeyPrefix + "FORM_HEADLINE_SERVICE_ADDRESS" | translate }}</h5>
+<form [formGroup]="form" data-e2e="registration.serviceAddressForm">
+    <sxm-ui-text-form-field labelText="{{ translateKeyPrefix + 'FIRST_NAME' | translate }}" formControlName="firstName" data-e2e="firstNameField"></sxm-ui-text-form-field>
+    <sxm-ui-text-form-field labelText="{{ translateKeyPrefix + 'LAST_NAME' | translate }}" formControlName="lastName" data-e2e="lastNameField"></sxm-ui-text-form-field>
+    <sxm-ui-email-form-field formControlName="email" data-e2e="emailField"></sxm-ui-email-form-field>
+    <sxm-ui-address-form-fields
+        addressType="service"
+        formControlName="serviceAddress"
+        [submitted]="serviceAddressFormSubmitted"
+        [prefillData]="{ zipCode: flepzData?.zipCode }"
+    >
+    </sxm-ui-address-form-fields>
+    <sxm-ui-phone-number-form-field formControlName="phoneNumber" data-e2e="phoneNumberField"> </sxm-ui-phone-number-form-field>
+    <button
+        type="button"
+        (click)="onSubmit()"
+        sxm-proceed-button
+        [loading]="serviceAddressFormProcessing$ | async"
+        sxmUiDataClickTrack="submit"
+        data-e2e="RegistrationAddressSubmitButton"
+    >
+        {{ translateKeyPrefix + "CONTINUE_BUTTON_TEXT" | translate }}
+    </button>
+</form>
+<sxm-ui-modal [closed]="true" #verifyAddressModal [ariaDescribedbyTextId]="registrationAddressStepModalAriaDescribedbyTextId">
+    <customer-verify-address
+         [ariaDescribedbyTextId]="registrationAddressStepModalAriaDescribedbyTextId"
+        [data]="verifyAddressesDataViewModel$ | async"
+        (editAddress)="proceedWithCorrectedAddress($event); verifyAddressModal.close()"
+        (editExisting)="verifyAddressModal.close()"
+    ></customer-verify-address>
+</sxm-ui-modal>

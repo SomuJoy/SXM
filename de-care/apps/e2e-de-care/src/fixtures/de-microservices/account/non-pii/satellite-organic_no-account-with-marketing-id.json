@@ -1,0 +1,10 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": null,
+        "marketingId": "VVZ000M8",
+        "marketingAcctId": null
+    }
+}

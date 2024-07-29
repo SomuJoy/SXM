@@ -1,0 +1,37 @@
+<ng-container *ngrxLet="viewModel$ as viewModel">
+    <sxm-ui-hero class="bottom-padding" [heroData]="viewModel.hero"></sxm-ui-hero>
+    <section id="mainContent">
+        <sxm-ui-primary-package-card
+            [class.theme-non-retail]="viewModel?.offerDescription?.theme === 'Theme2'"
+            [class.presentation-no-icons-single-detail-visible]="viewModel?.offerDescription?.presentation === 'Presentation3'"
+            [packageData]="viewModel?.offerDescription"
+        ></sxm-ui-primary-package-card>
+        <sxm-ui-step-header [currentStepNumber]="1" [numberOfSteps]="3">
+            <ng-container title>{{ translateKeyPrefix + ".TITLE" | translate }}</ng-container>
+        </sxm-ui-step-header>
+        <form [formGroup]="form" (ngSubmit)="formSubmit()">
+            <div *ngIf="unexpectedSubmissionError$ | async" class="invalid-feedback" id="unexpectedProcessingError">
+                <p>{{ translateKeyPrefix + ".UNEXPECTED_ERROR" | translate }}</p>
+            </div>
+            <sxm-ui-text-input-with-tooltip-form-field
+                formControlName="deviceId"
+                [labelText]="translateKeyPrefix + '.DEVICE_ID_FIELD_PLACEHOLDER' | translate"
+                [errorText]="translateKeyPrefix + (deviceNotEligible ? '.DEVICE_NOT_ELIGIBLE' : '.DEVICE_ID_ERROR') | translate"
+                [tooltipIconOnly]="true"
+                (tooltipClicked)="helpFindingRadioModal.open()"
+                [tooltipAriaLabelText]="translateKeyPrefix + '.RADIO_HELP_TOOLTIP_TITLE_LABEL' | translate"
+            ></sxm-ui-text-input-with-tooltip-form-field>
+            <p>
+                {{ translateKeyPrefix + ".NO_RADIO" | translate }}
+                <a [href]="translateKeyPrefix + '.GET_STREAMING.LINK_URL' | translate" target="_blank">{{ translateKeyPrefix + ".GET_STREAMING.LINK_TEXT" | translate }}</a>
+            </p>
+            <button type="submit" sxm-proceed-button [loading]="processing$ | async">
+                {{ translateKeyPrefix + ".BUTTON_LABEL" | translate }}
+            </button>
+        </form>
+    </section>
+    <section id="legalCopySection" deCarePageFullWidthContent="fullWidthContent">
+        <div [innerHTML]="viewModel.legalCopy"></div>
+    </section>
+    <sxm-ui-help-finding-radio-modal #helpFindingRadioModal></sxm-ui-help-finding-radio-modal>
+</ng-container>

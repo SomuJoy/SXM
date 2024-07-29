@@ -1,0 +1,78 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "JOHN",
+            "accountProfile": {
+                "accountRegistered": false
+            },
+            "accountState": {
+                "isInPreTrial": false
+            },
+            "serviceAddress": {
+                "state": "NY",
+                "country": "USA"
+            },
+            "subscriptions": [
+                {
+                    "id": "10000207054",
+                    "plans": [
+                        {
+                            "code": "Sponsored - OEM Trial - ALL ACCESS - 12mo - 116.55",
+                            "packageName": "SIR_AUD_ALLACCESS",
+                            "termLength": 12,
+                            "startDate": "2021-12-14T00:00:00-05:00",
+                            "endDate": "2022-12-14T00:00:00-05:00",
+                            "nextCycleOn": null,
+                            "marketType": "trial:new-car",
+                            "type": "TRIAL",
+                            "capabilities": ["AUD", "IPAUD"],
+                            "price": 0,
+                            "isBasePlan": true,
+                            "dataCapable": false
+                        }
+                    ],
+                    "followonPlans": [],
+                    "radioService": {
+                        "id": "10000206542",
+                        "last4DigitsOfRadioId": "9775",
+                        "devicePromoCode": "1012",
+                        "vehicleInfo": {
+                            "year": null,
+                            "make": null,
+                            "model": null
+                        },
+                        "is360LCapable": false
+                    },
+                    "streamingService": {
+                        "id": "10000204494",
+                        "maskedUserName": "ywa******@siriusxm.com",
+                        "status": "Active",
+                        "randomCredentials": false
+                    },
+                    "status": "Active",
+                    "devicePromoCode": "1012",
+                    "isPrimary": true
+                }
+            ],
+            "billingSummary": {
+                "creditCard": {
+                    "last4Digits": "1111",
+                    "type": "VISA",
+                    "status": "ACTIVE"
+                },
+                "isPaymentTypeInvoice": false
+            },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true,
+            "isAccountIdentifiedUsingFLEPZOrVIN": false
+        },
+        "maskedUserNameFromToken": null,
+        "marketingId": "990003289775",
+        "marketingAcctId": null,
+        "email": null,
+        "isUserNameInTokenSameAsAccount": false
+    }
+}

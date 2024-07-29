@@ -1,0 +1,8 @@
+{
+    "TITLE": "Cancel",
+    "ACTIVE_SUBSCRIPTIONS_WITH_PVIP": "You have two active subscriptions with your {{packageDescriptionName}} plan.",
+    "CANCELLING_YOUR_PLAN": "By cancelling your plan, both subscriptions will be deactivated.",
+    "DEACTIVATE_ONE_SUBSCRIPTION": "If you would like to deactivate only one subscription, you can ",
+    "CHAT_WITH_AGENT": "chat with an agent",
+    "CONTINUE_TO_REVIEW": "CONTINUE TO REVIEW"
+}

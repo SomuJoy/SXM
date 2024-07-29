@@ -1,0 +1,30 @@
+{
+    "DomainsOffersStateOffersWithCmsModule": {
+        "PLURAL_MAP": {
+            "MONTH": {
+                "=1": "month",
+                "other": "months"
+            }
+        },
+        "RECAP_DESCRIPTION": {
+            "MRD_DISCOUNT_PRICE": "{{pricePerMonth}}/mo with Family Discount.",
+            "MRD_REGULAR_PRICE": "Reg. {{msrpPrice}}/mo.",
+            "NAME_AND_CHANNEL_COUNT": "{{name}} ({{channelCount}}+ Channels)",
+            "TERM_AND_PRICE_MCP": "{{termLength}} {{monthString}} for {{pricePerMonth}}/mo{{dealRecapCardSuffix}}.",
+            "TERM_AND_PRICE": "{{termLength}} {{monthString}} for {{pricePerMonth}}{{dealRecapCardSuffix}}.",
+            "TERM_AND_PRICE_FOR_ONE": "{{pricePerMonth}}/mo{{dealRecapCardSuffix}}.",
+            "TERM_AND_PRICE_FREE": "{{termLength}} {{monthString}} for Free{{dealRecapCardSuffix}}.",
+            "TERM_AND_PRICE_FREE_FOR_ONE": "{{termLength}} {{monthString}} for Free.",
+            "FOLLOW_ON_PRICE": "Then {{retailPricePerMonth}}/mo.",
+            "FEES_AND_TAXES_APPLY": "Fees & taxes apply.",
+            "FOLLOW_ON_PRICE_QUEBEC": "",
+            "PLUS_FEE": "",
+            "PLURAL_MAP": {
+                "MONTH": {
+                    "=1": "Month",
+                    "other": "Months"
+                }
+            }
+        }
+    }
+}

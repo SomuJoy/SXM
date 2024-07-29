@@ -1,0 +1,39 @@
+@import "sxm.phoenix.imports";
+
+main {
+    height: 100%;
+    & > .content-container {
+        height: 100%;
+        & > .row {
+            min-height: 100%;
+        }
+    }
+}
+
+.do-not-call-content {
+    padding: 24px 18px 64px;
+    @include bp(medium) {
+        padding: 48px 0 64px;
+    }
+}
+
+h4 {
+    margin-bottom: 12px;
+}
+
+hr {
+    background-color: $gray-medium;
+    height: 1px;
+    border: 0;
+    margin: 24px 0;
+}
+
+.recirculation {
+    &--single {
+        position: relative;
+        margin-top: 64px;
+        &::before {
+            width: 100%;
+        }
+    }
+}

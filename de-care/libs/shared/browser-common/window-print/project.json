@@ -1,0 +1,31 @@
+{
+    "name": "shared-browser-common-window-print",
+    "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "library",
+    "sourceRoot": "libs/shared/browser-common/window-print/src",
+    "prefix": "de-care",
+    "targets": {
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/shared/browser-common/window-print/src/**/*.ts", "libs/shared/browser-common/window-print/src/**/*.html"]
+            },
+            "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "options": {
+                "jestConfig": "libs/shared/browser-common/window-print/jest.config.js",
+                "tsConfig": "libs/shared/browser-common/window-print/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/shared/browser-common/window-print/src/test-setup.ts"
+            }
+        }
+    },
+    "generators": {
+        "@nrwl/angular:component": {
+            "style": "scss"
+        }
+    },
+    "tags": ["type:ui-util", "scope:shared-ui-util"]
+}

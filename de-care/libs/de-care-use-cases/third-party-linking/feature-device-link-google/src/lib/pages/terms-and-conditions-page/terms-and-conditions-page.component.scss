@@ -1,0 +1,32 @@
+@import "sxm.phoenix.imports";
+@import "libs/sxm-assets/scss/mixins.scss";
+
+:host {
+    @include page-content-legacy-markup(1fr);
+    height: 100%;
+}
+
+.header {
+    margin: 34px 0 15px;
+    width: 100%;
+}
+
+h5 {
+    margin-bottom: 0;
+    max-width: 85%;
+    @include font-size(27px);
+}
+
+.button-cancel {
+    background: transparent;
+    padding: 0;
+    min-height: 20px;
+
+    &::before {
+        border-color: transparent;
+    }
+}
+
+p {
+    @include font-size(14px);
+}

@@ -1,0 +1,11 @@
+{
+    "TITLE": "Pick your plan",
+    "BODY": {
+        "FAMILY_DISCOUNT_ELIGIBLE": "With Family Discount, get another SXM App login to share SiriusXM with the whole family.",
+        "FAMILY_DISCOUNT_ELIGIBLE_SUB_TEXT": "The Family Discount requires at least one qualifying full price subscription plan on the same account."
+    },
+    "INELIGIBLE_LOADING_ALERT": "Unfortunately you aren't eligible for a Family Discount.",
+    "INELIGIBLE_LOADING_BODY": "Finding another great plan for you.",
+    "CONTENT_CARD_HEADLINE": "Get this streaming plan",
+    "PACKAGE_SELECTION_STEP": "OUR BEST STREAMING PLAN"
+}

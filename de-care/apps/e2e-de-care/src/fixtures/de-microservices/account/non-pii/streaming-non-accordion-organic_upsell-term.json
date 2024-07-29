@@ -1,0 +1,70 @@
+{
+    "status": "SUCCESS",
+    "httpStatusCode": 200,
+    "httpStatus": "OK",
+    "data": {
+        "nonPIIAccount": {
+            "firstName": "MIKE",
+            "accountProfile": { "accountRegistered": false },
+            "accountState": { "isInPreTrial": false },
+            "serviceAddress": { "state": "CA", "country": "US" },
+            "subscriptions": [
+                {
+                    "id": "10000229348",
+                    "plans": [
+                        {
+                            "code": "Promo - Streaming - 12mo - 99.00 - wETF (6mo25) - AMZ DOT - G4",
+                            "label": "Promo - Streaming Platinum - 12mo - 99.00 - wETF - AMZ DOT - GEN4 ",
+                            "packageName": "SIR_IP_SA",
+                            "termLength": 12,
+                            "startDate": "2022-07-12T00:00:00-04:00",
+                            "endDate": "2023-07-12T00:00:00-04:00",
+                            "nextCycleOn": null,
+                            "marketType": "self-pay:promo",
+                            "type": "PROMO",
+                            "capabilities": ["IPAUD"],
+                            "price": 99.0,
+                            "isBasePlan": true,
+                            "dataCapable": false
+                        }
+                    ],
+                    "followonPlans": [
+                        {
+                            "code": "Premier Streaming - Monthly",
+                            "label": null,
+                            "packageName": "SIR_IP_SA",
+                            "termLength": 1,
+                            "startDate": "2023-07-12T00:00:00-04:00",
+                            "endDate": null,
+                            "nextCycleOn": null,
+                            "marketType": "self-pay:standard",
+                            "type": "SELF_PAID",
+                            "capabilities": ["IPAUD"],
+                            "price": 10.99,
+                            "isBasePlan": true,
+                            "dataCapable": false
+                        }
+                    ],
+                    "radioService": null,
+                    "streamingService": {
+                        "id": "10000231396",
+                        "userName": "asdasdsd@siriusxm.com",
+                        "maskedUserName": "asd******@siriusxm.com",
+                        "status": "Active",
+                        "randomCredentials": false
+                    },
+                    "status": "Active",
+                    "devicePromoCode": null,
+                    "isPrimary": true
+                }
+            ],
+            "billingSummary": { "creditCard": { "last4Digits": "1111", "type": "VISA", "status": "ACTIVE" }, "isPaymentTypeInvoice": false },
+            "closedDevices": [],
+            "hasEmailAddressOnFile": true,
+            "isAccountIdentifiedUsingFLEPZOrVIN": false
+        },
+        "marketingId": null,
+        "marketingAcctId": "1652",
+        "email": null
+    }
+}
